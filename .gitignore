@@ -33,3 +33,7 @@ yarn-error.log*
 
 # Project specific
 # automations/  <-- Commented out to allow tracking
+*
+*.zip
+*.rar
+*.7z

@@ -20,50 +20,92 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
     <title>Archonic Codex 🌌 | Universal Knowledge Engine</title>
-    <meta name="description" content="Ashraf Morningstar's Neuromorphic Portfolio" />
+    <meta
+      name="description"
+      content="Ashraf Morningstar's Neuromorphic Portfolio. A futuristic, 3D interactive OS experience. Explore the future of web interfaces."
+    />
+
+    <!-- Viral Open Graph Tags -->
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:url"
+      content="https://ashrafmorningstar.github.io/archonic-codex/"
+    />
+    <meta
+      property="og:title"
+      content="Archonic Codex 🌌 | The Future of Interfaces"
+    />
+    <meta
+      property="og:description"
+      content="Experience the Universal Knowledge Engine. A 3D Neuromorphic OS built by Ashraf Morningstar. #React19 #ThreeJS #FutureTech"
+    />
+    <meta
+      property="og:image"
+      content="https://raw.githubusercontent.com/AshrafMorningstar/archonic-codex/main/public/og-preview.png"
+    />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:creator" content="@AshrafMorningstar" />
+    <meta
+      name="twitter:title"
+      content="Archonic Codex 🌌 | Universal Knowledge Engine"
+    />
+    <meta
+      name="twitter:description"
+      content="Step into the future. A fully immersive, glassmorphic Web OS experience."
+    />
+    <meta
+      name="twitter:image"
+      content="https://raw.githubusercontent.com/AshrafMorningstar/archonic-codex/main/public/og-preview.png"
+    />
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
       tailwind.config = {
-        darkMode: 'class',
+        darkMode: "class",
         theme: {
           extend: {
             colors: {
               chronos: {
                 blue: "#0A0C27",
                 dark: "#050510",
-                space: "#0F102E"
+                space: "#0F102E",
               },
               neuro: {
                 purple: "#3A0CA3",
                 pink: "#FF00FF",
-                cyan: "#00F5FF"
+                cyan: "#00F5FF",
               },
               quantum: {
                 glow: "#4CC9F0",
                 energy: "#7209B7",
-                matter: "#F72585"
+                matter: "#F72585",
               },
               hologram: {
                 primary: "rgba(10, 12, 39, 0.95)",
                 secondary: "rgba(58, 12, 163, 0.8)",
-                accent: "rgba(0, 245, 255, 0.6)"
-              }
+                accent: "rgba(0, 245, 255, 0.6)",
+              },
             },
             fontFamily: {
-              'space-grotesk': ['Space Grotesk', 'sans-serif'],
-              'inter': ['Inter', 'sans-serif'],
-              'mono': ['JetBrains Mono', 'monospace'],
+              "space-grotesk": ["Space Grotesk", "sans-serif"],
+              inter: ["Inter", "sans-serif"],
+              mono: ["JetBrains Mono", "monospace"],
             },
             animation: {
-              'quantum-pulse': 'quantum-pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-              'chronos-spin': 'chronos-spin 20s linear infinite',
-              'hologram-flicker': 'hologram-flicker 1.5s ease-in-out infinite',
-            }
-          }
-        }
-      }
+              "quantum-pulse":
+                "quantum-pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite",
+              "chronos-spin": "chronos-spin 20s linear infinite",
+              "hologram-flicker": "hologram-flicker 1.5s ease-in-out infinite",
+            },
+          },
+        },
+      };
     </script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -73,27 +115,27 @@
     />
     <style>
       :root {
-        --chronos-blue: #0A0C27;
-        --neuro-purple: #3A0CA3;
-        --quantum-glow: #4CC9F0;
+        --chronos-blue: #0a0c27;
+        --neuro-purple: #3a0ca3;
+        --quantum-glow: #4cc9f0;
         --glass-bg: rgba(10, 12, 39, 0.75);
         --glass-border: rgba(76, 201, 240, 0.1);
         --text-primary: #e0e0ff;
       }
 
       body.light-theme {
-        --chronos-blue: #F0F4F8;
-        --neuro-purple: #6366F1;
-        --quantum-glow: #0EA5E9;
+        --chronos-blue: #f0f4f8;
+        --neuro-purple: #6366f1;
+        --quantum-glow: #0ea5e9;
         --glass-bg: rgba(255, 255, 255, 0.65);
         --glass-border: rgba(0, 0, 0, 0.1);
-        --text-primary: #1F2937;
-        background-color: #F0F4F8;
-        color: #1F2937;
+        --text-primary: #1f2937;
+        background-color: #f0f4f8;
+        color: #1f2937;
       }
 
       body {
-        font-family: 'Inter', sans-serif;
+        font-family: "Inter", sans-serif;
         overflow: hidden;
         user-select: none;
         background-color: #050510;
@@ -101,12 +143,12 @@
         transition: background-color 0.5s ease, color 0.5s ease;
       }
       .font-display {
-        font-family: 'Space Grotesk', sans-serif;
+        font-family: "Space Grotesk", sans-serif;
       }
       .font-mono {
-        font-family: 'JetBrains Mono', monospace;
+        font-family: "JetBrains Mono", monospace;
       }
-      
+
       /* Premium Scrollbar */
       ::-webkit-scrollbar {
         width: 6px;
@@ -116,10 +158,14 @@
         background: transparent;
       }
       ::-webkit-scrollbar-thumb {
-        background: linear-gradient(180deg, var(--neuro-purple), var(--quantum-glow));
+        background: linear-gradient(
+          180deg,
+          var(--neuro-purple),
+          var(--quantum-glow)
+        );
         border-radius: 3px;
       }
-      
+
       /* Glassmorphism */
       .glass {
         background: var(--glass-bg);
@@ -131,25 +177,45 @@
       }
 
       @keyframes quantum-pulse {
-        0%, 100% { opacity: 1; transform: scale(1); }
-        50% { opacity: 0.5; transform: scale(1.05); }
+        0%,
+        100% {
+          opacity: 1;
+          transform: scale(1);
+        }
+        50% {
+          opacity: 0.5;
+          transform: scale(1.05);
+        }
       }
 
       @keyframes hologram-flicker {
-        0%, 100% { opacity: 1; filter: brightness(1); }
-        25% { opacity: 0.8; filter: brightness(1.2); }
-        50% { opacity: 0.9; filter: brightness(0.9); }
-        75% { opacity: 0.85; filter: brightness(1.1); }
+        0%,
+        100% {
+          opacity: 1;
+          filter: brightness(1);
+        }
+        25% {
+          opacity: 0.8;
+          filter: brightness(1.2);
+        }
+        50% {
+          opacity: 0.9;
+          filter: brightness(0.9);
+        }
+        75% {
+          opacity: 0.85;
+          filter: brightness(1.1);
+        }
       }
 
       /* CRT Effect for Terminal */
       .scanline {
         background: linear-gradient(
           to bottom,
-          rgba(255,255,255,0),
-          rgba(255,255,255,0) 50%,
-          rgba(0,245,255,0.05) 50%,
-          rgba(0,245,255,0.05)
+          rgba(255, 255, 255, 0),
+          rgba(255, 255, 255, 0) 50%,
+          rgba(0, 245, 255, 0.05) 50%,
+          rgba(0, 245, 255, 0.05)
         );
         background-size: 100% 4px;
         position: absolute;
@@ -161,26 +227,28 @@
         bottom: 0;
       }
     </style>
-  <script type="importmap">
-{
-  "imports": {
-    "react/": "https://esm.sh/react@^19.2.3/",
-    "react": "https://esm.sh/react@^19.2.3",
-    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
-    "zustand": "https://esm.sh/zustand@^5.0.9",
-    "lucide-react": "https://esm.sh/lucide-react@^0.561.0",
-    "framer-motion": "https://esm.sh/framer-motion@^11.0.8",
-    "gsap": "https://esm.sh/gsap@3.12.5",
-    "chess.js": "https://esm.sh/chess.js@1.0.0-beta.8",
-    "@react-spring/web": "https://esm.sh/@react-spring/web@9.7.3",
-    "zustand/": "https://esm.sh/zustand@^5.0.9/"
-  }
-}
-</script>
-<link rel="stylesheet" href="/index.css">
-</head>
-  <body class="h-screen w-screen overflow-hidden transition-colors duration-500">
+    <script type="importmap">
+      {
+        "imports": {
+          "react/": "https://esm.sh/react@^19.2.3/",
+          "react": "https://esm.sh/react@^19.2.3",
+          "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+          "zustand": "https://esm.sh/zustand@^5.0.9",
+          "lucide-react": "https://esm.sh/lucide-react@^0.561.0",
+          "framer-motion": "https://esm.sh/framer-motion@^11.0.8",
+          "gsap": "https://esm.sh/gsap@3.12.5",
+          "chess.js": "https://esm.sh/chess.js@1.0.0-beta.8",
+          "@react-spring/web": "https://esm.sh/@react-spring/web@9.7.3",
+          "zustand/": "https://esm.sh/zustand@^5.0.9/"
+        }
+      }
+    </script>
+    <link rel="stylesheet" href="/index.css" />
+  </head>
+  <body
+    class="h-screen w-screen overflow-hidden transition-colors duration-500"
+  >
     <div id="root"></div>
-  <script type="module" src="/index.tsx"></script>
-</body>
+    <script type="module" src="/index.tsx"></script>
+  </body>
 </html>
