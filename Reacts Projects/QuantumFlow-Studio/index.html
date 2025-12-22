@@ -1,0 +1,199 @@
+<!--
+ -----------------------------------------------------------------------------
+ @author      Ashraf Morningstar
+ @github      https://github.com/AshrafMorningstar
+ @repository  Project Graveyard - The Ultimate Archive
+ @quote       "Code that defines the future. Designed to inspire."
+ -----------------------------------------------------------------------------
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>QuantumFlow Studio - Advanced Particle Visualization Engine</title>
+    <meta
+      name="description"
+      content="Revolutionary particle-based data visualization engine with quantum-inspired physics and real-time rendering"
+    />
+    <meta name="author" content="AshrafMorningstar" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Created by AshrafMorningstar - https://github.com/AshrafMorningstar -->
+    <div class="quantum-container">
+      <!-- Header Section -->
+      <header class="quantum-header">
+        <div class="header-content">
+          <div class="logo-section">
+            <div class="logo-quantum-ring"></div>
+            <h1 class="logo-text">QuantumFlow Studio</h1>
+          </div>
+          <div class="header-controls">
+            <button class="theme-toggle" id="themeToggle">
+              <span class="theme-icon">🌓</span>
+            </button>
+            <div class="author-badge">
+              <a
+                href="https://github.com/AshrafMorningstar"
+                target="_blank"
+                rel="noopener"
+              >
+                <span class="author-icon">👨‍💻</span>
+                <span class="author-name">AshrafMorningstar</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- Main Canvas Area -->
+      <main class="quantum-main">
+        <canvas id="quantumCanvas" class="quantum-canvas"></canvas>
+
+        <!-- Floating Control Panel -->
+        <div class="control-panel">
+          <div class="panel-header">
+            <h2>Quantum Controls</h2>
+            <button class="panel-minimize" id="panelMinimize">−</button>
+          </div>
+          <div class="panel-content" id="panelContent">
+            <div class="control-group">
+              <label for="particleCount">Particle Density</label>
+              <input
+                type="range"
+                id="particleCount"
+                min="100"
+                max="5000"
+                value="1500"
+                step="100"
+              />
+              <span class="control-value" id="particleCountValue">1500</span>
+            </div>
+
+            <div class="control-group">
+              <label for="flowSpeed">Flow Velocity</label>
+              <input
+                type="range"
+                id="flowSpeed"
+                min="0.1"
+                max="5"
+                value="1"
+                step="0.1"
+              />
+              <span class="control-value" id="flowSpeedValue">1.0x</span>
+            </div>
+
+            <div class="control-group">
+              <label for="quantumField">Quantum Field Strength</label>
+              <input
+                type="range"
+                id="quantumField"
+                min="0"
+                max="100"
+                value="50"
+              />
+              <span class="control-value" id="quantumFieldValue">50%</span>
+            </div>
+
+            <div class="control-group">
+              <label for="colorMode">Color Spectrum</label>
+              <select id="colorMode" class="control-select">
+                <option value="quantum">Quantum Rainbow</option>
+                <option value="nebula">Nebula Fusion</option>
+                <option value="aurora">Aurora Borealis</option>
+                <option value="plasma">Plasma Storm</option>
+                <option value="cosmic">Cosmic Void</option>
+              </select>
+            </div>
+
+            <div class="control-group">
+              <label for="physicsMode">Physics Engine</label>
+              <select id="physicsMode" class="control-select">
+                <option value="fluid">Fluid Dynamics</option>
+                <option value="gravity">Gravitational Waves</option>
+                <option value="magnetic">Magnetic Fields</option>
+                <option value="vortex">Vortex Flow</option>
+                <option value="chaos">Chaos Theory</option>
+              </select>
+            </div>
+
+            <div class="button-group">
+              <button class="control-button primary" id="randomize">
+                🎲 Randomize
+              </button>
+              <button class="control-button secondary" id="reset">
+                🔄 Reset
+              </button>
+              <button class="control-button accent" id="export">
+                💾 Export
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Stats Display -->
+        <div class="stats-panel">
+          <div class="stat-item">
+            <span class="stat-label">FPS</span>
+            <span class="stat-value" id="fps">60</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-label">Particles</span>
+            <span class="stat-value" id="activeParticles">1500</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-label">Energy</span>
+            <span class="stat-value" id="energyLevel">100%</span>
+          </div>
+        </div>
+
+        <!-- Info Overlay -->
+        <div class="info-overlay" id="infoOverlay">
+          <div class="info-content">
+            <h2>Welcome to QuantumFlow Studio</h2>
+            <p>
+              An advanced particle-based visualization engine powered by
+              quantum-inspired physics algorithms.
+            </p>
+            <ul>
+              <li>
+                🌌 Real-time particle simulation with up to 5000 particles
+              </li>
+              <li>🎨 Dynamic color spectrums with 5 unique modes</li>
+              <li>⚡ Multiple physics engines for different effects</li>
+              <li>🎯 Interactive controls for complete customization</li>
+              <li>💫 Smooth 60 FPS rendering with WebGL acceleration</li>
+            </ul>
+            <p class="info-author">
+              Created by
+              <a href="https://github.com/AshrafMorningstar" target="_blank"
+                >AshrafMorningstar</a
+              >
+            </p>
+            <button class="info-close" id="infoClose">Start Exploring</button>
+          </div>
+        </div>
+      </main>
+
+      <!-- Footer -->
+      <footer class="quantum-footer">
+        <p>
+          © 2024 QuantumFlow Studio | Developed by
+          <a href="https://github.com/AshrafMorningstar" target="_blank"
+            >AshrafMorningstar</a
+          >
+        </p>
+      </footer>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

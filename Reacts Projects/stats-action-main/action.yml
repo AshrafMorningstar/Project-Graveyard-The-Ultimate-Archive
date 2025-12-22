@@ -1,0 +1,21 @@
+name: "profile-stats"
+description: "retrieve github profile stats and save locally to repo for further processing"
+branding:
+  icon: "bar-chart-2"
+  color: "blue"
+runs:
+  using: "composite"
+  steps:
+    - name: Setup Bun
+      uses: oven-sh/setup-bun@v2
+      with:
+        bun-version: latest
+
+    - name: Install dependencies
+      shell: bash
+      run: bun install --frozen-lockfile
+      working-directory: ${{ github.action_path }}
+
+    - name: Run stats collection
+      shell: bash
+      run: bun run ${{ github.action_path }}/src/index.ts

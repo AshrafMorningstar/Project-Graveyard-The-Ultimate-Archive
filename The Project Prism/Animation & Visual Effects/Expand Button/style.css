@@ -1,0 +1,26 @@
+/*
+ * -----------------------------------------------------------------------------
+ * @author      Ashraf Morningstar
+ * @github      https://github.com/AshrafMorningstar
+ * @repository  Project Graveyard - The Ultimate Archive
+ * @quote       "Code that defines the future. Designed to inspire."
+ * -----------------------------------------------------------------------------
+*/
+
+/* Created by Ashraf Morningstar */
+/* Theme: cyberpunk */
+
+        :root { --bg: #050505; --primary: #0ff; --secondary: #f0f; --text: #fff; --card-bg: #121212; --yellow: #fceE09; }
+        body { background-color: var(--bg); color: var(--text); font-family: 'Rajdhani', 'Courier New', monospace; display: flex; justify-content: center; align-items: center; min-height: 100vh; margin: 0; background-image: repeating-linear-gradient(0deg, transparent, transparent 1px, #111 1px, #111 2px); background-size: 100% 4px; }
+        .container { background: var(--card-bg); border: 2px solid var(--primary); padding: 2.5rem; position: relative; max-width: 450px; width: 90%; box-shadow: 0 0 30px rgba(0, 255, 255, 0.15); clip-path: polygon(0 0, 100% 0, 100% 95%, 95% 100%, 0 100%); }
+        .container::before { content: 'SYSTEM_READY'; position: absolute; top: -15px; left: 20px; background: var(--bg); color: var(--primary); padding: 0 10px; font-size: 0.8rem; border: 1px solid var(--primary); }
+        h1 { text-transform: uppercase; text-shadow: 3px 3px 0px var(--secondary); margin-bottom: 2.5rem; color: var(--primary); font-size: 2.5rem; letter-spacing: 2px; }
+        input, select, textarea { width: 100%; background: #000; border: 1px solid var(--secondary); color: var(--primary); padding: 18px; margin: 12px 0; font-family: 'Orbitron', monospace; outline: none; box-sizing: border-box; font-size: 1.1rem; }
+        input:focus { border-color: var(--yellow); box-shadow: 0 0 15px var(--secondary); }
+        button { width: 100%; background: var(--primary); color: black; border: none; padding: 18px; margin-top: 20px; font-weight: 900; text-transform: uppercase; cursor: pointer; clip-path: polygon(15% 0, 100% 0, 100% 70%, 85% 100%, 0 100%, 0 30%); transition: 0.2s; font-size: 1.2rem; letter-spacing: 2px; }
+        button:hover { background: var(--yellow); color: black; text-shadow: 0 0 5px rgba(0,0,0,0.5); clip-path: polygon(0 0, 85% 0, 100% 30%, 100% 100%, 15% 100%, 0 70%); }
+        .result { border: 1px dashed var(--yellow); padding: 20px; margin-top: 25px; color: var(--yellow); font-weight: bold; background: rgba(252, 238, 9, 0.1); }
+    
+
+/* Expand Button Specific Styles */
+

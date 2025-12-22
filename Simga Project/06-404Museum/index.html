@@ -1,0 +1,68 @@
+<!--
+ -----------------------------------------------------------------------------
+ @author      Ashraf Morningstar
+ @github      https://github.com/AshrafMorningstar
+ @repository  Project Graveyard - The Ultimate Archive
+ @quote       "Code that defines the future. Designed to inspire."
+ -----------------------------------------------------------------------------
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 Museum - A Curated Collection of Error States</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/rooms.css">
+</head>
+<body>
+    <nav class="museum-nav">
+        <button class="room-btn active" data-room="404">404</button>
+        <button class="room-btn" data-room="403">403</button>
+        <button class="room-btn" data-room="500">500</button>
+        <button class="room-btn" data-room="offline">Offline</button>
+    </nav>
+
+    <main class="museum-container">
+        <section class="error-room active" id="room-404" data-room="404">
+            <div class="room-content">
+                <h1 class="error-code">404</h1>
+                <h2 class="error-title">Lost in Wonder</h2>
+                <p class="error-message">The page you seek has wandered into the unknown.</p>
+                <p class="error-subtext">Perhaps it never existed, or perhaps it's waiting to be discovered.</p>
+            </div>
+        </section>
+
+        <section class="error-room" id="room-403" data-room="403">
+            <div class="room-content">
+                <h1 class="error-code">403</h1>
+                <h2 class="error-title">Beyond Boundaries</h2>
+                <p class="error-message">This space is reserved for those with permission.</p>
+                <p class="error-subtext">Boundaries exist to protect what matters.</p>
+            </div>
+        </section>
+
+        <section class="error-room" id="room-500" data-room="500">
+            <div class="room-content">
+                <h1 class="error-code">500</h1>
+                <h2 class="error-title">System Exhaustion</h2>
+                <p class="error-message">The server is overwhelmed and needs rest.</p>
+                <p class="error-subtext">Even machines need moments to recover.</p>
+            </div>
+        </section>
+
+        <section class="error-room" id="room-offline" data-room="offline">
+            <div class="room-content">
+                <h1 class="error-code">⚠</h1>
+                <h2 class="error-title">Disconnected</h2>
+                <p class="error-message">You are alone in the digital void.</p>
+                <p class="error-subtext">Connection is a privilege, not a guarantee.</p>
+            </div>
+        </section>
+    </main>
+
+    <script src="js/room-router.js"></script>
+</body>
+</html>

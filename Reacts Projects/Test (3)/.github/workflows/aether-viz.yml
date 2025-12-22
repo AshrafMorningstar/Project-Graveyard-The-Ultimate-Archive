@@ -1,0 +1,38 @@
+name: Aether-Viz Generation
+
+on:
+  push:
+    branches: [ main, master ]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  generate-masterpiece:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+
+      - name: Install Dependencies
+        run: npm ci
+
+      - name: Install FFmpeg
+        run: sudo apt-get update && sudo apt-get install -y ffmpeg
+
+      - name: Transform Data & Render Masterpiece
+        run: |
+          mkdir -p output
+          npx remotion render src/index.ts Masterpiece output/masterpiece.gif --gl=angle --sequence
+
+      - name: Commit & Push Artifacts
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "🎨 Aether-Viz: Updated Masterpiece [skip ci]"
+          file_pattern: output/*

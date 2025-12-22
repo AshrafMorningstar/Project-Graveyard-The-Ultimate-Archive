@@ -1,0 +1,68 @@
+<!--
+ -----------------------------------------------------------------------------
+ @author      Ashraf Morningstar
+ @github      https://github.com/AshrafMorningstar
+ @repository  Project Graveyard - The Ultimate Archive
+ @quote       "Code that defines the future. Designed to inspire."
+ -----------------------------------------------------------------------------
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Distance-Calculator</title>
+    <meta name="author" content="Ashraf Morningstar">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="../global-premium.css">
+</head>
+
+<body class="theme-ocean">
+
+    <div id="distanceContainer" style="text-align: center;">
+        <div class="container">
+            <div class="speedCalculator">
+                <h1>Distance Calculator</h1>
+                <p>Distance is the measurement of actual path covered byy any object.</p>
+                <br>
+                <p>Distance is the product of speed of an object to the time taken.
+                </p>
+                <h3 class="formula">Distance = Speed * Time
+                </h3>
+                <h4>SI unit of Distance is metre(m).</h4>
+                <br>
+                <h3><em>Fill in the speed(in m/s) and time(in seconds) and calculate the Distance. </em></h3>
+
+                <input type="number" id="speed" placeholder="Enter the Speed(in m/s)"><br><br>
+                <input type="number" id="time" placeholder="Enter the time(in seconds)"><br><br>
+                <input type="button" value="distance" id="speed" onclick="calcDistance()">
+                <h3 id="calculatedDistanceDisplay"></h3>
+            </div>
+            <button class="backButton"><a href="index.html">Back</a></button>
+        </div>
+        <script>
+
+            function calcDistance() {
+                let speed = document.getElementById("speed").value;
+                let time = document.getElementById("time").value;
+                let calculatedSpeedDisplay = document.getElementById("calculatedSpeedDisplay");
+                let distance = speed * time;
+                calculatedDistanceDisplay.innerText = `The calculated distance is ${distance} metres.`;
+            }
+
+
+
+        </script>
+
+<div id="ashraf-branding-bar">
+    <span>💎 Crafted by <a href="https://github.com/AshrafMorningstar" target="_blank">Ashraf Morningstar</a></span>
+    <a href="https://github.com/AshrafMorningstar" target="_blank"><i class="fab fa-github"></i> View on GitHub</a>
+</div>
+
+</body>
+
+</html>

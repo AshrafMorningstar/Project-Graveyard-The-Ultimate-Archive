@@ -1,0 +1,59 @@
+<!--
+ -----------------------------------------------------------------------------
+ @author      Ashraf Morningstar
+ @github      https://github.com/AshrafMorningstar
+ @repository  Project Graveyard - The Ultimate Archive
+ @quote       "Code that defines the future. Designed to inspire."
+ -----------------------------------------------------------------------------
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aura Weather | Ashraf Morningstar</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="background-gradient"></div>
+    <div class="card">
+        <div class="search">
+            <input type="text" class="search-bar" placeholder="Search city..." value="London">
+            <button><i class="fas fa-search"></i></button>
+        </div>
+        <div class="weather loading">
+            <h2 class="city">Weather in London</h2>
+            <div class="temp-box">
+                <h1 class="temp">21°C</h1>
+                <div class="icon">
+                    <img src="https://openweathermap.org/img/wn/04d.png" alt="" class="w-icon">
+                </div>
+            </div>
+            <div class="description">Cloudy</div>
+            <div class="details">
+                <div class="col">
+                    <i class="fas fa-tint"></i>
+                    <div class="info">
+                        <span class="humidity">60%</span>
+                        <p>Humidity</p>
+                    </div>
+                </div>
+                <div class="col">
+                    <i class="fas fa-wind"></i>
+                    <div class="info">
+                        <span class="wind">6.2 km/h</span>
+                        <p>Wind Speed</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer>
+            Created by <a href="https://github.com/AshrafMorningstar">Ashraf Morningstar</a>
+        </footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,128 @@
+/*
+ * -----------------------------------------------------------------------------
+ * @author      Ashraf Morningstar
+ * @github      https://github.com/AshrafMorningstar
+ * @repository  Project Graveyard - The Ultimate Archive
+ * @quote       "Code that defines the future. Designed to inspire."
+ * -----------------------------------------------------------------------------
+*/
+
+/* Persona Tiles - Tile Styles */
+/* Author: Ashraf Morningstar | https://github.com/AshrafMorningstar */
+
+.tile {
+    background: var(--bg-secondary);
+    border-radius: 16px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: var(--shadow-sm);
+    border: 2px solid transparent;
+    user-select: none;
+}
+
+.tile-emoji {
+    font-size: 36px;
+    transition: transform 0.3s ease;
+}
+
+.tile-label {
+    font-size: 14px;
+    font-weight: 600;
+    text-align: center;
+    color: var(--text-primary);
+    transition: color 0.3s ease;
+}
+
+/* Tile Type Colors */
+.tile[data-type="skill"] {
+    border-color: var(--color-skill);
+}
+
+.tile[data-type="interest"] {
+    border-color: var(--color-interest);
+}
+
+.tile[data-type="value"] {
+    border-color: var(--color-value);
+}
+
+.tile[data-type="goal"] {
+    border-color: var(--color-goal);
+}
+
+/* Hover State */
+.tile:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+}
+
+.tile:hover .tile-emoji {
+    transform: scale(1.2);
+}
+
+/* Active State */
+.tile.active {
+    transform: scale(1.1);
+    box-shadow: var(--shadow-lg);
+}
+
+.tile.active[data-type="skill"] {
+    background: var(--color-skill);
+}
+
+.tile.active[data-type="interest"] {
+    background: var(--color-interest);
+}
+
+.tile.active[data-type="value"] {
+    background: var(--color-value);
+}
+
+.tile.active[data-type="goal"] {
+    background: var(--color-goal);
+}
+
+.tile.active .tile-label {
+    color: white;
+}
+
+/* Canvas Tile (when moved to canvas) */
+.tile.in-canvas {
+    animation: slideIn 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Inactive tiles (when others are active) */
+.tile:not(.active) {
+    opacity: 0.6;
+}
+
+.tile.active ~ .tile:not(.active),
+.tile:has(~ .tile.active):not(.active) {
+    opacity: 0.6;
+}
+
+/* Focus state for keyboard accessibility */
+.tile:focus {
+    outline: 3px solid var(--color-skill);
+    outline-offset: 4px;
+}
+
+.tile:focus:not(:focus-visible) {
+    outline: none;
+}

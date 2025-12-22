@@ -1,0 +1,95 @@
+<!--
+ -----------------------------------------------------------------------------
+ @author      Ashraf Morningstar
+ @github      https://github.com/AshrafMorningstar
+ @repository  Project Graveyard - The Ultimate Archive
+ @quote       "Code that defines the future. Designed to inspire."
+ -----------------------------------------------------------------------------
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Currency Converter | Ultimate Web Dev Journey</title>
+    <style>
+        /* Created by Ashraf Morningstar - https://github.com/AshrafMorningstar */
+        body { background: #f6f6f6; font-family: 'Arial', sans-serif; display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh; color: #333; }
+        .currency { padding: 40px; width: 350px; background: #fff; box-shadow: 0 10px 20px rgba(0,0,0,0.1); border-radius: 5px; text-align: center; }
+        select, input { padding: 10px; font-size: 16px; margin: 10px 0; border: 1px solid #ddd; border-radius: 5px; width: 100%; box-sizing: border-box; }
+        .rate { color: #5f27cd; font-size: 14px; margin-top: 10px; font-weight: bold; }
+        .swap-btn { background: #5f27cd; color: #fff; border: none; padding: 5px 10px; cursor: pointer; border-radius: 5px; margin: 10px 0; }
+        h1 { color: #5f27cd; margin-bottom: 30px; }
+        .items { display: flex; align-items: center; justify-content: space-between; }
+    </style>
+</head>
+<body>
+    <div class="currency">
+        <h1>Currency Converter</h1>
+        <div class="items">
+            <select id="currency-one">
+                <option value="USD" selected>USD</option>
+                <option value="EUR">EUR</option>
+                <option value="GBP">GBP</option>
+                <option value="INR">INR</option>
+                <option value="JPY">JPY</option>
+            </select>
+            <input type="number" id="amount-one" placeholder="0" value="1" />
+        </div>
+
+        <div class="swap-rate-container">
+            <button class="swap-btn" id="swap">Swap ⇅</button>
+            <div class="rate" id="rate"></div>
+        </div>
+
+        <div class="items">
+            <select id="currency-two">
+                <option value="USD">USD</option>
+                <option value="EUR" selected>EUR</option>
+                <option value="GBP">GBP</option>
+                <option value="INR">INR</option>
+                <option value="JPY">JPY</option>
+            </select>
+            <input type="number" id="amount-two" placeholder="0" />
+        </div>
+    </div>
+    <script>
+        // Created by Ashraf Morningstar - https://github.com/AshrafMorningstar
+        const currencyEl_one = document.getElementById('currency-one');
+        const amountEl_one = document.getElementById('amount-one');
+        const currencyEl_two = document.getElementById('currency-two');
+        const amountEl_two = document.getElementById('amount-two');
+        const rateEl = document.getElementById('rate');
+        const swap = document.getElementById('swap');
+
+        function calculate() {
+            const currency_one = currencyEl_one.value;
+            const currency_two = currencyEl_two.value;
+            
+            // Using a free API
+            fetch(`https://api.exchangerate-api.com/v4/latest/${currency_one}`)
+                .then(res => res.json())
+                .then(data => {
+                    const rate = data.rates[currency_two];
+                    rateEl.innerText = `1 ${currency_one} = ${rate} ${currency_two}`;
+                    amountEl_two.value = (amountEl_one.value * rate).toFixed(2);
+                });
+        }
+
+        currencyEl_one.addEventListener('change', calculate);
+        amountEl_one.addEventListener('input', calculate);
+        currencyEl_two.addEventListener('change', calculate);
+        amountEl_two.addEventListener('input', calculate);
+
+        swap.addEventListener('click', () => {
+            const temp = currencyEl_one.value;
+            currencyEl_one.value = currencyEl_two.value;
+            currencyEl_two.value = temp;
+            calculate();
+        });
+
+        calculate();
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>

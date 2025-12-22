@@ -1,0 +1,90 @@
+/*
+ * -----------------------------------------------------------------------------
+ * @author      Ashraf Morningstar
+ * @github      https://github.com/AshrafMorningstar
+ * @repository  Project Graveyard - The Ultimate Archive
+ * @quote       "Code that defines the future. Designed to inspire."
+ * -----------------------------------------------------------------------------
+*/
+
+/* MoodScroll - Emotional Zone Styles */
+/* Author: Ashraf Morningstar | https://github.com/AshrafMorningstar */
+
+/* Zone 1: Calm - Light, airy, minimal */
+.zone-calm {
+    background: linear-gradient(135deg, #fafafa 0%, #f0f0f0 100%);
+}
+
+.zone-calm .zone-title {
+    color: #2c2c2c;
+}
+
+.zone-calm .zone-text {
+    color: #4a4a4a;
+}
+
+/* Zone 2: Curiosity - Slight contrast, motion hints */
+.zone-curiosity {
+    background: linear-gradient(135deg, #e8f4f8 0%, #d1e7f0 100%);
+}
+
+.zone-curiosity .zone-title {
+    color: #1a4d5c;
+}
+
+.zone-curiosity .zone-text {
+    color: #2d6a7d;
+}
+
+.zone-curiosity .zone-content {
+    animation-delay: 0.2s;
+}
+
+/* Zone 3: Intensity - High contrast, denser visuals */
+.zone-intensity {
+    background: linear-gradient(135deg, #2d1b4e 0%, #1a0f2e 100%);
+}
+
+.zone-intensity .zone-title {
+    color: #ffffff;
+    text-shadow: 0 0 40px rgba(138, 43, 226, 0.5);
+}
+
+.zone-intensity .zone-text {
+    color: #e0d4f7;
+}
+
+.zone-intensity .zone-content {
+    animation-delay: 0.3s;
+}
+
+/* Zone 4: Reflection - Dark, soft, reduced motion */
+.zone-reflection {
+    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+}
+
+.zone-reflection .zone-title {
+    color: #f5f5f5;
+}
+
+.zone-reflection .zone-text {
+    color: #b0b0b0;
+}
+
+.zone-reflection .zone-content {
+    animation-delay: 0.4s;
+}
+
+/* Active zone highlighting (applied via JS) */
+.zone.active {
+    opacity: 1;
+}
+
+.zone:not(.active) {
+    opacity: 0.6;
+}
+
+/* Smooth transitions between zones */
+.zone {
+    transition: opacity 0.8s ease;
+}

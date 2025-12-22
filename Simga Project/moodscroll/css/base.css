@@ -1,0 +1,178 @@
+/*
+ * -----------------------------------------------------------------------------
+ * @author      Ashraf Morningstar
+ * @github      https://github.com/AshrafMorningstar
+ * @repository  Project Graveyard - The Ultimate Archive
+ * @quote       "Code that defines the future. Designed to inspire."
+ * -----------------------------------------------------------------------------
+*/
+
+/**
+ * MoodScroll - Base Styles
+ * Author: Ashraf Morningstar
+ * GitHub: https://github.com/AshrafMorningstar
+ */
+
+/* Reset and Base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    overflow-x: hidden;
+    background: #000;
+    color: #fff;
+}
+
+/* Scroll Container */
+.scroll-container {
+    width: 100%;
+    min-height: 100vh;
+}
+
+/* Zone Base Styles */
+.zone {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4rem 2rem;
+    position: relative;
+    transition: background-color 0.8s ease;
+}
+
+.content {
+    max-width: 800px;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
+
+/* Typography */
+.zone-title {
+    font-size: clamp(3rem, 8vw, 6rem);
+    font-weight: 300;
+    letter-spacing: -0.02em;
+    margin-bottom: 1.5rem;
+    line-height: 1.1;
+    transition: all 0.6s ease;
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+.zone-text {
+    font-size: clamp(1.25rem, 3vw, 2rem);
+    font-weight: 400;
+    letter-spacing: 0.02em;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+    transition: all 0.6s ease;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.zone-description {
+    font-size: clamp(1rem, 2vw, 1.25rem);
+    font-weight: 300;
+    letter-spacing: 0.03em;
+    line-height: 1.8;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.6s ease;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Visible State */
+.zone.visible .zone-title,
+.zone.visible .zone-text,
+.zone.visible .zone-description {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.zone.visible .zone-title {
+    transition-delay: 0.1s;
+}
+
+.zone.visible .zone-text {
+    transition-delay: 0.2s;
+}
+
+.zone.visible .zone-description {
+    transition-delay: 0.3s;
+}
+
+/* Scroll Indicator */
+.scroll-indicator {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: rgba(255, 255, 255, 0.1);
+    z-index: 1000;
+    pointer-events: none;
+}
+
+.indicator-bar {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+    transition: width 0.1s ease, background 0.8s ease;
+}
+
+/* Attribution */
+.attribution {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    font-size: 0.875rem;
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+}
+
+.attribution p {
+    margin-bottom: 0.25rem;
+}
+
+.attribution a {
+    color: inherit;
+    text-decoration: none;
+    font-weight: 500;
+    border-bottom: 1px solid currentColor;
+    transition: opacity 0.3s ease;
+}
+
+.attribution a:hover {
+    opacity: 0.6;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .zone {
+        padding: 3rem 1.5rem;
+    }
+}
+
+/* Accessibility - Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+    
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}

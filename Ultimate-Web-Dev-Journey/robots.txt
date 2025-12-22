@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://ashrafmorningstar.github.io/Ultimate-Web-Dev-Journey/sitemap.xml

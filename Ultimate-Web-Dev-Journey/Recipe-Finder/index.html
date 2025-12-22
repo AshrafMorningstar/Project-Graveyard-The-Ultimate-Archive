@@ -1,0 +1,79 @@
+<!--
+ -----------------------------------------------------------------------------
+ @author      Ashraf Morningstar
+ @github      https://github.com/AshrafMorningstar
+ @repository  Project Graveyard - The Ultimate Archive
+ @quote       "Code that defines the future. Designed to inspire."
+ -----------------------------------------------------------------------------
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Recipe Finder | Ultimate Web Dev Journey</title>
+    <style>
+        /* Created by Ashraf Morningstar - https://github.com/AshrafMorningstar */
+        body { background-color: #f1f1f1; font-family: 'Verdana', sans-serif; display: flex; flex-direction: column; align-items: center; margin: 0; min-height: 100vh; }
+        header { background-color: #e67e22; width: 100%; padding: 20px; text-align: center; color: white; margin-bottom: 30px; }
+        .search-container { position: relative; width: 100%; max-width: 400px; }
+        input { width: 100%; padding: 15px; border: none; border-radius: 30px; outline: none; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+        .btn-search { position: absolute; top: 0; right: 0; background-color: #d35400; color: white; border: none; padding: 15px 20px; border-radius: 0 30px 30px 0; cursor: pointer; }
+        .meals { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; width: 90%; max-width: 1200px; margin: 0 auto 50px; }
+        .meal { background-color: #fff; border-radius: 10px; box-shadow: 0 4px 5px rgba(0,0,0,0.1); overflow: hidden; position: relative; }
+        .meal img { width: 100%; height: 250px; object-fit: cover; }
+        .meal-info { padding: 1.5rem; display: flex; align-items: center; justify-content: space-between; }
+        .meal-info h3 { margin: 0; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>🍳 Recipe Finder</h1>
+    </header>
+    <div class="search-container">
+        <input type="text" id="search" placeholder="Search for meals (e.g. Chicken)">
+        <button class="btn-search" id="search-btn">Search</button>
+    </div>
+    <div id="result-heading"></div>
+    <div id="meals" class="meals"></div>
+
+    <script>
+        // Created by Ashraf Morningstar - https://github.com/AshrafMorningstar
+        const search = document.getElementById('search');
+        const submit = document.getElementById('search-btn');
+        const mealsEl = document.getElementById('meals');
+        const resultHeading = document.getElementById('result-heading');
+
+        function searchMeal(e) {
+            e.preventDefault();
+            const term = search.value;
+            if (term.trim()) {
+                fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${term}`)
+                    .then(res => res.json())
+                    .then(data => {
+                        resultHeading.innerHTML = `<h2>Search results for '${term}':</h2>`;
+                        if (data.meals === null) {
+                            resultHeading.innerHTML = `<p>There are no search results. Try again!</p>`;
+                        } else {
+                            mealsEl.innerHTML = data.meals.map(meal => `
+                                <div class="meal">
+                                    <img src="${meal.strMealThumb}" alt="${meal.strMeal}" />
+                                    <div class="meal-info">
+                                        <h3>${meal.strMeal}</h3>
+                                    </div>
+                                </div>
+                            `).join('');
+                        }
+                    });
+                search.value = '';
+            } else {
+                alert('Please enter a search term');
+            }
+        }
+
+        submit.addEventListener('click', searchMeal);
+        search.addEventListener('change', searchMeal);
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>

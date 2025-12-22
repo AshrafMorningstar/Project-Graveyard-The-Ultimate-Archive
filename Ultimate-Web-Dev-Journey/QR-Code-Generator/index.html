@@ -1,0 +1,47 @@
+<!--
+ -----------------------------------------------------------------------------
+ @author      Ashraf Morningstar
+ @github      https://github.com/AshrafMorningstar
+ @repository  Project Graveyard - The Ultimate Archive
+ @quote       "Code that defines the future. Designed to inspire."
+ -----------------------------------------------------------------------------
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>QR Code Generator | Ultimate Web Dev Journey</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <style>
+        /* Created by Ashraf Morningstar - https://github.com/AshrafMorningstar */
+        body { background: #262a2b; display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh; font-family: 'Open Sans', sans-serif; margin: 0; }
+        .container { background: #fff; padding: 20px; border-radius: 5px; text-align: center; box-shadow: 0 10px 10px rgba(0,0,0,0.1); }
+        input { padding: 10px; width: 100%; margin-bottom: 20px; border: 1px solid #ddd; border-radius: 5px; box-sizing: border-box; }
+        button { padding: 10px 20px; background: #007bff; color: white; border: none; border-radius: 5px; cursor: pointer; }
+        #qrcode { margin-top: 20px; display: flex; justify-content: center; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>QR Code Generator</h1>
+        <input type="text" id="text" placeholder="Enter text or URL">
+        <button onclick="generateQR()">Generate QR</button>
+        <div id="qrcode"></div>
+    </div>
+    <script>
+        // Created by Ashraf Morningstar - https://github.com/AshrafMorningstar
+        function generateQR() {
+            const text = document.getElementById("text").value;
+            const qrcodeContainer = document.getElementById("qrcode");
+            qrcodeContainer.innerHTML = "";
+            if (text.trim() === "") {
+                alert("Please enter some text");
+                return;
+            }
+            new QRCode(qrcodeContainer, text);
+        }
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+[
+  {
+    "id": "q1",
+    "question": "What does WCAG stand for?",
+    "options": [
+      { "id": "a", "text": "Web Content Accessibility Guidelines", "isCorrect": true },
+      { "id": "b", "text": "World Computer Accessibility Group", "isCorrect": false },
+      { "id": "c", "text": "Web Coding and Graphics", "isCorrect": false },
+      { "id": "d", "text": "Wide Common Access Gateway", "isCorrect": false }
+    ],
+    "explanation": "WCAG stands for Web Content Accessibility Guidelines, developed by the W3C."
+  },
+  {
+    "id": "q2",
+    "question": "Which HTML element is best for a main heading?",
+    "options": [
+      { "id": "a", "text": "<head>", "isCorrect": false },
+      { "id": "b", "text": "<header>", "isCorrect": false },
+      { "id": "c", "text": "<h1>", "isCorrect": true },
+      { "id": "d", "text": "<title>", "isCorrect": false }
+    ],
+    "explanation": "The <h1> element represents the main heading of the page."
+  },
+  {
+    "id": "q3",
+    "question": "What is the minimum contrast ratio for normal text (WCAG AA)?",
+    "options": [
+      { "id": "a", "text": "3:1", "isCorrect": false },
+      { "id": "b", "text": "4.5:1", "isCorrect": true },
+      { "id": "c", "text": "7:1", "isCorrect": false },
+      { "id": "d", "text": "2:1", "isCorrect": false }
+    ],
+    "explanation": "WCAG AA requires a contrast ratio of at least 4.5:1 for normal text."
+  }
+]

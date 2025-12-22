@@ -1,0 +1,73 @@
+/*
+ * -----------------------------------------------------------------------------
+ * @author      Ashraf Morningstar
+ * @github      https://github.com/AshrafMorningstar
+ * @repository  Project Graveyard - The Ultimate Archive
+ * @quote       "Code that defines the future. Designed to inspire."
+ * -----------------------------------------------------------------------------
+*/
+
+/* Ambient Landing - Base Styles */
+/* Author: Ashraf Morningstar | https://github.com/AshrafMorningstar */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    overflow: hidden;
+    position: relative;
+}
+
+.ambient-container {
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    padding: 40px;
+    z-index: 1;
+}
+
+.content {
+    text-align: center;
+    color: white;
+    position: relative;
+    z-index: 2;
+}
+
+.headline {
+    font-size: clamp(36px, 6vw, 64px);
+    font-weight: 600;
+    margin-bottom: 24px;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+}
+
+.subheading {
+    font-size: clamp(18px, 2.5vw, 24px);
+    font-weight: 400;
+    margin-bottom: 16px;
+    opacity: 0.9;
+}
+
+.supporting-text {
+    font-size: clamp(14px, 2vw, 18px);
+    font-weight: 300;
+    opacity: 0.7;
+}
+
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}

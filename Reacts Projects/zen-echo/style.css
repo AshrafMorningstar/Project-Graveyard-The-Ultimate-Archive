@@ -1,0 +1,70 @@
+/*
+ * -----------------------------------------------------------------------------
+ * @author      Ashraf Morningstar
+ * @github      https://github.com/AshrafMorningstar
+ * @repository  Project Graveyard - The Ultimate Archive
+ * @quote       "Code that defines the future. Designed to inspire."
+ * -----------------------------------------------------------------------------
+*/
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #f0f0f0;
+  color: #111;
+  font-family: "Arial", sans-serif;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  cursor: none; /* Hide default cursor */
+}
+
+.content {
+  text-align: center;
+  mix-blend-mode: difference; /* Critical for the effect */
+  z-index: 2;
+}
+
+h1 {
+  font-size: 15rem;
+  line-height: 0.8;
+  margin: 0;
+  letter-spacing: -10px;
+  font-weight: 900;
+}
+
+h2 {
+  font-size: 15rem;
+  line-height: 0.8;
+  margin: 0;
+  letter-spacing: -10px;
+  font-weight: 300;
+  font-style: italic;
+}
+
+p {
+  margin-top: 2rem;
+  font-size: 1.5rem;
+  font-weight: 400;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+}
+
+#cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 300px;
+  height: 300px;
+  background: #fff; /* White circle */
+  border-radius: 50%;
+  transform: translate(-50%, -50%); /* Center on mouse */
+  pointer-events: none;
+  mix-blend-mode: difference; /* Inverts whatever is behind it */
+  z-index: 10;
+  transition: transform 0.1s linear; /* Smooth lag optional, removing for snappy feel */
+}
+
+/* Add noise texture if possible, but keep simple for now */

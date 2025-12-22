@@ -1,0 +1,35 @@
+/*
+ * -----------------------------------------------------------------------------
+ * @author      Ashraf Morningstar
+ * @github      https://github.com/AshrafMorningstar
+ * @repository  Project Graveyard - The Ultimate Archive
+ * @quote       "Code that defines the future. Designed to inspire."
+ * -----------------------------------------------------------------------------
+*/
+
+/* 
+   Designed & Enhanced by Ashraf Morningstar
+   Github: https://github.com/AshrafMorningstar
+*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* box-model*/
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #ebf2ff;
+}
+
+.card-img-top {
+  padding: 15px;
+  height: 300px;
+  width: auto;
+}
+
+.place__holder__image {
+  width: 100%;
+}
+
+

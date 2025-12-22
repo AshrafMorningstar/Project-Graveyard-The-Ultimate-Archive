@@ -1,0 +1,379 @@
+/*
+ * -----------------------------------------------------------------------------
+ * @author      Ashraf Morningstar
+ * @github      https://github.com/AshrafMorningstar
+ * @repository  Project Graveyard - The Ultimate Archive
+ * @quote       "Code that defines the future. Designed to inspire."
+ * -----------------------------------------------------------------------------
+*/
+
+/**
+ * CSS Theme Playground - Styles
+ * Author: Ashraf Morningstar
+ */
+
+:root {
+  /* UI Variables (The "Meta" Theme) */
+  --ui-bg: #1e1e1e;
+  --ui-sidebar: #252526;
+  --ui-border: #333333;
+  --ui-text: #cccccc;
+  --ui-accent: #0e639c;
+  --ui-space: 16px;
+
+  /* Configurable Variables (The "Preview" Theme - Defaults) */
+  --preview-bg: #ffffff;
+  --preview-text: #1a1a1a;
+  --preview-primary: #3b82f6;
+  --preview-secondary: #64748b;
+  --preview-accent: #8b5cf6;
+  --preview-success: #22c55e;
+  --preview-danger: #ef4444;
+  --preview-font: "Inter", sans-serif;
+  --preview-radius: 8px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background: var(--ui-bg);
+  color: var(--ui-text);
+  height: 100vh;
+  overflow: hidden;
+}
+
+.app-container {
+  display: flex;
+  height: 100%;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 350px;
+  background: var(--ui-sidebar);
+  border-right: 1px solid var(--ui-border);
+  display: flex;
+  flex-direction: column;
+  padding: var(--ui-space);
+  gap: 24px;
+}
+
+.sidebar-header h1 {
+  font-size: 20px;
+  font-weight: 600;
+  color: #fff;
+}
+
+.sidebar-header p {
+  font-size: 13px;
+  opacity: 0.7;
+}
+
+.control-group label {
+  display: block;
+  font-size: 12px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #888;
+}
+
+/* Preset Buttons */
+.preset-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.preset-btn {
+  padding: 8px;
+  background: #333;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  color: var(--ui-text);
+  cursor: pointer;
+  font-size: 13px;
+  transition: all 0.2s;
+}
+
+.preset-btn:hover {
+  background: #444;
+}
+.preset-btn.active {
+  background: var(--ui-accent);
+  color: white;
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Editor */
+.editor-container {
+  height: 300px; /* fixed height for editor */
+  border: 1px solid var(--ui-border);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.CodeMirror {
+  height: 100% !important;
+  font-family: "Fira Code", monospace;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+/* Actions */
+.actions {
+  margin-top: auto;
+  display: flex;
+  gap: 12px;
+}
+
+.btn {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 14px;
+  transition: transform 0.1s;
+}
+
+.btn:active {
+  transform: translateY(1px);
+}
+
+.btn-primary {
+  background: var(--ui-accent);
+  color: white;
+}
+.btn-primary:hover {
+  background: #1177bb;
+}
+
+.btn-secondary {
+  background: #333;
+  color: var(--ui-text);
+}
+.btn-secondary:hover {
+  background: #444;
+}
+
+/* Preview Area */
+.preview-area {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background: #111;
+}
+
+.preview-header {
+  height: 60px;
+  border-bottom: 1px solid var(--ui-border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+  background: var(--ui-sidebar);
+}
+
+.preview-header h2 {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.preview-canvas {
+  flex: 1;
+  overflow-y: auto;
+  padding: 40px;
+  /* Apply the configurable variables to the preview scope */
+  background: var(--preview-bg);
+  color: var(--preview-text);
+  font-family: var(--preview-font);
+  transition: background 0.3s, color 0.3s;
+}
+
+/* Preview Components Styles (Consuming Variables) */
+.component-section {
+  max-width: 900px;
+  margin: 0 auto 48px;
+}
+
+.component-section h3 {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--preview-secondary);
+  margin-bottom: 16px;
+  border-bottom: 2px solid rgba(127, 127, 127, 0.1);
+  padding-bottom: 8px;
+}
+
+.preview-card {
+  border: 1px solid rgba(127, 127, 127, 0.1);
+  border-radius: var(--preview-radius);
+  padding: 32px;
+  background: rgba(255, 255, 255, 0.02); /* slight tint */
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+.preview-card.row {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+/* Typography Preview */
+.preview-card h1 {
+  font-size: 48px;
+  line-height: 1.1;
+  margin-bottom: 16px;
+  color: var(--preview-text);
+}
+.preview-card h2 {
+  font-size: 36px;
+  margin-bottom: 12px;
+  color: var(--preview-text);
+}
+.preview-card h3 {
+  font-size: 28px;
+  margin-bottom: 12px;
+  color: var(--preview-text);
+}
+.preview-card p {
+  margin-bottom: 8px;
+  line-height: 1.6;
+  max-width: 60ch;
+}
+.preview-card small {
+  color: var(--preview-secondary);
+}
+
+/* Buttons Preview */
+.preview-btn {
+  padding: 12px 24px;
+  border-radius: var(--preview-radius);
+  font-weight: 500;
+  cursor: pointer;
+  border: none;
+  font-family: inherit;
+  transition: 0.2s;
+}
+
+.preview-btn.primary {
+  background: var(--preview-primary);
+  color: white;
+}
+.preview-btn.primary:hover {
+  filter: brightness(110%);
+}
+
+.preview-btn.secondary {
+  background: rgba(127, 127, 127, 0.1);
+  color: var(--preview-text);
+}
+.preview-btn.secondary:hover {
+  background: rgba(127, 127, 127, 0.2);
+}
+
+.preview-btn.ghost {
+  background: transparent;
+  color: var(--preview-primary);
+}
+.preview-btn.ghost:hover {
+  text-decoration: underline;
+}
+
+/* Inputs Preview */
+.input-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+  font-size: 14px;
+}
+.input-group input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid rgba(127, 127, 127, 0.2);
+  border-radius: var(--preview-radius);
+  background: transparent;
+  color: inherit;
+  font-family: inherit;
+}
+.input-group input:focus {
+  outline: none;
+  border-color: var(--preview-primary);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+}
+
+/* Color Grid */
+.color-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 16px;
+}
+.color-swatch {
+  height: 80px;
+  border-radius: var(--preview-radius);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 600;
+  color: white;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+.color-swatch.primary {
+  background: var(--preview-primary);
+}
+.color-swatch.secondary {
+  background: var(--preview-secondary);
+}
+.color-swatch.accent {
+  background: var(--preview-accent);
+}
+.color-swatch.success {
+  background: var(--preview-success);
+}
+.color-swatch.danger {
+  background: var(--preview-danger);
+}
+
+/* Card Surface Demo */
+.surface-demo {
+  max-width: 400px;
+}
+.card-header {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 20px;
+  align-items: center;
+}
+.avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--preview-secondary);
+}
+.skeleton-line {
+  height: 12px;
+  background: rgba(127, 127, 127, 0.1);
+  border-radius: 99px;
+  margin-bottom: 8px;
+}
+.skeleton-line.full {
+  width: 100%;
+}
+.skeleton-line.three-quarter {
+  width: 75%;
+}

@@ -1,0 +1,649 @@
+<!--
+ -----------------------------------------------------------------------------
+ @author      Ashraf Morningstar
+ @github      https://github.com/AshrafMorningstar
+ @repository  Project Graveyard - The Ultimate Archive
+ @quote       "Code that defines the future. Designed to inspire."
+ -----------------------------------------------------------------------------
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Ultimate Web Dev Journey - 48+ Premium Web Development Projects with Unique UI Designs by Ashraf Morningstar">
+    <meta name="keywords" content="web development, javascript projects, html css, premium ui, glassmorphism, neumorphism, portfolio">
+    <meta name="author" content="Ashraf Morningstar">
+    <meta property="og:title" content="Ultimate Web Dev Journey - Premium Web Projects">
+    <meta property="og:description" content="48+ Fully Functional Web Development Projects with Unique Premium UI Designs">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://ashrafmorningstar.github.io/Ultimate-Web-Dev-Journey/">
+    <title>Ultimate Web Dev Journey | Premium Web Projects by Ashraf Morningstar</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #6C63FF;
+            --secondary: #4ECDC4;
+            --accent: #FF6B6B;
+            --dark: #1a1a2e;
+            --light: #ffffff;
+            --gray: #f5f5f5;
+            --text: #2d3436;
+            --gradient-1: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --gradient-2: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            --gradient-3: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background-attachment: fixed;
+            color: var(--text);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Animated Background */
+        .bg-animation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            opacity: 0.3;
+        }
+
+        .bg-animation span {
+            position: absolute;
+            display: block;
+            width: 20px;
+            height: 20px;
+            background: rgba(255, 255, 255, 0.5);
+            animation: float 25s infinite;
+            border-radius: 50%;
+        }
+
+        .bg-animation span:nth-child(1) { left: 25%; animation-delay: 0s; }
+        .bg-animation span:nth-child(2) { left: 10%; animation-delay: 2s; animation-duration: 12s; }
+        .bg-animation span:nth-child(3) { left: 70%; animation-delay: 4s; }
+        .bg-animation span:nth-child(4) { left: 40%; animation-delay: 0s; animation-duration: 18s; }
+        .bg-animation span:nth-child(5) { left: 65%; animation-delay: 0s; }
+        .bg-animation span:nth-child(6) { left: 75%; animation-delay: 3s; }
+        .bg-animation span:nth-child(7) { left: 35%; animation-delay: 7s; }
+        .bg-animation span:nth-child(8) { left: 50%; animation-delay: 15s; animation-duration: 45s; }
+        .bg-animation span:nth-child(9) { left: 20%; animation-delay: 2s; animation-duration: 35s; }
+        .bg-animation span:nth-child(10) { left: 85%; animation-delay: 0s; animation-duration: 11s; }
+
+        @keyframes float {
+            0% {
+                transform: translateY(100vh) scale(0);
+            }
+            100% {
+                transform: translateY(-10vh) scale(1);
+            }
+        }
+
+        /* Header */
+        header {
+            padding: 2rem 5%;
+            text-align: center;
+            color: white;
+            position: relative;
+            z-index: 10;
+        }
+
+        .logo {
+            font-family: 'Poppins', sans-serif;
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #fff 0%, #f0f0f0 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes glow {
+            from {
+                filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.5));
+            }
+            to {
+                filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.8));
+            }
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-bottom: 2rem;
+        }
+
+        .stats {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 800;
+            font-family: 'Poppins', sans-serif;
+            display: block;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            opacity: 0.8;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Search Bar */
+        .search-container {
+            max-width: 600px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        .search-box {
+            width: 100%;
+            padding: 1rem 1.5rem;
+            font-size: 1rem;
+            border: none;
+            border-radius: 50px;
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            color: white;
+            outline: none;
+            transition: all 0.3s ease;
+        }
+
+        .search-box::placeholder {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .search-box:focus {
+            background: rgba(255, 255, 255, 0.3);
+            transform: scale(1.02);
+        }
+
+        /* Filter Buttons */
+        .filters {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+            padding: 2rem 5%;
+        }
+
+        .filter-btn {
+            padding: 0.75rem 1.5rem;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            color: white;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 600;
+        }
+
+        .filter-btn:hover,
+        .filter-btn.active {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Projects Grid */
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 2rem 5%;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .project-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            border-radius: 20px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            cursor: pointer;
+            position: relative;
+        }
+
+        .project-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 100%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .project-card:hover::before {
+            opacity: 1;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            border-color: rgba(255, 255, 255, 0.4);
+        }
+
+        .project-image {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-image::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(
+                45deg,
+                transparent,
+                rgba(255, 255, 255, 0.1),
+                transparent
+            );
+            transform: rotate(45deg);
+            transition: all 0.6s ease;
+        }
+
+        .project-card:hover .project-image::after {
+            left: 100%;
+        }
+
+        .project-content {
+            padding: 1.5rem;
+            color: white;
+        }
+
+        .project-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .project-description {
+            font-size: 0.9rem;
+            opacity: 0.9;
+            margin-bottom: 1rem;
+        }
+
+        .project-tags {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            margin-bottom: 1rem;
+        }
+
+        .tag {
+            padding: 0.25rem 0.75rem;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+
+        .project-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .btn {
+            flex: 1;
+            padding: 0.75rem;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 10px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary {
+            background: rgba(255, 255, 255, 0.3);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: rgba(255, 255, 255, 0.5);
+            transform: scale(1.05);
+        }
+
+        .btn-secondary {
+            background: rgba(0, 0, 0, 0.2);
+            color: white;
+        }
+
+        .btn-secondary:hover {
+            background: rgba(0, 0, 0, 0.4);
+            transform: scale(1.05);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 3rem 5%;
+            color: white;
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .social-link {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-size: 1.5rem;
+        }
+
+        .social-link:hover {
+            background: rgba(255, 255, 255, 0.4);
+            transform: translateY(-5px);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .logo {
+                font-size: 2rem;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stats {
+                gap: 1.5rem;
+            }
+
+            .stat-number {
+                font-size: 2rem;
+            }
+        }
+
+        /* Loading Animation */
+        .loading {
+            text-align: center;
+            padding: 3rem;
+            color: white;
+            font-size: 1.2rem;
+        }
+
+        .spinner {
+            width: 50px;
+            height: 50px;
+            border: 4px solid rgba(255, 255, 255, 0.3);
+            border-top-color: white;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 1rem;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <!-- Animated Background -->
+    <div class="bg-animation">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <h1 class="logo">🚀 Ultimate Web Dev Journey</h1>
+        <p class="subtitle">Premium Web Development Projects with Unique UI Designs</p>
+        
+        <div class="stats">
+            <div class="stat-item">
+                <span class="stat-number">48+</span>
+                <span class="stat-label">Projects</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">100%</span>
+                <span class="stat-label">Functional</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">8+</span>
+                <span class="stat-label">Design Systems</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Search -->
+    <div class="search-container">
+        <input type="text" class="search-box" id="searchBox" placeholder="🔍 Search projects...">
+    </div>
+
+    <!-- Filters -->
+    <div class="filters">
+        <button class="filter-btn active" data-filter="all">All Projects</button>
+        <button class="filter-btn" data-filter="game">🎮 Games</button>
+        <button class="filter-btn" data-filter="tool">🛠️ Tools</button>
+        <button class="filter-btn" data-filter="app">🌐 Apps</button>
+        <button class="filter-btn" data-filter="ui">🎨 UI Components</button>
+        <button class="filter-btn" data-filter="clone">📱 Clones</button>
+    </div>
+
+    <!-- Projects Grid -->
+    <div class="container">
+        <div class="projects-grid" id="projectsGrid">
+            <div class="loading">
+                <div class="spinner"></div>
+                <p>Loading amazing projects...</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <h2>Created by Ashraf Morningstar</h2>
+            <p>Crafting premium web experiences, one project at a time ✨</p>
+            
+            <div class="social-links">
+                <a href="https://github.com/AshrafMorningstar" class="social-link" target="_blank" title="GitHub">
+                    <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                </a>
+            </div>
+            
+            <p style="opacity: 0.7; margin-top: 2rem;">
+                © 2024 Ashraf Morningstar. All rights reserved.<br>
+                Made with ❤️ and premium design principles
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // Project data
+        const projects = [
+            { name: "2048-Game", title: "2048 Game", emoji: "🎮", category: "game", description: "Classic 2048 puzzle with glassmorphism design" },
+            { name: "Age-Calculator", title: "Age Calculator", emoji: "📅", category: "tool", description: "Calculate age with neumorphism UI" },
+            { name: "Analog-Clock", title: "Analog Clock", emoji: "🕐", category: "ui", description: "Swiss watch-inspired minimalist clock" },
+            { name: "Calculator", title: "Calculator", emoji: "🔢", category: "tool", description: "Cyberpunk neon calculator" },
+            { name: "Chat-App", title: "Chat App", emoji: "💬", category: "app", description: "Modern dark theme chat interface" },
+            { name: "Currency-Converter", title: "Currency Converter", emoji: "💱", category: "tool", description: "Live exchange rates with gradient mesh" },
+            { name: "Dark-Mode-Toggle", title: "Dark Mode Toggle", emoji: "🌓", category: "ui", description: "Smooth theme transition component" },
+            { name: "Digital-Clock", title: "Digital Clock", emoji: "⏰", category: "ui", description: "LED display style clock" },
+            { name: "Draggable-Div", title: "Draggable Div", emoji: "🎯", category: "ui", description: "Interactive drag & drop with physics" },
+            { name: "Drawing-App", title: "Drawing App", emoji: "🎨", category: "app", description: "Creative studio canvas app" },
+            { name: "E-commerce-Site", title: "E-commerce Site", emoji: "🛒", category: "app", description: "Professional shopping platform" },
+            { name: "Expense-Tracker", title: "Expense Tracker", emoji: "💰", category: "tool", description: "Financial dashboard with charts" },
+            { name: "Form-Validation", title: "Form Validation", emoji: "✅", category: "ui", description: "Real-time validation with animations" },
+            { name: "Github-Profile-Finder", title: "GitHub Profile Finder", emoji: "👤", category: "app", description: "Search GitHub users with dark theme" },
+            { name: "Glassmorphism-Login", title: "Glassmorphism Login", emoji: "🔐", category: "ui", description: "Premium frosted glass login form" },
+            { name: "Image-Slider", title: "Image Slider", emoji: "🖼️", category: "ui", description: "Elegant carousel with thumbnails" },
+            { name: "Landing-Page", title: "Landing Page", emoji: "🚀", category: "ui", description: "Conversion-optimized landing page" },
+            { name: "Loader-Animation", title: "Loader Animation", emoji: "⏳", category: "ui", description: "Premium loading animations" },
+            { name: "Memory-Card-Game", title: "Memory Card Game", emoji: "🃏", category: "game", description: "Card matching with gradient design" },
+            { name: "Movie-Search-App", title: "Movie Search App", emoji: "🎬", category: "app", description: "Cinema dark theme movie finder" },
+            { name: "Google-Search-Clone", title: "Google Search Clone", emoji: "🔍", category: "clone", description: "Minimalist search engine interface" },
+            { name: "Instagram-Clone", title: "Instagram Clone", emoji: "📸", category: "clone", description: "Social media feed and stories" },
+            { name: "Music-Player", title: "Music Player", emoji: "🎵", category: "app", description: "Spotify-inspired music player" },
+            { name: "Netflix-Clone", title: "Netflix Clone", emoji: "📺", category: "clone", description: "Premium Netflix UI replica" },
+            { name: "Notes-App", title: "Notes App", emoji: "📝", category: "tool", description: "Sticky notes with drag & drop" },
+            { name: "Password-Generator", title: "Password Generator", emoji: "🔑", category: "tool", description: "Secure password generator" },
+            { name: "Portfolio-Website", title: "Portfolio Website", emoji: "💼", category: "ui", description: "Professional showcase template" },
+            { name: "Product-Card", title: "Product Card", emoji: "🏷️", category: "ui", description: "3D hover effect product card" },
+            { name: "QR-Code-Generator", title: "QR Code Generator", emoji: "📱", category: "tool", description: "Modern QR code creator" },
+            { name: "Quiz-App", title: "Quiz App", emoji: "❓", category: "game", description: "Gamified learning quiz" },
+            { name: "Quote-Generator", title: "Quote Generator", emoji: "💭", category: "app", description: "Inspirational quotes with animations" },
+            { name: "Recipe-Finder", title: "Recipe Finder", emoji: "🍳", category: "app", description: "Food & cooking recipe search" },
+            { name: "Responsive-Navbar", title: "Responsive Navbar", emoji: "📱", category: "ui", description: "Modern navigation component" },
+            { name: "Rock-Paper-Scissors", title: "Rock Paper Scissors", emoji: "✊", category: "game", description: "Classic game with animations" },
+            { name: "Scroll-Animation", title: "Scroll Animation", emoji: "📜", category: "ui", description: "Smooth reveal on scroll" },
+            { name: "Simon-Game", title: "Simon Game", emoji: "🎮", category: "game", description: "Retro memory game" },
+            { name: "Snake-Game", title: "Snake Game", emoji: "🐍", category: "game", description: "Neon arcade snake" },
+            { name: "Speech-to-Text", title: "Speech to Text", emoji: "🎤", category: "tool", description: "Voice recognition interface" },
+            { name: "Spotify-Clone", title: "Spotify Clone", emoji: "🎧", category: "clone", description: "Spotify UI replica" },
+            { name: "Testimonial-Box", title: "Testimonial Box", emoji: "⭐", category: "ui", description: "Social proof carousel" },
+            { name: "Text-to-Speech", title: "Text to Speech", emoji: "🔊", category: "tool", description: "Audio synthesis interface" },
+            { name: "Tic-Tac-Toe", title: "Tic Tac Toe", emoji: "⭕", category: "game", description: "Classic board game" },
+            { name: "To-Do-List", title: "To-Do List", emoji: "✔️", category: "tool", description: "Productivity task manager" },
+            { name: "Typing-Speed-Test", title: "Typing Speed Test", emoji: "⌨️", category: "game", description: "WPM performance tracker" },
+            { name: "Vertical-Timeline", title: "Vertical Timeline", emoji: "📍", category: "ui", description: "Storytelling timeline" },
+            { name: "Weather-App", title: "Weather App", emoji: "🌤️", category: "app", description: "Premium weather forecast" },
+            { name: "Whack-a-Mole", title: "Whack a Mole", emoji: "🔨", category: "game", description: "Arcade fun game" },
+            { name: "YouTube-Clone", title: "YouTube Clone", emoji: "▶️", category: "clone", description: "Video platform UI" }
+        ];
+
+        // Render projects
+        function renderProjects(filteredProjects = projects) {
+            const grid = document.getElementById('projectsGrid');
+            
+            if (filteredProjects.length === 0) {
+                grid.innerHTML = '<div class="loading"><p>No projects found</p></div>';
+                return;
+            }
+
+            grid.innerHTML = filteredProjects.map(project => `
+                <div class="project-card" data-category="${project.category}">
+                    <div class="project-image">
+                        <span style="font-size: 4rem;">${project.emoji}</span>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">${project.title}</h3>
+                        <p class="project-description">${project.description}</p>
+                        <div class="project-tags">
+                            <span class="tag">${project.category}</span>
+                            <span class="tag">Premium UI</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="${project.name}/index.html" class="btn btn-primary" target="_blank">Live Demo</a>
+                            <a href="https://github.com/AshrafMorningstar/Ultimate-Web-Dev-Journey/tree/main/${project.name}" class="btn btn-secondary" target="_blank">Code</a>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // Filter functionality
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                
+                const filter = btn.dataset.filter;
+                if (filter === 'all') {
+                    renderProjects(projects);
+                } else {
+                    const filtered = projects.filter(p => p.category === filter);
+                    renderProjects(filtered);
+                }
+            });
+        });
+
+        // Search functionality
+        const searchBox = document.getElementById('searchBox');
+        searchBox.addEventListener('input', (e) => {
+            const query = e.target.value.toLowerCase();
+            const filtered = projects.filter(p => 
+                p.title.toLowerCase().includes(query) ||
+                p.description.toLowerCase().includes(query) ||
+                p.category.toLowerCase().includes(query)
+            );
+            renderProjects(filtered);
+        });
+
+        // Initial render
+        renderProjects();
+    </script>
+</body>
+</html>
+<!--
+═══════════════════════════════════════════════════════════════════════════════
+Created by: Ashraf Morningstar
+GitHub: https://github.com/AshrafMorningstar
+Repository: https://github.com/AshrafMorningstar/Ultimate-Web-Dev-Journey
+═══════════════════════════════════════════════════════════════════════════════
+-->

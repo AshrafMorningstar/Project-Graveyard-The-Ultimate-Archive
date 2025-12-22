@@ -1,0 +1,193 @@
+/*
+ * -----------------------------------------------------------------------------
+ * @author      Ashraf Morningstar
+ * @github      https://github.com/AshrafMorningstar
+ * @repository  Project Graveyard - The Ultimate Archive
+ * @quote       "Code that defines the future. Designed to inspire."
+ * -----------------------------------------------------------------------------
+*/
+
+/* Windowed Web - Desktop Styles */
+/* Author: Ashraf Morningstar */
+/* https://github.com/AshrafMorningstar */
+
+:root {
+    --desktop-bg: #1a1a2e;
+    --desktop-accent: #16213e;
+    --taskbar-bg: rgba(0, 0, 0, 0.8);
+    --taskbar-height: 48px;
+    --launcher-width: 80px;
+    --text-primary: #eee;
+    --text-secondary: #aaa;
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    overflow: hidden;
+    user-select: none;
+}
+
+.desktop {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+
+.desktop-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, var(--desktop-bg) 0%, var(--desktop-accent) 100%);
+    z-index: 0;
+}
+
+.windows-container {
+    position: absolute;
+    top: 0;
+    left: var(--launcher-width);
+    right: 0;
+    bottom: var(--taskbar-height);
+    z-index: 10;
+}
+
+/* Taskbar */
+.taskbar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: var(--taskbar-height);
+    background: var(--taskbar-bg);
+    backdrop-filter: blur(20px);
+    display: flex;
+    align-items: center;
+    padding: 0 1rem;
+    z-index: 100;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.taskbar-start {
+    flex-shrink: 0;
+}
+
+.logo {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    letter-spacing: 0.5px;
+}
+
+.taskbar-center {
+    flex: 1;
+    display: flex;
+    gap: 0.5rem;
+    padding: 0 1rem;
+    overflow-x: auto;
+    scrollbar-width: none;
+}
+
+.taskbar-center::-webkit-scrollbar {
+    display: none;
+}
+
+.taskbar-app {
+    padding: 0.5rem 1rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 4px;
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: var(--transition-smooth);
+    white-space: nowrap;
+}
+
+.taskbar-app:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--text-primary);
+}
+
+.taskbar-app.active {
+    background: rgba(255, 255, 255, 0.15);
+    color: var(--text-primary);
+}
+
+.taskbar-end {
+    flex-shrink: 0;
+}
+
+.system-time {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    font-variant-numeric: tabular-nums;
+}
+
+/* Launcher */
+.launcher {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: var(--taskbar-height);
+    width: var(--launcher-width);
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(10px);
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 1rem 0.5rem;
+    z-index: 50;
+}
+
+.launcher-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.25rem;
+    padding: 0.75rem 0.5rem;
+    background: transparent;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: var(--transition-smooth);
+    color: var(--text-secondary);
+}
+
+.launcher-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--text-primary);
+}
+
+.launcher-icon {
+    font-size: 1.5rem;
+}
+
+.launcher-label {
+    font-size: 0.7rem;
+    text-align: center;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    :root {
+        --launcher-width: 60px;
+        --taskbar-height: 56px;
+    }
+    
+    .launcher-label {
+        display: none;
+    }
+    
+    .logo {
+        font-size: 0.8rem;
+    }
+}

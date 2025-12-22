@@ -1,0 +1,183 @@
+/*
+ * -----------------------------------------------------------------------------
+ * @author      Ashraf Morningstar
+ * @github      https://github.com/AshrafMorningstar
+ * @repository  Project Graveyard - The Ultimate Archive
+ * @quote       "Code that defines the future. Designed to inspire."
+ * -----------------------------------------------------------------------------
+*/
+
+/**
+ * SilentNav - Layout Styles
+ * Author: Ashraf Morningstar
+ * GitHub: https://github.com/AshrafMorningstar
+ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: #0a0a0a;
+    color: #f5f5f5;
+    min-height: 100vh;
+    display: flex;
+    overflow: hidden;
+}
+
+.content-area {
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+}
+
+.section {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.section.active {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.section-content {
+    text-align: center;
+    max-width: 800px;
+    padding: 2rem;
+}
+
+.section-content h1 {
+    font-size: 4rem;
+    font-weight: 200;
+    margin-bottom: 1rem;
+    letter-spacing: -0.02em;
+}
+
+.section-content p {
+    font-size: 1.5rem;
+    font-weight: 300;
+    opacity: 0.7;
+}
+
+/* Grid Layout */
+.grid-layout {
+    display: grid;
+    grid-template-columns: repeat(2, 200px);
+    grid-template-rows: repeat(2, 200px);
+    gap: 2rem;
+}
+
+.grid-item {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 12px;
+    transition: transform 0.3s ease;
+}
+
+.grid-item:hover {
+    transform: scale(1.05);
+}
+
+/* Layers Layout */
+.layers-layout {
+    position: relative;
+    width: 400px;
+    height: 400px;
+}
+
+.layer {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    border-radius: 12px;
+    opacity: 0.7;
+}
+
+.layer:nth-child(1) {
+    transform: translateY(-20px);
+}
+
+.layer:nth-child(2) {
+    transform: translateY(0);
+}
+
+.layer:nth-child(3) {
+    transform: translateY(20px);
+}
+
+/* Circle Layout */
+.circle-layout {
+    position: relative;
+    width: 400px;
+    height: 400px;
+}
+
+.circle-ring {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: 3px solid #3498db;
+    border-radius: 50%;
+    animation: pulse 3s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.1);
+        opacity: 0.7;
+    }
+}
+
+/* Attribution */
+.attribution {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    text-align: right;
+    font-size: 0.875rem;
+    opacity: 0.5;
+    z-index: 100;
+}
+
+.attribution p {
+    margin-bottom: 0.25rem;
+}
+
+.attribution a {
+    color: #3498db;
+    text-decoration: none;
+}
+
+@media (max-width: 768px) {
+    .section-content h1 {
+        font-size: 2.5rem;
+    }
+    
+    .grid-layout {
+        grid-template-columns: repeat(2, 150px);
+        grid-template-rows: repeat(2, 150px);
+    }
+    
+    .layers-layout,
+    .circle-layout {
+        width: 300px;
+        height: 300px;
+    }
+}

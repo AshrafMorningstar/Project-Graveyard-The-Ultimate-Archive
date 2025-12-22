@@ -1,0 +1,553 @@
+<!--
+ -----------------------------------------------------------------------------
+ @author      Ashraf Morningstar
+ @github      https://github.com/AshrafMorningstar
+ @repository  Project Graveyard - The Ultimate Archive
+ @quote       "Code that defines the future. Designed to inspire."
+ -----------------------------------------------------------------------------
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ultimate Web Dev Projects | Ashraf Morningstar</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root { --bg: #0f172a; --card-bg: #1e293b; --text: #f8fafc; --accent: #38bdf8; --secondary: #94a3b8; }
+        body { margin: 0; font-family: 'Outfit', sans-serif; background: var(--bg); color: var(--text); overflow-x: hidden; }
+        header { text-align: center; padding: 80px 20px; background: radial-gradient(circle at 50% 50%, #1e293b 0%, #0f172a 100%); }
+        h1 { margin: 0; font-size: 3.5rem; background: linear-gradient(to right, #38bdf8, #818cf8); -webkit-background-clip: text; color: transparent; font-weight: 800; }
+        p.subtitle { color: var(--secondary); font-size: 1.2rem; margin-top: 20px; max-width: 600px; margin-left: auto; margin-right: auto; }
+        
+        main { max-width: 1400px; margin: 0 auto; padding: 40px 20px; }
+        .section-title { font-size: 2rem; margin-bottom: 30px; border-bottom: 1px solid #334155; padding-bottom: 10px; color: var(--accent); }
+        
+        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 25px; margin-bottom: 60px; }
+        .card { background: var(--card-bg); border-radius: 16px; padding: 25px; transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1); border: 1px solid rgba(255,255,255,0.05); text-decoration: none; color: white; position: relative; overflow: hidden; display: flex; flex-direction: column; justify-content: space-between; min-height: 120px; }
+        .card:hover { transform: translateY(-8px); box-shadow: 0 20px 40px rgba(0,0,0,0.3); border-color: var(--accent); }
+        .card h3 { margin: 0 0 10px 0; font-size: 1.3rem; }
+        .card .tag { font-size: 0.8rem; padding: 5px 12px; border-radius: 20px; background: rgba(56, 189, 248, 0.1); color: var(--accent); width: fit-content; }
+        .card.flask .tag { background: rgba(251, 191, 36, 0.1); color: #fbbf24; }
+        
+        .card::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(45deg, transparent, rgba(255,255,255,0.03), transparent); transform: translateX(-100%); transition: 0.5s; }
+        .card:hover::before { transform: translateX(100%); }
+
+        footer { text-align: center; padding: 40px; color: var(--secondary); border-top: 1px solid #334155; margin-top: 40px; }
+        footer a { color: var(--accent); text-decoration: none; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Ultimate Web Projects</h1>
+        <p class="subtitle">A curated collection of over 200 premium, fully-functional web applications. Explore unique designs, interactive games, and powerful tools.</p>
+        <div style="margin-top: 30px;">
+            <a href="https://github.com/AshrafMorningstar" style="background: var(--accent); color: #0f172a; padding: 12px 30px; border-radius: 30px; text-decoration: none; font-weight: bold; font-size: 1.1rem; transition: 0.3s;">Visit GitHub Profile</a>
+        </div>
+    </header>
+
+    <main>
+<div class="category"><h2 class="section-title">Calculators & Converters</h2><div class="grid"><a href="Calculators & Converters/Age Calculator/index.html" class="card js">
+            <h3>Age Calculator</h3>
+            <span class="tag">Interactive</span>
+        </a><a href="Calculators & Converters/BMI Calculator/index.html" class="card js">
+            <h3>BMI Calculator</h3>
+            <span class="tag">Interactive</span>
+        </a><a href="Calculators & Converters/BMI Calculator (Flask)/index.html" class="card flask">
+            <h3>BMI Calculator (Flask)</h3>
+            <span class="tag">Flask App</span>
+        </a><a href="Calculators & Converters/Simple Calculator (Flask)/index.html" class="card flask">
+            <h3>Simple Calculator (Flask)</h3>
+            <span class="tag">Flask App</span>
+        </a><a href="Calculators & Converters/CALCULATOR/index.html" class="card js">
+            <h3>CALCULATOR</h3>
+            <span class="tag">Interactive</span>
+        </a><a href="Calculators & Converters/Compound Interest Calculator/index.html" class="card js">
+            <h3>Compound Interest Calculator</h3>
+            <span class="tag">Interactive</span>
+        </a><a href="Calculators & Converters/Temperature Convertor/index.html" class="card js">
+            <h3>Temperature Convertor</h3>
+            <span class="tag">Interactive</span>
+        </a><a href="Calculators & Converters/Height Converter/index.html" class="card js">
+            <h3>Height Converter</h3>
+            <span class="tag">Interactive</span>
+        </a><a href="Calculators & Converters/Weight Converter/index.html" class="card js">
+            <h3>Weight Converter</h3>
+            <span class="tag">Interactive</span>
+        </a><a href="Calculators & Converters/Tip Calculator/index.html" class="card js">
+            <h3>Tip Calculator</h3>
+            <span class="tag">Interactive</span>
+        </a><a href="Calculators & Converters/Loan Calculator/index.html" class="card js">
+            <h3>Loan Calculator</h3>
+            <span class="tag">Interactive</span>
+        </a><a href="Calculators & Converters/VAT Calculator/index.html" class="card js">
+            <h3>VAT Calculator</h3>
+            <span class="tag">Interactive</span>
+        </a><a href="Calculators & Converters/LCM-HCF-CALCULATOR/index.html" class="card js">
+            <h3>LCM-HCF-CALCULATOR</h3>
+            <span class="tag">Interactive</span>
+        </a><a href="Calculators & Converters/Exchange Rate Calculator/index.html" class="card js">
+            <h3>Exchange Rate Calculator</h3>
+            <span class="tag">Interactive</span>
+        </a></div></div><div class="category"><h2 class="section-title">Games</h2><div class="grid"><a href="Games/2048 Game/index.html" class="card js">
+            <h3>2048 Game</h3>
+            <span class="tag">Interactive</span>
+        </a><a href="Games/Blackjack Game/index.html" class="card js">
+            <h3>Blackjack Game</h3>
+            <span class="tag">Interactive</span>
+        </a><a href="Games/Chess Game/index.html" class="card js">
+            <h3>Chess Game</h3>
+            <span class="tag">Interactive</span>
+        </a><a href="Games/Tic-Tac-Toe Game/index.html" class="card js">
+            <h3>Tic-Tac-Toe Game</h3>
+            <span class="tag">Interactive</span>
+        </a><a href="Games/Rock-Paper-Scissors/index.html" class="card js">
+            <h3>Rock-Paper-Scissors</h3>
+            <span class="tag">Interactive</span>
+        </a><a href="Games/Snake Game/index.html" class="card js">
+            <h3>Snake Game</h3>
+            <span class="tag">Interactive</span>
+        </a><a href="Games/Dice Game/index.html" class="card js">
+            <h3>Dice Game</h3>
+            <span class="tag">Interactive</span>
+        </a><a href="Games/Memory Card Game/index.html" class="card js">
+            <h3>Memory Card Game</h3>
+            <span class="tag">Interactive</span>
+        </a><a href="Games/ConnectFour/index.html" class="card js">
+            <h3>ConnectFour</h3>
+            <span class="tag">Interactive</span>
+        </a><a href="Games/Simon Game/index.html" class="card js">
+            <h3>Simon Game</h3>
+            <span class="tag">Interactive</span>
+        </a><a href="Games/Maths Quiz Game/index.html" class="card js">
+            <h3>Maths Quiz Game</h3>
+            <span class="tag">Interactive</span>
+        </a><a href="Games/Bottle Flip Game/index.html" class="card js">
+            <h3>Bottle Flip Game</h3>
+            <span class="tag">Interactive</span>
+        </a><a href="Games/Game Ping Pong/index.html" class="card js">
+            <h3>Game Ping Pong</h3>
+            <span class="tag">Interactive</span>
+        </a><a href="Games/Color Guessing Game/index.html" class="card js">
+            <h3>Color Guessing Game</h3>
+            <span class="tag">Interactive</span>
+        </a><a href="Games/Guess My Number/index.html" class="card js">
+            <h3>Guess My Number</h3>
+            <span class="tag">Interactive</span>
+        </a><a href="Games/JAVASCRIPT GAME/index.html" class="card js">
+            <h3>JAVASCRIPT GAME</h3>
+            <span class="tag">Interactive</span>
+        </a></div></div><div class="category"><h2 class="section-title">Productivity & Utilities</h2><div class="grid"><a href="Productivity & Utilities/To-Do List/index.html" class="card js">
+            <h3>To-Do List</h3>
+            <span class="tag">Interactive</span>
+        </a><a href="Productivity & Utilities/Darkmode To Do List/index.html" class="card js">
+            <h3>Darkmode To Do List</h3>
+            <span class="tag">Interactive</span>
+        </a><a href="Productivity & Utilities/Notes Keeping Website/index.html" class="card js">
+            <h3>Notes Keeping Website</h3>
+            <span class="tag">Interactive</span>
+        </a><a href="Productivity & Utilities/Keep Note/index.html" class="card js">
+            <h3>Keep Note</h3>
+            <span class="tag">Interactive</span>
+        </a><a href="Productivity & Utilities/Expense Tracker/index.html" class="card js">
+            <h3>Expense Tracker</h3>
+            <span class="tag">Interactive</span>
+        </a><a href="Productivity & Utilities/Countdown Timer/index.html" class="card js">
+            <h3>Countdown Timer</h3>
+            <span class="tag">Interactive</span>
+        </a><a href="Productivity & Utilities/Count Down To New Year/index.html" class="card js">
+            <h3>Count Down To New Year</h3>
+            <span class="tag">Interactive</span>
+        </a><a href="Productivity & Utilities/Digital Clock/index.html" class="card js">
+            <h3>Digital Clock</h3>
+            <span class="tag">Interactive</span>
+        </a><a href="Productivity & Utilities/Live Clock/index.html" class="card js">
+            <h3>Live Clock</h3>
+            <span class="tag">Interactive</span>
+        </a><a href="Productivity & Utilities/Clock/index.html" class="card js">
+            <h3>Clock</h3>
+            <span class="tag">Interactive</span>
+        </a><a href="Productivity & Utilities/Clock-Stopwatch/index.html" class="card js">
+            <h3>Clock-Stopwatch</h3>
+            <span class="tag">Interactive</span>
+        </a><a href="Productivity & Utilities/DIGITAL-JAVASCRIPT-CLOCK/index.html" class="card js">
+            <h3>DIGITAL-JAVASCRIPT-CLOCK</h3>
+            <span class="tag">Interactive</span>
+        </a></div></div><div class="category"><h2 class="section-title">Generators & Tools</h2><div class="grid"><a href="Generators & Tools/QR Code Generator/index.html" class="card js">
+            <h3>QR Code Generator</h3>
+            <span class="tag">Interactive</span>
+        </a><a href="Generators & Tools/01-qrcode-gen/index.html" class="card js">
+            <h3>01-qrcode-gen</h3>
+            <span class="tag">Interactive</span>
+        </a><a href="Generators & Tools/Password Generator/index.html" class="card js">
+            <h3>Password Generator</h3>
+            <span class="tag">Interactive</span>
+        </a><a href="Generators & Tools/Random Password Generator/index.html" class="card js">
+            <h3>Random Password Generator</h3>
+            <span class="tag">Interactive</span>
+        </a><a href="Generators & Tools/Quote Generator/index.html" class="card js">
+            <h3>Quote Generator</h3>
+            <span class="tag">Interactive</span>
+        </a><a href="Generators & Tools/AI Quote Generator/index.html" class="card js">
+            <h3>AI Quote Generator</h3>
+            <span class="tag">Interactive</span>
+        </a><a href="Generators & Tools/Random Color Generator/index.html" class="card js">
+            <h3>Random Color Generator</h3>
+            <span class="tag">Interactive</span>
+        </a><a href="Generators & Tools/Random Meal Generator/index.html" class="card js">
+            <h3>Random Meal Generator</h3>
+            <span class="tag">Interactive</span>
+        </a><a href="Generators & Tools/CAT GENERATOR APP/index.html" class="card js">
+            <h3>CAT GENERATOR APP</h3>
+            <span class="tag">Interactive</span>
+        </a><a href="Generators & Tools/Chuck Norris Jokes/index.html" class="card js">
+            <h3>Chuck Norris Jokes</h3>
+            <span class="tag">Interactive</span>
+        </a><a href="Generators & Tools/Basic Background Generator/index.html" class="card js">
+            <h3>Basic Background Generator</h3>
+            <span class="tag">Interactive</span>
+        </a><a href="Generators & Tools/Password Strength Meter/index.html" class="card js">
+            <h3>Password Strength Meter</h3>
+            <span class="tag">Interactive</span>
+        </a><a href="Generators & Tools/Lorem Ipsum Generator/index.html" class="card js">
+            <h3>Lorem Ipsum Generator</h3>
+            <span class="tag">Interactive</span>
+        </a></div></div><div class="category"><h2 class="section-title">API & Data Applications</h2><div class="grid"><a href="API & Data Applications/Weather App/index.html" class="card js">
+            <h3>Weather App</h3>
+            <span class="tag">Interactive</span>
+        </a><a href="API & Data Applications/Corona Tracker/index.html" class="card js">
+            <h3>Corona Tracker</h3>
+            <span class="tag">Interactive</span>
+        </a><a href="API & Data Applications/GitHub Profile Finder/index.html" class="card js">
+            <h3>GitHub Profile Finder</h3>
+            <span class="tag">Interactive</span>
+        </a><a href="API & Data Applications/Movie Search App/index.html" class="card js">
+            <h3>Movie Search App</h3>
+            <span class="tag">Interactive</span>
+        </a><a href="API & Data Applications/Movie Website/index.html" class="card js">
+            <h3>Movie Website</h3>
+            <span class="tag">Interactive</span>
+        </a><a href="API & Data Applications/React Movie App/index.html" class="card js">
+            <h3>React Movie App</h3>
+            <span class="tag">Interactive</span>
+        </a><a href="API & Data Applications/News App/index.html" class="card js">
+            <h3>News App</h3>
+            <span class="tag">Interactive</span>
+        </a><a href="API & Data Applications/Breaking Bad Characters/index.html" class="card js">
+            <h3>Breaking Bad Characters</h3>
+            <span class="tag">Interactive</span>
+        </a><a href="API & Data Applications/Dictionary/index.html" class="card js">
+            <h3>Dictionary</h3>
+            <span class="tag">Interactive</span>
+        </a><a href="API & Data Applications/Emoji Search App/index.html" class="card js">
+            <h3>Emoji Search App</h3>
+            <span class="tag">Interactive</span>
+        </a></div></div><div class="category"><h2 class="section-title">Website Templates</h2><div class="grid"><a href="Website Templates/Basic Portfolio Website/index.html" class="card js">
+            <h3>Basic Portfolio Website</h3>
+            <span class="tag">Interactive</span>
+        </a><a href="Website Templates/Single Window Portfolio/index.html" class="card js">
+            <h3>Single Window Portfolio</h3>
+            <span class="tag">Interactive</span>
+        </a><a href="Website Templates/Architecture Website/index.html" class="card js">
+            <h3>Architecture Website</h3>
+            <span class="tag">Interactive</span>
+        </a><a href="Website Templates/Food Website/index.html" class="card js">
+            <h3>Food Website</h3>
+            <span class="tag">Interactive</span>
+        </a><a href="Website Templates/Restaurant Website/index.html" class="card js">
+            <h3>Restaurant Website</h3>
+            <span class="tag">Interactive</span>
+        </a><a href="Website Templates/Band Website/index.html" class="card js">
+            <h3>Band Website</h3>
+            <span class="tag">Interactive</span>
+        </a><a href="Website Templates/MyGym Website/index.html" class="card js">
+            <h3>MyGym Website</h3>
+            <span class="tag">Interactive</span>
+        </a><a href="Website Templates/Art Gallery/index.html" class="card js">
+            <h3>Art Gallery</h3>
+            <span class="tag">Interactive</span>
+        </a><a href="Website Templates/Personal Blog/index.html" class="card js">
+            <h3>Personal Blog</h3>
+            <span class="tag">Interactive</span>
+        </a><a href="Website Templates/Blog Application/index.html" class="card js">
+            <h3>Blog Application</h3>
+            <span class="tag">Interactive</span>
+        </a><a href="Website Templates/Ecommerce Website/index.html" class="card js">
+            <h3>Ecommerce Website</h3>
+            <span class="tag">Interactive</span>
+        </a><a href="Website Templates/SPORTS WEBSITE/index.html" class="card js">
+            <h3>SPORTS WEBSITE</h3>
+            <span class="tag">Interactive</span>
+        </a><a href="Website Templates/TravelPro/index.html" class="card js">
+            <h3>TravelPro</h3>
+            <span class="tag">Interactive</span>
+        </a><a href="Website Templates/Landing Page Dark Theme/index.html" class="card js">
+            <h3>Landing Page Dark Theme</h3>
+            <span class="tag">Interactive</span>
+        </a><a href="Website Templates/Parallax Website/index.html" class="card js">
+            <h3>Parallax Website</h3>
+            <span class="tag">Interactive</span>
+        </a></div></div><div class="category"><h2 class="section-title">Forms & Authentication</h2><div class="grid"><a href="Forms & Authentication/Basic Contact Form/index.html" class="card js">
+            <h3>Basic Contact Form</h3>
+            <span class="tag">Interactive</span>
+        </a><a href="Forms & Authentication/AuthPage/index.html" class="card js">
+            <h3>AuthPage</h3>
+            <span class="tag">Interactive</span>
+        </a><a href="Forms & Authentication/Login Page/index.html" class="card js">
+            <h3>Login Page</h3>
+            <span class="tag">Interactive</span>
+        </a><a href="Forms & Authentication/Glassmorphism Form/index.html" class="card js">
+            <h3>Glassmorphism Form</h3>
+            <span class="tag">Interactive</span>
+        </a><a href="Forms & Authentication/Good Vibes Form/index.html" class="card js">
+            <h3>Good Vibes Form</h3>
+            <span class="tag">Interactive</span>
+        </a><a href="Forms & Authentication/SURVEY FORM/index.html" class="card js">
+            <h3>SURVEY FORM</h3>
+            <span class="tag">Interactive</span>
+        </a><a href="Forms & Authentication/Form Validation/index.html" class="card js">
+            <h3>Form Validation</h3>
+            <span class="tag">Interactive</span>
+        </a></div></div><div class="category"><h2 class="section-title">Clones & Recreations</h2><div class="grid"><a href="Clones & Recreations/Google.com Clone/index.html" class="card js">
+            <h3>Google.com Clone</h3>
+            <span class="tag">Interactive</span>
+        </a><a href="Clones & Recreations/Instagram Clone/index.html" class="card js">
+            <h3>Instagram Clone</h3>
+            <span class="tag">Interactive</span>
+        </a><a href="Clones & Recreations/Instagram Login-Signup Clone/index.html" class="card js">
+            <h3>Instagram Login/Signup Clone</h3>
+            <span class="tag">Interactive</span>
+        </a><a href="Clones & Recreations/Amazon Prime Login Clone/index.html" class="card js">
+            <h3>Amazon Prime Login Clone</h3>
+            <span class="tag">Interactive</span>
+        </a><a href="Clones & Recreations/SpotifyClone/index.html" class="card js">
+            <h3>SpotifyClone</h3>
+            <span class="tag">Interactive</span>
+        </a><a href="Clones & Recreations/YouTube Clone/index.html" class="card js">
+            <h3>YouTube Clone</h3>
+            <span class="tag">Interactive</span>
+        </a><a href="Clones & Recreations/Jira Clone/index.html" class="card js">
+            <h3>Jira Clone</h3>
+            <span class="tag">Interactive</span>
+        </a><a href="Clones & Recreations/Trello Board Clone/index.html" class="card js">
+            <h3>Trello Board Clone</h3>
+            <span class="tag">Interactive</span>
+        </a><a href="Clones & Recreations/Tindog/index.html" class="card js">
+            <h3>Tindog</h3>
+            <span class="tag">Interactive</span>
+        </a></div></div><div class="category"><h2 class="section-title">Music & Audio</h2><div class="grid"><a href="Music & Audio/DRUM/index.html" class="card js">
+            <h3>DRUM</h3>
+            <span class="tag">Interactive</span>
+        </a><a href="Music & Audio/DRUM (darkmode)/index.html" class="card js">
+            <h3>DRUM (darkmode)</h3>
+            <span class="tag">Interactive</span>
+        </a><a href="Music & Audio/Drum Kit Web App/index.html" class="card js">
+            <h3>Drum Kit Web App</h3>
+            <span class="tag">Interactive</span>
+        </a><a href="Music & Audio/Guitar/index.html" class="card js">
+            <h3>Guitar</h3>
+            <span class="tag">Interactive</span>
+        </a><a href="Music & Audio/Tabla/index.html" class="card js">
+            <h3>Tabla</h3>
+            <span class="tag">Interactive</span>
+        </a><a href="Music & Audio/Audio Visualization with Three.js/index.html" class="card js">
+            <h3>Audio Visualization with Three.js</h3>
+            <span class="tag">Interactive</span>
+        </a></div></div><div class="category"><h2 class="section-title">Image & Media Tools</h2><div class="grid"><a href="Image & Media Tools/Image Filter App/index.html" class="card js">
+            <h3>Image Filter App</h3>
+            <span class="tag">Interactive</span>
+        </a><a href="Image & Media Tools/Image Finder App/index.html" class="card js">
+            <h3>Image Finder App</h3>
+            <span class="tag">Interactive</span>
+        </a><a href="Image & Media Tools/Browser Camera/index.html" class="card js">
+            <h3>Browser Camera</h3>
+            <span class="tag">Interactive</span>
+        </a><a href="Image & Media Tools/White Board/index.html" class="card js">
+            <h3>White Board</h3>
+            <span class="tag">Interactive</span>
+        </a></div></div><div class="category"><h2 class="section-title">Animation & Visual Effects</h2><div class="grid"><a href="Animation & Visual Effects/Animated Car/index.html" class="card js">
+            <h3>Animated Car</h3>
+            <span class="tag">Interactive</span>
+        </a><a href="Animation & Visual Effects/Animated Rainbow/index.html" class="card js">
+            <h3>Animated Rainbow</h3>
+            <span class="tag">Interactive</span>
+        </a><a href="Animation & Visual Effects/Bouncing Balls/index.html" class="card js">
+            <h3>Bouncing Balls</h3>
+            <span class="tag">Interactive</span>
+        </a><a href="Animation & Visual Effects/CSS Loading Animation/index.html" class="card js">
+            <h3>CSS Loading Animation</h3>
+            <span class="tag">Interactive</span>
+        </a><a href="Animation & Visual Effects/Wavy Loader/index.html" class="card js">
+            <h3>Wavy Loader</h3>
+            <span class="tag">Interactive</span>
+        </a><a href="Animation & Visual Effects/Neon Light/index.html" class="card js">
+            <h3>Neon Light</h3>
+            <span class="tag">Interactive</span>
+        </a><a href="Animation & Visual Effects/Double Vertical Slider/index.html" class="card js">
+            <h3>Double Vertical Slider</h3>
+            <span class="tag">Interactive</span>
+        </a><a href="Animation & Visual Effects/Expand Button/index.html" class="card js">
+            <h3>Expand Button</h3>
+            <span class="tag">Interactive</span>
+        </a><a href="Animation & Visual Effects/Like Button Animation/index.html" class="card js">
+            <h3>Like Button Animation</h3>
+            <span class="tag">Interactive</span>
+        </a><a href="Animation & Visual Effects/Battery Indicator/index.html" class="card js">
+            <h3>Battery Indicator</h3>
+            <span class="tag">Interactive</span>
+        </a></div></div><div class="category"><h2 class="section-title">CSS Recreations</h2><div class="grid"><a href="CSS Recreations/Instagram Logo Using CSS/index.html" class="card js">
+            <h3>Instagram Logo Using CSS</h3>
+            <span class="tag">Interactive</span>
+        </a><a href="CSS Recreations/YouTube Logo/index.html" class="card js">
+            <h3>YouTube Logo</h3>
+            <span class="tag">Interactive</span>
+        </a><a href="CSS Recreations/YouTube Logo/index.html" class="card js">
+            <h3>YouTube Logo</h3>
+            <span class="tag">Interactive</span>
+        </a><a href="CSS Recreations/Google Logo Using CSS/index.html" class="card js">
+            <h3>Google Logo Using CSS</h3>
+            <span class="tag">Interactive</span>
+        </a><a href="CSS Recreations/Chrome Logo Using CSS/index.html" class="card js">
+            <h3>Chrome Logo Using CSS</h3>
+            <span class="tag">Interactive</span>
+        </a><a href="CSS Recreations/Facebook Logo/index.html" class="card js">
+            <h3>Facebook Logo</h3>
+            <span class="tag">Interactive</span>
+        </a></div></div><div class="category"><h2 class="section-title">Educational & Quiz</h2><div class="grid"><a href="Educational & Quiz/QUIZ WEB APP/index.html" class="card js">
+            <h3>QUIZ WEB APP</h3>
+            <span class="tag">Interactive</span>
+        </a><a href="Educational & Quiz/QUIZ APP 2/index.html" class="card js">
+            <h3>QUIZ APP 2</h3>
+            <span class="tag">Interactive</span>
+        </a><a href="Educational & Quiz/Quiz App/index.html" class="card js">
+            <h3>Quiz App</h3>
+            <span class="tag">Interactive</span>
+        </a><a href="Educational & Quiz/Online Quiz Portal/index.html" class="card js">
+            <h3>Online Quiz Portal</h3>
+            <span class="tag">Interactive</span>
+        </a><a href="Educational & Quiz/Javascript Documentation/index.html" class="card js">
+            <h3>Javascript Documentation</h3>
+            <span class="tag">Interactive</span>
+        </a><a href="Educational & Quiz/TRIBUTE PAGE/index.html" class="card js">
+            <h3>TRIBUTE PAGE</h3>
+            <span class="tag">Interactive</span>
+        </a><a href="Educational & Quiz/Product Landing Page/index.html" class="card js">
+            <h3>Product Landing Page</h3>
+            <span class="tag">Interactive</span>
+        </a></div></div><div class="category"><h2 class="section-title">Text & Data Processing</h2><div class="grid"><a href="Text & Data Processing/Text Analyzer/index.html" class="card js">
+            <h3>Text Analyzer</h3>
+            <span class="tag">Interactive</span>
+        </a><a href="Text & Data Processing/Word Counter/index.html" class="card js">
+            <h3>Word Counter</h3>
+            <span class="tag">Interactive</span>
+        </a><a href="Text & Data Processing/String Palindrome Checker/index.html" class="card js">
+            <h3>String Palindrome Checker</h3>
+            <span class="tag">Interactive</span>
+        </a><a href="Text & Data Processing/Text to Speech/index.html" class="card js">
+            <h3>Text to Speech</h3>
+            <span class="tag">Interactive</span>
+        </a><a href="Text & Data Processing/Text Conversion Dark-Light Mode/index.html" class="card js">
+            <h3>Text Conversion Dark/Light Mode</h3>
+            <span class="tag">Interactive</span>
+        </a><a href="Text & Data Processing/File Zipper/index.html" class="card js">
+            <h3>File Zipper</h3>
+            <span class="tag">Interactive</span>
+        </a><a href="Text & Data Processing/Sudoku Solver/index.html" class="card js">
+            <h3>Sudoku Solver</h3>
+            <span class="tag">Interactive</span>
+        </a></div></div><div class="category"><h2 class="section-title">Miscellaneous Applications</h2><div class="grid"><a href="Miscellaneous Applications/Typing Speed Test/index.html" class="card js">
+            <h3>Typing Speed Test</h3>
+            <span class="tag">Interactive</span>
+        </a><a href="Miscellaneous Applications/Typing Champ/index.html" class="card js">
+            <h3>Typing Champ</h3>
+            <span class="tag">Interactive</span>
+        </a><a href="Miscellaneous Applications/CLASSROOM SCHEDULER/index.html" class="card js">
+            <h3>CLASSROOM SCHEDULER</h3>
+            <span class="tag">Interactive</span>
+        </a><a href="Miscellaneous Applications/Week Day Predictor/index.html" class="card js">
+            <h3>Week Day Predictor</h3>
+            <span class="tag">Interactive</span>
+        </a><a href="Miscellaneous Applications/Museum of Candies/index.html" class="card js">
+            <h3>Museum of Candies</h3>
+            <span class="tag">Interactive</span>
+        </a><a href="Miscellaneous Applications/Geography Table/index.html" class="card js">
+            <h3>Geography Table</h3>
+            <span class="tag">Interactive</span>
+        </a><a href="Miscellaneous Applications/COVID-19 Awareness/index.html" class="card js">
+            <h3>COVID-19 Awareness</h3>
+            <span class="tag">Interactive</span>
+        </a><a href="Miscellaneous Applications/LOVE CALCULATOR/index.html" class="card js">
+            <h3>LOVE CALCULATOR</h3>
+            <span class="tag">Interactive</span>
+        </a><a href="Miscellaneous Applications/Birthday Letter/index.html" class="card js">
+            <h3>Birthday Letter</h3>
+            <span class="tag">Interactive</span>
+        </a><a href="Miscellaneous Applications/Date Guarantee/index.html" class="card js">
+            <h3>Date Guarantee</h3>
+            <span class="tag">Interactive</span>
+        </a><a href="Miscellaneous Applications/Relaxer App/index.html" class="card js">
+            <h3>Relaxer App</h3>
+            <span class="tag">Interactive</span>
+        </a><a href="Miscellaneous Applications/Magic Color Changer/index.html" class="card js">
+            <h3>Magic Color Changer</h3>
+            <span class="tag">Interactive</span>
+        </a><a href="Miscellaneous Applications/Counter App/index.html" class="card js">
+            <h3>Counter App</h3>
+            <span class="tag">Interactive</span>
+        </a><a href="Miscellaneous Applications/Score Keeper/index.html" class="card js">
+            <h3>Score Keeper</h3>
+            <span class="tag">Interactive</span>
+        </a><a href="Miscellaneous Applications/Custom Range Slider/index.html" class="card js">
+            <h3>Custom Range Slider</h3>
+            <span class="tag">Interactive</span>
+        </a><a href="Miscellaneous Applications/Responsive Navigation Bar/index.html" class="card js">
+            <h3>Responsive Navigation Bar</h3>
+            <span class="tag">Interactive</span>
+        </a><a href="Miscellaneous Applications/Glowing Icons/index.html" class="card js">
+            <h3>Glowing Icons</h3>
+            <span class="tag">Interactive</span>
+        </a><a href="Miscellaneous Applications/FAQ Application/index.html" class="card js">
+            <h3>FAQ Application</h3>
+            <span class="tag">Interactive</span>
+        </a><a href="Miscellaneous Applications/Interactive Pricing Component/index.html" class="card js">
+            <h3>Interactive Pricing Component</h3>
+            <span class="tag">Interactive</span>
+        </a><a href="Miscellaneous Applications/URL Shortener/index.html" class="card js">
+            <h3>URL Shortener</h3>
+            <span class="tag">Interactive</span>
+        </a><a href="Miscellaneous Applications/Online Code Editor/index.html" class="card js">
+            <h3>Online Code Editor</h3>
+            <span class="tag">Interactive</span>
+        </a><a href="Miscellaneous Applications/Virtual Keyboard/index.html" class="card js">
+            <h3>Virtual Keyboard</h3>
+            <span class="tag">Interactive</span>
+        </a><a href="Miscellaneous Applications/Chat App/index.html" class="card js">
+            <h3>Chat App</h3>
+            <span class="tag">Interactive</span>
+        </a><a href="Miscellaneous Applications/Classifier Using JS/index.html" class="card js">
+            <h3>Classifier Using JS</h3>
+            <span class="tag">Interactive</span>
+        </a><a href="Miscellaneous Applications/Solar System 3D/index.html" class="card js">
+            <h3>Solar System 3D</h3>
+            <span class="tag">Interactive</span>
+        </a><a href="Miscellaneous Applications/iCoder/index.html" class="card js">
+            <h3>iCoder</h3>
+            <span class="tag">Interactive</span>
+        </a><a href="Miscellaneous Applications/My Online Meal/index.html" class="card js">
+            <h3>My Online Meal</h3>
+            <span class="tag">Interactive</span>
+        </a><a href="Miscellaneous Applications/Payment Integration/index.html" class="card js">
+            <h3>Payment Integration</h3>
+            <span class="tag">Interactive</span>
+        </a><a href="Miscellaneous Applications/Project Explorer/index.html" class="card js">
+            <h3>Project Explorer</h3>
+            <span class="tag">Interactive</span>
+        </a></div></div>
+    </main>
+    <footer>
+        <p>Created with ❤️ by <a href="https://github.com/AshrafMorningstar">Ashraf Morningstar</a></p>
+        <p>&copy; 2025 All Rights Reserved.</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,195 @@
+/*
+ * -----------------------------------------------------------------------------
+ * @author      Ashraf Morningstar
+ * @github      https://github.com/AshrafMorningstar
+ * @repository  Project Graveyard - The Ultimate Archive
+ * @quote       "Code that defines the future. Designed to inspire."
+ * -----------------------------------------------------------------------------
+*/
+
+/* Created by Ashraf Morningstar - https://github.com/AshrafMorningstar */
+
+:root {
+  --bg-color: #e0e5ec;
+  --shadow-light: #ffffff;
+  --shadow-dark: #a3b1c6;
+  --primary: #6c63ff;
+  --text-dark: #2c3e50;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  min-height: 100vh;
+  background: var(--bg-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+.calculator {
+  width: 100%;
+  max-width: 400px;
+  background: var(--bg-color);
+  border-radius: 30px;
+  padding: 2.5rem;
+  box-shadow: 20px 20px 60px var(--shadow-dark),
+    -20px -20px 60px var(--shadow-light);
+}
+
+.display-container {
+  margin-bottom: 2rem;
+  padding: 2rem;
+  border-radius: 20px;
+  background: var(--bg-color);
+  box-shadow: inset 8px 8px 16px var(--shadow-dark),
+    inset -8px -8px 16px var(--shadow-light);
+}
+
+.display {
+  text-align: right;
+  min-height: 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.previous-operand {
+  color: #999;
+  font-size: 1.2rem;
+  min-height: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.current-operand {
+  color: var(--text-dark);
+  font-size: 2.5rem;
+  font-weight: 700;
+  word-wrap: break-word;
+  word-break: break-all;
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+.btn {
+  padding: 1.5rem;
+  border: none;
+  border-radius: 15px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.3rem;
+  font-weight: 600;
+  cursor: pointer;
+  background: var(--bg-color);
+  color: var(--text-dark);
+  box-shadow: 6px 6px 12px var(--shadow-dark),
+    -6px -6px 12px var(--shadow-light);
+  transition: all 0.2s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(108, 99, 255, 0.1);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+}
+
+.btn:hover::before {
+  width: 300px;
+  height: 300px;
+}
+
+.btn:active {
+  box-shadow: inset 4px 4px 8px var(--shadow-dark),
+    inset -4px -4px 8px var(--shadow-light);
+  transform: scale(0.98);
+}
+
+.btn.function {
+  color: var(--primary);
+  font-weight: 700;
+}
+
+.btn.operator {
+  color: #ff6b6b;
+  font-weight: 700;
+}
+
+.btn.equals {
+  background: linear-gradient(135deg, var(--primary), #8b7fff);
+  color: #fff;
+  font-weight: 700;
+  box-shadow: 6px 6px 12px var(--shadow-dark),
+    -6px -6px 12px var(--shadow-light), inset 0 0 0 rgba(255, 255, 255, 0.2);
+}
+
+.btn.equals:hover {
+  transform: translateY(-2px);
+  box-shadow: 8px 8px 16px var(--shadow-dark),
+    -8px -8px 16px var(--shadow-light);
+}
+
+.btn.equals:active {
+  transform: translateY(0);
+  box-shadow: inset 4px 4px 8px rgba(0, 0, 0, 0.2),
+    inset -4px -4px 8px rgba(255, 255, 255, 0.1);
+}
+
+.btn.zero {
+  grid-column: span 2;
+}
+
+footer {
+  text-align: center;
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+footer p {
+  color: #666;
+  font-size: 0.85rem;
+}
+
+footer a {
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+footer a:hover {
+  color: #8b7fff;
+}
+
+@media (max-width: 500px) {
+  .calculator {
+    padding: 2rem 1.5rem;
+  }
+
+  .btn {
+    padding: 1.2rem;
+    font-size: 1.1rem;
+  }
+
+  .current-operand {
+    font-size: 2rem;
+  }
+}

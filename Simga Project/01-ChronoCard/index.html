@@ -1,0 +1,53 @@
+<!--
+ -----------------------------------------------------------------------------
+ @author      Ashraf Morningstar
+ @github      https://github.com/AshrafMorningstar
+ @repository  Project Graveyard - The Ultimate Archive
+ @quote       "Code that defines the future. Designed to inspire."
+ -----------------------------------------------------------------------------
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="ChronoCard - A time-aware digital identity card that morphs based on real-time context"
+    />
+    <title>ChronoCard - Time-Aware Digital Identity</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/theme.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="chrono-card" id="chronoCard">
+        <div class="card-glow"></div>
+        <div class="card-content">
+          <div class="time-display" id="timeDisplay">
+            <span class="hours" id="hours">00</span>
+            <span class="separator">:</span>
+            <span class="minutes" id="minutes">00</span>
+            <span class="separator">:</span>
+            <span class="seconds" id="seconds">00</span>
+          </div>
+          <h1 class="greeting" id="greeting">Good Morning</h1>
+          <div class="identity">
+            <h2 class="name">Your Name</h2>
+            <p class="role">Creative Developer</p>
+          </div>
+          <div class="weekday-indicator" id="weekdayIndicator">
+            <span class="weekday-name" id="weekdayName">Monday</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="js/time-engine.js"></script>
+  </body>
+</html>

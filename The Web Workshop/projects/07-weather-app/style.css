@@ -1,0 +1,429 @@
+/*
+ * -----------------------------------------------------------------------------
+ * @author      Ashraf Morningstar
+ * @github      https://github.com/AshrafMorningstar
+ * @repository  Project Graveyard - The Ultimate Archive
+ * @quote       "Code that defines the future. Designed to inspire."
+ * -----------------------------------------------------------------------------
+*/
+
+/* Created by Ashraf Morningstar - https://github.com/AshrafMorningstar */
+
+:root {
+  --neon-pink: #ff006e;
+  --neon-cyan: #00f5ff;
+  --neon-purple: #8b00ff;
+  --neon-yellow: #ffea00;
+  --dark-bg: #0a0a0f;
+  --card-bg: rgba(10, 10, 15, 0.9);
+  --grid-color: rgba(0, 245, 255, 0.1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Rajdhani', sans-serif;
+  min-height: 100vh;
+  background: var(--dark-bg);
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Cyberpunk Grid Background */
+.cyberpunk-grid {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    linear-gradient(var(--grid-color) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-color) 1px, transparent 1px);
+  background-size: 50px 50px;
+  animation: grid-move 20s linear infinite;
+  z-index: 0;
+}
+
+@keyframes grid-move {
+  0% { transform: perspective(500px) rotateX(60deg) translateY(0); }
+  100% { transform: perspective(500px) rotateX(60deg) translateY(50px); }
+}
+
+.neon-lines {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    linear-gradient(90deg, transparent 0%, var(--neon-cyan) 50%, transparent 100%);
+  opacity: 0.05;
+  animation: neon-pulse 3s ease-in-out infinite;
+  z-index: 0;
+}
+
+@keyframes neon-pulse {
+  0%, 100% { opacity: 0.05; }
+  50% { opacity: 0.15; }
+}
+
+.container {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 450px;
+  padding: 1.5rem;
+}
+
+.weather-card {
+  background: var(--card-bg);
+  border: 2px solid var(--neon-cyan);
+  border-radius: 0;
+  padding: 2.5rem 2rem;
+  box-shadow: 
+    0 0 20px rgba(0, 245, 255, 0.3),
+    0 0 40px rgba(0, 245, 255, 0.1),
+    inset 0 0 20px rgba(0, 245, 255, 0.05);
+  position: relative;
+  clip-path: polygon(
+    0 0, calc(100% - 20px) 0, 100% 20px,
+    100% 100%, 20px 100%, 0 calc(100% - 20px)
+  );
+}
+
+.weather-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--neon-cyan), transparent);
+  animation: scan-line 2s linear infinite;
+}
+
+@keyframes scan-line {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+/* Glitch Effect */
+.glitch-wrapper {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.glitch {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--neon-cyan);
+  text-shadow: 
+    0 0 10px var(--neon-cyan),
+    0 0 20px var(--neon-cyan),
+    0 0 30px var(--neon-cyan);
+  position: relative;
+  letter-spacing: 4px;
+}
+
+.glitch::before,
+.glitch::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.glitch::before {
+  left: 2px;
+  text-shadow: -2px 0 var(--neon-pink);
+  clip: rect(24px, 550px, 90px, 0);
+  animation: glitch-anim 3s infinite linear alternate-reverse;
+}
+
+.glitch::after {
+  left: -2px;
+  text-shadow: -2px 0 var(--neon-purple);
+  clip: rect(85px, 550px, 140px, 0);
+  animation: glitch-anim 2s infinite linear alternate-reverse;
+}
+
+@keyframes glitch-anim {
+  0% { clip: rect(random(100) + px, 9999px, random(100) + px, 0); }
+  5% { clip: rect(random(100) + px, 9999px, random(100) + px, 0); }
+  10% { clip: rect(random(100) + px, 9999px, random(100) + px, 0); }
+  100% { clip: rect(random(100) + px, 9999px, random(100) + px, 0); }
+}
+
+.search-box {
+  display: flex;
+  gap: 0.75rem;
+  margin-bottom: 2rem;
+}
+
+#city-input {
+  flex: 1;
+  padding: 1rem;
+  background: rgba(0, 245, 255, 0.05);
+  border: 1px solid var(--neon-cyan);
+  color: #fff;
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.95rem;
+  outline: none;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+}
+
+#city-input:focus {
+  background: rgba(0, 245, 255, 0.1);
+  box-shadow: 0 0 15px rgba(0, 245, 255, 0.3);
+}
+
+.neon-btn {
+  padding: 1rem 2rem;
+  background: transparent;
+  border: 2px solid var(--neon-pink);
+  color: var(--neon-pink);
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  text-shadow: 0 0 10px var(--neon-pink);
+}
+
+.neon-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: var(--neon-pink);
+  transition: left 0.3s ease;
+  z-index: -1;
+}
+
+.neon-btn:hover::before {
+  left: 0;
+}
+
+.neon-btn:hover {
+  color: #000;
+  box-shadow: 0 0 20px var(--neon-pink);
+}
+
+.location-display {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+#city-name {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--neon-yellow);
+  text-shadow: 0 0 10px var(--neon-yellow);
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+#date-time {
+  font-family: 'Share Tech Mono', monospace;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.9rem;
+}
+
+.main-weather {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  padding: 1.5rem;
+  background: rgba(0, 245, 255, 0.03);
+  border: 1px solid rgba(0, 245, 255, 0.2);
+}
+
+.temperature-display {
+  display: flex;
+  align-items: flex-start;
+}
+
+.neon-text {
+  font-size: 4rem;
+  font-weight: 700;
+  color: var(--neon-cyan);
+  text-shadow: 
+    0 0 10px var(--neon-cyan),
+    0 0 20px var(--neon-cyan),
+    0 0 30px var(--neon-cyan);
+  line-height: 1;
+}
+
+.unit {
+  font-size: 2rem;
+  color: rgba(255, 255, 255, 0.6);
+  margin-left: 0.25rem;
+}
+
+.weather-icon img {
+  width: 100px;
+  height: 100px;
+  filter: drop-shadow(0 0 20px var(--neon-cyan));
+}
+
+.weather-description {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.weather-description p {
+  font-size: 1.3rem;
+  color: var(--neon-purple);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 600;
+  text-shadow: 0 0 10px var(--neon-purple);
+}
+
+.weather-details {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.detail-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  background: rgba(255, 0, 110, 0.05);
+  border: 1px solid rgba(255, 0, 110, 0.2);
+  clip-path: polygon(10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px);
+}
+
+.detail-icon {
+  font-size: 2rem;
+  filter: grayscale(1) brightness(2);
+}
+
+.detail-label {
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.5);
+  font-family: 'Share Tech Mono', monospace;
+  margin-bottom: 0.25rem;
+}
+
+.detail-value {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--neon-pink);
+  text-shadow: 0 0 5px var(--neon-pink);
+}
+
+.loading {
+  text-align: center;
+  padding: 3rem 0;
+}
+
+.scanner {
+  width: 200px;
+  height: 200px;
+  margin: 0 auto 1rem;
+  border: 2px solid var(--neon-cyan);
+  position: relative;
+  overflow: hidden;
+}
+
+.scanner-line {
+  width: 100%;
+  height: 2px;
+  background: var(--neon-cyan);
+  box-shadow: 0 0 10px var(--neon-cyan);
+  position: absolute;
+  top: 0;
+  animation: scanner-move 2s linear infinite;
+}
+
+@keyframes scanner-move {
+  0% { top: 0; }
+  100% { top: 100%; }
+}
+
+.loading p {
+  font-family: 'Share Tech Mono', monospace;
+  color: var(--neon-cyan);
+  letter-spacing: 2px;
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0%, 50%, 100% { opacity: 1; }
+  25%, 75% { opacity: 0.5; }
+}
+
+.error p {
+  text-align: center;
+  color: var(--neon-pink);
+  font-size: 1.2rem;
+  font-weight: 700;
+  padding: 2rem;
+  text-shadow: 0 0 10px var(--neon-pink);
+}
+
+footer {
+  text-align: center;
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(0, 245, 255, 0.2);
+}
+
+footer p {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.5);
+  letter-spacing: 1px;
+}
+
+footer a {
+  color: var(--neon-cyan);
+  text-decoration: none;
+  text-shadow: 0 0 5px var(--neon-cyan);
+  transition: all 0.3s ease;
+}
+
+footer a:hover {
+  color: var(--neon-pink);
+  text-shadow: 0 0 10px var(--neon-pink);
+}
+
+@media (max-width: 600px) {
+  .weather-card {
+    padding: 2rem 1.5rem;
+  }
+  
+  .glitch {
+    font-size: 2rem;
+  }
+  
+  .neon-text {
+    font-size: 3rem;
+  }
+  
+  .weather-details {
+    grid-template-columns: 1fr;
+  }
+}

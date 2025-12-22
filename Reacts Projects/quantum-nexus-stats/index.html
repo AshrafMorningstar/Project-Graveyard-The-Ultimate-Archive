@@ -1,0 +1,51 @@
+<!--
+ -----------------------------------------------------------------------------
+ @author      Ashraf Morningstar
+ @github      https://github.com/AshrafMorningstar
+ @repository  Project Graveyard - The Ultimate Archive
+ @quote       "Code that defines the future. Designed to inspire."
+ -----------------------------------------------------------------------------
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quantum Nexus | Advanced Analytics</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700&family=Space+Mono:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div id="canvas-container"></div>
+
+    <div class="overlay">
+      <header class="glass-header">
+        <div class="logo"><span class="logo-icon">💠</span> QUANTUM NEXUS</div>
+        <nav>
+          <button class="nav-btn active" onclick="switchTab('dashboard')">
+            DASHBOARD
+          </button>
+          <button class="nav-btn" onclick="switchTab('analytics')">
+            NEURAL NET
+          </button>
+          <button class="nav-btn" onclick="switchTab('settings')">
+            SYSTEM
+          </button>
+        </nav>
+        <div class="user-profile">
+          <div class="avatar">AM</div>
+        </div>
+      </header>
+
+      <main id="app-content">
+        <!-- Dynamic Content Injected Here -->
+      </main>
+    </div>
+
+    <script type="module" src="app.js"></script>
+  </body>
+</html>

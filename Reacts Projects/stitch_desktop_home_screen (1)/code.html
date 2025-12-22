@@ -1,0 +1,247 @@
+<!--
+ -----------------------------------------------------------------------------
+ @author      Ashraf Morningstar
+ @github      https://github.com/AshrafMorningstar
+ @repository  Project Graveyard - The Ultimate Archive
+ @quote       "Code that defines the future. Designed to inspire."
+ -----------------------------------------------------------------------------
+-->
+
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>About Me - Ashraf Morningstar</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<!-- Material Icons -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Configuration -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#137fec",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101922",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+<style>
+        /* Custom scrollbar for macOS feel */
+        .mac-scrollbar::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        .mac-scrollbar::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .mac-scrollbar::-webkit-scrollbar-thumb {
+            background-color: rgba(255, 255, 255, 0.2);
+            border-radius: 9999px;
+            border: 2px solid transparent;
+            background-clip: content-box;
+        }
+        .mac-scrollbar::-webkit-scrollbar-thumb:hover {
+            background-color: rgba(255, 255, 255, 0.4);
+        }
+        
+        /* Glassmorphism utility */
+        .glass-panel {
+            background: rgba(28, 28, 30, 0.65);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .sidebar-glass {
+            background: rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(10px);
+        }
+    </style>
+</head>
+<body class="bg-[url('https://images.unsplash.com/photo-1477346611705-65d1883cee1e?q=80&amp;w=2070&amp;auto=format&amp;fit=crop')] bg-cover bg-center h-screen w-full flex items-center justify-center overflow-hidden font-display selection:bg-primary/40 selection:text-white" data-alt="Abstract dark mountain landscape with foggy peaks">
+<!-- Draggable Area Container -->
+<!-- This div represents the 'window' itself -->
+<div class="relative w-[900px] h-[600px] max-w-[95vw] max-h-[90vh] glass-panel rounded-xl shadow-2xl flex flex-col overflow-hidden animate-fade-in group/window">
+<!-- Window Title Bar -->
+<div class="h-10 w-full flex items-center justify-between px-4 shrink-0 bg-white/5 border-b border-white/5 cursor-grab active:cursor-grabbing select-none">
+<!-- Traffic Lights -->
+<div class="flex gap-2 w-20">
+<div class="w-3 h-3 rounded-full bg-[#FF5F57] border border-[#E0443E] hover:bg-[#FF5F57]/80 transition-colors shadow-sm"></div>
+<div class="w-3 h-3 rounded-full bg-[#FEBC2E] border border-[#D89E24] hover:bg-[#FEBC2E]/80 transition-colors shadow-sm"></div>
+<div class="w-3 h-3 rounded-full bg-[#28C840] border border-[#1AAB29] hover:bg-[#28C840]/80 transition-colors shadow-sm"></div>
+</div>
+<!-- Title -->
+<div class="text-white/70 text-sm font-medium tracking-wide flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px]">person</span>
+                About Me
+            </div>
+<!-- Spacer for balance -->
+<div class="w-20"></div>
+</div>
+<!-- Window Content Body -->
+<div class="flex flex-1 overflow-hidden">
+<!-- Sidebar -->
+<div class="w-56 sidebar-glass h-full hidden md:flex flex-col justify-between pt-6 pb-4 border-r border-white/5 shrink-0">
+<div class="px-3 flex flex-col gap-1">
+<p class="px-3 text-xs font-medium text-white/40 mb-2 uppercase tracking-wider">Navigation</p>
+<button class="flex items-center gap-3 px-3 py-2 rounded-lg bg-white/10 text-white transition-all w-full text-left group">
+<span class="material-symbols-outlined text-[20px] text-primary group-hover:scale-110 transition-transform">account_circle</span>
+<span class="text-sm font-medium">Overview</span>
+</button>
+<button class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-white/70 hover:text-white transition-all w-full text-left group">
+<span class="material-symbols-outlined text-[20px] group-hover:scale-110 transition-transform">history_edu</span>
+<span class="text-sm font-medium">Experience</span>
+</button>
+<button class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-white/70 hover:text-white transition-all w-full text-left group">
+<span class="material-symbols-outlined text-[20px] group-hover:scale-110 transition-transform">code</span>
+<span class="text-sm font-medium">Projects</span>
+</button>
+</div>
+<div class="px-4 mt-auto">
+<div class="p-3 rounded-lg bg-gradient-to-br from-primary/20 to-transparent border border-white/5">
+<p class="text-xs text-white/60 mb-2">Currently available for hire.</p>
+<a class="text-xs text-primary hover:text-primary/80 font-medium flex items-center gap-1" href="mailto:hello@ashraf.dev">
+                            Contact Me <span class="material-symbols-outlined text-[12px]">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+<!-- Main Content Area -->
+<div class="flex-1 h-full overflow-y-auto mac-scrollbar bg-[#111a22]/80 relative">
+<!-- Hero/Header Section -->
+<div class="relative w-full h-40 bg-gradient-to-r from-[#1c2a38] to-[#111a22]">
+<div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1550684848-fac1c5b4e853?q=80&amp;w=2070&amp;auto=format&amp;fit=crop')] bg-cover bg-center opacity-30 mix-blend-overlay" data-alt="Abstract digital network connections background"></div>
+<div class="absolute bottom-0 left-0 w-full h-20 bg-gradient-to-t from-[#111a22]/80 to-transparent"></div>
+</div>
+<div class="px-8 -mt-16 pb-12">
+<!-- Profile Info -->
+<div class="flex flex-col md:flex-row gap-6 items-end md:items-center mb-8">
+<div class="relative">
+<div class="w-32 h-32 rounded-full border-4 border-[#111a22] shadow-xl overflow-hidden bg-white/10 group">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-110" data-alt="Portrait of Ashraf Morningstar smiling" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAvVVZVl6JB4mq0Frj41o6OhOmQ-VWldgmOlrJJvz5nWeBL6b13-fLUAZehPNU58rIjl9mzAXfC5KExdTYd4Fjc9ST1LcA6_qvSIdj3D7TfcUwkvsgH6PLvcKMYwslwFGdPULJoYt34QZrpuiDbY2R6x0dYTc8RrIdTl76fvtdpERqIYIK_RUDvcV2nEO0JZHj-zAVkV9XbZiAap75tIzp5oHFd3psDutE7B2rcTKfkqHgm-pH7uvyPGjFueyx0IkoCFlxTtVrXE-CH');"></div>
+</div>
+<div class="absolute bottom-2 right-2 w-5 h-5 bg-green-500 border-2 border-[#111a22] rounded-full" title="Online"></div>
+</div>
+<div class="flex flex-col pb-2">
+<h1 class="text-3xl font-bold text-white tracking-tight mb-1">Ashraf Morningstar</h1>
+<p class="text-primary font-medium text-lg">Full Stack Developer &amp; UI Designer</p>
+<div class="flex items-center gap-2 mt-2 text-sm text-gray-400">
+<span class="material-symbols-outlined text-[16px]">location_on</span>
+<span>San Francisco, CA</span>
+</div>
+</div>
+<div class="md:ml-auto flex gap-3 pb-2">
+<a class="flex items-center gap-2 bg-[#24292e] hover:bg-[#2f363d] text-white px-4 py-2 rounded-lg transition-colors border border-white/10 text-sm font-medium shadow-lg" href="https://github.com/AshrafMorningstar" target="_blank">
+<img alt="GitHub Logo" class="w-5 h-5 invert" data-alt="GitHub logo icon" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBMmoZOfsMGUim4xa08sc29ovKW9872bCTo4kWRQ0TRk6_gS_r_u87esxtPYcGCau5b0keG90dc1mKsiNwXaupovpjDsQ4x43oLsifcqMjQxdbmVYjz76RS_yeRTEeBglDIT51m_ZUsQIB33X7jD2EdlqPCdtNUx4WS5croM_uSFxSEltkMBi2afyryOcLdfxR8TLy0Td73-GnQUMKLSEWbIfgM-ncWCBMFye7Jzsh1f6TghxATVZC7e9wicnICzw3M72rY-vUyho8y"/>
+                                View GitHub
+                            </a>
+<button class="bg-primary hover:bg-primary/90 text-white px-4 py-2 rounded-lg transition-colors shadow-lg shadow-primary/20 text-sm font-medium">
+                                Resume
+                            </button>
+</div>
+</div>
+<!-- Bio Section -->
+<div class="mb-10">
+<h3 class="text-white text-lg font-bold mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">waving_hand</span>
+                            Introduction
+                        </h3>
+<p class="text-gray-300 leading-relaxed text-[15px] max-w-3xl">
+                            A passionate developer specializing in building immersive web experiences with <strong class="text-white">React</strong>, <strong class="text-white">GSAP</strong>, and <strong class="text-white">Tailwind CSS</strong>. I love creating clean, macOS-inspired aesthetics and performant applications. With a keen eye for detail and a drive for perfection, I transform complex problems into simple, beautiful, and intuitive designs. When I'm not coding, I'm exploring new design trends or contributing to open-source projects.
+                        </p>
+</div>
+<!-- Skills Section -->
+<div class="mb-10">
+<h3 class="text-white text-lg font-bold mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">bolt</span>
+                            Tech Stack
+                        </h3>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<!-- Frontend -->
+<div class="bg-white/5 rounded-xl p-4 border border-white/5">
+<h4 class="text-sm font-medium text-gray-400 uppercase tracking-wider mb-3">Frontend</h4>
+<div class="flex flex-wrap gap-2">
+<div class="flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#111a22] border border-white/10 hover:border-primary/50 transition-colors group cursor-default">
+<img alt="React" class="w-4 h-4" data-alt="React logo" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBxkcfglxlbdW-K2Vc-Mb8_fcLO6xD5h2e9w_bkadgedxKY_s5ojHM80nXVbSuiwWfS5u0-dBN96uvi-zUe8q36KkD_3uoRCyh-6wpGzfMK3j3NqGzpaFZb5tv8LU47lvRdbfjvvif-cXF8aMl2OMAZdcVUkelvQ8UHWjHnPRZ2yCtVlBKenqB7OqSuvLvq602fnlgfLlYUlcjiofSIbr4l3V9zZarSnzRLm3N-6nrr98i3x-cu7QbKHuGzE27C9rCq7iDgJu18oBUC"/>
+<span class="text-sm text-gray-200 font-medium">React</span>
+</div>
+<div class="flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#111a22] border border-white/10 hover:border-primary/50 transition-colors group cursor-default">
+<span class="text-sm text-cyan-400 font-bold">TW</span>
+<span class="text-sm text-gray-200 font-medium">Tailwind</span>
+</div>
+<div class="flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#111a22] border border-white/10 hover:border-primary/50 transition-colors group cursor-default">
+<span class="text-sm text-green-400 font-bold">GS</span>
+<span class="text-sm text-gray-200 font-medium">GSAP</span>
+</div>
+<div class="flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#111a22] border border-white/10 hover:border-primary/50 transition-colors group cursor-default">
+<span class="text-sm text-yellow-500 font-bold">JS</span>
+<span class="text-sm text-gray-200 font-medium">Three.js</span>
+</div>
+</div>
+</div>
+<!-- Backend & Tools -->
+<div class="bg-white/5 rounded-xl p-4 border border-white/5">
+<h4 class="text-sm font-medium text-gray-400 uppercase tracking-wider mb-3">Backend &amp; Tools</h4>
+<div class="flex flex-wrap gap-2">
+<div class="flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#111a22] border border-white/10 hover:border-primary/50 transition-colors group cursor-default">
+<img alt="Node" class="w-4 h-4" data-alt="Node.js logo" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAw8b7fy6NOf4xxDpgC_mf_EdCh7VaDtkAxT6lCuTtshKBf0yarfk_94M-UJZH_A3tnxGEXWB-DTrWtfnjQLiAFm_4ZflHLPrxDzXUm5zW9crHtAmJJS0vwDVoZVgLz7Q0prG_Rsie9irz5nNcdyiOrxBakIWfQ9q4hI5SkwAd6Hq7JxWzchp5zXeG8uBMY9a8BmiIsr_EJoEZdJ2E57BIN4F9GI-cRrmXqg340Ut5ThqqNeEHTk_hPhxzwLV6CymQLUywVu64uIAqb"/>
+<span class="text-sm text-gray-200 font-medium">Node.js</span>
+</div>
+<div class="flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#111a22] border border-white/10 hover:border-primary/50 transition-colors group cursor-default">
+<span class="text-sm text-orange-400 font-bold">🐻</span>
+<span class="text-sm text-gray-200 font-medium">Zustand</span>
+</div>
+<div class="flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#111a22] border border-white/10 hover:border-primary/50 transition-colors group cursor-default">
+<img alt="Git" class="w-4 h-4" data-alt="Git logo" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDjJmxPMg_SCABF5ffL1td2D8esFPA-2iI9Mq6tc2bcSYfWz9Spmd11FG_9BKY_d43CSiBBhjmaoIboENBtIAe1CegfLT7uLthinWphMTyQycynB7Lf-f6jKzRakz5rPITVhzQR2Cvg04jmJa36O0ZHBmFKC7wRWtBpH6yUf5wwBzlpeUaxxIhZt16kHEr9nZETzDt7qY_RxSqL8FLzUPqx-4OZXEJkEN9CXIH_FBXJFi4FJmfXG_Hn2r9QSukKgIQSOPUytuDgs0ws"/>
+<span class="text-sm text-gray-200 font-medium">Git</span>
+</div>
+<div class="flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#111a22] border border-white/10 hover:border-primary/50 transition-colors group cursor-default">
+<span class="text-sm text-white font-bold">▲</span>
+<span class="text-sm text-gray-200 font-medium">Vercel</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Connect Section -->
+<div class="rounded-xl bg-gradient-to-r from-[#1c2a38] to-[#16202a] p-6 border border-white/5 flex flex-col sm:flex-row items-center justify-between gap-4">
+<div>
+<h4 class="text-white font-bold text-lg">Let's build something together</h4>
+<p class="text-gray-400 text-sm">Open for freelance opportunities and collaborations.</p>
+</div>
+<a class="shrink-0 flex items-center justify-center w-12 h-12 rounded-full bg-white text-black hover:scale-110 transition-transform shadow-[0_0_20px_rgba(255,255,255,0.3)]" href="https://github.com/AshrafMorningstar">
+<span class="material-symbols-outlined">arrow_outward</span>
+</a>
+</div>
+<!-- Footer Info -->
+<div class="mt-8 pt-8 border-t border-white/5 text-center text-xs text-gray-500">
+<p>© 2024 Ashraf Morningstar. Designed with macOS aesthetics.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Resize Handle (Visual Only) -->
+<div class="absolute bottom-0 right-0 w-4 h-4 cursor-nwse-resize flex items-end justify-end p-1 opacity-50 hover:opacity-100">
+<svg fill="none" height="8" viewbox="0 0 8 8" width="8" xmlns="http://www.w3.org/2000/svg">
+<path d="M8 0L0 8H2.5L8 2.5V0Z" fill="white" fill-opacity="0.3"></path>
+<path d="M8 4L4 8H6.5L8 6.5V4Z" fill="white" fill-opacity="0.3"></path>
+</svg>
+</div>
+</div>
+</body></html>

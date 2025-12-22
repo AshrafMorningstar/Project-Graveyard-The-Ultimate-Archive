@@ -1,0 +1,80 @@
+<!--
+ -----------------------------------------------------------------------------
+ @author      Ashraf Morningstar
+ @github      https://github.com/AshrafMorningstar
+ @repository  Project Graveyard - The Ultimate Archive
+ @quote       "Code that defines the future. Designed to inspire."
+ -----------------------------------------------------------------------------
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Motivational Quotes Generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+        #quote {
+            margin: 20px;
+            font-size: 24px;
+            text-align: center;
+        }
+        #generate-btn {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+    <meta name="author" content="Ashraf Morningstar">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="../global-premium.css">
+</head>
+<body class="theme-sunset">
+
+    <div id="quote">Click the button to generate a motivational quote!</div>
+    <button id="generate-btn">Generate Quote</button>
+
+    <script>
+        function generateQuote() {
+            const quotes = [
+                "The best time to plant a tree was 20 years ago. The second best time is now.",
+                "Your limitation—it's only your imagination.",
+                "Push yourself, because no one else is going to do it for you.",
+                "Great things never come from comfort zones.",
+                "Dream it. Wish it. Do it.",
+                "Success doesn’t just find you. You have to go out and get it.",
+                "The harder you work for something, the greater you’ll feel when you achieve it.",
+                "Dream bigger. Do bigger.",
+                "Don’t stop when you’re tired. Stop when you’re done.",
+                "Wake up with determination. Go to bed with satisfaction."
+            ];
+
+            // Generate a random index to select a quote
+            const randomIndex = Math.floor(Math.random() * quotes.length);
+            const quote = quotes[randomIndex];
+
+            // Display the selected quote
+            document.getElementById('quote').innerText = quote;
+        }
+
+        // Add event listener to the button
+        document.getElementById('generate-btn').addEventListener('click', generateQuote);
+    </script>
+
+
+<div id="ashraf-branding-bar">
+    <span>💎 Crafted by <a href="https://github.com/AshrafMorningstar" target="_blank">Ashraf Morningstar</a></span>
+    <a href="https://github.com/AshrafMorningstar" target="_blank"><i class="fab fa-github"></i> View on GitHub</a>
+</div>
+
+</body>
+</html>

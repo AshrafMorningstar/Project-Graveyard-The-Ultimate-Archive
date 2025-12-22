@@ -1,0 +1,301 @@
+/*
+ * -----------------------------------------------------------------------------
+ * @author      Ashraf Morningstar
+ * @github      https://github.com/AshrafMorningstar
+ * @repository  Project Graveyard - The Ultimate Archive
+ * @quote       "Code that defines the future. Designed to inspire."
+ * -----------------------------------------------------------------------------
+*/
+
+.glass-template {
+  position: relative;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 48px 32px;
+  font-family: 'Inter', sans-serif;
+  color: #1a1a1a;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+.glass-bg-gradient {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 25%, #f093fb 50%, #4facfe 75%, #00f2fe 100%);
+  opacity: 0.15;
+  pointer-events: none;
+}
+
+.glass-bg-shapes {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.glass-shape {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.3;
+}
+
+.glass-shape-1 {
+  width: 400px;
+  height: 400px;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  top: -200px;
+  right: -100px;
+}
+
+.glass-shape-2 {
+  width: 350px;
+  height: 350px;
+  background: linear-gradient(135deg, #f093fb, #f5576c);
+  bottom: -150px;
+  left: -100px;
+}
+
+.glass-shape-3 {
+  width: 300px;
+  height: 300px;
+  background: linear-gradient(135deg, #4facfe, #00f2fe);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.glass-header {
+  position: relative;
+  text-align: center;
+  margin-bottom: 48px;
+  padding: 40px;
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.glass-name {
+  font-size: 52px;
+  font-weight: 800;
+  margin-bottom: 12px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.glass-title {
+  font-size: 22px;
+  color: #4a5568;
+  font-weight: 600;
+}
+
+.glass-main {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.glass-section {
+  padding: 32px;
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.glass-section-title {
+  font-size: 30px;
+  font-weight: 700;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 8px;
+}
+
+.glass-bio {
+  font-size: 17px;
+  line-height: 1.8;
+  color: #2d3748;
+}
+
+.glass-contact {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  font-size: 15px;
+  color: #4a5568;
+}
+
+.glass-contact a {
+  color: #667eea;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.glass-contact a:hover {
+  text-decoration: underline;
+}
+
+.glass-skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.glass-skill-tag {
+  padding: 10px 20px;
+  background: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #2d3748;
+  transition: all 0.3s;
+}
+
+.glass-skill-tag:hover {
+  background: rgba(255, 255, 255, 0.6);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.glass-item {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  transition: all 0.3s;
+}
+
+.glass-item:hover {
+  background: rgba(255, 255, 255, 0.35);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+.glass-item-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.glass-item h3 {
+  font-size: 22px;
+  font-weight: 700;
+  color: #1a202c;
+}
+
+.glass-period {
+  font-size: 14px;
+  color: #667eea;
+  font-weight: 600;
+}
+
+.glass-company {
+  font-size: 17px;
+  color: #764ba2;
+  font-weight: 600;
+}
+
+.glass-description {
+  font-size: 15px;
+  line-height: 1.7;
+  color: #4a5568;
+}
+
+.glass-tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.glass-tech-tag {
+  padding: 6px 14px;
+  background: rgba(102, 126, 234, 0.15);
+  border: 1px solid rgba(102, 126, 234, 0.3);
+  color: #667eea;
+  border-radius: 12px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.glass-footer {
+  position: relative;
+  margin-top: 48px;
+  padding: 32px;
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.glass-social {
+  display: flex;
+  justify-content: center;
+  gap: 28px;
+  flex-wrap: wrap;
+}
+
+.glass-social a {
+  color: #667eea;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 16px;
+  transition: all 0.3s;
+}
+
+.glass-social a:hover {
+  color: #764ba2;
+  transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+  .glass-name {
+    font-size: 38px;
+  }
+  
+  .glass-section-title {
+    font-size: 26px;
+  }
+  
+  .glass-item-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .glass-header,
+  .glass-section,
+  .glass-footer {
+    padding: 24px;
+  }
+}

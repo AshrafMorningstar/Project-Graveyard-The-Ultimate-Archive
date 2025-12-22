@@ -1,0 +1,193 @@
+<!--
+ -----------------------------------------------------------------------------
+ @author      Ashraf Morningstar
+ @github      https://github.com/AshrafMorningstar
+ @repository  Project Graveyard - The Ultimate Archive
+ @quote       "Code that defines the future. Designed to inspire."
+ -----------------------------------------------------------------------------
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Web Dev Mini Projects | Ashraf Morningstar</title>
+    <meta
+      name="description"
+      content="A collection of premium web development mini-projects by Ashraf Morningstar."
+    />
+    <meta name="author" content="Ashraf Morningstar" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --bg-color: #0f172a;
+        --card-bg: #1e293b;
+        --text-primary: #f8fafc;
+        --text-secondary: #94a3b8;
+        --accent: #38bdf8;
+        --font-main: "Outfit", sans-serif;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: var(--font-main);
+        background-color: var(--bg-color);
+        color: var(--text-primary);
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 2rem;
+      }
+
+      header {
+        text-align: center;
+        margin-bottom: 3rem;
+        animation: fadeInDown 1s ease-out;
+      }
+
+      header h1 {
+        font-size: 3rem;
+        background: linear-gradient(135deg, #38bdf8 0%, #818cf8 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        margin-bottom: 0.5rem;
+      }
+
+      header p {
+        color: var(--text-secondary);
+        font-size: 1.2rem;
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 2rem;
+        width: 100%;
+        max-width: 1200px;
+      }
+
+      .card {
+        background: var(--card-bg);
+        border-radius: 16px;
+        padding: 1.5rem;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        text-decoration: none;
+        color: inherit;
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+
+      .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 30px rgba(56, 189, 248, 0.2);
+        border-color: var(--accent);
+      }
+
+      .card h2 {
+        font-size: 1.5rem;
+        margin-bottom: 0.5rem;
+      }
+      .card p {
+        color: var(--text-secondary);
+        font-size: 0.9rem;
+        margin-bottom: 1rem;
+      }
+      .tag {
+        display: inline-block;
+        padding: 0.25rem 0.75rem;
+        border-radius: 20px;
+        background: rgba(56, 189, 248, 0.1);
+        color: var(--accent);
+        font-size: 0.8rem;
+        font-weight: 600;
+      }
+
+      footer {
+        margin-top: 4rem;
+        color: var(--text-secondary);
+        font-size: 0.9rem;
+      }
+
+      footer a {
+        color: var(--accent);
+        text-decoration: none;
+      }
+
+      @keyframes fadeInDown {
+        from {
+          opacity: 0;
+          transform: translateY(-20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Web Dev Mini Projects</h1>
+      <p>Premium Collection by Ashraf Morningstar</p>
+    </header>
+
+    <div class="grid" id="project-grid">
+      <!-- Projects will be injected here if we add JS, or hardcoded for SEO -->
+      <a href="./projects/01-qr-code-generator/index.html" class="card">
+        <div>
+          <h2>01. QR Code Generator</h2>
+          <p>Generate QR codes instantly with a modern UI.</p>
+        </div>
+        <span class="tag">Tool</span>
+      </a>
+      <a href="./projects/02-age-calculator/index.html" class="card">
+        <div>
+          <h2>02. Age Calculator</h2>
+          <p>Calculate your precise age in years, months, and days.</p>
+        </div>
+        <span class="tag">Tool</span>
+      </a>
+      <a href="./projects/03-digital-clock/index.html" class="card">
+        <div>
+          <h2>03. Digital Clock</h2>
+          <p>A sleek, neon-style digital clock.</p>
+        </div>
+        <span class="tag">Utility</span>
+      </a>
+      <a href="./projects/04-todo-list/index.html" class="card">
+        <div>
+          <h2>04. To-Do List</h2>
+          <p>Stay organized with this premium task manager.</p>
+        </div>
+        <span class="tag">Productivity</span>
+      </a>
+      <a href="./projects/05-quote-generator/index.html" class="card">
+        <div>
+          <h2>05. Quote Generator</h2>
+          <p>Get inspired with random quotes.</p>
+        </div>
+        <span class="tag">API</span>
+      </a>
+    </div>
+
+    <footer>
+      <p>
+        Created with ❤️ by
+        <a href="https://github.com/AshrafMorningstar">Ashraf Morningstar</a>
+      </p>
+    </footer>
+  </body>
+</html>

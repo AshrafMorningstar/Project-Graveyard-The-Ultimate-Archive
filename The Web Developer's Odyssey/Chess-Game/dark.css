@@ -1,0 +1,35 @@
+/*
+ * -----------------------------------------------------------------------------
+ * @author      Ashraf Morningstar
+ * @github      https://github.com/AshrafMorningstar
+ * @repository  Project Graveyard - The Ultimate Archive
+ * @quote       "Code that defines the future. Designed to inspire."
+ * -----------------------------------------------------------------------------
+*/
+
+/* 
+   Designed & Enhanced by Ashraf Morningstar
+   Github: https://github.com/AshrafMorningstar
+*/
+/* Dark Theme Styles */
+html, body {
+    background-color: #333;
+    color: #fff;
+}
+
+#turn {
+    background: #444;
+    border-color: #222;
+}
+
+.turnhighlight {
+    background: #5cb85c;
+    color: #fff;
+}
+
+.gamecell {
+    background: #555;
+    border-color: #222;
+}
+
+/* Add any other specific dark theme styles here */

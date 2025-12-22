@@ -1,0 +1,26 @@
+{
+  "name": "zenith-forge",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Expert-Level Procedural Synthesis & Render Farm Blueprint",
+  "scripts": {
+    "start": "node server/index.js",
+    "worker": "node workers/worker-prototype.js",
+    "build": "remotion build src/remotion/Index.tsx",
+    "test": "jest"
+  },
+  "dependencies": {
+    "remotion": "latest",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "express": "^4.18.2",
+    "gl-react": "^5.2.0",
+    "gl-react-dom": "^5.2.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.0.26",
+    "@types/webgl2": "^0.0.6",
+    "typescript": "^5.0.0",
+    "ts-node": "^10.9.1"
+  }
+}

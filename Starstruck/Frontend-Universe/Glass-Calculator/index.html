@@ -1,0 +1,194 @@
+<!--
+ -----------------------------------------------------------------------------
+ @author      Ashraf Morningstar
+ @github      https://github.com/AshrafMorningstar
+ @repository  Project Graveyard - The Ultimate Archive
+ @quote       "Code that defines the future. Designed to inspire."
+ -----------------------------------------------------------------------------
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glass Calculator</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(45deg, #fc00ff, #00dbde);
+            font-family: 'Segoe UI', sans-serif;
+            overflow: hidden;
+        }
+
+        .container {
+            position: relative;
+        }
+
+        .calculator {
+            position: relative;
+            display: grid;
+            width: 300px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+        }
+
+        .display {
+            grid-column: span 4;
+            height: 100px;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            margin-bottom: 20px;
+            color: #fff;
+            text-align: right;
+            padding: 20px;
+            font-size: 2.5em;
+            box-sizing: border-box;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            overflow: hidden;
+        }
+
+        .btn {
+            height: 60px;
+            width: 60px;
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.05);
+            color: #fff;
+            font-size: 1.2rem;
+            cursor: pointer;
+            margin: 5px;
+            transition: 0.2s;
+        }
+
+        .btn:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .btn.operator {
+            background: rgba(255, 255, 255, 0.15);
+            color: #00dbde;
+            font-weight: bold;
+        }
+
+        .btn.equal {
+            grid-column: span 2;
+            width: 135px;
+            background: rgba(255, 255, 255, 0.3);
+        }
+        
+        .btn.clear {
+            background: rgba(255, 0, 0, 0.2);
+        }
+
+        /* Decorative blobs */
+        .blob {
+            position: absolute;
+            filter: blur(40px);
+            z-index: -1;
+            border-radius: 50%;
+        }
+        .blob:nth-child(1) {
+            top: -50px;
+            left: -50px;
+            width: 200px;
+            height: 200px;
+            background: #ff357a;
+        }
+        .blob:nth-child(2) {
+            bottom: -50px;
+            right: -50px;
+            width: 200px;
+            height: 200px;
+            background: #fff172;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="blob"></div>
+        <div class="blob"></div>
+        <div class="calculator">
+            <div class="display" id="display">0</div>
+            
+            <button class="btn clear" onclick="clearDisplay()">C</button>
+            <button class="btn operator" onclick="appendOperator('/')">/</button>
+            <button class="btn operator" onclick="appendOperator('*')">×</button>
+            <button class="btn operator" onclick="deleteLast()">⌫</button>
+            
+            <button class="btn" onclick="appendNumber('7')">7</button>
+            <button class="btn" onclick="appendNumber('8')">8</button>
+            <button class="btn" onclick="appendNumber('9')">9</button>
+            <button class="btn operator" onclick="appendOperator('-')">-</button>
+            
+            <button class="btn" onclick="appendNumber('4')">4</button>
+            <button class="btn" onclick="appendNumber('5')">5</button>
+            <button class="btn" onclick="appendNumber('6')">6</button>
+            <button class="btn operator" onclick="appendOperator('+')">+</button>
+            
+            <button class="btn" onclick="appendNumber('1')">1</button>
+            <button class="btn" onclick="appendNumber('2')">2</button>
+            <button class="btn" onclick="appendNumber('3')">3</button>
+            <button class="btn equal" onclick="calculate()">=</button>
+            
+            <button class="btn" style="grid-column: span 2; width: 135px;" onclick="appendNumber('0')">0</button>
+            <button class="btn" onclick="appendNumber('.')">.</button>
+        </div>
+    </div>
+
+    <script>
+        const display = document.getElementById('display');
+        let currentInput = '';
+
+        function updateDisplay() {
+            display.innerText = currentInput || '0';
+        }
+
+        function appendNumber(num) {
+            if (num === '.' && currentInput.includes('.')) return;
+            currentInput += num;
+            updateDisplay();
+        }
+
+        function appendOperator(op) {
+            const lastChar = currentInput.slice(-1);
+            if (['+', '-', '*', '/'].includes(lastChar)) return;
+            if (currentInput === '') return;
+            currentInput += op;
+            updateDisplay();
+        }
+
+        function clearDisplay() {
+            currentInput = '';
+            updateDisplay();
+        }
+
+        function deleteLast() {
+            currentInput = currentInput.slice(0, -1);
+            updateDisplay();
+        }
+
+        function calculate() {
+            try {
+                // Using Function constructor instead of eval for safer execution
+                currentInput = new Function('return ' + currentInput)().toString();
+                updateDisplay();
+            } catch (error) {
+                currentInput = 'Error';
+                updateDisplay();
+                setTimeout(clearDisplay, 1000);
+            }
+        }
+    </script>
+</body>
+</html>

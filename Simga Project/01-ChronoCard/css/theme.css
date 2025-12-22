@@ -1,0 +1,239 @@
+/*
+ * -----------------------------------------------------------------------------
+ * @author      Ashraf Morningstar
+ * @github      https://github.com/AshrafMorningstar
+ * @repository  Project Graveyard - The Ultimate Archive
+ * @quote       "Code that defines the future. Designed to inspire."
+ * -----------------------------------------------------------------------------
+*/
+
+/* ChronoCard - Time-Aware Digital Identity Card */
+/* Author: Ashraf Morningstar | https://github.com/AshrafMorningstar */
+
+:root {
+  /* Time-based theme variables */
+  --bg-gradient-start: #fef3c7;
+  --bg-gradient-end: #fcd34d;
+  --card-bg: rgba(255, 255, 255, 0.25);
+  --card-border: rgba(255, 255, 255, 0.4);
+  --text-primary: #1f2937;
+  --text-secondary: #4b5563;
+  --accent-color: #3b82f6;
+  --glow-color: rgba(59, 130, 246, 0.3);
+
+  /* Typography weights (AM/PM based) */
+  --font-weight-primary: 600;
+  --font-weight-secondary: 400;
+
+  /* Motion variables */
+  --scale-factor: 1;
+  --opacity-factor: 1;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(
+    135deg,
+    var(--bg-gradient-start),
+    var(--bg-gradient-end)
+  );
+  transition: background 2s ease;
+  overflow: hidden;
+}
+
+.container {
+  perspective: 1000px;
+}
+
+.chrono-card {
+  position: relative;
+  width: 420px;
+  height: 280px;
+  background: var(--card-bg);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border-radius: 24px;
+  border: 1px solid var(--card-border);
+  padding: 32px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15),
+    0 0 0 1px rgba(255, 255, 255, 0.1) inset;
+  transform: scale(var(--scale-factor));
+  opacity: var(--opacity-factor);
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.card-glow {
+  position: absolute;
+  inset: -2px;
+  background: linear-gradient(135deg, var(--glow-color), transparent);
+  border-radius: 24px;
+  opacity: 0.6;
+  filter: blur(12px);
+  z-index: -1;
+  animation: pulse 4s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 0.4;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+.card-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  height: 100%;
+}
+
+.time-display {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  font-size: 48px;
+  font-weight: 700;
+  color: var(--text-primary);
+  letter-spacing: -0.02em;
+  font-variant-numeric: tabular-nums;
+}
+
+.time-display .separator {
+  opacity: 0.5;
+  animation: blink 2s ease-in-out infinite;
+}
+
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 0.2;
+  }
+}
+
+.greeting {
+  font-size: 24px;
+  font-weight: var(--font-weight-primary);
+  color: var(--text-primary);
+  text-align: center;
+  opacity: 0;
+  animation: fadeIn 1s ease forwards;
+  transition: font-weight 1s ease;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+.identity {
+  text-align: center;
+  margin-top: auto;
+}
+
+.name {
+  font-size: 28px;
+  font-weight: var(--font-weight-primary);
+  color: var(--text-primary);
+  margin-bottom: 8px;
+  transition: font-weight 1s ease;
+}
+
+.role {
+  font-size: 16px;
+  font-weight: var(--font-weight-secondary);
+  color: var(--text-secondary);
+  opacity: 0.8;
+  transition: font-weight 1s ease;
+}
+
+.weekday-indicator {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 8px 16px;
+  background: var(--accent-color);
+  border-radius: 12px;
+  transition: background-color 1s ease;
+}
+
+.weekday-name {
+  font-size: 14px;
+  font-weight: 600;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Responsive design */
+@media (max-width: 480px) {
+  .chrono-card {
+    width: 90vw;
+    height: auto;
+    min-height: 280px;
+  }
+
+  .time-display {
+    font-size: 36px;
+  }
+
+  .greeting {
+    font-size: 20px;
+  }
+
+  .name {
+    font-size: 24px;
+  }
+}
+
+/* Theme variations - Applied via JavaScript */
+.theme-morning {
+  --bg-gradient-start: #fef3c7;
+  --bg-gradient-end: #fcd34d;
+  --card-bg: rgba(255, 255, 255, 0.25);
+  --text-primary: #1f2937;
+  --text-secondary: #4b5563;
+}
+
+.theme-afternoon {
+  --bg-gradient-start: #dbeafe;
+  --bg-gradient-end: #93c5fd;
+  --card-bg: rgba(255, 255, 255, 0.2);
+  --text-primary: #1e3a8a;
+  --text-secondary: #3b82f6;
+}
+
+.theme-evening {
+  --bg-gradient-start: #fce7f3;
+  --bg-gradient-end: #f9a8d4;
+  --card-bg: rgba(255, 255, 255, 0.15);
+  --text-primary: #831843;
+  --text-secondary: #be185d;
+}
+
+.theme-night {
+  --bg-gradient-start: #1e293b;
+  --bg-gradient-end: #0f172a;
+  --card-bg: rgba(30, 41, 59, 0.4);
+  --card-border: rgba(148, 163, 184, 0.2);
+  --text-primary: #f1f5f9;
+  --text-secondary: #cbd5e1;
+}

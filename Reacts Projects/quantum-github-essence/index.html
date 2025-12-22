@@ -1,0 +1,54 @@
+<!--
+ -----------------------------------------------------------------------------
+ @author      Ashraf Morningstar
+ @github      https://github.com/AshrafMorningstar
+ @repository  Project Graveyard - The Ultimate Archive
+ @quote       "Code that defines the future. Designed to inspire."
+ -----------------------------------------------------------------------------
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Quantum GitHub Essence</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      background: linear-gradient(to bottom right, #000010, #03031f);
+      color: #e0eaff;
+      padding: 50px;
+      text-align: center;
+    }
+    .capsule {
+      margin-top: 40px;
+      padding: 25px;
+      border: 1px solid #4a6e91;
+      border-radius: 15px;
+      background: rgba(255, 255, 255, 0.03);
+      box-shadow: 0 0 30px rgba(0, 255, 255, 0.2);
+      display: inline-block;
+      min-width: 300px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Quantum GitHub Essence</h1>
+  <div class="capsule" id="capsuleBox">Loading capsule...</div>
+  <script>
+    fetch('output/capsule.json')
+      .then(res => res.json())
+      .then(data => {
+        const div = document.getElementById('capsuleBox');
+        div.innerHTML = \`
+          <strong>Theme:</strong> \${data.quantum_theme}<br>
+          <strong>Name:</strong> \${data.data.name}<br>
+          <strong>Repos:</strong> \${data.data.repos}<br>
+          <strong>Followers:</strong> \${data.data.followers}<br>
+          <em>Capsule ID: \${data.id}</em>
+        \`;
+      });
+  </script>
+</body>
+</html>

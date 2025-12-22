@@ -1,0 +1,245 @@
+<!--
+ -----------------------------------------------------------------------------
+ @author      Ashraf Morningstar
+ @github      https://github.com/AshrafMorningstar
+ @repository  Project Graveyard - The Ultimate Archive
+ @quote       "Code that defines the future. Designed to inspire."
+ -----------------------------------------------------------------------------
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ashraf Morningstar - Music for Coders</title>
+    <meta name="description" content="Premium music streaming interface designed for developers to find their flow.">
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Icons (Phonor or similar SVG icons would be best, using inline SVGs for zero-dependency) -->
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="logo">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" class="logo-icon">
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.59 14.42c-.2.3-.58.38-.88.2-2.42-1.48-5.46-1.81-9.05-.99-.34.07-.68-.15-.76-.49-.07-.34.15-.68.49-.76 4.02-.91 7.42-.53 10.2 1.16.3.18.38.56.2.88zm1.26-2.8c-.25.38-.76.49-1.13.25-2.83-1.74-7.14-2.25-10.48-1.23-.44.13-.91-.12-1.04-.56-.13-.44.12-.91.56-1.04 3.91-1.2 8.84-.63 12.1 1.37.38.23.49.74.24 1.12zm.1-2.92c-3.39-2.01-8.99-2.2-12.24-1.2-.55.17-1.15-.14-1.32-.69-.17-.55.14-1.15.69-1.32 3.82-1.17 10.03-.93 13.97 1.41.51.3.67.97.37 1.48-.3.5-1.03.65-1.53.35z" fill="currentColor"/>
+                </svg>
+                <span>Ashraf Morningstar</span>
+            </div>
+            
+            <nav class="main-nav">
+                <ul>
+                    <li class="active"><a href="#" id="nav-home">
+                        <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
+                        Home
+                    </a></li>
+                    <li><a href="#" id="nav-search">
+                        <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+                        Search
+                    </a></li>
+                    <li><a href="https://github.com/AshrafMorningstar" target="_blank" id="nav-github">
+                        <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                        Github Profile
+                    </a></li>
+                    <li><a href="#" id="nav-library">
+                        <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M3 13h2v-2H3v2zm0 4h2v-2H3v2zm0-8h2V7H3v2zm4 4h14v-2H7v2zm0 4h14v-2H7v2zM7 7v2h14V7H7z"/></svg>
+                        Your Library
+                    </a></li>
+                </ul>
+            </nav>
+
+            <div class="playlists">
+                <div class="playlist-create">
+                    <button class="create-btn">
+                        <span class="plus-icon">+</span> Create Playlist
+                    </button>
+                    <button class="liked-btn">
+                        <span class="heart-icon">♥</span> Liked Songs
+                    </button>
+                </div>
+                <div class="playlist-scroll">
+                    <ul>
+                        <li><a href="#">Debugging Session</a></li>
+                        <li><a href="#">Deep Work Flow</a></li>
+                        <li><a href="#">Coffee & Code</a></li>
+                        <li><a href="#">Late Night Commits</a></li>
+                        <li><a href="#">Synthwave for coding</a></li>
+                        <li><a href="#">Lo-Fi Chill</a></li>
+                        <li><a href="#">High Energy Release</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="install-app-cta">
+                <a href="https://github.com/AshrafMorningstar" target="_blank">Created by Ashraf</a>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="top-bar" id="top-bar">
+                <div class="nav-buttons">
+                    <button class="circle-btn" disabled>&lt;</button>
+                    <button class="circle-btn" disabled>&gt;</button>
+                </div>
+                <div class="user-menu">
+                    <button class="upgrade-btn" onclick="window.open('https://github.com/AshrafMorningstar', '_blank')">View GitHub</button>
+                    <button class="profile-btn">
+                        <img src="https://ui-avatars.com/api/?name=Ashraf+Morningstar&background=random" alt="User">
+                        <span>Ashraf Morningstar</span>
+                    </button>
+                </div>
+            </header>
+
+            <div class="content-scroll">
+                <!-- Hero Selection (Greeting) -->
+                <section class="section-hero">
+                    <div class="greeting-container">
+                        <h1 id="greeting">Good evening</h1>
+                        <div class="hero-grid">
+                            <!-- Cards will be injected by JS or hardcoded -->
+                            <div class="mini-card">
+                                <img src="assets/images/album_cover.png" alt="Coding Flow">
+                                <span>Coding Flow</span>
+                                <button class="play-hover-btn">▶</button>
+                            </div>
+                            <div class="mini-card">
+                                <div class="card-img-placeholder gradient-1">♥</div>
+                                <span>Liked Songs</span>
+                                <button class="play-hover-btn">▶</button>
+                            </div>
+                            <div class="mini-card">
+                                <div class="card-img-placeholder gradient-2">#</div>
+                                <span>Debugging Session</span>
+                                <button class="play-hover-btn">▶</button>
+                            </div>
+                             <div class="mini-card">
+                                <div class="card-img-placeholder gradient-3">⚡</div>
+                                <span>High Voltage</span>
+                                <button class="play-hover-btn">▶</button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="section">
+                    <div class="section-header">
+                        <h2>Made for Devs</h2>
+                        <a href="#">Show all</a>
+                    </div>
+                    <div class="cards-scroller">
+                        <div class="card">
+                            <img src="assets/images/album_cover.png" alt="Card Art">
+                            <div class="card-info">
+                                <h3>Coding Flow</h3>
+                                <p>Deep focus music for complex algorithms.</p>
+                            </div>
+                            <button class="play-btn-large">▶</button>
+                        </div>
+                        <div class="card">
+                            <div class="card-img-placeholder gradient-4"></div>
+                            <div class="card-info">
+                                <h3>Synthwave Saga</h3>
+                                <p>Retro futuristic beats to hack to.</p>
+                            </div>
+                            <button class="play-btn-large">▶</button>
+                        </div>
+                        <div class="card">
+                            <div class="card-img-placeholder gradient-5"></div>
+                            <div class="card-info">
+                                <h3>Lo-Fi Chill</h3>
+                                <p>Relaxing beats for bug fixing.</p>
+                            </div>
+                            <button class="play-btn-large">▶</button>
+                        </div>
+                        <div class="card">
+                            <div class="card-img-placeholder gradient-6"></div>
+                            <div class="card-info">
+                                <h3>Metal Focus</h3>
+                                <p>Aggressive riffs for deadline crunches.</p>
+                            </div>
+                            <button class="play-btn-large">▶</button>
+                        </div>
+                    </div>
+                </section>
+
+                 <section class="section">
+                    <div class="section-header">
+                        <h2>Recently Played</h2>
+                    </div>
+                    <div class="track-list" id="track-list-container">
+                         <!-- Tracks injected via JS -->
+                    </div>
+                </section>
+                
+                <footer class="main-footer">
+                    <div class="footer-links">
+                        <div class="col">
+                            <h4>Company</h4>
+                            <a href="#">About</a>
+                            <a href="#">Jobs</a>
+                        </div>
+                        <div class="col">
+                            <h4>Communities</h4>
+                            <a href="#">For Developers</a>
+                            <a href="#">Brands</a>
+                        </div>
+                    </div>
+                    <div class="footer-bottom">
+                         &copy; 2024 Ashraf Morningstar. <a href="https://github.com/AshrafMorningstar" style="color: grey; text-decoration: none;">GitHub</a>
+                    </div>
+                </footer>
+            </div>
+        </main>
+
+        <!-- Player Control Bar -->
+        <footer class="player-bar">
+            <div class="now-playing">
+                <img src="assets/images/album_cover.png" alt="Cover" class="now-playing-cover">
+                <div class="track-info">
+                    <div class="track-name">Main Function</div>
+                    <div class="artist-name">System.out</div>
+                </div>
+                <button class="like-btn" aria-label="Like">♡</button>
+            </div>
+            
+            <div class="player-controls">
+                <div class="control-buttons">
+                    <button class="control-btn shuffle" aria-label="Shuffle">🔀</button>
+                    <button class="control-btn prev" aria-label="Previous">⏮</button>
+                    <button class="control-btn play-pause circle" aria-label="Play/Pause">▶</button>
+                    <button class="control-btn next" aria-label="Next">⏭</button>
+                    <button class="control-btn repeat" aria-label="Repeat">🔁</button>
+                </div>
+                <div class="playback-bar">
+                    <span class="curr-time">0:00</span>
+                    <div class="progress-bar-container">
+                        <div class="progress-bar">
+                            <div class="progress"></div>
+                        </div>
+                    </div>
+                    <span class="total-time">3:42</span>
+                </div>
+            </div>
+
+            <div class="volume-controls">
+                <button class="control-btn" aria-label="Mic">🎤</button>
+                <button class="control-btn" aria-label="Queue">≣</button>
+                <button class="control-btn" aria-label="Device">💻</button>
+                <div class="volume-bar-container">
+                    <button class="control-btn volume-icon" aria-label="Mute">🔊</button>
+                     <div class="volume-bar">
+                        <div class="volume-level"></div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <script src="js/app.js"></script>
+</body>
+</html>

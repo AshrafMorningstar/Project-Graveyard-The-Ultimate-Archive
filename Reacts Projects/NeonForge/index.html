@@ -1,0 +1,160 @@
+<!--
+ -----------------------------------------------------------------------------
+ @author      Ashraf Morningstar
+ @github      https://github.com/AshrafMorningstar
+ @repository  Project Graveyard - The Ultimate Archive
+ @quote       "Code that defines the future. Designed to inspire."
+ -----------------------------------------------------------------------------
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NeonForge - 3D Portfolio Builder | AshrafMorningstar</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="neon-container">
+      <!-- Animated Background -->
+      <div class="cyber-grid"></div>
+      <div class="neon-orbs"></div>
+
+      <!-- Navigation -->
+      <nav class="cyber-nav">
+        <div class="nav-brand">
+          <span class="neon-text">NEON</span
+          ><span class="forge-text">FORGE</span>
+        </div>
+        <div class="nav-controls">
+          <button class="cyber-btn" id="themeBtn">🎨 Theme</button>
+          <button class="cyber-btn" id="3dToggle">🎲 3D Mode</button>
+          <button class="cyber-btn" id="exportBtn">💾 Export</button>
+        </div>
+      </nav>
+
+      <!-- Hero Section -->
+      <section class="hero-3d">
+        <div class="hero-content">
+          <h1 class="glowing-title">
+            Build Your <span class="highlight">3D Portfolio</span>
+          </h1>
+          <p class="hero-desc">
+            Create stunning, interactive portfolios with cutting-edge 3D
+            technology
+          </p>
+          <div class="hero-actions">
+            <button class="primary-btn" id="startBtn">Start Creating</button>
+            <button class="secondary-btn" id="demoBtn">View Demo</button>
+          </div>
+        </div>
+        <div class="hero-visual" id="hero3D"></div>
+      </section>
+
+      <!-- Builder Interface -->
+      <section class="builder-section">
+        <div class="builder-sidebar">
+          <h3 class="sidebar-title">Components</h3>
+          <div class="component-grid">
+            <div class="component-card" data-type="header">
+              <div class="card-icon">📋</div>
+              <span>Header</span>
+            </div>
+            <div class="component-card" data-type="about">
+              <div class="card-icon">👤</div>
+              <span>About</span>
+            </div>
+            <div class="component-card" data-type="projects">
+              <div class="card-icon">💼</div>
+              <span>Projects</span>
+            </div>
+            <div class="component-card" data-type="skills">
+              <div class="card-icon">⚡</div>
+              <span>Skills</span>
+            </div>
+            <div class="component-card" data-type="contact">
+              <div class="card-icon">📧</div>
+              <span>Contact</span>
+            </div>
+            <div class="component-card" data-type="gallery">
+              <div class="card-icon">🖼️</div>
+              <span>Gallery</span>
+            </div>
+          </div>
+
+          <h3 class="sidebar-title">Styles</h3>
+          <div class="style-controls">
+            <div class="control-item">
+              <label>Primary Color</label>
+              <input type="color" id="primaryColor" value="#ff006e" />
+            </div>
+            <div class="control-item">
+              <label>Secondary Color</label>
+              <input type="color" id="secondaryColor" value="#8338ec" />
+            </div>
+            <div class="control-item">
+              <label>Glow Intensity</label>
+              <input
+                type="range"
+                id="glowIntensity"
+                min="0"
+                max="100"
+                value="50"
+              />
+            </div>
+            <div class="control-item">
+              <label>Animation Speed</label>
+              <input type="range" id="animSpeed" min="1" max="10" value="5" />
+            </div>
+          </div>
+        </div>
+
+        <div class="builder-canvas">
+          <div class="canvas-toolbar">
+            <button class="tool-btn" id="undoBtn">↶ Undo</button>
+            <button class="tool-btn" id="redoBtn">↷ Redo</button>
+            <button class="tool-btn" id="clearBtn">🗑️ Clear</button>
+            <button class="tool-btn" id="previewBtn">👁️ Preview</button>
+          </div>
+
+          <div class="canvas-area" id="canvasArea">
+            <div class="canvas-placeholder">
+              <div class="placeholder-icon">🎨</div>
+              <h3>Drag components here to start building</h3>
+              <p>Your portfolio will appear in real-time with 3D effects</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="builder-properties">
+          <h3 class="sidebar-title">Properties</h3>
+          <div class="properties-panel" id="propertiesPanel">
+            <p class="no-selection">Select a component to edit properties</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Preview Modal -->
+      <div class="preview-modal" id="previewModal">
+        <div class="modal-content">
+          <button class="close-modal" id="closeModal">✕</button>
+          <div class="preview-frame" id="previewFrame"></div>
+        </div>
+      </div>
+
+      <!-- Footer -->
+      <footer class="cyber-footer">
+        <p>
+          Powered by
+          <a href="https://github.com/AshrafMorningstar" target="_blank"
+            >AshrafMorningstar</a
+          >
+        </p>
+        <p class="build-time" id="buildTime"></p>
+      </footer>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>

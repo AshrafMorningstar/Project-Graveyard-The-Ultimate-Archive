@@ -1,0 +1,171 @@
+/*
+ * -----------------------------------------------------------------------------
+ * @author      Ashraf Morningstar
+ * @github      https://github.com/AshrafMorningstar
+ * @repository  Project Graveyard - The Ultimate Archive
+ * @quote       "Code that defines the future. Designed to inspire."
+ * -----------------------------------------------------------------------------
+*/
+
+/* Glassmorphism Design System */
+:root {
+    --glass-bg: rgba(255, 255, 255, 0.2);
+    --glass-border: rgba(255, 255, 255, 0.3);
+    --text-primary: #1f2937;
+    --text-secondary: #4b5563;
+    --accent: #6366f1;
+    --delete: #ef4444;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: 'Inter', sans-serif;
+    background: #0f172a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-x: hidden;
+    color: var(--text-primary);
+}
+
+/* Animated Background Blobs */
+.background-blobs {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.blob {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.6;
+    animation: move 10s infinite alternate;
+}
+
+.blob-1 { width: 400px; height: 400px; background: #4f46e5; top: -100px; left: -100px; }
+.blob-2 { width: 300px; height: 300px; background: #ec4899; bottom: -50px; right: -50px; animation-duration: 12s; }
+.blob-3 { width: 200px; height: 200px; background: #06b6d4; top: 50%; left: 50%; transform: translate(-50%, -50%); animation-duration: 8s; }
+
+@keyframes move {
+    from { transform: translate(0, 0) scale(1); }
+    to { transform: translate(20px, -20px) scale(1.1); }
+}
+
+/* Glass Main Container */
+.glass-container {
+    width: 90%;
+    max-width: 500px;
+    background: var(--glass-bg);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid var(--glass-border);
+    border-radius: 24px;
+    padding: 2rem;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+}
+
+header { margin-bottom: 2rem; }
+header h1 { font-size: 2rem; font-weight: 700; color: #fff; margin: 0; }
+header p { color: rgba(255,255,255,0.7); margin: 0.5rem 0 0 0; }
+
+/* Input Area */
+.input-area {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 1.5rem;
+}
+
+input {
+    flex: 1;
+    padding: 1rem;
+    border-radius: 12px;
+    border: none;
+    background: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(4px);
+    font-size: 1rem;
+    color: #000;
+    outline: none;
+    transition: 0.3s;
+}
+
+input:focus { background: rgba(255, 255, 255, 0.8); box-shadow: 0 0 15px rgba(99, 102, 241, 0.3); }
+
+button#add-btn {
+    background: var(--accent);
+    color: white;
+    border: none;
+    width: 50px;
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: 0.3s;
+}
+
+button#add-btn:hover { background: #4f46e5; transform: scale(1.05); }
+
+/* Task List */
+.task-list { list-style: none; padding: 0; margin: 0; max-height: 400px; overflow-y: auto; }
+
+.task-item {
+    background: rgba(255, 255, 255, 0.4);
+    margin-bottom: 0.8rem;
+    padding: 1rem;
+    border-radius: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: 0.3s;
+    cursor: pointer;
+    animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+.task-item:hover { background: rgba(255, 255, 255, 0.6); transform: translateX(5px); }
+
+.task-item.completed { opacity: 0.6; text-decoration: line-through; background: rgba(255, 255, 255, 0.2); }
+
+.delete-btn {
+    color: var(--delete);
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 1.1rem;
+    opacity: 0;
+    transition: 0.3s;
+}
+
+.task-item:hover .delete-btn { opacity: 1; }
+
+/* Status Bar */
+.status-bar {
+    margin-top: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: rgba(255,255,255,0.8);
+    font-size: 0.9rem;
+}
+
+#clear-completed {
+    background: transparent;
+    border: 1px solid rgba(255,255,255,0.3);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 0.8rem;
+}
+
+#clear-completed:hover { background: rgba(255,255,255,0.1); }
+
+footer {
+    position: fixed;
+    bottom: 10px;
+    text-align: center;
+    width: 100%;
+}
+footer a { color: rgba(255,255,255,0.6); text-decoration: none; }

@@ -1,0 +1,47 @@
+<!--
+ -----------------------------------------------------------------------------
+ @author      Ashraf Morningstar
+ @github      https://github.com/AshrafMorningstar
+ @repository  Project Graveyard - The Ultimate Archive
+ @quote       "Code that defines the future. Designed to inspire."
+ -----------------------------------------------------------------------------
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Code Generator | Ashraf Morningstar</title>
+    <meta name="description" content="Generate custom QR codes instantly. A premium web tool by Ashraf Morningstar.">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrious/4.0.2/qrious.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>QR Code Generator</h1>
+            <p>Paste your URL or text below</p>
+        </header>
+
+        <div class="input-group">
+            <input type="text" id="qr-text" placeholder="Enter text or URL">
+            <button id="generate-btn">Generate QR</button>
+        </div>
+
+        <div class="qr-code">
+            <canvas id="qr-code"></canvas>
+        </div>
+        
+        <div class="actions">
+             <button id="download-btn" style="display: none;">Download PNG</button>
+        </div>
+
+        <footer>
+            <p>Created by <a href="https://github.com/AshrafMorningstar">Ashraf Morningstar</a></p>
+        </footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

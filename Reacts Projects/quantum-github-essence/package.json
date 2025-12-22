@@ -1,0 +1,11 @@
+{
+  "name": "quantum-github-essence",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "node scripts/quantumCapsule.js"
+  },
+  "dependencies": {
+    "axios": "^1.6.0",
+    "fs-extra": "^11.1.1"
+  }
+}

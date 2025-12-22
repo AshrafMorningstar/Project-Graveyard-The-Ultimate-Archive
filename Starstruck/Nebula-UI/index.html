@@ -1,0 +1,130 @@
+<!--
+ -----------------------------------------------------------------------------
+ @author      Ashraf Morningstar
+ @github      https://github.com/AshrafMorningstar
+ @repository  Project Graveyard - The Ultimate Archive
+ @quote       "Code that defines the future. Designed to inspire."
+ -----------------------------------------------------------------------------
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nebula-UI | The Future of Design</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="background-globes">
+      <div class="globe globe-1"></div>
+      <div class="globe globe-2"></div>
+      <div class="globe globe-3"></div>
+    </div>
+
+    <header class="glass-header">
+      <div class="logo">Nebula<span class="highlight">UI</span></div>
+      <nav>
+        <a href="#home">Home</a>
+        <a href="#features">Features</a>
+        <a href="#about">About</a>
+        <a href="#contact" class="cta-button">Get Started</a>
+      </nav>
+    </header>
+
+    <main>
+      <section id="home" class="hero">
+        <div class="hero-content">
+          <h1>
+            Design Beyond <br />
+            <span class="gradient-text">Boundaries</span>
+          </h1>
+          <p>
+            Experience the next generation of user interface design.
+            Glassmorphism, neon accents, and fluid animations combined into one
+            powerful framework.
+          </p>
+          <div class="hero-buttons">
+            <button class="primary-btn">Explore Docs</button>
+            <button class="secondary-btn">View Components</button>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <div class="glass-card main-card">
+            <div class="card-header">
+              <div class="circle red"></div>
+              <div class="circle yellow"></div>
+              <div class="circle green"></div>
+            </div>
+            <div class="card-content">
+              <h3>Status: <span class="status-active">Active</span></h3>
+              <div class="graph-placeholder">
+                <div class="bar" style="height: 60%"></div>
+                <div class="bar" style="height: 80%"></div>
+                <div class="bar" style="height: 40%"></div>
+                <div class="bar" style="height: 90%"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="features" class="features">
+        <h2>Why Choose Nebula?</h2>
+        <div class="feature-grid">
+          <div class="glass-card feature-card">
+            <div class="icon">✨</div>
+            <h3>Modern Aesthetics</h3>
+            <p>
+              Built with the latest trends in web design, focusing on
+              glassmorphism and vibrancy.
+            </p>
+          </div>
+          <div class="glass-card feature-card">
+            <div class="icon">🚀</div>
+            <h3>Blazing Fast</h3>
+            <p>
+              Optimized for performance with minimal overhead and maximum
+              impact.
+            </p>
+          </div>
+          <div class="glass-card feature-card">
+            <div class="icon">📱</div>
+            <h3>Fully Responsive</h3>
+            <p>
+              Looks stunning on every device, from mobile phones to 4K desktops.
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="glass-footer">
+      <p>
+        &copy; 2020 Nebula-UI. Created by
+        <a href="https://github.com/AshrafMorningstar">Ashraf Morningstar</a>.
+      </p>
+    </footer>
+
+    <script>
+      // Simple intersection observer for fade-in animations
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+          }
+        });
+      });
+
+      document
+        .querySelectorAll(".glass-card")
+        .forEach((el) => observer.observe(el));
+    </script>
+  </body>
+</html>

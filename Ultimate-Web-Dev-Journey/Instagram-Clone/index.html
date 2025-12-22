@@ -1,0 +1,134 @@
+<!--
+ -----------------------------------------------------------------------------
+ @author      Ashraf Morningstar
+ @github      https://github.com/AshrafMorningstar
+ @repository  Project Graveyard - The Ultimate Archive
+ @quote       "Code that defines the future. Designed to inspire."
+ -----------------------------------------------------------------------------
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Instagram Clone</title>
+    <style>
+        /* Created by Ashraf Morningstar - https://github.com/AshrafMorningstar */
+        body { background-color: #fafafa; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; margin: 0; display: flex; flex-direction: column; align-items: center; }
+        nav { background-color: #fff; border-bottom: 1px solid #dbdbdb; width: 100%; display: flex; justify-content: center; padding: 0 20px; position: sticky; top: 0; z-index: 100; height: 60px; }
+        .nav-container { width: 100%; max-width: 975px; display: flex; justify-content: space-between; align-items: center; height: 100%; }
+        .logo { width: 103px; }
+        .search input { background: #fafafa; border: 1px solid #dbdbdb; border-radius: 3px; padding: 5px 10px; text-align: center; }
+        .icons i { font-size: 22px; margin-left: 20px; cursor: pointer; color: #262626; }
+        .icons img { width: 22px; height: 22px; border-radius: 50%; margin-left: 20px; cursor: pointer; object-fit: cover; }
+        main { display: flex; width: 100%; max-width: 935px; margin-top: 30px; }
+        .feed { width: 614px; margin-right: 28px; }
+        .stories { background: #fff; border: 1px solid #dbdbdb; border-radius: 3px; padding: 16px 0; margin-bottom: 24px; display: flex; overflow-x: auto; -ms-overflow-style: none; scrollbar-width: none; }
+        .stories::-webkit-scrollbar { display: none; }
+        .story { display: flex; flex-direction: column; align-items: center; margin: 0 10px; cursor: pointer; }
+        .story-img-container { width: 66px; height: 66px; border-radius: 50%; background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); padding: 2px; }
+        .story img { width: 100%; height: 100%; border-radius: 50%; border: 2px solid #fff; object-fit: cover; }
+        .story p { font-size: 12px; margin-top: 5px; color: #262626; width: 74px; text-align: center; text-overflow: ellipsis; overflow: hidden; white-space: nowrap; }
+        .post { background: #fff; border: 1px solid #dbdbdb; border-radius: 3px; margin-bottom: 60px; }
+        .post-header { display: flex; align-items: center; padding: 14px; }
+        .post-header img { width: 32px; height: 32px; border-radius: 50%; margin-right: 14px; object-fit: cover; }
+        .post-header h3 { font-size: 14px; margin: 0; color: #262626; }
+        .post-img { width: 100%; }
+        .post-actions { padding: 8px 16px; margin-top: 4px; }
+        .post-actions i { font-size: 24px; margin-right: 16px; cursor: pointer; }
+        .post-likes { padding: 0 16px; font-weight: bold; font-size: 14px; margin-bottom: 8px; }
+        .post-caption { padding: 0 16px; font-size: 14px; margin-bottom: 4px; }
+        .post-caption span { font-weight: bold; margin-right: 4px; }
+        .sidebar { width: 293px; position: fixed; right: calc((100% - 975px) / 2); top: 90px; }
+        .sidebar-profile { display: flex; align-items: center; margin-bottom: 20px; }
+        .sidebar-profile img { width: 56px; height: 56px; border-radius: 50%; margin-right: 16px; object-fit: cover; }
+        .sidebar-info h3 { font-size: 14px; margin: 0; color: #262626; }
+        .sidebar-info p { font-size: 14px; margin: 2px 0 0; color: #8e8e8e; }
+        @media (max-width: 1000px) { .sidebar { display: none; } .main { justify-content: center; } .feed { margin-right: 0; } }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Instagram_logo.svg/1024px-Instagram_logo.svg.png" alt="Instagram" class="logo">
+            <div class="search"><input type="text" placeholder="Search"></div>
+            <div class="icons">
+                <i class="fas fa-home"></i>
+                <i class="far fa-paper-plane"></i>
+                <i class="far fa-compass"></i>
+                <i class="far fa-heart"></i>
+                <img src="https://github.com/AshrafMorningstar.png" alt="Profile">
+            </div>
+        </div>
+    </nav>
+    <main>
+        <div class="feed">
+            <div class="stories">
+                <div class="story">
+                    <div class="story-img-container"><img src="https://github.com/AshrafMorningstar.png" alt="story"></div>
+                    <p>ashrafmorningstar</p>
+                </div>
+                 <div class="story">
+                    <div class="story-img-container"><img src="https://i.pravatar.cc/150?img=1" alt="story"></div>
+                    <p>jane_doe</p>
+                </div>
+                 <div class="story">
+                    <div class="story-img-container"><img src="https://i.pravatar.cc/150?img=2" alt="story"></div>
+                    <p>traveler_mike</p>
+                </div>
+                 <div class="story">
+                    <div class="story-img-container"><img src="https://i.pravatar.cc/150?img=3" alt="story"></div>
+                    <p>foodie_ann</p>
+                </div>
+                 <div class="story">
+                    <div class="story-img-container"><img src="https://i.pravatar.cc/150?img=4" alt="story"></div>
+                    <p>dev_life</p>
+                </div>
+            </div>
+
+            <div class="post">
+                <div class="post-header">
+                    <img src="https://github.com/AshrafMorningstar.png" alt="Profile">
+                    <h3>ashrafmorningstar</h3>
+                </div>
+                <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-1.2.1&auto=format&fit=crop&w=1352&q=80" alt="Post" class="post-img">
+                <div class="post-actions">
+                    <i class="far fa-heart"></i>
+                    <i class="far fa-comment"></i>
+                    <i class="far fa-paper-plane"></i>
+                    <i class="far fa-bookmark" style="float: right; margin-right: 0;"></i>
+                </div>
+                <div class="post-likes">1,234 likes</div>
+                <div class="post-caption"><span>ashrafmorningstar</span> Coding my dreams into reality! 💻✨ #webdev #coding #setup</div>
+            </div>
+
+             <div class="post">
+                <div class="post-header">
+                    <img src="https://i.pravatar.cc/150?img=1" alt="Profile">
+                    <h3>jane_doe</h3>
+                </div>
+                <img src="https://images.unsplash.com/photo-1470252649378-9c297424ddbc?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Post" class="post-img">
+                <div class="post-actions">
+                    <i class="far fa-heart"></i>
+                    <i class="far fa-comment"></i>
+                    <i class="far fa-paper-plane"></i>
+                    <i class="far fa-bookmark" style="float: right; margin-right: 0;"></i>
+                </div>
+                <div class="post-likes">856 likes</div>
+                <div class="post-caption"><span>jane_doe</span> Beautiful morning view! 🌄</div>
+            </div>
+        </div>
+        <div class="sidebar">
+            <div class="sidebar-profile">
+                <img src="https://github.com/AshrafMorningstar.png" alt="Profile">
+                <div class="sidebar-info">
+                    <h3>ashrafmorningstar</h3>
+                    <p>Ashraf Morningstar</p>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>

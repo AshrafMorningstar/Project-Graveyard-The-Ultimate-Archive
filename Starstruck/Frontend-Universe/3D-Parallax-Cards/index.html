@@ -1,0 +1,141 @@
+<!--
+ -----------------------------------------------------------------------------
+ @author      Ashraf Morningstar
+ @github      https://github.com/AshrafMorningstar
+ @repository  Project Graveyard - The Ultimate Archive
+ @quote       "Code that defines the future. Designed to inspire."
+ -----------------------------------------------------------------------------
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Parallax Cards</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: #1e1e2e;
+            perspective: 1000px;
+            overflow: hidden;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .container {
+            display: flex;
+            gap: 50px;
+        }
+
+        .card {
+            width: 300px;
+            height: 450px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            position: relative;
+            transform-style: preserve-3d;
+            transition: transform 0.1s;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+            cursor: pointer;
+        }
+
+        .content {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            right: 20px;
+            bottom: 20px;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 15px;
+            transform: translateZ(50px);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            text-align: center;
+            color: #fff;
+            pointer-events: none;
+        }
+
+        .card:hover .content {
+            background: rgba(0, 0, 0, 0.4);
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            margin: 0 0 10px;
+            transform: translateZ(30px);
+        }
+
+        p {
+            font-size: 1rem;
+            color: #ccc;
+            transform: translateZ(20px);
+        }
+
+        .image-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 20px;
+            overflow: hidden;
+            z-index: -1;
+        }
+
+        .image-bg img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.6;
+        }
+
+        .card:nth-child(1) .image-bg { background: linear-gradient(135deg, #ff00cc, #333399); }
+        .card:nth-child(2) .image-bg { background: linear-gradient(135deg, #00dbde, #fc00ff); }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="card" id="card1">
+            <div class="image-bg"></div>
+            <div class="content">
+                <h2>Cyber</h2>
+                <p>Future is now</p>
+            </div>
+        </div>
+        <div class="card" id="card2">
+            <div class="image-bg"></div>
+            <div class="content">
+                <h2>Punk</h2>
+                <p>High tech, low life</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const cards = document.querySelectorAll('.card');
+
+        document.addEventListener('mousemove', (e) => {
+            const x = (window.innerWidth / 2 - e.pageX) / 20;
+            const y = (window.innerHeight / 2 - e.pageY) / 20;
+
+            cards.forEach(card => {
+                card.style.transform = `rotateY(${x}deg) rotateX(${y}deg)`;
+            });
+        });
+
+        document.addEventListener('mouseleave', () => {
+            cards.forEach(card => {
+                card.style.transform = `rotateY(0deg) rotateX(0deg)`;
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,109 @@
+<!--
+ -----------------------------------------------------------------------------
+ @author      Ashraf Morningstar
+ @github      https://github.com/AshrafMorningstar
+ @repository  Project Graveyard - The Ultimate Archive
+ @quote       "Code that defines the future. Designed to inspire."
+ -----------------------------------------------------------------------------
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cyberpunk Weather App | Ashraf Morningstar</title>
+    <meta name="description" content="Real-time weather with cyberpunk neon aesthetics. Created by Ashraf Morningstar - https://github.com/AshrafMorningstar">
+    <meta name="keywords" content="weather app, cyberpunk, neon UI, Ashraf Morningstar">
+    <meta name="author" content="Ashraf Morningstar">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="cyberpunk-grid"></div>
+    <div class="neon-lines"></div>
+    
+    <div class="container">
+        <div class="weather-card">
+            <div class="glitch-wrapper">
+                <h1 class="glitch" data-text="WEATHER.SYS">WEATHER.SYS</h1>
+            </div>
+
+            <div class="search-box">
+                <input type="text" id="city-input" placeholder="ENTER CITY NAME...">
+                <button id="search-btn" class="neon-btn">
+                    <span>SCAN</span>
+                </button>
+            </div>
+
+            <div id="weather-info" class="weather-info" style="display: none;">
+                <div class="location-display">
+                    <h2 id="city-name"></h2>
+                    <p id="date-time"></p>
+                </div>
+
+                <div class="main-weather">
+                    <div class="temperature-display">
+                        <span id="temperature" class="neon-text"></span>
+                        <span class="unit">°C</span>
+                    </div>
+                    <div class="weather-icon">
+                        <img id="weather-icon" src="" alt="Weather Icon">
+                    </div>
+                </div>
+
+                <div class="weather-description">
+                    <p id="description"></p>
+                </div>
+
+                <div class="weather-details">
+                    <div class="detail-item">
+                        <div class="detail-icon">💨</div>
+                        <div class="detail-info">
+                            <p class="detail-label">WIND SPEED</p>
+                            <p class="detail-value" id="wind-speed"></p>
+                        </div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="detail-icon">💧</div>
+                        <div class="detail-info">
+                            <p class="detail-label">HUMIDITY</p>
+                            <p class="detail-value" id="humidity"></p>
+                        </div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="detail-icon">🌡️</div>
+                        <div class="detail-info">
+                            <p class="detail-label">FEELS LIKE</p>
+                            <p class="detail-value" id="feels-like"></p>
+                        </div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="detail-icon">👁️</div>
+                        <div class="detail-info">
+                            <p class="detail-label">VISIBILITY</p>
+                            <p class="detail-value" id="visibility"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="loading" class="loading" style="display: none;">
+                <div class="scanner">
+                    <div class="scanner-line"></div>
+                </div>
+                <p>SCANNING ATMOSPHERE...</p>
+            </div>
+
+            <div id="error" class="error" style="display: none;">
+                <p>⚠️ LOCATION NOT FOUND</p>
+            </div>
+
+            <footer>
+                <p>CREATED BY <a href="https://github.com/AshrafMorningstar" target="_blank">ASHRAF MORNINGSTAR</a></p>
+            </footer>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

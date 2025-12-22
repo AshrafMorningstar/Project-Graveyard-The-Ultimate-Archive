@@ -1,0 +1,81 @@
+<!--
+ -----------------------------------------------------------------------------
+ @author      Ashraf Morningstar
+ @github      https://github.com/AshrafMorningstar
+ @repository  Project Graveyard - The Ultimate Archive
+ @quote       "Code that defines the future. Designed to inspire."
+ -----------------------------------------------------------------------------
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Notes App | Ultimate Web Dev Journey</title>
+    <style>
+        /* Created by Ashraf Morningstar - https://github.com/AshrafMorningstar */
+        body { background-color: #7bdaf3; font-family: 'Poppins', sans-serif; display: flex; flex-wrap: wrap; margin: 0; padding-top: 3rem; }
+        .add { position: fixed; top: 1rem; right: 1rem; background-color: #9ec862; color: #fff; border: none; border-radius: 3px; padding: 0.5rem 1rem; cursor: pointer; font-size: 1rem; box-shadow: 0 4px 5px rgba(0,0,0,0.2); z-index: 100; }
+        .note { background-color: #fff; box-shadow: 0 0 10px 4px rgba(0,0,0,0.1); margin: 30px 20px; height: 400px; width: 400px; overflow-y: scroll; border-radius: 5px; }
+        .tools { background-color: #9ec862; display: flex; justify-content: flex-end; padding: 0.5rem; }
+        .tools button { background-color: transparent; border: none; color: #fff; cursor: pointer; font-size: 1rem; margin-left: 0.5rem; }
+        .main { padding: 20px; }
+        .hidden { display: none; }
+        textarea { width: 100%; height: 100%; border: none; padding: 20px; font-size: 1.2rem; font-family: inherit; outline: none; resize: none;  }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+</head>
+<body>
+    <button class="add" id="add"><i class="fas fa-plus"></i> Add Note</button>
+    <script>
+        // Created by Ashraf Morningstar - https://github.com/AshrafMorningstar
+        const addBtn = document.getElementById('add');
+        const notes = JSON.parse(localStorage.getItem('notes'));
+
+        if(notes) { notes.forEach(note => addNewNote(note)); }
+
+        addBtn.addEventListener('click', () => addNewNote());
+
+        function addNewNote(text = '') {
+            const note = document.createElement('div');
+            note.classList.add('note');
+            note.innerHTML = `
+                <div class="tools">
+                    <button class="edit"><i class="fas fa-edit"></i></button>
+                    <button class="delete"><i class="fas fa-trash-alt"></i></button>
+                </div>
+                <div class="main ${text ? "" : "hidden"}"></div>
+                <textarea class="${text ? "hidden" : ""}"></textarea>
+            `;
+
+            const editBtn = note.querySelector('.edit');
+            const deleteBtn = note.querySelector('.delete');
+            const main = note.querySelector('.main');
+            const textArea = note.querySelector('textarea');
+
+            textArea.value = text;
+            main.innerHTML = marked(text);
+
+            deleteBtn.addEventListener('click', () => { note.remove(); updateLS(); });
+            editBtn.addEventListener('click', () => { main.classList.toggle('hidden'); textArea.classList.toggle('hidden'); });
+
+            textArea.addEventListener('input', (e) => {
+                const { value } = e.target;
+                main.innerHTML = marked(value);
+                updateLS();
+            });
+
+            document.body.appendChild(note);
+        }
+
+        function updateLS() {
+            const notesText = document.querySelectorAll('textarea');
+            const notes = [];
+            notesText.forEach(note => notes.push(note.value));
+            localStorage.setItem('notes', JSON.stringify(notes));
+        }
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/1.2.9/marked.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,345 @@
+/*
+ * -----------------------------------------------------------------------------
+ * @author      Ashraf Morningstar
+ * @github      https://github.com/AshrafMorningstar
+ * @repository  Project Graveyard - The Ultimate Archive
+ * @quote       "Code that defines the future. Designed to inspire."
+ * -----------------------------------------------------------------------------
+*/
+
+/**
+ * ChronoCard - Time-Aware Digital Identity Card
+ * Author: Ashraf Morningstar
+ * GitHub: https://github.com/AshrafMorningstar
+ */
+
+/* CSS Variables for Dynamic Theming */
+:root {
+    /* Morning Theme (5:00 - 11:59) */
+    --morning-bg: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+    --morning-text: #2c3e50;
+    --morning-accent: #ff6b6b;
+    
+    /* Afternoon Theme (12:00 - 16:59) */
+    --afternoon-bg: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+    --afternoon-text: #34495e;
+    --afternoon-accent: #3498db;
+    
+    /* Evening Theme (17:00 - 20:59) */
+    --evening-bg: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+    --evening-text: #2c3e50;
+    --evening-accent: #e74c3c;
+    
+    /* Night Theme (21:00 - 4:59) */
+    --night-bg: linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%);
+    --night-text: #ecf0f1;
+    --night-accent: #9b59b6;
+    
+    /* Weekday Accent Colors */
+    --monday: #3498db;
+    --tuesday: #e74c3c;
+    --wednesday: #2ecc71;
+    --thursday: #f39c12;
+    --friday: #9b59b6;
+    --saturday: #1abc9c;
+    --sunday: #e67e22;
+    
+    /* Active Theme Variables */
+    --current-bg: var(--morning-bg);
+    --current-text: var(--morning-text);
+    --current-accent: var(--morning-accent);
+    --current-font-weight: 300;
+}
+
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--current-bg);
+    transition: background 1s ease-in-out;
+    overflow: hidden;
+}
+
+.container {
+    perspective: 1000px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+/* ChronoCard Styles */
+.chronocard {
+    width: 420px;
+    aspect-ratio: 1.586 / 1;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-radius: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 
+        0 8px 32px rgba(0, 0, 0, 0.1),
+        0 2px 8px rgba(0, 0, 0, 0.05),
+        inset 0 1px 0 rgba(255, 255, 255, 0.4);
+    padding: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    animation: cardFloat 6s ease-in-out infinite;
+}
+
+@keyframes cardFloat {
+    0%, 100% {
+        transform: translateY(0) rotateX(0deg);
+    }
+    50% {
+        transform: translateY(-10px) rotateX(2deg);
+    }
+}
+
+.chronocard::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+        45deg,
+        transparent 30%,
+        rgba(255, 255, 255, 0.1) 50%,
+        transparent 70%
+    );
+    animation: shimmer 8s linear infinite;
+}
+
+@keyframes shimmer {
+    0% {
+        transform: translateX(-100%) translateY(-100%) rotate(45deg);
+    }
+    100% {
+        transform: translateX(100%) translateY(100%) rotate(45deg);
+    }
+}
+
+/* Card Header */
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+    position: relative;
+    z-index: 1;
+}
+
+.time-display {
+    font-size: 1.5rem;
+    font-weight: var(--current-font-weight);
+    color: var(--current-text);
+    letter-spacing: 0.05em;
+    transition: all 0.3s ease;
+    animation: timeBreath 3s ease-in-out infinite;
+}
+
+@keyframes timeBreath {
+    0%, 100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0.9;
+        transform: scale(1.02);
+    }
+}
+
+.day-indicator {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--current-accent);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    padding: 0.5rem 1rem;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+    backdrop-filter: blur(10px);
+    transition: all 0.5s ease;
+}
+
+/* Card Body */
+.card-body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.75rem;
+    position: relative;
+    z-index: 1;
+}
+
+.name {
+    font-size: 2.25rem;
+    font-weight: var(--current-font-weight);
+    color: var(--current-text);
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+    transition: all 0.6s ease;
+    margin-bottom: 0.25rem;
+}
+
+.role {
+    font-size: 1.125rem;
+    font-weight: 400;
+    color: var(--current-text);
+    opacity: 0.8;
+    letter-spacing: 0.02em;
+    transition: all 0.6s ease;
+}
+
+.greeting {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--current-accent);
+    margin-top: 1rem;
+    opacity: 0;
+    animation: greetingFade 1s ease-in-out forwards;
+    transition: all 0.8s ease;
+}
+
+@keyframes greetingFade {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Card Footer */
+.card-footer {
+    position: relative;
+    z-index: 1;
+}
+
+.accent-line {
+    width: 60px;
+    height: 4px;
+    background: var(--current-accent);
+    border-radius: 2px;
+    margin-bottom: 1rem;
+    transition: all 0.6s ease;
+    animation: lineGrow 2s ease-in-out infinite;
+}
+
+@keyframes lineGrow {
+    0%, 100% {
+        width: 60px;
+    }
+    50% {
+        width: 80px;
+    }
+}
+
+.tagline {
+    font-size: 0.875rem;
+    font-weight: 400;
+    color: var(--current-text);
+    opacity: 0.7;
+    letter-spacing: 0.05em;
+    transition: all 0.6s ease;
+}
+
+/* Attribution */
+.attribution {
+    text-align: center;
+    color: var(--current-text);
+    opacity: 0.8;
+    font-size: 0.875rem;
+    transition: all 0.6s ease;
+}
+
+.attribution p {
+    margin-bottom: 0.25rem;
+}
+
+.attribution a {
+    color: var(--current-accent);
+    text-decoration: none;
+    font-weight: 500;
+    transition: opacity 0.3s ease;
+}
+
+.attribution a:hover {
+    opacity: 0.7;
+}
+
+/* Theme Classes */
+body.morning {
+    --current-bg: var(--morning-bg);
+    --current-text: var(--morning-text);
+    --current-accent: var(--morning-accent);
+    --current-font-weight: 300;
+}
+
+body.afternoon {
+    --current-bg: var(--afternoon-bg);
+    --current-text: var(--afternoon-text);
+    --current-accent: var(--afternoon-accent);
+    --current-font-weight: 400;
+}
+
+body.evening {
+    --current-bg: var(--evening-bg);
+    --current-text: var(--evening-text);
+    --current-accent: var(--evening-accent);
+    --current-font-weight: 500;
+}
+
+body.night {
+    --current-bg: var(--night-bg);
+    --current-text: var(--night-text);
+    --current-accent: var(--night-accent);
+    --current-font-weight: 600;
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+    .chronocard {
+        width: 90vw;
+        padding: 2rem;
+    }
+    
+    .name {
+        font-size: 1.75rem;
+    }
+    
+    .greeting {
+        font-size: 1.25rem;
+    }
+    
+    .time-display {
+        font-size: 1.25rem;
+    }
+}
+
+/* Accessibility - Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}

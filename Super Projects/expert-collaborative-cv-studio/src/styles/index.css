@@ -1,0 +1,118 @@
+/*
+ * -----------------------------------------------------------------------------
+ * @author      Ashraf Morningstar
+ * @github      https://github.com/AshrafMorningstar
+ * @repository  Project Graveyard - The Ultimate Archive
+ * @quote       "Code that defines the future. Designed to inspire."
+ * -----------------------------------------------------------------------------
+*/
+
+:root {
+  --bg-primary: #ffffff;
+  --bg-sidebar: #f8fafc;
+  --text-primary: #0f172a;
+  --text-secondary: #64748b;
+  --accent: #2563eb;
+  --border: #e2e8f0;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Inter', sans-serif;
+  color: var(--text-primary);
+  background: var(--bg-primary);
+  height: 100vh;
+}
+
+#root { height: 100%; }
+
+.app-container {
+  display: grid;
+  grid-template-columns: 350px 1fr;
+  height: 100%;
+}
+
+.sidebar {
+  background: var(--bg-sidebar);
+  border-right: 1px solid var(--border);
+  padding: 24px;
+  overflow-y: auto;
+}
+
+.editor-main {
+  padding: 40px;
+  background: #f1f5f9;
+  overflow-y: auto;
+  display: flex;
+  justify-content: center;
+}
+
+.cv-page {
+  width: 210mm;
+  min-height: 297mm;
+  background: white;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  padding: 40px;
+  position: relative;
+}
+
+h1.nav-title {
+  font-size: 20px;
+  margin-bottom: 24px;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.form-section { margin-bottom: 24px; }
+.form-section h3 { font-size: 14px; text-transform: uppercase; color: var(--text-secondary); margin-bottom: 12px; }
+
+input, textarea {
+  width: 100%;
+  padding: 8px 12px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  margin-bottom: 12px;
+  font-family: inherit;
+}
+
+input:focus, textarea:focus {
+  outline: 2px solid var(--accent);
+  border-color: transparent;
+}
+
+/* CV Preview Styles */
+.cv-header { border-bottom: 2px solid var(--text-primary); padding-bottom: 20px; margin-bottom: 20px; }
+.cv-name { font-size: 32px; font-weight: 800; text-transform: uppercase; }
+.cv-role { font-size: 18px; color: var(--text-secondary); margin-top: 4px; }
+.cv-contact { margin-top: 12px; font-size: 14px; color: var(--text-secondary); display: flex; gap: 16px; }
+
+.cv-section { margin-bottom: 24px; }
+.cv-section-title { font-size: 16px; font-weight: 700; text-transform: uppercase; border-bottom: 1px solid var(--border); padding-bottom: 4px; margin-bottom: 12px; }
+.cv-item { margin-bottom: 12px; }
+.cv-item-header { display: flex; justify-content: space-between; font-weight: 600; }
+.cv-item-date { color: var(--text-secondary); font-weight: 400; font-size: 14px; }
+
+.status-bar {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: var(--text-primary);
+  color: white;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.indicator { width: 8px; height: 8px; background: #22c55e; border-radius: 50%; }
+
+@media print {
+  body { background: white; }
+  .sidebar, .status-bar { display: none; }
+  .editor-main { padding: 0; background: white; }
+  .cv-page { box-shadow: none; padding: 0; width: 100%; }
+  .app-container { display: block; }
+}

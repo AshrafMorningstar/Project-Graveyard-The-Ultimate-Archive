@@ -1,0 +1,128 @@
+<!--
+ -----------------------------------------------------------------------------
+ @author      Ashraf Morningstar
+ @github      https://github.com/AshrafMorningstar
+ @repository  Project Graveyard - The Ultimate Archive
+ @quote       "Code that defines the future. Designed to inspire."
+ -----------------------------------------------------------------------------
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Premium neomorphic calculator with soft UI design and scientific functions">
+    <meta name="keywords" content="neomorphic calculator, soft UI, scientific calculator, Ashraf Morningstar">
+    <meta name="author" content="Ashraf Morningstar">
+    <title>Neomorphic Calculator Pro | Premium Soft UI Design</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Created by: Ashraf Morningstar -->
+    <!-- GitHub: https://github.com/AshrafMorningstar -->
+    
+    <div class="container">
+        <div class="calculator">
+            <div class="theme-toggle">
+                <button class="theme-btn" id="themeToggle">
+                    <span class="icon">🌙</span>
+                </button>
+            </div>
+            
+            <div class="display-container">
+                <div class="display-secondary" id="secondaryDisplay">0</div>
+                <div class="display-primary" id="primaryDisplay">0</div>
+            </div>
+            
+            <div class="mode-switch">
+                <button class="mode-btn active" data-mode="basic">Basic</button>
+                <button class="mode-btn" data-mode="scientific">Scientific</button>
+            </div>
+            
+            <div class="buttons-grid" id="basicButtons">
+                <button class="btn function" data-action="clear">AC</button>
+                <button class="btn function" data-action="delete">DEL</button>
+                <button class="btn function" data-action="percent">%</button>
+                <button class="btn operator" data-action="divide">÷</button>
+                
+                <button class="btn number" data-number="7">7</button>
+                <button class="btn number" data-number="8">8</button>
+                <button class="btn number" data-number="9">9</button>
+                <button class="btn operator" data-action="multiply">×</button>
+                
+                <button class="btn number" data-number="4">4</button>
+                <button class="btn number" data-number="5">5</button>
+                <button class="btn number" data-number="6">6</button>
+                <button class="btn operator" data-action="subtract">−</button>
+                
+                <button class="btn number" data-number="1">1</button>
+                <button class="btn number" data-number="2">2</button>
+                <button class="btn number" data-number="3">3</button>
+                <button class="btn operator" data-action="add">+</button>
+                
+                <button class="btn number zero" data-number="0">0</button>
+                <button class="btn number" data-number=".">.</button>
+                <button class="btn equals" data-action="equals">=</button>
+            </div>
+            
+            <div class="buttons-grid scientific hidden" id="scientificButtons">
+                <button class="btn function" data-action="sin">sin</button>
+                <button class="btn function" data-action="cos">cos</button>
+                <button class="btn function" data-action="tan">tan</button>
+                <button class="btn function" data-action="log">log</button>
+                
+                <button class="btn function" data-action="sqrt">√</button>
+                <button class="btn function" data-action="power">x²</button>
+                <button class="btn function" data-action="exp">eˣ</button>
+                <button class="btn function" data-action="ln">ln</button>
+                
+                <button class="btn function" data-action="pi">π</button>
+                <button class="btn function" data-action="e">e</button>
+                <button class="btn function" data-action="factorial">x!</button>
+                <button class="btn function" data-action="inverse">1/x</button>
+                
+                <button class="btn number" data-number="7">7</button>
+                <button class="btn number" data-number="8">8</button>
+                <button class="btn number" data-number="9">9</button>
+                <button class="btn operator" data-action="divide">÷</button>
+                
+                <button class="btn number" data-number="4">4</button>
+                <button class="btn number" data-number="5">5</button>
+                <button class="btn number" data-number="6">6</button>
+                <button class="btn operator" data-action="multiply">×</button>
+                
+                <button class="btn number" data-number="1">1</button>
+                <button class="btn number" data-number="2">2</button>
+                <button class="btn number" data-number="3">3</button>
+                <button class="btn operator" data-action="subtract">−</button>
+                
+                <button class="btn function" data-action="clear">AC</button>
+                <button class="btn number" data-number="0">0</button>
+                <button class="btn number" data-number=".">.</button>
+                <button class="btn operator" data-action="add">+</button>
+                
+                <button class="btn function" data-action="delete">DEL</button>
+                <button class="btn function" data-action="percent">%</button>
+                <button class="btn equals span-2" data-action="equals">=</button>
+            </div>
+            
+            <div class="history-panel" id="historyPanel">
+                <div class="history-header">
+                    <h3>History</h3>
+                    <button class="clear-history" id="clearHistory">Clear</button>
+                </div>
+                <div class="history-list" id="historyList">
+                    <p class="no-history">No calculations yet</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>Created by <a href="https://github.com/AshrafMorningstar" target="_blank">Ashraf Morningstar</a></p>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

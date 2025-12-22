@@ -1,0 +1,17 @@
+/*
+ * -----------------------------------------------------------------------------
+ * @author      Ashraf Morningstar
+ * @github      https://github.com/AshrafMorningstar
+ * @repository  Project Graveyard - The Ultimate Archive
+ * @quote       "Code that defines the future. Designed to inspire."
+ * -----------------------------------------------------------------------------
+*/
+
+/* 
+   Designed & Enhanced by Ashraf Morningstar
+   Github: https://github.com/AshrafMorningstar
+*/
+#ulTasks li.done {
+    color: #6c757d;
+    text-decoration: line-through;
+  }

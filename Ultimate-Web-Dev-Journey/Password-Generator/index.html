@@ -1,0 +1,116 @@
+<!--
+ -----------------------------------------------------------------------------
+ @author      Ashraf Morningstar
+ @github      https://github.com/AshrafMorningstar
+ @repository  Project Graveyard - The Ultimate Archive
+ @quote       "Code that defines the future. Designed to inspire."
+ -----------------------------------------------------------------------------
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Password Generator | Ultimate Web Dev Journey</title>
+    <style>
+        /* Created by Ashraf Morningstar - https://github.com/AshrafMorningstar */
+        body { background: #3b5998; color: #fff; display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh; font-family: sans-serif; margin: 0; }
+        .container { background: #242e42; padding: 20px; width: 350px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.3); }
+        h2 { text-align: center; margin: 0 0 20px; }
+        .result-container { background-color: rgba(0,0,0,0.4); display: flex; justify-content: flex-start; align-items: center; position: relative; font-size: 18px; letter-spacing: 1px; padding: 12px 10px; height: 50px; width: 100%; box-sizing: border-box; margin-bottom: 20px; }
+        .result-container span { word-wrap: break-word; max-width: calc(100% - 40px); }
+        .btn { border: none; background-color: #3b3b98; color: #fff; font-size: 16px; padding: 8px 12px; cursor: pointer; }
+        .btn-large { display: block; width: 100%; background-color: #3b3b98; color: #fff; border: none; padding: 10px; font-size: 18px; margin-top: 20px; cursor: pointer; }
+        .setting { display: flex; justify-content: space-between; align-items: center; margin: 15px 0; }
+        input[type="checkbox"] { transform: scale(1.5); }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Password Generator</h2>
+        <div class="result-container">
+            <span id="result"></span>
+            <button class="btn" id="clipboard">Copy</button>
+        </div>
+        <div class="settings">
+            <div class="setting">
+                <label>Password Length</label>
+                <input type="number" id="length" min="4" max="20" value="10" style="width: 50px;">
+            </div>
+            <div class="setting">
+                <label>Include Uppercase</label>
+                <input type="checkbox" id="uppercase" checked>
+            </div>
+            <div class="setting">
+                <label>Include Lowercase</label>
+                <input type="checkbox" id="lowercase" checked>
+            </div>
+            <div class="setting">
+                <label>Include Numbers</label>
+                <input type="checkbox" id="numbers" checked>
+            </div>
+            <div class="setting">
+                <label>Include Symbols</label>
+                <input type="checkbox" id="symbols" checked>
+            </div>
+        </div>
+        <button class="btn btn-large" id="generate">Generate Password</button>
+    </div>
+    <script>
+        // Created by Ashraf Morningstar - https://github.com/AshrafMorningstar
+        const resultEl = document.getElementById('result');
+        const lengthEl = document.getElementById('length');
+        const uppercaseEl = document.getElementById('uppercase');
+        const lowercaseEl = document.getElementById('lowercase');
+        const numbersEl = document.getElementById('numbers');
+        const symbolsEl = document.getElementById('symbols');
+        const generateBtn = document.getElementById('generate');
+        const clipboardBtn = document.getElementById('clipboard');
+
+        const randomFunc = {
+            lower: getRandomLower,
+            upper: getRandomUpper,
+            number: getRandomNumber,
+            symbol: getRandomSymbol
+        };
+
+        clipboardBtn.addEventListener('click', () => {
+            const password = resultEl.innerText;
+            if(!password) return;
+            navigator.clipboard.writeText(password);
+            alert('Password copied to clipboard!');
+        });
+
+        generateBtn.addEventListener('click', () => {
+            const length = +lengthEl.value;
+            const hasLower = lowercaseEl.checked;
+            const hasUpper = uppercaseEl.checked;
+            const hasNumber = numbersEl.checked;
+            const hasSymbol = symbolsEl.checked;
+            resultEl.innerText = generatePassword(hasLower, hasUpper, hasNumber, hasSymbol, length);
+        });
+
+        function generatePassword(lower, upper, number, symbol, length) {
+            let generatedPassword = '';
+            const typesCount = lower + upper + number + symbol;
+            const typesArr = [{lower}, {upper}, {number}, {symbol}].filter(item => Object.values(item)[0]);
+
+            if(typesCount === 0) return '';
+
+            for(let i = 0; i < length; i += typesCount) {
+                typesArr.forEach(type => {
+                    const funcName = Object.keys(type)[0];
+                    generatedPassword += randomFunc[funcName]();
+                });
+            }
+            return generatedPassword.slice(0, length);
+        }
+
+        function getRandomLower() { return String.fromCharCode(Math.floor(Math.random() * 26) + 97); }
+        function getRandomUpper() { return String.fromCharCode(Math.floor(Math.random() * 26) + 65); }
+        function getRandomNumber() { return String.fromCharCode(Math.floor(Math.random() * 10) + 48); }
+        function getRandomSymbol() { const symbols = '!@#$%^&*(){}[]=<>/,.'; return symbols[Math.floor(Math.random() * symbols.length)]; }
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>

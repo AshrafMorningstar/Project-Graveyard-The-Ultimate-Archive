@@ -1,0 +1,65 @@
+<!--
+ -----------------------------------------------------------------------------
+ @author      Ashraf Morningstar
+ @github      https://github.com/AshrafMorningstar
+ @repository  Project Graveyard - The Ultimate Archive
+ @quote       "Code that defines the future. Designed to inspire."
+ -----------------------------------------------------------------------------
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Windowed Web - Desktop Environment in Browser</title>
+    <meta name="description" content="A web-based desktop environment with draggable windows, focus management, and spatial memory.">
+    <link rel="stylesheet" href="css/desktop.css">
+    <link rel="stylesheet" href="css/windows.css">
+</head>
+<body>
+    <div class="desktop">
+        <!-- Desktop Background -->
+        <div class="desktop-background"></div>
+
+        <!-- Windows Container -->
+        <div id="windows-container" class="windows-container"></div>
+
+        <!-- Taskbar -->
+        <div class="taskbar">
+            <div class="taskbar-start">
+                <div class="logo">WindowedWeb</div>
+            </div>
+            
+            <div class="taskbar-center" id="taskbar-apps"></div>
+            
+            <div class="taskbar-end">
+                <div class="system-time" id="system-time"></div>
+            </div>
+        </div>
+
+        <!-- App Launcher -->
+        <div class="launcher">
+            <button class="launcher-btn" data-app="notes">
+                <span class="launcher-icon">📝</span>
+                <span class="launcher-label">Notes</span>
+            </button>
+            <button class="launcher-btn" data-app="calculator">
+                <span class="launcher-icon">🔢</span>
+                <span class="launcher-label">Calculator</span>
+            </button>
+            <button class="launcher-btn" data-app="terminal">
+                <span class="launcher-icon">⌨️</span>
+                <span class="launcher-label">Terminal</span>
+            </button>
+            <button class="launcher-btn" data-app="browser">
+                <span class="launcher-icon">🌐</span>
+                <span class="launcher-label">Browser</span>
+            </button>
+        </div>
+    </div>
+
+    <script src="js/window-manager.js"></script>
+    <script src="js/drag-engine.js"></script>
+</body>
+</html>

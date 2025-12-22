@@ -1,0 +1,27 @@
+/*
+ * -----------------------------------------------------------------------------
+ * @author      Ashraf Morningstar
+ * @github      https://github.com/AshrafMorningstar
+ * @repository  Project Graveyard - The Ultimate Archive
+ * @quote       "Code that defines the future. Designed to inspire."
+ * -----------------------------------------------------------------------------
+*/
+
+/* Created by Ashraf Morningstar */
+/* Theme: neumorphism */
+
+        :root { --bg: #e0e5ec; --shadow-light: #ffffff; --shadow-dark: #a3b1c6; --text: #4a4a4a; --primary: #4a90e2; }
+        body { background: var(--bg); color: var(--text); font-family: 'Nunito', sans-serif; display: flex; justify-content: center; align-items: center; min-height: 100vh; margin: 0; }
+        .container { background: var(--bg); padding: 3rem; border-radius: 40px; box-shadow: 12px 12px 24px var(--shadow-dark), -12px -12px 24px var(--shadow-light); text-align: center; max-width: 420px; width: 90%; }
+        h1 { color: var(--text); margin-bottom: 2.5rem; letter-spacing: 1px; }
+        input, select, textarea { width: 100%; padding: 18px; margin: 12px 0; border: none; border-radius: 50px; background: var(--bg); box-shadow: inset 6px 6px 12px var(--shadow-dark), inset -6px -6px 12px var(--shadow-light); color: var(--text); outline: none; box-sizing: border-box; text-align: left; padding-left: 30px; font-size: 1rem; transition: 0.3s; }
+        input:focus { box-shadow: inset 4px 4px 8px var(--shadow-dark), inset -4px -4px 8px var(--shadow-light), 0 0 5px var(--primary); }
+        textarea { border-radius: 20px; }
+        button { width: 100%; padding: 18px; margin: 20px 0; border: none; border-radius: 50px; background: var(--bg); box-shadow: 6px 6px 12px var(--shadow-dark), -6px -6px 12px var(--shadow-light); color: var(--primary); font-weight: 800; text-transform: uppercase; cursor: pointer; transition: 0.2s; font-size: 1.1rem; }
+        button:hover { transform: translateY(-2px); color: #333; }
+        button:active { box-shadow: inset 4px 4px 8px var(--shadow-dark), inset -4px -4px 8px var(--shadow-light); transform: translateY(0); }
+        .result { margin-top: 25px; font-weight: bold; color: var(--primary); font-size: 1.2rem; padding: 10px; border-radius: 20px; box-shadow: inset 3px 3px 6px var(--shadow-dark), inset -3px -3px 6px var(--shadow-light); }
+    
+
+/* CLASSROOM SCHEDULER Specific Styles */
+

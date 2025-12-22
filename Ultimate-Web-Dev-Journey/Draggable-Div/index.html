@@ -1,0 +1,63 @@
+<!--
+ -----------------------------------------------------------------------------
+ @author      Ashraf Morningstar
+ @github      https://github.com/AshrafMorningstar
+ @repository  Project Graveyard - The Ultimate Archive
+ @quote       "Code that defines the future. Designed to inspire."
+ -----------------------------------------------------------------------------
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Draggable Div | Ultimate Web Dev Journey</title>
+    <style>
+        /* Created by Ashraf Morningstar - https://github.com/AshrafMorningstar */
+        body { background-color: #333; display: flex; align-items: center; justify-content: center; height: 100vh; overflow: hidden; margin: 0; font-family: 'Arial', sans-serif; }
+        .wrapper { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); }
+        header { font-size: 20px; color: #fff; cursor: move; padding: 15px; border-bottom: 1px solid #ccc; background-color: #444; border-radius: 5px 5px 0 0; user-select: none; }
+        .content { background: #fff; padding: 25px; border-radius: 0 0 5px 5px; width: 300px; height: 200px; }
+        .draggable { position: absolute; z-index: 9; background-color: #f1f1f1; text-align: center; border: 1px solid #d3d3d3; box-shadow: 0 5px 15px rgba(0,0,0,0.3); }
+    </style>
+</head>
+<body>
+    <div id="drag-div" class="draggable">
+        <header>Drag me here</header>
+        <div class="content">
+            <p>I am a draggable window.</p>
+            <p>Move me anywhere!</p>
+        </div>
+    </div>
+    <script>
+        // Created by Ashraf Morningstar - https://github.com/AshrafMorningstar
+        const wrapper = document.querySelector(".wrapper");
+        const header = document.querySelector("header");
+        const dragDiv = document.getElementById("drag-div");
+
+        function onDrag({movementX, movementY}){
+            let getStyle = window.getComputedStyle(dragDiv);
+            let left = parseInt(getStyle.left);
+            let top = parseInt(getStyle.top);
+            
+            dragDiv.style.left = `${left + movementX}px`;
+            dragDiv.style.top = `${top + movementY}px`;
+        }
+
+        header.addEventListener("mousedown", () => {
+            header.classList.add("active");
+            header.addEventListener("mousemove", onDrag);
+        });
+
+        document.addEventListener("mouseup", () => {
+            header.classList.remove("active");
+            header.removeEventListener("mousemove", onDrag);
+        });
+        
+        // Center initial
+        dragDiv.style.left = (window.innerWidth / 2) - 175 + "px";
+        dragDiv.style.top = (window.innerHeight / 2) - 125 + "px";
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,15 @@
+/*
+ * -----------------------------------------------------------------------------
+ * @author      Ashraf Morningstar
+ * @github      https://github.com/AshrafMorningstar
+ * @repository  Project Graveyard - The Ultimate Archive
+ * @quote       "Code that defines the future. Designed to inspire."
+ * -----------------------------------------------------------------------------
+*/
+
+import { create } from 'zustand'
+
+export const useStore = create((set) => ({
+  user: null,
+  setUser: (user) => set({ user }),
+}))

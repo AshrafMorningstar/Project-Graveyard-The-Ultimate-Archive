@@ -1,0 +1,105 @@
+<!--
+ -----------------------------------------------------------------------------
+ @author      Ashraf Morningstar
+ @github      https://github.com/AshrafMorningstar
+ @repository  Project Graveyard - The Ultimate Archive
+ @quote       "Code that defines the future. Designed to inspire."
+ -----------------------------------------------------------------------------
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="SilentNav - Navigation without labels, using only visual language">
+    <title>SilentNav - Navigation Without Labels</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/nav.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="silent-nav" id="silentNav">
+        <button class="nav-symbol" data-section="grid" aria-label="Grid Section">
+            <svg viewBox="0 0 24 24" class="symbol-icon">
+                <rect x="3" y="3" width="7" height="7" rx="1"/>
+                <rect x="14" y="3" width="7" height="7" rx="1"/>
+                <rect x="3" y="14" width="7" height="7" rx="1"/>
+                <rect x="14" y="14" width="7" height="7" rx="1"/>
+            </svg>
+        </button>
+        <button class="nav-symbol" data-section="flow" aria-label="Flow Section">
+            <svg viewBox="0 0 24 24" class="symbol-icon">
+                <path d="M12 2L2 7L12 12L22 7L12 2Z"/>
+                <path d="M2 17L12 22L22 17"/>
+                <path d="M2 12L12 17L12 22"/>
+                <path d="M22 12L12 17"/>
+            </svg>
+        </button>
+        <button class="nav-symbol" data-section="minimal" aria-label="Minimal Section">
+            <svg viewBox="0 0 24 24" class="symbol-icon">
+                <circle cx="12" cy="12" r="10"/>
+                <circle cx="12" cy="12" r="3"/>
+            </svg>
+        </button>
+        <button class="nav-symbol" data-section="visual" aria-label="Visual Section">
+            <svg viewBox="0 0 24 24" class="symbol-icon">
+                <polygon points="12,2 2,22 22,22"/>
+            </svg>
+        </button>
+    </nav>
+
+    <!-- Content Sections -->
+    <main class="content-container" id="contentContainer">
+        <section class="content-section active" data-section="grid">
+            <div class="section-inner">
+                <h1>Structure</h1>
+                <div class="grid-demo">
+                    <div class="grid-item"></div>
+                    <div class="grid-item"></div>
+                    <div class="grid-item"></div>
+                    <div class="grid-item"></div>
+                </div>
+                <p>Organization through geometry</p>
+            </div>
+        </section>
+
+        <section class="content-section" data-section="flow">
+            <div class="section-inner">
+                <h1>Connection</h1>
+                <div class="flow-demo">
+                    <div class="flow-line"></div>
+                    <div class="flow-line"></div>
+                    <div class="flow-line"></div>
+                </div>
+                <p>Movement creates meaning</p>
+            </div>
+        </section>
+
+        <section class="content-section" data-section="minimal">
+            <div class="section-inner">
+                <h1>Essence</h1>
+                <div class="minimal-demo">
+                    <div class="circle-outer">
+                        <div class="circle-inner"></div>
+                    </div>
+                </div>
+                <p>Simplicity reveals truth</p>
+            </div>
+        </section>
+
+        <section class="content-section" data-section="visual">
+            <div class="section-inner">
+                <h1>Direction</h1>
+                <div class="visual-demo">
+                    <div class="triangle"></div>
+                </div>
+                <p>Shape guides attention</p>
+            </div>
+        </section>
+    </main>
+
+    <script src="js/nav-controller.js"></script>
+</body>
+</html>

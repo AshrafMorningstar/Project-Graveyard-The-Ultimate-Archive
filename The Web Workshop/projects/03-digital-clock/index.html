@@ -1,0 +1,40 @@
+<!--
+ -----------------------------------------------------------------------------
+ @author      Ashraf Morningstar
+ @github      https://github.com/AshrafMorningstar
+ @repository  Project Graveyard - The Ultimate Archive
+ @quote       "Code that defines the future. Designed to inspire."
+ -----------------------------------------------------------------------------
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neon Cyber Clock | Ashraf Morningstar</title>
+    <meta name="description" content="Futuristic Neon Clock with glitch effects. Designed by Ashraf Morningstar.">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="overlay"></div>
+    <div class="clock-container">
+        <div class="glitch-wrapper">
+            <h1 id="time" class="glitch" data-text="00:00:00">00:00:00</h1>
+        </div>
+        <div class="date-container">
+            <p id="date">LOADING SYSTEM...</p>
+        </div>
+    </div>
+    
+    <div class="controls">
+        <button id="toggle-format">24H / 12H</button>
+    </div>
+
+    <footer>
+        <p>SYSTEM_OVERRIDE_BY: <a href="https://github.com/AshrafMorningstar" target="_blank">ASHRAF_MORNINGSTAR</a></p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

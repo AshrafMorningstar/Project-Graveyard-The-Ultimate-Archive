@@ -1,0 +1,168 @@
+<!--
+ -----------------------------------------------------------------------------
+ @author      Ashraf Morningstar
+ @github      https://github.com/AshrafMorningstar
+ @repository  Project Graveyard - The Ultimate Archive
+ @quote       "Code that defines the future. Designed to inspire."
+ -----------------------------------------------------------------------------
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A premium collection of 12 advanced web development projects by Ashraf Morningstar. Featuring React, WASM, PWA, and AI integrations.">
+    <meta name="keywords" content="Web Development, Portfolio, React, JavaScript, WASM, PWA, Ashraf Morningstar, Full Stack, Expert Projects">
+    <meta name="author" content="Ashraf Morningstar">
+    <meta property="og:title" content="Ashraf Morningstar - Web Development Project Collection">
+    <meta property="og:description" content="Explore 12 production-ready web projects ranging from interactive AI engines to offline-first PWAs.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://github.com/AshrafMorningstar">
+    <title>Ashraf Morningstar | Project Collection</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #030712;
+            --surface: #111827;
+            --primary: #8b5cf6;
+            --text: #f9fafb;
+            --text-muted: #9ca3af;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 40px 20px; }
+        header { text-align: center; margin-bottom: 80px; padding-top: 40px; }
+        h1 { font-family: 'Space Grotesk', sans-serif; font-size: 3.5rem; font-weight: 700; margin-bottom: 16px; background: linear-gradient(to right, #c4b5fd, #8b5cf6); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .subtitle { font-size: 1.25rem; color: var(--text-muted); max-width: 600px; margin: 0 auto; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 32px; }
+        .card { background: var(--surface); border: 1px solid #1f2937; border-radius: 16px; overflow: hidden; transition: transform 0.2s, border-color 0.2s; text-decoration: none; color: inherit; display: flex; flex-direction: column; }
+        .card:hover { transform: translateY(-4px); border-color: var(--primary); }
+        .card-content { padding: 32px; flex: 1; }
+        .badge { display: inline-block; padding: 4px 12px; border-radius: 9999px; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 16px; }
+        .badge.beginner { background: rgba(16, 185, 129, 0.1); color: #34d399; }
+        .badge.expert { background: rgba(139, 92, 246, 0.1); color: #a78bfa; }
+        .card h2 { font-family: 'Space Grotesk', sans-serif; font-size: 1.5rem; margin-bottom: 12px; }
+        .card p { color: var(--text-muted); font-size: 0.95rem; line-height: 1.6; margin-bottom: 24px; }
+        .tech-stack { display: flex; gap: 8px; flex-wrap: wrap; margin-top: auto; }
+        .tech { font-size: 0.75rem; color: #6b7280; background: #1f2937; padding: 4px 8px; border-radius: 4px; }
+        footer { margin-top: 80px; text-align: center; color: var(--text-muted); padding-bottom: 40px; font-size: 0.875rem; }
+        a.social { color: var(--primary); text-decoration: none; margin-left: 8px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Ashraf Morningstar</h1>
+            <p class="subtitle">A curated collection of 12 production-ready web development projects, featuring advanced algorithms, real-time collaboration, and AI integration.</p>
+        </header>
+
+        <div class="grid">
+            <!-- Beginner Projects -->
+            <a href="./beginner-micro-portfolio-generator/" class="card">
+                <div class="card-content">
+                    <span class="badge beginner">Beginner</span>
+                    <h2>Micro Portfolio Generator</h2>
+                    <p>Zero-config portfolio builder with drag-and-drop templates and ZIP export.</p>
+                    <div class="tech-stack"><span class="tech">HTML5</span><span class="tech">JSZip</span><span class="tech">Sortable.js</span></div>
+                </div>
+            </a>
+            <a href="./beginner-events-offline-pwa/" class="card">
+                <div class="card-content">
+                    <span class="badge beginner">Beginner</span>
+                    <h2>Local Events PWA</h2>
+                    <p>Offline-first community events app with IndexedDB sync and Map view.</p>
+                    <div class="tech-stack"><span class="tech">PWA</span><span class="tech">IndexedDB</span><span class="tech">Leaflet</span></div>
+                </div>
+            </a>
+            <a href="./beginner-recipe-remix/" class="card">
+                <div class="card-content">
+                    <span class="badge beginner">Beginner</span>
+                    <h2>Recipe Remix Engine</h2>
+                    <p>Ingredient-based recipe finder with fuzzy search logic and cooking mode.</p>
+                    <div class="tech-stack"><span class="tech">Vanilla JS</span><span class="tech">Fuzzy Search</span><span class="tech">CSS Grid</span></div>
+                </div>
+            </a>
+            <a href="./beginner-accessible-quiz-builder/" class="card">
+                <div class="card-content">
+                    <span class="badge beginner">Beginner</span>
+                    <h2>Accessible Quiz Builder</h2>
+                    <p>WCAG AAA compliant quiz creator with keyboard-first navigation focus.</p>
+                    <div class="tech-stack"><span class="tech">A11y</span><span class="tech">ARIA</span><span class="tech">LocalStorage</span></div>
+                </div>
+            </a>
+            <a href="./beginner-css-theme-playground/" class="card">
+                <div class="card-content">
+                    <span class="badge beginner">Beginner</span>
+                    <h2>CSS Theme Playground</h2>
+                    <p>Real-time design token generator with live component preview.</p>
+                    <div class="tech-stack"><span class="tech">CSS variables</span><span class="tech">CodeMirror</span></div>
+                </div>
+            </a>
+            <a href="./beginner-ecommerce-ux-sandbox/" class="card">
+                <div class="card-content">
+                    <span class="badge beginner">Beginner</span>
+                    <h2>E-Commerce UX Sandbox</h2>
+                    <p>Full-featured shopping cart flow with persistent state and coupon logic.</p>
+                    <div class="tech-stack"><span class="tech">State Mgmt</span><span class="tech">UX Patterns</span></div>
+                </div>
+            </a>
+
+            <!-- Expert Projects -->
+            <a href="./expert-collaborative-cv-studio/dist/" class="card">
+                <div class="card-content">
+                    <span class="badge expert">Expert</span>
+                    <h2>Collaborative CV Studio</h2>
+                    <p>Google Docs-style resume editor with real-time multi-user cursor tracking.</p>
+                    <div class="tech-stack"><span class="tech">React</span><span class="tech">Yjs</span><span class="tech">WebSockets</span></div>
+                </div>
+            </a>
+            <a href="./expert-generative-ui-engine/dist/" class="card">
+                <div class="card-content">
+                    <span class="badge expert">Expert</span>
+                    <h2>Generative UI Engine</h2>
+                    <p>AI-powered React component generator with streaming code previews.</p>
+                    <div class="tech-stack"><span class="tech">AI Sim</span><span class="tech">React</span><span class="tech">AST Parsing</span></div>
+                </div>
+            </a>
+            <a href="./expert-privacy-first-analytics/dist/" class="card">
+                <div class="card-content">
+                    <span class="badge expert">Expert</span>
+                    <h2>Privacy-First Analytics</h2>
+                    <p>GDPR-compliant dashboard with differential privacy algorithms and D3 charts.</p>
+                    <div class="tech-stack"><span class="tech">D3.js</span><span class="tech">Recharts</span><span class="tech">Diff Privacy</span></div>
+                </div>
+            </a>
+            <a href="./expert-micro-mentorship-pwa/dist/" class="card">
+                <div class="card-content">
+                    <span class="badge expert">Expert</span>
+                    <h2>Micro-Mentorship PWA</h2>
+                    <p>Instant peer-to-peer video calls using WebRTC and signaling simulation.</p>
+                    <div class="tech-stack"><span class="tech">WebRTC</span><span class="tech">PeerJS</span><span class="tech">PWA</span></div>
+                </div>
+            </a>
+            <a href="./expert-wasm-image-pipeline/dist/" class="card">
+                <div class="card-content">
+                    <span class="badge expert">Expert</span>
+                    <h2>WASM Image Pipeline</h2>
+                    <p>High-performance in-browser photo editing using WebAssembly buffers.</p>
+                    <div class="tech-stack"><span class="tech">WASM</span><span class="tech">Canvas API</span><span class="tech">React</span></div>
+                </div>
+            </a>
+            <a href="./expert-verifiable-content-platform/dist/" class="card">
+                <div class="card-content">
+                    <span class="badge expert">Expert</span>
+                    <h2>Verifiable Content Platform</h2>
+                    <p>Decentralized publishing proof-of-concept with IPFS and Blockchain hashing.</p>
+                    <div class="tech-stack"><span class="tech">CryptoJS</span><span class="tech">IPFS</span><span class="tech">Blockchain</span></div>
+                </div>
+            </a>
+        </div>
+
+        <footer>
+            <p>&copy; 2025 Ashraf Morningstar. Released under MIT License.</p>
+            <p>View source on <a href="https://github.com/AshrafMorningstar" class="social">GitHub</a></p>
+        </footer>
+    </div>
+</body>
+</html>

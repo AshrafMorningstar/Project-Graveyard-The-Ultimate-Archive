@@ -1,0 +1,93 @@
+<!--
+ -----------------------------------------------------------------------------
+ @author      Ashraf Morningstar
+ @github      https://github.com/AshrafMorningstar
+ @repository  Project Graveyard - The Ultimate Archive
+ @quote       "Code that defines the future. Designed to inspire."
+ -----------------------------------------------------------------------------
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Persona Tiles - Build your digital persona through interactive modular tiles">
+    <title>Persona Tiles - Modular Profile Builder</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/grid.css">
+    <link rel="stylesheet" href="css/tiles.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>Build Your Persona</h1>
+            <p>Click tiles to compose your digital identity</p>
+        </header>
+
+        <div class="persona-canvas" id="personaCanvas">
+            <!-- Tiles will be dynamically positioned here -->
+        </div>
+
+        <div class="tile-pool" id="tilePool">
+            <!-- Skills -->
+            <div class="tile" data-type="skill" data-id="frontend">
+                <span class="tile-emoji">💻</span>
+                <span class="tile-label">Frontend</span>
+            </div>
+            <div class="tile" data-type="skill" data-id="design">
+                <span class="tile-emoji">🎨</span>
+                <span class="tile-label">Design</span>
+            </div>
+            <div class="tile" data-type="skill" data-id="backend">
+                <span class="tile-emoji">⚙️</span>
+                <span class="tile-label">Backend</span>
+            </div>
+            
+            <!-- Interests -->
+            <div class="tile" data-type="interest" data-id="music">
+                <span class="tile-emoji">🎵</span>
+                <span class="tile-label">Music</span>
+            </div>
+            <div class="tile" data-type="interest" data-id="travel">
+                <span class="tile-emoji">✈️</span>
+                <span class="tile-label">Travel</span>
+            </div>
+            <div class="tile" data-type="interest" data-id="reading">
+                <span class="tile-emoji">📚</span>
+                <span class="tile-label">Reading</span>
+            </div>
+            
+            <!-- Values -->
+            <div class="tile" data-type="value" data-id="creativity">
+                <span class="tile-emoji">💡</span>
+                <span class="tile-label">Creativity</span>
+            </div>
+            <div class="tile" data-type="value" data-id="growth">
+                <span class="tile-emoji">🌱</span>
+                <span class="tile-label">Growth</span>
+            </div>
+            <div class="tile" data-type="value" data-id="impact">
+                <span class="tile-emoji">🎯</span>
+                <span class="tile-label">Impact</span>
+            </div>
+            
+            <!-- Goals -->
+            <div class="tile" data-type="goal" data-id="mastery">
+                <span class="tile-emoji">🏆</span>
+                <span class="tile-label">Mastery</span>
+            </div>
+            <div class="tile" data-type="goal" data-id="innovation">
+                <span class="tile-emoji">🚀</span>
+                <span class="tile-label">Innovation</span>
+            </div>
+            <div class="tile" data-type="goal" data-id="community">
+                <span class="tile-emoji">🤝</span>
+                <span class="tile-label">Community</span>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/persona-engine.js"></script>
+</body>
+</html>

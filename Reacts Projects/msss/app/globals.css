@@ -1,0 +1,410 @@
+/*
+ * -----------------------------------------------------------------------------
+ * @author      Ashraf Morningstar
+ * @github      https://github.com/AshrafMorningstar
+ * @repository  Project Graveyard - The Ultimate Archive
+ * @quote       "Code that defines the future. Designed to inspire."
+ * -----------------------------------------------------------------------------
+*/
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Quantum Color Spectrum */
+  --chronos-blue: #0a0c27;
+  --chronos-dark: #050510;
+  --chronos-space: #0f102e;
+
+  --neuro-purple: #3a0ca3;
+  --neuro-pink: #ff00ff;
+  --neuro-cyan: #00f5ff;
+
+  --quantum-glow: #4cc9f0;
+  --quantum-energy: #7209b7;
+  --quantum-matter: #f72585;
+
+  /* Hologram Effects */
+  --hologram-primary: rgba(10, 12, 39, 0.95);
+  --hologram-secondary: rgba(58, 12, 163, 0.8);
+  --hologram-accent: rgba(0, 245, 255, 0.6);
+}
+
+/* Quantum Scrollbar */
+::-webkit-scrollbar {
+  width: 12px;
+  background: var(--chronos-dark);
+}
+
+::-webkit-scrollbar-track {
+  background: var(--chronos-space);
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(
+    180deg,
+    var(--neuro-purple),
+    var(--quantum-energy)
+  );
+  border-radius: 6px;
+  border: 2px solid var(--chronos-dark);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, var(--quantum-energy), var(--neuro-pink));
+}
+
+/* Quantum Selection */
+::selection {
+  background: var(--neuro-purple);
+  color: var(--neuro-cyan);
+}
+
+/* Quantum Focus Styles */
+:focus-visible {
+  outline: 2px solid var(--quantum-glow);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Quantum Animations */
+@keyframes quantum-pulse {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.5;
+    transform: scale(1.05);
+  }
+}
+
+@keyframes chronos-spin {
+  from {
+    transform: rotate(0deg) scale(1);
+  }
+  to {
+    transform: rotate(360deg) scale(1.1);
+  }
+}
+
+@keyframes neural-flow {
+  0%,
+  100% {
+    transform: translateY(0) scale(1);
+    opacity: 0.7;
+  }
+  50% {
+    transform: translateY(-20px) scale(1.05);
+    opacity: 1;
+  }
+}
+
+@keyframes hologram-flicker {
+  0%,
+  100% {
+    opacity: 1;
+    filter: brightness(1);
+  }
+  25% {
+    opacity: 0.8;
+    filter: brightness(1.2);
+  }
+  50% {
+    opacity: 0.9;
+    filter: brightness(0.9);
+  }
+  75% {
+    opacity: 0.85;
+    filter: brightness(1.1);
+  }
+}
+
+@keyframes cosmic-drift {
+  0% {
+    transform: translateX(0) translateY(0);
+  }
+  25% {
+    transform: translateX(10px) translateY(-5px);
+  }
+  50% {
+    transform: translateX(0) translateY(-10px);
+  }
+  75% {
+    transform: translateX(-10px) translateY(-5px);
+  }
+  100% {
+    transform: translateX(0) translateY(0);
+  }
+}
+
+@keyframes particle-float {
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  33% {
+    transform: translateY(-30px) rotate(120deg);
+  }
+  66% {
+    transform: translateY(15px) rotate(240deg);
+  }
+}
+
+@keyframes time-dilation {
+  0% {
+    transform: scale(1);
+    filter: blur(0px);
+  }
+  50% {
+    transform: scale(1.1);
+    filter: blur(2px);
+  }
+  100% {
+    transform: scale(1);
+    filter: blur(0px);
+  }
+}
+
+@keyframes quantum-entanglement {
+  0%,
+  100% {
+    stroke-dasharray: 100, 100;
+    stroke-dashoffset: 0;
+  }
+  50% {
+    stroke-dasharray: 20, 100;
+    stroke-dashoffset: 50;
+  }
+}
+
+@keyframes wormhole {
+  0% {
+    transform: scale(0) rotate(0deg);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.2) rotate(180deg);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1) rotate(360deg);
+    opacity: 1;
+  }
+}
+
+/* Quantum Glass Effect */
+.quantum-glass {
+  background: var(--hologram-primary);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.hologram-glass {
+  background: rgba(58, 12, 163, 0.15);
+  backdrop-filter: blur(40px);
+  -webkit-backdrop-filter: blur(40px);
+  border: 1px solid rgba(0, 245, 255, 0.2);
+}
+
+.neural-glass {
+  background: rgba(247, 37, 133, 0.1);
+  backdrop-filter: blur(60px);
+  -webkit-backdrop-filter: blur(60px);
+  border: 1px solid rgba(255, 0, 255, 0.3);
+}
+
+/* Quantum Text Effects */
+.quantum-text-glow {
+  text-shadow: 0 0 10px var(--quantum-glow), 0 0 20px var(--quantum-glow),
+    0 0 40px var(--quantum-glow);
+}
+
+.neuro-text-glow {
+  text-shadow: 0 0 10px var(--neuro-pink), 0 0 20px var(--neuro-pink),
+    0 0 40px var(--neuro-purple);
+}
+
+.chronos-text-glow {
+  text-shadow: 0 0 10px var(--neuro-cyan), 0 0 20px var(--neuro-cyan),
+    0 0 40px var(--chronos-blue);
+}
+
+/* Quantum Gradient Borders */
+.quantum-border {
+  position: relative;
+  border: 2px solid transparent;
+  background-clip: padding-box;
+}
+
+.quantum-border::before {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  border-radius: inherit;
+  padding: 2px;
+  background: linear-gradient(
+    45deg,
+    var(--neuro-purple),
+    var(--quantum-glow),
+    var(--neuro-pink)
+  );
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+}
+
+/* Quantum Loading States */
+.quantum-loading {
+  position: relative;
+  overflow: hidden;
+}
+
+.quantum-loading::after {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    45deg,
+    transparent 30%,
+    rgba(76, 201, 240, 0.1) 50%,
+    transparent 70%
+  );
+  animation: quantum-shine 3s infinite linear;
+}
+
+@keyframes quantum-shine {
+  0% {
+    transform: translateX(-100%) translateY(-100%) rotate(45deg);
+  }
+  100% {
+    transform: translateX(100%) translateY(100%) rotate(45deg);
+  }
+}
+
+/* Quantum Interactive Elements */
+.quantum-button {
+  position: relative;
+  background: linear-gradient(
+    135deg,
+    var(--neuro-purple),
+    var(--quantum-energy)
+  );
+  color: white;
+  border: none;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.quantum-button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  transition: left 0.5s ease;
+}
+
+.quantum-button:hover::before {
+  left: 100%;
+}
+
+.quantum-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(58, 12, 163, 0.4),
+    0 0 50px rgba(76, 201, 240, 0.3);
+}
+
+/* Quantum Grid Background */
+.quantum-grid {
+  background-size: 50px 50px;
+  background-image: linear-gradient(
+      to right,
+      rgba(58, 12, 163, 0.1) 1px,
+      transparent 1px
+    ),
+    linear-gradient(to bottom, rgba(58, 12, 163, 0.1) 1px, transparent 1px);
+}
+
+.neural-grid {
+  background-size: 100px 100px;
+  background-image: radial-gradient(
+    rgba(76, 201, 240, 0.15) 1px,
+    transparent 1px
+  );
+}
+
+/* Quantum Responsive Design */
+@media (max-width: 768px) {
+  .quantum-responsive {
+    backdrop-filter: blur(10px);
+  }
+}
+
+/* Quantum Print Styles */
+@media print {
+  .quantum-no-print {
+    display: none;
+  }
+
+  body {
+    background: white !important;
+    color: black !important;
+  }
+}
+
+/* Quantum Dark Mode - enforced by default essentially, but handled by class */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --chronos-blue: #050510;
+    --neuro-purple: #2a0870;
+  }
+}
+
+/* Quantum Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Utilities */
+.quantum-clip-path {
+  clip-path: polygon(
+    0% 0%,
+    100% 0%,
+    100% calc(100% - 20px),
+    calc(100% - 20px) 100%,
+    0% 100%
+  );
+}
+
+.neural-clip-path {
+  clip-path: polygon(20px 0%, 100% 0, 100% 100%, 0% 100%, 0% 20px);
+}
+
+.quantum-image {
+  filter: brightness(1.1) contrast(1.1) saturate(1.2);
+}
+
+.hologram-image {
+  filter: hue-rotate(180deg) brightness(1.2) contrast(1.3);
+}

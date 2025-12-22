@@ -1,0 +1,56 @@
+<!--
+ -----------------------------------------------------------------------------
+ @author      Ashraf Morningstar
+ @github      https://github.com/AshrafMorningstar
+ @repository  Project Graveyard - The Ultimate Archive
+ @quote       "Code that defines the future. Designed to inspire."
+ -----------------------------------------------------------------------------
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terminal Password Gen | Ashraf Morningstar</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="terminal">
+        <div class="header">
+            <span class="dot red"></span>
+            <span class="dot yellow"></span>
+            <span class="dot green"></span>
+            <span class="title">SecureGen_v2.0.exe</span>
+        </div>
+        <div class="content">
+            <p class="prompt">> INITIATING PASSWORD PROTOCOL...</p>
+            <p class="prompt">> SELECT PARAMETERS:</p>
+            
+            <div class="settings">
+                <label>> LENGTH: <span id="val-box">16</span></label>
+                <input type="range" id="length" min="4" max="32" value="16">
+                
+                <div class="checkboxes">
+                    <label><input type="checkbox" id="uppercase" checked> [INCLUDE_UPPERCASE]</label>
+                    <label><input type="checkbox" id="lowercase" checked> [INCLUDE_LOWERCASE]</label>
+                    <label><input type="checkbox" id="numbers" checked> [INCLUDE_NUMBERS]</label>
+                    <label><input type="checkbox" id="symbols" checked> [INCLUDE_SYMBOLS]</label>
+                </div>
+            </div>
+
+            <button id="generate-btn">>> EXECUTE_GENERATION</button>
+
+            <div class="result-container">
+                <span id="password">WAITING_FOR_INPUT...</span>
+                <button id="copy-btn">[COPY]</button>
+            </div>
+            
+            <p class="prompt bottom">> <span class="blink">_</span></p>
+        </div>
+        <footer>SYSTEM ID: <a href="https://github.com/AshrafMorningstar">ASHRAF_MORNINGSTAR</a></footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

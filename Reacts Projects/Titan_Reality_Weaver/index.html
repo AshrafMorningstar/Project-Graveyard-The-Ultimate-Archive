@@ -1,0 +1,248 @@
+<!--
+ -----------------------------------------------------------------------------
+ @author      Ashraf Morningstar
+ @github      https://github.com/AshrafMorningstar
+ @repository  Project Graveyard - The Ultimate Archive
+ @quote       "Code that defines the future. Designed to inspire."
+ -----------------------------------------------------------------------------
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TITAN REALITY WEAVER - Digital Twin Platform</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Theme Selector -->
+    <div class="theme-selector">
+      <button class="theme-btn" data-theme="cyber">🌌 Cyber</button>
+      <button class="theme-btn" data-theme="ocean">🌊 Ocean</button>
+      <button class="theme-btn" data-theme="sunset">🌅 Sunset</button>
+      <button class="theme-btn" data-theme="forest">🌲 Forest</button>
+      <button class="theme-btn" data-theme="galaxy">✨ Galaxy</button>
+    </div>
+
+    <!-- Particle Background -->
+    <canvas id="particles"></canvas>
+
+    <!-- Main Container -->
+    <div class="container">
+      <!-- Header -->
+      <header class="header">
+        <div class="logo-container">
+          <div class="logo-ring"></div>
+          <h1 class="logo-text">TITAN REALITY WEAVER</h1>
+        </div>
+        <p class="tagline">Differentiable Real-Time Digital Twin Fabric</p>
+      </header>
+
+      <!-- Stats Dashboard -->
+      <section class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-icon">🚀</div>
+          <div class="stat-value" data-target="99.9">0</div>
+          <div class="stat-label">Uptime %</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon">⚡</div>
+          <div class="stat-value" data-target="1000">0</div>
+          <div class="stat-label">Simulations/sec</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon">🧠</div>
+          <div class="stat-value" data-target="50">0</div>
+          <div class="stat-label">AI Models</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon">🔐</div>
+          <div class="stat-value" data-target="100">0</div>
+          <div class="stat-label">Security Score</div>
+        </div>
+      </section>
+
+      <!-- Features Grid -->
+      <section class="features">
+        <h2 class="section-title">Revolutionary Capabilities</h2>
+        <div class="features-grid">
+          <div class="feature-card">
+            <div class="feature-header">
+              <span class="feature-icon">🔬</span>
+              <h3>Differentiable Physics</h3>
+            </div>
+            <p>
+              End-to-end differentiable simulators with automatic gradient
+              computation for real-time optimization
+            </p>
+            <div class="feature-progress">
+              <div class="progress-bar" style="width: 95%"></div>
+            </div>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-header">
+              <span class="feature-icon">🌐</span>
+              <h3>Multi-Scale Modeling</h3>
+            </div>
+            <p>
+              Hybrid architecture combining high-fidelity physics, ML
+              surrogates, and discrete event models
+            </p>
+            <div class="feature-progress">
+              <div class="progress-bar" style="width: 88%"></div>
+            </div>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-header">
+              <span class="feature-icon">📡</span>
+              <h3>Live Data Fusion</h3>
+            </div>
+            <p>
+              Real-time ingestion from IoT sensors, PLCs, cameras with temporal
+              and spatial alignment
+            </p>
+            <div class="feature-progress">
+              <div class="progress-bar" style="width: 92%"></div>
+            </div>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-header">
+              <span class="feature-icon">🎯</span>
+              <h3>Causal Engine</h3>
+            </div>
+            <p>
+              Structural causal models for counterfactual analysis and what-if
+              scenario exploration
+            </p>
+            <div class="feature-progress">
+              <div class="progress-bar" style="width: 85%"></div>
+            </div>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-header">
+              <span class="feature-icon">🤖</span>
+              <h3>Autonomous Control</h3>
+            </div>
+            <p>
+              Safe deployment of learned controllers with shadow mode and
+              gradual rollout strategies
+            </p>
+            <div class="feature-progress">
+              <div class="progress-bar" style="width: 90%"></div>
+            </div>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-header">
+              <span class="feature-icon">🔐</span>
+              <h3>Verifiable Provenance</h3>
+            </div>
+            <p>
+              Cryptographic signing, Merkle trees, and immutable audit trails
+              for compliance
+            </p>
+            <div class="feature-progress">
+              <div class="progress-bar" style="width: 97%"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 3D Visualization Preview -->
+      <section class="visualization">
+        <h2 class="section-title">Live Digital Twin Visualization</h2>
+        <div class="viz-container">
+          <canvas id="twin-canvas"></canvas>
+          <div class="viz-controls">
+            <button class="viz-btn" id="play-btn">▶ Play</button>
+            <button class="viz-btn" id="pause-btn">⏸ Pause</button>
+            <button class="viz-btn" id="step-btn">⏭ Step</button>
+            <input
+              type="range"
+              id="timeline"
+              min="0"
+              max="100"
+              value="0"
+              class="timeline-slider"
+            />
+          </div>
+        </div>
+      </section>
+
+      <!-- Tech Stack -->
+      <section class="tech-stack">
+        <h2 class="section-title">Powered By Cutting-Edge Technology</h2>
+        <div class="tech-grid">
+          <div class="tech-item">
+            <div class="tech-logo">🦀</div>
+            <span>Rust</span>
+          </div>
+          <div class="tech-item">
+            <div class="tech-logo">🐍</div>
+            <span>Python</span>
+          </div>
+          <div class="tech-item">
+            <div class="tech-logo">⚛️</div>
+            <span>React</span>
+          </div>
+          <div class="tech-item">
+            <div class="tech-logo">🎮</div>
+            <span>WebGPU</span>
+          </div>
+          <div class="tech-item">
+            <div class="tech-logo">📊</div>
+            <span>Kafka</span>
+          </div>
+          <div class="tech-item">
+            <div class="tech-logo">🗄️</div>
+            <span>PostgreSQL</span>
+          </div>
+          <div class="tech-item">
+            <div class="tech-logo">☸️</div>
+            <span>Kubernetes</span>
+          </div>
+          <div class="tech-item">
+            <div class="tech-logo">🔥</div>
+            <span>PyTorch</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA Section -->
+      <section class="cta">
+        <h2>Ready to Transform Your Digital Twin Strategy?</h2>
+        <p>Join the future of real-time simulation and optimization</p>
+        <div class="cta-buttons">
+          <a
+            href="https://github.com/AshrafMorningstar/Titan_Reality_Weaver"
+            class="btn btn-primary"
+          >
+            <span>🚀</span> Get Started
+          </a>
+          <a href="#" class="btn btn-secondary">
+            <span>📖</span> Documentation
+          </a>
+        </div>
+      </section>
+
+      <!-- Footer -->
+      <footer class="footer">
+        <p>
+          Created by
+          <a href="https://github.com/AshrafMorningstar" target="_blank"
+            >AshrafMorningstar</a
+          >
+        </p>
+        <p>© 2025 TITAN REALITY WEAVER. All rights reserved.</p>
+      </footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/three@0.155.0/build/three.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

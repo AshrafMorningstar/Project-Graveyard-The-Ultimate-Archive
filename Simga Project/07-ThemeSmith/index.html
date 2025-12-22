@@ -1,0 +1,64 @@
+<!--
+ -----------------------------------------------------------------------------
+ @author      Ashraf Morningstar
+ @github      https://github.com/AshrafMorningstar
+ @repository  Project Graveyard - The Ultimate Archive
+ @quote       "Code that defines the future. Designed to inspire."
+ -----------------------------------------------------------------------------
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ThemeSmith - Real-Time Design System Generator</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/tokens.css">
+    <link rel="stylesheet" href="css/components.css">
+</head>
+<body>
+    <div class="app-container">
+        <aside class="control-panel">
+            <h2>ThemeSmith</h2>
+            <div class="control-group">
+                <label>Base Hue</label>
+                <input type="range" id="hueSlider" min="0" max="360" value="220">
+                <span id="hueValue">220°</span>
+            </div>
+            <div class="control-group">
+                <label>Contrast</label>
+                <input type="range" id="contrastSlider" min="0" max="100" value="50">
+                <span id="contrastValue">50%</span>
+            </div>
+            <div class="control-group">
+                <label>Border Radius</label>
+                <input type="range" id="radiusSlider" min="0" max="24" value="8">
+                <span id="radiusValue">8px</span>
+            </div>
+            <div class="control-group">
+                <label>Elevation</label>
+                <input type="range" id="elevationSlider" min="0" max="100" value="50">
+                <span id="elevationValue">50%</span>
+            </div>
+        </aside>
+
+        <main class="preview-area">
+            <h1>Live Preview</h1>
+            <div class="component-grid">
+                <button class="btn btn-primary">Primary Button</button>
+                <button class="btn btn-secondary">Secondary Button</button>
+                <div class="card">
+                    <h3>Card Component</h3>
+                    <p>This card updates in real-time as you adjust the design tokens.</p>
+                </div>
+                <div class="alert">
+                    <strong>Alert:</strong> Design system updating live!
+                </div>
+                <input type="text" class="input" placeholder="Input field">
+            </div>
+        </main>
+    </div>
+    <script src="js/token-engine.js"></script>
+</body>
+</html>

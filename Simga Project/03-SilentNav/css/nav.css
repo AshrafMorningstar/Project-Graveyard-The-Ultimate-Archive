@@ -1,0 +1,129 @@
+/*
+ * -----------------------------------------------------------------------------
+ * @author      Ashraf Morningstar
+ * @github      https://github.com/AshrafMorningstar
+ * @repository  Project Graveyard - The Ultimate Archive
+ * @quote       "Code that defines the future. Designed to inspire."
+ * -----------------------------------------------------------------------------
+*/
+
+/* SilentNav - Navigation Styles */
+/* Author: Ashraf Morningstar | https://github.com/AshrafMorningstar */
+
+.silent-nav {
+    position: fixed;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    padding: 32px 24px;
+    background: var(--bg-secondary);
+    border-right: 1px solid var(--border-color);
+    z-index: 1000;
+}
+
+.nav-symbol {
+    width: 48px;
+    height: 48px;
+    background: transparent;
+    border: 2px solid var(--border-color);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.nav-symbol::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: var(--accent-color);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.symbol-icon {
+    width: 24px;
+    height: 24px;
+    fill: none;
+    stroke: var(--text-secondary);
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    transition: all 0.3s ease;
+    position: relative;
+    z-index: 1;
+}
+
+/* Hover State */
+.nav-symbol:hover {
+    border-color: var(--accent-color);
+    transform: scale(1.1);
+}
+
+.nav-symbol:hover::before {
+    opacity: 0.1;
+}
+
+.nav-symbol:hover .symbol-icon {
+    stroke: var(--accent-color);
+    transform: scale(1.1);
+}
+
+/* Active State */
+.nav-symbol.active {
+    border-color: var(--accent-color);
+    background: var(--accent-color);
+}
+
+.nav-symbol.active .symbol-icon {
+    stroke: white;
+    transform: scale(1.2);
+}
+
+/* Transition State */
+.nav-symbol.transitioning {
+    animation: navPulse 0.6s ease;
+}
+
+@keyframes navPulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.15); }
+}
+
+/* Focus State (Keyboard Accessibility) */
+.nav-symbol:focus {
+    outline: 2px solid var(--accent-color);
+    outline-offset: 4px;
+}
+
+.nav-symbol:focus:not(:focus-visible) {
+    outline: none;
+}
+
+/* Mobile Navigation */
+@media (max-width: 768px) {
+    .silent-nav {
+        left: 50%;
+        top: auto;
+        bottom: 0;
+        transform: translateX(-50%);
+        flex-direction: row;
+        padding: 16px 24px;
+        border-right: none;
+        border-top: 1px solid var(--border-color);
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .nav-symbol {
+        width: 56px;
+        height: 56px;
+    }
+}

@@ -1,0 +1,16 @@
+{
+  "username": "AshrafMorningstar",
+  "stats": {
+    "commits": 1250,
+    "pullRequests": 42,
+    "issues": 15,
+    "stars": 320,
+    "contributions": 3500
+  },
+  "topLanguages": [
+    { "name": "TypeScript", "color": "#3178c6", "percentage": 65 },
+    { "name": "Rust", "color": "#dea584", "percentage": 20 },
+    { "name": "Python", "color": "#3572A5", "percentage": 10 },
+    { "name": "C++", "color": "#f34b7d", "percentage": 5 }
+  ]
+}

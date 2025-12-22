@@ -1,0 +1,73 @@
+<!--
+ -----------------------------------------------------------------------------
+ @author      Ashraf Morningstar
+ @github      https://github.com/AshrafMorningstar
+ @repository  Project Graveyard - The Ultimate Archive
+ @quote       "Code that defines the future. Designed to inspire."
+ -----------------------------------------------------------------------------
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Digital Clock | Ultimate Web Dev Journey</title>
+    <style>
+        /* Created by Ashraf Morningstar - https://github.com/AshrafMorningstar */
+        body {
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: #2d3436;
+            font-family: 'Courier New', Courier, monospace;
+        }
+        .clock {
+            background: #000;
+            color: #00ff00;
+            padding: 20px 40px;
+            font-size: 80px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 255, 0, 0.5);
+            text-align: center;
+        }
+        .date {
+            font-size: 20px;
+            color: #fff;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="clock-container">
+        <div class="clock" id="time">00:00:00</div>
+        <div class="date" id="date">Monday, 01 Jan 2024</div>
+    </div>
+
+    <script>
+        // Created by Ashraf Morningstar - https://github.com/AshrafMorningstar
+        function updateClock() {
+            const now = new Date();
+            let h = now.getHours();
+            let m = now.getMinutes();
+            let s = now.getSeconds();
+            
+            // Add zero padding
+            h = (h < 10) ? "0" + h : h;
+            m = (m < 10) ? "0" + m : m;
+            s = (s < 10) ? "0" + s : s;
+
+            const timeString = `${h}:${m}:${s}`;
+            document.getElementById("time").innerText = timeString;
+
+            const options = { weekday: 'long', year: 'numeric', month: 'short', day: 'numeric' };
+            document.getElementById("date").innerText = now.toLocaleDateString(undefined, options);
+        }
+
+        setInterval(updateClock, 1000);
+        updateClock();
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>

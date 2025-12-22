@@ -1,0 +1,139 @@
+/*
+ * -----------------------------------------------------------------------------
+ * @author      Ashraf Morningstar
+ * @github      https://github.com/AshrafMorningstar
+ * @repository  Project Graveyard - The Ultimate Archive
+ * @quote       "Code that defines the future. Designed to inspire."
+ * -----------------------------------------------------------------------------
+*/
+
+:root {
+    --bg: #f8f5f2;
+    --card: #fffffe;
+    --heading: #2b2c34;
+    --paragraph: #2b2c34;
+    --btn: #6246ea;
+    --btn-text: #fffffe;
+    --secondary: #d1d1e9;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: 'Raleway', sans-serif;
+    background-color: var(--bg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* Abstract Background Shape */
+    background-image: 
+        radial-gradient(circle at 10% 20%, #e3f6f5 10%, transparent 10.2%),
+        radial-gradient(circle at 90% 80%, #bae8e8 15%, transparent 15.2%),
+        radial-gradient(circle at 50% 50%, #fffffe 0%, #f8f5f2 100%);
+}
+
+.canvas {
+    position: relative;
+    z-index: 10;
+}
+
+.card {
+    background: var(--card);
+    padding: 3rem 4rem;
+    border-radius: 2px;
+    max-width: 600px;
+    box-shadow: 20px 20px 60px #d1d1d1, -20px -20px 60px #ffffff;
+    position: relative;
+    border-left: 10px solid var(--btn);
+    transition: transform 0.3s ease;
+}
+
+.card:hover { transform: translateY(-5px); }
+
+.quote-icon {
+    font-size: 3rem;
+    color: var(--secondary);
+    position: absolute;
+    top: -20px;
+    left: 40px;
+    background: var(--card);
+    padding: 0 10px;
+}
+
+.content { margin: 2rem 0; text-align: center; }
+
+#quote {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    font-style: italic;
+    color: var(--heading);
+    line-height: 1.4;
+    margin: 0;
+}
+
+#author {
+    display: block;
+    margin-top: 1.5rem;
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: #666;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 3rem;
+}
+
+.btn {
+    border: none;
+    padding: 12px 24px;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 700;
+    font-size: 0.9rem;
+    cursor: pointer;
+    border-radius: 50px;
+    transition: all 0.2s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.btn.primary {
+    background-color: var(--btn);
+    color: var(--btn-text);
+    box-shadow: 0 4px 15px rgba(98, 70, 234, 0.3);
+}
+
+.btn.primary:hover {
+    background-color: #553bbd;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(98, 70, 234, 0.4);
+}
+
+.btn.secondary {
+    background-color: var(--bg);
+    color: var(--heading);
+    width: 45px;
+    height: 45px;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid transparent;
+}
+
+.btn.secondary:hover {
+    border-color: var(--secondary);
+    background-color: #fff;
+}
+
+footer {
+    position: absolute;
+    bottom: 20px;
+    color: #999;
+    font-size: 0.8rem;
+}
+footer a { color: var(--btn); text-decoration: none; }

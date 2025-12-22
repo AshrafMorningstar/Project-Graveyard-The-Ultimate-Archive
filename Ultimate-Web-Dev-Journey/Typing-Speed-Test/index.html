@@ -1,0 +1,95 @@
+<!--
+ -----------------------------------------------------------------------------
+ @author      Ashraf Morningstar
+ @github      https://github.com/AshrafMorningstar
+ @repository  Project Graveyard - The Ultimate Archive
+ @quote       "Code that defines the future. Designed to inspire."
+ -----------------------------------------------------------------------------
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Typing Speed Test | Ultimate Web Dev Journey</title>
+    <style>
+        /* Created by Ashraf Morningstar - https://github.com/AshrafMorningstar */
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+        body { background-color: #34495e; color: #fff; font-family: 'Roboto', sans-serif; display: flex; align-items: center; justify-content: center; height: 100vh; overflow: hidden; margin: 0; }
+        .container { background-color: #2c3e50; padding: 20px; border-radius: 10px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); width: 500px; max-width: 100%; text-align: center; }
+        .timer { position: absolute; top: 20px; font-size: 3rem; color: #fff; font-weight: bold; }
+        .quote-display { margin-bottom: 20px; font-size: 1.5rem; line-height: 1.4; color: #bdc3c7; }
+        .quote-input { background-color: transparent; border: 2px solid #bdc3c7; outline: none; width: 100%; height: 8rem; margin: auto; resize: none; padding: 1rem; font-size: 1rem; border-radius: .5rem; color: #fff; }
+        .quote-input:focus { border-color: #fff; }
+        .correct { color: #2ecc71; }
+        .incorrect { color: #e74c3c; text-decoration: underline; }
+    </style>
+</head>
+<body>
+    <div class="timer" id="timer">0</div>
+    <div class="container">
+        <div class="quote-display" id="quoteDisplay"></div>
+        <textarea id="quoteInput" class="quote-input" autofocus></textarea>
+        <h4 style="margin-top: 20px;">Type the text above exactly as shown!</h4>
+    </div>
+    <script>
+        // Created by Ashraf Morningstar - https://github.com/AshrafMorningstar
+        const RANDOM_QUOTE_API_URL = 'https://api.quotable.io/random';
+        const quoteDisplayElement = document.getElementById('quoteDisplay');
+        const quoteInputElement = document.getElementById('quoteInput');
+        const timerElement = document.getElementById('timer');
+        let startTime;
+
+        quoteInputElement.addEventListener('input', () => {
+            const arrayQuote = quoteDisplayElement.querySelectorAll('span');
+            const arrayValue = quoteInputElement.value.split('');
+            let correct = true;
+            arrayQuote.forEach((characterSpan, index) => {
+                const character = arrayValue[index];
+                if (character == null) {
+                    characterSpan.classList.remove('correct');
+                    characterSpan.classList.remove('incorrect');
+                    correct = false;
+                } else if (character === characterSpan.innerText) {
+                    characterSpan.classList.add('correct');
+                    characterSpan.classList.remove('incorrect');
+                } else {
+                    characterSpan.classList.remove('correct');
+                    characterSpan.classList.add('incorrect');
+                    correct = false;
+                }
+            });
+            if (correct) renderNewQuote();
+        });
+
+        function getRandomQuote() { return fetch(RANDOM_QUOTE_API_URL).then(response => response.json()).then(data => data.content); }
+
+        async function renderNewQuote() {
+            const quote = await getRandomQuote();
+            quoteDisplayElement.innerHTML = '';
+            quote.split('').forEach(character => {
+                const characterSpan = document.createElement('span');
+                characterSpan.innerText = character;
+                quoteDisplayElement.appendChild(characterSpan);
+            });
+            quoteInputElement.value = null;
+            startTimer();
+        }
+
+        function startTimer() {
+            timerElement.innerText = 0;
+            startTime = new Date();
+            setInterval(() => {
+                timerElement.innerText = getTimerTime();
+            }, 1000);
+        }
+
+        function getTimerTime() {
+            return Math.floor((new Date() - startTime) / 1000);
+        }
+
+        renderNewQuote();
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>

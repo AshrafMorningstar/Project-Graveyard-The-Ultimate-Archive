@@ -1,0 +1,297 @@
+/*
+ * -----------------------------------------------------------------------------
+ * @author      Ashraf Morningstar
+ * @github      https://github.com/AshrafMorningstar
+ * @repository  Project Graveyard - The Ultimate Archive
+ * @quote       "Code that defines the future. Designed to inspire."
+ * -----------------------------------------------------------------------------
+*/
+
+/* 
+   Global Premium Theme - "Aether" v2.0
+   Created by Ashraf Morningstar
+   https://github.com/AshrafMorningstar
+*/
+
+:root {
+    /* Default Theme (Deep Space) */
+    --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    --bg-dark: #0f172a;
+    --glass-bg: rgba(255, 255, 255, 0.05);
+    --glass-border: rgba(255, 255, 255, 0.1);
+    --accent-color: #4facfe;
+    --text-main: #ffffff;
+}
+
+/* Theme: Neon Cyberpunk */
+.theme-neon {
+    --primary-gradient: linear-gradient(135deg, #ff00cc 0%, #333399 100%);
+    --bg-dark: #050510;
+    --glass-bg: rgba(255, 0, 204, 0.05);
+    --glass-border: rgba(255, 0, 204, 0.2);
+    --accent-color: #00f2fe;
+}
+
+/* Theme: Ocean Breeze */
+.theme-ocean {
+    --primary-gradient: linear-gradient(135deg, #2E3192 0%, #1BFFFF 100%);
+    --bg-dark: #001e2b;
+    --glass-bg: rgba(0, 255, 255, 0.05);
+    --glass-border: rgba(0, 255, 255, 0.1);
+    --accent-color: #1BFFFF;
+}
+
+/* Theme: Sunset Vibez */
+.theme-sunset {
+    --primary-gradient: linear-gradient(135deg, #ff0844 0%, #ffb199 100%);
+    --bg-dark: #2a0808;
+    --glass-bg: rgba(255, 200, 100, 0.05);
+    --glass-border: rgba(255, 200, 100, 0.2);
+    --accent-color: #ffb199;
+}
+
+/* Global Reset & Core Styles */
+body {
+    background: var(--bg-dark);
+    color: var(--text-main);
+    font-family: 'Outfit', 'Inter', system-ui, sans-serif;
+    min-height: 100vh;
+    margin: 0;
+    line-height: 1.6;
+    overflow-x: hidden;
+    position: relative;
+    transition: background 0.5s ease;
+}
+
+/* Unique Textures (Pseudo-elements) */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    background-image:
+        radial-gradient(circle at 15% 50%, rgba(255, 255, 255, 0.03) 0%, transparent 25%),
+        radial-gradient(circle at 85% 30%, rgba(255, 255, 255, 0.03) 0%, transparent 25%);
+    z-index: -1;
+}
+
+/* Grid Texture for Neon Theme */
+.theme-neon::after {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image:
+        linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%),
+        linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+    background-size: 100% 2px, 3px 100%;
+    z-index: -1;
+    pointer-events: none;
+}
+
+/* --- THEMES --- */
+body.theme-neon {
+  --bg-primary: #000000;
+  --gradient-1: linear-gradient(45deg, #ff00ff, #00ffff);
+  --accent-color: #00ffff;
+  --glass-bg: rgba(20, 20, 20, 0.8);
+  --glass-border: #00ffff;
+  --glass-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
+  font-family: "Orbitron", sans-serif; /* Sci-fi feel */
+}
+
+body.theme-sunset {
+  --bg-primary: #2d1b2e;
+  --gradient-1: linear-gradient(to right, #f6d365 0%, #fda085 100%);
+  --accent-color: #fda085;
+  --glass-bg: rgba(255, 100, 100, 0.1);
+  --glass-border: rgba(255, 200, 200, 0.2);
+}
+
+body.theme-ocean {
+  --bg-primary: #001e3c;
+  --gradient-1: linear-gradient(to top, #30cfd0 0%, #330867 100%);
+  --accent-color: #30cfd0;
+  --glass-bg: rgba(0, 50, 100, 0.3);
+  --glass-border: rgba(100, 200, 255, 0.2);
+}
+
+body.theme-forest {
+  --bg-primary: #0f2015; /* lush dark green */
+  --gradient-1: linear-gradient(to right, #11998e, #38ef7d);
+  --accent-color: #38ef7d;
+  --glass-bg: rgba(20, 60, 30, 0.4);
+  --glass-border: rgba(100, 255, 150, 0.2);
+}
+
+body.theme-minimal {
+  --bg-primary: #ffffff;
+  --text-main: #1e293b;
+  --text-muted: #64748b;
+  --gradient-1: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%); /* Subtle */
+  --accent-color: #2563eb;
+  --glass-bg: rgba(0, 0, 0, 0.03);
+  --glass-border: rgba(0, 0, 0, 0.1);
+  --glass-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+body.theme-cyberpunk {
+  --bg-primary: #110022;
+  --gradient-1: linear-gradient(90deg, #fcee21, #009245); /* Yellow to Green */
+  --accent-color: #fcee21;
+  --glass-bg: rgba(50, 0, 50, 0.6);
+  --glass-border: #fcee21;
+  text-transform: uppercase;
+}
+
+/* --- CORE STYLES --- */
+body {
+  background: var(--bg-primary);
+  color: var(--text-main);
+  font-family: var(--font-body);
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  transition: all 0.5s ease;
+  overflow-x: hidden;
+}
+
+/* Animated Background Mesh (for default/dark themes) */
+body:not(.theme-minimal)::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  background-image: radial-gradient(
+      at 0% 0%,
+      hsla(253, 16%, 7%, 1) 0,
+      transparent 50%
+    ),
+    radial-gradient(at 50% 0%, hsla(225, 39%, 30%, 1) 0, transparent 50%),
+    radial-gradient(at 100% 0%, hsla(339, 49%, 30%, 1) 0, transparent 50%);
+  opacity: 0.8;
+  pointer-events: none;
+}
+
+/* Glass Panel */
+.glass-panel {
+  background: var(--glass-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--border-radius);
+  box-shadow: var(--glass-shadow);
+  padding: 2rem;
+  margin: 2rem auto;
+  max-width: 1200px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.glass-panel:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+/* Inputs & Form Elements */
+input,
+textarea,
+select {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--glass-border);
+  color: var(--text-main);
+  padding: 0.8rem 1.2rem;
+  border-radius: 8px;
+  outline: none;
+  width: 100%;
+  box-sizing: border-box;
+  font-family: inherit;
+  transition: border-color 0.3s;
+}
+
+input:focus,
+textarea:focus {
+  border-color: var(--accent-color);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* Buttons */
+button,
+.btn {
+  background: var(--gradient-1);
+  color: white;
+  border: none;
+  padding: 12px 28px;
+  border-radius: 50px;
+  font-weight: 600;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+button:hover,
+.btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.4);
+}
+
+/* Headers */
+h1,
+h2,
+h3 {
+  font-family: var(--font-heading);
+  background: var(--gradient-1);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  margin-bottom: 1rem;
+}
+
+a {
+  color: var(--accent-color);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+a:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
+/* Branding Footer */
+#ashraf-branding-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(15, 23, 42, 0.95);
+  backdrop-filter: blur(10px);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  color: #94a3b8;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  font-size: 0.9rem;
+  z-index: 10000;
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.5);
+}
+
+#ashraf-branding-bar i {
+  font-size: 1.2rem;
+}
+#ashraf-branding-bar a {
+  color: var(--accent-color);
+}

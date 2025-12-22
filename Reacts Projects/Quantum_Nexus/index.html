@@ -1,0 +1,320 @@
+<!--
+ -----------------------------------------------------------------------------
+ @author      Ashraf Morningstar
+ @github      https://github.com/AshrafMorningstar
+ @repository  Project Graveyard - The Ultimate Archive
+ @quote       "Code that defines the future. Designed to inspire."
+ -----------------------------------------------------------------------------
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quantum Nexus - Hyperdimensional Data Visualization</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Quantum Loading Screen -->
+    <div id="quantum-loader" class="quantum-loader">
+      <div class="quantum-core">
+        <div class="quantum-ring ring-1"></div>
+        <div class="quantum-ring ring-2"></div>
+        <div class="quantum-ring ring-3"></div>
+        <div class="quantum-center">Q</div>
+      </div>
+      <div class="loading-text">Initializing Quantum State...</div>
+      <div class="quantum-progress">
+        <div class="progress-fill"></div>
+      </div>
+    </div>
+
+    <!-- Main Application -->
+    <div id="app" class="app hidden">
+      <!-- Hyperdimensional Canvas Background -->
+      <canvas id="hyper-canvas"></canvas>
+
+      <!-- Particle Field -->
+      <canvas id="particle-field"></canvas>
+
+      <!-- Header -->
+      <header class="header">
+        <div class="logo">
+          <div class="logo-quantum">
+            <div class="quantum-symbol">⚛️</div>
+          </div>
+          <h1 class="logo-text">Quantum Nexus</h1>
+        </div>
+
+        <nav class="nav">
+          <button class="nav-btn active" data-view="visualize">
+            <span class="icon">🌌</span>
+            <span>Visualize</span>
+          </button>
+          <button class="nav-btn" data-view="analyze">
+            <span class="icon">📊</span>
+            <span>Analyze</span>
+          </button>
+          <button class="nav-btn" data-view="generate">
+            <span class="icon">🎨</span>
+            <span>Generate</span>
+          </button>
+          <button class="nav-btn" data-view="sonify">
+            <span class="icon">🎵</span>
+            <span>Sonify</span>
+          </button>
+        </nav>
+
+        <div class="header-controls">
+          <button class="control-btn" id="theme-morph">
+            <span>🎭</span>
+            <span>Morph Theme</span>
+          </button>
+          <button class="control-btn" id="randomize">
+            <span>🎲</span>
+            <span>Randomize</span>
+          </button>
+        </div>
+      </header>
+
+      <!-- Main Content Area -->
+      <main class="main-content">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+          <div class="sidebar-section">
+            <h3 class="section-title">Quantum Themes</h3>
+            <div class="theme-grid">
+              <div class="theme-card" data-theme="cosmic-void">
+                <div
+                  class="theme-preview"
+                  style="background: linear-gradient(135deg, #0a0a1a, #1a0a2e)"
+                ></div>
+                <span>Cosmic Void</span>
+              </div>
+              <div class="theme-card" data-theme="plasma-storm">
+                <div
+                  class="theme-preview"
+                  style="background: linear-gradient(135deg, #ff006e, #8338ec)"
+                ></div>
+                <span>Plasma Storm</span>
+              </div>
+              <div class="theme-card" data-theme="liquid-crystal">
+                <div
+                  class="theme-preview"
+                  style="background: linear-gradient(135deg, #06ffa5, #00d4ff)"
+                ></div>
+                <span>Liquid Crystal</span>
+              </div>
+              <div class="theme-card" data-theme="electric-dreams">
+                <div
+                  class="theme-preview"
+                  style="background: linear-gradient(135deg, #00f5ff, #ff00ff)"
+                ></div>
+                <span>Electric Dreams</span>
+              </div>
+              <div class="theme-card" data-theme="quantum-blossom">
+                <div
+                  class="theme-preview"
+                  style="background: linear-gradient(135deg, #ff6b9d, #c44569)"
+                ></div>
+                <span>Quantum Blossom</span>
+              </div>
+              <div class="theme-card" data-theme="prismatic-burst">
+                <div
+                  class="theme-preview"
+                  style="background: linear-gradient(135deg, #f7b733, #fc4a1a)"
+                ></div>
+                <span>Prismatic Burst</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="sidebar-section">
+            <h3 class="section-title">Visualization Controls</h3>
+            <div class="control-group">
+              <label>Particle Density</label>
+              <input
+                type="range"
+                min="100"
+                max="10000"
+                value="5000"
+                id="particle-density"
+                class="slider"
+              />
+              <span class="value-display" id="density-value">5000</span>
+            </div>
+            <div class="control-group">
+              <label>Quantum Flux</label>
+              <input
+                type="range"
+                min="0"
+                max="100"
+                value="50"
+                id="quantum-flux"
+                class="slider"
+              />
+              <span class="value-display" id="flux-value">50</span>
+            </div>
+            <div class="control-group">
+              <label>Temporal Shift</label>
+              <input
+                type="range"
+                min="0"
+                max="100"
+                value="30"
+                id="temporal-shift"
+                class="slider"
+              />
+              <span class="value-display" id="shift-value">30</span>
+            </div>
+            <div class="control-group">
+              <label>Dimensional Depth</label>
+              <input
+                type="range"
+                min="2"
+                max="5"
+                value="4"
+                id="dimension-depth"
+                class="slider"
+              />
+              <span class="value-display" id="depth-value">4D</span>
+            </div>
+          </div>
+
+          <div class="sidebar-section">
+            <h3 class="section-title">Data Input</h3>
+            <button class="action-btn">
+              <span>📁</span>
+              <span>Load Dataset</span>
+            </button>
+            <button class="action-btn">
+              <span>🔗</span>
+              <span>Connect API</span>
+            </button>
+            <button class="action-btn">
+              <span>🎲</span>
+              <span>Generate Random</span>
+            </button>
+          </div>
+        </aside>
+
+        <!-- Visualization Area -->
+        <section class="viz-area">
+          <div class="viz-header">
+            <h2 class="viz-title">Hyperdimensional Visualization</h2>
+            <div class="viz-stats">
+              <div class="stat-item">
+                <span class="stat-label">FPS</span>
+                <span class="stat-value" id="fps">60</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-label">Particles</span>
+                <span class="stat-value" id="particle-count">5000</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-label">Dimensions</span>
+                <span class="stat-value" id="dimensions">4D</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="viz-canvas-container">
+            <canvas id="main-viz"></canvas>
+
+            <!-- Overlay Controls -->
+            <div class="viz-overlay">
+              <button class="overlay-btn" id="play-pause">
+                <span id="play-icon">⏸️</span>
+              </button>
+              <button class="overlay-btn" id="reset">
+                <span>🔄</span>
+              </button>
+              <button class="overlay-btn" id="screenshot">
+                <span>📸</span>
+              </button>
+              <button class="overlay-btn" id="fullscreen">
+                <span>⛶</span>
+              </button>
+            </div>
+
+            <!-- Timeline -->
+            <div class="timeline">
+              <div class="timeline-track">
+                <div class="timeline-progress" id="timeline-progress"></div>
+                <input
+                  type="range"
+                  min="0"
+                  max="100"
+                  value="0"
+                  id="timeline-slider"
+                  class="timeline-slider"
+                />
+              </div>
+              <div class="timeline-labels">
+                <span>0s</span>
+                <span id="current-time">0.0s</span>
+                <span>∞</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Data Insights Panel -->
+          <div class="insights-panel">
+            <div class="insight-card">
+              <div class="insight-icon">🔮</div>
+              <div class="insight-content">
+                <h4>Quantum Prediction</h4>
+                <p>Pattern convergence detected in 3.7 seconds</p>
+              </div>
+            </div>
+            <div class="insight-card">
+              <div class="insight-icon">🌊</div>
+              <div class="insight-content">
+                <h4>Fluid Dynamics</h4>
+                <p>Turbulence level: Moderate (67%)</p>
+              </div>
+            </div>
+            <div class="insight-card">
+              <div class="insight-icon">⚡</div>
+              <div class="insight-content">
+                <h4>Energy State</h4>
+                <p>System entropy: 0.842 (High complexity)</p>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <!-- Floating Action Button -->
+      <button class="fab" id="export-fab">
+        <span>💾</span>
+        <div class="fab-menu hidden" id="fab-menu">
+          <button class="fab-option">Export PNG</button>
+          <button class="fab-option">Export SVG</button>
+          <button class="fab-option">Export Video</button>
+          <button class="fab-option">Export Data</button>
+        </div>
+      </button>
+
+      <!-- Notification System -->
+      <div class="notification-container" id="notifications"></div>
+
+      <!-- Footer -->
+      <footer class="footer">
+        <div class="footer-content">
+          <p>
+            Created by
+            <a href="https://github.com/AshrafMorningstar" target="_blank"
+              >AshrafMorningstar</a
+            >
+          </p>
+          <p>Quantum Nexus v1.0.0 | © 2025 All Rights Reserved</p>
+        </div>
+      </footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/three@0.155.0/build/three.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

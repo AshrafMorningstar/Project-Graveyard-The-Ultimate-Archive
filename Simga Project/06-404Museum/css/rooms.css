@@ -1,0 +1,291 @@
+/*
+ * -----------------------------------------------------------------------------
+ * @author      Ashraf Morningstar
+ * @github      https://github.com/AshrafMorningstar
+ * @repository  Project Graveyard - The Ultimate Archive
+ * @quote       "Code that defines the future. Designed to inspire."
+ * -----------------------------------------------------------------------------
+*/
+
+/* 404 Museum - Room-Specific Styles */
+/* Author: Ashraf Morningstar */
+/* https://github.com/AshrafMorningstar */
+
+/* Entrance Room */
+#entrance {
+    background: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%);
+}
+
+/* Room 404 - Lost / Curiosity */
+.room-404 {
+    background: linear-gradient(135deg, #1a2332 0%, #0d1117 100%);
+}
+
+.room-404 .error-code {
+    color: #4a9eff;
+    text-shadow: 0 0 40px rgba(74, 158, 255, 0.3);
+}
+
+.room-404 .error-title {
+    color: #7eb8ff;
+}
+
+.ambient-shapes {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.shape {
+    position: absolute;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(74, 158, 255, 0.15) 0%, transparent 70%);
+    animation: float 20s infinite ease-in-out;
+}
+
+.shape-1 {
+    width: 300px;
+    height: 300px;
+    top: 10%;
+    left: 10%;
+    animation-delay: 0s;
+}
+
+.shape-2 {
+    width: 200px;
+    height: 200px;
+    top: 60%;
+    right: 15%;
+    animation-delay: 7s;
+}
+
+.shape-3 {
+    width: 250px;
+    height: 250px;
+    bottom: 15%;
+    left: 50%;
+    animation-delay: 14s;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translate(0, 0) scale(1);
+        opacity: 0.3;
+    }
+    50% {
+        transform: translate(30px, -30px) scale(1.1);
+        opacity: 0.6;
+    }
+}
+
+/* Room 403 - Restricted / Boundaries */
+.room-403 {
+    background: linear-gradient(135deg, #2a1a1a 0%, #0d0707 100%);
+}
+
+.room-403 .error-code {
+    color: #ff6b6b;
+    text-shadow: 0 0 40px rgba(255, 107, 107, 0.3);
+}
+
+.room-403 .error-title {
+    color: #ff9999;
+}
+
+.boundary-lines {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.line {
+    position: absolute;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(to bottom, transparent 0%, rgba(255, 107, 107, 0.3) 50%, transparent 100%);
+    animation: pulse-line 3s infinite ease-in-out;
+}
+
+.line:nth-child(1) {
+    left: 20%;
+    animation-delay: 0s;
+}
+
+.line:nth-child(2) {
+    left: 40%;
+    animation-delay: 0.75s;
+}
+
+.line:nth-child(3) {
+    left: 60%;
+    animation-delay: 1.5s;
+}
+
+.line:nth-child(4) {
+    left: 80%;
+    animation-delay: 2.25s;
+}
+
+@keyframes pulse-line {
+    0%, 100% {
+        opacity: 0.2;
+    }
+    50% {
+        opacity: 0.6;
+    }
+}
+
+/* Room 500 - System Fatigue */
+.room-500 {
+    background: linear-gradient(135deg, #1a1a2a 0%, #07070d 100%);
+}
+
+.room-500 .error-code {
+    color: #9b7eff;
+    text-shadow: 0 0 40px rgba(155, 126, 255, 0.3);
+}
+
+.room-500 .error-title {
+    color: #b89fff;
+}
+
+.pulse-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at center, rgba(155, 126, 255, 0.1) 0%, transparent 70%);
+    animation: breathe 4s infinite ease-in-out;
+    z-index: 1;
+}
+
+@keyframes breathe {
+    0%, 100% {
+        opacity: 0.3;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0.6;
+        transform: scale(1.05);
+    }
+}
+
+/* Room Offline - Isolation */
+.room-offline {
+    background: linear-gradient(135deg, #0f0f0f 0%, #000000 100%);
+}
+
+.room-offline .error-code {
+    color: #666;
+    text-shadow: 0 0 40px rgba(102, 102, 102, 0.3);
+    font-size: clamp(3rem, 10vw, 6rem);
+}
+
+.room-offline .error-title {
+    color: #888;
+}
+
+.void-effect {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at center, transparent 0%, rgba(0, 0, 0, 0.8) 100%);
+    animation: void-pulse 8s infinite ease-in-out;
+    z-index: 1;
+}
+
+@keyframes void-pulse {
+    0%, 100% {
+        opacity: 0.5;
+    }
+    50% {
+        opacity: 0.8;
+    }
+}
+
+/* Room Timeout - Anticipation */
+.room-timeout {
+    background: linear-gradient(135deg, #2a2a1a 0%, #0d0d07 100%);
+}
+
+.room-timeout .error-code {
+    color: #ffb74a;
+    text-shadow: 0 0 40px rgba(255, 183, 74, 0.3);
+    font-size: clamp(3rem, 10vw, 6rem);
+}
+
+.room-timeout .error-title {
+    color: #ffc97e;
+}
+
+.timer-rings {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    height: 400px;
+    z-index: 1;
+}
+
+.ring {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 2px solid rgba(255, 183, 74, 0.2);
+    border-radius: 50%;
+    animation: expand-ring 3s infinite ease-out;
+}
+
+.ring-1 {
+    width: 100px;
+    height: 100px;
+    animation-delay: 0s;
+}
+
+.ring-2 {
+    width: 100px;
+    height: 100px;
+    animation-delay: 1s;
+}
+
+.ring-3 {
+    width: 100px;
+    height: 100px;
+    animation-delay: 2s;
+}
+
+@keyframes expand-ring {
+    0% {
+        width: 100px;
+        height: 100px;
+        opacity: 0.6;
+    }
+    100% {
+        width: 400px;
+        height: 400px;
+        opacity: 0;
+    }
+}
+
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+    .shape,
+    .line,
+    .pulse-overlay,
+    .void-effect,
+    .ring {
+        animation: none !important;
+    }
+}

@@ -1,0 +1,54 @@
+name: CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build-rust:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install Rust
+        uses: actions-rs/toolchain@v1
+        with:
+          toolchain: stable
+          profile: minimal
+      - name: Build runtime_core
+        working-directory: runtime/runtime_core
+        run: cargo build --release
+
+  build-python-wheel:
+    runs-on: ubuntu-latest
+    needs: build-rust
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install Rust (for maturin)
+        uses: actions-rs/toolchain@v1
+        with:
+          toolchain: stable
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+      - name: Install maturin
+        run: pip install maturin
+      - name: Build wheel
+        working-directory: runtime/py_bindings
+        run: maturin build --release -o target/wheels
+      - name: Upload wheel artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: python-wheels
+          path: runtime/py_bindings/target/wheels/*.whl
+
+  lint-and-test:
+    runs-on: ubuntu-latest
+    needs: [build-rust, build-python-wheel]
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run cargo tests
+        working-directory: runtime/runtime_core
+        run: cargo test

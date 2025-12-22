@@ -1,0 +1,147 @@
+/*
+ * -----------------------------------------------------------------------------
+ * @author      Ashraf Morningstar
+ * @github      https://github.com/AshrafMorningstar
+ * @repository  Project Graveyard - The Ultimate Archive
+ * @quote       "Code that defines the future. Designed to inspire."
+ * -----------------------------------------------------------------------------
+*/
+
+body {
+    background-color: #0d1117;
+    font-family: 'VT323', monospace;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    color: #0f0;
+}
+
+.terminal {
+    background: #000;
+    width: 90%;
+    max-width: 500px;
+    border: 2px solid #333;
+    border-radius: 5px;
+    box-shadow: 0 0 20px rgba(0, 255, 0, 0.2);
+    overflow: hidden;
+}
+
+.header {
+    background: #333;
+    padding: 5px 10px;
+    display: flex;
+    align-items: center;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin-right: 5px;
+    display: inline-block;
+}
+
+.red { background: #ff5f56; }
+.yellow { background: #ffbd2e; }
+.green { background: #27c93f; }
+
+.title {
+    margin-left: 10px;
+    color: #ccc;
+    font-size: 1.1rem;
+}
+
+.content {
+    padding: 20px;
+}
+
+.prompt {
+    font-size: 1.2rem;
+    margin: 10px 0;
+    color: #0f0;
+    text-shadow: 0 0 5px #0f0;
+}
+
+.settings {
+    margin: 20px 0;
+    border-left: 2px solid #0f0;
+    padding-left: 15px;
+}
+
+input[type="range"] {
+    width: 100%;
+    margin: 10px 0;
+    accent-color: #0f0;
+}
+
+.checkboxes label {
+    display: block;
+    margin: 5px 0;
+    cursor: pointer;
+    font-size: 1.1rem;
+}
+
+.checkboxes input {
+    margin-right: 10px;
+}
+
+button {
+    background: #0f0;
+    color: #000;
+    border: none;
+    padding: 10px 20px;
+    font-family: inherit;
+    font-size: 1.3rem;
+    font-weight: bold;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 10px;
+}
+
+button:hover {
+    background: #000;
+    color: #0f0;
+    border: 2px solid #0f0;
+}
+
+.result-container {
+    margin-top: 20px;
+    border: 1px dashed #0f0;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #0a0a0a;
+}
+
+#password {
+    font-size: 1.4rem;
+    word-break: break-all;
+}
+
+#copy-btn {
+    width: auto;
+    margin: 0;
+    padding: 5px 10px;
+    font-size: 1rem;
+}
+
+.blink {
+    animation: blinker 1s linear infinite;
+}
+
+@keyframes blinker {
+    50% { opacity: 0; }
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    font-size: 0.9rem;
+    border-top: 1px solid #333;
+    color: #555;
+}
+
+footer a { color: #0f0; text-decoration: none; }

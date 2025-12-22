@@ -1,0 +1,13 @@
+[package]
+name = "runtime_core"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+name = "runtime_core"
+path = "src/lib.rs"
+
+[dependencies]
+anyhow = "1.0"
+wasmtime = "8.0.0"
+serde = { version = "1.0", features=["derive"] }

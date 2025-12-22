@@ -1,0 +1,257 @@
+<!--
+ -----------------------------------------------------------------------------
+ @author      Ashraf Morningstar
+ @github      https://github.com/AshrafMorningstar
+ @repository  Project Graveyard - The Ultimate Archive
+ @quote       "Code that defines the future. Designed to inspire."
+ -----------------------------------------------------------------------------
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PRISM SYNC — Advanced Cloud Synchronization Platform</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --prism: #6366f1;
+      --pink: #ec4899;
+      --bg: #0f172a;
+      --surface: #1e293b;
+      --text: #f1f5f9;
+      --muted: #94a3b8;
+    }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #0f172a 100%);
+      color: var(--text);
+      min-height: 100vh;
+    }
+    .header {
+      padding: 30px 40px;
+      border-bottom: 2px solid var(--prism);
+      background: rgba(15, 23, 42, 0.95);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .title {
+      font-size: 1.8rem;
+      color: var(--prism);
+      font-weight: 700;
+    }
+    .credit {
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+    .credit a { color: var(--prism); text-decoration: none; }
+    .container {
+      max-width: 1600px;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
+    .sync-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin-bottom: 40px;
+    }
+    .device {
+      background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(236, 72, 153, 0.05));
+      border: 2px solid var(--prism);
+      border-radius: 16px;
+      padding: 24px;
+      text-align: center;
+    }
+    .device-icon {
+      font-size: 3rem;
+      margin-bottom: 12px;
+    }
+    .device-name {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 8px;
+      color: var(--prism);
+    }
+    .device-status {
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-bottom: 16px;
+    }
+    .sync-indicator {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 12px;
+      background: rgba(99, 102, 241, 0.2);
+      border-radius: 20px;
+      font-size: 0.8rem;
+    }
+    .indicator-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #10b981;
+      animation: pulse 1.5s ease-in-out infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.5; }
+    }
+    .stats-section {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      margin-bottom: 40px;
+    }
+    .stat-card {
+      background: rgba(30, 41, 59, 0.8);
+      border: 1px solid var(--prism);
+      border-radius: 12px;
+      padding: 20px;
+    }
+    .stat-label {
+      font-size: 0.8rem;
+      color: var(--muted);
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+    .stat-value {
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--prism);
+    }
+    .activity-log {
+      background: rgba(30, 41, 59, 0.8);
+      border: 1px solid var(--prism);
+      border-radius: 12px;
+      padding: 20px;
+    }
+    .activity-title {
+      color: var(--prism);
+      font-weight: 600;
+      margin-bottom: 16px;
+    }
+    .activity-item {
+      display: flex;
+      justify-content: space-between;
+      padding: 8px 0;
+      border-bottom: 1px solid rgba(99, 102, 241, 0.2);
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+    .activity-item:last-child { border-bottom: none; }
+    .activity-time { color: var(--prism); }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <div class="title">🔄 PRISM SYNC</div>
+    <div class="credit">Created by <a href="https://github.com/AshrafMorningstar" target="_blank">@AshrafMorningstar</a></div>
+  </div>
+
+  <div class="container">
+    <div class="sync-grid">
+      <div class="device">
+        <div class="device-icon">💻</div>
+        <div class="device-name">Desktop</div>
+        <div class="device-status">MacBook Pro</div>
+        <div class="sync-indicator">
+          <div class="indicator-dot"></div>
+          <span>Synced</span>
+        </div>
+      </div>
+
+      <div class="device">
+        <div class="device-icon">📱</div>
+        <div class="device-name">Mobile</div>
+        <div class="device-status">iPhone 15</div>
+        <div class="sync-indicator">
+          <div class="indicator-dot"></div>
+          <span>Syncing...</span>
+        </div>
+      </div>
+
+      <div class="device">
+        <div class="device-icon">⌚</div>
+        <div class="device-name">Watch</div>
+        <div class="device-status">Apple Watch</div>
+        <div class="sync-indicator">
+          <div class="indicator-dot"></div>
+          <span>Synced</span>
+        </div>
+      </div>
+
+      <div class="device">
+        <div class="device-icon">📟</div>
+        <div class="device-name">Tablet</div>
+        <div class="device-status">iPad Pro</div>
+        <div class="sync-indicator">
+          <div class="indicator-dot"></div>
+          <span>Synced</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="stats-section">
+      <div class="stat-card">
+        <div class="stat-label">Files Synced</div>
+        <div class="stat-value" id="files">0</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Data Transferred</div>
+        <div class="stat-value" id="data">0 GB</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Sync Speed</div>
+        <div class="stat-value" id="speed">0 MB/s</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Connected Devices</div>
+        <div class="stat-value" id="devices">4</div>
+      </div>
+    </div>
+
+    <div class="activity-log">
+      <div class="activity-title">📊 Recent Activity</div>
+      <div id="activity"></div>
+    </div>
+  </div>
+
+  <script>
+    const activities = [
+      'Desktop synced successfully',
+      'Mobile data received',
+      'Cloud backup initiated',
+      'Watch connection established',
+      'Files uploaded to cloud',
+      'Tablet sync completed',
+      'Encryption verified',
+      'Storage optimized'
+    ];
+
+    function updateStats() {
+      document.getElementById('files').textContent = Math.floor(Math.random() * 50000 + 10000);
+      document.getElementById('data').textContent = (Math.random() * 500 + 50).toFixed(1);
+      document.getElementById('speed').textContent = Math.floor(Math.random() * 500 + 50);
+
+      const activityDiv = document.getElementById('activity');
+      activityDiv.innerHTML = '';
+      for (let i = 0; i < 5; i++) {
+        const time = new Date(Date.now() - Math.random() * 3600000).toLocaleTimeString();
+        const activity = activities[Math.floor(Math.random() * activities.length)];
+        const actEl = document.createElement('div');
+        actEl.className = 'activity-item';
+        actEl.innerHTML = `<span>${activity}</span><span class="activity-time">${time}</span>`;
+        activityDiv.appendChild(actEl);
+      }
+    }
+
+    updateStats();
+    setInterval(updateStats, 3000);
+  </script>
+</body>
+</html>

@@ -1,0 +1,187 @@
+/*
+ * -----------------------------------------------------------------------------
+ * @author      Ashraf Morningstar
+ * @github      https://github.com/AshrafMorningstar
+ * @repository  Project Graveyard - The Ultimate Archive
+ * @quote       "Code that defines the future. Designed to inspire."
+ * -----------------------------------------------------------------------------
+*/
+
+/* SilentNav - Layout Styles */
+/* Author: Ashraf Morningstar | https://github.com/AshrafMorningstar */
+
+:root {
+    --accent-color: #2563eb;
+    --bg-primary: #fafafa;
+    --bg-secondary: #ffffff;
+    --text-primary: #0a0a0a;
+    --text-secondary: #666666;
+    --border-color: #e5e5e5;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    min-height: 100vh;
+    display: flex;
+}
+
+.content-container {
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+}
+
+.content-section {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.6s ease, transform 0.6s ease;
+    transform: translateY(20px);
+}
+
+.content-section.active {
+    opacity: 1;
+    pointer-events: all;
+    transform: translateY(0);
+}
+
+.section-inner {
+    text-align: center;
+    max-width: 600px;
+    padding: 40px;
+}
+
+.section-inner h1 {
+    font-size: clamp(48px, 8vw, 72px);
+    font-weight: 600;
+    margin-bottom: 60px;
+    letter-spacing: -0.02em;
+}
+
+.section-inner p {
+    font-size: 18px;
+    color: var(--text-secondary);
+    margin-top: 40px;
+    font-weight: 400;
+}
+
+/* Demo Elements */
+.grid-demo {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    max-width: 300px;
+    margin: 0 auto;
+}
+
+.grid-item {
+    aspect-ratio: 1;
+    background: var(--accent-color);
+    border-radius: 12px;
+    transition: transform 0.3s ease;
+}
+
+.grid-item:hover {
+    transform: scale(1.05);
+}
+
+.flow-demo {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.flow-line {
+    height: 4px;
+    background: var(--accent-color);
+    border-radius: 2px;
+    animation: flowPulse 2s ease-in-out infinite;
+}
+
+.flow-line:nth-child(2) {
+    animation-delay: 0.3s;
+    width: 80%;
+    margin-left: auto;
+}
+
+.flow-line:nth-child(3) {
+    animation-delay: 0.6s;
+    width: 60%;
+}
+
+@keyframes flowPulse {
+    0%, 100% { opacity: 0.3; }
+    50% { opacity: 1; }
+}
+
+.minimal-demo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+}
+
+.circle-outer {
+    width: 200px;
+    height: 200px;
+    border: 3px solid var(--accent-color);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: rotate 20s linear infinite;
+}
+
+.circle-inner {
+    width: 60px;
+    height: 60px;
+    background: var(--accent-color);
+    border-radius: 50%;
+}
+
+@keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.visual-demo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+}
+
+.triangle {
+    width: 0;
+    height: 0;
+    border-left: 100px solid transparent;
+    border-right: 100px solid transparent;
+    border-bottom: 173px solid var(--accent-color);
+    animation: pulse 3s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .section-inner {
+        padding: 24px;
+    }
+}

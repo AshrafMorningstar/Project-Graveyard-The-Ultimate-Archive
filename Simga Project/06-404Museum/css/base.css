@@ -1,0 +1,192 @@
+/*
+ * -----------------------------------------------------------------------------
+ * @author      Ashraf Morningstar
+ * @github      https://github.com/AshrafMorningstar
+ * @repository  Project Graveyard - The Ultimate Archive
+ * @quote       "Code that defines the future. Designed to inspire."
+ * -----------------------------------------------------------------------------
+*/
+
+/* 404 Museum - Base Styles */
+/* Author: Ashraf Morningstar */
+/* https://github.com/AshrafMorningstar */
+
+:root {
+    /* Typography */
+    --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    
+    /* Base Colors */
+    --color-black: #0a0a0a;
+    --color-white: #fafafa;
+    
+    /* Transitions */
+    --transition-smooth: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-fast: all 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-primary);
+    background: var(--color-black);
+    color: var(--color-white);
+    overflow-x: hidden;
+    min-height: 100vh;
+}
+
+/* Room Container */
+.room {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.room.active {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.room-content {
+    text-align: center;
+    z-index: 10;
+    position: relative;
+    padding: 2rem;
+    max-width: 600px;
+}
+
+/* Typography */
+.museum-title {
+    font-size: clamp(3rem, 8vw, 6rem);
+    font-weight: 200;
+    letter-spacing: -0.03em;
+    margin-bottom: 1rem;
+    background: linear-gradient(135deg, #fff 0%, #999 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.museum-subtitle {
+    font-size: clamp(1rem, 2vw, 1.5rem);
+    font-weight: 300;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    opacity: 0.7;
+    margin-bottom: 0.5rem;
+}
+
+.museum-description {
+    font-size: clamp(0.9rem, 1.5vw, 1.1rem);
+    font-weight: 300;
+    opacity: 0.5;
+    margin-bottom: 3rem;
+    font-style: italic;
+}
+
+.error-code {
+    font-size: clamp(4rem, 12vw, 8rem);
+    font-weight: 100;
+    letter-spacing: -0.05em;
+    margin-bottom: 1.5rem;
+    line-height: 1;
+}
+
+.error-title {
+    font-size: clamp(1.8rem, 4vw, 3rem);
+    font-weight: 300;
+    letter-spacing: -0.02em;
+    margin-bottom: 1rem;
+}
+
+.error-message {
+    font-size: clamp(1rem, 2vw, 1.3rem);
+    font-weight: 300;
+    opacity: 0.8;
+    margin-bottom: 0.8rem;
+    line-height: 1.6;
+}
+
+.error-hint {
+    font-size: clamp(0.9rem, 1.5vw, 1rem);
+    font-weight: 300;
+    opacity: 0.5;
+    font-style: italic;
+    margin-bottom: 2.5rem;
+}
+
+/* Navigation */
+.room-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 3rem;
+}
+
+.room-link,
+.back-btn {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--color-white);
+    padding: 0.8rem 1.8rem;
+    font-size: 0.95rem;
+    font-weight: 400;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: var(--transition-fast);
+    backdrop-filter: blur(10px);
+    border-radius: 2px;
+}
+
+.room-link:hover,
+.back-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.3);
+    transform: translateY(-2px);
+}
+
+.room-link:active,
+.back-btn:active {
+    transform: translateY(0);
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .room-content {
+        padding: 1.5rem;
+    }
+    
+    .room-nav {
+        gap: 0.8rem;
+    }
+    
+    .room-link,
+    .back-btn {
+        padding: 0.7rem 1.4rem;
+        font-size: 0.85rem;
+    }
+}

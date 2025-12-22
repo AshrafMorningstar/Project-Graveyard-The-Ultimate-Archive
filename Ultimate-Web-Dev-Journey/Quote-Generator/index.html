@@ -1,0 +1,53 @@
+<!--
+ -----------------------------------------------------------------------------
+ @author      Ashraf Morningstar
+ @github      https://github.com/AshrafMorningstar
+ @repository  Project Graveyard - The Ultimate Archive
+ @quote       "Code that defines the future. Designed to inspire."
+ -----------------------------------------------------------------------------
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Quote Generator | Ultimate Web Dev Journey</title>
+    <style>
+        /* Created by Ashraf Morningstar - https://github.com/AshrafMorningstar */
+        body { background: #f48fb1; display: flex; justify-content: center; align-items: center; height: 100vh; font-family: 'Montserrat', sans-serif; margin: 0; }
+        .quote-box { background: white; width: 600px; padding: 40px; border-radius: 15px; box-shadow: 0 10px 20px rgba(0,0,0,0.1); text-align: center; }
+        .quote { font-size: 1.5rem; color: #333; margin-bottom: 20px; }
+        .author { font-size: 1rem; color: #777; font-style: italic; margin-bottom: 30px; display: block; }
+        button { background-color: #333; color: white; border: none; padding: 15px 30px; border-radius: 30px; font-size: 1rem; cursor: pointer; transition: 0.3s; }
+        button:hover { opacity: 0.8; }
+    </style>
+</head>
+<body>
+    <div class="quote-box">
+        <h2 class="quote">"Loading quote..."</h2>
+        <span class="author">- Unknown</span>
+        <button onclick="getQuote()">New Quote</button>
+    </div>
+    <script>
+        // Created by Ashraf Morningstar - https://github.com/AshrafMorningstar
+        const api_url = "https://api.quotable.io/random";
+        const quoteBox = document.querySelector(".quote");
+        const authorBox = document.querySelector(".author");
+
+        async function getQuote() {
+            try {
+                const response = await fetch(api_url);
+                const data = await response.json();
+                quoteBox.innerHTML = `"${data.content}"`;
+                authorBox.innerHTML = `- ${data.author}`;
+            } catch (err) {
+                quoteBox.innerHTML = "An error occurred while fetching the quote.";
+                authorBox.innerHTML = "";
+            }
+        }
+
+        getQuote();
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>

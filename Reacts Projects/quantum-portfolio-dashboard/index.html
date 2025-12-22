@@ -1,0 +1,240 @@
+<!--
+ -----------------------------------------------------------------------------
+ @author      Ashraf Morningstar
+ @github      https://github.com/AshrafMorningstar
+ @repository  Project Graveyard - The Ultimate Archive
+ @quote       "Code that defines the future. Designed to inspire."
+ -----------------------------------------------------------------------------
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quantum Portfolio Dashboard | AshrafMorningstar</title>
+    <meta name="description" content="An ultra-modern, multi-dimensional portfolio dashboard with holographic effects and dynamic themes">
+    <meta name="author" content="AshrafMorningstar">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Particle Background -->
+    <canvas id="particleCanvas"></canvas>
+    
+    <!-- Holographic Overlay -->
+    <div class="holographic-overlay"></div>
+    
+    <!-- Main Container -->
+    <div class="quantum-container">
+        
+        <!-- Header with Theme Switcher -->
+        <header class="quantum-header">
+            <div class="logo-container">
+                <div class="logo-hologram">
+                    <svg viewBox="0 0 100 100" class="logo-svg">
+                        <defs>
+                            <linearGradient id="logoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" class="grad-start"/>
+                                <stop offset="100%" class="grad-end"/>
+                            </linearGradient>
+                        </defs>
+                        <polygon points="50,10 90,30 90,70 50,90 10,70 10,30" fill="url(#logoGrad)" opacity="0.3"/>
+                        <polygon points="50,20 80,35 80,65 50,80 20,65 20,35" fill="none" stroke="url(#logoGrad)" stroke-width="2"/>
+                        <circle cx="50" cy="50" r="15" fill="url(#logoGrad)"/>
+                    </svg>
+                </div>
+                <h1 class="quantum-title">QUANTUM DASHBOARD</h1>
+            </div>
+            
+            <div class="theme-switcher">
+                <button class="theme-btn active" data-theme="cyber" title="Cyber Theme">
+                    <span class="theme-icon">⚡</span>
+                </button>
+                <button class="theme-btn" data-theme="neon" title="Neon Theme">
+                    <span class="theme-icon">🌟</span>
+                </button>
+                <button class="theme-btn" data-theme="aurora" title="Aurora Theme">
+                    <span class="theme-icon">🌈</span>
+                </button>
+                <button class="theme-btn" data-theme="matrix" title="Matrix Theme">
+                    <span class="theme-icon">💚</span>
+                </button>
+                <button class="theme-btn" data-theme="cosmic" title="Cosmic Theme">
+                    <span class="theme-icon">🌌</span>
+                </button>
+            </div>
+        </header>
+
+        <!-- Main Grid Layout -->
+        <div class="quantum-grid">
+            
+            <!-- Profile Card -->
+            <div class="quantum-card profile-card" data-tilt>
+                <div class="card-glow"></div>
+                <div class="card-content">
+                    <div class="profile-avatar-container">
+                        <div class="avatar-ring"></div>
+                        <img src="https://github.com/AshrafMorningstar.png" alt="AshrafMorningstar" class="profile-avatar" id="profileAvatar">
+                        <div class="status-indicator"></div>
+                    </div>
+                    <h2 class="profile-name" id="profileName">AshrafMorningstar</h2>
+                    <p class="profile-bio" id="profileBio">Full-Stack Developer | Open Source Enthusiast</p>
+                    <div class="profile-stats">
+                        <div class="stat-item">
+                            <div class="stat-value" id="followers">0</div>
+                            <div class="stat-label">Followers</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value" id="repos">0</div>
+                            <div class="stat-label">Repositories</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value" id="stars">0</div>
+                            <div class="stat-label">Stars</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Activity Heatmap -->
+            <div class="quantum-card activity-card" data-tilt>
+                <div class="card-glow"></div>
+                <div class="card-content">
+                    <h3 class="card-title">
+                        <span class="title-icon">📊</span>
+                        Activity Heatmap
+                    </h3>
+                    <div id="activityHeatmap" class="heatmap-container"></div>
+                </div>
+            </div>
+
+            <!-- Language Distribution -->
+            <div class="quantum-card language-card" data-tilt>
+                <div class="card-glow"></div>
+                <div class="card-content">
+                    <h3 class="card-title">
+                        <span class="title-icon">💻</span>
+                        Language Distribution
+                    </h3>
+                    <canvas id="languageChart" class="language-chart"></canvas>
+                    <div id="languageList" class="language-list"></div>
+                </div>
+            </div>
+
+            <!-- Contribution Graph -->
+            <div class="quantum-card contribution-card" data-tilt>
+                <div class="card-glow"></div>
+                <div class="card-content">
+                    <h3 class="card-title">
+                        <span class="title-icon">📈</span>
+                        Contribution Timeline
+                    </h3>
+                    <canvas id="contributionGraph" class="contribution-graph"></canvas>
+                </div>
+            </div>
+
+            <!-- Top Repositories -->
+            <div class="quantum-card repos-card" data-tilt>
+                <div class="card-glow"></div>
+                <div class="card-content">
+                    <h3 class="card-title">
+                        <span class="title-icon">⭐</span>
+                        Top Repositories
+                    </h3>
+                    <div id="topRepos" class="repos-list"></div>
+                </div>
+            </div>
+
+            <!-- Skills Radar -->
+            <div class="quantum-card skills-card" data-tilt>
+                <div class="card-glow"></div>
+                <div class="card-content">
+                    <h3 class="card-title">
+                        <span class="title-icon">🎯</span>
+                        Skills Radar
+                    </h3>
+                    <canvas id="skillsRadar" class="skills-radar"></canvas>
+                </div>
+            </div>
+
+            <!-- Real-time Stats -->
+            <div class="quantum-card realtime-card" data-tilt>
+                <div class="card-glow"></div>
+                <div class="card-content">
+                    <h3 class="card-title">
+                        <span class="title-icon">⚡</span>
+                        Real-time Metrics
+                    </h3>
+                    <div class="metrics-grid">
+                        <div class="metric-item">
+                            <div class="metric-icon">🔥</div>
+                            <div class="metric-info">
+                                <div class="metric-value" id="streak">0</div>
+                                <div class="metric-label">Day Streak</div>
+                            </div>
+                        </div>
+                        <div class="metric-item">
+                            <div class="metric-icon">💡</div>
+                            <div class="metric-info">
+                                <div class="metric-value" id="commits">0</div>
+                                <div class="metric-label">Total Commits</div>
+                            </div>
+                        </div>
+                        <div class="metric-item">
+                            <div class="metric-icon">🚀</div>
+                            <div class="metric-info">
+                                <div class="metric-value" id="prs">0</div>
+                                <div class="metric-label">Pull Requests</div>
+                            </div>
+                        </div>
+                        <div class="metric-item">
+                            <div class="metric-icon">🎨</div>
+                            <div class="metric-info">
+                                <div class="metric-value" id="issues">0</div>
+                                <div class="metric-label">Issues Closed</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Achievement Badges -->
+            <div class="quantum-card achievements-card" data-tilt>
+                <div class="card-glow"></div>
+                <div class="card-content">
+                    <h3 class="card-title">
+                        <span class="title-icon">🏆</span>
+                        Achievements
+                    </h3>
+                    <div id="achievements" class="achievements-grid"></div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Footer -->
+        <footer class="quantum-footer">
+            <p>Crafted with ⚡ by <a href="https://github.com/AshrafMorningstar" target="_blank">AshrafMorningstar</a></p>
+            <p class="footer-subtitle">Quantum Portfolio Dashboard v2.0 | Every refresh generates unique visuals</p>
+        </footer>
+
+    </div>
+
+    <!-- Loading Screen -->
+    <div class="loading-screen" id="loadingScreen">
+        <div class="loader-container">
+            <div class="quantum-loader">
+                <div class="loader-ring"></div>
+                <div class="loader-ring"></div>
+                <div class="loader-ring"></div>
+            </div>
+            <p class="loading-text">Initializing Quantum Dashboard...</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

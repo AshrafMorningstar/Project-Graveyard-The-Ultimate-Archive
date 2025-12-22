@@ -1,0 +1,210 @@
+/*
+ * -----------------------------------------------------------------------------
+ * @author      Ashraf Morningstar
+ * @github      https://github.com/AshrafMorningstar
+ * @repository  Project Graveyard - The Ultimate Archive
+ * @quote       "Code that defines the future. Designed to inspire."
+ * -----------------------------------------------------------------------------
+*/
+
+/* Windowed Web - Window Styles */
+/* Author: Ashraf Morningstar */
+/* https://github.com/AshrafMorningstar */
+
+.window {
+    position: absolute;
+    min-width: 300px;
+    min-height: 200px;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 8px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    transition: box-shadow 0.2s ease;
+    overflow: hidden;
+}
+
+.window.focused {
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.4);
+    z-index: 1000 !important;
+}
+
+.window.minimized {
+    transform: scale(0.8);
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* Window Titlebar */
+.window-titlebar {
+    height: 40px;
+    background: linear-gradient(to bottom, #f5f5f5, #e8e8e8);
+    border-bottom: 1px solid #d0d0d0;
+    display: flex;
+    align-items: center;
+    padding: 0 0.75rem;
+    cursor: move;
+    user-select: none;
+}
+
+.window.focused .window-titlebar {
+    background: linear-gradient(to bottom, #4a9eff, #357abd);
+}
+
+.window-title {
+    flex: 1;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: #333;
+}
+
+.window.focused .window-title {
+    color: white;
+}
+
+.window-controls {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.window-control-btn {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    transition: var(--transition-smooth);
+}
+
+.window-control-btn.close {
+    background: #ff5f57;
+}
+
+.window-control-btn.minimize {
+    background: #ffbd2e;
+}
+
+.window-control-btn.maximize {
+    background: #28c840;
+}
+
+.window-control-btn:hover {
+    filter: brightness(1.2);
+}
+
+/* Window Content */
+.window-content {
+    flex: 1;
+    padding: 1rem;
+    overflow: auto;
+    background: white;
+    color: #333;
+}
+
+/* Window Resize Handle */
+.window-resize-handle {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 20px;
+    height: 20px;
+    cursor: nwse-resize;
+    background: linear-gradient(135deg, transparent 50%, rgba(0, 0, 0, 0.1) 50%);
+}
+
+/* App-Specific Styles */
+.app-notes textarea {
+    width: 100%;
+    height: 100%;
+    border: none;
+    outline: none;
+    font-family: 'Courier New', monospace;
+    font-size: 0.9rem;
+    resize: none;
+    padding: 0;
+}
+
+.app-calculator {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.5rem;
+    padding: 1rem;
+}
+
+.calc-display {
+    grid-column: 1 / -1;
+    padding: 1rem;
+    background: #f0f0f0;
+    border-radius: 4px;
+    text-align: right;
+    font-size: 1.5rem;
+    font-family: monospace;
+    margin-bottom: 0.5rem;
+}
+
+.calc-btn {
+    padding: 1rem;
+    background: #e0e0e0;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: var(--transition-smooth);
+}
+
+.calc-btn:hover {
+    background: #d0d0d0;
+}
+
+.calc-btn.operator {
+    background: #4a9eff;
+    color: white;
+}
+
+.calc-btn.operator:hover {
+    background: #357abd;
+}
+
+.app-terminal {
+    background: #1e1e1e;
+    color: #00ff00;
+    font-family: 'Courier New', monospace;
+    font-size: 0.9rem;
+    padding: 1rem;
+}
+
+.terminal-line {
+    margin-bottom: 0.25rem;
+}
+
+.terminal-prompt {
+    color: #4a9eff;
+}
+
+.app-browser {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.browser-address-bar {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.browser-address-bar input {
+    flex: 1;
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 0.9rem;
+}
+
+.browser-content {
+    flex: 1;
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 1rem;
+    overflow: auto;
+}

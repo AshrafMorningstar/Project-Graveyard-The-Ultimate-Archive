@@ -1,0 +1,144 @@
+<!--
+ -----------------------------------------------------------------------------
+ @author      Ashraf Morningstar
+ @github      https://github.com/AshrafMorningstar
+ @repository  Project Graveyard - The Ultimate Archive
+ @quote       "Code that defines the future. Designed to inspire."
+ -----------------------------------------------------------------------------
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frontend Universe | Project Collection</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap');
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+            background: #111;
+            color: #fff;
+            min-height: 100vh;
+        }
+
+        header {
+            text-align: center;
+            padding: 4rem 2rem;
+            background: linear-gradient(to bottom, #222, #111);
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(to right, #00dbde, #fc00ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        p.subtitle {
+            font-size: 1.2rem;
+            color: #888;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            padding: 4rem 10%;
+        }
+
+        .project-card {
+            background: #1e1e1e;
+            border-radius: 15px;
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 1px solid #333;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(0, 219, 222, 0.2);
+            border-color: #00dbde;
+        }
+
+        .card-preview {
+            height: 200px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 4rem;
+        }
+
+        .preview-1 { background: linear-gradient(135deg, #0f0c29, #302b63, #24243e); }
+        .preview-2 { background: linear-gradient(45deg, #fc00ff, #00dbde); }
+        .preview-3 { background: linear-gradient(to right, #8e2de2, #4a00e0); }
+
+        .card-info {
+            padding: 1.5rem;
+        }
+
+        h3 {
+            margin: 0 0 0.5rem;
+            font-size: 1.5rem;
+        }
+
+        p.project-desc {
+            color: #aaa;
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            border-top: 1px solid #333;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Frontend Universe</h1>
+        <p class="subtitle">A collection of premium frontend mini-projects exploring glassmorphism, 3D effects, and modern UI interactions.</p>
+    </header>
+
+    <main class="project-grid">
+        <a href="Neon-Clock/index.html" class="project-card">
+            <div class="card-preview preview-1">⌚</div>
+            <div class="card-info">
+                <h3>Neon Pulse Clock</h3>
+                <p class="project-desc">A digital clock with vibrant neon glowing effects and dynamic time-based animations.</p>
+            </div>
+        </a>
+
+        <a href="Glass-Calculator/index.html" class="project-card">
+            <div class="card-preview preview-2">🧮</div>
+            <div class="card-info">
+                <h3>Glass Calculator</h3>
+                <p class="project-desc">A fully functional calculator featuring a trendy frosted glass user interface.</p>
+            </div>
+        </a>
+
+        <a href="3D-Parallax-Cards/index.html" class="project-card">
+            <div class="card-preview preview-3">🃏</div>
+            <div class="card-info">
+                <h3>3D Parallax Cards</h3>
+                <p class="project-desc">Interactive cards that respond to mouse movement with a realistic 3D depth effect.</p>
+            </div>
+        </a>
+    </main>
+
+    <footer>
+        &copy; 2020 Frontend Universe. Built by Ashraf Morningstar.
+    </footer>
+</body>
+</html>

@@ -1,0 +1,308 @@
+/*
+ * -----------------------------------------------------------------------------
+ * @author      Ashraf Morningstar
+ * @github      https://github.com/AshrafMorningstar
+ * @repository  Project Graveyard - The Ultimate Archive
+ * @quote       "Code that defines the future. Designed to inspire."
+ * -----------------------------------------------------------------------------
+*/
+
+/**
+ * Micro Portfolio Generator - Main Styles
+ * Author: Ashraf Morningstar
+ * GitHub: https://github.com/AshrafMorningstar
+ */
+
+:root {
+  /* Color System */
+  --bg-primary: #0b0d10;
+  --bg-secondary: #12151b;
+  --bg-tertiary: #1a1d24;
+  --text-primary: #ededed;
+  --text-secondary: #a1a1aa;
+  --accent: #6366f1;
+  --accent-hover: #4f46e5;
+  --success: #22c55e;
+  --border: #2a2d35;
+
+  /* Spacing */
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 32px;
+  --space-2xl: 48px;
+
+  /* Typography */
+  --font-primary: "Inter", system-ui, -apple-system, sans-serif;
+
+  /* Transitions */
+  --transition-fast: 120ms ease-out;
+  --transition-normal: 180ms ease-out;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-primary);
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+.app-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: var(--space-2xl) var(--space-lg);
+}
+
+/* Header */
+.app-header {
+  text-align: center;
+  margin-bottom: var(--space-2xl);
+}
+
+.app-title {
+  font-size: 48px;
+  font-weight: 700;
+  margin-bottom: var(--space-sm);
+  background: linear-gradient(135deg, var(--accent), #8b5cf6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.app-subtitle {
+  font-size: 18px;
+  color: var(--text-secondary);
+}
+
+/* Main Content */
+.main-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-xl);
+  margin-bottom: var(--space-2xl);
+}
+
+@media (max-width: 1024px) {
+  .main-content {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Form Panel */
+.form-panel {
+  background: var(--bg-secondary);
+  padding: var(--space-xl);
+  border-radius: 16px;
+  border: 1px solid var(--border);
+}
+
+.form-panel h2 {
+  font-size: 24px;
+  margin-bottom: var(--space-lg);
+  color: var(--text-primary);
+}
+
+.form-group {
+  margin-bottom: var(--space-lg);
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: var(--space-sm);
+  font-weight: 600;
+  color: var(--text-primary);
+  font-size: 14px;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 12px 16px;
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--text-primary);
+  font-family: var(--font-primary);
+  font-size: 14px;
+  transition: border-color var(--transition-fast);
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: var(--text-secondary);
+}
+
+/* Template Selector */
+.template-selector {
+  display: flex;
+  gap: var(--space-sm);
+}
+
+.template-btn {
+  flex: 1;
+  padding: 12px;
+  background: var(--bg-tertiary);
+  border: 2px solid var(--border);
+  border-radius: 8px;
+  color: var(--text-primary);
+  font-family: var(--font-primary);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.template-btn:hover {
+  border-color: var(--accent);
+  transform: translateY(-2px);
+}
+
+.template-btn.active {
+  background: var(--accent);
+  border-color: var(--accent);
+}
+
+/* Section Order */
+.section-order {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.section-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  padding: 12px 16px;
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  cursor: move;
+  transition: all var(--transition-fast);
+}
+
+.section-item:hover {
+  border-color: var(--accent);
+  transform: translateX(4px);
+}
+
+.section-item.dragging {
+  opacity: 0.5;
+}
+
+.drag-handle {
+  color: var(--text-secondary);
+  font-size: 18px;
+}
+
+/* Preview Panel */
+.preview-panel {
+  background: var(--bg-secondary);
+  padding: var(--space-xl);
+  border-radius: 16px;
+  border: 1px solid var(--border);
+  position: sticky;
+  top: var(--space-lg);
+  max-height: calc(100vh - var(--space-2xl));
+  overflow-y: auto;
+}
+
+.preview-panel h2 {
+  font-size: 24px;
+  margin-bottom: var(--space-lg);
+  color: var(--text-primary);
+}
+
+.preview-container {
+  background: white;
+  border-radius: 8px;
+  min-height: 400px;
+  overflow: hidden;
+}
+
+/* Export Button */
+.export-btn {
+  position: fixed;
+  bottom: var(--space-xl);
+  right: var(--space-xl);
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: 16px 24px;
+  background: var(--accent);
+  color: white;
+  border: none;
+  border-radius: 50px;
+  font-family: var(--font-primary);
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
+  box-shadow: 0 8px 24px rgba(99, 102, 241, 0.4);
+  transition: all var(--transition-normal);
+  z-index: 1000;
+}
+
+.export-btn:hover {
+  background: var(--accent-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 32px rgba(99, 102, 241, 0.5);
+}
+
+.export-btn:active {
+  transform: translateY(0);
+}
+
+/* Footer */
+.app-footer {
+  text-align: center;
+  padding: var(--space-xl) 0;
+  color: var(--text-secondary);
+  border-top: 1px solid var(--border);
+}
+
+.app-footer a {
+  color: var(--accent);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+.app-footer a:hover {
+  color: var(--accent-hover);
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent);
+}
+
+/* Focus Visible */
+*:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}

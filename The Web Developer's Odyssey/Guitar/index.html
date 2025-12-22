@@ -1,0 +1,62 @@
+<!--
+ -----------------------------------------------------------------------------
+ @author      Ashraf Morningstar
+ @github      https://github.com/AshrafMorningstar
+ @repository  Project Graveyard - The Ultimate Archive
+ @quote       "Code that defines the future. Designed to inspire."
+ -----------------------------------------------------------------------------
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="./style.css">
+    <script src="script.js" defer></script>
+    <title>Guitar</title>
+    <meta name="author" content="Ashraf Morningstar">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="../global-premium.css">
+</head>
+
+<body class="theme-neon">
+    <div class="container">
+        <div align=center>
+            <h1 style="color: white;">THE GUITAR</h1>
+            <div class="guitar">
+                <div id="lutemain1" align="center">
+                    <div id="lutelines" align="center">
+                        <div id="vline1" align="center" onmouseenter="play('https://raw.githubusercontent.com/212mr/m15final/master/music/lute01.mp3')" style="height:490px;"></div>
+
+                        <div id="vline2" align="center" onmouseenter="play('https://raw.githubusercontent.com/212mr/m15final/master/music/lute02.mp3')" style="height:490px;"></div>
+
+                        <div id="vline3" align="center" onmouseenter="play('https://raw.githubusercontent.com/212mr/m15final/master/music/lute03.mp3')" style="height:490px;"></div>
+
+                        <div id="vline4" align="center" onmouseenter="play('https://raw.githubusercontent.com/212mr/m15final/master/music/lute02.mp3')" style="height:490px;"></div>
+
+                        <div id="vline4" align="center" onmouseenter="play('https://raw.githubusercontent.com/212mr/m15final/master/music/lute04.mp3')" style="height:490px;"></div>
+
+                        <div id="vline5" align="center" onmouseenter="play('https://raw.githubusercontent.com/212mr/m15final/master/music/lute05.mp3')" style="height:490px;"></div>
+                    </div>
+                    <div id="lutecircle" align="center"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        function play(mp3_file) 
+        {
+        var audio = new Audio(mp3_file);
+        audio.play();
+        }
+    </script>
+
+
+<div id="ashraf-branding-bar">
+    <span>💎 Crafted by <a href="https://github.com/AshrafMorningstar" target="_blank">Ashraf Morningstar</a></span>
+    <a href="https://github.com/AshrafMorningstar" target="_blank"><i class="fab fa-github"></i> View on GitHub</a>
+</div>
+
+</body>
+
+</html>

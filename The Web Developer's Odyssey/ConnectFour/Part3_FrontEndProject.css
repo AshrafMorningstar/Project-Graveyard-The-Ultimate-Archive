@@ -1,0 +1,21 @@
+/*
+ * -----------------------------------------------------------------------------
+ * @author      Ashraf Morningstar
+ * @github      https://github.com/AshrafMorningstar
+ * @repository  Project Graveyard - The Ultimate Archive
+ * @quote       "Code that defines the future. Designed to inspire."
+ * -----------------------------------------------------------------------------
+*/
+
+/* 
+   Designed & Enhanced by Ashraf Morningstar
+   Github: https://github.com/AshrafMorningstar
+*/
+.board button {
+  width: 100px;
+  height: 100px;
+  background-color: gray;
+  border-radius: 50%;
+  border: 4px solid black; /*this gets rid of bootstrap shadow*/
+  margin: 1px;
+}

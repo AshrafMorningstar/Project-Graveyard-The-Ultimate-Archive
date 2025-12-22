@@ -1,0 +1,35 @@
+<!--
+ -----------------------------------------------------------------------------
+ @author      Ashraf Morningstar
+ @github      https://github.com/AshrafMorningstar
+ @repository  Project Graveyard - The Ultimate Archive
+ @quote       "Code that defines the future. Designed to inspire."
+ -----------------------------------------------------------------------------
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Loan Calculator - A premium web application created by Ashraf Morningstar.">
+    <title>Loan Calculator | Ashraf Morningstar</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Created by Ashraf Morningstar - https://github.com/AshrafMorningstar -->
+</head>
+<body>
+    <div class="container">
+        <h1>Loan Calculator</h1>
+        <input id="d" readonly style="text-align:right; margin-bottom:10px;"><div style="display:grid; grid-template-columns:repeat(4,1fr); gap:5px;">
+                <button onclick="a('7')">7</button><button onclick="a('8')">8</button><button onclick="a('9')">9</button><button onclick="o('/')">/</button>
+                <button onclick="a('4')">4</button><button onclick="a('5')">5</button><button onclick="a('6')">6</button><button onclick="o('*')">*</button>
+                <button onclick="a('1')">1</button><button onclick="a('2')">2</button><button onclick="a('3')">3</button><button onclick="o('-')">-</button>
+                <button onclick="c()">C</button><button onclick="a('0')">0</button><button onclick="e()">=</button><button onclick="o('+')">+</button>
+            </div>
+        <div style="margin-top: 30px; font-size: 0.8rem; opacity: 0.7;">
+            Created by <a href="https://github.com/AshrafMorningstar" style="color: inherit; text-decoration: underline;">Ashraf Morningstar</a>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,189 @@
+<!--
+ -----------------------------------------------------------------------------
+ @author      Ashraf Morningstar
+ @github      https://github.com/AshrafMorningstar
+ @repository  Project Graveyard - The Ultimate Archive
+ @quote       "Code that defines the future. Designed to inspire."
+ -----------------------------------------------------------------------------
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Stunning holographic 3D portfolio with iridescent colors and particle effects"
+    />
+    <meta
+      name="keywords"
+      content="holographic portfolio, 3D portfolio, web developer, creative portfolio, Ashraf Morningstar"
+    />
+    <meta name="author" content="Ashraf Morningstar" />
+    <title>Holographic 3D Portfolio | Premium Web Design</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Created by: Ashraf Morningstar -->
+    <!-- GitHub: https://github.com/AshrafMorningstar -->
+
+    <div class="particle-container" id="particles"></div>
+
+    <nav class="holographic-nav">
+      <div class="logo">
+        <span class="holo-text">ASHRAF</span>
+      </div>
+      <ul class="nav-links">
+        <li><a href="#home" class="nav-link active">Home</a></li>
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+    </nav>
+
+    <section id="home" class="hero-section">
+      <div class="hero-content">
+        <h1 class="glitch-text" data-text="ASHRAF MORNINGSTAR">
+          ASHRAF MORNINGSTAR
+        </h1>
+        <p class="subtitle holo-text">
+          Full Stack Developer & Creative Designer
+        </p>
+        <div class="cta-buttons">
+          <button class="holo-button primary">View Projects</button>
+          <button class="holo-button secondary">Download CV</button>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="holographic-card rotating">
+          <div class="card-face front"></div>
+          <div class="card-face back"></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="about-section">
+      <h2 class="section-title holo-text">About Me</h2>
+      <div class="about-grid">
+        <div class="holo-card">
+          <div class="card-icon">💻</div>
+          <h3>Web Development</h3>
+          <p>Creating stunning, responsive websites with modern technologies</p>
+        </div>
+        <div class="holo-card">
+          <div class="card-icon">🎨</div>
+          <h3>UI/UX Design</h3>
+          <p>Crafting beautiful, intuitive user experiences</p>
+        </div>
+        <div class="holo-card">
+          <div class="card-icon">⚡</div>
+          <h3>Performance</h3>
+          <p>Optimizing for speed and seamless interactions</p>
+        </div>
+        <div class="holo-card">
+          <div class="card-icon">🚀</div>
+          <h3>Innovation</h3>
+          <p>Pushing boundaries with cutting-edge solutions</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="projects-section">
+      <h2 class="section-title holo-text">Featured Projects</h2>
+      <div class="projects-grid">
+        <div class="project-card">
+          <div class="project-image">
+            <div class="project-overlay">
+              <button class="view-btn">View Project</button>
+            </div>
+          </div>
+          <div class="project-info">
+            <h3>E-Commerce Platform</h3>
+            <p>Full-stack shopping experience</p>
+            <div class="tech-stack">
+              <span class="tech-tag">React</span>
+              <span class="tech-tag">Node.js</span>
+              <span class="tech-tag">MongoDB</span>
+            </div>
+          </div>
+        </div>
+        <div class="project-card">
+          <div class="project-image">
+            <div class="project-overlay">
+              <button class="view-btn">View Project</button>
+            </div>
+          </div>
+          <div class="project-info">
+            <h3>AI Dashboard</h3>
+            <p>Machine learning analytics</p>
+            <div class="tech-stack">
+              <span class="tech-tag">Python</span>
+              <span class="tech-tag">TensorFlow</span>
+              <span class="tech-tag">Vue.js</span>
+            </div>
+          </div>
+        </div>
+        <div class="project-card">
+          <div class="project-image">
+            <div class="project-overlay">
+              <button class="view-btn">View Project</button>
+            </div>
+          </div>
+          <div class="project-info">
+            <h3>Social Media App</h3>
+            <p>Real-time communication platform</p>
+            <div class="tech-stack">
+              <span class="tech-tag">Next.js</span>
+              <span class="tech-tag">Firebase</span>
+              <span class="tech-tag">WebRTC</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="contact-section">
+      <h2 class="section-title holo-text">Get In Touch</h2>
+      <form class="contact-form">
+        <div class="form-group">
+          <input
+            type="text"
+            class="holo-input"
+            placeholder="Your Name"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <input
+            type="email"
+            class="holo-input"
+            placeholder="Your Email"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <textarea
+            class="holo-input"
+            rows="5"
+            placeholder="Your Message"
+            required
+          ></textarea>
+        </div>
+        <button type="submit" class="holo-button primary">Send Message</button>
+      </form>
+    </section>
+
+    <footer class="footer">
+      <p>
+        Created by
+        <a href="https://github.com/AshrafMorningstar" target="_blank"
+          >Ashraf Morningstar</a
+        >
+      </p>
+      <p>&copy; 2025 All Rights Reserved</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

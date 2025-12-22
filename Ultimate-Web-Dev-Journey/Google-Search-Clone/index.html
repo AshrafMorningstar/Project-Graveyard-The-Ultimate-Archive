@@ -1,0 +1,80 @@
+<!--
+ -----------------------------------------------------------------------------
+ @author      Ashraf Morningstar
+ @github      https://github.com/AshrafMorningstar
+ @repository  Project Graveyard - The Ultimate Archive
+ @quote       "Code that defines the future. Designed to inspire."
+ -----------------------------------------------------------------------------
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Google Clone</title>
+    <style>
+        /* Created by Ashraf Morningstar - https://github.com/AshrafMorningstar */
+        body { font-family: arial, sans-serif; margin: 0; display: flex; flex-direction: column; height: 100vh; }
+        header { display: flex; justify-content: flex-end; padding: 15px; align-items: center; }
+        header a { color: rgba(0,0,0,0.87); font-size: 13px; text-decoration: none; margin: 0 10px; }
+        header a:hover { text-decoration: underline; }
+        header img { border-radius: 50%; width: 32px; cursor: pointer; }
+        main { display: flex; flex-direction: column; align-items: center; flex: 1; margin-top: 100px; }
+        .logo { width: 272px; margin-bottom: 20px; }
+        .search-area { width: 100%; max-width: 584px; }
+        .search-box { width: 100%; border: 1px solid #dfe1e5; display: flex; border-radius: 24px; padding: 12px 20px; align-items: center; box-shadow: none; transition: box-shadow 0.2s; box-sizing: border-box; }
+        .search-box:hover { box-shadow: 0 1px 6px rgba(32,33,36,0.28); border-color: rgba(223,225,229,0); }
+        .search-box input { flex: 1; border: none; outline: none; font-size: 16px; margin: 0 10px; }
+        .search-box i { color: #9aa0a6; }
+        .buttons { margin-top: 30px; }
+        .buttons button { background-color: #f8f9fa; border: 1px solid #f8f9fa; border-radius: 4px; color: #3c4043; font-size: 14px; margin: 0 4px; padding: 0 16px; height: 36px; min-width: 54px; text-align: center; cursor: pointer; }
+        .buttons button:hover { border-color: #dadce0; box-shadow: 0 1px 1px rgba(0,0,0,0.1); color: #202124; }
+        footer { background: #f2f2f2; color: #70757a; font-size: 14px; }
+        .footer-top { padding: 15px 30px; border-bottom: 1px solid #dadce0; }
+        .footer-bottom { padding: 15px 30px; display: flex; justify-content: space-between; flex-wrap: wrap; }
+        .footer-bottom ul { display: flex; list-style: none; padding: 0; margin: 0; }
+        .footer-bottom li { margin-right: 30px; cursor: pointer; }
+        .footer-bottom li:hover { text-decoration: underline; }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+</head>
+<body>
+    <header>
+        <a href="#">Gmail</a>
+        <a href="#">Images</a>
+        <i class="fas fa-th" style="color: #5f6368; margin: 0 15px; cursor: pointer;"></i>
+        <img src="https://github.com/AshrafMorningstar.png" alt="Profile">
+    </header>
+    <main>
+        <img src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png" alt="Google" class="logo">
+        <div class="search-area">
+            <div class="search-box">
+                <i class="fas fa-search"></i>
+                <input type="text">
+                <i class="fas fa-microphone"></i>
+            </div>
+            <div class="buttons">
+                <button>Google Search</button>
+                <button>I'm Feeling Lucky</button>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="footer-top">Bangladesh</div>
+        <div class="footer-bottom">
+            <ul>
+                <li>About</li>
+                <li>Advertising</li>
+                <li>Business</li>
+                <li>How Search works</li>
+            </ul>
+            <ul>
+                <li>Privacy</li>
+                <li>Terms</li>
+                <li>Settings</li>
+            </ul>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

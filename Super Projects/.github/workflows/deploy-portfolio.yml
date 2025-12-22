@@ -1,0 +1,85 @@
+name: Deploy All Projects to Pages
+
+on:
+  push:
+    branches: ["main"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "18"
+
+      - name: Build Expert Projects
+        run: |
+          # Build CV Studio
+          cd expert-collaborative-cv-studio
+          npm install
+          npm run build
+          cd ..
+
+          # Build Generative UI
+          cd expert-generative-ui-engine
+          npm install
+          npm run build
+          cd ..
+
+          # Build Analytics
+          cd expert-privacy-first-analytics
+          npm install
+          npm run build
+          cd ..
+
+          # Build Mentorship
+          cd expert-micro-mentorship-pwa
+          npm install
+          npm run build
+          cd ..
+
+          # Build WASM
+          cd expert-wasm-image-pipeline
+          npm install
+          npm run build
+          cd ..
+
+          # Build Content Platform
+          cd expert-verifiable-content-platform
+          npm install
+          npm run build
+          cd ..
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          # Upload entire directory
+          path: "."
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

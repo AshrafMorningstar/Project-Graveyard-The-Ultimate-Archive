@@ -1,0 +1,52 @@
+name: "Cyber Stats Remotion"
+description: "Generate cyber-static GitHub stats videos using Remotion"
+inputs:
+  config_file:
+    description: "Path to configuration file"
+    required: false
+    default: "cyber-config.yml"
+  github_token:
+    description: "GitHub Token for API access"
+    required: true
+runs:
+  using: "composite"
+  steps:
+    - name: Setup Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: 18
+
+    - name: Install FFmpeg
+      shell: bash
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y ffmpeg
+
+    - name: Checkout Action
+      uses: actions/checkout@v3
+      with:
+        repository: "AshrafMorningstar/cyber-stats-remotion"
+        path: "cyber-stats-action"
+
+    - name: Install Dependencies
+      shell: bash
+      run: |
+        cd cyber-stats-action
+        npm ci
+
+    - name: Render Video
+      shell: bash
+      env:
+        CONFIG_FILE: ${{ inputs.config_file }}
+        GITHUB_TOKEN: ${{ inputs.github_token }}
+      run: |
+        cd cyber-stats-action
+        # Pass inputs to Remotion via process.env or similar
+        # For now, we assume the config is default or we'd need a script to read it and pass props
+        npx remotion render src/index.ts CyberStats ../out/cyber-stats.gif --codec=gif --gl=angle --props="{\"configFile\":\"${CONFIG_FILE}\"}"
+
+    - name: Move Output
+      shell: bash
+      run: |
+        mkdir -p stats
+        mv out/cyber-stats.gif stats/cyber-stats.gif

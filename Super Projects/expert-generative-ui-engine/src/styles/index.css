@@ -1,0 +1,136 @@
+/*
+ * -----------------------------------------------------------------------------
+ * @author      Ashraf Morningstar
+ * @github      https://github.com/AshrafMorningstar
+ * @repository  Project Graveyard - The Ultimate Archive
+ * @quote       "Code that defines the future. Designed to inspire."
+ * -----------------------------------------------------------------------------
+*/
+
+:root {
+  --primary: #7c3aed;
+  --bg: #09090b;
+  --surface: #18181b;
+  --text: #e4e4e7;
+  --bg-code: #000000;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  height: 100vh;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 400px 1fr;
+  height: 100vh;
+}
+
+/* Sidebar */
+.panel {
+  background: var(--surface);
+  border-right: 1px solid #27272a;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+}
+
+.logo { font-size: 18px; font-weight: 600; margin-bottom: 32px; color: var(--primary); }
+
+.input-area {
+  margin-bottom: 24px;
+}
+
+.input-area label {
+  display: block;
+  font-size: 12px;
+  text-transform: uppercase;
+  color: #a1a1aa;
+  margin-bottom: 8px;
+}
+
+textarea {
+  width: 100%;
+  padding: 12px;
+  background: #27272a;
+  border: 1px solid #3f3f46;
+  border-radius: 8px;
+  color: white;
+  margin-bottom: 12px;
+  resize: vertical;
+  min-height: 120px;
+  font-family: inherit;
+}
+
+textarea:focus { outline: 2px solid var(--primary); border-color: transparent; }
+
+.btn-generate {
+  width: 100%;
+  padding: 12px;
+  background: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.btn-generate:hover { opacity: 0.9; }
+.btn-generate:disabled { opacity: 0.5; cursor: not-allowed; }
+
+/* Code Viewer */
+.code-viewer {
+  background: var(--bg-code);
+  padding: 24px;
+  overflow: auto;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #a5b4fc;
+}
+
+.viewer-header {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #27272a;
+  padding: 16px 24px;
+  background: var(--bg);
+}
+
+.tabs button {
+  background: none;
+  border: none;
+  color: #71717a;
+  padding: 8px 16px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.tabs button.active {
+  color: white;
+  border-bottom: 2px solid var(--primary);
+}
+
+.loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  color: #71717a;
+  gap: 12px;
+}
+
+.spinner {
+  width: 20px;
+  height: 20px;
+  border: 2px solid #3f3f46;
+  border-top-color: var(--primary);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin { to { transform: rotate(360deg); } }

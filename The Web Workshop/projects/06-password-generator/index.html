@@ -1,0 +1,114 @@
+<!--
+ -----------------------------------------------------------------------------
+ @author      Ashraf Morningstar
+ @github      https://github.com/AshrafMorningstar
+ @repository  Project Graveyard - The Ultimate Archive
+ @quote       "Code that defines the future. Designed to inspire."
+ -----------------------------------------------------------------------------
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Holographic Password Generator | Ashraf Morningstar</title>
+    <meta
+      name="description"
+      content="Generate ultra-secure passwords with holographic glassmorphism UI. Created by Ashraf Morningstar - https://github.com/AshrafMorningstar"
+    />
+    <meta
+      name="keywords"
+      content="password generator, secure password, web tool, Ashraf Morningstar"
+    />
+    <meta name="author" content="Ashraf Morningstar" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="holographic-bg"></div>
+    <div class="container">
+      <div class="glass-card">
+        <header>
+          <h1 class="holographic-text">Password Generator</h1>
+          <p>Create ultra-secure passwords instantly</p>
+        </header>
+
+        <div class="password-display">
+          <input
+            type="text"
+            id="password"
+            readonly
+            placeholder="Your password will appear here"
+          />
+          <button id="copy-btn" class="icon-btn" title="Copy to clipboard">
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+              <path
+                d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"
+              ></path>
+            </svg>
+          </button>
+        </div>
+
+        <div class="options">
+          <div class="option-group">
+            <label for="length"
+              >Password Length: <span id="length-value">16</span></label
+            >
+            <input type="range" id="length" min="8" max="32" value="16" />
+          </div>
+
+          <div class="checkbox-group">
+            <label class="checkbox-label">
+              <input type="checkbox" id="uppercase" checked />
+              <span>Uppercase (A-Z)</span>
+            </label>
+            <label class="checkbox-label">
+              <input type="checkbox" id="lowercase" checked />
+              <span>Lowercase (a-z)</span>
+            </label>
+            <label class="checkbox-label">
+              <input type="checkbox" id="numbers" checked />
+              <span>Numbers (0-9)</span>
+            </label>
+            <label class="checkbox-label">
+              <input type="checkbox" id="symbols" checked />
+              <span>Symbols (!@#$%)</span>
+            </label>
+          </div>
+        </div>
+
+        <button id="generate-btn" class="generate-btn">
+          <span>Generate Password</span>
+          <div class="holographic-shine"></div>
+        </button>
+
+        <div class="strength-meter">
+          <div class="strength-bar" id="strength-bar"></div>
+          <p id="strength-text">Strength: <span>-</span></p>
+        </div>
+
+        <footer>
+          <p>
+            Created by
+            <a href="https://github.com/AshrafMorningstar" target="_blank"
+              >Ashraf Morningstar</a
+            >
+          </p>
+        </footer>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

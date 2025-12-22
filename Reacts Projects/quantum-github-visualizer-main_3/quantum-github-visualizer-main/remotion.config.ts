@@ -1,0 +1,18 @@
+/*
+ * -----------------------------------------------------------------------------
+ * @author      Ashraf Morningstar
+ * @github      https://github.com/AshrafMorningstar
+ * @repository  Project Graveyard - The Ultimate Archive
+ * @quote       "Code that defines the future. Designed to inspire."
+ * -----------------------------------------------------------------------------
+*/
+
+import {Config} from '@remotion/cli/config';
+
+Config.setVideoImageFormat('png');
+Config.setCodec('h264');
+Config.setConcurrency(4);
+Config.setOverwriteOutput(true);
+Config.setPixelFormat('yuv420p');
+Config.setChromiumOpenGlRenderer('angle');
+Config.setScale(1);

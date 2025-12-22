@@ -1,0 +1,296 @@
+<!--
+ -----------------------------------------------------------------------------
+ @author      Ashraf Morningstar
+ @github      https://github.com/AshrafMorningstar
+ @repository  Project Graveyard - The Ultimate Archive
+ @quote       "Code that defines the future. Designed to inspire."
+ -----------------------------------------------------------------------------
+-->
+
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Projects - Ashraf Morningstar</title>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#137fec",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101922",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "2xl": "1rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        /* Custom Scrollbar for macOS feel */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+        
+        .glass-panel {
+            background: rgba(28, 28, 30, 0.75);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+        }
+
+        .traffic-light:hover span {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body class="bg-black font-display antialiased overflow-hidden selection:bg-primary/30 selection:text-white">
+<!-- Desktop Background -->
+<div class="relative w-full h-screen flex items-center justify-center bg-cover bg-center overflow-hidden" data-alt="Abstract dark blue and purple liquid gradient background representing a modern OS desktop wallpaper" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA-s0rqW-lMFcuxTivYpBa27s8mVXTLdc5uxOaHBcWNqbzEU1zUyfTa-gzR5lFyeb2Vopbi90OCoiQhn9QAqpQAjT54aXtNDti63QvcxiJJVy2bd_6ws4___hop9vs0Qzc4RkjJmLxxj02kE9OmQLCjwXS26PKglCrnfQeSrk2U8OB3npIqHyqaomyLInwNvwNKXSLhjK0TsB_yD4YarTHw2d_yHZpj_y9-lLe4jdMwYdi7Y8qwhdxJEWByplHMad-TLhbFiC4lZnH0');">
+<!-- Window Container -->
+<div class="relative w-[90%] max-w-[1200px] h-[85vh] rounded-2xl shadow-2xl flex flex-col border border-white/10 overflow-hidden ring-1 ring-black/50 transition-all duration-300 ease-out animate-in zoom-in-95 fade-in">
+<!-- Window Toolbar / Header -->
+<header class="h-14 shrink-0 glass-panel border-b border-white/10 flex items-center justify-between px-5 draggable cursor-default select-none z-20">
+<!-- Left: Traffic Lights & Navigation -->
+<div class="flex items-center gap-6">
+<!-- Traffic Lights -->
+<div class="flex items-center gap-2 group/traffic">
+<button aria-label="Close" class="size-3 rounded-full bg-[#FF5F57] border border-black/10 flex items-center justify-center traffic-light shadow-sm transition-transform active:scale-90">
+<span class="material-symbols-outlined text-[8px] text-black/60 font-bold opacity-0 transition-opacity">close</span>
+</button>
+<button aria-label="Minimize" class="size-3 rounded-full bg-[#FEBC2E] border border-black/10 flex items-center justify-center traffic-light shadow-sm transition-transform active:scale-90">
+<span class="material-symbols-outlined text-[8px] text-black/60 font-bold opacity-0 transition-opacity">remove</span>
+</button>
+<button aria-label="Maximize" class="size-3 rounded-full bg-[#28C840] border border-black/10 flex items-center justify-center traffic-light shadow-sm transition-transform active:scale-90">
+<span class="material-symbols-outlined text-[8px] text-black/60 font-bold opacity-0 transition-opacity">open_in_full</span>
+</button>
+</div>
+<!-- Navigation Arrows -->
+<div class="flex items-center gap-1 text-white/50">
+<button class="hover:bg-white/10 rounded p-1 transition-colors">
+<span class="material-symbols-outlined text-lg">chevron_left</span>
+</button>
+<button class="hover:bg-white/10 rounded p-1 transition-colors">
+<span class="material-symbols-outlined text-lg">chevron_right</span>
+</button>
+</div>
+<!-- Title -->
+<h1 class="text-white/90 text-sm font-semibold tracking-wide ml-2 hidden sm:block">Projects</h1>
+</div>
+<!-- Right: View Controls & Search -->
+<div class="flex items-center gap-4">
+<!-- View Toggle -->
+<div class="flex bg-black/20 rounded-lg p-0.5 border border-white/5 shadow-inner">
+<button aria-label="Grid View" class="p-1 px-2 rounded bg-white/10 text-white shadow-sm transition-all">
+<span class="material-symbols-outlined text-lg block">grid_view</span>
+</button>
+<button aria-label="List View" class="p-1 px-2 rounded text-white/50 hover:text-white hover:bg-white/5 transition-all">
+<span class="material-symbols-outlined text-lg block">view_list</span>
+</button>
+</div>
+<!-- Search Bar -->
+<div class="relative group/search">
+<span class="material-symbols-outlined absolute left-2 top-1/2 -translate-y-1/2 text-white/40 text-lg group-focus-within/search:text-primary transition-colors">search</span>
+<input class="bg-black/20 border border-white/5 rounded-lg pl-8 pr-3 py-1.5 text-sm text-white placeholder-white/30 focus:outline-none focus:ring-1 focus:ring-primary/50 w-32 focus:w-48 transition-all duration-300 shadow-inner" placeholder="Search" type="text"/>
+</div>
+</div>
+</header>
+<!-- Window Body -->
+<div class="flex flex-1 overflow-hidden">
+<!-- Sidebar -->
+<aside class="w-64 glass-panel border-r border-white/10 flex flex-col p-3 gap-6 overflow-y-auto hidden md:flex backdrop-blur-3xl bg-opacity-90">
+<!-- Section: Favorites -->
+<div class="flex flex-col gap-1">
+<span class="text-[11px] font-semibold text-white/30 uppercase tracking-widest pl-3 mb-1">Favorites</span>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg bg-primary text-white shadow-md shadow-primary/20 transition-all" href="#">
+<span class="material-symbols-outlined text-[20px]" data-weight="fill">grid_view</span>
+<span class="text-sm font-medium">All Projects</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-white/70 hover:bg-white/10 hover:text-white transition-all group" href="#">
+<span class="material-symbols-outlined text-[20px] group-hover:text-[#FEBC2E] transition-colors">star</span>
+<span class="text-sm font-medium">Featured</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-white/70 hover:bg-white/10 hover:text-white transition-all group" href="#">
+<span class="material-symbols-outlined text-[20px] group-hover:text-[#28C840] transition-colors">code</span>
+<span class="text-sm font-medium">Web Apps</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-white/70 hover:bg-white/10 hover:text-white transition-all group" href="#">
+<span class="material-symbols-outlined text-[20px] group-hover:text-primary transition-colors">palette</span>
+<span class="text-sm font-medium">Design Systems</span>
+</a>
+</div>
+<!-- Section: Tech Stack -->
+<div class="flex flex-col gap-1">
+<span class="text-[11px] font-semibold text-white/30 uppercase tracking-widest pl-3 mb-1">Tech Stack</span>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-white/70 hover:bg-white/10 hover:text-white transition-all" href="#">
+<span class="material-symbols-outlined text-[20px] text-[#58C4DC]">data_object</span>
+<span class="text-sm font-medium">React Ecosystem</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-white/70 hover:bg-white/10 hover:text-white transition-all" href="#">
+<span class="material-symbols-outlined text-[20px] text-[#F7DF1E]">javascript</span>
+<span class="text-sm font-medium">Vanilla JS / GSAP</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-white/70 hover:bg-white/10 hover:text-white transition-all" href="#">
+<span class="material-symbols-outlined text-[20px] text-[#38B2AC]">css</span>
+<span class="text-sm font-medium">Tailwind CSS</span>
+</a>
+</div>
+<!-- Section: External -->
+<div class="flex flex-col gap-1 mt-auto">
+<span class="text-[11px] font-semibold text-white/30 uppercase tracking-widest pl-3 mb-1">Locations</span>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-white/70 hover:bg-white/10 hover:text-white transition-all" href="#">
+<span class="material-symbols-outlined text-[20px]">public</span>
+<span class="text-sm font-medium">Live Demos</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-white/70 hover:bg-white/10 hover:text-white transition-all" href="#">
+<span class="material-symbols-outlined text-[20px]">folder_open</span>
+<span class="text-sm font-medium">GitHub Repos</span>
+</a>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 bg-[#101012] relative overflow-y-auto p-6 md:p-8">
+<!-- Breadcrumbs/Path (Visual Only) -->
+<div class="flex items-center gap-2 mb-6 text-sm text-white/40">
+<span class="hover:text-white cursor-pointer transition-colors">Ashraf's MacBook Pro</span>
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+<span class="hover:text-white cursor-pointer transition-colors">Portfolio</span>
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+<span class="text-white font-medium">All Projects</span>
+</div>
+<!-- Project Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+<!-- Card 1 -->
+<div class="group flex flex-col gap-3 p-3 rounded-xl hover:bg-white/5 transition-all duration-200 cursor-pointer border border-transparent hover:border-white/5 ring-0 hover:ring-1 hover:ring-white/10">
+<div class="relative w-full aspect-video rounded-lg overflow-hidden bg-[#1c1c1e] border border-white/10 shadow-lg group-hover:shadow-primary/10 transition-all">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105" data-alt="Dashboard interface displaying graphs and data visualizations for e-commerce analytics" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA5sod1kR4Qkp7SVyDLhPU20pQ7OxVuyBF8IoRCC4Y2JR-9g7frTIDnMYrCFuDqlF1iRG9sUf2XJ4HCZhlxcQaUqJooL0axiLS5IP3sq2_tboZTSwZRj1B4mF0KpRzDfqhYYZt--IzkzQQTja3weeZRyzyfN6o3d6pEW8KesWdmZl0C6FHS5FB4ZpoUP12mh_e6MsRMbFnBixoqHOKnT2dpYXUmwnyftYj2bAfaIivu_0TwOajcb8EkdmqfjHY9aW8Ubbd-F1gCjsEx');">
+</div>
+<div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors flex items-center justify-center opacity-0 group-hover:opacity-100">
+<button class="bg-primary/90 text-white px-4 py-2 rounded-full text-xs font-bold backdrop-blur-md shadow-lg transform translate-y-2 group-hover:translate-y-0 transition-all duration-300">View Project</button>
+</div>
+</div>
+<div class="px-1">
+<h3 class="text-white text-sm font-semibold leading-tight group-hover:text-primary transition-colors">E-Commerce Dashboard</h3>
+<p class="text-white/40 text-xs mt-1">Next.js • Tailwind • Stripe</p>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="group flex flex-col gap-3 p-3 rounded-xl hover:bg-white/5 transition-all duration-200 cursor-pointer border border-transparent hover:border-white/5 ring-0 hover:ring-1 hover:ring-white/10">
+<div class="relative w-full aspect-video rounded-lg overflow-hidden bg-[#1c1c1e] border border-white/10 shadow-lg group-hover:shadow-primary/10 transition-all">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105" data-alt="Clean and minimal financial data visualization dashboard with dark mode UI" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAt7QRu0N0_GkrwqiKicvyLkk4Yu93yoSJrHtriOsq8mEhfOdskEykFGfeF1i-MlCIYctihftwr4LY6X9wO1QCsgTEKxhM-x5xSakvObCJbfaR_PtAMUPHadzRwxgwkn1idcOzTz4c9i88IbAHzi8NLoHrL2xvjIW6lCLgieE7g5Z3DGbYcmZ7NsYqKnh0mF25apy5f8hQkTTKIL6G5AE3ahoHhxZ-YWvVy-ZwRqeu8yRbAYW8RXosnuMvscC8QWUiArp345cP66cRX');">
+</div>
+<div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors flex items-center justify-center opacity-0 group-hover:opacity-100">
+<button class="bg-primary/90 text-white px-4 py-2 rounded-full text-xs font-bold backdrop-blur-md shadow-lg transform translate-y-2 group-hover:translate-y-0 transition-all duration-300">View Project</button>
+</div>
+</div>
+<div class="px-1">
+<h3 class="text-white text-sm font-semibold leading-tight group-hover:text-primary transition-colors">Finance Tracker</h3>
+<p class="text-white/40 text-xs mt-1">D3.js • Angular • Node</p>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="group flex flex-col gap-3 p-3 rounded-xl hover:bg-white/5 transition-all duration-200 cursor-pointer border border-transparent hover:border-white/5 ring-0 hover:ring-1 hover:ring-white/10">
+<div class="relative w-full aspect-video rounded-lg overflow-hidden bg-[#1c1c1e] border border-white/10 shadow-lg group-hover:shadow-primary/10 transition-all">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105" data-alt="Abstract 3D shapes and particles representing a creative portfolio website" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCcFIclahCLyYH-CPK78ImfhOw5EWDelcJYqjDu7odo2OuQEDcMQ2fXPINar0sl9l3C-1J230_QIdij_7URVMr157ddRdzfC2EEFpMs1QBypRwFoAoG_d93QnHavQMWXrp9-zbwismOMTyoOYva3kB1p0i3zAbwMbmf8DFYR3yyHLiykOoNOL5Nu_QHZfdYkqo2kYddVKB8mJGkrp38c_ta9hh62bh6UAjNUxRYtXxWmVL9pPKFbeM51cR_u-nJPhXQ-lXHC6K2VIwZ');">
+</div>
+<div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors flex items-center justify-center opacity-0 group-hover:opacity-100">
+<button class="bg-primary/90 text-white px-4 py-2 rounded-full text-xs font-bold backdrop-blur-md shadow-lg transform translate-y-2 group-hover:translate-y-0 transition-all duration-300">View Project</button>
+</div>
+</div>
+<div class="px-1">
+<h3 class="text-white text-sm font-semibold leading-tight group-hover:text-primary transition-colors">Portfolio v1</h3>
+<p class="text-white/40 text-xs mt-1">Three.js • WebGL • React</p>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="group flex flex-col gap-3 p-3 rounded-xl hover:bg-white/5 transition-all duration-200 cursor-pointer border border-transparent hover:border-white/5 ring-0 hover:ring-1 hover:ring-white/10">
+<div class="relative w-full aspect-video rounded-lg overflow-hidden bg-[#1c1c1e] border border-white/10 shadow-lg group-hover:shadow-primary/10 transition-all">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105" data-alt="Mobile application interface for a chat app shown on a dark background" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDa1o7lhsJ8M_xkJ3Z5QvypM74Ug9nitvmCzNoaxz2xmdy9ZHw5fCj-JZzbJjBls-gb5Ub7XEafR1jSs7jCJWBJC8c7IDUtoXWHlO92ooS08wHp1We4p-06Zlr5ID9QW3yB_r35cB5c8BdIlEWgkeVCqFLXQc0KTwt1YGTGaMFRqYkHK9bKKcdR6PLbal_baQnFOJmHBFSIAKnjusFKsubkDHX6y8pVI4_bHZXYVyM3RxT2o-tehFERk1Esozu3MsBn5IkVXPW-w1Jt');">
+</div>
+<div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors flex items-center justify-center opacity-0 group-hover:opacity-100">
+<button class="bg-primary/90 text-white px-4 py-2 rounded-full text-xs font-bold backdrop-blur-md shadow-lg transform translate-y-2 group-hover:translate-y-0 transition-all duration-300">View Project</button>
+</div>
+</div>
+<div class="px-1">
+<h3 class="text-white text-sm font-semibold leading-tight group-hover:text-primary transition-colors">Chat Application</h3>
+<p class="text-white/40 text-xs mt-1">Socket.io • React • Redis</p>
+</div>
+</div>
+<!-- Card 5 -->
+<div class="group flex flex-col gap-3 p-3 rounded-xl hover:bg-white/5 transition-all duration-200 cursor-pointer border border-transparent hover:border-white/5 ring-0 hover:ring-1 hover:ring-white/10">
+<div class="relative w-full aspect-video rounded-lg overflow-hidden bg-[#1c1c1e] border border-white/10 shadow-lg group-hover:shadow-primary/10 transition-all">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105" data-alt="Weather application UI showing clouds and temperature data" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDRDAf2VlzY6EnBwQoFiaguzU39l1vZr9cdBi0cclEhvO-ofpdZz6n-vR8GB1ws8uy7KuPYckBGTnDd6WFtoMVf5Kn-SjrNwGmfnU8UCywaqfwA4hBOiSzXwGICd_t7PZ1Ys3YmWPmHQYGFoAygiHC67tWWNBKDvq5SmBm3laRwDbjqdcxzdZjHfjJsSvgKeDHyIafkfPOhpL_lsRgfmk50pl8iWsZ3kmPNOF1wIymS0tIQGjaIy0uU6_Ck2vekvLHQ9iDkyBe0Adlx');">
+</div>
+<div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors flex items-center justify-center opacity-0 group-hover:opacity-100">
+<button class="bg-primary/90 text-white px-4 py-2 rounded-full text-xs font-bold backdrop-blur-md shadow-lg transform translate-y-2 group-hover:translate-y-0 transition-all duration-300">View Project</button>
+</div>
+</div>
+<div class="px-1">
+<h3 class="text-white text-sm font-semibold leading-tight group-hover:text-primary transition-colors">Weather API</h3>
+<p class="text-white/40 text-xs mt-1">OpenWeather • Vue.js</p>
+</div>
+</div>
+<!-- Card 6 -->
+<div class="group flex flex-col gap-3 p-3 rounded-xl hover:bg-white/5 transition-all duration-200 cursor-pointer border border-transparent hover:border-white/5 ring-0 hover:ring-1 hover:ring-white/10">
+<div class="relative w-full aspect-video rounded-lg overflow-hidden bg-[#1c1c1e] border border-white/10 shadow-lg group-hover:shadow-primary/10 transition-all">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105" data-alt="Task management kanban board with colorful tags and user avatars" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAwDS7SPaQoNiVcvK8q9dEFebxQRtbAnsoyuBY5BaLZkxpEzYFAQ2IQf5dnnZ_y5iVVLO0_zpiwulpCaiPuLUyjRgeUYKzJiDNC8PqD-HKdGMK1uimqbKYC8w3LriY2Bg8nVKCPF9XHn_wC-_Gs6PJVujz4QkI0IuGt5lzapD4q_RQK0bk5OzpDpCezISiMcP9M-zn2ZE8urDi-N4LuvhAIWRkzBHDUZ2PVY8SKKH0EbqEwvjTBhzKvTD4L2lanjQwyPXuNGWn0lWy0');">
+</div>
+<div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors flex items-center justify-center opacity-0 group-hover:opacity-100">
+<button class="bg-primary/90 text-white px-4 py-2 rounded-full text-xs font-bold backdrop-blur-md shadow-lg transform translate-y-2 group-hover:translate-y-0 transition-all duration-300">View Project</button>
+</div>
+</div>
+<div class="px-1">
+<h3 class="text-white text-sm font-semibold leading-tight group-hover:text-primary transition-colors">Task Manager</h3>
+<p class="text-white/40 text-xs mt-1">Firebase • React • Redux</p>
+</div>
+</div>
+</div>
+<!-- Empty Space for scrolling feel -->
+<div class="h-10"></div>
+</main>
+</div>
+<!-- Footer / Status Bar -->
+<footer class="h-8 glass-panel border-t border-white/10 flex items-center justify-between px-4 text-[11px] text-white/40 shrink-0">
+<div class="flex items-center gap-4">
+<span>6 items selected</span>
+<span class="hidden sm:inline">2.4 GB available on disk</span>
+</div>
+<div class="flex items-center gap-2">
+<div class="w-20 h-1 bg-white/10 rounded-full overflow-hidden">
+<div class="w-1/3 h-full bg-primary rounded-full"></div>
+</div>
+</div>
+</footer>
+</div>
+</div>
+</body></html>

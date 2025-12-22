@@ -1,0 +1,9 @@
+/target
+**/*.rs.bk
+*.pyc
+__pycache__/
+venv/
+*.whl
+node_modules/
+.vscode/
+.idea/

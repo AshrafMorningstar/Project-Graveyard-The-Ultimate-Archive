@@ -1,0 +1,120 @@
+<!--
+ -----------------------------------------------------------------------------
+ @author      Ashraf Morningstar
+ @github      https://github.com/AshrafMorningstar
+ @repository  Project Graveyard - The Ultimate Archive
+ @quote       "Code that defines the future. Designed to inspire."
+ -----------------------------------------------------------------------------
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Music Player | Ultimate Web Dev Journey</title>
+    <style>
+        /* Created by Ashraf Morningstar - https://github.com/AshrafMorningstar */
+        @import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
+        body { background-image: linear-gradient(0deg, rgba(247, 247, 247, 1) 23.8%, rgba(252, 221, 221, 1) 92%); height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; font-family: 'Lato', sans-serif; margin: 0; }
+        .music-container { background-color: #fff; box-shadow: 0 20px 20px 0 rgba(252, 169, 169, 0.6); display: flex; padding: 20px 30px; position: relative; margin: 100px 0; z-index: 10; border-radius: 15px; }
+        .img-container { position: relative; width: 110px; }
+        .img-container::after { content: ''; background-color: #fff; border-radius: 50%; position: absolute; bottom: 100%; left: 50%; width: 20px; height: 20px; transform: translate(-50%, 50%); }
+        .img-container img { border-radius: 50%; object-fit: cover; height: 110px; width: 110px; position: absolute; bottom: 0; left: 0; animation: rotate 3s linear infinite; animation-play-state: paused; }
+        .music-container.play .img-container img { animation-play-state: running; }
+        @keyframes rotate { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+        .navigation { display: flex; align-items: center; justify-content: center; z-index: 1; }
+        .action-btn { background-color: #fff; border: 0; color: #dfdbdf; font-size: 20px; cursor: pointer; padding: 10px; margin: 0 20px; }
+        .action-btn-big { color: #cdc2d0; font-size: 30px; }
+        .action-btn:focus { outline: 0; }
+        .music-info { background-color: rgba(255, 255, 255, 0.5); border-radius: 15px 15px 0 0; position: absolute; top: 0; left: 20px; width: calc(100% - 40px); opacity: 0; transform: translateY(0%); transition: transform 0.3s ease-in, opacity 0.3s ease-in; padding: 10px 10px 10px 150px; z-index: 0; }
+        .music-container.play .music-info { opacity: 1; transform: translateY(-100%); }
+        .music-info h4 { margin: 0; }
+        .progress-container { background: #fff; border-radius: 5px; cursor: pointer; margin: 10px 0; height: 4px; width: 100%; }
+        .progress { background-color: #fe8daa; border-radius: 5px; height: 100%; width: 0%; transition: width 0.1s linear; }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css"/>
+</head>
+<body>
+    <h1>Music Player</h1>
+    <div class="music-container" id="music-container">
+        <div class="music-info">
+            <h4 id="title">Ukulele</h4>
+            <div class="progress-container" id="progress-container">
+                <div class="progress" id="progress"></div>
+            </div>
+        </div>
+        <audio src="music.mp3" id="audio"></audio>
+        <div class="img-container">
+            <img src="https://images.unsplash.com/photo-1547025603-997e0b57e793?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="music-cover" id="cover" />
+        </div>
+        <div class="navigation">
+            <button id="prev" class="action-btn"><i class="fas fa-backward"></i></button>
+            <button id="play" class="action-btn action-btn-big"><i class="fas fa-play"></i></button>
+            <button id="next" class="action-btn"><i class="fas fa-forward"></i></button>
+        </div>
+    </div>
+    <script>
+        // Created by Ashraf Morningstar - https://github.com/AshrafMorningstar
+        const musicContainer = document.getElementById('music-container');
+        const playBtn = document.getElementById('play');
+        const prevBtn = document.getElementById('prev');
+        const nextBtn = document.getElementById('next');
+        const audio = document.getElementById('audio');
+        const progress = document.getElementById('progress');
+        const progressContainer = document.getElementById('progress-container');
+        const title = document.getElementById('title');
+        const cover = document.getElementById('cover');
+
+        // Song titles
+        const songs = ['hey', 'summer', 'ukulele'];
+        let songIndex = 2;
+
+        function loadSong(song) {
+            title.innerText = song;
+            // audio.src = `music/${song}.mp3`; // This relies on local files.
+            // For demo, we leave src blank or use placeholder to prevent errors
+            cover.src = `https://images.unsplash.com/photo-1547025603-997e0b57e793?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60`;
+        }
+
+        function playSong() {
+            musicContainer.classList.add('play');
+            playBtn.querySelector('i.fas').classList.remove('fa-play');
+            playBtn.querySelector('i.fas').classList.add('fa-pause');
+            // audio.play();
+        }
+
+        function pauseSong() {
+            musicContainer.classList.remove('play');
+            playBtn.querySelector('i.fas').classList.add('fa-play');
+            playBtn.querySelector('i.fas').classList.remove('fa-pause');
+            // audio.pause();
+        }
+
+        function prevSong() {
+            songIndex--;
+            if (songIndex < 0) songIndex = songs.length - 1;
+            loadSong(songs[songIndex]);
+            playSong();
+        }
+
+        function nextSong() {
+            songIndex++;
+            if (songIndex > songs.length - 1) songIndex = 0;
+            loadSong(songs[songIndex]);
+            playSong();
+        }
+
+        playBtn.addEventListener('click', () => {
+            const isPlaying = musicContainer.classList.contains('play');
+            if (isPlaying) pauseSong();
+            else playSong();
+        });
+
+        prevBtn.addEventListener('click', prevSong);
+        nextBtn.addEventListener('click', nextSong);
+
+        loadSong(songs[songIndex]);
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>

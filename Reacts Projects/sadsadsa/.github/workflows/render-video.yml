@@ -1,0 +1,28 @@
+name: Render Cyber Stats Video
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Render Video
+        run: npx remotion render src/index.tsx CyberStats out/video.mp4 --props=input.json
+
+      - name: Upload Video
+        uses: actions/upload-artifact@v3
+        with:
+          name: cyber-stats-video
+          path: out/video.mp4

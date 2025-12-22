@@ -1,0 +1,100 @@
+/*
+ * -----------------------------------------------------------------------------
+ * @author      Ashraf Morningstar
+ * @github      https://github.com/AshrafMorningstar
+ * @repository  Project Graveyard - The Ultimate Archive
+ * @quote       "Code that defines the future. Designed to inspire."
+ * -----------------------------------------------------------------------------
+*/
+
+/* ThemeSmith - Design Tokens */
+/* Author: Ashraf Morningstar | https://github.com/AshrafMorningstar */
+
+:root {
+    --hue: 220;
+    --saturation: 70%;
+    --lightness: 50%;
+    --contrast: 50;
+    --radius: 8px;
+    --elevation: 50;
+    
+    /* Derived colors */
+    --color-primary: hsl(var(--hue), var(--saturation), var(--lightness));
+    --color-primary-light: hsl(var(--hue), var(--saturation), calc(var(--lightness) + 20%));
+    --color-primary-dark: hsl(var(--hue), var(--saturation), calc(var(--lightness) - 20%));
+    --color-bg: hsl(var(--hue), 10%, calc(95% + var(--contrast) * 0.05%));
+    --color-text: hsl(var(--hue), 10%, calc(10% - var(--contrast) * 0.05%));
+    --color-border: hsl(var(--hue), 10%, calc(80% + var(--contrast) * 0.1%));
+    
+    /* Shadows */
+    --shadow: 0 calc(var(--elevation) * 0.1px) calc(var(--elevation) * 0.3px) rgba(0, 0, 0, calc(var(--elevation) * 0.002));
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: var(--color-bg);
+    color: var(--color-text);
+    transition: all 0.3s ease;
+}
+
+.app-container {
+    display: flex;
+    min-height: 100vh;
+}
+
+.control-panel {
+    width: 300px;
+    background: white;
+    padding: 32px 24px;
+    border-right: 1px solid var(--color-border);
+    box-shadow: var(--shadow);
+}
+
+.control-panel h2 {
+    margin-bottom: 32px;
+    color: var(--color-primary);
+}
+
+.control-group {
+    margin-bottom: 24px;
+}
+
+.control-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.control-group input[type="range"] {
+    width: 100%;
+    margin-bottom: 4px;
+}
+
+.control-group span {
+    font-size: 12px;
+    color: var(--color-text);
+    opacity: 0.7;
+}
+
+.preview-area {
+    flex: 1;
+    padding: 48px;
+}
+
+.preview-area h1 {
+    margin-bottom: 40px;
+    font-size: 32px;
+}
+
+.component-grid {
+    display: grid;
+    gap: 24px;
+    max-width: 600px;
+}

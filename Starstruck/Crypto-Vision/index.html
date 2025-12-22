@@ -1,0 +1,122 @@
+<!--
+ -----------------------------------------------------------------------------
+ @author      Ashraf Morningstar
+ @github      https://github.com/AshrafMorningstar
+ @repository  Project Graveyard - The Ultimate Archive
+ @quote       "Code that defines the future. Designed to inspire."
+ -----------------------------------------------------------------------------
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crypto-Vision | Advanced Asset Tracking</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;500;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="logo">
+                <div class="logo-icon">CV</div>
+                <span>CryptoVision</span>
+            </div>
+            <nav>
+                <a href="#" class="active"><span class="icon">📊</span> Dashboard</a>
+                <a href="#"><span class="icon">💼</span> Portfolio</a>
+                <a href="#"><span class="icon">⚡</span> Trade</a>
+                <a href="#"><span class="icon">⚙️</span> Settings</a>
+            </nav>
+            <div class="user-profile">
+                <div class="avatar">AM</div>
+                <div class="user-info">
+                    <span class="name">Ashraf M.</span>
+                    <span class="status">Premium</span>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header>
+                <h1>Dashboard Overview</h1>
+                <div class="header-actions">
+                    <button class="btn-icon">🔔</button>
+                    <button class="btn-primary">Connect Wallet</button>
+                </div>
+            </header>
+
+            <!-- Stats Grid -->
+            <div class="stats-grid">
+                <div class="card stat-card glass">
+                    <h3>Total Balance</h3>
+                    <div class="value">$42,069.00</div>
+                    <div class="trend positive">+12.5% <span>vs last week</span></div>
+                </div>
+                <div class="card stat-card glass">
+                    <h3>Daily Profit</h3>
+                    <div class="value">$1,240.50</div>
+                    <div class="trend positive">+5.2% <span>today</span></div>
+                </div>
+                <div class="card stat-card glass">
+                    <h3>Active Trades</h3>
+                    <div class="value">8</div>
+                    <div class="trend neutral">0 changes</div>
+                </div>
+            </div>
+
+            <!-- Charts Section -->
+            <div class="charts-section">
+                <div class="card graph-card glass">
+                    <div class="card-header">
+                        <h2>Market Overview</h2>
+                        <div class="time-filters">
+                            <span class="active">1H</span>
+                            <span>1D</span>
+                            <span>1W</span>
+                            <span>1M</span>
+                            <span>1Y</span>
+                        </div>
+                    </div>
+                    <canvas id="marketChart"></canvas>
+                </div>
+                <div class="card asset-list glass">
+                    <h2>Top Assets</h2>
+                    <div class="asset-item">
+                        <div class="asset-icon btc">₿</div>
+                        <div class="asset-details">
+                            <span class="asset-name">Bitcoin</span>
+                            <span class="asset-sub">BTC</span>
+                        </div>
+                        <div class="asset-price" id="price-btc">$45,230</div>
+                        <div class="asset-change positive">+2.4%</div>
+                    </div>
+                    <div class="asset-item">
+                        <div class="asset-icon eth">Ξ</div>
+                        <div class="asset-details">
+                            <span class="asset-name">Ethereum</span>
+                            <span class="asset-sub">ETH</span>
+                        </div>
+                        <div class="asset-price" id="price-eth">$3,100</div>
+                        <div class="asset-change negative">-1.2%</div>
+                    </div>
+                    <div class="asset-item">
+                        <div class="asset-icon sol">◎</div>
+                        <div class="asset-details">
+                            <span class="asset-name">Solana</span>
+                            <span class="asset-sub">SOL</span>
+                        </div>
+                        <div class="asset-price" id="price-sol">$120</div>
+                        <div class="asset-change positive">+8.5%</div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>

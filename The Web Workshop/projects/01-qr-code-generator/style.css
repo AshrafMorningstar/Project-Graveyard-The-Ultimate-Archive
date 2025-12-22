@@ -1,0 +1,113 @@
+/*
+ * -----------------------------------------------------------------------------
+ * @author      Ashraf Morningstar
+ * @github      https://github.com/AshrafMorningstar
+ * @repository  Project Graveyard - The Ultimate Archive
+ * @quote       "Code that defines the future. Designed to inspire."
+ * -----------------------------------------------------------------------------
+*/
+
+:root {
+  --bg-color: #e0e5ec;
+  --text-color: #4a4a4a;
+  --shadow-light: #ffffff;
+  --shadow-dark: #a3b1c6;
+  --primary: #4d79ff;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+}
+
+.container {
+  width: 100%;
+  max-width: 400px;
+  padding: 2rem;
+  border-radius: 20px;
+  background-color: var(--bg-color);
+  box-shadow: 9px 9px 16px var(--shadow-dark),
+    -9px -9px 16px var(--shadow-light);
+  text-align: center;
+}
+
+header h1 {
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+  color: var(--primary);
+}
+
+header p {
+  font-size: 0.9rem;
+  color: #888;
+  margin-bottom: 2rem;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+input {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 10px;
+  background: var(--bg-color);
+  box-shadow: inset 5px 5px 10px var(--shadow-dark),
+    inset -5px -5px 10px var(--shadow-light);
+  outline: none;
+  font-family: inherit;
+  color: var(--text-color);
+}
+
+button {
+  padding: 12px;
+  border: none;
+  border-radius: 10px;
+  background: var(--bg-color);
+  box-shadow: 5px 5px 10px var(--shadow-dark),
+    -5px -5px 10px var(--shadow-light);
+  color: var(--primary);
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.1s ease;
+}
+
+button:active {
+  box-shadow: inset 5px 5px 10px var(--shadow-dark),
+    inset -5px -5px 10px var(--shadow-light);
+  transform: translateY(2px);
+}
+
+.qr-code {
+  margin: 2rem 0;
+  display: flex;
+  justify-content: center;
+}
+
+canvas {
+  border-radius: 10px;
+  box-shadow: 5px 5px 10px var(--shadow-dark),
+    -5px -5px 10px var(--shadow-light);
+  padding: 10px;
+  background: #fff; /* QR code needs white background */
+}
+
+footer {
+  margin-top: 2rem;
+  font-size: 0.8rem;
+}
+
+footer a {
+  color: var(--primary);
+  text-decoration: none;
+}

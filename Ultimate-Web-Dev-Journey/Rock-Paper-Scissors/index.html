@@ -1,0 +1,113 @@
+<!--
+ -----------------------------------------------------------------------------
+ @author      Ashraf Morningstar
+ @github      https://github.com/AshrafMorningstar
+ @repository  Project Graveyard - The Ultimate Archive
+ @quote       "Code that defines the future. Designed to inspire."
+ -----------------------------------------------------------------------------
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Rock Paper Scissors | Ultimate Web Dev Journey</title>
+    <style>
+        /* Created by Ashraf Morningstar - https://github.com/AshrafMorningstar */
+       body { background: #25273e; color: #fff; font-family: sans-serif; display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh; }
+       h1 { margin-bottom: 20px; }
+       .score-board { border: 3px solid #fff; border-radius: 4px; padding: 15px 20px; width: 200px; display: flex; justify-content: space-between; align-items: center; font-size: 46px; margin: 0 auto 30px; position: relative; }
+       .badge { background: #e2584d; color: #fff; font-size: 14px; padding: 2px 10px; position: absolute; top: -15px; left: 50%; transform: translateX(-50%); }
+       .choice { display: inline-block; margin: 0 20px; cursor: pointer; }
+       .choice img { width: 100px; height: 100px; border-radius: 50%; border: 5px solid transparent; transition: 0.3s; }
+       .choice:hover img { border-color: #2196f3; }
+       #action-message { text-align: center; font-weight: bold; font-size: 20px; margin-top: 20px; }
+    </style>
+</head>
+<body>
+    <div class="score-board">
+        <div id="user-score" class="score">0</div>
+        <div id="computer-score" class="score">0</div>
+        <span class="badge">user:comp</span>
+    </div>
+    <h1>Rock Paper Scissors</h1>
+    <div class="choices">
+        <div class="choice" id="r"><img src="https://img.icons8.com/color/96/000000/rock.png" alt="Rock"></div>
+        <div class="choice" id="p"><img src="https://img.icons8.com/color/96/000000/paper-bag-with-seeds.png" alt="Paper"></div>
+        <div class="choice" id="s"><img src="https://img.icons8.com/color/96/000000/scissor.png" alt="Scissors"></div>
+    </div>
+    <p id="action-message">Make your move.</p>
+
+    <script>
+        // Created by Ashraf Morningstar - https://github.com/AshrafMorningstar
+        let userScore = 0;
+        let computerScore = 0;
+        const userScore_span = document.getElementById("user-score");
+        const computerScore_span = document.getElementById("computer-score");
+        const result_p = document.querySelector("#action-message");
+        const rock_div = document.getElementById("r");
+        const paper_div = document.getElementById("p");
+        const scissors_div = document.getElementById("s");
+
+        function getComputerChoice() {
+            const choices = ['r', 'p', 's'];
+            const randomNumber = Math.floor(Math.random() * 3);
+            return choices[randomNumber];
+        }
+
+        function convertToWord(letter) {
+            if (letter === "r") return "Rock";
+            if (letter === "p") return "Paper";
+            return "Scissors";
+        }
+
+        function win(userChoice, computerChoice) {
+            userScore++;
+            userScore_span.innerHTML = userScore;
+            computerScore_span.innerHTML = computerScore;
+            result_p.innerHTML = `${convertToWord(userChoice)} beats ${convertToWord(computerChoice)}. You win! 🔥`;
+        }
+
+        function lose(userChoice, computerChoice) {
+            computerScore++;
+            userScore_span.innerHTML = userScore;
+            computerScore_span.innerHTML = computerScore;
+            result_p.innerHTML = `${convertToWord(computerChoice)} beats ${convertToWord(userChoice)}. You lost... 💩`;
+        }
+
+        function draw(userChoice, computerChoice) {
+            result_p.innerHTML = `${convertToWord(userChoice)} equals ${convertToWord(computerChoice)}. It's a draw. 🤝`;
+        }
+
+        function game(userChoice) {
+            const computerChoice = getComputerChoice();
+            switch (userChoice + computerChoice) {
+                case "rs":
+                case "pr":
+                case "sp":
+                    win(userChoice, computerChoice);
+                    break;
+                case "rp":
+                case "ps":
+                case "sr":
+                    lose(userChoice, computerChoice);
+                    break;
+                case "rr":
+                case "pp":
+                case "ss":
+                    draw(userChoice, computerChoice);
+                    break;
+            }
+        }
+
+        function main() {
+            rock_div.addEventListener('click', () => game("r"));
+            paper_div.addEventListener('click', () => game("p"));
+            scissors_div.addEventListener('click', () => game("s"));
+        }
+
+        main();
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>

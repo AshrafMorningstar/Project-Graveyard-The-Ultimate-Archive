@@ -1,0 +1,65 @@
+<!--
+ -----------------------------------------------------------------------------
+ @author      Ashraf Morningstar
+ @github      https://github.com/AshrafMorningstar
+ @repository  Project Graveyard - The Ultimate Archive
+ @quote       "Code that defines the future. Designed to inspire."
+ -----------------------------------------------------------------------------
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Voice to Text | Ultimate Web Dev Journey</title>
+    <style>
+        /* Created by Ashraf Morningstar - https://github.com/AshrafMorningstar */
+        body { background: #fce4ec; font-family: 'Verdana', sans-serif; display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh; }
+        .container { background: #fff; padding: 20px; border-radius: 10px; width: 80%; max-width: 600px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); text-align: center; }
+        .text-box { width: 100%; height: 200px; border: 1px solid #ddd; border-radius: 5px; padding: 10px; font-size: 18px; margin-top: 20px; overflow-y: scroll; text-align: left; }
+        .btn { border: none; background: #e91e63; color: white; padding: 10px 20px; font-size: 18px; margin-top: 20px; cursor: pointer; border-radius: 5px; }
+        .btn:active { transform: scale(0.98); }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🗣️ Speech to Text</h1>
+        <p>Click the button and speak. (Chrome Only)</p>
+        <div class="text-box" id="text-box">...</div>
+        <button id="start-btn" class="btn">Start Listening</button>
+    </div>
+    <script>
+        // Created by Ashraf Morningstar - https://github.com/AshrafMorningstar
+        const startBtn = document.getElementById('start-btn');
+        const textBox = document.getElementById('text-box');
+
+        const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+        
+        if (SpeechRecognition) {
+            const recognition = new SpeechRecognition();
+            recognition.continuous = true;
+            recognition.lang = 'en-US';
+
+            startBtn.addEventListener('click', () => {
+                recognition.start();
+                startBtn.innerText = "Listening...";
+                startBtn.style.background = "#c2185b";
+            });
+
+            recognition.onresult = (event) => {
+                const current = event.resultIndex;
+                const transcript = event.results[current][0].transcript;
+                textBox.innerText = transcript;
+            };
+
+            recognition.onend = () => {
+                startBtn.innerText = "Start Listening";
+                startBtn.style.background = "#e91e63";
+            };
+        } else {
+            textBox.innerText = "Your browser does not support Speech Recognition.";
+        }
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>

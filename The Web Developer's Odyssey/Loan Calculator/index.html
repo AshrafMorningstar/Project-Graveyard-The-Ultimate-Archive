@@ -1,0 +1,55 @@
+<!--
+ -----------------------------------------------------------------------------
+ @author      Ashraf Morningstar
+ @github      https://github.com/AshrafMorningstar
+ @repository  Project Graveyard - The Ultimate Archive
+ @quote       "Code that defines the future. Designed to inspire."
+ -----------------------------------------------------------------------------
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="style.css">
+	<title>Loan Calculator</title>
+    <meta name="author" content="Ashraf Morningstar">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="../global-premium.css">
+</head>
+
+<body class="theme-neon">
+	<div class="container">
+		<h3>Loan Calculator</h3>
+		<p>Loan Amount:
+			<input type="number" value="1" id="amount" min="0" onchange="calculateLoan()"> ₹</p>
+		<p>Interest Rate:
+			<input type="number" value="0.1" id="interest" min="0" onchange="calculateLoan()"> % </p>
+		<p>Months to Pay:
+			<input type="number" value="1" id="months" min="0" onchange="calculateLoan()"> </p>
+		<h2 id="payment"></h2> </div>
+	<script>
+		function calculateLoan() {
+			const amount = document.querySelector("#amount").value;
+			const interestRate = document.querySelector("#interest").value;
+			const months = document.querySelector("#months").value;
+			const monthlyRate = (interestRate) / (12 * 100);
+			const onePlusR = Math.pow(1 + monthlyRate, months);
+			const den = onePlusR - 1;
+			const emi = (amount * monthlyRate * (onePlusR / den)).toFixed(2);
+			const totalPay = (emi * months).toFixed(2);
+			document.querySelector("#payment").innerHTML = `EMI: ₹ ${emi} <br><br> Total Payment: ₹${totalPay}`
+		}
+	</script>
+
+<div id="ashraf-branding-bar">
+    <span>💎 Crafted by <a href="https://github.com/AshrafMorningstar" target="_blank">Ashraf Morningstar</a></span>
+    <a href="https://github.com/AshrafMorningstar" target="_blank"><i class="fab fa-github"></i> View on GitHub</a>
+</div>
+
+</body>
+
+</html>

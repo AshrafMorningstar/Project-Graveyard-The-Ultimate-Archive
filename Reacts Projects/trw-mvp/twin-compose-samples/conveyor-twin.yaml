@@ -1,0 +1,55 @@
+twin_id: "plant-001:conveyor-cell-A"
+description: "Conveyor subsystem + motor + camera sensor"
+version: "1.0.0"
+metadata:
+  owner: "manufacturing-sme@acme.example"
+  environment: "staging"
+
+runtime:
+  backend: gpu
+  precision: mixed
+  max_latency_ms: 100
+
+sources:
+  - id: "motor01_ts"
+    type: timeseries
+    connector: "kafka://telemetry/motor01"
+    schema: "telemetry.timeseries.v1"
+    transforms:
+      - filter: {type: "lowpass", cutoff_hz: 50}
+      - resample: {rate_hz: 200}
+  - id: "belt_cam"
+    type: video
+    connector: "rtsp://edgecam-7/stream"
+    schema: "telemetry.video.v1"
+    transforms:
+      - frame_skip: 2
+
+graph:
+  - id: "motor_model"
+    type: model
+    model_ref: "oci://registry.example/models/motor_surrogate:1.2.0"
+    inputs: ["motor01_ts"]
+    outputs: ["motor_state"]
+    constraints:
+      - safety: {max_temp_c: 90}
+  - id: "vision_pose"
+    type: model
+    model_ref: "oci://registry.example/models/pose_estimator:latest"
+    inputs: ["belt_cam"]
+    outputs: ["pose"]
+  - id: "system_integrator"
+    type: integrator
+    impl: "twincore/integrator:0.1.0"
+    inputs: ["motor_state", "pose"]
+    outputs: ["estimated_load"]
+  - id: "controller"
+    type: controller
+    impl: "oci://registry.example/controllers/mpc:3.0.0"
+    inputs: ["estimated_load"]
+    outputs: ["control_signal"]
+    deployment:
+      rollout_strategy: "shadow"
+      shadow_duration_minutes: 60
+      safety_thresholds:
+        max_deviation_pct: 5
