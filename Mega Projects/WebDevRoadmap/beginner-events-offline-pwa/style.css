@@ -1,0 +1,321 @@
+/*
+ * -----------------------------------------------------------------------------
+ * @author      Ashraf Morningstar
+ * @github      https://github.com/AshrafMorningstar
+ * @repository  Project Graveyard - The Ultimate Archive
+ * @quote       "Code that defines the future. Designed to inspire."
+ * -----------------------------------------------------------------------------
+*/
+
+/**
+ * Local Events PWA - Styles
+ * Author: Ashraf Morningstar
+ * GitHub: https://github.com/AshrafMorningstar
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg-primary: #0B0D10;
+  --bg-secondary: #12151B;
+  --bg-card: #1A1D24;
+  --text-primary: #EDEDED;
+  --text-secondary: #A1A1AA;
+  --accent: #3B82F6;
+  --success: #22C55E;
+  --warning: #F59E0B;
+  --radius: 12px;
+  --shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  line-height: 1.6;
+  padding-bottom: 2rem;
+}
+
+.app {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+/* Status Bar */
+.status-bar {
+  position: sticky;
+  top: 0;
+  background: var(--bg-secondary);
+  padding: 0.75rem 1rem;
+  border-radius: var(--radius);
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  z-index: 100;
+  box-shadow: var(--shadow);
+}
+
+.status-indicator {
+  font-size: 1.5rem;
+  animation: pulse 2s infinite;
+}
+
+.status-indicator.online {
+  color: var(--success);
+}
+
+.status-indicator.offline {
+  color: var(--warning);
+  animation: none;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+/* Header */
+.header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  background: linear-gradient(135deg, #3B82F6, #A855F7);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.subtitle {
+  color: var(--text-secondary);
+  font-size: 1.125rem;
+}
+
+/* Tabs */
+.tabs {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+  background: var(--bg-secondary);
+  padding: 0.5rem;
+  border-radius: var(--radius);
+}
+
+.tab-btn {
+  flex: 1;
+  padding: 0.75rem;
+  background: transparent;
+  border: none;
+  color: var(--text-secondary);
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.tab-btn:hover {
+  background: var(--bg-card);
+  color: var(--text-primary);
+}
+
+.tab-btn.active {
+  background: var(--accent);
+  color: white;
+}
+
+/* Views */
+.view {
+  display: none;
+}
+
+.view.active {
+  display: block;
+  animation: fadeIn 0.3s;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Filters */
+.filters {
+  margin-bottom: 1.5rem;
+}
+
+.filters select {
+  width: 100%;
+  max-width: 300px;
+  padding: 0.75rem 1rem;
+  background: var(--bg-secondary);
+  border: 2px solid var(--bg-card);
+  border-radius: var(--radius);
+  color: var(--text-primary);
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+/* Events Grid */
+.events-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.event-card {
+  background: var(--bg-secondary);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  box-shadow: var(--shadow);
+  transition: all 0.3s;
+  position: relative;
+}
+
+.event-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+}
+
+.event-category {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  background: var(--accent);
+  color: white;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+
+.event-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: var(--text-primary);
+}
+
+.event-date {
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+  margin-bottom: 0.5rem;
+}
+
+.event-description {
+  color: var(--text-secondary);
+  line-height: 1.5;
+  margin-bottom: 1rem;
+}
+
+.event-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.btn {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-favorite {
+  background: var(--bg-card);
+  color: var(--text-secondary);
+}
+
+.btn-favorite.active {
+  background: var(--warning);
+  color: white;
+}
+
+.btn-details {
+  flex: 1;
+  background: var(--accent);
+  color: white;
+}
+
+.btn-details:hover {
+  background: #2563EB;
+}
+
+/* Map & Calendar Placeholders */
+.map-placeholder,
+.calendar-placeholder {
+  background: var(--bg-secondary);
+  border-radius: var(--radius);
+  padding: 4rem 2rem;
+  text-align: center;
+  min-height: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.map-placeholder p:first-child,
+.calendar-placeholder p:first-child {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+}
+
+.map-info,
+.calendar-info {
+  color: var(--text-secondary);
+  font-size: 1.125rem;
+}
+
+/* Favorites */
+.favorites-section {
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 2px solid var(--bg-secondary);
+}
+
+.favorites-section h2 {
+  font-size: 1.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.favorites-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1rem;
+}
+
+.empty-state {
+  grid-column: 1 / -1;
+  text-align: center;
+  color: var(--text-secondary);
+  padding: 2rem;
+  background: var(--bg-secondary);
+  border-radius: var(--radius);
+}
+
+@media (max-width: 768px) {
+  .header h1 {
+    font-size: 2rem;
+  }
+  
+  .events-grid,
+  .favorites-list {
+    grid-template-columns: 1fr;
+  }
+}

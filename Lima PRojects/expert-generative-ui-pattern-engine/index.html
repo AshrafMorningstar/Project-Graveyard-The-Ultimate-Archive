@@ -1,0 +1,567 @@
+<!--
+ -----------------------------------------------------------------------------
+ @author      Ashraf Morningstar
+ @github      https://github.com/AshrafMorningstar
+ @repository  Project Graveyard - The Ultimate Archive
+ @quote       "Code that defines the future. Designed to inspire."
+ -----------------------------------------------------------------------------
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="AI-powered UI component generator with code preview and accessibility checks">
+    <meta name="author" content="Ashraf Morningstar">
+    <title>GenUI | Generative Pattern Engine</title>
+    <link rel="stylesheet" href="../shared/global-design-system.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            background-color: #0d1117;
+            height: 100vh;
+            display: grid;
+            grid-template-rows: auto 1fr;
+            overflow: hidden;
+        }
+
+        /* Header */
+        .app-header {
+            background: #161b22;
+            border-bottom: 1px solid #30363d;
+            padding: var(--space-4) var(--space-6);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Courier New', monospace;
+            font-weight: 700;
+            color: var(--accent-primary);
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .model-badge {
+            font-size: 10px;
+            background: #238636;
+            color: white;
+            padding: 2px 6px;
+            border-radius: 999px;
+            text-transform: uppercase;
+        }
+
+        /* Main Workspace */
+        .workspace {
+            display: grid;
+            grid-template-columns: 350px 1fr 400px;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        /* Prompt Panel (Left) */
+        .prompt-panel {
+            background: #0d1117;
+            border-right: 1px solid #30363d;
+            padding: var(--space-6);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .chat-history {
+            flex: 1;
+            overflow-y: auto;
+            margin-bottom: var(--space-4);
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-4);
+        }
+
+        .message {
+            padding: var(--space-4);
+            border-radius: var(--radius-lg);
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        .message.user {
+            background: #1f242c;
+            color: #c9d1d9;
+            align-self: flex-end;
+            max-width: 90%;
+        }
+
+        .message.system {
+            background: transparent;
+            color: #8b949e;
+            align-self: flex-start;
+            border: 1px solid #30363d;
+            max-width: 90%;
+        }
+
+        .input-area {
+            position: relative;
+        }
+
+        .prompt-input {
+            width: 100%;
+            background: #161b22;
+            border: 1px solid #30363d;
+            border-radius: var(--radius-lg);
+            color: white;
+            padding: var(--space-3) var(--space-4);
+            min-height: 100px;
+            resize: none;
+            font-family: inherit;
+        }
+
+        .prompt-input:focus {
+            outline: none;
+            border-color: var(--accent-primary);
+        }
+
+        .generate-btn {
+            position: absolute;
+            bottom: 12px;
+            right: 12px;
+            background: var(--accent-primary);
+            color: white;
+            border: none;
+            padding: 6px 12px;
+            border-radius: var(--radius-md);
+            cursor: pointer;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 12px;
+        }
+
+        .generate-btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        /* Visual Preview (Center) */
+        .preview-panel {
+            background: #010409;
+            display: flex;
+            flex-direction: column;
+            padding: var(--space-6);
+        }
+
+        .preview-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: var(--space-4);
+            color: #8b949e;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .preview-canvas {
+            flex: 1;
+            background: white; /* Contrast for preview */
+            border-radius: var(--radius-lg);
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            background-image: radial-gradient(#e5e7eb 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+
+        /* Code & Meta (Right) */
+        .meta-panel {
+            background: #0d1117;
+            border-left: 1px solid #30363d;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .tabs {
+            display: flex;
+            border-bottom: 1px solid #30363d;
+        }
+
+        .tab {
+            flex: 1;
+            padding: var(--space-3);
+            background: transparent;
+            border: none;
+            color: #8b949e;
+            cursor: pointer;
+            border-bottom: 2px solid transparent;
+            font-size: 13px;
+        }
+
+        .tab.active {
+            color: white;
+            border-bottom-color: var(--accent-primary);
+        }
+
+        .code-editor {
+            flex: 1;
+            padding: var(--space-4);
+            font-family: 'Consolas', 'Monaco', monospace;
+            font-size: 13px;
+            color: #c9d1d9;
+            overflow-y: auto;
+            white-space: pre;
+            line-height: 1.6;
+        }
+
+        .token { color: #d2a8ff; } /* Keyword */
+        .token.str { color: #a5d6ff; } /* String */
+        .token.tag { color: #7ee787; } /* Tag */
+        .token.attr { color: #79c0ff; } /* Attribute */
+
+        .a11y-score {
+            padding: var(--space-6);
+        }
+
+        .score-card {
+            background: #161b22;
+            border: 1px solid #30363d;
+            border-radius: var(--radius-lg);
+            padding: var(--space-4);
+            margin-bottom: var(--space-4);
+        }
+
+        .score-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: var(--space-3);
+        }
+
+        .score-circle {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: transparent;
+            border: 3px solid #238636;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: #238636;
+        }
+
+        .checklist-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 8px;
+            font-size: 13px;
+            color: #c9d1d9;
+        }
+
+        .checklist-item i {
+            color: #238636;
+        }
+
+        /* Components Library Styles (Injected into preview) */
+        .generated-component-card {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            padding: 24px;
+            max-width: 320px;
+            width: 100%;
+        }
+
+        .generated-btn {
+            background-color: #3b82f6;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 6px;
+            border: none;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+        .generated-btn:hover { background-color: #2563eb; }
+
+        /* Loader */
+        .ai-loader {
+            display: none;
+            align-items: center;
+            gap: 8px;
+            color: var(--accent-primary);
+            font-family: monospace;
+            margin-top: 10px;
+        }
+        .ai-loader span {
+            animation: blink 1s infinite;
+        }
+        @keyframes blink { 50% { opacity: 0; } }
+    </style>
+</head>
+<body>
+    <header class="app-header">
+        <div class="logo">
+            <i class="fas fa-brain"></i>
+            GenUI <span class="model-badge">v2.4-Turbo</span>
+        </div>
+        <div>
+            <button class="btn btn-secondary btn-sm"><i class="fas fa-save"></i> Save Preset</button>
+            <button class="btn btn-primary btn-sm"><i class="fas fa-code-branch"></i> Export React</button>
+        </div>
+    </header>
+
+    <div class="workspace">
+        <!-- Prompt Panel -->
+        <aside class="prompt-panel">
+            <div class="chat-history" id="chatHistory">
+                <div class="message system">
+                    Welcome to GenUI. Describe a UI component, and I'll generate the code, accessible markup, and styles for you.
+                </div>
+            </div>
+            
+            <div class="input-area">
+                <textarea class="prompt-input" id="promptInput" placeholder="e.g. A login card with email, password, and social auth buttons..."></textarea>
+                <div class="ai-loader" id="loader">
+                    <i class="fas fa-spinner fa-spin"></i> Generating<span>...</span>
+                </div>
+                <button class="generate-btn" id="generateBtn" onclick="generateComponent()">
+                    <i class="fas fa-magic"></i> Generate
+                </button>
+            </div>
+        </aside>
+
+        <!-- Preview Panel -->
+        <main class="preview-panel">
+            <div class="preview-header">
+                <span>Canvas Preview (1024px)</span>
+                <span><i class="fas fa-sync-alt"></i> Reload</span>
+            </div>
+            <div class="preview-canvas" id="previewCanvas">
+                <div style="color: #6b7280; text-align: center;">
+                    <i class="fas fa-paint-brush" style="font-size: 2rem; margin-bottom: 1rem; opacity: 0.5;"></i>
+                    <p>Component will appear here</p>
+                </div>
+            </div>
+        </main>
+
+        <!-- Meta Panel -->
+        <aside class="meta-panel">
+            <div class="tabs">
+                <button class="tab active" onclick="switchTab('code')">React / JSX</button>
+                <button class="tab" onclick="switchTab('a11y')">Accessibility</button>
+            </div>
+
+            <div id="codeTab" class="code-editor">
+                <div style="color: #6b7280; margin-top: 20px; text-align: center;">// Code will be generated here</div>
+            </div>
+
+            <div id="a11yTab" class="a11y-score" style="display: none;">
+                <div class="score-card">
+                    <div class="score-header">
+                        <span style="font-weight: bold; color: white;">A11y Score</span>
+                        <div class="score-circle">--</div>
+                    </div>
+                    <div style="height: 4px; background: #30363d; border-radius: 2px;">
+                        <div style="width: 0%; height: 100%; background: #238636; border-radius: 2px;" id="scoreBar"></div>
+                    </div>
+                </div>
+                
+                <h4 style="color: #8b949e; margin-bottom: 12px; font-size: 12px; text-transform: uppercase;">Audit Log</h4>
+                <div id="auditLog"></div>
+            </div>
+        </aside>
+    </div>
+
+    <script>
+        /**
+         * GenUI Pattern Engine
+         * Author: Ashraf Morningstar
+         */
+
+        // Pre-defined component library (The "AI")
+        const componentLibrary = {
+            'login': {
+                html: `
+<div class="generated-component-card" style="width: 350px;">
+    <h2 style="margin-top:0; font-size: 1.5rem; color: #111827;">Welcome back</h2>
+    <p style="color: #6b7280; margin-bottom: 1.5rem;">Please enter your details to sign in.</p>
+    
+    <div style="margin-bottom: 1rem;">
+        <label style="display: block; font-size: 0.875rem; font-weight: 500; color: #374151; margin-bottom: 0.5rem;">Email</label>
+        <input type="email" placeholder="Enter your email" style="width: 100%; padding: 0.5rem 0.75rem; border: 1px solid #d1d5db; border-radius: 0.375rem;">
+    </div>
+    
+    <div style="margin-bottom: 1.5rem;">
+        <label style="display: block; font-size: 0.875rem; font-weight: 500; color: #374151; margin-bottom: 0.5rem;">Password</label>
+        <input type="password" placeholder="••••••••" style="width: 100%; padding: 0.5rem 0.75rem; border: 1px solid #d1d5db; border-radius: 0.375rem;">
+    </div>
+
+    <button class="generated-btn" style="width: 100%; margin-bottom: 1rem;">Sign in</button>
+    <button style="width: 100%; padding: 0.5rem; background: white; border: 1px solid #d1d5db; border-radius: 0.375rem; display: flex; align-items: center; justify-content: center; gap: 8px; color: #374151; cursor: pointer;">
+        <i class="fab fa-google"></i> Sign in with Google
+    </button>
+</div>`,
+                code: `export default function LoginCard() {
+  return (
+    <div className="card w-full max-w-sm p-6 bg-white rounded-xl shadow-md">
+      <h2 className="text-2xl font-bold text-gray-900">Welcome back</h2>
+      <p className="text-gray-500 mb-6">Please enter your details.</p>
+
+      <form className="space-y-4">
+        <div>
+          <label className="block text-sm font-medium text-gray-700">Email</label>
+          <input type="email" className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500" />
+        </div>
+        
+        <!-- Additional fields omitted for brevity -->
+        
+        <button className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-blue-600 hover:bg-blue-700">
+          Sign in
+        </button>
+      </form>
+    </div>
+  );
+}`,
+                a11yScore: 98,
+                checks: [
+                    'Form labels properly associated with inputs',
+                    'Contrast ratio exceeds 4.5:1',
+                    'Focus states visible',
+                    'Semantic HTML structure'
+                ]
+            },
+            'card': {
+                html: `
+<div class="generated-component-card">
+    <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=300&q=80" style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px; margin-bottom: 1rem;" alt="Red Nike Sneaker">
+    <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 0.5rem;">
+        <h3 style="margin: 0; font-size: 1.125rem; font-weight: 600; color: #111827;">Nike Air Max</h3>
+        <span style="background: #eff6ff; color: #1d4ed8; padding: 2px 8px; border-radius: 999px; font-size: 0.75rem; font-weight: 600;">$129</span>
+    </div>
+    <p style="color: #6b7280; font-size: 0.875rem; margin-bottom: 1.5rem;">Iconic style meets modern comfort. Features responsive cushioning and breathable mesh.</p>
+    <button class="generated-btn" style="width: 100%;">Add to Cart</button>
+</div>`,
+                code: `export default function ProductCard() {
+  return (
+    <div className="card bg-white p-6 rounded-xl shadow-lg max-w-sm">
+      <img src="/shoe.jpg" alt="Nike Air Max" className="w-full h-48 object-cover rounded-lg mb-4" />
+      <div className="flex justify-between items-start mb-2">
+        <h3 className="text-lg font-semibold text-gray-900">Nike Air Max</h3>
+        <span className="bg-blue-50 text-blue-700 px-2 py-1 rounded-full text-xs font-semibold">$129</span>
+      </div>
+      <p className="text-gray-500 text-sm mb-6">Iconic style meets modern comfort.</p>
+      <button className="w-full bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700 transition">
+        Add to Cart
+      </button>
+    </div>
+  );
+}`,
+                a11yScore: 100,
+                checks: [
+                    'Image has descriptive alt text',
+                    'Button has sufficient touch target size',
+                    'Text resizing supported',
+                    'Heading hierarchy preserved'
+                ]
+            }
+        };
+
+        function generateComponent() {
+            const input = document.getElementById('promptInput');
+            const btn = document.getElementById('generateBtn');
+            const loader = document.getElementById('loader');
+            const history = document.getElementById('chatHistory');
+
+            if (!input.value.trim()) return;
+
+            // Add user message
+            const userMsg = document.createElement('div');
+            userMsg.className = 'message user';
+            userMsg.textContent = input.value;
+            history.appendChild(userMsg);
+            history.scrollTop = history.scrollHeight;
+
+            // Start "Generation"
+            input.disabled = true;
+            btn.disabled = true;
+            loader.style.display = 'flex';
+
+            // Keyword matching logic
+            const query = input.value.toLowerCase();
+            let result = componentLibrary.login; // default
+            if (query.includes('product') || query.includes('card') || query.includes('shoe')) {
+                result = componentLibrary.card;
+            }
+
+            setTimeout(() => {
+                // Done
+                input.disabled = false;
+                btn.disabled = false;
+                loader.style.display = 'none';
+                input.value = '';
+
+                // Update Preview
+                document.getElementById('previewCanvas').innerHTML = result.html;
+
+                // Update Code
+                renderCode(result.code);
+
+                // Update A11y
+                updateA11y(result.a11yScore, result.checks);
+
+                // Add System Message
+                const sysMsg = document.createElement('div');
+                sysMsg.className = 'message system';
+                sysMsg.textContent = "I've generated that for you. Use the tabs on the right to view Code and Accessibility audit.";
+                history.appendChild(sysMsg);
+                history.scrollTop = history.scrollHeight;
+
+            }, 2000); // 2s simulated delay
+        }
+
+        function renderCode(codeString) {
+            const container = document.getElementById('codeTab');
+            // Simple syntax highlighting simulation
+            const colored = codeString
+                .replace(/(import|export|default|function|return|const|let|var)/g, '<span class="token">$1</span>')
+                .replace(/"([^"]*)"/g, '<span class="token str">"$1"</span>')
+                .replace(/&lt;([a-z]+)/g, '&lt;<span class="token tag">$1</span>')
+                .replace(/([a-z-]+)=/g, '<span class="token attr">$1</span>=');
+            
+            container.innerHTML = colored;
+        }
+
+        function updateA11y(score, checks) {
+            document.querySelector('.score-circle').textContent = score;
+            document.getElementById('scoreBar').style.width = score + '%';
+            
+            const log = document.getElementById('auditLog');
+            log.innerHTML = checks.map(check => `
+                <div class="checklist-item">
+                    <i class="fas fa-check-circle"></i>
+                    <span>${check}</span>
+                </div>
+            `).join('');
+        }
+
+        function switchTab(tabName) {
+            document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+            event.target.classList.add('active');
+
+            if (tabName === 'code') {
+                document.getElementById('codeTab').style.display = 'block';
+                document.getElementById('a11yTab').style.display = 'none';
+            } else {
+                document.getElementById('codeTab').style.display = 'none';
+                document.getElementById('a11yTab').style.display = 'block';
+            }
+        }
+    </script>
+</body>
+</html>

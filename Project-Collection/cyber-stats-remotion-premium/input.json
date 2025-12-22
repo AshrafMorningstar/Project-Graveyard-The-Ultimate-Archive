@@ -1,0 +1,12 @@
+{
+  "username": "AshrafMorningstar",
+  "theme": "cyber",
+  "colors": {
+    "bg": "#0b1020",
+    "accent": "#00ffd5",
+    "accent2": "#7a00ff",
+    "muted": "#86a3c3"
+  },
+  "cards": ["main", "languages", "heatmap", "toprepos", "streak"],
+  "reducedMotion": false
+}

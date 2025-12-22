@@ -1,0 +1,14 @@
+/*
+ * -----------------------------------------------------------------------------
+ * @author      Ashraf Morningstar
+ * @github      https://github.com/AshrafMorningstar
+ * @repository  Project Graveyard - The Ultimate Archive
+ * @quote       "Code that defines the future. Designed to inspire."
+ * -----------------------------------------------------------------------------
+*/
+
+import { registerRoot } from "remotion";
+import { RemotionRoot } from "./Root";
+import "./index.css";
+
+registerRoot(RemotionRoot);

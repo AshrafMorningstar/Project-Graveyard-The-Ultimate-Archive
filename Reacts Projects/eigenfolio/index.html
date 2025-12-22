@@ -1,0 +1,89 @@
+<!--
+ -----------------------------------------------------------------------------
+ @author      Ashraf Morningstar
+ @github      https://github.com/AshrafMorningstar
+ @repository  Project Graveyard - The Ultimate Archive
+ @quote       "Code that defines the future. Designed to inspire."
+ -----------------------------------------------------------------------------
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ashraf Morningstar | Portfolio OS</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+              display: ['Space Grotesk', 'sans-serif'],
+            },
+            colors: {
+              os: {
+                bg: '#0f172a', // Slate 900
+                dock: 'rgba(15, 23, 42, 0.6)',
+                window: 'rgba(30, 41, 59, 0.85)',
+                accent: '#3b82f6', // Blue 500
+                accentHover: '#2563eb', // Blue 600
+                text: '#f8fafc', // Slate 50
+                muted: '#94a3b8', // Slate 400
+              }
+            },
+            animation: {
+              'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+            }
+          },
+        },
+      }
+    </script>
+    <style>
+      body {
+        margin: 0;
+        overflow: hidden;
+        background-color: #000;
+      }
+      /* Custom scrollbar for windows */
+      ::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: transparent;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: rgba(255, 255, 255, 0.2);
+        border-radius: 4px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: rgba(255, 255, 255, 0.3);
+      }
+      .glass-panel {
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "react": "https://esm.sh/react@^19.2.3",
+    "zustand": "https://esm.sh/zustand@^5.0.9",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "@google/genai": "https://esm.sh/@google/genai@^1.33.0",
+    "gsap": "https://esm.sh/gsap@^3.14.2"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body>
+    <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>

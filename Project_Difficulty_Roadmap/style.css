@@ -1,0 +1,186 @@
+/*
+ * -----------------------------------------------------------------------------
+ * @author      Ashraf Morningstar
+ * @github      https://github.com/AshrafMorningstar
+ * @repository  Project Graveyard - The Ultimate Archive
+ * @quote       "Code that defines the future. Designed to inspire."
+ * -----------------------------------------------------------------------------
+*/
+
+/* 
+   Project: Master Portfolio Styles
+   Author: Ashraf Morningstar
+   GitHub: https://github.com/AshrafMorningstar
+*/
+
+:root {
+    --bg: #050510;
+    --card-bg: rgba(255, 255, 255, 0.05);
+    --card-hover: rgba(255, 255, 255, 0.1);
+    --text-primary: #ffffff;
+    --text-secondary: #aaa;
+    --accent: #00ffff;
+    
+    --beginner: #2ecc71;
+    --intermediate: #f1c40f;
+    --advanced: #e67e22;
+    --expert: #e74c3c;
+}
+
+body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text-primary);
+    font-family: 'Inter', sans-serif;
+}
+
+/* Dynamic Background */
+.background-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at top right, #1a1a40 0%, transparent 60%),
+                radial-gradient(circle at bottom left, #0d0d20 0%, transparent 60%);
+    z-index: -1;
+}
+
+header {
+    text-align: center;
+    padding: 4rem 1rem;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    background: rgba(0,0,0,0.3);
+    backdrop-filter: blur(10px);
+}
+
+h1 {
+    font-size: 3rem;
+    margin: 0 0 1rem 0;
+    background: linear-gradient(90deg, #fff, #aaa);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 800;
+}
+
+header p {
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+    margin: 0;
+}
+
+.meta {
+    margin-top: 2rem;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.9rem;
+    color: var(--accent);
+}
+
+.github-link {
+    color: var(--text-primary);
+    text-decoration: none;
+    border: 1px solid var(--text-primary);
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    margin-left: 1rem;
+    transition: all 0.3s;
+}
+
+.github-link:hover {
+    background: var(--text-primary);
+    color: var(--bg);
+}
+
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.level-section {
+    margin-bottom: 4rem;
+}
+
+.level-title {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    padding-bottom: 0.5rem;
+}
+
+.badge {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    color: #000;
+    font-weight: bold;
+}
+
+.badge.beginner { background: var(--beginner); }
+.badge.intermediate { background: var(--intermediate); }
+.badge.advanced { background: var(--advanced); }
+.badge.expert { background: var(--expert); }
+
+/* Grid */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.project-card {
+    background: var(--card-bg);
+    border: 1px solid rgba(255,255,255,0.05);
+    border-radius: 12px;
+    padding: 1.5rem;
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    background: var(--card-hover);
+    border-color: rgba(255,255,255,0.2);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+.card-number {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 2rem;
+    font-weight: bold;
+    color: rgba(255,255,255,0.1);
+    transition: color 0.3s;
+}
+
+.project-card:hover .card-number {
+    color: var(--accent);
+}
+
+.card-content h3 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.1rem;
+}
+
+.card-content p {
+    margin: 0;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+}
+
+footer {
+    text-align: center;
+    padding: 2rem;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    font-family: 'JetBrains Mono', monospace;
+}

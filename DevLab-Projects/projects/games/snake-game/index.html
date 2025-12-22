@@ -1,0 +1,64 @@
+<!--
+ -----------------------------------------------------------------------------
+ @author      Ashraf Morningstar
+ @github      https://github.com/AshrafMorningstar
+ @repository  Project Graveyard - The Ultimate Archive
+ @quote       "Code that defines the future. Designed to inspire."
+ -----------------------------------------------------------------------------
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Retro Snake | Web Dev Mega Projects</title>
+    <meta name="description" content="Classic Snake Game with a retro CRT arcade aesthetic. High scores and responsive gameplay.">
+    <meta name="author" content="Ashraf Morningstar">
+    
+    <link rel="stylesheet" href="../../../assets/css/global.css">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="crt-overlay"></div>
+    <div class="container flex-center" style="min-height: 100vh;">
+        <main class="arcade-cabinet">
+            <header class="game-header">
+                <div class="score-board">
+                    <span>SCORE: <span id="score">0</span></span>
+                    <span>HIGH: <span id="high-score">0</span></span>
+                </div>
+            </header>
+
+            <div class="screen-frame">
+                <canvas id="game-canvas" width="400" height="400"></canvas>
+                <div id="start-screen" class="overlay-screen">
+                    <h1>SNAKE</h1>
+                    <p>PRESS ARROW KEYS TO START</p>
+                </div>
+                <div id="game-over-screen" class="overlay-screen hidden">
+                    <h1>GAME OVER</h1>
+                    <p>SCORE: <span id="final-score">0</span></p>
+                    <button id="restart-btn" class="btn-pixel">TRY AGAIN</button>
+                </div>
+            </div>
+
+            <div class="mobile-controls">
+                <button class="d-pad up" data-dir="up">▲</button>
+                <div class="row">
+                    <button class="d-pad left" data-dir="left">◀</button>
+                    <button class="d-pad right" data-dir="right">▶</button>
+                </div>
+                <button class="d-pad down" data-dir="down">▼</button>
+            </div>
+
+            <footer class="footer-attribution">
+                <p>Created & Maintained by <a href="https://github.com/AshrafMorningstar">Ashraf Morningstar</a></p>
+            </footer>
+        </main>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!--
+ -----------------------------------------------------------------------------
+ @author      Ashraf Morningstar
+ @github      https://github.com/AshrafMorningstar
+ @repository  Project Graveyard - The Ultimate Archive
+ @quote       "Code that defines the future. Designed to inspire."
+ -----------------------------------------------------------------------------
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bio-Digital Interface Bridge | Ashraf Morningstar</title>
+    <!-- 
+        Project: Bio-Digital Interface Bridge
+        Level: Expert
+        Author: Ashraf Morningstar
+        GitHub: https://github.com/AshrafMorningstar
+    -->
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="interface">
+        <header>
+            <h1>BIO-LINK v1.0</h1>
+            <div class="status">
+                <span class="label">SYNC STATUS:</span>
+                <span id="sync-status" class="blink">SEARCHING...</span>
+            </div>
+        </header>
+
+        <main>
+            <div class="viz-container">
+                <canvas id="bio-canvas"></canvas>
+                <div class="overlay-stats">
+                    <div class="stat-group">
+                        <label>HEART RATE (BPM)</label>
+                        <span id="bpm-display">--</span>
+                    </div>
+                    <div class="stat-group">
+                        <label>STRESS LEVEL</label>
+                        <div class="bar-container">
+                            <div id="stress-bar" class="bar-fill"></div>
+                        </div>
+                    </div>
+                    <div class="stat-group">
+                        <label>SYNC COHERENCE</label>
+                        <span id="coherence-display">0%</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="instructions">
+                <p>Establishing neural handshake...</p>
+                <p>Move your cursor to generate bio-kinetic energy.</p>
+                <p>Rapid movement increases stress. Smooth motion increases coherence.</p>
+            </div>
+        </main>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>

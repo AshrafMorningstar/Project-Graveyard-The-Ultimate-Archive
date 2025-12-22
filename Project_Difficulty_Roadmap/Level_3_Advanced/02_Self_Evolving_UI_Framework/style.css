@@ -1,0 +1,116 @@
+/*
+ * -----------------------------------------------------------------------------
+ * @author      Ashraf Morningstar
+ * @github      https://github.com/AshrafMorningstar
+ * @repository  Project Graveyard - The Ultimate Archive
+ * @quote       "Code that defines the future. Designed to inspire."
+ * -----------------------------------------------------------------------------
+*/
+
+/* 
+   Project: Self-Evolving UI Framework
+   Level: Advanced
+   Author: Ashraf Morningstar
+   GitHub: https://github.com/AshrafMorningstar
+*/
+
+:root {
+    --bg-dark: #121212;
+    --text: #e0e0e0;
+    --border: #333;
+    --primary: #bb86fc;
+}
+
+body {
+    background: var(--bg-dark);
+    color: var(--text);
+    margin: 0;
+    font-family: 'Roboto Mono', monospace;
+    height: 100vh;
+    overflow: hidden;
+}
+
+#dashboard {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+header {
+    border-bottom: 1px solid var(--border);
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+h1 { margin: 0; font-size: 1.5rem; color: var(--primary); }
+
+.stats {
+    display: flex;
+    gap: 2rem;
+}
+
+.primary-btn {
+    background: var(--primary);
+    border: none;
+    color: white;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 4px;
+}
+
+main {
+    flex: 1;
+    display: flex;
+}
+
+.darwin-sandbox {
+    flex: 1;
+    padding: 2rem;
+    background: #1a1a1a;
+    overflow-y: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#component-container {
+    width: 60%;
+    min-height: 80%;
+    border: 2px dashed #444;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    position: relative;
+}
+
+.genome-panel {
+    width: 300px;
+    border-left: 1px solid var(--border);
+    padding: 1rem;
+    background: #000;
+}
+
+pre {
+    color: #0f0;
+    font-size: 0.8rem;
+    white-space: pre-wrap;
+    word-break: break-all;
+}
+
+/* Base Component Styles (Traits will override) */
+.evo-component {
+    padding: 1rem;
+    border: 1px solid transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: center;
+    user-select: none;
+}
+
+.evo-component:active {
+    transform: scale(0.98);
+}

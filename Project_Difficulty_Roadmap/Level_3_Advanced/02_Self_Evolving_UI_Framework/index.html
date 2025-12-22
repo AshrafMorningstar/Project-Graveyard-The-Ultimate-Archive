@@ -1,0 +1,50 @@
+<!--
+ -----------------------------------------------------------------------------
+ @author      Ashraf Morningstar
+ @github      https://github.com/AshrafMorningstar
+ @repository  Project Graveyard - The Ultimate Archive
+ @quote       "Code that defines the future. Designed to inspire."
+ -----------------------------------------------------------------------------
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Self-Evolving UI Framework | Ashraf Morningstar</title>
+    <!-- 
+        Project: Self-Evolving UI Framework
+        Level: Advanced
+        Author: Ashraf Morningstar
+        GitHub: https://github.com/AshrafMorningstar
+    -->
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="dashboard">
+        <header>
+            <h1>🧬 EVO-UI Framework</h1>
+            <div class="stats">
+                <span>Generation: <strong id="gen-count">1</strong></span>
+                <span>Best Fitness: <strong id="best-fit">0</strong></span>
+            </div>
+            <button id="evolve-btn" class="primary-btn">Force Evolution</button>
+        </header>
+
+        <main>
+            <div class="darwin-sandbox">
+                <!-- Components will be injected here -->
+                <div id="component-container"></div>
+            </div>
+
+            <aside class="genome-panel">
+                <h3>Genome Inspector</h3>
+                <pre id="genome-viewer">// Select a component to view its DNA</pre>
+            </aside>
+        </main>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>

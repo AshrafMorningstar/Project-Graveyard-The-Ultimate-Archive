@@ -1,0 +1,52 @@
+<!--
+ -----------------------------------------------------------------------------
+ @author      Ashraf Morningstar
+ @github      https://github.com/AshrafMorningstar
+ @repository  Project Graveyard - The Ultimate Archive
+ @quote       "Code that defines the future. Designed to inspire."
+ -----------------------------------------------------------------------------
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sound-Activated Color Symphony | Ashraf Morningstar</title>
+    <!-- 
+        Project: Sound-Activated Color Symphony
+        Level: Beginner
+        Author: Ashraf Morningstar
+        GitHub: https://github.com/AshrafMorningstar
+    -->
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div id="overlay" class="overlay">
+        <div class="content">
+            <h1>Sound Color Symphony</h1>
+            <p>Visualize your environment's soundscape.</p>
+            <div class="controls">
+                <button id="start-mic-btn" class="glass-btn"><i class="fa-solid fa-microphone"></i> Start Microphone</button>
+                <button id="start-demo-btn" class="glass-btn"><i class="fa-solid fa-music"></i> Play Demo Audio</button>
+            </div>
+            <p class="small">Click to enable audio context</p>
+        </div>
+    </div>
+
+    <div class="ui-controls">
+        <button id="toggle-overlay" class="icon-btn"><i class="fa-solid fa-bars"></i></button>
+        <div class="visualizer-options">
+            <button class="option-btn active" data-type="frequency">Bar Graph</button>
+            <button class="option-btn" data-type="wave">Waveform</button>
+            <button class="option-btn" data-type="circular">Circular</button>
+        </div>
+    </div>
+
+    <canvas id="visualizer"></canvas>
+
+    <script src="app.js"></script>
+</body>
+</html>

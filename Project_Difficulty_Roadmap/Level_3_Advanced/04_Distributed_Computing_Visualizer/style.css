@@ -1,0 +1,167 @@
+/*
+ * -----------------------------------------------------------------------------
+ * @author      Ashraf Morningstar
+ * @github      https://github.com/AshrafMorningstar
+ * @repository  Project Graveyard - The Ultimate Archive
+ * @quote       "Code that defines the future. Designed to inspire."
+ * -----------------------------------------------------------------------------
+*/
+
+/* 
+   Project: Distributed Computing Visualizer
+   Level: Advanced
+   Author: Ashraf Morningstar
+   GitHub: https://github.com/AshrafMorningstar
+*/
+
+:root {
+    --bg: #000;
+    --node-bg: #111;
+    --text: #0f0;
+    --border: #003300;
+    --active: #00ff00;
+    --busy: #ff9900;
+    --idle: #333;
+}
+
+body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Share Tech Mono', monospace;
+    margin: 0;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 1rem;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+}
+
+h1 { margin: 0; letter-spacing: 2px; }
+
+.pulse {
+    animation: blink 1s infinite;
+    color: var(--active);
+}
+
+@keyframes blink { 50% { opacity: 0; } }
+
+.controls {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.btn {
+    background: #002200;
+    color: var(--text);
+    border: 1px solid var(--text);
+    padding: 0.5rem 1rem;
+    font-family: inherit;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+.btn:hover { background: var(--text); color: black; }
+.btn.danger { border-color: red; color: red; }
+.btn.danger:hover { background: red; color: black; }
+
+.status {
+    display: flex;
+    gap: 1rem;
+    font-size: 0.9rem;
+}
+
+strong { color: white; }
+
+main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.grid-container {
+    flex: 2;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 1rem;
+    overflow-y: auto;
+    padding: 1rem;
+    border: 1px solid var(--border);
+}
+
+.node {
+    background: var(--node-bg);
+    border: 1px solid var(--border);
+    padding: 1rem;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100px;
+    position: relative;
+    transition: all 0.2s;
+}
+
+.node.working {
+    border-color: var(--busy);
+    box-shadow: 0 0 10px rgba(255, 153, 0, 0.2);
+}
+
+.node.finished {
+    border-color: var(--active);
+}
+
+.node-id { font-size: 0.8rem; opacity: 0.7; }
+.node-status { font-weight: bold; font-size: 0.9rem; margin-top: 0.5rem; }
+
+.progress-bar {
+    height: 4px;
+    background: #222;
+    margin-top: auto;
+    width: 100%;
+}
+
+.progress-fill {
+    height: 100%;
+    background: var(--active);
+    width: 0%;
+    transition: width 0.1s;
+}
+
+.node.working .progress-fill { background: var(--busy); }
+
+.analytics-panel {
+    flex: 1;
+    border: 1px solid var(--border);
+    padding: 1rem;
+    background: #050505;
+}
+
+footer {
+    height: 100px;
+    margin-top: 1rem;
+    border-top: 1px solid var(--border);
+}
+
+.log-panel {
+    height: 100%;
+    overflow-y: auto;
+    font-size: 0.8rem;
+    padding: 0.5rem;
+}
+
+.log-entry { margin-bottom: 2px; }

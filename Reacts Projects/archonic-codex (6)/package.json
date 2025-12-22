@@ -1,0 +1,27 @@
+{
+  "name": "archonic-codex",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "react": "^19.2.3",
+    "react-dom": "^19.2.3",
+    "zustand": "^5.0.9",
+    "lucide-react": "^0.561.0",
+    "framer-motion": "^11.0.8",
+    "gsap": "3.12.5",
+    "chess.js": "1.0.0-beta.8",
+    "@react-spring/web": "9.7.3"
+  },
+  "devDependencies": {
+    "@types/node": "^22.14.0",
+    "@vitejs/plugin-react": "^5.0.0",
+    "typescript": "~5.8.2",
+    "vite": "^6.2.0"
+  }
+}

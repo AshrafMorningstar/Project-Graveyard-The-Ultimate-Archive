@@ -1,0 +1,184 @@
+/*
+ * -----------------------------------------------------------------------------
+ * @author      Ashraf Morningstar
+ * @github      https://github.com/AshrafMorningstar
+ * @repository  Project Graveyard - The Ultimate Archive
+ * @quote       "Code that defines the future. Designed to inspire."
+ * -----------------------------------------------------------------------------
+*/
+
+/**
+ * MoodScroll - Mood-Specific Styles
+ * Author: Ashraf Morningstar
+ * GitHub: https://github.com/AshrafMorningstar
+ */
+
+/* Zone 1: Calm */
+.zone-calm {
+    --zone-bg: #f0f4f8;
+    --zone-text: #2d3748;
+    --zone-accent: #90cdf4;
+    background: linear-gradient(135deg, #f0f4f8 0%, #e2e8f0 100%);
+}
+
+.zone-calm .zone-title {
+    color: #2d3748;
+    font-weight: 400;
+    letter-spacing: 0.1em;
+}
+
+.zone-calm .zone-text {
+    color: #4a5568;
+}
+
+.zone-calm .zone-description {
+    color: #718096;
+}
+
+/* Zone 2: Curiosity */
+.zone-curiosity {
+    --zone-bg: #fef5e7;
+    --zone-text: #744210;
+    --zone-accent: #f6ad55;
+    background: linear-gradient(135deg, #fef5e7 0%, #fde68a 100%);
+}
+
+.zone-curiosity .zone-title {
+    color: #744210;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+}
+
+.zone-curiosity .zone-text {
+    color: #975a16;
+}
+
+.zone-curiosity .zone-description {
+    color: #b7791f;
+}
+
+/* Zone 3: Intensity */
+.zone-intensity {
+    --zone-bg: #2d1b2e;
+    --zone-text: #fef5f6;
+    --zone-accent: #fc8181;
+    background: linear-gradient(135deg, #2d1b2e 0%, #5b21b6 100%);
+}
+
+.zone-intensity .zone-title {
+    color: #fef5f6;
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    text-shadow: 0 4px 20px rgba(252, 129, 129, 0.4);
+}
+
+.zone-intensity .zone-text {
+    color: #fbb6ce;
+}
+
+.zone-intensity .zone-description {
+    color: #f687b3;
+}
+
+/* Zone 4: Reflection */
+.zone-reflection {
+    --zone-bg: #1a202c;
+    --zone-text: #e2e8f0;
+    --zone-accent: #81e6d9;
+    background: linear-gradient(135deg, #1a202c 0%, #2d3748 100%);
+}
+
+.zone-reflection .zone-title {
+    color: #e2e8f0;
+    font-weight: 400;
+    letter-spacing: 0.08em;
+    opacity: 0.9;
+}
+
+.zone-reflection .zone-text {
+    color: #cbd5e0;
+}
+
+.zone-reflection .zone-description {
+    color: #a0aec0;
+}
+
+/* Scroll-based animations */
+.zone::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0;
+    transition: opacity 0.8s ease;
+    pointer-events: none;
+}
+
+.zone-calm::before {
+    background: radial-gradient(circle at 30% 50%, rgba(144, 205, 244, 0.2) 0%, transparent 50%);
+}
+
+.zone-curiosity::before {
+    background: radial-gradient(circle at 70% 50%, rgba(246, 173, 85, 0.3) 0%, transparent 50%);
+}
+
+.zone-intensity::before {
+    background: radial-gradient(circle at 50% 50%, rgba(252, 129, 129, 0.3) 0%, transparent 60%);
+}
+
+.zone-reflection::before {
+    background: radial-gradient(circle at 50% 30%, rgba(129, 230, 217, 0.15) 0%, transparent 50%);
+}
+
+.zone.active::before {
+    opacity: 1;
+}
+
+/* Typography weight transitions based on scroll */
+.zone-calm .zone-title {
+    font-variation-settings: 'wght' 400;
+}
+
+.zone-curiosity .zone-title {
+    font-variation-settings: 'wght' 500;
+}
+
+.zone-intensity .zone-title {
+    font-variation-settings: 'wght' 700;
+}
+
+.zone-reflection .zone-title {
+    font-variation-settings: 'wght' 400;
+}
+
+/* Motion intensity increases toward Zone 3, then decreases */
+.zone-calm .content {
+    transition-duration: 1.2s;
+}
+
+.zone-curiosity .content {
+    transition-duration: 0.9s;
+}
+
+.zone-intensity .content {
+    transition-duration: 0.6s;
+}
+
+.zone-reflection .content {
+    transition-duration: 1.5s;
+}
+
+/* Subtle parallax effect */
+.zone-title {
+    transform: translateY(calc(var(--scroll-offset, 0) * 0.3px));
+}
+
+.zone-text {
+    transform: translateY(calc(var(--scroll-offset, 0) * 0.2px));
+}
+
+.zone-description {
+    transform: translateY(calc(var(--scroll-offset, 0) * 0.1px));
+}

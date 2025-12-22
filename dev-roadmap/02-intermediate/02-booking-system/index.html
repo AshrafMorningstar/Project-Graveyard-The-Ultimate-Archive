@@ -1,0 +1,67 @@
+<!--
+ -----------------------------------------------------------------------------
+ @author      Ashraf Morningstar
+ @github      https://github.com/AshrafMorningstar
+ @repository  Project Graveyard - The Ultimate Archive
+ @quote       "Code that defines the future. Designed to inspire."
+ -----------------------------------------------------------------------------
+-->
+
+<!--
+  Author: Ashraf Morningstar
+  GitHub: https://github.com/AshrafMorningstar
+  Project: Local Experience Booking System
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WanderLust Booking | Ashraf Morningstar</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav>
+        <div class="logo">WanderLust</div>
+        <div class="user-menu">
+            <span>Welcome, Ashraf</span>
+            <img src="https://ui-avatars.com/api/?name=Ashraf+Morningstar&background=random" alt="User">
+        </div>
+    </nav>
+
+    <main>
+        <header class="hero">
+            <h1>Discover Local Magic</h1>
+            <p>Book unique experiences hosted by locals.</p>
+        </header>
+
+        <section class="filters">
+            <button class="filter-btn active">All</button>
+            <button class="filter-btn">Food</button>
+            <button class="filter-btn">Art</button>
+            <button class="filter-btn">Outdoors</button>
+        </section>
+
+        <div class="experiences-grid" id="grid">
+            <!-- Cards injected via JS -->
+        </div>
+    </main>
+
+    <!-- Booking Modal -->
+    <div class="modal" id="booking-modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2 id="modal-title">Experience Title</h2>
+            <div class="booking-details">
+                <p>Date: <input type="date" id="booking-date"></p>
+                <p>Guests: <input type="number" min="1" value="1" id="booking-guests"></p>
+                <div class="total-price">Total: $<span id="modal-price">0</span></div>
+            </div>
+            <button class="confirm-btn">Confirm Booking</button>
+        </div>
+    </div>
+
+    <script src="client.js"></script>
+</body>
+</html>

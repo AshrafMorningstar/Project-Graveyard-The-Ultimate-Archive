@@ -1,0 +1,89 @@
+/*
+ * -----------------------------------------------------------------------------
+ * @author      Ashraf Morningstar
+ * @github      https://github.com/AshrafMorningstar
+ * @repository  Project Graveyard - The Ultimate Archive
+ * @quote       "Code that defines the future. Designed to inspire."
+ * -----------------------------------------------------------------------------
+*/
+
+
+:root {
+    --primary-color: #6C63FF;
+    --secondary-color: #4CAF50;
+    --bg-color: #f4f4f9;
+    --text-color: #333;
+    --card-bg: #fff;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    background: var(--card-bg);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    max-width: 800px;
+    width: 90%;
+    margin: 2rem auto;
+    text-align: center;
+}
+
+h1 {
+    margin-bottom: 1.5rem;
+    color: var(--primary-color);
+}
+
+button {
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background 0.3s;
+}
+
+button:hover {
+    background: #5753d9;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+footer {
+    margin-top: auto;
+    padding: 1rem;
+    text-align: center;
+    font-size: 0.9rem;
+    color: #777;
+}
+
+footer a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+/* Author Attribution in CSS */
+/* Project by Ashraf Morningstar - https://github.com/AshrafMorningstar */

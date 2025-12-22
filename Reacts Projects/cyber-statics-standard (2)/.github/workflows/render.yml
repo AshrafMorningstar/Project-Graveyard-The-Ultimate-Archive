@@ -1,0 +1,60 @@
+name: Render Cyber Statics (Standard)
+
+on:
+  workflow_dispatch:
+    inputs:
+      username:
+        description: 'GitHub username to render'
+        required: false
+        default: 'AshrafMorningstar'
+  push:
+    branches:
+      - feature/cyber-statics-ashraf
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      actions: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Cache node modules
+        uses: actions/cache@v4
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Render video
+        env:
+          GITHUB_USERNAME: ${{ github.event.inputs.username || github.event.inputs.username || 'AshrafMorningstar' }}
+          PERSONAL_TOKEN: ${{ secrets.PERSONAL_TOKEN }}
+        run: |
+          npm run build
+          npm run render
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: cyber-statics-video
+          path: out/**
+
+      - name: Create release (optional)
+        if: startsWith(github.ref, 'refs/heads/feature/cyber-statics-ashraf')
+        uses: softprops/action-gh-release@v1
+        with:
+          files: out/**
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

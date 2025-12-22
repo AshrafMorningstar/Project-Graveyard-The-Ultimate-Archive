@@ -1,0 +1,20 @@
+{
+  "name": "07-github-time-capsule",
+  "version": "1.0.0",
+  "description": "Daily snapshot system creating historical GitHub timeline",
+  "author": "AshrafMorningstar <https://github.com/AshrafMorningstar>",
+  "license": "MIT",
+  "scripts": {
+    "start": "npx http-server -p 8080",
+    "deploy": "gh-pages -d ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AshrafMorningstar/07-github-time-capsule"
+  },
+  "keywords": [
+    "github",
+    "archival",
+    "ashrafmorningstar"
+  ]
+}

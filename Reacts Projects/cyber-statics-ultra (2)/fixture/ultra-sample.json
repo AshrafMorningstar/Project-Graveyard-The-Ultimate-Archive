@@ -1,0 +1,54 @@
+Create folder cyber-statics-ultra/fixture/ and file ultra-sample.json with this content:
+
+{
+  "profile": {
+    "login": "AshrafMorningstar",
+    "name": "Ashraf Siddiqui",
+    "avatar_url": "https://avatars.githubusercontent.com/u/000000?v=4",
+    "bio": "Creative developer and designer — fixture data",
+    "followers": 256,
+    "following": 18,
+    "public_repos": 48
+  },
+  "top_repos": [
+    {
+      "name": "cyber-statics-remotion-ultra",
+      "description": "Cinematic GitHub stats with neon holograms",
+      "stars": 950,
+      "lang": "TypeScript",
+      "html_url": "https://github.com/AshrafMorningstar/cyber-statics-remotion-ultra",
+      "forks": 68,
+      "watchers": 950,
+      "size": 420
+    },
+    {
+      "name": "neon-portfolio",
+      "description": "A neon-themed portfolio with 3D effects",
+      "stars": 420,
+      "lang": "JavaScript",
+      "html_url": "https://github.com/AshrafMorningstar/neon-portfolio",
+      "forks": 12,
+      "watchers": 420,
+      "size": 210
+    }
+  ],
+  "languages": {
+    "TypeScript": 42000,
+    "JavaScript": 24000,
+    "CSS": 6000,
+    "HTML": 1200
+  },
+  "star_distribution": {
+    "buckets": {
+      "0-10": 12,
+      "11-50": 6,
+      "51-100": 3,
+      "101-500": 2,
+      "500+": 1
+    },
+    "total": 1500
+  },
+  "commits_monthly": [12, 18, 22, 20, 24, 28, 30, 34, 22, 18, 20, 26],
+  "total_stars": 1500
+}
+This fixture is used automatically by the Ultra fetcher when the API fails or when you develop offline.

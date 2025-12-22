@@ -1,0 +1,174 @@
+<!--
+ -----------------------------------------------------------------------------
+ @author      Ashraf Morningstar
+ @github      https://github.com/AshrafMorningstar
+ @repository  Project Graveyard - The Ultimate Archive
+ @quote       "Code that defines the future. Designed to inspire."
+ -----------------------------------------------------------------------------
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NeuroForge OS - AI-Augmented Browser Operating System</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Boot Screen -->
+    <div id="boot-screen" class="boot-screen">
+      <div class="boot-logo">
+        <div class="neural-network"></div>
+        <h1 class="boot-title">NeuroForge OS</h1>
+      </div>
+      <div class="boot-progress">
+        <div class="progress-bar"></div>
+      </div>
+      <p class="boot-text">Initializing AI Kernel...</p>
+    </div>
+
+    <!-- Desktop Environment -->
+    <div id="desktop" class="desktop hidden">
+      <!-- Taskbar -->
+      <div class="taskbar">
+        <div class="taskbar-left">
+          <button class="start-button" id="start-btn">
+            <span class="icon">🧠</span>
+            <span>NeuroForge</span>
+          </button>
+          <div class="running-apps" id="running-apps"></div>
+        </div>
+        <div class="taskbar-center">
+          <div class="search-bar">
+            <span class="icon">🔍</span>
+            <input
+              type="text"
+              placeholder="Ask AI anything..."
+              id="ai-search"
+            />
+          </div>
+        </div>
+        <div class="taskbar-right">
+          <div class="system-tray">
+            <button class="tray-icon" title="Network">📡</button>
+            <button class="tray-icon" title="AI Assistant">🤖</button>
+            <button class="tray-icon" title="Settings">⚙️</button>
+            <div class="clock" id="clock">00:00</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Desktop Area -->
+      <div class="desktop-area" id="desktop-area">
+        <!-- Desktop Icons -->
+        <div class="desktop-icons">
+          <div class="desktop-icon" data-app="file-manager">
+            <div class="icon-image">📁</div>
+            <div class="icon-label">Files</div>
+          </div>
+          <div class="desktop-icon" data-app="ai-studio">
+            <div class="icon-image">🤖</div>
+            <div class="icon-label">AI Studio</div>
+          </div>
+          <div class="desktop-icon" data-app="code-editor">
+            <div class="icon-image">💻</div>
+            <div class="icon-label">Code Editor</div>
+          </div>
+          <div class="desktop-icon" data-app="terminal">
+            <div class="icon-image">⌨️</div>
+            <div class="icon-label">Terminal</div>
+          </div>
+          <div class="desktop-icon" data-app="browser">
+            <div class="icon-image">🌐</div>
+            <div class="icon-label">Browser</div>
+          </div>
+          <div class="desktop-icon" data-app="settings">
+            <div class="icon-image">⚙️</div>
+            <div class="icon-label">Settings</div>
+          </div>
+        </div>
+
+        <!-- Windows Container -->
+        <div class="windows-container" id="windows-container"></div>
+      </div>
+
+      <!-- Start Menu -->
+      <div class="start-menu hidden" id="start-menu">
+        <div class="start-menu-header">
+          <h3>Applications</h3>
+          <input type="text" placeholder="Search apps..." class="app-search" />
+        </div>
+        <div class="start-menu-apps">
+          <div class="app-category">
+            <h4>🎨 Creative</h4>
+            <div class="app-item" data-app="design-studio">Design Studio</div>
+            <div class="app-item" data-app="video-editor">Video Editor</div>
+          </div>
+          <div class="app-category">
+            <h4>💼 Productivity</h4>
+            <div class="app-item" data-app="documents">Documents</div>
+            <div class="app-item" data-app="spreadsheet">Spreadsheet</div>
+            <div class="app-item" data-app="presentation">Presentation</div>
+          </div>
+          <div class="app-category">
+            <h4>🔧 Development</h4>
+            <div class="app-item" data-app="code-editor">Code Editor</div>
+            <div class="app-item" data-app="terminal">Terminal</div>
+            <div class="app-item" data-app="git-client">Git Client</div>
+          </div>
+          <div class="app-category">
+            <h4>🤖 AI Tools</h4>
+            <div class="app-item" data-app="ai-studio">AI Studio</div>
+            <div class="app-item" data-app="ml-playground">ML Playground</div>
+            <div class="app-item" data-app="data-viz">Data Visualizer</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- AI Assistant Panel -->
+      <div class="ai-panel hidden" id="ai-panel">
+        <div class="ai-header">
+          <h3>🤖 AI Assistant</h3>
+          <button class="close-btn" id="close-ai">×</button>
+        </div>
+        <div class="ai-chat" id="ai-chat">
+          <div class="ai-message">
+            <div class="avatar">🤖</div>
+            <div class="message">
+              Hello! I'm your AI assistant. How can I help you today?
+            </div>
+          </div>
+        </div>
+        <div class="ai-input-area">
+          <input type="text" placeholder="Ask me anything..." id="ai-input" />
+          <button id="ai-send">Send</button>
+        </div>
+      </div>
+
+      <!-- Context Menu -->
+      <div class="context-menu hidden" id="context-menu">
+        <div class="menu-item">📋 Paste</div>
+        <div class="menu-item">🎨 Personalize</div>
+        <div class="menu-item">🔄 Refresh</div>
+        <div class="menu-separator"></div>
+        <div class="menu-item">⚙️ Settings</div>
+      </div>
+
+      <!-- Theme Switcher -->
+      <div class="theme-switcher">
+        <button class="theme-btn" data-theme="neural">🧠 Neural</button>
+        <button class="theme-btn" data-theme="cyber">🌃 Cyber</button>
+        <button class="theme-btn" data-theme="nature">🌿 Nature</button>
+        <button class="theme-btn" data-theme="sunset">🌅 Sunset</button>
+        <button class="theme-btn" data-theme="ocean">🌊 Ocean</button>
+      </div>
+    </div>
+
+    <!-- 3D Background Canvas -->
+    <canvas id="bg-canvas"></canvas>
+
+    <script src="https://cdn.jsdelivr.net/npm/three@0.155.0/build/three.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

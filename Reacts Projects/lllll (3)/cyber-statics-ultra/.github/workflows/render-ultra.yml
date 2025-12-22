@@ -1,0 +1,58 @@
+name: Render Cyber Statics Ultra
+
+on:
+  workflow_dispatch:
+    inputs:
+      username:
+        description: "GitHub username"
+        required: false
+        default: "AshrafMorningstar"
+
+jobs:
+  ultra_render:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      actions: write
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Cache node_modules
+        uses: actions/cache@v4
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-ultra-${{ hashFiles('**/package-lock.json') }}
+
+      - name: Install deps
+        run: npm ci
+
+      - name: Build Ultra
+        env:
+          GITHUB_USERNAME: ${{ github.event.inputs.username }}
+          PERSONAL_TOKEN: ${{ secrets.PERSONAL_TOKEN }}
+        run: npm run build
+
+      - name: Render 1080p
+        env:
+          GITHUB_USERNAME: ${{ github.event.inputs.username }}
+          PERSONAL_TOKEN: ${{ secrets.PERSONAL_TOKEN }}
+        run: npm run render:1080
+
+      - name: Render 720p
+        env:
+          GITHUB_USERNAME: ${{ github.event.inputs.username }}
+          PERSONAL_TOKEN: ${{ secrets.PERSONAL_TOKEN }}
+        run: npm run render:720
+
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: ultra-videos
+          path: out/**
+4) Ultra Edition .env.example

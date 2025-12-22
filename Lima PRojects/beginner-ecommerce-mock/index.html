@@ -1,0 +1,768 @@
+<!--
+ -----------------------------------------------------------------------------
+ @author      Ashraf Morningstar
+ @github      https://github.com/AshrafMorningstar
+ @repository  Project Graveyard - The Ultimate Archive
+ @quote       "Code that defines the future. Designed to inspire."
+ -----------------------------------------------------------------------------
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A premium e-commerce payment sandbox with mock checkout flow">
+    <meta name="author" content="Ashraf Morningstar">
+    <title>Luxe | E-commerce Payment Sandbox</title>
+    <link rel="stylesheet" href="../shared/global-design-system.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --glass-bg: rgba(255, 255, 255, 0.05);
+            --glass-border: rgba(255, 255, 255, 0.1);
+            --neon-accent: #00f2fe;
+        }
+
+        body {
+            background-color: #0B0D10;
+            background-image: radial-gradient(circle at 50% 0%, #1a1d26 0%, #0B0D10 70%);
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: var(--space-6) 0;
+            border-bottom: 1px solid var(--glass-border);
+            margin-bottom: var(--space-8);
+        }
+
+        .logo {
+            font-size: var(--font-size-2xl);
+            font-weight: 700;
+            color: white;
+            letter-spacing: -1px;
+            display: flex;
+            align-items: center;
+            gap: var(--space-2);
+        }
+
+        .cart-icon {
+            position: relative;
+            cursor: pointer;
+            padding: var(--space-2);
+        }
+
+        .cart-count {
+            position: absolute;
+            top: 0;
+            right: 0;
+            background: var(--accent-primary);
+            color: white;
+            font-size: 10px;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+
+        .main-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-12);
+            align-items: start;
+        }
+
+        @media (max-width: 900px) {
+            .main-layout {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Product Gallery */
+        .product-gallery {
+            position: sticky;
+            top: var(--space-4);
+        }
+
+        .main-image {
+            width: 100%;
+            aspect-ratio: 1/1;
+            background: var(--glass-bg);
+            border-radius: var(--radius-2xl);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: var(--space-4);
+            border: 1px solid var(--glass-border);
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .main-image img {
+            width: 80%;
+            height: auto;
+            filter: drop-shadow(0 20px 40px rgba(0,0,0,0.5));
+            transition: transform 0.3s ease;
+        }
+
+        .main-image:hover img {
+            transform: scale(1.05) rotate(-5deg);
+        }
+
+        .thumbnails {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: var(--space-4);
+        }
+
+        .thumb {
+            aspect-ratio: 1/1;
+            background: var(--glass-bg);
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--glass-border);
+            cursor: pointer;
+            transition: all 0.2s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .thumb:hover, .thumb.active {
+            border-color: var(--accent-primary);
+            background: rgba(59, 130, 246, 0.1);
+        }
+
+        /* Product Info */
+        .product-info h1 {
+            font-size: 3.5rem;
+            line-height: 1.1;
+            margin-bottom: var(--space-4);
+            background: linear-gradient(to right, #fff, #94a3b8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .price-container {
+            font-size: var(--font-size-2xl);
+            margin-bottom: var(--space-6);
+            display: flex;
+            align-items: center;
+            gap: var(--space-4);
+        }
+
+        .price {
+            color: var(--accent-primary);
+            font-weight: 700;
+        }
+
+        .original-price {
+            text-decoration: line-through;
+            color: var(--text-tertiary);
+            font-size: var(--font-size-lg);
+        }
+
+        .variants {
+            margin-bottom: var(--space-8);
+        }
+
+        .variant-group {
+            margin-bottom: var(--space-6);
+        }
+
+        .variant-label {
+            display: block;
+            margin-bottom: var(--space-3);
+            font-size: var(--font-size-sm);
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .size-options {
+            display: flex;
+            gap: var(--space-3);
+        }
+
+        .size-btn {
+            width: 48px;
+            height: 48px;
+            border: 1px solid var(--glass-border);
+            background: transparent;
+            color: var(--text-secondary);
+            border-radius: var(--radius-lg);
+            cursor: pointer;
+            transition: all 0.2s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 500;
+        }
+
+        .size-btn:hover, .size-btn.active {
+            border-color: var(--accent-primary);
+            color: white;
+            background: rgba(59, 130, 246, 0.1);
+        }
+
+        .add-to-cart-container {
+            display: flex;
+            gap: var(--space-4);
+            margin-bottom: var(--space-8);
+            padding: var(--space-6);
+            background: var(--glass-bg);
+            border-radius: var(--radius-xl);
+            border: 1px solid var(--glass-border);
+        }
+
+        .quantity-control {
+            display: flex;
+            align-items: center;
+            background: var(--bg-primary);
+            border-radius: var(--radius-lg);
+            padding: 0 var(--space-2);
+        }
+
+        .qty-btn {
+            width: 32px;
+            height: 32px;
+            border: none;
+            background: transparent;
+            color: var(--text-primary);
+            cursor: pointer;
+            font-size: 1.2rem;
+        }
+
+        .qty-input {
+            width: 40px;
+            background: transparent;
+            border: none;
+            color: white;
+            text-align: center;
+            font-size: var(--font-size-lg);
+        }
+
+        .btn-add-cart {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: var(--space-2);
+            font-size: var(--font-size-lg);
+            padding: var(--space-3);
+        }
+
+        /* Cart Mockup Modal */
+        .cart-modal {
+            position: fixed;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            width: 400px;
+            background: #111;
+            border-left: 1px solid var(--glass-border);
+            transform: translateX(100%);
+            transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            z-index: 1000;
+            display: flex;
+            flex-direction: column;
+            box-shadow: -20px 0 40px rgba(0,0,0,0.5);
+        }
+
+        .cart-modal.open {
+            transform: translateX(0);
+        }
+
+        .cart-header {
+            padding: var(--space-6);
+            border-bottom: 1px solid var(--glass-border);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .cart-items {
+            flex: 1;
+            overflow-y: auto;
+            padding: var(--space-6);
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-4);
+        }
+
+        .cart-item {
+            display: flex;
+            gap: var(--space-4);
+            padding-bottom: var(--space-4);
+            border-bottom: 1px solid var(--glass-border);
+        }
+
+        .cart-item img {
+            width: 80px;
+            height: 80px;
+            border-radius: var(--radius-md);
+            background: var(--glass-bg);
+            object-fit: contain;
+            padding: var(--space-2);
+        }
+
+        .cart-footer {
+            padding: var(--space-6);
+            border-top: 1px solid var(--glass-border);
+            background: var(--bg-secondary);
+        }
+
+        .cart-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: var(--space-2);
+            color: var(--text-secondary);
+        }
+
+        .cart-total {
+            margin-top: var(--space-4);
+            padding-top: var(--space-4);
+            border-top: 1px solid var(--glass-border);
+            font-size: var(--font-size-xl);
+            font-weight: 700;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        /* Checkout Modal */
+        .checkout-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.8);
+            backdrop-filter: blur(10px);
+            z-index: 2000;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .checkout-modal.active {
+            display: flex;
+            opacity: 1;
+        }
+
+        .checkout-container {
+            background: #1a1d26;
+            width: 100%;
+            max-width: 500px;
+            border-radius: var(--radius-xl);
+            padding: var(--space-8);
+            border: 1px solid var(--glass-border);
+            transform: scale(0.95);
+            transition: transform 0.3s;
+        }
+
+        .checkout-modal.active .checkout-container {
+            transform: scale(1);
+        }
+
+        .payment-form .form-group {
+            margin-bottom: var(--space-4);
+        }
+
+        .card-element {
+            background: var(--bg-primary);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius-lg);
+            padding: var(--space-3);
+            display: flex;
+            align-items: center;
+            gap: var(--space-3);
+        }
+
+        .card-element i {
+            color: var(--text-tertiary);
+        }
+
+        .card-input {
+            background: transparent;
+            border: none;
+            color: white;
+            flex: 1;
+            font-family: inherit;
+        }
+
+        .card-input:focus {
+            outline: none;
+        }
+
+        .success-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #1a1d26;
+            border-radius: var(--radius-xl);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: var(--space-8);
+        }
+
+        .success-icon {
+            font-size: 5rem;
+            color: var(--success);
+            margin-bottom: var(--space-6);
+            animation: bounce 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        @keyframes bounce {
+            0% { transform: scale(0); }
+            50% { transform: scale(1.2); }
+            100% { transform: scale(1); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Navbar -->
+        <nav class="navbar">
+            <div class="logo">
+                <i class="fas fa-cube"></i> LUXE
+            </div>
+            <div class="cart-icon" onclick="toggleCart()">
+                <i class="fas fa-shopping-bag" style="font-size: 1.5rem; color: white;"></i>
+                <div class="cart-count">0</div>
+            </div>
+        </nav>
+
+        <main class="main-layout">
+            <!-- Left: Gallery -->
+            <div class="product-gallery">
+                <div class="main-image">
+                    <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/premier-ball.png" alt="Product" id="mainImage">
+                    <div style="position: absolute; top: 1rem; right: 1rem; background: var(--accent-primary); padding: 0.25rem 0.75rem; border-radius: 999px; font-size: 0.8rem; font-weight: bold;">NEW DROP</div>
+                </div>
+                <div class="thumbnails">
+                    <div class="thumb active" onclick="setThumb(this, 0)">
+                        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/premier-ball.png" width="40" alt="">
+                    </div>
+                    <div class="thumb" onclick="setThumb(this, 1)">
+                        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/luxury-ball.png" width="40" alt="">
+                    </div>
+                    <div class="thumb" onclick="setThumb(this, 2)">
+                        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/ultra-ball.png" width="40" alt="">
+                    </div>
+                    <div class="thumb" onclick="setThumb(this, 3)">
+                        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/master-ball.png" width="40" alt="">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right: Details -->
+            <div class="product-info">
+                <div style="color: var(--accent-primary); text-transform: uppercase; letter-spacing: 2px; font-weight: bold; margin-bottom: var(--space-2);">Limited Edition</div>
+                <h1>Orbital Sphere X1</h1>
+                
+                <div class="price-container">
+                    <span class="price">$199.00</span>
+                    <span class="original-price">$249.00</span>
+                </div>
+
+                <p style="color: var(--text-secondary); line-height: 1.8; margin-bottom: var(--space-8);">
+                    The Orbital Sphere X1 redefines spatial audio with zero-latency transmission and 
+                    haptic feedback integration. Crafted from aerospace-grade aluminum and 
+                    featuring active noise cancellation, it delivers an immersive soundscape 
+                    that adapts to your environment in real-time.
+                </p>
+
+                <div class="variants">
+                    <div class="variant-group">
+                        <label class="variant-label">Select Color</label>
+                        <div class="size-options">
+                            <button class="size-btn active" onclick="setSize(this)">Wht</button>
+                            <button class="size-btn" onclick="setSize(this)">Blk</button>
+                            <button class="size-btn" onclick="setSize(this)">Gold</button>
+                        </div>
+                    </div>
+
+                    <div class="variant-group">
+                        <label class="variant-label">Storage Capacity</label>
+                        <div class="size-options">
+                            <button class="size-btn active" style="width: auto; padding: 0 1rem;" onclick="setSize(this)">64GB</button>
+                            <button class="size-btn" style="width: auto; padding: 0 1rem;" onclick="setSize(this)">128GB</button>
+                            <button class="size-btn" style="width: auto; padding: 0 1rem;" onclick="setSize(this)">256GB</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="add-to-cart-container">
+                    <div class="quantity-control">
+                        <button class="qty-btn" onclick="updateQty(-1)">−</button>
+                        <input type="text" value="1" class="qty-input" readonly id="qtyDisplay">
+                        <button class="qty-btn" onclick="updateQty(1)">+</button>
+                    </div>
+                    <button class="btn btn-primary btn-add-cart" onclick="addToCart()">
+                        <span>Add to Cart</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+
+                <div style="display: flex; gap: var(--space-8); color: var(--text-secondary); font-size: var(--font-size-sm);">
+                    <div style="display: flex; align-items: center; gap: var(--space-2);">
+                        <i class="fas fa-truck"></i> Free Shipping
+                    </div>
+                    <div style="display: flex; align-items: center; gap: var(--space-2);">
+                        <i class="fas fa-shield-alt"></i> 2-Year Warranty
+                    </div>
+                    <div style="display: flex; align-items: center; gap: var(--space-2);">
+                        <i class="fas fa-undo"></i> 30-Day Return
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Right Sidebar Cart -->
+    <div class="cart-modal" id="cartModal">
+        <div class="cart-header">
+            <h3 style="margin: 0;">Your Cart (<span class="cart-count-text">0</span>)</h3>
+            <button onclick="toggleCart()" style="background: none; border: none; color: white; font-size: 1.5rem; cursor: pointer;">&times;</button>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <!-- Items injected here -->
+            <div style="text-align: center; color: var(--text-tertiary); margin-top: 50%;">
+                <i class="fas fa-shopping-basket" style="font-size: 3rem; margin-bottom: 1rem; opacity: 0.5;"></i>
+                <p>Your cart is empty</p>
+            </div>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-row">
+                <span>Subtotal</span>
+                <span id="subtotal">$0.00</span>
+            </div>
+            <div class="cart-row">
+                <span>Shipping</span>
+                <span>Free</span>
+            </div>
+            <div class="cart-total">
+                <span>Total</span>
+                <span id="total">$0.00</span>
+            </div>
+            <button class="btn btn-primary" style="width: 100%; margin-top: var(--space-4);" onclick="openCheckout()">
+                Proceed to Checkout
+            </button>
+        </div>
+    </div>
+
+    <!-- Checkout Modal -->
+    <section class="checkout-modal" id="checkoutModal">
+        <div class="checkout-container">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--space-6);">
+                <h2>Secure Checkout</h2>
+                <button onclick="closeCheckout()" style="background: none; border: none; color: var(--text-secondary); cursor: pointer;">Cancel</button>
+            </div>
+
+            <form class="payment-form" onsubmit="handlePayment(event)">
+                <div class="form-group">
+                    <label class="form-label">Email Address</label>
+                    <input type="email" class="form-input" placeholder="you@example.com" required>
+                </div>
+
+                <div style="margin: var(--space-6) 0; height: 1px; background: var(--glass-border);"></div>
+
+                <h3 style="margin-bottom: var(--space-4);">Payment Details</h3>
+                <div class="alert alert-info" style="margin-bottom: var(--space-4); font-size: 12px;">
+                    <i class="fas fa-info-circle"></i> This is a sandbox. Use any generic card info.
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Card Number</label>
+                    <div class="card-element">
+                        <i class="far fa-credit-card"></i>
+                        <input type="text" class="card-input" placeholder="0000 0000 0000 0000" maxlength="19">
+                    </div>
+                </div>
+
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-4);">
+                    <div class="form-group">
+                        <label class="form-label">Expiry</label>
+                        <div class="card-element">
+                            <input type="text" class="card-input" placeholder="MM/YY" maxlength="5">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">CVC</label>
+                        <div class="card-element">
+                            <i class="fas fa-lock" style="font-size: 0.8rem;"></i>
+                            <input type="text" class="card-input" placeholder="123" maxlength="3">
+                        </div>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: var(--space-6); position: relative;">
+                    <span id="payBtnText">Pay <span id="checkoutTotal">$199.00</span></span>
+                    <div id="spinner" style="display: none; width: 20px; height: 20px; border: 2px solid rgba(255,255,255,0.3); border-top-color: white; border-radius: 50%; animation: spin 0.8s linear infinite; margin: 0 auto;"></div>
+                </button>
+            </form>
+
+            <div id="successOverlay" class="success-overlay" style="display: none;">
+                <i class="fas fa-check-circle success-icon"></i>
+                <h2>Payment Successful!</h2>
+                <p style="color: var(--text-secondary); margin-bottom: var(--space-6);">Order #8X29B confirmed. Check your email.</p>
+                <button class="btn btn-secondary" onclick="resetCart()">Continue Shopping</button>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        /**
+         * Luxe E-commerce Sandbox
+         * Author: Ashraf Morningstar
+         */
+
+        const product = {
+            id: 'x1',
+            name: 'Orbital Sphere X1',
+            price: 199.00,
+            image: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/premier-ball.png'
+        };
+
+        let cart = [];
+        let qty = 1;
+
+        // Image Swap
+        function setThumb(el, index) {
+            document.querySelectorAll('.thumb').forEach(t => t.classList.remove('active'));
+            el.classList.add('active');
+            // Mock image change behavior
+            const mainImg = document.getElementById('mainImage');
+            mainImg.style.opacity = '0';
+            setTimeout(() => {
+                mainImg.src = el.querySelector('img').src;
+                mainImg.style.opacity = '1';
+            }, 200);
+        }
+
+        // Size Selector
+        function setSize(el) {
+            el.parentElement.querySelectorAll('.size-btn').forEach(b => b.classList.remove('active'));
+            el.classList.add('active');
+        }
+
+        // Qty Control
+        function updateQty(change) {
+            const newQty = qty + change;
+            if (newQty >= 1 && newQty <= 10) {
+                qty = newQty;
+                document.getElementById('qtyDisplay').value = qty;
+            }
+        }
+
+        // Cart Logic
+        function addToCart() {
+            const existing = cart.find(item => item.id === product.id);
+            if (existing) {
+                existing.qty += qty;
+            } else {
+                cart.push({ ...product, qty });
+            }
+            updateCartUI();
+            toggleCart();
+        }
+
+        function updateCartUI() {
+            // Count
+            const totalItems = cart.reduce((acc, item) => acc + item.qty, 0);
+            document.querySelectorAll('.cart-count, .cart-count-text').forEach(el => el.textContent = totalItems);
+
+            // List
+            const list = document.getElementById('cartItems');
+            if (cart.length === 0) {
+                list.innerHTML = `
+                    <div style="text-align: center; color: var(--text-tertiary); margin-top: 50%;">
+                        <i class="fas fa-shopping-basket" style="font-size: 3rem; margin-bottom: 1rem; opacity: 0.5;"></i>
+                        <p>Your cart is empty</p>
+                    </div>`;
+            } else {
+                list.innerHTML = cart.map(item => `
+                    <div class="cart-item">
+                        <img src="${item.image}" alt="">
+                        <div style="flex: 1;">
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 4px;">
+                                <span style="font-weight: 600;">${item.name}</span>
+                                <span>$${(item.price * item.qty).toFixed(2)}</span>
+                            </div>
+                            <div style="color: var(--text-secondary); font-size: 0.9rem;">Qty: ${item.qty}</div>
+                        </div>
+                    </div>
+                `).join('');
+            }
+
+            // Totals
+            const total = cart.reduce((acc, item) => acc + (item.price * item.qty), 0);
+            document.getElementById('subtotal').textContent = `$${total.toFixed(2)}`;
+            document.getElementById('total').textContent = `$${total.toFixed(2)}`;
+            document.getElementById('checkoutTotal').textContent = `$${total.toFixed(2)}`;
+        }
+
+        function toggleCart() {
+            document.getElementById('cartModal').classList.toggle('open');
+        }
+
+        // Checkout logic
+        function openCheckout() {
+            if (cart.length === 0) return alert('Cart is empty!');
+            document.getElementById('cartModal').classList.remove('open');
+            document.getElementById('checkoutModal').classList.add('active');
+        }
+
+        function closeCheckout() {
+            document.getElementById('checkoutModal').classList.remove('active');
+        }
+
+        function handlePayment(e) {
+            e.preventDefault();
+            const btnText = document.getElementById('payBtnText');
+            const spinner = document.getElementById('spinner');
+            
+            btnText.style.display = 'none';
+            spinner.style.display = 'block';
+
+            // Simulate API call
+            setTimeout(() => {
+                spinner.style.display = 'none';
+                document.getElementById('successOverlay').style.display = 'flex';
+            }, 2000);
+        }
+
+        function resetCart() {
+            cart = [];
+            qty = 1;
+            document.getElementById('qtyDisplay').value = 1;
+            updateCartUI();
+            document.getElementById('successOverlay').style.display = 'none';
+            document.getElementById('checkoutModal').classList.remove('active');
+            document.getElementById('payBtnText').style.display = 'inline';
+        }
+
+        // Keyframe for spinner
+        const style = document.createElement('style');
+        style.innerHTML = `
+            @keyframes spin {
+                0% { transform: rotate(0deg); }
+                100% { transform: rotate(360deg); }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>

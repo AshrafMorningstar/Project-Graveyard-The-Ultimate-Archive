@@ -1,0 +1,41 @@
+<!--
+ -----------------------------------------------------------------------------
+ @author      Ashraf Morningstar
+ @github      https://github.com/AshrafMorningstar
+ @repository  Project Graveyard - The Ultimate Archive
+ @quote       "Code that defines the future. Designed to inspire."
+ -----------------------------------------------------------------------------
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>AshrafMorningstar's GitHub Time Capsule</title>
+  <style>
+    body { font-family: monospace; background: #111; color: #0f0; padding: 2rem; }
+    .capsule { margin-bottom: 1rem; border-bottom: 1px dashed #0f0; padding-bottom: 1rem; }
+  </style>
+</head>
+<body>
+  <h1>📦 GitHub Time Capsule of AshrafMorningstar</h1>
+  <div id="container">Loading capsule...</div>
+  <script>
+    fetch('data/' + new Date().toISOString().split('T')[0] + '.json')
+      .then(res => res.json())
+      .then(data => {
+        const el = document.getElementById('container');
+        el.innerHTML = `
+          <div class='capsule'>
+            <p><strong>Name:</strong> ${data.name}</p>
+            <p><strong>GitHub:</strong> <a href='${data.github}' target='_blank'>${data.github}</a></p>
+            <p><strong>Date:</strong> ${data.date}</p>
+            <p><strong>Followers:</strong> ${data.followers}</p>
+            <p><strong>Repos:</strong> ${data.repos}</p>
+            <p><strong>GitHub Since:</strong> ${data.created_at}</p>
+          </div>
+        `;
+      });
+  </script>
+</body>
+</html>

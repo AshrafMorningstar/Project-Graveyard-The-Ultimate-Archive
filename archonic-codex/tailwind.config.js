@@ -1,0 +1,72 @@
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  content: [
+    "./index.html",
+    "./**/*.{js,ts,jsx,tsx}",
+  ],
+  theme: {
+    extend: {
+      colors: {
+        background: "var(--background)",
+        foreground: "var(--foreground)",
+        primary: {
+          DEFAULT: "var(--primary)",
+          foreground: "var(--primary-foreground)",
+        },
+        secondary: {
+          DEFAULT: "var(--secondary)",
+          foreground: "var(--secondary-foreground)",
+        },
+        destructive: {
+          DEFAULT: "var(--destructive)",
+          foreground: "var(--destructive-foreground)",
+        },
+        muted: {
+          DEFAULT: "var(--muted)",
+          foreground: "var(--muted-foreground)",
+        },
+        accent: {
+          DEFAULT: "var(--accent)",
+          foreground: "var(--accent-foreground)",
+        },
+        popover: {
+          DEFAULT: "var(--popover)",
+          foreground: "var(--popover-foreground)",
+        },
+        card: {
+          DEFAULT: "var(--card)",
+          foreground: "var(--card-foreground)",
+        },
+        'chronos-dark': '#050510',
+        'chronos-glass': 'rgba(10, 10, 20, 0.6)',
+        'neon-blue': '#00f3ff',
+        'neon-purple': '#bd00ff',
+        'neon-pink': '#ff0055',
+      },
+      fontFamily: {
+        sans: ['Inter', 'sans-serif'],
+        mono: ['Fira Code', 'monospace'],
+        display: ['Orbitron', 'sans-serif'],
+      },
+      backdropBlur: {
+        xs: '2px',
+      },
+      animation: {
+        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+        'float': 'float 6s ease-in-out infinite',
+        'glow': 'glow 2s ease-in-out infinite alternate',
+      },
+      keyframes: {
+        float: {
+          '0%, 100%': { transform: 'translateY(0)' },
+          '50%': { transform: 'translateY(-10px)' },
+        },
+        glow: {
+          'from': { boxShadow: '0 0 10px #00f3ff, 0 0 20px #00f3ff' },
+          'to': { boxShadow: '0 0 20px #00f3ff, 0 0 30px #00f3ff' },
+        }
+      }
+    },
+  },
+  plugins: [],
+}

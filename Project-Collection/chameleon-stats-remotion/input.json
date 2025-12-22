@@ -1,0 +1,7 @@
+{
+  "username": "AshrafMorningstar",
+  "theme": "random",
+  "seed": null,
+  "cards": ["main", "languages", "heatmap", "toprepos", "timeline", "banner"],
+  "reducedMotion": false
+}

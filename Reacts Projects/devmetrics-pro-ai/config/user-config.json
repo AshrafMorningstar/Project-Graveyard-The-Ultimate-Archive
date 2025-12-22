@@ -1,0 +1,46 @@
+{
+  "user": {
+    "githubUsername": "AshrafMorningstar",
+    "additionalPlatforms": ["gitlab", "stackoverflow", "npm"],
+    "preferredLanguages": ["TypeScript", "Python", "Go", "JavaScript"]
+  },
+
+  "visualization": {
+    "theme": "dark",
+    "primaryColor": "#3B82F6",
+    "secondaryColor": "#10B981",
+    "accentColor": "#F59E0B",
+    "animationStyle": "smooth",
+    "outputFormats": ["gif", "mp4", "webm"]
+  },
+
+  "ai": {
+    "enabled": true,
+    "provider": "openai",
+    "insightDepth": "detailed",
+    "personalization": true,
+    "features": {
+      "productivityAnalysis": true,
+      "skillRecommendations": true,
+      "projectDescriptions": true,
+      "trendPrediction": true
+    }
+  },
+
+  "schedule": {
+    "autoUpdate": true,
+    "frequency": "weekly",
+    "outputDirectory": "./outputs",
+    "timezone": "UTC"
+  },
+
+  "rendering": {
+    "quality": "high",
+    "fps": 30,
+    "resolution": {
+      "width": 1920,
+      "height": 1080
+    },
+    "compression": true
+  }
+}

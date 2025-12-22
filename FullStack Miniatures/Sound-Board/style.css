@@ -1,0 +1,58 @@
+/*
+ * -----------------------------------------------------------------------------
+ * @author      Ashraf Morningstar
+ * @github      https://github.com/AshrafMorningstar
+ * @repository  Project Graveyard - The Ultimate Archive
+ * @quote       "Code that defines the future. Designed to inspire."
+ * -----------------------------------------------------------------------------
+*/
+
+/* Created by Ashraf Morningstar - https://github.com/AshrafMorningstar */
+@import url('https://fonts.googleapis.com/css?family=Poppins&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #a29bfe;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 100vh;
+    overflow: hidden;
+    margin: 0;
+    flex-direction: column;
+}
+
+.btn {
+    background-color: rebeccapurple;
+    border-radius: 5px;
+    border: none;
+    color: #fff;
+    margin: 1rem;
+    padding: 1.5rem 3rem;
+    font-size: 1.2rem;
+    font-family: inherit;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.btn:hover {
+    opacity: 0.9;
+    transform: scale(1.1);
+}
+
+.btn:focus {
+    outline: none;
+}
+
+.footer {
+    position: fixed;
+    bottom: 20px;
+    color: white;
+}
+.footer a { color: rebeccapurple; text-decoration: none; font-weight: bold; background: white; padding: 2px 5px; border-radius: 3px; }

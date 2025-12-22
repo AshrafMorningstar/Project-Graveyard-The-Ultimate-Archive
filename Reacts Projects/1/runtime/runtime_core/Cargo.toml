@@ -1,0 +1,8 @@
+[package]
+name = "runtime_core"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+anyhow = "1.0"
+wasmtime = "14.0" # or "13.0", pinning a recent version

@@ -1,0 +1,62 @@
+<!--
+ -----------------------------------------------------------------------------
+ @author      Ashraf Morningstar
+ @github      https://github.com/AshrafMorningstar
+ @repository  Project Graveyard - The Ultimate Archive
+ @quote       "Code that defines the future. Designed to inspire."
+ -----------------------------------------------------------------------------
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MoodScroll - Emotion-Responsive Experience</title>
+    <meta name="description" content="A scroll-driven emotional journey through visual states">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/moods.css">
+    <!-- Author: Ashraf Morningstar -->
+    <!-- GitHub: https://github.com/AshrafMorningstar -->
+</head>
+<body>
+    <main class="scroll-container">
+        <section class="mood-zone zone-1" data-emotion="calm">
+            <div class="content">
+                <h1 class="zone-title">Calm</h1>
+                <p class="zone-text">In stillness, we find clarity</p>
+            </div>
+        </section>
+
+        <section class="mood-zone zone-2" data-emotion="curiosity">
+            <div class="content">
+                <h1 class="zone-title">Curiosity</h1>
+                <p class="zone-text">Questions lead to discovery</p>
+            </div>
+        </section>
+
+        <section class="mood-zone zone-3" data-emotion="intensity">
+            <div class="content">
+                <h1 class="zone-title">Intensity</h1>
+                <p class="zone-text">Energy transforms into action</p>
+            </div>
+        </section>
+
+        <section class="mood-zone zone-4" data-emotion="reflection">
+            <div class="content">
+                <h1 class="zone-title">Reflection</h1>
+                <p class="zone-text">In darkness, we see ourselves</p>
+            </div>
+        </section>
+    </main>
+
+    <div class="scroll-indicator">
+        <div class="indicator-bar"></div>
+    </div>
+
+    <script src="js/scroll-engine.js"></script>
+</body>
+</html>

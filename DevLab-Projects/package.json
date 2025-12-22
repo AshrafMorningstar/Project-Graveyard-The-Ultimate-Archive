@@ -1,0 +1,38 @@
+{
+  "name": "web-dev-mega-projects",
+  "version": "1.0.0",
+  "description": "Premium Web Development Projects Collection by Ashraf Morningstar",
+  "author": "Ashraf Morningstar <https://github.com/AshrafMorningstar>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AshrafMorningstar/web-dev-mega-projects.git"
+  },
+  "scripts": {
+    "start": "node automation-engine.js",
+    "generate": "node generate-projects.js",
+    "deploy": "node deploy-to-github.js",
+    "auto-all": "node full-automation.js"
+  },
+  "keywords": [
+    "web-development",
+    "premium-ui",
+    "projects",
+    "portfolio",
+    "ashraf-morningstar",
+    "glassmorphism",
+    "neumorphism",
+    "holographic",
+    "modern-design"
+  ],
+  "dependencies": {
+    "@octokit/rest": "^19.0.13",
+    "simple-git": "^3.20.0",
+    "chalk": "^4.1.2",
+    "ora": "^5.4.1",
+    "inquirer": "^8.2.5"
+  },
+  "devDependencies": {
+    "prettier": "^3.0.0"
+  }
+}

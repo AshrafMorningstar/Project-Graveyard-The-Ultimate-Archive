@@ -1,0 +1,11 @@
+{
+  "name": "astro-github-timeline",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "node scripts/generateTimeline.js"
+  },
+  "dependencies": {
+    "axios": "^1.6.0",
+    "fs-extra": "^11.1.1"
+  }
+}

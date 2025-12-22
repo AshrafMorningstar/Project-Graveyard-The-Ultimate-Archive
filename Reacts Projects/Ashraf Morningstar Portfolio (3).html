@@ -1,0 +1,952 @@
+<!--
+ -----------------------------------------------------------------------------
+ @author      Ashraf Morningstar
+ @github      https://github.com/AshrafMorningstar
+ @repository  Project Graveyard - The Ultimate Archive
+ @quote       "Code that defines the future. Designed to inspire."
+ -----------------------------------------------------------------------------
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ashraf Morningstar - Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-bg-primary: #0f172a;
+            --color-bg-secondary: #1e293b;
+            --color-bg-tertiary: #334155;
+            --color-text-primary: #f1f5f9;
+            --color-text-secondary: #cbd5e1;
+            --color-accent: #06b6d4;
+            --color-accent-hover: #0891b2;
+            --color-accent-dark: #164e63;
+            --color-border: #334155;
+            --color-success: #10b981;
+            --color-warning: #f59e0b;
+            --color-error: #ef4444;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            width: 100%;
+            height: 100%;
+            font-family: 'Inter', sans-serif;
+            background-color: var(--color-bg-primary);
+            color: var(--color-text-primary);
+            overflow: hidden;
+        }
+
+        body {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+        }
+
+        .desktop {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+
+        /* HEADER / PROFILE */
+        .header {
+            padding: 24px 32px;
+            border-bottom: 1px solid var(--color-border);
+            background: rgba(30, 41, 59, 0.8);
+            backdrop-filter: blur(10px);
+            position: relative;
+            z-index: 50;
+        }
+
+        .header-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .profile-info {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .profile-avatar {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--color-accent) 0%, #0891b2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 20px;
+            color: #0f172a;
+            box-shadow: 0 4px 16px rgba(6, 182, 212, 0.3);
+        }
+
+        .profile-text h1 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--color-text-primary);
+            margin: 0;
+        }
+
+        .profile-text p {
+            font-size: 12px;
+            color: var(--color-text-secondary);
+            margin: 4px 0 0 0;
+        }
+
+        .github-link {
+            color: var(--color-accent);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 16px;
+            border-radius: 6px;
+            border: 1px solid var(--color-border);
+            background: rgba(6, 182, 212, 0.1);
+        }
+
+        .github-link:hover {
+            background: rgba(6, 182, 212, 0.2);
+            border-color: var(--color-accent);
+            box-shadow: 0 0 12px rgba(6, 182, 212, 0.2);
+        }
+
+        /* MAIN CONTENT AREA */
+        .main-area {
+            flex: 1;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* WINDOWS CONTAINER */
+        .windows-container {
+            flex: 1;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .window {
+            position: absolute;
+            background: rgba(30, 41, 59, 0.95);
+            border: 1px solid var(--color-border);
+            border-radius: 12px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+            display: flex;
+            flex-direction: column;
+            min-width: 400px;
+            min-height: 300px;
+            backdrop-filter: blur(10px);
+            transition: box-shadow 0.2s ease;
+            touch-action: none;
+        }
+
+        .window.active {
+            box-shadow: 0 25px 80px rgba(6, 182, 212, 0.2);
+            border-color: var(--color-accent);
+        }
+
+        .window-header {
+            padding: 12px 16px;
+            border-bottom: 1px solid var(--color-border);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            cursor: grab;
+            user-select: none;
+            background: linear-gradient(135deg, rgba(51, 65, 85, 0.4), rgba(30, 41, 59, 0.2));
+        }
+
+        .window-header:active {
+            cursor: grabbing;
+        }
+
+        .window-controls {
+            display: flex;
+            gap: 8px;
+            margin-left: auto;
+        }
+
+        .window-btn {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            border: none;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 8px;
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .window-btn.close {
+            background: #ef4444;
+        }
+
+        .window-btn.minimize {
+            background: #f59e0b;
+        }
+
+        .window-btn.maximize {
+            background: #10b981;
+        }
+
+        .window-btn:hover {
+            transform: scale(1.2);
+        }
+
+        .window-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--color-text-primary);
+        }
+
+        .window-icon {
+            width: 16px;
+            height: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+        }
+
+        .window-content {
+            flex: 1;
+            padding: 16px;
+            overflow-y: auto;
+            overflow-x: hidden;
+        }
+
+        .window-content::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .window-content::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        .window-content::-webkit-scrollbar-thumb {
+            background: rgba(6, 182, 212, 0.4);
+            border-radius: 4px;
+        }
+
+        .window-content::-webkit-scrollbar-thumb:hover {
+            background: rgba(6, 182, 212, 0.6);
+        }
+
+        .resize-handle {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background: var(--color-accent);
+            border-radius: 2px;
+            cursor: nwse-resize;
+            right: 0;
+            bottom: 0;
+            opacity: 0;
+            transition: opacity 0.2s ease;
+        }
+
+        .window:hover .resize-handle {
+            opacity: 0.5;
+        }
+
+        .resize-handle:hover {
+            opacity: 1 !important;
+        }
+
+        /* DOCK */
+        .dock {
+            height: 80px;
+            border-top: 1px solid var(--color-border);
+            background: rgba(30, 41, 59, 0.8);
+            backdrop-filter: blur(20px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            padding: 0 20px 20px 20px;
+            position: relative;
+            z-index: 40;
+        }
+
+        .dock-container {
+            display: flex;
+            gap: 12px;
+            align-items: flex-end;
+            position: relative;
+        }
+
+        .dock-item {
+            width: 56px;
+            height: 56px;
+            border-radius: 12px;
+            background: rgba(6, 182, 212, 0.1);
+            border: 1px solid rgba(6, 182, 212, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+            position: relative;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .dock-item:hover {
+            transform: scale(1.1) translateY(-5px);
+            background: rgba(6, 182, 212, 0.2);
+            border-color: var(--color-accent);
+            box-shadow: 0 8px 24px rgba(6, 182, 212, 0.25);
+        }
+
+        .dock-item.active::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            width: 4px;
+            height: 4px;
+            background: var(--color-accent);
+            border-radius: 50%;
+        }
+
+        .dock-item-label {
+            position: absolute;
+            bottom: -24px;
+            font-size: 11px;
+            white-space: nowrap;
+            background: rgba(30, 41, 59, 0.9);
+            padding: 4px 8px;
+            border-radius: 4px;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.2s ease;
+            border: 1px solid var(--color-border);
+        }
+
+        .dock-item:hover .dock-item-label {
+            opacity: 1;
+        }
+
+        .dock-separator {
+            width: 1px;
+            height: 40px;
+            background: var(--color-border);
+            margin: 0 4px;
+        }
+
+        /* CONTENT STYLES */
+        .content-section {
+            margin-bottom: 20px;
+        }
+
+        .content-section h2 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: var(--color-accent);
+        }
+
+        .content-section h3 {
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--color-text-primary);
+        }
+
+        .content-section p {
+            font-size: 13px;
+            line-height: 1.6;
+            color: var(--color-text-secondary);
+            margin-bottom: 8px;
+        }
+
+        .project-card {
+            background: rgba(51, 65, 85, 0.3);
+            border: 1px solid var(--color-border);
+            border-radius: 8px;
+            padding: 12px;
+            margin-bottom: 12px;
+            transition: all 0.3s ease;
+        }
+
+        .project-card:hover {
+            background: rgba(51, 65, 85, 0.5);
+            border-color: var(--color-accent);
+            box-shadow: 0 4px 12px rgba(6, 182, 212, 0.1);
+        }
+
+        .project-card h4 {
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 6px;
+            color: var(--color-text-primary);
+        }
+
+        .project-card .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-top: 8px;
+        }
+
+        .tech-tag {
+            font-size: 11px;
+            padding: 4px 8px;
+            background: rgba(6, 182, 212, 0.2);
+            border: 1px solid rgba(6, 182, 212, 0.4);
+            border-radius: 4px;
+            color: var(--color-accent);
+            white-space: nowrap;
+        }
+
+        .link-button {
+            display: inline-block;
+            padding: 8px 12px;
+            background: rgba(6, 182, 212, 0.2);
+            border: 1px solid var(--color-accent);
+            border-radius: 6px;
+            color: var(--color-accent);
+            text-decoration: none;
+            font-size: 12px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            margin-right: 8px;
+            cursor: pointer;
+        }
+
+        .link-button:hover {
+            background: var(--color-accent);
+            color: var(--color-bg-primary);
+            box-shadow: 0 4px 12px rgba(6, 182, 212, 0.3);
+        }
+
+        .skill-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 8px;
+        }
+
+        .skill-item {
+            background: rgba(51, 65, 85, 0.3);
+            border: 1px solid var(--color-border);
+            padding: 8px;
+            border-radius: 6px;
+            font-size: 12px;
+            text-align: center;
+        }
+
+        .skill-item:hover {
+            background: rgba(6, 182, 212, 0.15);
+            border-color: var(--color-accent);
+        }
+
+        .context-menu {
+            position: fixed;
+            background: rgba(30, 41, 59, 0.95);
+            border: 1px solid var(--color-border);
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            min-width: 150px;
+        }
+
+        .context-menu-item {
+            padding: 8px 12px;
+            font-size: 13px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            border: none;
+            background: none;
+            color: var(--color-text-primary);
+            width: 100%;
+            text-align: left;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .context-menu-item:hover {
+            background: rgba(6, 182, 212, 0.2);
+            color: var(--color-accent);
+        }
+
+        .context-menu-separator {
+            height: 1px;
+            background: var(--color-border);
+            margin: 4px 0;
+        }
+
+        /* ANIMATIONS */
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        .window {
+            animation: slideUp 0.3s ease-out;
+        }
+
+        .header {
+            animation: slideUp 0.4s ease-out;
+        }
+
+        .dock {
+            animation: slideUp 0.5s ease-out;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 12px;
+                align-items: flex-start;
+            }
+
+            .window {
+                min-width: 95vw;
+                max-width: 95vw;
+            }
+
+            .dock-item {
+                width: 48px;
+                height: 48px;
+                font-size: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="root" class="desktop">
+        <!-- HEADER / PROFILE -->
+        <header class="header">
+            <div class="header-content">
+                <div class="profile-info">
+                    <div class="profile-avatar">AM</div>
+                    <div class="profile-text">
+                        <h1>Ashraf Morningstar</h1>
+                        <p>Full Stack Developer | React • Next.js • TypeScript</p>
+                    </div>
+                </div>
+                <a href="https://github.com/AshrafMorningstar" target="_blank" class="github-link">
+                    <span>🔗</span>
+                    <span>GitHub Profile</span>
+                </a>
+            </div>
+        </header>
+
+        <!-- MAIN CONTENT AREA -->
+        <div class="main-area">
+            <!-- WINDOWS CONTAINER -->
+            <div class="windows-container" id="windowsContainer"></div>
+
+            <!-- DOCK -->
+            <div class="dock">
+                <div class="dock-container" id="dockContainer"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // STATE MANAGEMENT
+        const windowStore = {
+            windows: new Map(),
+            nextId: 1,
+            
+            createWindow(app) {
+                const id = `window-${this.nextId++}`;
+                const randomX = Math.random() * (window.innerWidth - 500);
+                const randomY = Math.random() * (window.innerHeight - 400) + 80;
+                
+                this.windows.set(id, {
+                    id,
+                    app,
+                    x: randomX,
+                    y: randomY,
+                    width: 500,
+                    height: 400,
+                    minimized: false,
+                    active: true,
+                });
+                return id;
+            },
+
+            updateWindow(id, updates) {
+                const window = this.windows.get(id);
+                if (window) {
+                    Object.assign(window, updates);
+                }
+            },
+
+            closeWindow(id) {
+                this.windows.delete(id);
+            },
+
+            getWindow(id) {
+                return this.windows.get(id);
+            },
+
+            getAllWindows() {
+                return Array.from(this.windows.values());
+            }
+        };
+
+        // APPLICATIONS DATA
+        const apps = [
+            {
+                id: 'about',
+                name: 'About',
+                icon: '👤',
+                content: `
+                    <div class="content-section">
+                        <h2>About Me</h2>
+                        <p>Hi! I'm Ashraf Morningstar, a passionate full-stack developer based in Mumbai, working at Wipro Technologies. I specialize in creating beautiful, interactive web applications with modern technologies.</p>
+                    </div>
+                    <div class="content-section">
+                        <h3>Skills & Expertise</h3>
+                        <div class="skill-grid">
+                            <div class="skill-item">JavaScript</div>
+                            <div class="skill-item">TypeScript</div>
+                            <div class="skill-item">React</div>
+                            <div class="skill-item">Next.js</div>
+                            <div class="skill-item">Tailwind CSS</div>
+                            <div class="skill-item">Node.js</div>
+                            <div class="skill-item">GSAP</div>
+                            <div class="skill-item">Web Design</div>
+                        </div>
+                    </div>
+                `
+            },
+            {
+                id: 'projects',
+                name: 'Projects',
+                icon: '💼',
+                content: `
+                    <div class="content-section">
+                        <h2>Featured Projects</h2>
+                        <div class="project-card">
+                            <h4>macOS Portfolio</h4>
+                            <p>Interactive portfolio with draggable windows and GSAP animations</p>
+                            <div class="tech-stack">
+                                <span class="tech-tag">React</span>
+                                <span class="tech-tag">GSAP</span>
+                                <span class="tech-tag">Tailwind</span>
+                            </div>
+                            <a href="https://github.com/AshrafMorningstar" target="_blank" class="link-button">View Code</a>
+                        </div>
+                        <div class="project-card">
+                            <h4>E-Commerce Platform</h4>
+                            <p>Full-stack e-commerce solution with payment integration</p>
+                            <div class="tech-stack">
+                                <span class="tech-tag">Next.js</span>
+                                <span class="tech-tag">Stripe</span>
+                                <span class="tech-tag">PostgreSQL</span>
+                            </div>
+                            <a href="https://github.com/AshrafMorningstar" target="_blank" class="link-button">View Code</a>
+                        </div>
+                        <div class="project-card">
+                            <h4>Real-time Chat App</h4>
+                            <p>WebSocket-based messaging application with real-time updates</p>
+                            <div class="tech-stack">
+                                <span class="tech-tag">Socket.io</span>
+                                <span class="tech-tag">Express</span>
+                                <span class="tech-tag">React</span>
+                            </div>
+                            <a href="https://github.com/AshrafMorningstar" target="_blank" class="link-button">View Code</a>
+                        </div>
+                    </div>
+                `
+            },
+            {
+                id: 'contact',
+                name: 'Contact',
+                icon: '📧',
+                content: `
+                    <div class="content-section">
+                        <h2>Get In Touch</h2>
+                        <p>Feel free to reach out to me for collaborations or just a friendly hello!</p>
+                    </div>
+                    <div class="content-section">
+                        <h3>Contact Information</h3>
+                        <p><strong>Email:</strong> ashraf@example.com</p>
+                        <p><strong>Location:</strong> Mumbai, India</p>
+                        <p><strong>GitHub:</strong> <a href="https://github.com/AshrafMorningstar" target="_blank" class="link-button">@AshrafMorningstar</a></p>
+                    </div>
+                    <div class="content-section">
+                        <h3>Follow Me</h3>
+                        <p>Stay updated with my latest projects and posts on social media.</p>
+                        <a href="https://github.com/AshrafMorningstar" target="_blank" class="link-button">GitHub</a>
+                        <a href="https://linkedin.com" target="_blank" class="link-button">LinkedIn</a>
+                    </div>
+                `
+            }
+        ];
+
+        // RENDER DOCK
+        function renderDock() {
+            const dockContainer = document.getElementById('dockContainer');
+            dockContainer.innerHTML = '';
+
+            apps.forEach((app, index) => {
+                const dockItem = document.createElement('div');
+                dockItem.className = 'dock-item';
+                dockItem.innerHTML = `
+                    <span class="dock-icon">${app.icon}</span>
+                    <span class="dock-item-label">${app.name}</span>
+                `;
+                dockItem.addEventListener('click', () => openApp(app.id));
+                dockContainer.appendChild(dockItem);
+            });
+
+            // Separator
+            const separator = document.createElement('div');
+            separator.className = 'dock-separator';
+            dockContainer.appendChild(separator);
+
+            // Minimize button
+            const minimizeBtn = document.createElement('div');
+            minimizeBtn.className = 'dock-item';
+            minimizeBtn.innerHTML = '🗂️<span class="dock-item-label">Hide All</span>';
+            minimizeBtn.addEventListener('click', minimizeAll);
+            dockContainer.appendChild(minimizeBtn);
+        }
+
+        // RENDER WINDOWS
+        function renderWindows() {
+            const container = document.getElementById('windowsContainer');
+            container.innerHTML = '';
+
+            windowStore.getAllWindows().forEach(win => {
+                const windowEl = document.createElement('div');
+                windowEl.className = 'window' + (win.active ? ' active' : '');
+                windowEl.id = win.id;
+                windowEl.style.left = win.x + 'px';
+                windowEl.style.top = win.y + 'px';
+                windowEl.style.width = win.width + 'px';
+                windowEl.style.height = win.height + 'px';
+                windowEl.style.display = win.minimized ? 'none' : 'flex';
+
+                const app = apps.find(a => a.id === win.app);
+                if (!app) return;
+
+                windowEl.innerHTML = `
+                    <div class="window-header" data-window-id="${win.id}">
+                        <div class="window-icon">${app.icon}</div>
+                        <div class="window-title">${app.name}</div>
+                        <div class="window-controls">
+                            <button class="window-btn close" data-action="close"></button>
+                            <button class="window-btn minimize" data-action="minimize"></button>
+                            <button class="window-btn maximize" data-action="maximize"></button>
+                        </div>
+                    </div>
+                    <div class="window-content">${app.content}</div>
+                    <div class="resize-handle" data-window-id="${win.id}"></div>
+                `;
+
+                // EVENT LISTENERS
+                const header = windowEl.querySelector('.window-header');
+                header.addEventListener('mousedown', startDrag);
+                
+                windowEl.querySelector('.resize-handle').addEventListener('mousedown', startResize);
+
+                windowEl.querySelectorAll('.window-btn').forEach(btn => {
+                    btn.addEventListener('click', (e) => {
+                        const action = e.target.dataset.action;
+                        handleWindowAction(win.id, action);
+                    });
+                });
+
+                container.appendChild(windowEl);
+            });
+        }
+
+        // DRAG FUNCTIONALITY
+        let dragData = null;
+
+        function startDrag(e) {
+            if (e.button !== 0) return;
+            const windowId = e.currentTarget.dataset.windowId;
+            const windowEl = document.getElementById(windowId);
+            const win = windowStore.getWindow(windowId);
+
+            dragData = {
+                windowId,
+                startX: e.clientX,
+                startY: e.clientY,
+                windowX: win.x,
+                windowY: win.y,
+            };
+
+            windowEl.style.cursor = 'grabbing';
+            document.addEventListener('mousemove', performDrag);
+            document.addEventListener('mouseup', stopDrag);
+        }
+
+        function performDrag(e) {
+            if (!dragData) return;
+            const deltaX = e.clientX - dragData.startX;
+            const deltaY = e.clientY - dragData.startY;
+
+            const newX = dragData.windowX + deltaX;
+            const newY = dragData.windowY + deltaY;
+
+            windowStore.updateWindow(dragData.windowId, {
+                x: Math.max(0, Math.min(newX, window.innerWidth - 300)),
+                y: Math.max(80, Math.min(newY, window.innerHeight - 100)),
+            });
+
+            renderWindows();
+        }
+
+        function stopDrag() {
+            dragData = null;
+            document.removeEventListener('mousemove', performDrag);
+            document.removeEventListener('mouseup', stopDrag);
+        }
+
+        // RESIZE FUNCTIONALITY
+        let resizeData = null;
+
+        function startResize(e) {
+            if (e.button !== 0) return;
+            const windowId = e.currentTarget.dataset.windowId;
+            const win = windowStore.getWindow(windowId);
+
+            resizeData = {
+                windowId,
+                startX: e.clientX,
+                startY: e.clientY,
+                windowWidth: win.width,
+                windowHeight: win.height,
+            };
+
+            document.addEventListener('mousemove', performResize);
+            document.addEventListener('mouseup', stopResize);
+        }
+
+        function performResize(e) {
+            if (!resizeData) return;
+            const deltaX = e.clientX - resizeData.startX;
+            const deltaY = e.clientY - resizeData.startY;
+
+            const newWidth = Math.max(400, resizeData.windowWidth + deltaX);
+            const newHeight = Math.max(300, resizeData.windowHeight + deltaY);
+
+            windowStore.updateWindow(resizeData.windowId, {
+                width: newWidth,
+                height: newHeight,
+            });
+
+            renderWindows();
+        }
+
+        function stopResize() {
+            resizeData = null;
+            document.removeEventListener('mousemove', performResize);
+            document.removeEventListener('mouseup', stopResize);
+        }
+
+        // WINDOW ACTIONS
+        function openApp(appId) {
+            const existingWindow = windowStore.getAllWindows().find(w => w.app === appId);
+            if (existingWindow) {
+                windowStore.updateWindow(existingWindow.id, {
+                    minimized: false,
+                    active: true,
+                });
+            } else {
+                windowStore.createWindow(appId);
+            }
+            renderWindows();
+        }
+
+        function handleWindowAction(windowId, action) {
+            const win = windowStore.getWindow(windowId);
+            if (!win) return;
+
+            if (action === 'close') {
+                windowStore.closeWindow(windowId);
+            } else if (action === 'minimize') {
+                windowStore.updateWindow(windowId, { minimized: true });
+            } else if (action === 'maximize') {
+                const isMaximized = win.width === window.innerWidth - 20;
+                if (isMaximized) {
+                    windowStore.updateWindow(windowId, {
+                        x: 100,
+                        y: 150,
+                        width: 600,
+                        height: 500,
+                    });
+                } else {
+                    windowStore.updateWindow(windowId, {
+                        x: 10,
+                        y: 100,
+                        width: window.innerWidth - 20,
+                        height: window.innerHeight - 140,
+                    });
+                }
+            }
+            renderWindows();
+        }
+
+        function minimizeAll() {
+            windowStore.getAllWindows().forEach(win => {
+                windowStore.updateWindow(win.id, { minimized: true });
+            });
+            renderWindows();
+        }
+
+        // INITIAL RENDER
+        renderDock();
+        renderWindows();
+    </script>
+</body>
+</html>

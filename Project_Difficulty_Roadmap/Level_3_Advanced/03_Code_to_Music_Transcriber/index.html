@@ -1,0 +1,68 @@
+<!--
+ -----------------------------------------------------------------------------
+ @author      Ashraf Morningstar
+ @github      https://github.com/AshrafMorningstar
+ @repository  Project Graveyard - The Ultimate Archive
+ @quote       "Code that defines the future. Designed to inspire."
+ -----------------------------------------------------------------------------
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code-to-Music Transcriber | Ashraf Morningstar</title>
+    <!-- 
+        Project: Code-to-Music Transcriber
+        Level: Advanced
+        Author: Ashraf Morningstar
+        GitHub: https://github.com/AshrafMorningstar
+    -->
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&family=Outfit:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.8.49/Tone.js"></script>
+</head>
+<body>
+    <div class="app-container">
+        <aside class="sidebar">
+            <h1>🎵 Code Synth</h1>
+            <p>Turn your algorithms into melodies.</p>
+            
+            <div class="controls">
+                <label>Instrument</label>
+                <select id="synth-type">
+                    <option value="polysynth">PolySynth (Retro)</option>
+                    <option value="fm">FM Synth (Digital)</option>
+                    <option value="membrane">Membrane (Percussive)</option>
+                </select>
+
+                <label>BPM</label>
+                <input type="range" id="bpm-slider" min="60" max="200" value="120">
+                
+                <button id="play-btn" class="play-btn">▶ Play Code</button>
+            </div>
+            
+            <div class="visualization">
+                <!-- Visual Bars will go here -->
+                <canvas id="viz-canvas"></canvas>
+            </div>
+        </aside>
+
+        <main class="editor-area">
+            <div class="editor-header">
+                <span class="tab active">source.js</span>
+            </div>
+            <textarea id="code-input" spellcheck="false" placeholder="// Type code here to hear it...
+
+function hello() {
+  const world = 10;
+  for(let i=0; i<5; i++) {
+     console.log(i);
+  }
+}"></textarea>
+        </main>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>

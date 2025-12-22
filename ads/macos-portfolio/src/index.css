@@ -1,0 +1,50 @@
+/*
+ * -----------------------------------------------------------------------------
+ * @author      Ashraf Morningstar
+ * @github      https://github.com/AshrafMorningstar
+ * @repository  Project Graveyard - The Ultimate Archive
+ * @quote       "Code that defines the future. Designed to inspire."
+ * -----------------------------------------------------------------------------
+*/
+
+:root {
+  --bg-color: #000;
+  --text-main: #333;
+  --text-muted: #666;
+  --dock-bg: rgba(255, 255, 255, 0.2);
+  --win-bg: rgba(255, 255, 255, 0.85);
+  --win-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+  --accent: #007aff;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+    Arial, sans-serif;
+  overflow: hidden;
+  user-select: none;
+  background: #333;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100vw;
+  background: url("https://images.unsplash.com/photo-1490730141103-6cac27aaab94?auto=format&fit=crop&w=2560&q=80")
+    no-repeat center center fixed;
+  background-size: cover;
+}
+
+/* Animations */
+@keyframes popIn {
+  0% {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}

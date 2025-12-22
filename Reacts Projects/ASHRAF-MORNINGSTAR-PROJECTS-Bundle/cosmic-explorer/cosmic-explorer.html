@@ -1,0 +1,154 @@
+<!--
+ -----------------------------------------------------------------------------
+ @author      Ashraf Morningstar
+ @github      https://github.com/AshrafMorningstar
+ @repository  Project Graveyard - The Ultimate Archive
+ @quote       "Code that defines the future. Designed to inspire."
+ -----------------------------------------------------------------------------
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>COSMIC EXPLORER — Interactive 3D Space Visualizer</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Arial', sans-serif;
+      background: #000;
+      color: #0f0;
+      min-height: 100vh;
+      overflow: hidden;
+    }
+    canvas { display: block; }
+    .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      padding: 20px;
+      background: linear-gradient(180deg, rgba(0,0,0,0.8), transparent);
+      color: #0f0;
+      font-family: 'Courier New', monospace;
+      z-index: 10;
+    }
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .title {
+      font-size: 1.5rem;
+      text-shadow: 0 0 20px #0f0;
+    }
+    .credit {
+      font-size: 0.8rem;
+      opacity: 0.7;
+    }
+    .credit a { color: #0f0; text-decoration: none; }
+    .stats {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: rgba(0, 0, 0, 0.8);
+      border: 1px solid #0f0;
+      padding: 15px;
+      font-size: 0.8rem;
+      font-family: 'Courier New', monospace;
+      width: 200px;
+    }
+    .stat-row {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 8px;
+    }
+    .stat-value { color: #0f0; font-weight: bold; }
+  </style>
+</head>
+<body>
+  <div class="overlay">
+    <div class="header">
+      <div class="title">🚀 COSMIC EXPLORER v1.0</div>
+      <div class="credit">Created by <a href="https://github.com/AshrafMorningstar" target="_blank">@AshrafMorningstar</a></div>
+    </div>
+  </div>
+
+  <div class="stats">
+    <div class="stat-row"><span>FPS:</span><span class="stat-value" id="fps">60</span></div>
+    <div class="stat-row"><span>Objects:</span><span class="stat-value" id="objects">0</span></div>
+    <div class="stat-row"><span>Distance:</span><span class="stat-value" id="distance">0 AU</span></div>
+    <div class="stat-row"><span>Speed:</span><span class="stat-value" id="speed">0 m/s</span></div>
+  </div>
+
+  <canvas id="canvas"></canvas>
+
+  <script>
+    const canvas = document.getElementById('canvas');
+    const ctx = canvas.getContext('2d');
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    // Particle system
+    const particles = [];
+    for (let i = 0; i < 500; i++) {
+      particles.push({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        vx: (Math.random() - 0.5) * 2,
+        vy: (Math.random() - 0.5) * 2,
+        size: Math.random() * 2,
+        brightness: Math.random()
+      });
+    }
+
+    let frameCount = 0;
+    let lastTime = Date.now();
+    let fps = 60;
+
+    function animate() {
+      ctx.fillStyle = 'rgba(0, 0, 0, 0.1)';
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+      particles.forEach(p => {
+        p.x += p.vx;
+        p.y += p.vy;
+        p.brightness = 0.3 + Math.sin(frameCount * 0.01 + p.x) * 0.7;
+
+        if (p.x < 0) p.x = canvas.width;
+        if (p.x > canvas.width) p.x = 0;
+        if (p.y < 0) p.y = canvas.height;
+        if (p.y > canvas.height) p.y = 0;
+
+        ctx.fillStyle = `rgba(0, 255, 0, ${p.brightness})`;
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+        ctx.fill();
+      });
+
+      frameCount++;
+
+      // Update FPS
+      if (frameCount % 10 === 0) {
+        const now = Date.now();
+        fps = Math.round(10000 / (now - lastTime));
+        lastTime = now;
+        document.getElementById('fps').textContent = fps;
+        document.getElementById('objects').textContent = particles.length;
+        document.getElementById('distance').textContent = (Math.sin(frameCount * 0.01) * 1000 + 2000).toFixed(0) + ' AU';
+        document.getElementById('speed').textContent = (Math.sin(frameCount * 0.02) * 50000 + 60000).toFixed(0);
+      }
+
+      requestAnimationFrame(animate);
+    }
+
+    animate();
+
+    window.addEventListener('resize', () => {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,118 @@
+/*
+ * -----------------------------------------------------------------------------
+ * @author      Ashraf Morningstar
+ * @github      https://github.com/AshrafMorningstar
+ * @repository  Project Graveyard - The Ultimate Archive
+ * @quote       "Code that defines the future. Designed to inspire."
+ * -----------------------------------------------------------------------------
+*/
+
+/**
+ * @author Ashraf Morningstar
+ * @link https://github.com/AshrafMorningstar
+ * @description Premium Viral Deployment
+ * @design_status Premium_Pro_Max
+ */
+
+/* 
+ * MoodScroll - Mood Themes
+ * Author: Ashraf Morningstar
+ * GitHub: https://github.com/AshrafMorningstar
+ */
+
+/* Zone 1: Calm */
+.zone-calm {
+  background: linear-gradient(180deg, #f8f9fa 0%, #e9ecef 100%);
+}
+
+.zone-calm .zone-title {
+  color: #495057;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+}
+
+.zone-calm .zone-text {
+  color: #6c757d;
+}
+
+.zone-calm .zone-accent {
+  background: #a8dadc;
+  top: 20%;
+  right: 10%;
+}
+
+/* Zone 2: Curiosity */
+.zone-curiosity {
+  background: linear-gradient(180deg, #e9ecef 0%, #dee2e6 100%);
+}
+
+.zone-curiosity .zone-title {
+  color: #343a40;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+
+.zone-curiosity .zone-text {
+  color: #495057;
+  font-weight: 400;
+}
+
+.zone-curiosity .zone-accent {
+  background: #f4a261;
+  bottom: 30%;
+  left: 15%;
+}
+
+/* Zone 3: Intensity */
+.zone-intensity {
+  background: linear-gradient(180deg, #212529 0%, #343a40 100%);
+}
+
+.zone-intensity .zone-title {
+  color: #f8f9fa;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.zone-intensity .zone-text {
+  color: #e9ecef;
+  font-weight: 500;
+}
+
+.zone-intensity .zone-accent {
+  background: #e63946;
+  top: 40%;
+  right: 20%;
+}
+
+/* Zone 4: Reflection */
+.zone-reflection {
+  background: linear-gradient(180deg, #2c3e50 0%, #34495e 100%);
+}
+
+.zone-reflection .zone-title {
+  color: #ecf0f1;
+  font-weight: 300;
+  letter-spacing: 0.08em;
+}
+
+.zone-reflection .zone-text {
+  color: #bdc3c7;
+  font-weight: 300;
+}
+
+.zone-reflection .zone-accent {
+  background: #457b9d;
+  bottom: 20%;
+  left: 25%;
+}
+
+.zone-reflection .project-signature p,
+.zone-reflection .project-signature a {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.zone-reflection .project-signature a:hover {
+  color: #74b9ff;
+}

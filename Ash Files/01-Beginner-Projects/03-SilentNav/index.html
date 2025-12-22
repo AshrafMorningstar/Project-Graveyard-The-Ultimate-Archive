@@ -1,0 +1,97 @@
+<!--
+ -----------------------------------------------------------------------------
+ @author      Ashraf Morningstar
+ @github      https://github.com/AshrafMorningstar
+ @repository  Project Graveyard - The Ultimate Archive
+ @quote       "Code that defines the future. Designed to inspire."
+ -----------------------------------------------------------------------------
+-->
+
+<!--
+ * @author Ashraf Morningstar
+ * @link https://github.com/AshrafMorningstar
+ * @description Premium Viral Deployment
+ * @design_status Premium_Pro_Max
+ -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SilentNav - Navigation Without Labels</title>
+    <meta name="description" content="A fully usable website with zero visible text navigation">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/nav.css">
+</head>
+<body>
+    <nav class="silent-nav" id="silentNav" role="navigation" aria-label="Main navigation">
+        <div class="nav-symbol" data-section="home" aria-label="Home" role="button" tabindex="0">
+            <svg viewBox="0 0 100 100" class="symbol-svg">
+                <circle cx="50" cy="50" r="40" class="symbol-shape"/>
+            </svg>
+        </div>
+        <div class="nav-symbol" data-section="grid" aria-label="Grid view" role="button" tabindex="0">
+            <svg viewBox="0 0 100 100" class="symbol-svg">
+                <rect x="20" y="20" width="25" height="25" class="symbol-shape"/>
+                <rect x="55" y="20" width="25" height="25" class="symbol-shape"/>
+                <rect x="20" y="55" width="25" height="25" class="symbol-shape"/>
+                <rect x="55" y="55" width="25" height="25" class="symbol-shape"/>
+            </svg>
+        </div>
+        <div class="nav-symbol" data-section="flow" aria-label="Flow view" role="button" tabindex="0">
+            <svg viewBox="0 0 100 100" class="symbol-svg">
+                <path d="M 20 50 Q 50 20, 80 50 T 140 50" class="symbol-shape" fill="none" stroke-width="4"/>
+            </svg>
+        </div>
+        <div class="nav-symbol" data-section="minimal" aria-label="Minimal view" role="button" tabindex="0">
+            <svg viewBox="0 0 100 100" class="symbol-svg">
+                <line x1="30" y1="50" x2="70" y2="50" class="symbol-shape" stroke-width="4"/>
+            </svg>
+        </div>
+    </nav>
+
+    <main class="content-area" id="contentArea">
+        <section class="content-section active" data-section="home">
+            <div class="section-inner">
+                <h1>Silent Navigation</h1>
+                <p>Understanding without words. Navigate through shape, motion, and intuition.</p>
+                <div class="visual-element circle-pattern"></div>
+            </div>
+        </section>
+
+        <section class="content-section" data-section="grid">
+            <div class="section-inner grid-layout">
+                <div class="grid-item"></div>
+                <div class="grid-item"></div>
+                <div class="grid-item"></div>
+                <div class="grid-item"></div>
+                <div class="grid-item"></div>
+                <div class="grid-item"></div>
+            </div>
+        </section>
+
+        <section class="content-section" data-section="flow">
+            <div class="section-inner flow-layout">
+                <div class="flow-text">
+                    <h2>Fluid Motion</h2>
+                    <p>Content that moves with purpose</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section" data-section="minimal">
+            <div class="section-inner minimal-layout">
+                <div class="minimal-line"></div>
+                <h2>Less is clarity</h2>
+            </div>
+        </section>
+    </main>
+
+    <footer class="project-credit">
+        <a href="https://github.com/AshrafMorningstar" target="_blank" aria-label="GitHub profile">Ashraf Morningstar</a>
+    </footer>
+
+    <script src="js/nav-controller.js"></script>
+</body>
+</html>

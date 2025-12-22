@@ -1,0 +1,59 @@
+name: Render DevMetrics Video
+
+on:
+  workflow_dispatch:
+    inputs:
+      composition:
+        description: 'Composition to render'
+        required: true
+        default: 'TimeLapseEvolution'
+        type: choice
+        options:
+          - GitHubStats
+          - SkillsRadar
+          - TimeLapse
+          - TimeLapseEvolution
+  schedule:
+    - cron: '0 0 * * 0' # Weekly on Sunday at midnight
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Render video
+        run: |
+          npx remotion render src/remotion/index.ts ${{ github.event.inputs.composition || 'TimeLapseEvolution' }} out/video.mp4
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Upload rendered video
+        uses: actions/upload-artifact@v4
+        with:
+          name: devmetrics-video-${{ github.event.inputs.composition || 'TimeLapseEvolution' }}
+          path: out/*.mp4
+          retention-days: 30
+
+      - name: Create release (on schedule)
+        if: github.event_name == 'schedule'
+        uses: softprops/action-gh-release@v1
+        with:
+          tag_name: auto-${{ github.run_number }}
+          name: Automated Render ${{ github.run_number }}
+          files: out/*.mp4
+          draft: false
+          prerelease: false
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

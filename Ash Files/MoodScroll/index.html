@@ -1,0 +1,73 @@
+<!--
+ -----------------------------------------------------------------------------
+ @author      Ashraf Morningstar
+ @github      https://github.com/AshrafMorningstar
+ @repository  Project Graveyard - The Ultimate Archive
+ @quote       "Code that defines the future. Designed to inspire."
+ -----------------------------------------------------------------------------
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MoodScroll - Emotion-Responsive Scroll Experience</title>
+    <meta name="description" content="A single-page emotional journey controlled by scroll position">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/moods.css">
+</head>
+<body>
+    <div class="scroll-container">
+        <!-- Zone 1: Calm -->
+        <section class="zone zone-calm" data-zone="calm">
+            <div class="content">
+                <h1 class="zone-title">Calm</h1>
+                <p class="zone-text">In stillness, we find clarity.</p>
+                <p class="zone-description">The beginning of every journey starts with peace.</p>
+            </div>
+        </section>
+
+        <!-- Zone 2: Curiosity -->
+        <section class="zone zone-curiosity" data-zone="curiosity">
+            <div class="content">
+                <h1 class="zone-title">Curiosity</h1>
+                <p class="zone-text">Questions lead to discovery.</p>
+                <p class="zone-description">What lies beyond the horizon of the known?</p>
+            </div>
+        </section>
+
+        <!-- Zone 3: Intensity -->
+        <section class="zone zone-intensity" data-zone="intensity">
+            <div class="content">
+                <h1 class="zone-title">Intensity</h1>
+                <p class="zone-text">Passion fuels creation.</p>
+                <p class="zone-description">In the heart of fire, we forge our purpose.</p>
+            </div>
+        </section>
+
+        <!-- Zone 4: Reflection -->
+        <section class="zone zone-reflection" data-zone="reflection">
+            <div class="content">
+                <h1 class="zone-title">Reflection</h1>
+                <p class="zone-text">Looking back, we move forward.</p>
+                <p class="zone-description">Every ending is a new beginning.</p>
+            </div>
+        </section>
+    </div>
+
+    <div class="scroll-indicator">
+        <div class="indicator-bar"></div>
+    </div>
+
+    <footer class="attribution">
+        <p>Created by <strong>Ashraf Morningstar</strong></p>
+        <a href="https://github.com/AshrafMorningstar" target="_blank">github.com/AshrafMorningstar</a>
+    </footer>
+
+    <script src="js/scroll-engine.js"></script>
+</body>
+</html>

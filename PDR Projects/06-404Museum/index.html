@@ -1,0 +1,106 @@
+<!--
+ -----------------------------------------------------------------------------
+ @author      Ashraf Morningstar
+ @github      https://github.com/AshrafMorningstar
+ @repository  Project Graveyard - The Ultimate Archive
+ @quote       "Code that defines the future. Designed to inspire."
+ -----------------------------------------------------------------------------
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="404 Museum - A curated exhibition of error states as designed experiences">
+    <title>404 Museum - Error State Exhibition</title>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/rooms/404.css">
+    <link rel="stylesheet" href="css/rooms/403.css">
+    <link rel="stylesheet" href="css/rooms/500.css">
+    <link rel="stylesheet" href="css/rooms/offline.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="museum-nav" id="museumNav">
+        <button class="room-btn active" data-room="404">404</button>
+        <button class="room-btn" data-room="403">403</button>
+        <button class="room-btn" data-room="500">500</button>
+        <button class="room-btn" data-room="offline">Offline</button>
+    </nav>
+
+    <main class="museum-container">
+        <!-- Room 404: Lost -->
+        <section class="error-room active" id="room-404" data-room="404">
+            <div class="room-content">
+                <div class="error-code">404</div>
+                <h1 class="error-title">Lost in the Museum</h1>
+                <p class="error-message">
+                    The page you seek has wandered into another gallery.<br>
+                    Perhaps it never existed at all.
+                </p>
+                <div class="room-decoration">
+                    <div class="floating-number">4</div>
+                    <div class="floating-number">0</div>
+                    <div class="floating-number">4</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Room 403: Restricted -->
+        <section class="error-room" id="room-403" data-room="403">
+            <div class="room-content">
+                <div class="error-code">403</div>
+                <h1 class="error-title">Beyond the Velvet Rope</h1>
+                <p class="error-message">
+                    This gallery is reserved for invited guests.<br>
+                    Your credentials do not grant passage.
+                </p>
+                <div class="room-decoration">
+                    <div class="barrier"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Room 500: System Fatigue -->
+        <section class="error-room" id="room-500" data-room="500">
+            <div class="room-content">
+                <div class="error-code">500</div>
+                <h1 class="error-title">The System Rests</h1>
+                <p class="error-message">
+                    Even machines need to breathe.<br>
+                    We're experiencing a moment of fatigue.
+                </p>
+                <div class="room-decoration">
+                    <div class="glitch-box"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Room Offline: Isolation -->
+        <section class="error-room" id="room-offline" data-room="offline">
+            <div class="room-content">
+                <div class="error-code">⚠</div>
+                <h1 class="error-title">Disconnected</h1>
+                <p class="error-message">
+                    The thread between you and the world has frayed.<br>
+                    Check your connection and return.
+                </p>
+                <div class="room-decoration">
+                    <div class="signal-bars">
+                        <span></span><span></span><span></span><span></span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="museum-footer">
+        <p class="museum-label">404 Museum — Where Errors Become Art</p>
+    </footer>
+
+    <script src="js/room-router.js"></script>
+</body>
+</html>

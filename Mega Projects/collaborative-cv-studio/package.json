@@ -1,0 +1,8 @@
+{
+  "name": "collaborative-cv-studio",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "services/*"
+  ]
+}

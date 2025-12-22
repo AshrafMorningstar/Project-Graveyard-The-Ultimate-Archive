@@ -1,0 +1,18 @@
+/*
+ * -----------------------------------------------------------------------------
+ * @author      Ashraf Morningstar
+ * @github      https://github.com/AshrafMorningstar
+ * @repository  Project Graveyard - The Ultimate Archive
+ * @quote       "Code that defines the future. Designed to inspire."
+ * -----------------------------------------------------------------------------
+*/
+
+/**
+ * @author Ashraf Morningstar
+ * @link https://github.com/AshrafMorningstar
+ * @description Premium Viral Deployment
+ * @design_status Premium_Pro_Max
+ */
+
+/* Ambient Landing - Ashraf Morningstar - https://github.com/AshrafMorningstar */
+*{margin:0;padding:0;box-sizing:border-box}body{font-family:'Inter',sans-serif;min-height:100vh;background:linear-gradient(135deg,#0f2027,#203a43,#2c5364);overflow:hidden;display:flex;align-items:center;justify-content:center;color:#fff}.ambient-container{position:relative;width:100%;height:100vh;display:flex;align-items:center;justify-content:center}.floating-orb{position:absolute;border-radius:50%;filter:blur(60px);opacity:0.4}.orb-1{width:400px;height:400px;background:radial-gradient(circle,#667eea,transparent);animation:float1 18s ease-in-out infinite;top:10%;left:10%}.orb-2{width:350px;height:350px;background:radial-gradient(circle,#f093fb,transparent);animation:float2 20s ease-in-out infinite;bottom:15%;right:15%}.orb-3{width:300px;height:300px;background:radial-gradient(circle,#4facfe,transparent);animation:float3 16s ease-in-out infinite;top:50%;left:50%;transform:translate(-50%,-50%)}@keyframes float1{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(30px,-30px) scale(1.1)}}@keyframes float2{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(-40px,20px) scale(1.15)}}@keyframes float3{0%,100%{transform:translate(-50%,-50%) scale(1)}50%{transform:translate(calc(-50% + 20px),calc(-50% - 20px)) scale(1.08)}}.content{position:relative;z-index:10;text-align:center;max-width:800px;padding:2rem}.headline{font-family:'Playfair Display',serif;font-size:clamp(2.5rem,6vw,5rem);font-weight:700;margin-bottom:1.5rem;line-height:1.2;animation:breathe 12s ease-in-out infinite}@keyframes breathe{0%,100%{opacity:0.95;transform:scale(1)}50%{opacity:1;transform:scale(1.02)}}.subheading{font-size:clamp(1.2rem,3vw,1.8rem);font-weight:300;margin-bottom:2rem;opacity:0.9;animation:breathe 14s ease-in-out infinite 1s}.statement{font-size:clamp(1rem,2vw,1.3rem);font-weight:300;opacity:0.7;animation:breathe 16s ease-in-out infinite 2s}.signature{position:fixed;bottom:2rem;left:50%;transform:translateX(-50%);z-index:100}.signature a{color:rgba(255,255,255,0.6);text-decoration:none;font-size:0.9rem;transition:color 0.3s}.signature a:hover{color:#fff}@media(prefers-reduced-motion:reduce){*{animation:none!important}}

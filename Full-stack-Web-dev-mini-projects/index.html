@@ -1,0 +1,3292 @@
+<!--
+ -----------------------------------------------------------------------------
+ @author      Ashraf Morningstar
+ @github      https://github.com/AshrafMorningstar
+ @repository  Project Graveyard - The Ultimate Archive
+ @quote       "Code that defines the future. Designed to inspire."
+ -----------------------------------------------------------------------------
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Ashraf Morningstar">
+    <title>200+ Web Development Mini Projects - Ashraf Morningstar</title>
+    <meta name="description" content="A massive collection of 200+ fully functional, premium web development mini-projects by Ashraf Morningstar.">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #6366f1;
+            --secondary: #8b5cf6;
+            --dark: #0f172a;
+            --light: #f8fafc;
+            --surface: #1e293b;
+            --text-main: #f1f5f9;
+            --text-muted: #94a3b8;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Outfit', sans-serif;
+            background-color: var(--dark);
+            color: var(--text-main);
+            min-height: 100vh;
+        }
+        
+        .hero {
+            background: linear-gradient(135deg, #312e81 0%, #4c1d95 100%);
+            padding: 4rem 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 50% 50%, rgba(99, 102, 241, 0.15) 0%, transparent 50%);
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 10;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            background: linear-gradient(to right, #818cf8, #c4b5fd);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .hero p {
+            font-size: 1.25rem;
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+        }
+        
+        .stats-bar {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin-bottom: 2rem;
+        }
+        
+        .stat-item {
+            text-align: center;
+        }
+        
+        .stat-value {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--text-main);
+        }
+        
+        .stat-label {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .category-section {
+            margin-bottom: 4rem;
+        }
+        
+        .category-title {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            text-transform: capitalize;
+            color: var(--text-main);
+            border-bottom: 1px solid rgba(148, 163, 184, 0.2);
+            padding-bottom: 0.5rem;
+        }
+        
+        .count-badge {
+            background: rgba(99, 102, 241, 0.2);
+            color: #818cf8;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+        
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .project-card {
+            background: var(--surface);
+            border: 1px solid rgba(148, 163, 184, 0.1);
+            border-radius: 16px;
+            padding: 1.5rem;
+            text-decoration: none;
+            color: var(--text-main);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary);
+            box-shadow: 0 10px 30px -10px rgba(99, 102, 241, 0.3);
+        }
+        
+        .card-icon {
+            font-size: 1.5rem;
+            background: rgba(99, 102, 241, 0.1);
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 12px;
+        }
+        
+        .card-content h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.25rem;
+        }
+        
+        .card-content p {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+        
+        .card-arrow {
+            margin-left: auto;
+            color: var(--primary);
+            opacity: 0;
+            transform: translateX(-10px);
+            transition: all 0.3s ease;
+        }
+        
+        .project-card:hover .card-arrow {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        
+        footer {
+            background: var(--surface);
+            text-align: center;
+            padding: 3rem;
+            margin-top: 4rem;
+            border-top: 1px solid rgba(148, 163, 184, 0.1);
+        }
+        
+        .btn-github {
+            display: inline-block;
+            background: white;
+            color: var(--dark);
+            padding: 0.75rem 1.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 1rem;
+            transition: transform 0.2s;
+        }
+        
+        .btn-github:hover {
+            transform: scale(1.05);
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            .steps-bar { flex-direction: column; gap: 1rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="hero">
+        <div class="hero-content">
+            <h1>200+ Web Mini Projects</h1>
+            <p>A massive collection of fully functional, premium web applications by Ashraf Morningstar</p>
+            
+            <div class="stats-bar">
+                <div class="stat-item">
+                    <div class="stat-value">260+</div>
+                    <div class="stat-label">Projects</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value">15+</div>
+                    <div class="stat-label">Categories</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value">100%</div>
+                    <div class="stat-label">Open Source</div>
+                </div>
+            </div>
+            
+            <a href="https://github.com/AshrafMorningstar" class="btn-github" target="_blank">View on GitHub</a>
+        </div>
+    </header>
+
+    <main class="container">
+        
+        <div class="category-section">
+            <h2 class="category-title">API & Data Applications <span class="count-badge">6</span></h2>
+            <div class="projects-grid">
+        
+                <a href="API & Data Applications/Dictionary/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Dictionary</h3>
+                        <p>Premium Dictionary application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="API & Data Applications/Emoji-Search-App/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Emoji Search App</h3>
+                        <p>Premium Emoji Search App application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="API & Data Applications/GitHub-Profile-Finder/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>GitHub Profile Finder</h3>
+                        <p>Premium GitHub Profile Finder application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="API & Data Applications/Movie-Search-App/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Movie Search App</h3>
+                        <p>Premium Movie Search App application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="API & Data Applications/News-App/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>News App</h3>
+                        <p>Premium News App application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="API & Data Applications/Weather-App/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Weather App</h3>
+                        <p>Premium Weather App application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+            </div>
+        </div>
+        
+        <div class="category-section">
+            <h2 class="category-title">API Data Apps <span class="count-badge">16</span></h2>
+            <div class="projects-grid">
+        
+                <a href="API-Data-Apps/Book-Search/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Book Search</h3>
+                        <p>Premium Book Search application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="API-Data-Apps/Breaking-Bad-Characters/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Breaking Bad Characters</h3>
+                        <p>Premium Breaking Bad Characters application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="API-Data-Apps/Corona-Tracker/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Corona Tracker</h3>
+                        <p>Premium Corona Tracker application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="API-Data-Apps/Country-Info-App/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Country Info App</h3>
+                        <p>Premium Country Info App application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="API-Data-Apps/Cryptocurrency-Tracker/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Cryptocurrency Tracker</h3>
+                        <p>Premium Cryptocurrency Tracker application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="API-Data-Apps/Dictionary-App/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Dictionary App</h3>
+                        <p>Premium Dictionary App application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="API-Data-Apps/Emoji-Search/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Emoji Search</h3>
+                        <p>Premium Emoji Search application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="API-Data-Apps/GitHub-Profile-Finder/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>GitHub Profile Finder</h3>
+                        <p>Premium GitHub Profile Finder application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="API-Data-Apps/IP-Address-Finder/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>IP Address Finder</h3>
+                        <p>Premium IP Address Finder application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="API-Data-Apps/Movie-Search/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Movie Search</h3>
+                        <p>Premium Movie Search application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="API-Data-Apps/Movie-Website/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Movie Website</h3>
+                        <p>Premium Movie Website application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="API-Data-Apps/News-App/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>News App</h3>
+                        <p>Premium News App application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="API-Data-Apps/React-Movie-App/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>React Movie App</h3>
+                        <p>Premium React Movie App application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="API-Data-Apps/Recipe-Finder/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Recipe Finder</h3>
+                        <p>Premium Recipe Finder application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="API-Data-Apps/Stock-Market-Tracker/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Stock Market Tracker</h3>
+                        <p>Premium Stock Market Tracker application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="API-Data-Apps/Weather-App/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Weather App</h3>
+                        <p>Premium Weather App application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+            </div>
+        </div>
+        
+        <div class="category-section">
+            <h2 class="category-title">Animation Effects <span class="count-badge">15</span></h2>
+            <div class="projects-grid">
+        
+                <a href="Animation-Effects/3D-Card-Flip/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>3D Card Flip</h3>
+                        <p>Premium 3D Card Flip application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Animation-Effects/Animated-Car/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Animated Car</h3>
+                        <p>Premium Animated Car application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Animation-Effects/Battery-Indicator/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Battery Indicator</h3>
+                        <p>Premium Battery Indicator application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Animation-Effects/Bouncing-Balls/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Bouncing Balls</h3>
+                        <p>Premium Bouncing Balls application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Animation-Effects/CSS-Loading/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>CSS Loading</h3>
+                        <p>Premium CSS Loading application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Animation-Effects/Expand-Button/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Expand Button</h3>
+                        <p>Premium Expand Button application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Animation-Effects/Like-Animation/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Like Animation</h3>
+                        <p>Premium Like Animation application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Animation-Effects/Morphing-Shapes/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Morphing Shapes</h3>
+                        <p>Premium Morphing Shapes application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Animation-Effects/Neon-Light/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Neon Light</h3>
+                        <p>Premium Neon Light application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Animation-Effects/Parallax-Scrolling/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Parallax Scrolling</h3>
+                        <p>Premium Parallax Scrolling application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Animation-Effects/Particle-Effects/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Particle Effects</h3>
+                        <p>Premium Particle Effects application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Animation-Effects/Rainbow-Animation/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Rainbow Animation</h3>
+                        <p>Premium Rainbow Animation application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Animation-Effects/Scroll-Animations/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Scroll Animations</h3>
+                        <p>Premium Scroll Animations application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Animation-Effects/Vertical-Slider/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Vertical Slider</h3>
+                        <p>Premium Vertical Slider application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Animation-Effects/Wavy-Loader/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Wavy Loader</h3>
+                        <p>Premium Wavy Loader application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+            </div>
+        </div>
+        
+        <div class="category-section">
+            <h2 class="category-title">CSS Recreations <span class="count-badge">10</span></h2>
+            <div class="projects-grid">
+        
+                <a href="CSS-Recreations/Amazon-Logo-CSS/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Amazon Logo CSS</h3>
+                        <p>Premium Amazon Logo CSS application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="CSS-Recreations/Apple-Logo-CSS/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Apple Logo CSS</h3>
+                        <p>Premium Apple Logo CSS application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="CSS-Recreations/Chrome-Logo-CSS/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Chrome Logo CSS</h3>
+                        <p>Premium Chrome Logo CSS application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="CSS-Recreations/Facebook-Logo-CSS/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Facebook Logo CSS</h3>
+                        <p>Premium Facebook Logo CSS application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="CSS-Recreations/Google-Logo-CSS/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Google Logo CSS</h3>
+                        <p>Premium Google Logo CSS application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="CSS-Recreations/Instagram-Logo-CSS/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Instagram Logo CSS</h3>
+                        <p>Premium Instagram Logo CSS application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="CSS-Recreations/Microsoft-Logo-CSS/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Microsoft Logo CSS</h3>
+                        <p>Premium Microsoft Logo CSS application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="CSS-Recreations/Netflix-Logo-CSS/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Netflix Logo CSS</h3>
+                        <p>Premium Netflix Logo CSS application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="CSS-Recreations/Twitter-Logo-CSS/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Twitter Logo CSS</h3>
+                        <p>Premium Twitter Logo CSS application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="CSS-Recreations/YouTube-Logo-CSS/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>YouTube Logo CSS</h3>
+                        <p>Premium YouTube Logo CSS application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+            </div>
+        </div>
+        
+        <div class="category-section">
+            <h2 class="category-title">Calculators & Converters <span class="count-badge">12</span></h2>
+            <div class="projects-grid">
+        
+                <a href="Calculators & Converters/Age-Calculator/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Age Calculator</h3>
+                        <p>Premium Age Calculator application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Calculators & Converters/BMI-Calculator/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>BMI Calculator</h3>
+                        <p>Premium BMI Calculator application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Calculators & Converters/Compound-Interest-Calculator/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Compound Interest Calculator</h3>
+                        <p>Premium Compound Interest Calculator application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Calculators & Converters/Exchange-Rate-Calculator/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Exchange Rate Calculator</h3>
+                        <p>Premium Exchange Rate Calculator application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Calculators & Converters/Height-Converter/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Height Converter</h3>
+                        <p>Premium Height Converter application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Calculators & Converters/LCM-HCF-CALCULATOR/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>LCM HCF CALCULATOR</h3>
+                        <p>Premium LCM HCF CALCULATOR application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Calculators & Converters/Loan-Calculator/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Loan Calculator</h3>
+                        <p>Premium Loan Calculator application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Calculators & Converters/Simple-Calculator/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Simple Calculator</h3>
+                        <p>Premium Simple Calculator application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Calculators & Converters/Temperature-Convertor/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Temperature Convertor</h3>
+                        <p>Premium Temperature Convertor application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Calculators & Converters/Tip-Calculator/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Tip Calculator</h3>
+                        <p>Premium Tip Calculator application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Calculators & Converters/VAT-Calculator/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>VAT Calculator</h3>
+                        <p>Premium VAT Calculator application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Calculators & Converters/Weight-Converter/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Weight Converter</h3>
+                        <p>Premium Weight Converter application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+            </div>
+        </div>
+        
+        <div class="category-section">
+            <h2 class="category-title">Calculators Converters <span class="count-badge">18</span></h2>
+            <div class="projects-grid">
+        
+                <a href="Calculators-Converters/Age-Calculator/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Age Calculator</h3>
+                        <p>Premium Age Calculator application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Calculators-Converters/BMI-Calculator/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>BMI Calculator</h3>
+                        <p>Premium BMI Calculator application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Calculators-Converters/Calorie-Calculator/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Calorie Calculator</h3>
+                        <p>Premium Calorie Calculator application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Calculators-Converters/Compound-Interest-Calculator/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Compound Interest Calculator</h3>
+                        <p>Premium Compound Interest Calculator application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Calculators-Converters/Discount-Calculator/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Discount Calculator</h3>
+                        <p>Premium Discount Calculator application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Calculators-Converters/Exchange-Rate-Calculator/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Exchange Rate Calculator</h3>
+                        <p>Premium Exchange Rate Calculator application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Calculators-Converters/GPA-Calculator/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>GPA Calculator</h3>
+                        <p>Premium GPA Calculator application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Calculators-Converters/Height-Converter/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Height Converter</h3>
+                        <p>Premium Height Converter application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Calculators-Converters/LCM-HCF-Calculator/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>LCM HCF Calculator</h3>
+                        <p>Premium LCM HCF Calculator application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Calculators-Converters/Loan-Calculator/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Loan Calculator</h3>
+                        <p>Premium Loan Calculator application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Calculators-Converters/Mortgage-Calculator/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Mortgage Calculator</h3>
+                        <p>Premium Mortgage Calculator application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Calculators-Converters/Percentage-Calculator/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Percentage Calculator</h3>
+                        <p>Premium Percentage Calculator application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Calculators-Converters/Simple-Calculator/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Simple Calculator</h3>
+                        <p>Premium Simple Calculator application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Calculators-Converters/Temperature-Converter/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Temperature Converter</h3>
+                        <p>Premium Temperature Converter application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Calculators-Converters/Time-Zone-Converter/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Time Zone Converter</h3>
+                        <p>Premium Time Zone Converter application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Calculators-Converters/Tip-Calculator/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Tip Calculator</h3>
+                        <p>Premium Tip Calculator application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Calculators-Converters/VAT-Calculator/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>VAT Calculator</h3>
+                        <p>Premium VAT Calculator application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Calculators-Converters/Weight-Converter/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Weight Converter</h3>
+                        <p>Premium Weight Converter application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+            </div>
+        </div>
+        
+        <div class="category-section">
+            <h2 class="category-title">Clones & Recreations <span class="count-badge">5</span></h2>
+            <div class="projects-grid">
+        
+                <a href="Clones & Recreations/Google-Clone/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Google Clone</h3>
+                        <p>Premium Google Clone application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Clones & Recreations/Instagram-Clone/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Instagram Clone</h3>
+                        <p>Premium Instagram Clone application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Clones & Recreations/Netflix-Clone/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Netflix Clone</h3>
+                        <p>Premium Netflix Clone application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Clones & Recreations/Spotify-Clone/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Spotify Clone</h3>
+                        <p>Premium Spotify Clone application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Clones & Recreations/YouTube-Clone/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>YouTube Clone</h3>
+                        <p>Premium YouTube Clone application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+            </div>
+        </div>
+        
+        <div class="category-section">
+            <h2 class="category-title">Clones Recreations <span class="count-badge">16</span></h2>
+            <div class="projects-grid">
+        
+                <a href="Clones-Recreations/Airbnb-Clone/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Airbnb Clone</h3>
+                        <p>Premium Airbnb Clone application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Clones-Recreations/Amazon-Prime-Clone/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Amazon Prime Clone</h3>
+                        <p>Premium Amazon Prime Clone application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Clones-Recreations/Facebook-Clone/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Facebook Clone</h3>
+                        <p>Premium Facebook Clone application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Clones-Recreations/Google-Clone/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Google Clone</h3>
+                        <p>Premium Google Clone application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Clones-Recreations/Instagram-Clone/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Instagram Clone</h3>
+                        <p>Premium Instagram Clone application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Clones-Recreations/Instagram-Login-Clone/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Instagram Login Clone</h3>
+                        <p>Premium Instagram Login Clone application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Clones-Recreations/Jira-Clone/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Jira Clone</h3>
+                        <p>Premium Jira Clone application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Clones-Recreations/LinkedIn-Clone/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>LinkedIn Clone</h3>
+                        <p>Premium LinkedIn Clone application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Clones-Recreations/Netflix-Clone/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Netflix Clone</h3>
+                        <p>Premium Netflix Clone application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Clones-Recreations/Pinterest-Clone/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Pinterest Clone</h3>
+                        <p>Premium Pinterest Clone application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Clones-Recreations/Spotify-Clone/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Spotify Clone</h3>
+                        <p>Premium Spotify Clone application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Clones-Recreations/Tindog/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Tindog</h3>
+                        <p>Premium Tindog application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Clones-Recreations/Trello-Clone/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Trello Clone</h3>
+                        <p>Premium Trello Clone application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Clones-Recreations/Twitter-Clone/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Twitter Clone</h3>
+                        <p>Premium Twitter Clone application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Clones-Recreations/Uber-Clone/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Uber Clone</h3>
+                        <p>Premium Uber Clone application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Clones-Recreations/YouTube-Clone/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>YouTube Clone</h3>
+                        <p>Premium YouTube Clone application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+            </div>
+        </div>
+        
+        <div class="category-section">
+            <h2 class="category-title">Educational Quiz <span class="count-badge">12</span></h2>
+            <div class="projects-grid">
+        
+                <a href="Educational-Quiz/Code-Playground/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Code Playground</h3>
+                        <p>Premium Code Playground application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Educational-Quiz/Flashcard-App/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Flashcard App</h3>
+                        <p>Premium Flashcard App application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Educational-Quiz/JavaScript-Docs/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>JavaScript Docs</h3>
+                        <p>Premium JavaScript Docs application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Educational-Quiz/Language-Learning/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Language Learning</h3>
+                        <p>Premium Language Learning application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Educational-Quiz/Math-Learning/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Math Learning</h3>
+                        <p>Premium Math Learning application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Educational-Quiz/Online-Quiz-Portal/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Online Quiz Portal</h3>
+                        <p>Premium Online Quiz Portal application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Educational-Quiz/Product-Landing/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Product Landing</h3>
+                        <p>Premium Product Landing application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Educational-Quiz/Quiz-App/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Quiz App</h3>
+                        <p>Premium Quiz App application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Educational-Quiz/Quiz-App-2/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Quiz App 2</h3>
+                        <p>Premium Quiz App 2 application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Educational-Quiz/Study-Timer/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Study Timer</h3>
+                        <p>Premium Study Timer application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Educational-Quiz/Tribute-Page/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Tribute Page</h3>
+                        <p>Premium Tribute Page application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Educational-Quiz/Typing-Tutor/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Typing Tutor</h3>
+                        <p>Premium Typing Tutor application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+            </div>
+        </div>
+        
+        <div class="category-section">
+            <h2 class="category-title">Forms & Authentication <span class="count-badge">4</span></h2>
+            <div class="projects-grid">
+        
+                <a href="Forms & Authentication/Contact-Form/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Contact Form</h3>
+                        <p>Premium Contact Form application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Forms & Authentication/Form-Validation/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Form Validation</h3>
+                        <p>Premium Form Validation application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Forms & Authentication/Glassmorphism-Form/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Glassmorphism Form</h3>
+                        <p>Premium Glassmorphism Form application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Forms & Authentication/Login-Page/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Login Page</h3>
+                        <p>Premium Login Page application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+            </div>
+        </div>
+        
+        <div class="category-section">
+            <h2 class="category-title">Forms Authentication <span class="count-badge">13</span></h2>
+            <div class="projects-grid">
+        
+                <a href="Forms-Authentication/Auth-Page/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Auth Page</h3>
+                        <p>Premium Auth Page application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Forms-Authentication/Booking-Form/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Booking Form</h3>
+                        <p>Premium Booking Form application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Forms-Authentication/Contact-Form/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Contact Form</h3>
+                        <p>Premium Contact Form application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Forms-Authentication/Feedback-Form/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Feedback Form</h3>
+                        <p>Premium Feedback Form application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Forms-Authentication/Form-Validation/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Form Validation</h3>
+                        <p>Premium Form Validation application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Forms-Authentication/Glassmorphism-Form/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Glassmorphism Form</h3>
+                        <p>Premium Glassmorphism Form application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Forms-Authentication/Good-Vibes-Form/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Good Vibes Form</h3>
+                        <p>Premium Good Vibes Form application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Forms-Authentication/Login-Page/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Login Page</h3>
+                        <p>Premium Login Page application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Forms-Authentication/Multi-Step-Form/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Multi Step Form</h3>
+                        <p>Premium Multi Step Form application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Forms-Authentication/Newsletter-Signup/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Newsletter Signup</h3>
+                        <p>Premium Newsletter Signup application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Forms-Authentication/Payment-Form/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Payment Form</h3>
+                        <p>Premium Payment Form application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Forms-Authentication/Registration-Form/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Registration Form</h3>
+                        <p>Premium Registration Form application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Forms-Authentication/Survey-Form/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Survey Form</h3>
+                        <p>Premium Survey Form application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+            </div>
+        </div>
+        
+        <div class="category-section">
+            <h2 class="category-title">Games <span class="count-badge">28</span></h2>
+            <div class="projects-grid">
+        
+                <a href="Games/2048-Game/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>2048 Game</h3>
+                        <p>Premium 2048 Game application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Games/Blackjack-Game/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Blackjack Game</h3>
+                        <p>Premium Blackjack Game application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Games/Bottle-Flip-Game/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Bottle Flip Game</h3>
+                        <p>Premium Bottle Flip Game application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Games/Breakout-Game/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Breakout Game</h3>
+                        <p>Premium Breakout Game application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Games/Chess-Game/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Chess Game</h3>
+                        <p>Premium Chess Game application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Games/Color-Guessing-Game/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Color Guessing Game</h3>
+                        <p>Premium Color Guessing Game application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Games/Connect-Four/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Connect Four</h3>
+                        <p>Premium Connect Four application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Games/ConnectFour/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>ConnectFour</h3>
+                        <p>Premium ConnectFour application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Games/Crossword-Puzzle/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Crossword Puzzle</h3>
+                        <p>Premium Crossword Puzzle application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Games/Dice-Game/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Dice Game</h3>
+                        <p>Premium Dice Game application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Games/Flappy-Bird-Clone/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Flappy Bird Clone</h3>
+                        <p>Premium Flappy Bird Clone application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Games/Game-Ping-Pong/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Game Ping Pong</h3>
+                        <p>Premium Game Ping Pong application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Games/Guess-My-Number/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Guess My Number</h3>
+                        <p>Premium Guess My Number application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Games/Hangman-Game/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Hangman Game</h3>
+                        <p>Premium Hangman Game application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Games/Maths-Quiz-Game/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Maths Quiz Game</h3>
+                        <p>Premium Maths Quiz Game application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Games/Memory-Card-Game/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Memory Card Game</h3>
+                        <p>Premium Memory Card Game application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Games/Mole-Whacking-Game/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Mole Whacking Game</h3>
+                        <p>Premium Mole Whacking Game application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Games/Pac-Man-Clone/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Pac Man Clone</h3>
+                        <p>Premium Pac Man Clone application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Games/Ping-Pong/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Ping Pong</h3>
+                        <p>Premium Ping Pong application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Games/Rock-Paper-Scissors/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Rock Paper Scissors</h3>
+                        <p>Premium Rock Paper Scissors application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Games/Simon-Game/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Simon Game</h3>
+                        <p>Premium Simon Game application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Games/Snake-Game/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Snake Game</h3>
+                        <p>Premium Snake Game application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Games/Space-Invaders/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Space Invaders</h3>
+                        <p>Premium Space Invaders application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Games/Sudoku-Game/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Sudoku Game</h3>
+                        <p>Premium Sudoku Game application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Games/Tic-Tac-Toe/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Tic Tac Toe</h3>
+                        <p>Premium Tic Tac Toe application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Games/Tic-Tac-Toe-Game/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Tic Tac Toe Game</h3>
+                        <p>Premium Tic Tac Toe Game application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Games/Trivia-Quiz/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Trivia Quiz</h3>
+                        <p>Premium Trivia Quiz application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Games/Word-Search/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Word Search</h3>
+                        <p>Premium Word Search application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+            </div>
+        </div>
+        
+        <div class="category-section">
+            <h2 class="category-title">Generators & Tools <span class="count-badge">7</span></h2>
+            <div class="projects-grid">
+        
+                <a href="Generators & Tools/Chuck-Norris-Jokes/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Chuck Norris Jokes</h3>
+                        <p>Premium Chuck Norris Jokes application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Generators & Tools/Lorem-Ipsum-Generator/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Lorem Ipsum Generator</h3>
+                        <p>Premium Lorem Ipsum Generator application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Generators & Tools/Password-Generator/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Password Generator</h3>
+                        <p>Premium Password Generator application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Generators & Tools/QR-Code-Generator/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>QR Code Generator</h3>
+                        <p>Premium QR Code Generator application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Generators & Tools/Quote-Generator/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Quote Generator</h3>
+                        <p>Premium Quote Generator application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Generators & Tools/Random-Color-Generator/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Random Color Generator</h3>
+                        <p>Premium Random Color Generator application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Generators & Tools/Random-Password-Generator/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Random Password Generator</h3>
+                        <p>Premium Random Password Generator application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+            </div>
+        </div>
+        
+        <div class="category-section">
+            <h2 class="category-title">Generators Tools <span class="count-badge">18</span></h2>
+            <div class="projects-grid">
+        
+                <a href="Generators-Tools/AI-Quote-Generator/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>AI Quote Generator</h3>
+                        <p>Premium AI Quote Generator application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Generators-Tools/Avatar-Generator/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Avatar Generator</h3>
+                        <p>Premium Avatar Generator application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Generators-Tools/Background-Generator/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Background Generator</h3>
+                        <p>Premium Background Generator application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Generators-Tools/Barcode-Generator/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Barcode Generator</h3>
+                        <p>Premium Barcode Generator application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Generators-Tools/Cat-Generator/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Cat Generator</h3>
+                        <p>Premium Cat Generator application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Generators-Tools/Chuck-Norris-Jokes/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Chuck Norris Jokes</h3>
+                        <p>Premium Chuck Norris Jokes application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Generators-Tools/Gradient-Generator/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Gradient Generator</h3>
+                        <p>Premium Gradient Generator application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Generators-Tools/Lorem-Ipsum-Generator/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Lorem Ipsum Generator</h3>
+                        <p>Premium Lorem Ipsum Generator application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Generators-Tools/Meme-Generator/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Meme Generator</h3>
+                        <p>Premium Meme Generator application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Generators-Tools/Name-Generator/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Name Generator</h3>
+                        <p>Premium Name Generator application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Generators-Tools/Password-Generator/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Password Generator</h3>
+                        <p>Premium Password Generator application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Generators-Tools/Password-Strength-Meter/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Password Strength Meter</h3>
+                        <p>Premium Password Strength Meter application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Generators-Tools/QR-Code-Generator/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>QR Code Generator</h3>
+                        <p>Premium QR Code Generator application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Generators-Tools/Quote-Generator/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Quote Generator</h3>
+                        <p>Premium Quote Generator application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Generators-Tools/Random-Color/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Random Color</h3>
+                        <p>Premium Random Color application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Generators-Tools/Random-Meal/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Random Meal</h3>
+                        <p>Premium Random Meal application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Generators-Tools/Random-Password/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Random Password</h3>
+                        <p>Premium Random Password application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Generators-Tools/UUID-Generator/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>UUID Generator</h3>
+                        <p>Premium UUID Generator application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+            </div>
+        </div>
+        
+        <div class="category-section">
+            <h2 class="category-title">Image Media <span class="count-badge">11</span></h2>
+            <div class="projects-grid">
+        
+                <a href="Image-Media/Browser-Camera/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Browser Camera</h3>
+                        <p>Premium Browser Camera application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Image-Media/Collage-Maker/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Collage Maker</h3>
+                        <p>Premium Collage Maker application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Image-Media/Color-Picker/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Color Picker</h3>
+                        <p>Premium Color Picker application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Image-Media/Image-Compressor/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Image Compressor</h3>
+                        <p>Premium Image Compressor application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Image-Media/Image-Cropper/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Image Cropper</h3>
+                        <p>Premium Image Cropper application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Image-Media/Image-Filter/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Image Filter</h3>
+                        <p>Premium Image Filter application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Image-Media/Image-Finder/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Image Finder</h3>
+                        <p>Premium Image Finder application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Image-Media/Meme-Creator/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Meme Creator</h3>
+                        <p>Premium Meme Creator application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Image-Media/Photo-Editor/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Photo Editor</h3>
+                        <p>Premium Photo Editor application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Image-Media/Screenshot-Tool/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Screenshot Tool</h3>
+                        <p>Premium Screenshot Tool application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Image-Media/Whiteboard/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Whiteboard</h3>
+                        <p>Premium Whiteboard application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+            </div>
+        </div>
+        
+        <div class="category-section">
+            <h2 class="category-title">Miscellaneous <span class="count-badge">52</span></h2>
+            <div class="projects-grid">
+        
+                <a href="Miscellaneous/Accordion-Menu/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Accordion Menu</h3>
+                        <p>Premium Accordion Menu application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Miscellaneous/Age-Verifier/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Age Verifier</h3>
+                        <p>Premium Age Verifier application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Miscellaneous/BMI-Tracker/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>BMI Tracker</h3>
+                        <p>Premium BMI Tracker application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Miscellaneous/Birthday-Letter/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Birthday Letter</h3>
+                        <p>Premium Birthday Letter application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Miscellaneous/COVID-Awareness/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>COVID Awareness</h3>
+                        <p>Premium COVID Awareness application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Miscellaneous/Chat-App/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Chat App</h3>
+                        <p>Premium Chat App application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Miscellaneous/Classifier-JS/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Classifier JS</h3>
+                        <p>Premium Classifier JS application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Miscellaneous/Classroom-Scheduler/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Classroom Scheduler</h3>
+                        <p>Premium Classroom Scheduler application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Miscellaneous/Code-Editor/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Code Editor</h3>
+                        <p>Premium Code Editor application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Miscellaneous/Color-Changer/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Color Changer</h3>
+                        <p>Premium Color Changer application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Miscellaneous/Cookie-Consent/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Cookie Consent</h3>
+                        <p>Premium Cookie Consent application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Miscellaneous/Counter-App/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Counter App</h3>
+                        <p>Premium Counter App application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Miscellaneous/Dark-Mode-Toggle/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Dark Mode Toggle</h3>
+                        <p>Premium Dark Mode Toggle application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Miscellaneous/Date-Guarantee/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Date Guarantee</h3>
+                        <p>Premium Date Guarantee application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Miscellaneous/Drag-and-Drop/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Drag and Drop</h3>
+                        <p>Premium Drag and Drop application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Miscellaneous/FAQ-App/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>FAQ App</h3>
+                        <p>Premium FAQ App application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Miscellaneous/File-Upload/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>File Upload</h3>
+                        <p>Premium File Upload application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Miscellaneous/Geography-Table/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Geography Table</h3>
+                        <p>Premium Geography Table application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Miscellaneous/Glowing-Icons/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Glowing Icons</h3>
+                        <p>Premium Glowing Icons application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Miscellaneous/Image-Slider/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Image Slider</h3>
+                        <p>Premium Image Slider application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Miscellaneous/Infinite-Scroll/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Infinite Scroll</h3>
+                        <p>Premium Infinite Scroll application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Miscellaneous/Lazy-Loading/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Lazy Loading</h3>
+                        <p>Premium Lazy Loading application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Miscellaneous/Love-Calculator/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Love Calculator</h3>
+                        <p>Premium Love Calculator application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Miscellaneous/Modal-Popup/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Modal Popup</h3>
+                        <p>Premium Modal Popup application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Miscellaneous/Museum-of-Candies/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Museum of Candies</h3>
+                        <p>Premium Museum of Candies application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Miscellaneous/Music-Player/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Music Player</h3>
+                        <p>Premium Music Player application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Miscellaneous/Online-Meal/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Online Meal</h3>
+                        <p>Premium Online Meal application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Miscellaneous/Payment-Integration/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Payment Integration</h3>
+                        <p>Premium Payment Integration application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Miscellaneous/Pricing-Component/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Pricing Component</h3>
+                        <p>Premium Pricing Component application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Miscellaneous/Progress-Bar/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Progress Bar</h3>
+                        <p>Premium Progress Bar application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Miscellaneous/Range-Slider/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Range Slider</h3>
+                        <p>Premium Range Slider application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Miscellaneous/Rating-Component/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Rating Component</h3>
+                        <p>Premium Rating Component application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Miscellaneous/Relaxer-App/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Relaxer App</h3>
+                        <p>Premium Relaxer App application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Miscellaneous/Responsive-Navbar/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Responsive Navbar</h3>
+                        <p>Premium Responsive Navbar application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Miscellaneous/Score-Keeper/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Score Keeper</h3>
+                        <p>Premium Score Keeper application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Miscellaneous/Scroll-Progress/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Scroll Progress</h3>
+                        <p>Premium Scroll Progress application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Miscellaneous/Search-Autocomplete/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Search Autocomplete</h3>
+                        <p>Premium Search Autocomplete application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Miscellaneous/Solar-System-3D/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Solar System 3D</h3>
+                        <p>Premium Solar System 3D application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Miscellaneous/Sudoku-Solver/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Sudoku Solver</h3>
+                        <p>Premium Sudoku Solver application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Miscellaneous/Tabs-Component/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Tabs Component</h3>
+                        <p>Premium Tabs Component application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Miscellaneous/Tag-Input/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Tag Input</h3>
+                        <p>Premium Tag Input application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Miscellaneous/Testimonial-Slider/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Testimonial Slider</h3>
+                        <p>Premium Testimonial Slider application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Miscellaneous/Text-to-Speech/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Text to Speech</h3>
+                        <p>Premium Text to Speech application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Miscellaneous/Toast-Notifications/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Toast Notifications</h3>
+                        <p>Premium Toast Notifications application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Miscellaneous/Typing-Champ/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Typing Champ</h3>
+                        <p>Premium Typing Champ application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Miscellaneous/Typing-Speed-Test/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Typing Speed Test</h3>
+                        <p>Premium Typing Speed Test application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Miscellaneous/URL-Shortener/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>URL Shortener</h3>
+                        <p>Premium URL Shortener application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Miscellaneous/Virtual-Keyboard/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Virtual Keyboard</h3>
+                        <p>Premium Virtual Keyboard application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Miscellaneous/Water-Reminder/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Water Reminder</h3>
+                        <p>Premium Water Reminder application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Miscellaneous/Week-Day-Predictor/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Week Day Predictor</h3>
+                        <p>Premium Week Day Predictor application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Miscellaneous/Word-Counter/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Word Counter</h3>
+                        <p>Premium Word Counter application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Miscellaneous/iCoder/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>iCoder</h3>
+                        <p>Premium iCoder application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+            </div>
+        </div>
+        
+        <div class="category-section">
+            <h2 class="category-title">Music Audio <span class="count-badge">12</span></h2>
+            <div class="projects-grid">
+        
+                <a href="Music-Audio/Audio-Visualizer/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Audio Visualizer</h3>
+                        <p>Premium Audio Visualizer application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Music-Audio/Beat-Maker/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Beat Maker</h3>
+                        <p>Premium Beat Maker application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Music-Audio/Dark-Drum-Kit/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Dark Drum Kit</h3>
+                        <p>Premium Dark Drum Kit application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Music-Audio/Drum-Beats/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Drum Beats</h3>
+                        <p>Premium Drum Beats application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Music-Audio/Drum-Kit/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Drum Kit</h3>
+                        <p>Premium Drum Kit application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Music-Audio/Guitar-Simulator/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Guitar Simulator</h3>
+                        <p>Premium Guitar Simulator application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Music-Audio/Metronome/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Metronome</h3>
+                        <p>Premium Metronome application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Music-Audio/Music-Player/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Music Player</h3>
+                        <p>Premium Music Player application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Music-Audio/Piano-Keyboard/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Piano Keyboard</h3>
+                        <p>Premium Piano Keyboard application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Music-Audio/Playlist-Manager/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Playlist Manager</h3>
+                        <p>Premium Playlist Manager application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Music-Audio/Sound-Board/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Sound Board</h3>
+                        <p>Premium Sound Board application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Music-Audio/Tabla-Player/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Tabla Player</h3>
+                        <p>Premium Tabla Player application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+            </div>
+        </div>
+        
+        <div class="category-section">
+            <h2 class="category-title">Productivity & Utilities <span class="count-badge">8</span></h2>
+            <div class="projects-grid">
+        
+                <a href="Productivity & Utilities/Clock-Stopwatch/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Clock Stopwatch</h3>
+                        <p>Premium Clock Stopwatch application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Productivity & Utilities/Countdown-Timer/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Countdown Timer</h3>
+                        <p>Premium Countdown Timer application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Productivity & Utilities/Darkmode-To-Do-List/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Darkmode To Do List</h3>
+                        <p>Premium Darkmode To Do List application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Productivity & Utilities/Digital-Clock/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Digital Clock</h3>
+                        <p>Premium Digital Clock application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Productivity & Utilities/Expense-Tracker/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Expense Tracker</h3>
+                        <p>Premium Expense Tracker application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Productivity & Utilities/Notes-Keeping-Website/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Notes Keeping Website</h3>
+                        <p>Premium Notes Keeping Website application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Productivity & Utilities/Pomodoro-Timer/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Pomodoro Timer</h3>
+                        <p>Premium Pomodoro Timer application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Productivity & Utilities/To-Do-List/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>To Do List</h3>
+                        <p>Premium To Do List application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+            </div>
+        </div>
+        
+        <div class="category-section">
+            <h2 class="category-title">Productivity Utilities <span class="count-badge">18</span></h2>
+            <div class="projects-grid">
+        
+                <a href="Productivity-Utilities/Analog-Clock/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Analog Clock</h3>
+                        <p>Premium Analog Clock application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Productivity-Utilities/Budget-Planner/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Budget Planner</h3>
+                        <p>Premium Budget Planner application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Productivity-Utilities/Calendar-App/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Calendar App</h3>
+                        <p>Premium Calendar App application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Productivity-Utilities/Countdown-Timer/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Countdown Timer</h3>
+                        <p>Premium Countdown Timer application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Productivity-Utilities/Dark-Mode-To-Do/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Dark Mode To Do</h3>
+                        <p>Premium Dark Mode To Do application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Productivity-Utilities/Digital-Clock/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Digital Clock</h3>
+                        <p>Premium Digital Clock application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Productivity-Utilities/Event-Scheduler/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Event Scheduler</h3>
+                        <p>Premium Event Scheduler application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Productivity-Utilities/Expense-Tracker/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Expense Tracker</h3>
+                        <p>Premium Expense Tracker application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Productivity-Utilities/Habit-Tracker/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Habit Tracker</h3>
+                        <p>Premium Habit Tracker application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Productivity-Utilities/Invoice-Generator/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Invoice Generator</h3>
+                        <p>Premium Invoice Generator application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Productivity-Utilities/Keep-Notes/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Keep Notes</h3>
+                        <p>Premium Keep Notes application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Productivity-Utilities/Live-Clock/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Live Clock</h3>
+                        <p>Premium Live Clock application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Productivity-Utilities/New-Year-Countdown/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>New Year Countdown</h3>
+                        <p>Premium New Year Countdown application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Productivity-Utilities/Notes-App/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Notes App</h3>
+                        <p>Premium Notes App application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Productivity-Utilities/Pomodoro-Timer/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Pomodoro Timer</h3>
+                        <p>Premium Pomodoro Timer application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Productivity-Utilities/Receipt-Maker/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Receipt Maker</h3>
+                        <p>Premium Receipt Maker application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Productivity-Utilities/Stopwatch/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Stopwatch</h3>
+                        <p>Premium Stopwatch application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Productivity-Utilities/To-Do-List/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>To Do List</h3>
+                        <p>Premium To Do List application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+            </div>
+        </div>
+        
+        <div class="category-section">
+            <h2 class="category-title">Text Data <span class="count-badge">12</span></h2>
+            <div class="projects-grid">
+        
+                <a href="Text-Data/Base64-Encoder/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Base64 Encoder</h3>
+                        <p>Premium Base64 Encoder application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Text-Data/CSV-to-JSON/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>CSV to JSON</h3>
+                        <p>Premium CSV to JSON application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Text-Data/Code-Formatter/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Code Formatter</h3>
+                        <p>Premium Code Formatter application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Text-Data/File-Zipper/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>File Zipper</h3>
+                        <p>Premium File Zipper application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Text-Data/JSON-Formatter/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>JSON Formatter</h3>
+                        <p>Premium JSON Formatter application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Text-Data/Markdown-Editor/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Markdown Editor</h3>
+                        <p>Premium Markdown Editor application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Text-Data/Palindrome-Checker/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Palindrome Checker</h3>
+                        <p>Premium Palindrome Checker application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Text-Data/Sudoku-Solver/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Sudoku Solver</h3>
+                        <p>Premium Sudoku Solver application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Text-Data/Text-Analyzer/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Text Analyzer</h3>
+                        <p>Premium Text Analyzer application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Text-Data/Text-Converter/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Text Converter</h3>
+                        <p>Premium Text Converter application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Text-Data/Text-to-Speech/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Text to Speech</h3>
+                        <p>Premium Text to Speech application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Text-Data/Word-Counter/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Word Counter</h3>
+                        <p>Premium Word Counter application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+            </div>
+        </div>
+        
+        <div class="category-section">
+            <h2 class="category-title">Website Templates <span class="count-badge">6</span></h2>
+            <div class="projects-grid">
+        
+                <a href="Website Templates/Basic-Portfolio-Website/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Basic Portfolio Website</h3>
+                        <p>Premium Basic Portfolio Website application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Website Templates/Food-Website/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Food Website</h3>
+                        <p>Premium Food Website application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Website Templates/Landing-Page-Dark-Theme/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Landing Page Dark Theme</h3>
+                        <p>Premium Landing Page Dark Theme application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Website Templates/Personal-Blog/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Personal Blog</h3>
+                        <p>Premium Personal Blog application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Website Templates/Restaurant-Website/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Restaurant Website</h3>
+                        <p>Premium Restaurant Website application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Website Templates/TravelPro/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>TravelPro</h3>
+                        <p>Premium TravelPro application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+            </div>
+        </div>
+        
+        <div class="category-section">
+            <h2 class="category-title">Website Templates <span class="count-badge">20</span></h2>
+            <div class="projects-grid">
+        
+                <a href="Website-Templates/Agency-Website/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Agency Website</h3>
+                        <p>Premium Agency Website application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Website-Templates/Architecture-Website/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Architecture Website</h3>
+                        <p>Premium Architecture Website application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Website-Templates/Art-Gallery/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Art Gallery</h3>
+                        <p>Premium Art Gallery application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Website-Templates/Band-Website/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Band Website</h3>
+                        <p>Premium Band Website application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Website-Templates/Blog-Application/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Blog Application</h3>
+                        <p>Premium Blog Application application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Website-Templates/Corporate-Website/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Corporate Website</h3>
+                        <p>Premium Corporate Website application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Website-Templates/Ecommerce-Website/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Ecommerce Website</h3>
+                        <p>Premium Ecommerce Website application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Website-Templates/Food-Website/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Food Website</h3>
+                        <p>Premium Food Website application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Website-Templates/Gym-Website/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Gym Website</h3>
+                        <p>Premium Gym Website application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Website-Templates/Landing-Page-Dark/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Landing Page Dark</h3>
+                        <p>Premium Landing Page Dark application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Website-Templates/Parallax-Website/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Parallax Website</h3>
+                        <p>Premium Parallax Website application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Website-Templates/Personal-Blog/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Personal Blog</h3>
+                        <p>Premium Personal Blog application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Website-Templates/Photography-Portfolio/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Photography Portfolio</h3>
+                        <p>Premium Photography Portfolio application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Website-Templates/Portfolio-Website/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Portfolio Website</h3>
+                        <p>Premium Portfolio Website application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Website-Templates/Restaurant-Website/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Restaurant Website</h3>
+                        <p>Premium Restaurant Website application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Website-Templates/SaaS-Landing-Page/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>SaaS Landing Page</h3>
+                        <p>Premium SaaS Landing Page application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Website-Templates/Single-Page-Portfolio/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Single Page Portfolio</h3>
+                        <p>Premium Single Page Portfolio application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Website-Templates/Sports-Website/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Sports Website</h3>
+                        <p>Premium Sports Website application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Website-Templates/Startup-Landing/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Startup Landing</h3>
+                        <p>Premium Startup Landing application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+                <a href="Website-Templates/Travel-Website/index.html" class="project-card">
+                    <div class="card-icon">✨</div>
+                    <div class="card-content">
+                        <h3>Travel Website</h3>
+                        <p>Premium Travel Website application</p>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            
+            </div>
+        </div>
+        
+    </main>
+
+    <footer>
+        <p>Created with ❤️ by <strong>Ashraf Morningstar</strong></p>
+        <p style="margin-top: 1rem; color: var(--text-muted);">
+            &copy; 2024 All Rights Reserved
+        </p>
+    </footer>
+
+</body>
+</html>
+    

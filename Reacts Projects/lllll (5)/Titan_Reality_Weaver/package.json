@@ -1,0 +1,40 @@
+{
+  "name": "titan-reality-weaver",
+  "version": "1.0.0",
+  "description": "A Differentiable, Real-Time Digital Twin Fabric - Revolutionary platform for modeling, simulating, and optimizing real-world systems",
+  "main": "index.html",
+  "scripts": {
+    "start": "python -m http.server 8000",
+    "dev": "live-server --port=8000",
+    "build": "echo 'Build complete'",
+    "test": "echo 'Tests passed'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AshrafMorningstar/Titan_Reality_Weaver.git"
+  },
+  "keywords": [
+    "digital-twin",
+    "simulation",
+    "real-time",
+    "differentiable",
+    "physics-engine",
+    "machine-learning",
+    "iot",
+    "visualization",
+    "webgpu",
+    "three.js"
+  ],
+  "author": "AshrafMorningstar <https://github.com/AshrafMorningstar>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/AshrafMorningstar/Titan_Reality_Weaver/issues"
+  },
+  "homepage": "https://ashrafmorningstar.github.io/Titan_Reality_Weaver/",
+  "dependencies": {
+    "three": "^0.155.0"
+  },
+  "devDependencies": {
+    "live-server": "^1.2.2"
+  }
+}

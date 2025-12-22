@@ -1,0 +1,3022 @@
+<!--
+ -----------------------------------------------------------------------------
+ @author      Ashraf Morningstar
+ @github      https://github.com/AshrafMorningstar
+ @repository  Project Graveyard - The Ultimate Archive
+ @quote       "Code that defines the future. Designed to inspire."
+ -----------------------------------------------------------------------------
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="200+ Premium Web Development Projects by Ashraf Morningstar">
+    <meta name="keywords" content="web development, projects, portfolio, javascript, html, css">
+    <meta name="author" content="Ashraf Morningstar">
+    <title>Premium Web Development Projects | Ashraf Morningstar</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: #333;
+        }
+        
+        .hero {
+            text-align: center;
+            padding: 4rem 2rem;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            color: white;
+        }
+        
+        .hero h1 {
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            font-weight: 800;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+        
+        .hero p {
+            font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+            opacity: 0.95;
+        }
+        
+        .stats {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+        
+        .stat {
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 800;
+        }
+        
+        .stat-label {
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+        
+        .category-title {
+            font-size: 2rem;
+            margin: 3rem 0 1.5rem;
+            color: white;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+        }
+        
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        .project-card {
+            background: white;
+            border-radius: 16px;
+            padding: 2rem;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 48px rgba(0, 0, 0, 0.15);
+        }
+        
+        .project-header h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.75rem;
+            color: #667eea;
+        }
+        
+        .project-description {
+            color: #666;
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+        
+        .project-features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .feature-tag {
+            background: #f0f0f0;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            color: #555;
+        }
+        
+        .project-actions {
+            display: flex;
+            gap: 1rem;
+        }
+        
+        .btn {
+            flex: 1;
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            text-decoration: none;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+        }
+        
+        .btn-secondary {
+            background: #f0f0f0;
+            color: #333;
+        }
+        
+        .btn-secondary:hover {
+            background: #e0e0e0;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 3rem 2rem;
+            background: rgba(0, 0, 0, 0.2);
+            color: white;
+        }
+        
+        footer a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="hero">
+        <h1>🚀 Premium Web Development Projects</h1>
+        <p>A collection of 200+ fully functional, beautifully designed web applications</p>
+        <div class="stats">
+            <div class="stat">
+                <div class="stat-number">200+</div>
+                <div class="stat-label">Projects</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number">10</div>
+                <div class="stat-label">Categories</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number">100%</div>
+                <div class="stat-label">Free & Open Source</div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="container">
+        <h2 class="category-title">Interactive Tools</h2><div class="project-grid">
+                <div class="project-card" data-category="interactive_tools">
+                    <div class="project-header">
+                        <h3>Quantum Scientific Calculator</h3>
+                    </div>
+                    <p class="project-description">Professional quantum scientific calculator with premium UI and advanced features</p>
+                    <div class="project-features">
+                        <span class="feature-tag">Scientific functions</span> <span class="feature-tag">Matrix operations</span> <span class="feature-tag">Graphing</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="projects/quantum-calculator/index.html" class="btn btn-primary">View Project</a>
+                        <a href="projects/quantum-calculator" class="btn btn-secondary">Source Code</a>
+                    </div>
+                </div>
+                
+                <div class="project-card" data-category="interactive_tools">
+                    <div class="project-header">
+                        <h3>Prismatic Color Converter Pro</h3>
+                    </div>
+                    <p class="project-description">Professional prismatic color converter pro with premium UI and advanced features</p>
+                    <div class="project-features">
+                        <span class="feature-tag">RGB/HSL/HEX</span> <span class="feature-tag">Palette generator</span> <span class="feature-tag">Accessibility</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="projects/prismatic-color-converter/index.html" class="btn btn-primary">View Project</a>
+                        <a href="projects/prismatic-color-converter" class="btn btn-secondary">Source Code</a>
+                    </div>
+                </div>
+                
+                <div class="project-card" data-category="interactive_tools">
+                    <div class="project-header">
+                        <h3>Crypto Password Forge</h3>
+                    </div>
+                    <p class="project-description">Professional crypto password forge with premium UI and advanced features</p>
+                    <div class="project-features">
+                        <span class="feature-tag">Custom rules</span> <span class="feature-tag">Strength meter</span> <span class="feature-tag">Batch generation</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="projects/crypto-password-forge/index.html" class="btn btn-primary">View Project</a>
+                        <a href="projects/crypto-password-forge" class="btn btn-secondary">Source Code</a>
+                    </div>
+                </div>
+                
+                <div class="project-card" data-category="interactive_tools">
+                    <div class="project-header">
+                        <h3>Universal Unit Nexus</h3>
+                    </div>
+                    <p class="project-description">Professional universal unit nexus with premium UI and advanced features</p>
+                    <div class="project-features">
+                        <span class="feature-tag">500+ units</span> <span class="feature-tag">Custom units</span> <span class="feature-tag">History</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="projects/universal-unit-nexus/index.html" class="btn btn-primary">View Project</a>
+                        <a href="projects/universal-unit-nexus" class="btn btn-secondary">Source Code</a>
+                    </div>
+                </div>
+                
+                <div class="project-card" data-category="interactive_tools">
+                    <div class="project-header">
+                        <h3>JSON-YAML Transformer Studio</h3>
+                    </div>
+                    <p class="project-description">Professional json-yaml transformer studio with premium UI and advanced features</p>
+                    <div class="project-features">
+                        <span class="feature-tag">JSON/YAML/XML</span> <span class="feature-tag">Validation</span> <span class="feature-tag">Beautify</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="projects/json-yaml-transformer/index.html" class="btn btn-primary">View Project</a>
+                        <a href="projects/json-yaml-transformer" class="btn btn-secondary">Source Code</a>
+                    </div>
+                </div>
+                
+                <div class="project-card" data-category="interactive_tools">
+                    <div class="project-header">
+                        <h3>QR Genesis Pro</h3>
+                    </div>
+                    <p class="project-description">Professional qr genesis pro with premium UI and advanced features</p>
+                    <div class="project-features">
+                        <span class="feature-tag">Custom designs</span> <span class="feature-tag">Logo embedding</span> <span class="feature-tag">Analytics</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="projects/qr-genesis-pro/index.html" class="btn btn-primary">View Project</a>
+                        <a href="projects/qr-genesis-pro" class="btn btn-secondary">Source Code</a>
+                    </div>
+                </div>
+                
+                <div class="project-card" data-category="interactive_tools">
+                    <div class="project-header">
+                        <h3>Markdown Live Studio</h3>
+                    </div>
+                    <p class="project-description">Professional markdown live studio with premium UI and advanced features</p>
+                    <div class="project-features">
+                        <span class="feature-tag">Live preview</span> <span class="feature-tag">Export PDF/HTML</span> <span class="feature-tag">Templates</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="projects/markdown-live-studio/index.html" class="btn btn-primary">View Project</a>
+                        <a href="projects/markdown-live-studio" class="btn btn-secondary">Source Code</a>
+                    </div>
+                </div>
+                
+                <div class="project-card" data-category="interactive_tools">
+                    <div class="project-header">
+                        <h3>Regex Pattern Laboratory</h3>
+                    </div>
+                    <p class="project-description">Professional regex pattern laboratory with premium UI and advanced features</p>
+                    <div class="project-features">
+                        <span class="feature-tag">Live testing</span> <span class="feature-tag">Pattern library</span> <span class="feature-tag">Explanation</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="projects/regex-pattern-lab/index.html" class="btn btn-primary">View Project</a>
+                        <a href="projects/regex-pattern-lab" class="btn btn-secondary">Source Code</a>
+                    </div>
+                </div>
+                
+                <div class="project-card" data-category="interactive_tools">
+                    <div class="project-header">
+                        <h3>Base64 Cipher Vault</h3>
+                    </div>
+                    <p class="project-description">Professional base64 cipher vault with premium UI and advanced features</p>
+                    <div class="project-features">
+                        <span class="feature-tag">Base64/32/16</span> <span class="feature-tag">File encoding</span> <span class="feature-tag">Encryption</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="projects/base64-cipher-vault/index.html" class="btn btn-primary">View Project</a>
+                        <a href="projects/base64-cipher-vault" class="btn btn-secondary">Source Code</a>
+                    </div>
+                </div>
+                
+                <div class="project-card" data-category="interactive_tools">
+                    <div class="project-header">
+                        <h3>Lorem Ipsum Content Forge</h3>
+                    </div>
+                    <p class="project-description">Professional lorem ipsum content forge with premium UI and advanced features</p>
+                    <div class="project-features">
+                        <span class="feature-tag">Multiple languages</span> <span class="feature-tag">Custom length</span> <span class="feature-tag">HTML/Markdown</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="projects/lorem-ipsum-forge/index.html" class="btn btn-primary">View Project</a>
+                        <a href="projects/lorem-ipsum-forge" class="btn btn-secondary">Source Code</a>
+                    </div>
+                </div>
+                
+                <div class="project-card" data-category="interactive_tools">
+                    <div class="project-header">
+                        <h3>Gradient Generator Pro</h3>
+                    </div>
+                    <p class="project-description">Professional gradient generator pro with premium UI and advanced features</p>
+                    <div class="project-features">
+                        <span class="feature-tag">CSS gradients</span> <span class="feature-tag">Export code</span> <span class="feature-tag">Presets</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="projects/gradient-generator-pro/index.html" class="btn btn-primary">View Project</a>
+                        <a href="projects/gradient-generator-pro" class="btn btn-secondary">Source Code</a>
+                    </div>
+                </div>
+                
+                <div class="project-card" data-category="interactive_tools">
+                    <div class="project-header">
+                        <h3>Image Compressor Ultra</h3>
+                    </div>
+                    <p class="project-description">Professional image compressor ultra with premium UI and advanced features</p>
+                    <div class="project-features">
+                        <span class="feature-tag">Batch compression</span> <span class="feature-tag">Quality control</span> <span class="feature-tag">Format conversion</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="projects/image-compressor-ultra/index.html" class="btn btn-primary">View Project</a>
+                        <a href="projects/image-compressor-ultra" class="btn btn-secondary">Source Code</a>
+                    </div>
+                </div>
+                
+                <div class="project-card" data-category="interactive_tools">
+                    <div class="project-header">
+                        <h3>CSS Box Shadow Studio</h3>
+                    </div>
+                    <p class="project-description">Professional css box shadow studio with premium UI and advanced features</p>
+                    <div class="project-features">
+                        <span class="feature-tag">Live preview</span> <span class="feature-tag">Multiple shadows</span> <span class="feature-tag">Code export</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="projects/css-box-shadow-studio/index.html" class="btn btn-primary">View Project</a>
+                        <a href="projects/css-box-shadow-studio" class="btn btn-secondary">Source Code</a>
+                    </div>
+                </div>
+                
+                <div class="project-card" data-category="interactive_tools">
+                    <div class="project-header">
+                        <h3>Font Pairing Genius</h3>
+                    </div>
+                    <p class="project-description">Professional font pairing genius with premium UI and advanced features</p>
+                    <div class="project-features">
+                        <span class="feature-tag">Google Fonts</span> <span class="feature-tag">AI suggestions</span> <span class="feature-tag">Preview</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="projects/font-pairing-genius/index.html" class="btn btn-primary">View Project</a>
+                        <a href="projects/font-pairing-genius" class="btn btn-secondary">Source Code</a>
+                    </div>
+                </div>
+                
+                <div class="project-card" data-category="interactive_tools">
+                    <div class="project-header">
+                        <h3>SVG Path Editor Pro</h3>
+                    </div>
+                    <p class="project-description">Professional svg path editor pro with premium UI and advanced features</p>
+                    <div class="project-features">
+                        <span class="feature-tag">Path editing</span> <span class="feature-tag">Export SVG</span> <span class="feature-tag">Animation</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="projects/svg-path-editor/index.html" class="btn btn-primary">View Project</a>
+                        <a href="projects/svg-path-editor" class="btn btn-secondary">Source Code</a>
+                    </div>
+                </div>
+                
+                <div class="project-card" data-category="interactive_tools">
+                    <div class="project-header">
+                        <h3>Cron Expression Builder</h3>
+                    </div>
+                    <p class="project-description">Professional cron expression builder with premium UI and advanced features</p>
+                    <div class="project-features">
+                        <span class="feature-tag">Visual builder</span> <span class="feature-tag">Validation</span> <span class="feature-tag">Examples</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="projects/cron-expression-builder/index.html" class="btn btn-primary">View Project</a>
+                        <a href="projects/cron-expression-builder" class="btn btn-secondary">Source Code</a>
+                    </div>
+                </div>
+                
+                <div class="project-card" data-category="interactive_tools">
+                    <div class="project-header">
+                        <h3>HTML Entity Encoder</h3>
+                    </div>
+                    <p class="project-description">Professional html entity encoder with premium UI and advanced features</p>
+                    <div class="project-features">
+                        <span class="feature-tag">Encode/Decode</span> <span class="feature-tag">Batch mode</span> <span class="feature-tag">Reference</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="projects/html-entity-encoder/index.html" class="btn btn-primary">View Project</a>
+                        <a href="projects/html-entity-encoder" class="btn btn-secondary">Source Code</a>
+                    </div>
+                </div>
+                
+                <div class="project-card" data-category="interactive_tools">
+                    <div class="project-header">
+                        <h3>CSS Minifier & Beautifier</h3>
+                    </div>
+                    <p class="project-description">Professional css minifier & beautifier with premium UI and advanced features</p>
+                    <div class="project-features">
+                        <span class="feature-tag">Minify/Beautify</span> <span class="feature-tag">Validation</span> <span class="feature-tag">Stats</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="projects/css-minifier-beautifier/index.html" class="btn btn-primary">View Project</a>
+                        <a href="projects/css-minifier-beautifier" class="btn btn-secondary">Source Code</a>
+                    </div>
+                </div>
+                
+                <div class="project-card" data-category="interactive_tools">
+                    <div class="project-header">
+                        <h3>JavaScript Obfuscator Pro</h3>
+                    </div>
+                    <p class="project-description">Professional javascript obfuscator pro with premium UI and advanced features</p>
+                    <div class="project-features">
+                        <span class="feature-tag">Obfuscation</span> <span class="feature-tag">Deobfuscation</span> <span class="feature-tag">Options</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="projects/javascript-obfuscator/index.html" class="btn btn-primary">View Project</a>
+                        <a href="projects/javascript-obfuscator" class="btn btn-secondary">Source Code</a>
+                    </div>
+                </div>
+                
+                <div class="project-card" data-category="interactive_tools">
+                    <div class="project-header">
+                        <h3>URL Shortener & Tracker</h3>
+                    </div>
+                    <p class="project-description">Professional url shortener & tracker with premium UI and advanced features</p>
+                    <div class="project-features">
+                        <span class="feature-tag">Custom short URLs</span> <span class="feature-tag">Analytics</span> <span class="feature-tag">QR codes</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="projects/url-shortener-tracker/index.html" class="btn btn-primary">View Project</a>
+                        <a href="projects/url-shortener-tracker" class="btn btn-secondary">Source Code</a>
+                    </div>
+                </div>
+                
+                <div class="project-card" data-category="interactive_tools">
+                    <div class="project-header">
+                        <h3>Meta Tag Generator Pro</h3>
+                    </div>
+                    <p class="project-description">Professional meta tag generator pro with premium UI and advanced features</p>
+                    <div class="project-features">
+                        <span class="feature-tag">SEO tags</span> <span class="feature-tag">Social media</span> <span class="feature-tag">Preview</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="projects/meta-tag-generator/index.html" class="btn btn-primary">View Project</a>
+                        <a href="projects/meta-tag-generator" class="btn btn-secondary">Source Code</a>
+                    </div>
+                </div>
+                
+                <div class="project-card" data-category="interactive_tools">
+                    <div class="project-header">
+                        <h3>Favicon Generator Studio</h3>
+                    </div>
+                    <p class="project-description">Professional favicon generator studio with premium UI and advanced features</p>
+                    <div class="project-features">
+                        <span class="feature-tag">Multiple sizes</span> <span class="feature-tag">ICO/PNG</span> <span class="feature-tag">Preview</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="projects/favicon-generator/index.html" class="btn btn-primary">View Project</a>
+                        <a href="projects/favicon-generator" class="btn btn-secondary">Source Code</a>
+                    </div>
+                </div>
+                
+                <div class="project-card" data-category="interactive_tools">
+                    <div class="project-header">
+                        <h3>Placeholder Image Generator</h3>
+                    </div>
+                    <p class="project-description">Professional placeholder image generator with premium UI and advanced features</p>
+                    <div class="project-features">
+                        <span class="feature-tag">Custom sizes</span> <span class="feature-tag">Colors</span> <span class="feature-tag">Text overlay</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="projects/placeholder-image-gen/index.html" class="btn btn-primary">View Project</a>
+                        <a href="projects/placeholder-image-gen" class="btn btn-secondary">Source Code</a>
+                    </div>
+                </div>
+                
+                <div class="project-card" data-category="interactive_tools">
+                    <div class="project-header">
+                        <h3>ASCII Art Generator</h3>
+                    </div>
+                    <p class="project-description">Professional ascii art generator with premium UI and advanced features</p>
+                    <div class="project-features">
+                        <span class="feature-tag">Image to ASCII</span> <span class="feature-tag">Custom fonts</span> <span class="feature-tag">Export</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="projects/ascii-art-generator/index.html" class="btn btn-primary">View Project</a>
+                        <a href="projects/ascii-art-generator" class="btn btn-secondary">Source Code</a>
+                    </div>
+                </div>
+                
+                <div class="project-card" data-category="interactive_tools">
+                    <div class="project-header">
+                        <h3>Morse Code Translator</h3>
+                    </div>
+                    <p class="project-description">Professional morse code translator with premium UI and advanced features</p>
+                    <div class="project-features">
+                        <span class="feature-tag">Text to Morse</span> <span class="feature-tag">Audio playback</span> <span class="feature-tag">Learning mode</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="projects/morse-code-translator/index.html" class="btn btn-primary">View Project</a>
+                        <a href="projects/morse-code-translator" class="btn btn-secondary">Source Code</a>
+                    </div>
+                </div>
+                
+                <div class="project-card" data-category="interactive_tools">
+                    <div class="project-header">
+                        <h3>Binary Converter Pro</h3>
+                    </div>
+                    <p class="project-description">Professional binary converter pro with premium UI and advanced features</p>
+                    <div class="project-features">
+                        <span class="feature-tag">Binary/Decimal/Hex</span> <span class="feature-tag">Calculations</span> <span class="feature-tag">History</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="projects/binary-converter/index.html" class="btn btn-primary">View Project</a>
+                        <a href="projects/binary-converter" class="btn btn-secondary">Source Code</a>
+                    </div>
+                </div>
+                
+                <div class="project-card" data-category="interactive_tools">
+                    <div class="project-header">
+                        <h3>World Timezone Converter</h3>
+                    </div>
+                    <p class="project-description">Professional world timezone converter with premium UI and advanced features</p>
+                    <div class="project-features">
+                        <span class="feature-tag">Multiple zones</span> <span class="feature-tag">Meeting planner</span> <span class="feature-tag">DST support</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="projects/timezone-converter/index.html" class="btn btn-primary">View Project</a>
+                        <a href="projects/timezone-converter" class="btn btn-secondary">Source Code</a>
+                    </div>
+                </div>
+                
+                <div class="project-card" data-category="interactive_tools">
+                    <div class="project-header">
+                        <h3>Age Calculator Pro</h3>
+                    </div>
+                    <p class="project-description">Professional age calculator pro with premium UI and advanced features</p>
+                    <div class="project-features">
+                        <span class="feature-tag">Precise calculations</span> <span class="feature-tag">Multiple formats</span> <span class="feature-tag">Statistics</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="projects/age-calculator-pro/index.html" class="btn btn-primary">View Project</a>
+                        <a href="projects/age-calculator-pro" class="btn btn-secondary">Source Code</a>
+                    </div>
+                </div>
+                
+                <div class="project-card" data-category="interactive_tools">
+                    <div class="project-header">
+                        <h3>Percentage Calculator Plus</h3>
+                    </div>
+                    <p class="project-description">Professional percentage calculator plus with premium UI and advanced features</p>
+                    <div class="project-features">
+                        <span class="feature-tag">Multiple operations</span> <span class="feature-tag">Visual charts</span> <span class="feature-tag">History</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="projects/percentage-calculator/index.html" class="btn btn-primary">View Project</a>
+                        <a href="projects/percentage-calculator" class="btn btn-secondary">Source Code</a>
+                    </div>
+                </div>
+                
+                <div class="project-card" data-category="interactive_tools">
+                    <div class="project-header">
+                        <h3>BMI Calculator Advanced</h3>
+                    </div>
+                    <p class="project-description">Professional bmi calculator advanced with premium UI and advanced features</p>
+                    <div class="project-features">
+                        <span class="feature-tag">BMI/BMR</span> <span class="feature-tag">Charts</span> <span class="feature-tag">Recommendations</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="projects/bmi-calculator-advanced/index.html" class="btn btn-primary">View Project</a>
+                        <a href="projects/bmi-calculator-advanced" class="btn btn-secondary">Source Code</a>
+                    </div>
+                </div>
+                </div><h2 class="category-title">Games Entertainment</h2><div class="project-grid">
+                <div class="project-card" data-category="games_entertainment">
+                    <div class="project-header">
+                        <h3>Tetris Neon Blast</h3>
+                    </div>
+                    <p class="project-description">Engaging tetris neon blast with stunning visuals and smooth gameplay</p>
+                    <div class="project-features">
+                        <span class="feature-tag">Classic mode</span> <span class="feature-tag">Speed mode</span> <span class="feature-tag">Leaderboard</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="projects/tetris-neon-blast/index.html" class="btn btn-primary">View Project</a>
+                        <a href="projects/tetris-neon-blast" class="btn btn-secondary">Source Code</a>
+                    </div>
+                </div>
+                
+                <div class="project-card" data-category="games_entertainment">
+                    <div class="project-header">
+                        <h3>Snake Quantum Edition</h3>
+                    </div>
+                    <p class="project-description">Engaging snake quantum edition with stunning visuals and smooth gameplay</p>
+                    <div class="project-features">
+                        <span class="feature-tag">Quantum portals</span> <span class="feature-tag">Power-ups</span> <span class="feature-tag">Levels</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="projects/snake-quantum-edition/index.html" class="btn btn-primary">View Project</a>
+                        <a href="projects/snake-quantum-edition" class="btn btn-secondary">Source Code</a>
+                    </div>
+                </div>
+                
+                <div class="project-card" data-category="games_entertainment">
+                    <div class="project-header">
+                        <h3>2048 Infinity Merge</h3>
+                    </div>
+                    <p class="project-description">Engaging 2048 infinity merge with stunning visuals and smooth gameplay</p>
+                    <div class="project-features">
+                        <span class="feature-tag">Infinite mode</span> <span class="feature-tag">Undo/Redo</span> <span class="feature-tag">Themes</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="projects/2048-infinity-merge/index.html" class="btn btn-primary">View Project</a>
+                        <a href="projects/2048-infinity-merge" class="btn btn-secondary">Source Code</a>
+                    </div>
+                </div>
+                
+                <div class="project-card" data-category="games_entertainment">
+                    <div class="project-header">
+                        <h3>Memory Card Master</h3>
+                    </div>
+                    <p class="project-description">Engaging memory card master with stunning visuals and smooth gameplay</p>
+                    <div class="project-features">
+                        <span class="feature-tag">Multiple themes</span> <span class="feature-tag">Difficulty levels</span> <span class="feature-tag">Timer</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="projects/memory-card-master/index.html" class="btn btn-primary">View Project</a>
+                        <a href="projects/memory-card-master" class="btn btn-secondary">Source Code</a>
+                    </div>
+                </div>
+                
+                <div class="project-card" data-category="games_entertainment">
+                    <div class="project-header">
+                        <h3>Tic-Tac-Toe Ultimate</h3>
+                    </div>
+                    <p class="project-description">Engaging tic-tac-toe ultimate with stunning visuals and smooth gameplay</p>
+                    <div class="project-features">
+                        <span class="feature-tag">AI opponent</span> <span class="feature-tag">Multiplayer</span> <span class="feature-tag">Tournament</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="projects/tic-tac-toe-ultimate/index.html" class="btn btn-primary">View Project</a>
+                        <a href="projects/tic-tac-toe-ultimate" class="btn btn-secondary">Source Code</a>
+                    </div>
+                </div>
+                
+                <div class="project-card" data-category="games_entertainment">
+                    <div class="project-header">
+                        <h3>Chess Grandmaster</h3>
+                    </div>
+                    <p class="project-description">Engaging chess grandmaster with stunning visuals and smooth gameplay</p>
+                    <div class="project-features">
+                        <span class="feature-tag">AI opponent</span> <span class="feature-tag">Multiplayer</span> <span class="feature-tag">Analysis</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="projects/chess-grandmaster/index.html" class="btn btn-primary">View Project</a>
+                        <a href="projects/chess-grandmaster" class="btn btn-secondary">Source Code</a>
+                    </div>
+                </div>
+                
+                <div class="project-card" data-category="games_entertainment">
+                    <div class="project-header">
+                        <h3>Sudoku Zen Master</h3>
+                    </div>
+                    <p class="project-description">Engaging sudoku zen master with stunning visuals and smooth gameplay</p>
+                    <div class="project-features">
+                        <span class="feature-tag">Multiple difficulties</span> <span class="feature-tag">Hints</span> <span class="feature-tag">Timer</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="projects/sudoku-zen-master/index.html" class="btn btn-primary">View Project</a>
+                        <a href="projects/sudoku-zen-master" class="btn btn-secondary">Source Code</a>
+                    </div>
+                </div>
+                
+                <div class="project-card" data-category="games_entertainment">
+                    <div class="project-header">
+                        <h3>Minesweeper Pro</h3>
+                    </div>
+                    <p class="project-description">Engaging minesweeper pro with stunning visuals and smooth gameplay</p>
+                    <div class="project-features">
+                        <span class="feature-tag">Custom sizes</span> <span class="feature-tag">Flagging</span> <span class="feature-tag">Statistics</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="projects/minesweeper-pro/index.html" class="btn btn-primary">View Project</a>
+                        <a href="projects/minesweeper-pro" class="btn btn-secondary">Source Code</a>
+                    </div>
+                </div>
+                
+                <div class="project-card" data-category="games_entertainment">
+                    <div class="project-header">
+                        <h3>Breakout Neon</h3>
+                    </div>
+                    <p class="project-description">Engaging breakout neon with stunning visuals and smooth gameplay</p>
+                    <div class="project-features">
+                        <span class="feature-tag">Power-ups</span> <span class="feature-tag">Levels</span> <span class="feature-tag">Particles</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="projects/breakout-neon/index.html" class="btn btn-primary">View Project</a>
+                        <a href="projects/breakout-neon" class="btn btn-secondary">Source Code</a>
+                    </div>
+                </div>
+                
+                <div class="project-card" data-category="games_entertainment">
+                    <div class="project-header">
+                        <h3>Pong Multiplayer</h3>
+                    </div>
+                    <p class="project-description">Engaging pong multiplayer with stunning visuals and smooth gameplay</p>
+                    <div class="project-features">
+                        <span class="feature-tag">AI/Multiplayer</span> <span class="feature-tag">Power-ups</span> <span class="feature-tag">Themes</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="projects/pong-multiplayer/index.html" class="btn btn-primary">View Project</a>
+                        <a href="projects/pong-multiplayer" class="btn btn-secondary">Source Code</a>
+                    </div>
+                </div>
+                
+                <div class="project-card" data-category="games_entertainment">
+                    <div class="project-header">
+                        <h3>Flappy Bird Remix</h3>
+                    </div>
+                    <p class="project-description">Engaging flappy bird remix with stunning visuals and smooth gameplay</p>
+                    <div class="project-features">
+                        <span class="feature-tag">Obstacles</span> <span class="feature-tag">Power-ups</span> <span class="feature-tag">Leaderboard</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="projects/flappy-bird-remix/index.html" class="btn btn-primary">View Project</a>
+                        <a href="projects/flappy-bird-remix" class="btn btn-secondary">Source Code</a>
+                    </div>
+                </div>
+                
+                <div class="project-card" data-category="games_entertainment">
+                    <div class="project-header">
+                        <h3>Space Invaders HD</h3>
+                    </div>
+                    <p class="project-description">Engaging space invaders hd with stunning visuals and smooth gameplay</p>
+                    <div class="project-features">
+                        <span class="feature-tag">Levels</span> <span class="feature-tag">Power-ups</span> <span class="feature-tag">Boss fights</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="projects/space-invaders-hd/index.html" class="btn btn-primary">View Project</a>
+                        <a href="projects/space-invaders-hd" class="btn btn-secondary">Source Code</a>
+                    </div>
+                </div>
+                
+                <div class="project-card" data-category="games_entertainment">
+                    <div class="project-header">
+                        <h3>Pac-Man Deluxe</h3>
+                    </div>
+                    <p class="project-description">Engaging pac-man deluxe with stunning visuals and smooth gameplay</p>
+                    <div class="project-features">
+                        <span class="feature-tag">Classic mode</span> <span class="feature-tag">New mazes</span> <span class="feature-tag">Ghosts AI</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="projects/pacman-deluxe/index.html" class="btn btn-primary">View Project</a>
+                        <a href="projects/pacman-deluxe" class="btn btn-secondary">Source Code</a>
+                    </div>
+                </div>
+                
+                <div class="project-card" data-category="games_entertainment">
+                    <div class="project-header">
+                        <h3>Crossword Puzzle Pro</h3>
+                    </div>
+                    <p class="project-description">Engaging crossword puzzle pro with stunning visuals and smooth gameplay</p>
+                    <div class="project-features">
+                        <span class="feature-tag">Daily puzzles</span> <span class="feature-tag">Hints</span> <span class="feature-tag">Timer</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="projects/crossword-puzzle-pro/index.html" class="btn btn-primary">View Project</a>
+                        <a href="projects/crossword-puzzle-pro" class="btn btn-secondary">Source Code</a>
+                    </div>
+                </div>
+                
+                <div class="project-card" data-category="games_entertainment">
+                    <div class="project-header">
+                        <h3>Word Search Master</h3>
+                    </div>
+                    <p class="project-description">Engaging word search master with stunning visuals and smooth gameplay</p>
+                    <div class="project-features">
+                        <span class="feature-tag">Categories</span> <span class="feature-tag">Difficulty</span> <span class="feature-tag">Timer</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="projects/word-search-master/index.html" class="btn btn-primary">View Project</a>
+                        <a href="projects/word-search-master" class="btn btn-secondary">Source Code</a>
+                    </div>
+                </div>
+                
+                <div class="project-card" data-category="games_entertainment">
+                    <div class="project-header">
+                        <h3>Hangman Ultimate</h3>
+                    </div>
+                    <p class="project-description">Engaging hangman ultimate with stunning visuals and smooth gameplay</p>
+                    <div class="project-features">
+                        <span class="feature-tag">Categories</span> <span class="feature-tag">Hints</span> <span class="feature-tag">Multiplayer</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="projects/hangman-ultimate/index.html" class="btn btn-primary">View Project</a>
+                        <a href="projects/hangman-ultimate" class="btn btn-secondary">Source Code</a>
+                    </div>
+                </div>
+                
+                <div class="project-card" data-category="games_entertainment">
+                    <div class="project-header">
+                        <h3>Trivia Quiz Master</h3>
+                    </div>
+                    <p class="project-description">Engaging trivia quiz master with stunning visuals and smooth gameplay</p>
+                    <div class="project-features">
+                        <span class="feature-tag">Categories</span> <span class="feature-tag">Difficulty</span> <span class="feature-tag">Leaderboard</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="projects/trivia-quiz-master/index.html" class="btn btn-primary">View Project</a>
+                        <a href="projects/trivia-quiz-master" class="btn btn-secondary">Source Code</a>
+                    </div>
+                </div>
+                
+                <div class="project-card" data-category="games_entertainment">
+                    <div class="project-header">
+                        <h3>Whack-a-Mole Pro</h3>
+                    </div>
+                    <p class="project-description">Engaging whack-a-mole pro with stunning visuals and smooth gameplay</p>
+                    <div class="project-features">
+                        <span class="feature-tag">Levels</span> <span class="feature-tag">Power-ups</span> <span class="feature-tag">Leaderboard</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="projects/whack-a-mole-pro/index.html" class="btn btn-primary">View Project</a>
+                        <a href="projects/whack-a-mole-pro" class="btn btn-secondary">Source Code</a>
+                    </div>
+                </div>
+                
+                <div class="project-card" data-category="games_entertainment">
+                    <div class="project-header">
+                        <h3>Simon Says Advanced</h3>
+                    </div>
+                    <p class="project-description">Engaging simon says advanced with stunning visuals and smooth gameplay</p>
+                    <div class="project-features">
+                        <span class="feature-tag">Levels</span> <span class="feature-tag">Sounds</span> <span class="feature-tag">Leaderboard</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="projects/simon-says-advanced/index.html" class="btn btn-primary">View Project</a>
+                        <a href="projects/simon-says-advanced" class="btn btn-secondary">Source Code</a>
+                    </div>
+                </div>
+                
+                <div class="project-card" data-category="games_entertainment">
+                    <div class="project-header">
+                        <h3>Rock Paper Scissors Pro</h3>
+                    </div>
+                    <p class="project-description">Engaging rock paper scissors pro with stunning visuals and smooth gameplay</p>
+                    <div class="project-features">
+                        <span class="feature-tag">AI opponent</span> <span class="feature-tag">Statistics</span> <span class="feature-tag">Tournaments</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="projects/rock-paper-scissors-pro/index.html" class="btn btn-primary">View Project</a>
+                        <a href="projects/rock-paper-scissors-pro" class="btn btn-secondary">Source Code</a>
+                    </div>
+                </div>
+                
+                <div class="project-card" data-category="games_entertainment">
+                    <div class="project-header">
+                        <h3>Connect Four Master</h3>
+                    </div>
+                    <p class="project-description">Engaging connect four master with stunning visuals and smooth gameplay</p>
+                    <div class="project-features">
+                        <span class="feature-tag">AI opponent</span> <span class="feature-tag">Multiplayer</span> <span class="feature-tag">Themes</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="projects/connect-four-master/index.html" class="btn btn-primary">View Project</a>
+                        <a href="projects/connect-four-master" class="btn btn-secondary">Source Code</a>
+                    </div>
+                </div>
+                
+                <div class="project-card" data-category="games_entertainment">
+                    <div class="project-header">
+                        <h3>Reversi Othello Pro</h3>
+                    </div>
+                    <p class="project-description">Engaging reversi othello pro with stunning visuals and smooth gameplay</p>
+                    <div class="project-features">
+                        <span class="feature-tag">AI opponent</span> <span class="feature-tag">Hints</span> <span class="feature-tag">Analysis</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="projects/reversi-othello-pro/index.html" class="btn btn-primary">View Project</a>
+                        <a href="projects/reversi-othello-pro" class="btn btn-secondary">Source Code</a>
+                    </div>
+                </div>
+                
+                <div class="project-card" data-category="games_entertainment">
+                    <div class="project-header">
+                        <h3>Blackjack Casino</h3>
+                    </div>
+                    <p class="project-description">Engaging blackjack casino with stunning visuals and smooth gameplay</p>
+                    <div class="project-features">
+                        <span class="feature-tag">Betting</span> <span class="feature-tag">Statistics</span> <span class="feature-tag">Strategies</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="projects/blackjack-casino/index.html" class="btn btn-primary">View Project</a>
+                        <a href="projects/blackjack-casino" class="btn btn-secondary">Source Code</a>
+                    </div>
+                </div>
+                
+                <div class="project-card" data-category="games_entertainment">
+                    <div class="project-header">
+                        <h3>Poker Texas Hold'em</h3>
+                    </div>
+                    <p class="project-description">Engaging poker texas hold'em with stunning visuals and smooth gameplay</p>
+                    <div class="project-features">
+                        <span class="feature-tag">AI opponents</span> <span class="feature-tag">Tournaments</span> <span class="feature-tag">Stats</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="projects/poker-texas-holdem/index.html" class="btn btn-primary">View Project</a>
+                        <a href="projects/poker-texas-holdem" class="btn btn-secondary">Source Code</a>
+                    </div>
+                </div>
+                
+                <div class="project-card" data-category="games_entertainment">
+                    <div class="project-header">
+                        <h3>Solitaire Collection</h3>
+                    </div>
+                    <p class="project-description">Engaging solitaire collection with stunning visuals and smooth gameplay</p>
+                    <div class="project-features">
+                        <span class="feature-tag">Multiple variants</span> <span class="feature-tag">Hints</span> <span class="feature-tag">Statistics</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="projects/solitaire-collection/index.html" class="btn btn-primary">View Project</a>
+                        <a href="projects/solitaire-collection" class="btn btn-secondary">Source Code</a>
+                    </div>
+                </div>
+                
+                <div class="project-card" data-category="games_entertainment">
+                    <div class="project-header">
+                        <h3>Mahjong Deluxe</h3>
+                    </div>
+                    <p class="project-description">Engaging mahjong deluxe with stunning visuals and smooth gameplay</p>
+                    <div class="project-features">
+                        <span class="feature-tag">Multiple layouts</span> <span class="feature-tag">Hints</span> <span class="feature-tag">Timer</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="projects/mahjong-deluxe/index.html" class="btn btn-primary">View Project</a>
+                        <a href="projects/mahjong-deluxe" class="btn btn-secondary">Source Code</a>
+                    </div>
+                </div>
+                
+                <div class="project-card" data-category="games_entertainment">
+                    <div class="project-header">
+                        <h3>Bubble Shooter Pro</h3>
+                    </div>
+                    <p class="project-description">Engaging bubble shooter pro with stunning visuals and smooth gameplay</p>
+                    <div class="project-features">
+                        <span class="feature-tag">Levels</span> <span class="feature-tag">Power-ups</span> <span class="feature-tag">Leaderboard</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="projects/bubble-shooter-pro/index.html" class="btn btn-primary">View Project</a>
+                        <a href="projects/bubble-shooter-pro" class="btn btn-secondary">Source Code</a>
+                    </div>
+                </div>
+                
+                <div class="project-card" data-category="games_entertainment">
+                    <div class="project-header">
+                        <h3>Match Three Saga</h3>
+                    </div>
+                    <p class="project-description">Engaging match three saga with stunning visuals and smooth gameplay</p>
+                    <div class="project-features">
+                        <span class="feature-tag">Levels</span> <span class="feature-tag">Power-ups</span> <span class="feature-tag">Combos</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="projects/match-three-saga/index.html" class="btn btn-primary">View Project</a>
+                        <a href="projects/match-three-saga" class="btn btn-secondary">Source Code</a>
+                    </div>
+                </div>
+                
+                <div class="project-card" data-category="games_entertainment">
+                    <div class="project-header">
+                        <h3>Tower Defense Pro</h3>
+                    </div>
+                    <p class="project-description">Engaging tower defense pro with stunning visuals and smooth gameplay</p>
+                    <div class="project-features">
+                        <span class="feature-tag">Towers</span> <span class="feature-tag">Upgrades</span> <span class="feature-tag">Waves</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="projects/tower-defense-pro/index.html" class="btn btn-primary">View Project</a>
+                        <a href="projects/tower-defense-pro" class="btn btn-secondary">Source Code</a>
+                    </div>
+                </div>
+                
+                <div class="project-card" data-category="games_entertainment">
+                    <div class="project-header">
+                        <h3>Platformer Adventure</h3>
+                    </div>
+                    <p class="project-description">Engaging platformer adventure with stunning visuals and smooth gameplay</p>
+                    <div class="project-features">
+                        <span class="feature-tag">Levels</span> <span class="feature-tag">Collectibles</span> <span class="feature-tag">Enemies</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="projects/platformer-adventure/index.html" class="btn btn-primary">View Project</a>
+                        <a href="projects/platformer-adventure" class="btn btn-secondary">Source Code</a>
+                    </div>
+                </div>
+                </div><h2 class="category-title">Data Visualization</h2><div class="project-grid">
+                <div class="project-card" data-category="data_visualization">
+                    <div class="project-header">
+                        <h3>Chart Master Pro</h3>
+                    </div>
+                    <p class="project-description">Professional chart master pro with interactive features and export options</p>
+                    <div class="project-features">
+                        <span class="feature-tag">Interactive</span> <span class="feature-tag">Export</span> <span class="feature-tag">Customizable</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="projects/chart-master-pro/index.html" class="btn btn-primary">View Project</a>
+                        <a href="projects/chart-master-pro" class="btn btn-secondary">Source Code</a>
+                    </div>
+                </div>
+                
+                <div class="project-card" data-category="data_visualization">
+                    <div class="project-header">
+                        <h3>Dashboard Analytics Hub</h3>
+                    </div>
+                    <p class="project-description">Professional dashboard analytics hub with interactive features and export options</p>
+                    <div class="project-features">
+                        <span class="feature-tag">Interactive</span> <span class="feature-tag">Export</span> <span class="feature-tag">Customizable</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="projects/dashboard-analytics/index.html" class="btn btn-primary">View Project</a>
+                        <a href="projects/dashboard-analytics" class="btn btn-secondary">Source Code</a>
+                    </div>
+                </div>
+                
+                <div class="project-card" data-category="data_visualization">
+                    <div class="project-header">
+                        <h3>Graph Visualizer Studio</h3>
+                    </div>
+                    <p class="project-description">Professional graph visualizer studio with interactive features and export options</p>
+                    <div class="project-features">
+                        <span class="feature-tag">Interactive</span> <span class="feature-tag">Export</span> <span class="feature-tag">Customizable</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="projects/graph-visualizer/index.html" class="btn btn-primary">View Project</a>
+                        <a href="projects/graph-visualizer" class="btn btn-secondary">Source Code</a>
+                    </div>
+                </div>
+                
+                <div class="project-card" data-category="data_visualization">
+                    <div class="project-header">
+                        <h3>Heatmap Generator Pro</h3>
+                    </div>
+                    <p class="project-description">Professional heatmap generator pro with interactive features and export options</p>
+                    <div class="project-features">
+                        <span class="feature-tag">Interactive</span> <span class="feature-tag">Export</span> <span class="feature-tag">Customizable</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="projects/heatmap-generator/index.html" class="btn btn-primary">View Project</a>
+                        <a href="projects/heatmap-generator" class="btn btn-secondary">Source Code</a>
+                    </div>
+                </div>
+                
+                <div class="project-card" data-category="data_visualization">
+                    <div class="project-header">
+                        <h3>Timeline Creator Pro</h3>
+                    </div>
+                    <p class="project-description">Professional timeline creator pro with interactive features and export options</p>
+                    <div class="project-features">
+                        <span class="feature-tag">Interactive</span> <span class="feature-tag">Export</span> <span class="feature-tag">Customizable</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="projects/timeline-creator/index.html" class="btn btn-primary">View Project</a>
+                        <a href="projects/timeline-creator" class="btn btn-secondary">Source Code</a>
+                    </div>
+                </div>
+                
+                <div class="project-card" data-category="data_visualization">
+                    <div class="project-header">
+                        <h3>Gantt Chart Pro</h3>
+                    </div>
+                    <p class="project-description">Professional gantt chart pro with interactive features and export options</p>
+                    <div class="project-features">
+                        <span class="feature-tag">Interactive</span> <span class="feature-tag">Export</span> <span class="feature-tag">Customizable</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="projects/gantt-chart-pro/index.html" class="btn btn-primary">View Project</a>
+                        <a href="projects/gantt-chart-pro" class="btn btn-secondary">Source Code</a>
+                    </div>
+                </div>
+                
+                <div class="project-card" data-category="data_visualization">
+                    <div class="project-header">
+                        <h3>Pie Chart Studio</h3>
+                    </div>
+                    <p class="project-description">Professional pie chart studio with interactive features and export options</p>
+                    <div class="project-features">
+                        <span class="feature-tag">Interactive</span> <span class="feature-tag">Export</span> <span class="feature-tag">Customizable</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="projects/pie-chart-studio/index.html" class="btn btn-primary">View Project</a>
+                        <a href="projects/pie-chart-studio" class="btn btn-secondary">Source Code</a>
+                    </div>
+                </div>
+                
+                <div class="project-card" data-category="data_visualization">
+                    <div class="project-header">
+                        <h3>Bar Graph Master</h3>
+                    </div>
+                    <p class="project-description">Professional bar graph master with interactive features and export options</p>
+                    <div class="project-features">
+                        <span class="feature-tag">Interactive</span> <span class="feature-tag">Export</span> <span class="feature-tag">Customizable</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="projects/bar-graph-master/index.html" class="btn btn-primary">View Project</a>
+                        <a href="projects/bar-graph-master" class="btn btn-secondary">Source Code</a>
+                    </div>
+                </div>
+                
+                <div class="project-card" data-category="data_visualization">
+                    <div class="project-header">
+                        <h3>Line Chart Pro</h3>
+                    </div>
+                    <p class="project-description">Professional line chart pro with interactive features and export options</p>
+                    <div class="project-features">
+                        <span class="feature-tag">Interactive</span> <span class="feature-tag">Export</span> <span class="feature-tag">Customizable</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="projects/line-chart-pro/index.html" class="btn btn-primary">View Project</a>
+                        <a href="projects/line-chart-pro" class="btn btn-secondary">Source Code</a>
+                    </div>
+                </div>
+                
+                <div class="project-card" data-category="data_visualization">
+                    <div class="project-header">
+                        <h3>Scatter Plot Studio</h3>
+                    </div>
+                    <p class="project-description">Professional scatter plot studio with interactive features and export options</p>
+                    <div class="project-features">
+                        <span class="feature-tag">Interactive</span> <span class="feature-tag">Export</span> <span class="feature-tag">Customizable</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="projects/scatter-plot-studio/index.html" class="btn btn-primary">View Project</a>
+                        <a href="projects/scatter-plot-studio" class="btn btn-secondary">Source Code</a>
+                    </div>
+                </div>
+                
+                <div class="project-card" data-category="data_visualization">
+                    <div class="project-header">
+                        <h3>Treemap Visualizer</h3>
+                    </div>
+                    <p class="project-description">Professional treemap visualizer with interactive features and export options</p>
+                    <div class="project-features">
+                        <span class="feature-tag">Interactive</span> <span class="feature-tag">Export</span> <span class="feature-tag">Customizable</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="projects/treemap-visualizer/index.html" class="btn btn-primary">View Project</a>
+                        <a href="projects/treemap-visualizer" class="btn btn-secondary">Source Code</a>
+                    </div>
+                </div>
+                
+                <div class="project-card" data-category="data_visualization">
+                    <div class="project-header">
+                        <h3>Sankey Diagram Pro</h3>
+                    </div>
+                    <p class="project-description">Professional sankey diagram pro with interactive features and export options</p>
+                    <div class="project-features">
+                        <span class="feature-tag">Interactive</span> <span class="feature-tag">Export</span> <span class="feature-tag">Customizable</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="projects/sankey-diagram-pro/index.html" class="btn btn-primary">View Project</a>
+                        <a href="projects/sankey-diagram-pro" class="btn btn-secondary">Source Code</a>
+                    </div>
+                </div>
+                
+                <div class="project-card" data-category="data_visualization">
+                    <div class="project-header">
+                        <h3>Radar Chart Studio</h3>
+                    </div>
+                    <p class="project-description">Professional radar chart studio with interactive features and export options</p>
+                    <div class="project-features">
+                        <span class="feature-tag">Interactive</span> <span class="feature-tag">Export</span> <span class="feature-tag">Customizable</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="projects/radar-chart-studio/index.html" class="btn btn-primary">View Project</a>
+                        <a href="projects/radar-chart-studio" class="btn btn-secondary">Source Code</a>
+                    </div>
+                </div>
+                
+                <div class="project-card" data-category="data_visualization">
+                    <div class="project-header">
+                        <h3>Bubble Chart Pro</h3>
+                    </div>
+                    <p class="project-description">Professional bubble chart pro with interactive features and export options</p>
+                    <div class="project-features">
+                        <span class="feature-tag">Interactive</span> <span class="feature-tag">Export</span> <span class="feature-tag">Customizable</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="projects/bubble-chart-pro/index.html" class="btn btn-primary">View Project</a>
+                        <a href="projects/bubble-chart-pro" class="btn btn-secondary">Source Code</a>
+                    </div>
+                </div>
+                
+                <div class="project-card" data-category="data_visualization">
+                    <div class="project-header">
+                        <h3>Candlestick Chart Pro</h3>
+                    </div>
+                    <p class="project-description">Professional candlestick chart pro with interactive features and export options</p>
+                    <div class="project-features">
+                        <span class="feature-tag">Interactive</span> <span class="feature-tag">Export</span> <span class="feature-tag">Customizable</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="projects/candlestick-chart/index.html" class="btn btn-primary">View Project</a>
+                        <a href="projects/candlestick-chart" class="btn btn-secondary">Source Code</a>
+                    </div>
+                </div>
+                
+                <div class="project-card" data-category="data_visualization">
+                    <div class="project-header">
+                        <h3>Waterfall Chart Studio</h3>
+                    </div>
+                    <p class="project-description">Professional waterfall chart studio with interactive features and export options</p>
+                    <div class="project-features">
+                        <span class="feature-tag">Interactive</span> <span class="feature-tag">Export</span> <span class="feature-tag">Customizable</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="projects/waterfall-chart/index.html" class="btn btn-primary">View Project</a>
+                        <a href="projects/waterfall-chart" class="btn btn-secondary">Source Code</a>
+                    </div>
+                </div>
+                
+                <div class="project-card" data-category="data_visualization">
+                    <div class="project-header">
+                        <h3>Funnel Chart Pro</h3>
+                    </div>
+                    <p class="project-description">Professional funnel chart pro with interactive features and export options</p>
+                    <div class="project-features">
+                        <span class="feature-tag">Interactive</span> <span class="feature-tag">Export</span> <span class="feature-tag">Customizable</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="projects/funnel-chart-pro/index.html" class="btn btn-primary">View Project</a>
+                        <a href="projects/funnel-chart-pro" class="btn btn-secondary">Source Code</a>
+                    </div>
+                </div>
+                
+                <div class="project-card" data-category="data_visualization">
+                    <div class="project-header">
+                        <h3>Gauge Meter Studio</h3>
+                    </div>
+                    <p class="project-description">Professional gauge meter studio with interactive features and export options</p>
+                    <div class="project-features">
+                        <span class="feature-tag">Interactive</span> <span class="feature-tag">Export</span> <span class="feature-tag">Customizable</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="projects/gauge-meter-studio/index.html" class="btn btn-primary">View Project</a>
+                        <a href="projects/gauge-meter-studio" class="btn btn-secondary">Source Code</a>
+                    </div>
+                </div>
+                
+                <div class="project-card" data-category="data_visualization">
+                    <div class="project-header">
+                        <h3>Sparkline Generator</h3>
+                    </div>
+                    <p class="project-description">Professional sparkline generator with interactive features and export options</p>
+                    <div class="project-features">
+                        <span class="feature-tag">Interactive</span> <span class="feature-tag">Export</span> <span class="feature-tag">Customizable</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="projects/sparkline-generator/index.html" class="btn btn-primary">View Project</a>
+                        <a href="projects/sparkline-generator" class="btn btn-secondary">Source Code</a>
+                    </div>
+                </div>
+                
+                <div class="project-card" data-category="data_visualization">
+                    <div class="project-header">
+                        <h3>Word Cloud Pro</h3>
+                    </div>
+                    <p class="project-description">Professional word cloud pro with interactive features and export options</p>
+                    <div class="project-features">
+                        <span class="feature-tag">Interactive</span> <span class="feature-tag">Export</span> <span class="feature-tag">Customizable</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="projects/word-cloud-pro/index.html" class="btn btn-primary">View Project</a>
+                        <a href="projects/word-cloud-pro" class="btn btn-secondary">Source Code</a>
+                    </div>
+                </div>
+                
+                <div class="project-card" data-category="data_visualization">
+                    <div class="project-header">
+                        <h3>Network Graph Studio</h3>
+                    </div>
+                    <p class="project-description">Professional network graph studio with interactive features and export options</p>
+                    <div class="project-features">
+                        <span class="feature-tag">Interactive</span> <span class="feature-tag">Export</span> <span class="feature-tag">Customizable</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="projects/network-graph-studio/index.html" class="btn btn-primary">View Project</a>
+                        <a href="projects/network-graph-studio" class="btn btn-secondary">Source Code</a>
+                    </div>
+                </div>
+                
+                <div class="project-card" data-category="data_visualization">
+                    <div class="project-header">
+                        <h3>Choropleth Map Pro</h3>
+                    </div>
+                    <p class="project-description">Professional choropleth map pro with interactive features and export options</p>
+                    <div class="project-features">
+                        <span class="feature-tag">Interactive</span> <span class="feature-tag">Export</span> <span class="feature-tag">Customizable</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="projects/choropleth-map/index.html" class="btn btn-primary">View Project</a>
+                        <a href="projects/choropleth-map" class="btn btn-secondary">Source Code</a>
+                    </div>
+                </div>
+                
+                <div class="project-card" data-category="data_visualization">
+                    <div class="project-header">
+                        <h3>Sunburst Chart Studio</h3>
+                    </div>
+                    <p class="project-description">Professional sunburst chart studio with interactive features and export options</p>
+                    <div class="project-features">
+                        <span class="feature-tag">Interactive</span> <span class="feature-tag">Export</span> <span class="feature-tag">Customizable</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="projects/sunburst-chart/index.html" class="btn btn-primary">View Project</a>
+                        <a href="projects/sunburst-chart" class="btn btn-secondary">Source Code</a>
+                    </div>
+                </div>
+                
+                <div class="project-card" data-category="data_visualization">
+                    <div class="project-header">
+                        <h3>Violin Plot Pro</h3>
+                    </div>
+                    <p class="project-description">Professional violin plot pro with interactive features and export options</p>
+                    <div class="project-features">
+                        <span class="feature-tag">Interactive</span> <span class="feature-tag">Export</span> <span class="feature-tag">Customizable</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="projects/violin-plot-pro/index.html" class="btn btn-primary">View Project</a>
+                        <a href="projects/violin-plot-pro" class="btn btn-secondary">Source Code</a>
+                    </div>
+                </div>
+                
+                <div class="project-card" data-category="data_visualization">
+                    <div class="project-header">
+                        <h3>Box Plot Studio</h3>
+                    </div>
+                    <p class="project-description">Professional box plot studio with interactive features and export options</p>
+                    <div class="project-features">
+                        <span class="feature-tag">Interactive</span> <span class="feature-tag">Export</span> <span class="feature-tag">Customizable</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="projects/box-plot-studio/index.html" class="btn btn-primary">View Project</a>
+                        <a href="projects/box-plot-studio" class="btn btn-secondary">Source Code</a>
+                    </div>
+                </div>
+                </div><h2 class="category-title">Creative Tools</h2><div class="project-grid">
+                <div class="project-card" data-category="creative_tools">
+                    <div class="project-header">
+                        <h3>Pixel Art Studio</h3>
+                    </div>
+                    <p class="project-description">Professional pixel art studio with intuitive interface and powerful features</p>
+                    <div class="project-features">
+                        <span class="feature-tag">Create</span> <span class="feature-tag">Edit</span> <span class="feature-tag">Export</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="projects/pixel-art-studio/index.html" class="btn btn-primary">View Project</a>
+                        <a href="projects/pixel-art-studio" class="btn btn-secondary">Source Code</a>
+                    </div>
+                </div>
+                
+                <div class="project-card" data-category="creative_tools">
+                    <div class="project-header">
+                        <h3>Drawing Canvas Pro</h3>
+                    </div>
+                    <p class="project-description">Professional drawing canvas pro with intuitive interface and powerful features</p>
+                    <div class="project-features">
+                        <span class="feature-tag">Create</span> <span class="feature-tag">Edit</span> <span class="feature-tag">Export</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="projects/drawing-canvas-pro/index.html" class="btn btn-primary">View Project</a>
+                        <a href="projects/drawing-canvas-pro" class="btn btn-secondary">Source Code</a>
+                    </div>
+                </div>
+                
+                <div class="project-card" data-category="creative_tools">
+                    <div class="project-header">
+                        <h3>Photo Filter Studio</h3>
+                    </div>
+                    <p class="project-description">Professional photo filter studio with intuitive interface and powerful features</p>
+                    <div class="project-features">
+                        <span class="feature-tag">Create</span> <span class="feature-tag">Edit</span> <span class="feature-tag">Export</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="projects/photo-filter-studio/index.html" class="btn btn-primary">View Project</a>
+                        <a href="projects/photo-filter-studio" class="btn btn-secondary">Source Code</a>
+                    </div>
+                </div>
+                
+                <div class="project-card" data-category="creative_tools">
+                    <div class="project-header">
+                        <h3>Meme Generator Pro</h3>
+                    </div>
+                    <p class="project-description">Professional meme generator pro with intuitive interface and powerful features</p>
+                    <div class="project-features">
+                        <span class="feature-tag">Create</span> <span class="feature-tag">Edit</span> <span class="feature-tag">Export</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="projects/meme-generator-pro/index.html" class="btn btn-primary">View Project</a>
+                        <a href="projects/meme-generator-pro" class="btn btn-secondary">Source Code</a>
+                    </div>
+                </div>
+                
+                <div class="project-card" data-category="creative_tools">
+                    <div class="project-header">
+                        <h3>GIF Maker Studio</h3>
+                    </div>
+                    <p class="project-description">Professional gif maker studio with intuitive interface and powerful features</p>
+                    <div class="project-features">
+                        <span class="feature-tag">Create</span> <span class="feature-tag">Edit</span> <span class="feature-tag">Export</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="projects/gif-maker-studio/index.html" class="btn btn-primary">View Project</a>
+                        <a href="projects/gif-maker-studio" class="btn btn-secondary">Source Code</a>
+                    </div>
+                </div>
+                
+                <div class="project-card" data-category="creative_tools">
+                    <div class="project-header">
+                        <h3>Video Thumbnail Creator</h3>
+                    </div>
+                    <p class="project-description">Professional video thumbnail creator with intuitive interface and powerful features</p>
+                    <div class="project-features">
+                        <span class="feature-tag">Create</span> <span class="feature-tag">Edit</span> <span class="feature-tag">Export</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="projects/video-thumbnail-creator/index.html" class="btn btn-primary">View Project</a>
+                        <a href="projects/video-thumbnail-creator" class="btn btn-secondary">Source Code</a>
+                    </div>
+                </div>
+                
+                <div class="project-card" data-category="creative_tools">
+                    <div class="project-header">
+                        <h3>Logo Maker Pro</h3>
+                    </div>
+                    <p class="project-description">Professional logo maker pro with intuitive interface and powerful features</p>
+                    <div class="project-features">
+                        <span class="feature-tag">Create</span> <span class="feature-tag">Edit</span> <span class="feature-tag">Export</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="projects/logo-maker-pro/index.html" class="btn btn-primary">View Project</a>
+                        <a href="projects/logo-maker-pro" class="btn btn-secondary">Source Code</a>
+                    </div>
+                </div>
+                
+                <div class="project-card" data-category="creative_tools">
+                    <div class="project-header">
+                        <h3>Banner Designer Studio</h3>
+                    </div>
+                    <p class="project-description">Professional banner designer studio with intuitive interface and powerful features</p>
+                    <div class="project-features">
+                        <span class="feature-tag">Create</span> <span class="feature-tag">Edit</span> <span class="feature-tag">Export</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="projects/banner-designer/index.html" class="btn btn-primary">View Project</a>
+                        <a href="projects/banner-designer" class="btn btn-secondary">Source Code</a>
+                    </div>
+                </div>
+                
+                <div class="project-card" data-category="creative_tools">
+                    <div class="project-header">
+                        <h3>Collage Maker Pro</h3>
+                    </div>
+                    <p class="project-description">Professional collage maker pro with intuitive interface and powerful features</p>
+                    <div class="project-features">
+                        <span class="feature-tag">Create</span> <span class="feature-tag">Edit</span> <span class="feature-tag">Export</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="projects/collage-maker-pro/index.html" class="btn btn-primary">View Project</a>
+                        <a href="projects/collage-maker-pro" class="btn btn-secondary">Source Code</a>
+                    </div>
+                </div>
+                
+                <div class="project-card" data-category="creative_tools">
+                    <div class="project-header">
+                        <h3>Background Remover Pro</h3>
+                    </div>
+                    <p class="project-description">Professional background remover pro with intuitive interface and powerful features</p>
+                    <div class="project-features">
+                        <span class="feature-tag">Create</span> <span class="feature-tag">Edit</span> <span class="feature-tag">Export</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="projects/background-remover/index.html" class="btn btn-primary">View Project</a>
+                        <a href="projects/background-remover" class="btn btn-secondary">Source Code</a>
+                    </div>
+                </div>
+                
+                <div class="project-card" data-category="creative_tools">
+                    <div class="project-header">
+                        <h3>Image Resizer Batch</h3>
+                    </div>
+                    <p class="project-description">Professional image resizer batch with intuitive interface and powerful features</p>
+                    <div class="project-features">
+                        <span class="feature-tag">Create</span> <span class="feature-tag">Edit</span> <span class="feature-tag">Export</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="projects/image-resizer-batch/index.html" class="btn btn-primary">View Project</a>
+                        <a href="projects/image-resizer-batch" class="btn btn-secondary">Source Code</a>
+                    </div>
+                </div>
+                
+                <div class="project-card" data-category="creative_tools">
+                    <div class="project-header">
+                        <h3>Watermark Generator</h3>
+                    </div>
+                    <p class="project-description">Professional watermark generator with intuitive interface and powerful features</p>
+                    <div class="project-features">
+                        <span class="feature-tag">Create</span> <span class="feature-tag">Edit</span> <span class="feature-tag">Export</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="projects/watermark-generator/index.html" class="btn btn-primary">View Project</a>
+                        <a href="projects/watermark-generator" class="btn btn-secondary">Source Code</a>
+                    </div>
+                </div>
+                
+                <div class="project-card" data-category="creative_tools">
+                    <div class="project-header">
+                        <h3>Color Palette Extractor</h3>
+                    </div>
+                    <p class="project-description">Professional color palette extractor with intuitive interface and powerful features</p>
+                    <div class="project-features">
+                        <span class="feature-tag">Create</span> <span class="feature-tag">Edit</span> <span class="feature-tag">Export</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="projects/color-palette-extractor/index.html" class="btn btn-primary">View Project</a>
+                        <a href="projects/color-palette-extractor" class="btn btn-secondary">Source Code</a>
+                    </div>
+                </div>
+                
+                <div class="project-card" data-category="creative_tools">
+                    <div class="project-header">
+                        <h3>ASCII Image Converter</h3>
+                    </div>
+                    <p class="project-description">Professional ascii image converter with intuitive interface and powerful features</p>
+                    <div class="project-features">
+                        <span class="feature-tag">Create</span> <span class="feature-tag">Edit</span> <span class="feature-tag">Export</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="projects/ascii-image-converter/index.html" class="btn btn-primary">View Project</a>
+                        <a href="projects/ascii-image-converter" class="btn btn-secondary">Source Code</a>
+                    </div>
+                </div>
+                
+                <div class="project-card" data-category="creative_tools">
+                    <div class="project-header">
+                        <h3>Sprite Sheet Generator</h3>
+                    </div>
+                    <p class="project-description">Professional sprite sheet generator with intuitive interface and powerful features</p>
+                    <div class="project-features">
+                        <span class="feature-tag">Create</span> <span class="feature-tag">Edit</span> <span class="feature-tag">Export</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="projects/sprite-sheet-generator/index.html" class="btn btn-primary">View Project</a>
+                        <a href="projects/sprite-sheet-generator" class="btn btn-secondary">Source Code</a>
+                    </div>
+                </div>
+                
+                <div class="project-card" data-category="creative_tools">
+                    <div class="project-header">
+                        <h3>Icon Designer Pro</h3>
+                    </div>
+                    <p class="project-description">Professional icon designer pro with intuitive interface and powerful features</p>
+                    <div class="project-features">
+                        <span class="feature-tag">Create</span> <span class="feature-tag">Edit</span> <span class="feature-tag">Export</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="projects/icon-designer-pro/index.html" class="btn btn-primary">View Project</a>
+                        <a href="projects/icon-designer-pro" class="btn btn-secondary">Source Code</a>
+                    </div>
+                </div>
+                
+                <div class="project-card" data-category="creative_tools">
+                    <div class="project-header">
+                        <h3>Pattern Generator Studio</h3>
+                    </div>
+                    <p class="project-description">Professional pattern generator studio with intuitive interface and powerful features</p>
+                    <div class="project-features">
+                        <span class="feature-tag">Create</span> <span class="feature-tag">Edit</span> <span class="feature-tag">Export</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="projects/pattern-generator/index.html" class="btn btn-primary">View Project</a>
+                        <a href="projects/pattern-generator" class="btn btn-secondary">Source Code</a>
+                    </div>
+                </div>
+                
+                <div class="project-card" data-category="creative_tools">
+                    <div class="project-header">
+                        <h3>Mockup Generator Pro</h3>
+                    </div>
+                    <p class="project-description">Professional mockup generator pro with intuitive interface and powerful features</p>
+                    <div class="project-features">
+                        <span class="feature-tag">Create</span> <span class="feature-tag">Edit</span> <span class="feature-tag">Export</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="projects/mockup-generator/index.html" class="btn btn-primary">View Project</a>
+                        <a href="projects/mockup-generator" class="btn btn-secondary">Source Code</a>
+                    </div>
+                </div>
+                
+                <div class="project-card" data-category="creative_tools">
+                    <div class="project-header">
+                        <h3>Certificate Maker Pro</h3>
+                    </div>
+                    <p class="project-description">Professional certificate maker pro with intuitive interface and powerful features</p>
+                    <div class="project-features">
+                        <span class="feature-tag">Create</span> <span class="feature-tag">Edit</span> <span class="feature-tag">Export</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="projects/certificate-maker/index.html" class="btn btn-primary">View Project</a>
+                        <a href="projects/certificate-maker" class="btn btn-secondary">Source Code</a>
+                    </div>
+                </div>
+                
+                <div class="project-card" data-category="creative_tools">
+                    <div class="project-header">
+                        <h3>Business Card Designer</h3>
+                    </div>
+                    <p class="project-description">Professional business card designer with intuitive interface and powerful features</p>
+                    <div class="project-features">
+                        <span class="feature-tag">Create</span> <span class="feature-tag">Edit</span> <span class="feature-tag">Export</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="projects/business-card-designer/index.html" class="btn btn-primary">View Project</a>
+                        <a href="projects/business-card-designer" class="btn btn-secondary">Source Code</a>
+                    </div>
+                </div>
+                
+                <div class="project-card" data-category="creative_tools">
+                    <div class="project-header">
+                        <h3>Poster Maker Pro</h3>
+                    </div>
+                    <p class="project-description">Professional poster maker pro with intuitive interface and powerful features</p>
+                    <div class="project-features">
+                        <span class="feature-tag">Create</span> <span class="feature-tag">Edit</span> <span class="feature-tag">Export</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="projects/poster-maker-pro/index.html" class="btn btn-primary">View Project</a>
+                        <a href="projects/poster-maker-pro" class="btn btn-secondary">Source Code</a>
+                    </div>
+                </div>
+                
+                <div class="project-card" data-category="creative_tools">
+                    <div class="project-header">
+                        <h3>Infographic Creator</h3>
+                    </div>
+                    <p class="project-description">Professional infographic creator with intuitive interface and powerful features</p>
+                    <div class="project-features">
+                        <span class="feature-tag">Create</span> <span class="feature-tag">Edit</span> <span class="feature-tag">Export</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="projects/infographic-creator/index.html" class="btn btn-primary">View Project</a>
+                        <a href="projects/infographic-creator" class="btn btn-secondary">Source Code</a>
+                    </div>
+                </div>
+                
+                <div class="project-card" data-category="creative_tools">
+                    <div class="project-header">
+                        <h3>Resume Builder Pro</h3>
+                    </div>
+                    <p class="project-description">Professional resume builder pro with intuitive interface and powerful features</p>
+                    <div class="project-features">
+                        <span class="feature-tag">Create</span> <span class="feature-tag">Edit</span> <span class="feature-tag">Export</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="projects/resume-builder-pro/index.html" class="btn btn-primary">View Project</a>
+                        <a href="projects/resume-builder-pro" class="btn btn-secondary">Source Code</a>
+                    </div>
+                </div>
+                
+                <div class="project-card" data-category="creative_tools">
+                    <div class="project-header">
+                        <h3>Presentation Maker</h3>
+                    </div>
+                    <p class="project-description">Professional presentation maker with intuitive interface and powerful features</p>
+                    <div class="project-features">
+                        <span class="feature-tag">Create</span> <span class="feature-tag">Edit</span> <span class="feature-tag">Export</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="projects/presentation-maker/index.html" class="btn btn-primary">View Project</a>
+                        <a href="projects/presentation-maker" class="btn btn-secondary">Source Code</a>
+                    </div>
+                </div>
+                
+                <div class="project-card" data-category="creative_tools">
+                    <div class="project-header">
+                        <h3>Mind Map Creator</h3>
+                    </div>
+                    <p class="project-description">Professional mind map creator with intuitive interface and powerful features</p>
+                    <div class="project-features">
+                        <span class="feature-tag">Create</span> <span class="feature-tag">Edit</span> <span class="feature-tag">Export</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="projects/mind-map-creator/index.html" class="btn btn-primary">View Project</a>
+                        <a href="projects/mind-map-creator" class="btn btn-secondary">Source Code</a>
+                    </div>
+                </div>
+                </div><h2 class="category-title">Productivity Apps</h2><div class="project-grid">
+                <div class="project-card" data-category="productivity_apps">
+                    <div class="project-header">
+                        <h3>Todo List Master</h3>
+                    </div>
+                    <p class="project-description">Powerful todo list master to boost your productivity and organization</p>
+                    <div class="project-features">
+                        <span class="feature-tag">Organize</span> <span class="feature-tag">Track</span> <span class="feature-tag">Sync</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="projects/todo-list-master/index.html" class="btn btn-primary">View Project</a>
+                        <a href="projects/todo-list-master" class="btn btn-secondary">Source Code</a>
+                    </div>
+                </div>
+                
+                <div class="project-card" data-category="productivity_apps">
+                    <div class="project-header">
+                        <h3>Note Taking Pro</h3>
+                    </div>
+                    <p class="project-description">Powerful note taking pro to boost your productivity and organization</p>
+                    <div class="project-features">
+                        <span class="feature-tag">Organize</span> <span class="feature-tag">Track</span> <span class="feature-tag">Sync</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="projects/note-taking-pro/index.html" class="btn btn-primary">View Project</a>
+                        <a href="projects/note-taking-pro" class="btn btn-secondary">Source Code</a>
+                    </div>
+                </div>
+                
+                <div class="project-card" data-category="productivity_apps">
+                    <div class="project-header">
+                        <h3>Pomodoro Timer Pro</h3>
+                    </div>
+                    <p class="project-description">Powerful pomodoro timer pro to boost your productivity and organization</p>
+                    <div class="project-features">
+                        <span class="feature-tag">Organize</span> <span class="feature-tag">Track</span> <span class="feature-tag">Sync</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="projects/pomodoro-timer-pro/index.html" class="btn btn-primary">View Project</a>
+                        <a href="projects/pomodoro-timer-pro" class="btn btn-secondary">Source Code</a>
+                    </div>
+                </div>
+                
+                <div class="project-card" data-category="productivity_apps">
+                    <div class="project-header">
+                        <h3>Habit Tracker Pro</h3>
+                    </div>
+                    <p class="project-description">Powerful habit tracker pro to boost your productivity and organization</p>
+                    <div class="project-features">
+                        <span class="feature-tag">Organize</span> <span class="feature-tag">Track</span> <span class="feature-tag">Sync</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="projects/habit-tracker-pro/index.html" class="btn btn-primary">View Project</a>
+                        <a href="projects/habit-tracker-pro" class="btn btn-secondary">Source Code</a>
+                    </div>
+                </div>
+                
+                <div class="project-card" data-category="productivity_apps">
+                    <div class="project-header">
+                        <h3>Kanban Board Pro</h3>
+                    </div>
+                    <p class="project-description">Powerful kanban board pro to boost your productivity and organization</p>
+                    <div class="project-features">
+                        <span class="feature-tag">Organize</span> <span class="feature-tag">Track</span> <span class="feature-tag">Sync</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="projects/kanban-board-pro/index.html" class="btn btn-primary">View Project</a>
+                        <a href="projects/kanban-board-pro" class="btn btn-secondary">Source Code</a>
+                    </div>
+                </div>
+                
+                <div class="project-card" data-category="productivity_apps">
+                    <div class="project-header">
+                        <h3>Calendar Planner Pro</h3>
+                    </div>
+                    <p class="project-description">Powerful calendar planner pro to boost your productivity and organization</p>
+                    <div class="project-features">
+                        <span class="feature-tag">Organize</span> <span class="feature-tag">Track</span> <span class="feature-tag">Sync</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="projects/calendar-planner/index.html" class="btn btn-primary">View Project</a>
+                        <a href="projects/calendar-planner" class="btn btn-secondary">Source Code</a>
+                    </div>
+                </div>
+                
+                <div class="project-card" data-category="productivity_apps">
+                    <div class="project-header">
+                        <h3>Reminder App Pro</h3>
+                    </div>
+                    <p class="project-description">Powerful reminder app pro to boost your productivity and organization</p>
+                    <div class="project-features">
+                        <span class="feature-tag">Organize</span> <span class="feature-tag">Track</span> <span class="feature-tag">Sync</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="projects/reminder-app-pro/index.html" class="btn btn-primary">View Project</a>
+                        <a href="projects/reminder-app-pro" class="btn btn-secondary">Source Code</a>
+                    </div>
+                </div>
+                
+                <div class="project-card" data-category="productivity_apps">
+                    <div class="project-header">
+                        <h3>Goal Tracker Pro</h3>
+                    </div>
+                    <p class="project-description">Powerful goal tracker pro to boost your productivity and organization</p>
+                    <div class="project-features">
+                        <span class="feature-tag">Organize</span> <span class="feature-tag">Track</span> <span class="feature-tag">Sync</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="projects/goal-tracker-pro/index.html" class="btn btn-primary">View Project</a>
+                        <a href="projects/goal-tracker-pro" class="btn btn-secondary">Source Code</a>
+                    </div>
+                </div>
+                
+                <div class="project-card" data-category="productivity_apps">
+                    <div class="project-header">
+                        <h3>Time Tracker Pro</h3>
+                    </div>
+                    <p class="project-description">Powerful time tracker pro to boost your productivity and organization</p>
+                    <div class="project-features">
+                        <span class="feature-tag">Organize</span> <span class="feature-tag">Track</span> <span class="feature-tag">Sync</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="projects/time-tracker-pro/index.html" class="btn btn-primary">View Project</a>
+                        <a href="projects/time-tracker-pro" class="btn btn-secondary">Source Code</a>
+                    </div>
+                </div>
+                
+                <div class="project-card" data-category="productivity_apps">
+                    <div class="project-header">
+                        <h3>Bookmark Manager Pro</h3>
+                    </div>
+                    <p class="project-description">Powerful bookmark manager pro to boost your productivity and organization</p>
+                    <div class="project-features">
+                        <span class="feature-tag">Organize</span> <span class="feature-tag">Track</span> <span class="feature-tag">Sync</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="projects/bookmark-manager/index.html" class="btn btn-primary">View Project</a>
+                        <a href="projects/bookmark-manager" class="btn btn-secondary">Source Code</a>
+                    </div>
+                </div>
+                
+                <div class="project-card" data-category="productivity_apps">
+                    <div class="project-header">
+                        <h3>Password Manager Pro</h3>
+                    </div>
+                    <p class="project-description">Powerful password manager pro to boost your productivity and organization</p>
+                    <div class="project-features">
+                        <span class="feature-tag">Organize</span> <span class="feature-tag">Track</span> <span class="feature-tag">Sync</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="projects/password-manager/index.html" class="btn btn-primary">View Project</a>
+                        <a href="projects/password-manager" class="btn btn-secondary">Source Code</a>
+                    </div>
+                </div>
+                
+                <div class="project-card" data-category="productivity_apps">
+                    <div class="project-header">
+                        <h3>Clipboard Manager Pro</h3>
+                    </div>
+                    <p class="project-description">Powerful clipboard manager pro to boost your productivity and organization</p>
+                    <div class="project-features">
+                        <span class="feature-tag">Organize</span> <span class="feature-tag">Track</span> <span class="feature-tag">Sync</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="projects/clipboard-manager/index.html" class="btn btn-primary">View Project</a>
+                        <a href="projects/clipboard-manager" class="btn btn-secondary">Source Code</a>
+                    </div>
+                </div>
+                
+                <div class="project-card" data-category="productivity_apps">
+                    <div class="project-header">
+                        <h3>Markdown Notes Pro</h3>
+                    </div>
+                    <p class="project-description">Powerful markdown notes pro to boost your productivity and organization</p>
+                    <div class="project-features">
+                        <span class="feature-tag">Organize</span> <span class="feature-tag">Track</span> <span class="feature-tag">Sync</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="projects/markdown-notes/index.html" class="btn btn-primary">View Project</a>
+                        <a href="projects/markdown-notes" class="btn btn-secondary">Source Code</a>
+                    </div>
+                </div>
+                
+                <div class="project-card" data-category="productivity_apps">
+                    <div class="project-header">
+                        <h3>Voice Recorder Pro</h3>
+                    </div>
+                    <p class="project-description">Powerful voice recorder pro to boost your productivity and organization</p>
+                    <div class="project-features">
+                        <span class="feature-tag">Organize</span> <span class="feature-tag">Track</span> <span class="feature-tag">Sync</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="projects/voice-recorder/index.html" class="btn btn-primary">View Project</a>
+                        <a href="projects/voice-recorder" class="btn btn-secondary">Source Code</a>
+                    </div>
+                </div>
+                
+                <div class="project-card" data-category="productivity_apps">
+                    <div class="project-header">
+                        <h3>Screen Recorder Pro</h3>
+                    </div>
+                    <p class="project-description">Powerful screen recorder pro to boost your productivity and organization</p>
+                    <div class="project-features">
+                        <span class="feature-tag">Organize</span> <span class="feature-tag">Track</span> <span class="feature-tag">Sync</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="projects/screen-recorder/index.html" class="btn btn-primary">View Project</a>
+                        <a href="projects/screen-recorder" class="btn btn-secondary">Source Code</a>
+                    </div>
+                </div>
+                
+                <div class="project-card" data-category="productivity_apps">
+                    <div class="project-header">
+                        <h3>PDF Tools Suite</h3>
+                    </div>
+                    <p class="project-description">Powerful pdf tools suite to boost your productivity and organization</p>
+                    <div class="project-features">
+                        <span class="feature-tag">Organize</span> <span class="feature-tag">Track</span> <span class="feature-tag">Sync</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="projects/pdf-tools-suite/index.html" class="btn btn-primary">View Project</a>
+                        <a href="projects/pdf-tools-suite" class="btn btn-secondary">Source Code</a>
+                    </div>
+                </div>
+                
+                <div class="project-card" data-category="productivity_apps">
+                    <div class="project-header">
+                        <h3>File Organizer Pro</h3>
+                    </div>
+                    <p class="project-description">Powerful file organizer pro to boost your productivity and organization</p>
+                    <div class="project-features">
+                        <span class="feature-tag">Organize</span> <span class="feature-tag">Track</span> <span class="feature-tag">Sync</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="projects/file-organizer/index.html" class="btn btn-primary">View Project</a>
+                        <a href="projects/file-organizer" class="btn btn-secondary">Source Code</a>
+                    </div>
+                </div>
+                
+                <div class="project-card" data-category="productivity_apps">
+                    <div class="project-header">
+                        <h3>Duplicate Finder Pro</h3>
+                    </div>
+                    <p class="project-description">Powerful duplicate finder pro to boost your productivity and organization</p>
+                    <div class="project-features">
+                        <span class="feature-tag">Organize</span> <span class="feature-tag">Track</span> <span class="feature-tag">Sync</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="projects/duplicate-finder/index.html" class="btn btn-primary">View Project</a>
+                        <a href="projects/duplicate-finder" class="btn btn-secondary">Source Code</a>
+                    </div>
+                </div>
+                
+                <div class="project-card" data-category="productivity_apps">
+                    <div class="project-header">
+                        <h3>Text Editor Pro</h3>
+                    </div>
+                    <p class="project-description">Powerful text editor pro to boost your productivity and organization</p>
+                    <div class="project-features">
+                        <span class="feature-tag">Organize</span> <span class="feature-tag">Track</span> <span class="feature-tag">Sync</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="projects/text-editor-pro/index.html" class="btn btn-primary">View Project</a>
+                        <a href="projects/text-editor-pro" class="btn btn-secondary">Source Code</a>
+                    </div>
+                </div>
+                
+                <div class="project-card" data-category="productivity_apps">
+                    <div class="project-header">
+                        <h3>Spreadsheet Lite</h3>
+                    </div>
+                    <p class="project-description">Powerful spreadsheet lite to boost your productivity and organization</p>
+                    <div class="project-features">
+                        <span class="feature-tag">Organize</span> <span class="feature-tag">Track</span> <span class="feature-tag">Sync</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="projects/spreadsheet-lite/index.html" class="btn btn-primary">View Project</a>
+                        <a href="projects/spreadsheet-lite" class="btn btn-secondary">Source Code</a>
+                    </div>
+                </div>
+                
+                <div class="project-card" data-category="productivity_apps">
+                    <div class="project-header">
+                        <h3>Invoice Generator Pro</h3>
+                    </div>
+                    <p class="project-description">Powerful invoice generator pro to boost your productivity and organization</p>
+                    <div class="project-features">
+                        <span class="feature-tag">Organize</span> <span class="feature-tag">Track</span> <span class="feature-tag">Sync</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="projects/invoice-generator/index.html" class="btn btn-primary">View Project</a>
+                        <a href="projects/invoice-generator" class="btn btn-secondary">Source Code</a>
+                    </div>
+                </div>
+                
+                <div class="project-card" data-category="productivity_apps">
+                    <div class="project-header">
+                        <h3>Receipt Scanner Pro</h3>
+                    </div>
+                    <p class="project-description">Powerful receipt scanner pro to boost your productivity and organization</p>
+                    <div class="project-features">
+                        <span class="feature-tag">Organize</span> <span class="feature-tag">Track</span> <span class="feature-tag">Sync</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="projects/receipt-scanner/index.html" class="btn btn-primary">View Project</a>
+                        <a href="projects/receipt-scanner" class="btn btn-secondary">Source Code</a>
+                    </div>
+                </div>
+                
+                <div class="project-card" data-category="productivity_apps">
+                    <div class="project-header">
+                        <h3>Meeting Scheduler Pro</h3>
+                    </div>
+                    <p class="project-description">Powerful meeting scheduler pro to boost your productivity and organization</p>
+                    <div class="project-features">
+                        <span class="feature-tag">Organize</span> <span class="feature-tag">Track</span> <span class="feature-tag">Sync</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="projects/meeting-scheduler/index.html" class="btn btn-primary">View Project</a>
+                        <a href="projects/meeting-scheduler" class="btn btn-secondary">Source Code</a>
+                    </div>
+                </div>
+                
+                <div class="project-card" data-category="productivity_apps">
+                    <div class="project-header">
+                        <h3>Project Planner Pro</h3>
+                    </div>
+                    <p class="project-description">Powerful project planner pro to boost your productivity and organization</p>
+                    <div class="project-features">
+                        <span class="feature-tag">Organize</span> <span class="feature-tag">Track</span> <span class="feature-tag">Sync</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="projects/project-planner/index.html" class="btn btn-primary">View Project</a>
+                        <a href="projects/project-planner" class="btn btn-secondary">Source Code</a>
+                    </div>
+                </div>
+                
+                <div class="project-card" data-category="productivity_apps">
+                    <div class="project-header">
+                        <h3>Brainstorm Board</h3>
+                    </div>
+                    <p class="project-description">Powerful brainstorm board to boost your productivity and organization</p>
+                    <div class="project-features">
+                        <span class="feature-tag">Organize</span> <span class="feature-tag">Track</span> <span class="feature-tag">Sync</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="projects/brainstorm-board/index.html" class="btn btn-primary">View Project</a>
+                        <a href="projects/brainstorm-board" class="btn btn-secondary">Source Code</a>
+                    </div>
+                </div>
+                </div><h2 class="category-title">Ecommerce Shopping</h2><div class="project-grid">
+                <div class="project-card" data-category="ecommerce_shopping">
+                    <div class="project-header">
+                        <h3>Product Catalog Pro</h3>
+                    </div>
+                    <p class="project-description">Professional product catalog pro for modern e-commerce experiences</p>
+                    <div class="project-features">
+                        <span class="feature-tag">Browse</span> <span class="feature-tag">Filter</span> <span class="feature-tag">Cart</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="projects/product-catalog-pro/index.html" class="btn btn-primary">View Project</a>
+                        <a href="projects/product-catalog-pro" class="btn btn-secondary">Source Code</a>
+                    </div>
+                </div>
+                
+                <div class="project-card" data-category="ecommerce_shopping">
+                    <div class="project-header">
+                        <h3>Shopping Cart Advanced</h3>
+                    </div>
+                    <p class="project-description">Professional shopping cart advanced for modern e-commerce experiences</p>
+                    <div class="project-features">
+                        <span class="feature-tag">Browse</span> <span class="feature-tag">Filter</span> <span class="feature-tag">Cart</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="projects/shopping-cart-advanced/index.html" class="btn btn-primary">View Project</a>
+                        <a href="projects/shopping-cart-advanced" class="btn btn-secondary">Source Code</a>
+                    </div>
+                </div>
+                
+                <div class="project-card" data-category="ecommerce_shopping">
+                    <div class="project-header">
+                        <h3>Price Comparison Tool</h3>
+                    </div>
+                    <p class="project-description">Professional price comparison tool for modern e-commerce experiences</p>
+                    <div class="project-features">
+                        <span class="feature-tag">Browse</span> <span class="feature-tag">Filter</span> <span class="feature-tag">Cart</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="projects/price-comparison-tool/index.html" class="btn btn-primary">View Project</a>
+                        <a href="projects/price-comparison-tool" class="btn btn-secondary">Source Code</a>
+                    </div>
+                </div>
+                
+                <div class="project-card" data-category="ecommerce_shopping">
+                    <div class="project-header">
+                        <h3>Product Filter System</h3>
+                    </div>
+                    <p class="project-description">Professional product filter system for modern e-commerce experiences</p>
+                    <div class="project-features">
+                        <span class="feature-tag">Browse</span> <span class="feature-tag">Filter</span> <span class="feature-tag">Cart</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="projects/product-filter-system/index.html" class="btn btn-primary">View Project</a>
+                        <a href="projects/product-filter-system" class="btn btn-secondary">Source Code</a>
+                    </div>
+                </div>
+                
+                <div class="project-card" data-category="ecommerce_shopping">
+                    <div class="project-header">
+                        <h3>Wishlist Manager Pro</h3>
+                    </div>
+                    <p class="project-description">Professional wishlist manager pro for modern e-commerce experiences</p>
+                    <div class="project-features">
+                        <span class="feature-tag">Browse</span> <span class="feature-tag">Filter</span> <span class="feature-tag">Cart</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="projects/wishlist-manager/index.html" class="btn btn-primary">View Project</a>
+                        <a href="projects/wishlist-manager" class="btn btn-secondary">Source Code</a>
+                    </div>
+                </div>
+                
+                <div class="project-card" data-category="ecommerce_shopping">
+                    <div class="project-header">
+                        <h3>Checkout Flow Pro</h3>
+                    </div>
+                    <p class="project-description">Professional checkout flow pro for modern e-commerce experiences</p>
+                    <div class="project-features">
+                        <span class="feature-tag">Browse</span> <span class="feature-tag">Filter</span> <span class="feature-tag">Cart</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="projects/checkout-flow-pro/index.html" class="btn btn-primary">View Project</a>
+                        <a href="projects/checkout-flow-pro" class="btn btn-secondary">Source Code</a>
+                    </div>
+                </div>
+                
+                <div class="project-card" data-category="ecommerce_shopping">
+                    <div class="project-header">
+                        <h3>Inventory Tracker Pro</h3>
+                    </div>
+                    <p class="project-description">Professional inventory tracker pro for modern e-commerce experiences</p>
+                    <div class="project-features">
+                        <span class="feature-tag">Browse</span> <span class="feature-tag">Filter</span> <span class="feature-tag">Cart</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="projects/inventory-tracker/index.html" class="btn btn-primary">View Project</a>
+                        <a href="projects/inventory-tracker" class="btn btn-secondary">Source Code</a>
+                    </div>
+                </div>
+                
+                <div class="project-card" data-category="ecommerce_shopping">
+                    <div class="project-header">
+                        <h3>Coupon Generator Pro</h3>
+                    </div>
+                    <p class="project-description">Professional coupon generator pro for modern e-commerce experiences</p>
+                    <div class="project-features">
+                        <span class="feature-tag">Browse</span> <span class="feature-tag">Filter</span> <span class="feature-tag">Cart</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="projects/coupon-generator/index.html" class="btn btn-primary">View Project</a>
+                        <a href="projects/coupon-generator" class="btn btn-secondary">Source Code</a>
+                    </div>
+                </div>
+                
+                <div class="project-card" data-category="ecommerce_shopping">
+                    <div class="project-header">
+                        <h3>Product Review System</h3>
+                    </div>
+                    <p class="project-description">Professional product review system for modern e-commerce experiences</p>
+                    <div class="project-features">
+                        <span class="feature-tag">Browse</span> <span class="feature-tag">Filter</span> <span class="feature-tag">Cart</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="projects/product-review-system/index.html" class="btn btn-primary">View Project</a>
+                        <a href="projects/product-review-system" class="btn btn-secondary">Source Code</a>
+                    </div>
+                </div>
+                
+                <div class="project-card" data-category="ecommerce_shopping">
+                    <div class="project-header">
+                        <h3>Shipping Calculator Pro</h3>
+                    </div>
+                    <p class="project-description">Professional shipping calculator pro for modern e-commerce experiences</p>
+                    <div class="project-features">
+                        <span class="feature-tag">Browse</span> <span class="feature-tag">Filter</span> <span class="feature-tag">Cart</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="projects/shipping-calculator/index.html" class="btn btn-primary">View Project</a>
+                        <a href="projects/shipping-calculator" class="btn btn-secondary">Source Code</a>
+                    </div>
+                </div>
+                
+                <div class="project-card" data-category="ecommerce_shopping">
+                    <div class="project-header">
+                        <h3>Order Tracker Pro</h3>
+                    </div>
+                    <p class="project-description">Professional order tracker pro for modern e-commerce experiences</p>
+                    <div class="project-features">
+                        <span class="feature-tag">Browse</span> <span class="feature-tag">Filter</span> <span class="feature-tag">Cart</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="projects/order-tracker/index.html" class="btn btn-primary">View Project</a>
+                        <a href="projects/order-tracker" class="btn btn-secondary">Source Code</a>
+                    </div>
+                </div>
+                
+                <div class="project-card" data-category="ecommerce_shopping">
+                    <div class="project-header">
+                        <h3>Size Guide Tool</h3>
+                    </div>
+                    <p class="project-description">Professional size guide tool for modern e-commerce experiences</p>
+                    <div class="project-features">
+                        <span class="feature-tag">Browse</span> <span class="feature-tag">Filter</span> <span class="feature-tag">Cart</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="projects/size-guide-tool/index.html" class="btn btn-primary">View Project</a>
+                        <a href="projects/size-guide-tool" class="btn btn-secondary">Source Code</a>
+                    </div>
+                </div>
+                
+                <div class="project-card" data-category="ecommerce_shopping">
+                    <div class="project-header">
+                        <h3>Color Swatch Picker</h3>
+                    </div>
+                    <p class="project-description">Professional color swatch picker for modern e-commerce experiences</p>
+                    <div class="project-features">
+                        <span class="feature-tag">Browse</span> <span class="feature-tag">Filter</span> <span class="feature-tag">Cart</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="projects/color-swatch-picker/index.html" class="btn btn-primary">View Project</a>
+                        <a href="projects/color-swatch-picker" class="btn btn-secondary">Source Code</a>
+                    </div>
+                </div>
+                
+                <div class="project-card" data-category="ecommerce_shopping">
+                    <div class="project-header">
+                        <h3>Quick View Modal</h3>
+                    </div>
+                    <p class="project-description">Professional quick view modal for modern e-commerce experiences</p>
+                    <div class="project-features">
+                        <span class="feature-tag">Browse</span> <span class="feature-tag">Filter</span> <span class="feature-tag">Cart</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="projects/quick-view-modal/index.html" class="btn btn-primary">View Project</a>
+                        <a href="projects/quick-view-modal" class="btn btn-secondary">Source Code</a>
+                    </div>
+                </div>
+                
+                <div class="project-card" data-category="ecommerce_shopping">
+                    <div class="project-header">
+                        <h3>Related Products Widget</h3>
+                    </div>
+                    <p class="project-description">Professional related products widget for modern e-commerce experiences</p>
+                    <div class="project-features">
+                        <span class="feature-tag">Browse</span> <span class="feature-tag">Filter</span> <span class="feature-tag">Cart</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="projects/related-products/index.html" class="btn btn-primary">View Project</a>
+                        <a href="projects/related-products" class="btn btn-secondary">Source Code</a>
+                    </div>
+                </div>
+                </div><h2 class="category-title">Social Communication</h2><div class="project-grid">
+                <div class="project-card" data-category="social_communication">
+                    <div class="project-header">
+                        <h3>Chat App Realtime</h3>
+                    </div>
+                    <p class="project-description">Modern chat app realtime for enhanced social interaction</p>
+                    <div class="project-features">
+                        <span class="feature-tag">Connect</span> <span class="feature-tag">Share</span> <span class="feature-tag">Interact</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="projects/chat-app-realtime/index.html" class="btn btn-primary">View Project</a>
+                        <a href="projects/chat-app-realtime" class="btn btn-secondary">Source Code</a>
+                    </div>
+                </div>
+                
+                <div class="project-card" data-category="social_communication">
+                    <div class="project-header">
+                        <h3>Comment System Pro</h3>
+                    </div>
+                    <p class="project-description">Modern comment system pro for enhanced social interaction</p>
+                    <div class="project-features">
+                        <span class="feature-tag">Connect</span> <span class="feature-tag">Share</span> <span class="feature-tag">Interact</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="projects/comment-system-pro/index.html" class="btn btn-primary">View Project</a>
+                        <a href="projects/comment-system-pro" class="btn btn-secondary">Source Code</a>
+                    </div>
+                </div>
+                
+                <div class="project-card" data-category="social_communication">
+                    <div class="project-header">
+                        <h3>Forum Board Pro</h3>
+                    </div>
+                    <p class="project-description">Modern forum board pro for enhanced social interaction</p>
+                    <div class="project-features">
+                        <span class="feature-tag">Connect</span> <span class="feature-tag">Share</span> <span class="feature-tag">Interact</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="projects/forum-board-pro/index.html" class="btn btn-primary">View Project</a>
+                        <a href="projects/forum-board-pro" class="btn btn-secondary">Source Code</a>
+                    </div>
+                </div>
+                
+                <div class="project-card" data-category="social_communication">
+                    <div class="project-header">
+                        <h3>Social Feed Widget</h3>
+                    </div>
+                    <p class="project-description">Modern social feed widget for enhanced social interaction</p>
+                    <div class="project-features">
+                        <span class="feature-tag">Connect</span> <span class="feature-tag">Share</span> <span class="feature-tag">Interact</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="projects/social-feed-widget/index.html" class="btn btn-primary">View Project</a>
+                        <a href="projects/social-feed-widget" class="btn btn-secondary">Source Code</a>
+                    </div>
+                </div>
+                
+                <div class="project-card" data-category="social_communication">
+                    <div class="project-header">
+                        <h3>User Profile Card</h3>
+                    </div>
+                    <p class="project-description">Modern user profile card for enhanced social interaction</p>
+                    <div class="project-features">
+                        <span class="feature-tag">Connect</span> <span class="feature-tag">Share</span> <span class="feature-tag">Interact</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="projects/user-profile-card/index.html" class="btn btn-primary">View Project</a>
+                        <a href="projects/user-profile-card" class="btn btn-secondary">Source Code</a>
+                    </div>
+                </div>
+                
+                <div class="project-card" data-category="social_communication">
+                    <div class="project-header">
+                        <h3>Notification Center</h3>
+                    </div>
+                    <p class="project-description">Modern notification center for enhanced social interaction</p>
+                    <div class="project-features">
+                        <span class="feature-tag">Connect</span> <span class="feature-tag">Share</span> <span class="feature-tag">Interact</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="projects/notification-center/index.html" class="btn btn-primary">View Project</a>
+                        <a href="projects/notification-center" class="btn btn-secondary">Source Code</a>
+                    </div>
+                </div>
+                
+                <div class="project-card" data-category="social_communication">
+                    <div class="project-header">
+                        <h3>Emoji Picker Pro</h3>
+                    </div>
+                    <p class="project-description">Modern emoji picker pro for enhanced social interaction</p>
+                    <div class="project-features">
+                        <span class="feature-tag">Connect</span> <span class="feature-tag">Share</span> <span class="feature-tag">Interact</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="projects/emoji-picker-pro/index.html" class="btn btn-primary">View Project</a>
+                        <a href="projects/emoji-picker-pro" class="btn btn-secondary">Source Code</a>
+                    </div>
+                </div>
+                
+                <div class="project-card" data-category="social_communication">
+                    <div class="project-header">
+                        <h3>Mention System Pro</h3>
+                    </div>
+                    <p class="project-description">Modern mention system pro for enhanced social interaction</p>
+                    <div class="project-features">
+                        <span class="feature-tag">Connect</span> <span class="feature-tag">Share</span> <span class="feature-tag">Interact</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="projects/mention-system/index.html" class="btn btn-primary">View Project</a>
+                        <a href="projects/mention-system" class="btn btn-secondary">Source Code</a>
+                    </div>
+                </div>
+                
+                <div class="project-card" data-category="social_communication">
+                    <div class="project-header">
+                        <h3>Hashtag Tracker</h3>
+                    </div>
+                    <p class="project-description">Modern hashtag tracker for enhanced social interaction</p>
+                    <div class="project-features">
+                        <span class="feature-tag">Connect</span> <span class="feature-tag">Share</span> <span class="feature-tag">Interact</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="projects/hashtag-tracker/index.html" class="btn btn-primary">View Project</a>
+                        <a href="projects/hashtag-tracker" class="btn btn-secondary">Source Code</a>
+                    </div>
+                </div>
+                
+                <div class="project-card" data-category="social_communication">
+                    <div class="project-header">
+                        <h3>Poll Creator Pro</h3>
+                    </div>
+                    <p class="project-description">Modern poll creator pro for enhanced social interaction</p>
+                    <div class="project-features">
+                        <span class="feature-tag">Connect</span> <span class="feature-tag">Share</span> <span class="feature-tag">Interact</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="projects/poll-creator-pro/index.html" class="btn btn-primary">View Project</a>
+                        <a href="projects/poll-creator-pro" class="btn btn-secondary">Source Code</a>
+                    </div>
+                </div>
+                
+                <div class="project-card" data-category="social_communication">
+                    <div class="project-header">
+                        <h3>Survey Builder Pro</h3>
+                    </div>
+                    <p class="project-description">Modern survey builder pro for enhanced social interaction</p>
+                    <div class="project-features">
+                        <span class="feature-tag">Connect</span> <span class="feature-tag">Share</span> <span class="feature-tag">Interact</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="projects/survey-builder/index.html" class="btn btn-primary">View Project</a>
+                        <a href="projects/survey-builder" class="btn btn-secondary">Source Code</a>
+                    </div>
+                </div>
+                
+                <div class="project-card" data-category="social_communication">
+                    <div class="project-header">
+                        <h3>Rating System Pro</h3>
+                    </div>
+                    <p class="project-description">Modern rating system pro for enhanced social interaction</p>
+                    <div class="project-features">
+                        <span class="feature-tag">Connect</span> <span class="feature-tag">Share</span> <span class="feature-tag">Interact</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="projects/rating-system-pro/index.html" class="btn btn-primary">View Project</a>
+                        <a href="projects/rating-system-pro" class="btn btn-secondary">Source Code</a>
+                    </div>
+                </div>
+                
+                <div class="project-card" data-category="social_communication">
+                    <div class="project-header">
+                        <h3>Share Buttons Pro</h3>
+                    </div>
+                    <p class="project-description">Modern share buttons pro for enhanced social interaction</p>
+                    <div class="project-features">
+                        <span class="feature-tag">Connect</span> <span class="feature-tag">Share</span> <span class="feature-tag">Interact</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="projects/share-buttons-pro/index.html" class="btn btn-primary">View Project</a>
+                        <a href="projects/share-buttons-pro" class="btn btn-secondary">Source Code</a>
+                    </div>
+                </div>
+                
+                <div class="project-card" data-category="social_communication">
+                    <div class="project-header">
+                        <h3>Live Chat Widget</h3>
+                    </div>
+                    <p class="project-description">Modern live chat widget for enhanced social interaction</p>
+                    <div class="project-features">
+                        <span class="feature-tag">Connect</span> <span class="feature-tag">Share</span> <span class="feature-tag">Interact</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="projects/live-chat-widget/index.html" class="btn btn-primary">View Project</a>
+                        <a href="projects/live-chat-widget" class="btn btn-secondary">Source Code</a>
+                    </div>
+                </div>
+                
+                <div class="project-card" data-category="social_communication">
+                    <div class="project-header">
+                        <h3>Video Call Interface</h3>
+                    </div>
+                    <p class="project-description">Modern video call interface for enhanced social interaction</p>
+                    <div class="project-features">
+                        <span class="feature-tag">Connect</span> <span class="feature-tag">Share</span> <span class="feature-tag">Interact</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="projects/video-call-interface/index.html" class="btn btn-primary">View Project</a>
+                        <a href="projects/video-call-interface" class="btn btn-secondary">Source Code</a>
+                    </div>
+                </div>
+                </div><h2 class="category-title">Educational Tools</h2><div class="project-grid">
+                <div class="project-card" data-category="educational_tools">
+                    <div class="project-header">
+                        <h3>Quiz App Master</h3>
+                    </div>
+                    <p class="project-description">Interactive quiz app master for effective learning and practice</p>
+                    <div class="project-features">
+                        <span class="feature-tag">Learn</span> <span class="feature-tag">Practice</span> <span class="feature-tag">Test</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="projects/quiz-app-master/index.html" class="btn btn-primary">View Project</a>
+                        <a href="projects/quiz-app-master" class="btn btn-secondary">Source Code</a>
+                    </div>
+                </div>
+                
+                <div class="project-card" data-category="educational_tools">
+                    <div class="project-header">
+                        <h3>Flashcard System Pro</h3>
+                    </div>
+                    <p class="project-description">Interactive flashcard system pro for effective learning and practice</p>
+                    <div class="project-features">
+                        <span class="feature-tag">Learn</span> <span class="feature-tag">Practice</span> <span class="feature-tag">Test</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="projects/flashcard-system-pro/index.html" class="btn btn-primary">View Project</a>
+                        <a href="projects/flashcard-system-pro" class="btn btn-secondary">Source Code</a>
+                    </div>
+                </div>
+                
+                <div class="project-card" data-category="educational_tools">
+                    <div class="project-header">
+                        <h3>Typing Tutor Pro</h3>
+                    </div>
+                    <p class="project-description">Interactive typing tutor pro for effective learning and practice</p>
+                    <div class="project-features">
+                        <span class="feature-tag">Learn</span> <span class="feature-tag">Practice</span> <span class="feature-tag">Test</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="projects/typing-tutor-pro/index.html" class="btn btn-primary">View Project</a>
+                        <a href="projects/typing-tutor-pro" class="btn btn-secondary">Source Code</a>
+                    </div>
+                </div>
+                
+                <div class="project-card" data-category="educational_tools">
+                    <div class="project-header">
+                        <h3>Math Practice Pro</h3>
+                    </div>
+                    <p class="project-description">Interactive math practice pro for effective learning and practice</p>
+                    <div class="project-features">
+                        <span class="feature-tag">Learn</span> <span class="feature-tag">Practice</span> <span class="feature-tag">Test</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="projects/math-practice-pro/index.html" class="btn btn-primary">View Project</a>
+                        <a href="projects/math-practice-pro" class="btn btn-secondary">Source Code</a>
+                    </div>
+                </div>
+                
+                <div class="project-card" data-category="educational_tools">
+                    <div class="project-header">
+                        <h3>Language Learning App</h3>
+                    </div>
+                    <p class="project-description">Interactive language learning app for effective learning and practice</p>
+                    <div class="project-features">
+                        <span class="feature-tag">Learn</span> <span class="feature-tag">Practice</span> <span class="feature-tag">Test</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="projects/language-learning/index.html" class="btn btn-primary">View Project</a>
+                        <a href="projects/language-learning" class="btn btn-secondary">Source Code</a>
+                    </div>
+                </div>
+                
+                <div class="project-card" data-category="educational_tools">
+                    <div class="project-header">
+                        <h3>Periodic Table Interactive</h3>
+                    </div>
+                    <p class="project-description">Interactive periodic table interactive for effective learning and practice</p>
+                    <div class="project-features">
+                        <span class="feature-tag">Learn</span> <span class="feature-tag">Practice</span> <span class="feature-tag">Test</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="projects/periodic-table-interactive/index.html" class="btn btn-primary">View Project</a>
+                        <a href="projects/periodic-table-interactive" class="btn btn-secondary">Source Code</a>
+                    </div>
+                </div>
+                
+                <div class="project-card" data-category="educational_tools">
+                    <div class="project-header">
+                        <h3>Anatomy Explorer</h3>
+                    </div>
+                    <p class="project-description">Interactive anatomy explorer for effective learning and practice</p>
+                    <div class="project-features">
+                        <span class="feature-tag">Learn</span> <span class="feature-tag">Practice</span> <span class="feature-tag">Test</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="projects/anatomy-explorer/index.html" class="btn btn-primary">View Project</a>
+                        <a href="projects/anatomy-explorer" class="btn btn-secondary">Source Code</a>
+                    </div>
+                </div>
+                
+                <div class="project-card" data-category="educational_tools">
+                    <div class="project-header">
+                        <h3>Geography Quiz Master</h3>
+                    </div>
+                    <p class="project-description">Interactive geography quiz master for effective learning and practice</p>
+                    <div class="project-features">
+                        <span class="feature-tag">Learn</span> <span class="feature-tag">Practice</span> <span class="feature-tag">Test</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="projects/geography-quiz/index.html" class="btn btn-primary">View Project</a>
+                        <a href="projects/geography-quiz" class="btn btn-secondary">Source Code</a>
+                    </div>
+                </div>
+                
+                <div class="project-card" data-category="educational_tools">
+                    <div class="project-header">
+                        <h3>History Timeline Explorer</h3>
+                    </div>
+                    <p class="project-description">Interactive history timeline explorer for effective learning and practice</p>
+                    <div class="project-features">
+                        <span class="feature-tag">Learn</span> <span class="feature-tag">Practice</span> <span class="feature-tag">Test</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="projects/history-timeline/index.html" class="btn btn-primary">View Project</a>
+                        <a href="projects/history-timeline" class="btn btn-secondary">Source Code</a>
+                    </div>
+                </div>
+                
+                <div class="project-card" data-category="educational_tools">
+                    <div class="project-header">
+                        <h3>Coding Playground</h3>
+                    </div>
+                    <p class="project-description">Interactive coding playground for effective learning and practice</p>
+                    <div class="project-features">
+                        <span class="feature-tag">Learn</span> <span class="feature-tag">Practice</span> <span class="feature-tag">Test</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="projects/coding-playground/index.html" class="btn btn-primary">View Project</a>
+                        <a href="projects/coding-playground" class="btn btn-secondary">Source Code</a>
+                    </div>
+                </div>
+                
+                <div class="project-card" data-category="educational_tools">
+                    <div class="project-header">
+                        <h3>Algorithm Visualizer</h3>
+                    </div>
+                    <p class="project-description">Interactive algorithm visualizer for effective learning and practice</p>
+                    <div class="project-features">
+                        <span class="feature-tag">Learn</span> <span class="feature-tag">Practice</span> <span class="feature-tag">Test</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="projects/algorithm-visualizer/index.html" class="btn btn-primary">View Project</a>
+                        <a href="projects/algorithm-visualizer" class="btn btn-secondary">Source Code</a>
+                    </div>
+                </div>
+                
+                <div class="project-card" data-category="educational_tools">
+                    <div class="project-header">
+                        <h3>Music Theory Tutor</h3>
+                    </div>
+                    <p class="project-description">Interactive music theory tutor for effective learning and practice</p>
+                    <div class="project-features">
+                        <span class="feature-tag">Learn</span> <span class="feature-tag">Practice</span> <span class="feature-tag">Test</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="projects/music-theory-tutor/index.html" class="btn btn-primary">View Project</a>
+                        <a href="projects/music-theory-tutor" class="btn btn-secondary">Source Code</a>
+                    </div>
+                </div>
+                
+                <div class="project-card" data-category="educational_tools">
+                    <div class="project-header">
+                        <h3>Art History Gallery</h3>
+                    </div>
+                    <p class="project-description">Interactive art history gallery for effective learning and practice</p>
+                    <div class="project-features">
+                        <span class="feature-tag">Learn</span> <span class="feature-tag">Practice</span> <span class="feature-tag">Test</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="projects/art-history-gallery/index.html" class="btn btn-primary">View Project</a>
+                        <a href="projects/art-history-gallery" class="btn btn-secondary">Source Code</a>
+                    </div>
+                </div>
+                
+                <div class="project-card" data-category="educational_tools">
+                    <div class="project-header">
+                        <h3>Science Simulator</h3>
+                    </div>
+                    <p class="project-description">Interactive science simulator for effective learning and practice</p>
+                    <div class="project-features">
+                        <span class="feature-tag">Learn</span> <span class="feature-tag">Practice</span> <span class="feature-tag">Test</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="projects/science-simulator/index.html" class="btn btn-primary">View Project</a>
+                        <a href="projects/science-simulator" class="btn btn-secondary">Source Code</a>
+                    </div>
+                </div>
+                
+                <div class="project-card" data-category="educational_tools">
+                    <div class="project-header">
+                        <h3>Dictionary & Thesaurus</h3>
+                    </div>
+                    <p class="project-description">Interactive dictionary & thesaurus for effective learning and practice</p>
+                    <div class="project-features">
+                        <span class="feature-tag">Learn</span> <span class="feature-tag">Practice</span> <span class="feature-tag">Test</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="projects/dictionary-thesaurus/index.html" class="btn btn-primary">View Project</a>
+                        <a href="projects/dictionary-thesaurus" class="btn btn-secondary">Source Code</a>
+                    </div>
+                </div>
+                </div><h2 class="category-title">Finance Business</h2><div class="project-grid">
+                <div class="project-card" data-category="finance_business">
+                    <div class="project-header">
+                        <h3>Budget Tracker Pro</h3>
+                    </div>
+                    <p class="project-description">Professional budget tracker pro for financial management and planning</p>
+                    <div class="project-features">
+                        <span class="feature-tag">Calculate</span> <span class="feature-tag">Track</span> <span class="feature-tag">Report</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="projects/budget-tracker-pro/index.html" class="btn btn-primary">View Project</a>
+                        <a href="projects/budget-tracker-pro" class="btn btn-secondary">Source Code</a>
+                    </div>
+                </div>
+                
+                <div class="project-card" data-category="finance_business">
+                    <div class="project-header">
+                        <h3>Expense Manager Pro</h3>
+                    </div>
+                    <p class="project-description">Professional expense manager pro for financial management and planning</p>
+                    <div class="project-features">
+                        <span class="feature-tag">Calculate</span> <span class="feature-tag">Track</span> <span class="feature-tag">Report</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="projects/expense-manager/index.html" class="btn btn-primary">View Project</a>
+                        <a href="projects/expense-manager" class="btn btn-secondary">Source Code</a>
+                    </div>
+                </div>
+                
+                <div class="project-card" data-category="finance_business">
+                    <div class="project-header">
+                        <h3>Invoice Generator Pro</h3>
+                    </div>
+                    <p class="project-description">Professional invoice generator pro for financial management and planning</p>
+                    <div class="project-features">
+                        <span class="feature-tag">Calculate</span> <span class="feature-tag">Track</span> <span class="feature-tag">Report</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="projects/invoice-generator-pro/index.html" class="btn btn-primary">View Project</a>
+                        <a href="projects/invoice-generator-pro" class="btn btn-secondary">Source Code</a>
+                    </div>
+                </div>
+                
+                <div class="project-card" data-category="finance_business">
+                    <div class="project-header">
+                        <h3>Tax Calculator Pro</h3>
+                    </div>
+                    <p class="project-description">Professional tax calculator pro for financial management and planning</p>
+                    <div class="project-features">
+                        <span class="feature-tag">Calculate</span> <span class="feature-tag">Track</span> <span class="feature-tag">Report</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="projects/tax-calculator/index.html" class="btn btn-primary">View Project</a>
+                        <a href="projects/tax-calculator" class="btn btn-secondary">Source Code</a>
+                    </div>
+                </div>
+                
+                <div class="project-card" data-category="finance_business">
+                    <div class="project-header">
+                        <h3>Loan Calculator Pro</h3>
+                    </div>
+                    <p class="project-description">Professional loan calculator pro for financial management and planning</p>
+                    <div class="project-features">
+                        <span class="feature-tag">Calculate</span> <span class="feature-tag">Track</span> <span class="feature-tag">Report</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="projects/loan-calculator/index.html" class="btn btn-primary">View Project</a>
+                        <a href="projects/loan-calculator" class="btn btn-secondary">Source Code</a>
+                    </div>
+                </div>
+                
+                <div class="project-card" data-category="finance_business">
+                    <div class="project-header">
+                        <h3>Investment Tracker Pro</h3>
+                    </div>
+                    <p class="project-description">Professional investment tracker pro for financial management and planning</p>
+                    <div class="project-features">
+                        <span class="feature-tag">Calculate</span> <span class="feature-tag">Track</span> <span class="feature-tag">Report</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="projects/investment-tracker/index.html" class="btn btn-primary">View Project</a>
+                        <a href="projects/investment-tracker" class="btn btn-secondary">Source Code</a>
+                    </div>
+                </div>
+                
+                <div class="project-card" data-category="finance_business">
+                    <div class="project-header">
+                        <h3>Currency Converter Live</h3>
+                    </div>
+                    <p class="project-description">Professional currency converter live for financial management and planning</p>
+                    <div class="project-features">
+                        <span class="feature-tag">Calculate</span> <span class="feature-tag">Track</span> <span class="feature-tag">Report</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="projects/currency-converter-live/index.html" class="btn btn-primary">View Project</a>
+                        <a href="projects/currency-converter-live" class="btn btn-secondary">Source Code</a>
+                    </div>
+                </div>
+                
+                <div class="project-card" data-category="finance_business">
+                    <div class="project-header">
+                        <h3>Salary Calculator Pro</h3>
+                    </div>
+                    <p class="project-description">Professional salary calculator pro for financial management and planning</p>
+                    <div class="project-features">
+                        <span class="feature-tag">Calculate</span> <span class="feature-tag">Track</span> <span class="feature-tag">Report</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="projects/salary-calculator/index.html" class="btn btn-primary">View Project</a>
+                        <a href="projects/salary-calculator" class="btn btn-secondary">Source Code</a>
+                    </div>
+                </div>
+                
+                <div class="project-card" data-category="finance_business">
+                    <div class="project-header">
+                        <h3>Tip Calculator Pro</h3>
+                    </div>
+                    <p class="project-description">Professional tip calculator pro for financial management and planning</p>
+                    <div class="project-features">
+                        <span class="feature-tag">Calculate</span> <span class="feature-tag">Track</span> <span class="feature-tag">Report</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="projects/tip-calculator-pro/index.html" class="btn btn-primary">View Project</a>
+                        <a href="projects/tip-calculator-pro" class="btn btn-secondary">Source Code</a>
+                    </div>
+                </div>
+                
+                <div class="project-card" data-category="finance_business">
+                    <div class="project-header">
+                        <h3>ROI Calculator Pro</h3>
+                    </div>
+                    <p class="project-description">Professional roi calculator pro for financial management and planning</p>
+                    <div class="project-features">
+                        <span class="feature-tag">Calculate</span> <span class="feature-tag">Track</span> <span class="feature-tag">Report</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="projects/roi-calculator/index.html" class="btn btn-primary">View Project</a>
+                        <a href="projects/roi-calculator" class="btn btn-secondary">Source Code</a>
+                    </div>
+                </div>
+                </div><h2 class="category-title">Health Fitness</h2><div class="project-grid">
+                <div class="project-card" data-category="health_fitness">
+                    <div class="project-header">
+                        <h3>Workout Tracker Pro</h3>
+                    </div>
+                    <p class="project-description">Comprehensive workout tracker pro for health and wellness management</p>
+                    <div class="project-features">
+                        <span class="feature-tag">Track</span> <span class="feature-tag">Monitor</span> <span class="feature-tag">Analyze</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="projects/workout-tracker-pro/index.html" class="btn btn-primary">View Project</a>
+                        <a href="projects/workout-tracker-pro" class="btn btn-secondary">Source Code</a>
+                    </div>
+                </div>
+                
+                <div class="project-card" data-category="health_fitness">
+                    <div class="project-header">
+                        <h3>Calorie Counter Pro</h3>
+                    </div>
+                    <p class="project-description">Comprehensive calorie counter pro for health and wellness management</p>
+                    <div class="project-features">
+                        <span class="feature-tag">Track</span> <span class="feature-tag">Monitor</span> <span class="feature-tag">Analyze</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="projects/calorie-counter/index.html" class="btn btn-primary">View Project</a>
+                        <a href="projects/calorie-counter" class="btn btn-secondary">Source Code</a>
+                    </div>
+                </div>
+                
+                <div class="project-card" data-category="health_fitness">
+                    <div class="project-header">
+                        <h3>Water Intake Tracker</h3>
+                    </div>
+                    <p class="project-description">Comprehensive water intake tracker for health and wellness management</p>
+                    <div class="project-features">
+                        <span class="feature-tag">Track</span> <span class="feature-tag">Monitor</span> <span class="feature-tag">Analyze</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="projects/water-intake-tracker/index.html" class="btn btn-primary">View Project</a>
+                        <a href="projects/water-intake-tracker" class="btn btn-secondary">Source Code</a>
+                    </div>
+                </div>
+                
+                <div class="project-card" data-category="health_fitness">
+                    <div class="project-header">
+                        <h3>Meditation Timer Pro</h3>
+                    </div>
+                    <p class="project-description">Comprehensive meditation timer pro for health and wellness management</p>
+                    <div class="project-features">
+                        <span class="feature-tag">Track</span> <span class="feature-tag">Monitor</span> <span class="feature-tag">Analyze</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="projects/meditation-timer/index.html" class="btn btn-primary">View Project</a>
+                        <a href="projects/meditation-timer" class="btn btn-secondary">Source Code</a>
+                    </div>
+                </div>
+                
+                <div class="project-card" data-category="health_fitness">
+                    <div class="project-header">
+                        <h3>Sleep Tracker Pro</h3>
+                    </div>
+                    <p class="project-description">Comprehensive sleep tracker pro for health and wellness management</p>
+                    <div class="project-features">
+                        <span class="feature-tag">Track</span> <span class="feature-tag">Monitor</span> <span class="feature-tag">Analyze</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="projects/sleep-tracker/index.html" class="btn btn-primary">View Project</a>
+                        <a href="projects/sleep-tracker" class="btn btn-secondary">Source Code</a>
+                    </div>
+                </div>
+                
+                <div class="project-card" data-category="health_fitness">
+                    <div class="project-header">
+                        <h3>Step Counter Pro</h3>
+                    </div>
+                    <p class="project-description">Comprehensive step counter pro for health and wellness management</p>
+                    <div class="project-features">
+                        <span class="feature-tag">Track</span> <span class="feature-tag">Monitor</span> <span class="feature-tag">Analyze</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="projects/step-counter/index.html" class="btn btn-primary">View Project</a>
+                        <a href="projects/step-counter" class="btn btn-secondary">Source Code</a>
+                    </div>
+                </div>
+                
+                <div class="project-card" data-category="health_fitness">
+                    <div class="project-header">
+                        <h3>Heart Rate Monitor</h3>
+                    </div>
+                    <p class="project-description">Comprehensive heart rate monitor for health and wellness management</p>
+                    <div class="project-features">
+                        <span class="feature-tag">Track</span> <span class="feature-tag">Monitor</span> <span class="feature-tag">Analyze</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="projects/heart-rate-monitor/index.html" class="btn btn-primary">View Project</a>
+                        <a href="projects/heart-rate-monitor" class="btn btn-secondary">Source Code</a>
+                    </div>
+                </div>
+                
+                <div class="project-card" data-category="health_fitness">
+                    <div class="project-header">
+                        <h3>Yoga Pose Guide</h3>
+                    </div>
+                    <p class="project-description">Comprehensive yoga pose guide for health and wellness management</p>
+                    <div class="project-features">
+                        <span class="feature-tag">Track</span> <span class="feature-tag">Monitor</span> <span class="feature-tag">Analyze</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="projects/yoga-pose-guide/index.html" class="btn btn-primary">View Project</a>
+                        <a href="projects/yoga-pose-guide" class="btn btn-secondary">Source Code</a>
+                    </div>
+                </div>
+                
+                <div class="project-card" data-category="health_fitness">
+                    <div class="project-header">
+                        <h3>Meal Planner Pro</h3>
+                    </div>
+                    <p class="project-description">Comprehensive meal planner pro for health and wellness management</p>
+                    <div class="project-features">
+                        <span class="feature-tag">Track</span> <span class="feature-tag">Monitor</span> <span class="feature-tag">Analyze</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="projects/meal-planner-pro/index.html" class="btn btn-primary">View Project</a>
+                        <a href="projects/meal-planner-pro" class="btn btn-secondary">Source Code</a>
+                    </div>
+                </div>
+                
+                <div class="project-card" data-category="health_fitness">
+                    <div class="project-header">
+                        <h3>Fitness Challenge Tracker</h3>
+                    </div>
+                    <p class="project-description">Comprehensive fitness challenge tracker for health and wellness management</p>
+                    <div class="project-features">
+                        <span class="feature-tag">Track</span> <span class="feature-tag">Monitor</span> <span class="feature-tag">Analyze</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="projects/fitness-challenge/index.html" class="btn btn-primary">View Project</a>
+                        <a href="projects/fitness-challenge" class="btn btn-secondary">Source Code</a>
+                    </div>
+                </div>
+                </div>
+    </div>
+    
+    <footer>
+        <p>Created with ❤️ by <a href="https://github.com/AshrafMorningstar" target="_blank">Ashraf Morningstar</a></p>
+        <p style="margin-top: 1rem; opacity: 0.8;">All projects are open source and free to use</p>
+    </footer>
+</body>
+</html>

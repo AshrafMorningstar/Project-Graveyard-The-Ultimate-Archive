@@ -1,0 +1,10 @@
+version: "3.8"
+
+services:
+  webdev-portfolio:
+    image: ashrafmorningstar/webdev-roadmap
+    build: .
+    ports:
+      - "8080:80"
+    restart: always
+    container_name: webdev-portfolio-container

@@ -1,0 +1,185 @@
+/*
+ * -----------------------------------------------------------------------------
+ * @author      Ashraf Morningstar
+ * @github      https://github.com/AshrafMorningstar
+ * @repository  Project Graveyard - The Ultimate Archive
+ * @quote       "Code that defines the future. Designed to inspire."
+ * -----------------------------------------------------------------------------
+*/
+
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Orbitron:wght@400;700;900&display=swap");
+
+:root {
+  --primary-color: #00f3ff;
+  --secondary-color: #ff00ff;
+  --bg-color: #0a0a0a;
+  --text-main: #ffffff;
+  --text-dim: #a0a0a0;
+  --card-bg: rgba(20, 20, 30, 0.6);
+  --card-border: rgba(0, 243, 255, 0.3);
+  --neon-shadow: 0 0 10px var(--primary-color), 0 0 20px var(--primary-color);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg-color);
+  font-family: "JetBrains Mono", monospace;
+  color: var(--text-main);
+  overflow: hidden;
+}
+
+/* Background Grid Animation */
+.cyber-grid-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image:
+    linear-gradient(rgba(0, 243, 255, 0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 243, 255, 0.1) 1px, transparent 1px);
+  background-size: 50px 50px;
+  background-position: center bottom;
+  perspective: 1000px;
+  transform-style: preserve-3d;
+  animation: grid-move 20s linear infinite;
+  z-index: -1;
+}
+
+.cyber-grid-bg::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, transparent 50%, var(--bg-color));
+}
+
+@keyframes grid-move {
+  0% {
+    transform: perspective(500px) rotateX(60deg) translateY(0)
+      translateZ(-200px);
+  }
+  100% {
+    transform: perspective(500px) rotateX(60deg) translateY(50px)
+      translateZ(-200px);
+  }
+}
+
+/* Glitch Effect Class */
+.glitch {
+  position: relative;
+}
+
+.glitch::before,
+.glitch::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.glitch::before {
+  left: 2px;
+  text-shadow: -1px 0 #ff00c1;
+  clip: rect(44px, 450px, 56px, 0);
+  animation: glitch-anim-1 5s infinite linear alternate-reverse;
+}
+
+.glitch::after {
+  left: -2px;
+  text-shadow: -1px 0 #00fff9;
+  clip: rect(44px, 450px, 56px, 0);
+  animation: glitch-anim-2 5s infinite linear alternate-reverse;
+}
+
+@keyframes glitch-anim-1 {
+  0% {
+    clip: rect(30px, 9999px, 10px, 0);
+  }
+  20% {
+    clip: rect(80px, 9999px, 90px, 0);
+  }
+  40% {
+    clip: rect(10px, 9999px, 40px, 0);
+  }
+  60% {
+    clip: rect(50px, 9999px, 20px, 0);
+  }
+  80% {
+    clip: rect(40px, 9999px, 70px, 0);
+  }
+  100% {
+    clip: rect(60px, 9999px, 30px, 0);
+  }
+}
+
+@keyframes glitch-anim-2 {
+  0% {
+    clip: rect(60px, 9999px, 40px, 0);
+  }
+  20% {
+    clip: rect(10px, 9999px, 60px, 0);
+  }
+  40% {
+    clip: rect(50px, 9999px, 20px, 0);
+  }
+  60% {
+    clip: rect(20px, 9999px, 90px, 0);
+  }
+  80% {
+    clip: rect(70px, 9999px, 30px, 0);
+  }
+  100% {
+    clip: rect(30px, 9999px, 10px, 0);
+  }
+}
+
+/* Card Styles */
+.cyber-card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  box-shadow: 0 0 15px rgba(0, 243, 255, 0.1);
+  padding: 2px;
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(10px);
+}
+
+.cyber-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--primary-color),
+    transparent
+  );
+  animation: scanline 2s linear infinite;
+}
+
+@keyframes scanline {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+/* Typography */
+h1,
+h2,
+h3 {
+  font-family: "Orbitron", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}

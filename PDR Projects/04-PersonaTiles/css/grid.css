@@ -1,0 +1,144 @@
+/*
+ * -----------------------------------------------------------------------------
+ * @author      Ashraf Morningstar
+ * @github      https://github.com/AshrafMorningstar
+ * @repository  Project Graveyard - The Ultimate Archive
+ * @quote       "Code that defines the future. Designed to inspire."
+ * -----------------------------------------------------------------------------
+*/
+
+/* Persona Tiles - Grid System */
+
+:root {
+    /* Colors */
+    --color-bg: #f5f7fa;
+    --color-surface: #ffffff;
+    --color-text: #2c3e50;
+    --color-muted: #7f8c8d;
+    
+    /* Tile type colors */
+    --color-skill: #3498db;
+    --color-interest: #e74c3c;
+    --color-value: #2ecc71;
+    --color-goal: #f39c12;
+    
+    /* Spacing */
+    --spacing-unit: 1rem;
+    --tile-size: 160px;
+    --tile-gap: 1.5rem;
+    
+    /* Transitions */
+    --transition-smooth: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-quick: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    
+    /* Typography */
+    --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-primary);
+    background: var(--color-bg);
+    color: var(--color-text);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header */
+.app-header {
+    text-align: center;
+    padding: calc(var(--spacing-unit) * 3) var(--spacing-unit);
+    background: var(--color-surface);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.app-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: calc(var(--spacing-unit) * 0.5);
+    background: linear-gradient(135deg, var(--color-skill), var(--color-interest));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.app-subtitle {
+    font-size: 1.125rem;
+    color: var(--color-muted);
+    font-weight: 400;
+}
+
+/* Tiles Container */
+.tiles-container {
+    flex: 1;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(var(--tile-size), 1fr));
+    gap: var(--tile-gap);
+    padding: calc(var(--spacing-unit) * 3);
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+/* Footer */
+.app-footer {
+    padding: calc(var(--spacing-unit) * 2);
+    background: var(--color-surface);
+    box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.05);
+    text-align: center;
+}
+
+.selection-count {
+    font-size: 1.125rem;
+    color: var(--color-text);
+}
+
+.count-number {
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: var(--color-skill);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    :root {
+        --tile-size: 120px;
+        --tile-gap: 1rem;
+    }
+    
+    .app-title {
+        font-size: 2rem;
+    }
+    
+    .tiles-container {
+        padding: calc(var(--spacing-unit) * 2);
+    }
+}
+
+@media (max-width: 480px) {
+    :root {
+        --tile-size: 100px;
+    }
+    
+    .tiles-container {
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    }
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}

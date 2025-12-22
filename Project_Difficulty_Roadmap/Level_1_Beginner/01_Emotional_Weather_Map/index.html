@@ -1,0 +1,93 @@
+<!--
+ -----------------------------------------------------------------------------
+ @author      Ashraf Morningstar
+ @github      https://github.com/AshrafMorningstar
+ @repository  Project Graveyard - The Ultimate Archive
+ @quote       "Code that defines the future. Designed to inspire."
+ -----------------------------------------------------------------------------
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Emotional Weather Map | Ashraf Morningstar</title>
+    <!-- 
+        Project: Emotional Weather Map
+        Level: Beginner
+        Author: Ashraf Morningstar
+        GitHub: https://github.com/AshrafMorningstar
+    -->
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+      crossorigin=""
+    />
+  </head>
+  <body>
+    <div class="app-container">
+      <header class="glass-header">
+        <div class="logo">
+          <i class="fa-solid fa-cloud-moon-rain"></i>
+          <h1>Emotional Weather Map</h1>
+        </div>
+        <div class="user-controls">
+          <span class="user-name">Ashraf Morningstar's Map</span>
+        </div>
+      </header>
+
+      <main class="main-content">
+        <div id="map" class="map-container"></div>
+
+        <aside class="mood-panel glass-panel">
+          <h2>Share Your Mood</h2>
+          <div class="mood-selector">
+            <button class="mood-btn" data-mood="joy" title="Joy">😆</button>
+            <button class="mood-btn" data-mood="calm" title="Calm">😌</button>
+            <button class="mood-btn" data-mood="sadness" title="Sadness">
+              😢
+            </button>
+            <button class="mood-btn" data-mood="anger" title="Anger">😠</button>
+            <button class="mood-btn" data-mood="fear" title="Fear">😨</button>
+            <button class="mood-btn" data-mood="love" title="Love">🥰</button>
+          </div>
+
+          <div class="mood-input-group">
+            <label for="mood-note">Why do you feel this way?</label>
+            <textarea
+              id="mood-note"
+              placeholder="Share your story..."
+            ></textarea>
+          </div>
+
+          <button id="submit-mood" class="primary-btn">Pin My Emotion</button>
+
+          <div class="stats-container">
+            <h3>Global Mood</h3>
+            <div class="stats-bar">
+              <div class="stat-item" id="global-mood-display">Loading...</div>
+            </div>
+          </div>
+        </aside>
+      </main>
+    </div>
+
+    <script
+      src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+      crossorigin=""
+    ></script>
+    <script src="app.js"></script>
+  </body>
+</html>

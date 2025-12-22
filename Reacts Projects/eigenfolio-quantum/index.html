@@ -1,0 +1,106 @@
+<!--
+ -----------------------------------------------------------------------------
+ @author      Ashraf Morningstar
+ @github      https://github.com/AshrafMorningstar
+ @repository  Project Graveyard - The Ultimate Archive
+ @quote       "Code that defines the future. Designed to inspire."
+ -----------------------------------------------------------------------------
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Eigenfolio Quantum | Neuromorphic Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            fontFamily: {
+              'space-grotesk': ['"Space Grotesk"', 'sans-serif'],
+              'inter': ['"Inter"', 'sans-serif'],
+            },
+            colors: {
+              chronos: {
+                blue: "#0A0C27",
+                dark: "#050510",
+                space: "#0F102E"
+              },
+              neuro: {
+                purple: "#3A0CA3",
+                pink: "#FF00FF",
+                cyan: "#00F5FF"
+              },
+              quantum: {
+                glow: "#4CC9F0",
+                energy: "#7209B7",
+                matter: "#F72585"
+              },
+              hologram: {
+                primary: "rgba(10, 12, 39, 0.95)",
+                secondary: "rgba(58, 12, 163, 0.8)",
+                accent: "rgba(0, 245, 255, 0.6)"
+              }
+            },
+            animation: {
+              'quantum-pulse': 'quantum-pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+              'float': 'float 6s ease-in-out infinite',
+              'glow': 'glow 2s ease-in-out infinite alternate',
+            },
+            keyframes: {
+              'quantum-pulse': {
+                '0%, 100%': { opacity: 1, boxShadow: '0 0 20px rgba(76, 201, 240, 0.5)' },
+                '50%': { opacity: 0.7, boxShadow: '0 0 40px rgba(76, 201, 240, 0.2)' }
+              },
+              float: {
+                '0%, 100%': { transform: 'translateY(0)' },
+                '50%': { transform: 'translateY(-10px)' },
+              },
+              glow: {
+                'from': { boxShadow: '0 0 10px #3A0CA3' },
+                'to': { boxShadow: '0 0 20px #00F5FF' }
+              }
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      body {
+        background-color: #050510;
+        color: white;
+        overflow: hidden;
+      }
+      .scrollbar-hide::-webkit-scrollbar {
+          display: none;
+      }
+      .glass-panel {
+        background: rgba(10, 12, 39, 0.7);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "@google/genai": "https://esm.sh/@google/genai@^1.33.0",
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "react": "https://esm.sh/react@^19.2.3",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "lucide-react": "https://esm.sh/lucide-react@^0.561.0"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body>
+    <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>

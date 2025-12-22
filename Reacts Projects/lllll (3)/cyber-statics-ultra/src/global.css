@@ -1,0 +1,24 @@
+/*
+ * -----------------------------------------------------------------------------
+ * @author      Ashraf Morningstar
+ * @github      https://github.com/AshrafMorningstar
+ * @repository  Project Graveyard - The Ultimate Archive
+ * @quote       "Code that defines the future. Designed to inspire."
+ * -----------------------------------------------------------------------------
+*/
+
+Add these small utility styles to support glow and motion.
+
+/* Glow utility */
+.glow {
+  filter: drop-shadow(0 6px 20px rgba(176,44,255,0.06));
+}
+
+/* subtle floating */
+@keyframes float-small {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+  100% { transform: translateY(0px); }
+}
+
+.float-slow { animation: float-small 7s ease-in-out infinite; }

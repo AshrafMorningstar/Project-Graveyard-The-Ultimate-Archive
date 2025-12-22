@@ -1,0 +1,8 @@
+{
+  "name": "Archonic Codex",
+  "description": "A premium, macOS-style interactive developer portfolio with draggable windows, animations, and mini-games.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ]
+}

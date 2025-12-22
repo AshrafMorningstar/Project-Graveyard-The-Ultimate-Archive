@@ -1,0 +1,47 @@
+<!--
+ -----------------------------------------------------------------------------
+ @author      Ashraf Morningstar
+ @github      https://github.com/AshrafMorningstar
+ @repository  Project Graveyard - The Ultimate Archive
+ @quote       "Code that defines the future. Designed to inspire."
+ -----------------------------------------------------------------------------
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>GitHub AI Oracle</title>
+  <style id="theme-style"></style>
+  <script>
+    const THEMES = {
+      stellar: 'body{background:#000013;color:#00ffff;font-family:sans-serif;} .card{border:1px solid #00f0f0;}',
+      neon: 'body{background:#111;color:#f0f;font-family:monospace;} .card{box-shadow:0 0 15px #f0f;}',
+      obsidian: 'body{background:#0b0c10;color:#c5c6c7;font-family:Arial;} .card{background:#1f2833;}',
+      aether: 'body{background:#2d2a4a;color:#f5f6fa;font-family:Georgia;} .card{border:1px solid #8c7ae6;}',
+      digitalwave: 'body{background:#002b36;color:#93a1a1;} .card{border-left:5px solid #268bd2;padding:10px;}'
+    };
+
+    fetch('public/oracle-output.json')
+      .then(res => res.json())
+      .then(data => {
+        const style = THEMES[data.theme] || THEMES.stellar;
+        document.getElementById('theme-style').textContent = style;
+
+        document.getElementById('oracle').innerHTML = \`
+          <div class="card"><h2>\${data.name}'s Oracle</h2>
+          <p><strong>Theme:</strong> \${data.theme}</p>
+          <p><strong>Followers:</strong> \${data.followers}</p>
+          <p><strong>Public Repos:</strong> \${data.repos}</p>
+          <p><strong>Predicted Growth Index:</strong> \${data.trend_prediction}</p>
+          <h3>Recent Activity:</h3>
+          <ul>\${data.activity.map(e => \`<li>\${e.type} in \${e.repo} (\${new Date(e.created_at).toLocaleString()})</li>\`).join('')}</ul>
+          </div>\`;
+      });
+  </script>
+</head>
+<body>
+  <h1>GitHub AI Oracle</h1>
+  <div id="oracle"></div>
+</body>
+</html>

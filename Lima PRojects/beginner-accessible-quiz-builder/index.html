@@ -1,0 +1,111 @@
+<!--
+ -----------------------------------------------------------------------------
+ @author      Ashraf Morningstar
+ @github      https://github.com/AshrafMorningstar
+ @repository  Project Graveyard - The Ultimate Archive
+ @quote       "Code that defines the future. Designed to inspire."
+ -----------------------------------------------------------------------------
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Create and take accessible quizzes">
+    <meta name="author" content="Ashraf Morningstar">
+    <title>Accessible Quiz Builder | Ashraf Morningstar</title>
+    <link rel="stylesheet" href="src/styles/main.css">
+    <!-- Open Graph Tags for Virality -->
+    <meta property="og:title" content="Accessible Quiz Builder">
+    <meta property="og:description" content="Build WCAG-compliant quizzes in minutes.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://github.com/AshrafMorningstar">
+</head>
+<body class="theme-light">
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <header role="banner" class="app-header">
+        <div class="container">
+            <h1>Accessible Quiz Builder</h1>
+            <nav role="navigation" aria-label="Main Navigation">
+                <button id="nav-builder" aria-current="page">Builder</button>
+                <button id="nav-player">Player</button>
+            </nav>
+            <div class="theme-switcher">
+                <label for="theme-select">Theme:</label>
+                <select id="theme-select">
+                    <option value="theme-light">Light</option>
+                    <option value="theme-dark">Dark</option>
+                    <option value="theme-high-contrast">High Contrast</option>
+                </select>
+            </div>
+        </div>
+    </header>
+
+    <main id="main-content" role="main" class="container">
+        <!-- Live Region for Announcements -->
+        <div id="live-region" class="visually-hidden" aria-live="polite"></div>
+
+        <!-- Builder View -->
+        <section id="view-builder" aria-label="Quiz Builder">
+            <h2>Create New Quiz</h2>
+            <form id="quiz-form">
+                <div class="form-group">
+                    <label for="quiz-title">Quiz Title (Required)</label>
+                    <input type="text" id="quiz-title" required aria-required="true">
+                </div>
+
+                <div id="questions-container">
+                    <!-- Questions injected here -->
+                </div>
+
+                <button type="button" id="add-question-btn" class="btn-secondary">
+                    + Add Question
+                </button>
+
+                <div class="form-actions">
+                    <button type="submit" class="btn-primary">Save Quiz</button>
+                    <button type="button" id="load-quiz-btn" class="btn-outline">Load Saved Draft</button>
+                </div>
+            </form>
+        </section>
+
+        <!-- Player View -->
+        <section id="view-player" class="hidden" aria-label="Quiz Player">
+            <div id="player-intro">
+                <h2 id="player-quiz-title">No Quiz Loaded</h2>
+                <button id="start-quiz-btn" class="btn-primary">Start Quiz</button>
+            </div>
+
+            <div id="player-active" class="hidden">
+                <div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+                    <div class="progress-fill"></div>
+                </div>
+                
+                <h3 id="question-text" tabindex="-1"></h3>
+                
+                <form id="question-form">
+                    <fieldset id="choices-fieldset">
+                        <legend class="visually-hidden">Select an answer</legend>
+                        <div id="choices-container"></div>
+                    </fieldset>
+                    <button type="submit" class="btn-primary">Submit Answer</button>
+                </form>
+            </div>
+
+            <div id="player-results" class="hidden" tabindex="-1">
+                <h2>Quiz Complete!</h2>
+                <p id="final-score"></p>
+                <button id="restart-btn" class="btn-secondary">Restart Quiz</button>
+            </div>
+        </section>
+    </main>
+
+    <footer role="contentinfo">
+        <p>&copy; 2024 Ashraf Morningstar. Built with semantic HTML & Love.</p>
+    </footer>
+
+    <script type="module" src="src/main.js"></script>
+</body>
+</html>

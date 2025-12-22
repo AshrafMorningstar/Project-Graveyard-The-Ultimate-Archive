@@ -1,0 +1,39 @@
+<!--
+ -----------------------------------------------------------------------------
+ @author      Ashraf Morningstar
+ @github      https://github.com/AshrafMorningstar
+ @repository  Project Graveyard - The Ultimate Archive
+ @quote       "Code that defines the future. Designed to inspire."
+ -----------------------------------------------------------------------------
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>AshrafMorningstar's GitHub SoulPrint</title>
+  <style>
+    body { background: #0a0a0a; color: #0ff; font-family: monospace; padding: 2rem; }
+    .card { border: 1px solid #0ff; padding: 1rem; border-radius: 10px; margin-top: 2rem; }
+  </style>
+</head>
+<body>
+  <h1>🌌 GitHub SoulPrint</h1>
+  <div id="soulprint" class="card">Loading your soul...</div>
+  <script>
+    fetch('soul/soulprint.json')
+      .then(res => res.json())
+      .then(data => {
+        document.getElementById('soulprint').innerHTML = \`
+          <p><strong>Name:</strong> \${data.username}</p>
+          <p><strong>GitHub:</strong> <a href="\${data.github}" target="_blank">\${data.github}</a></p>
+          <p><strong>Symbol Color:</strong> \${data.symbol}</p>
+          <p><strong>Strength:</strong> \${data.traits.strength}</p>
+          <p><strong>Adaptability:</strong> \${data.traits.adaptability}</p>
+          <p><strong>Resonance:</strong> \${data.traits.resonance}</p>
+          <p><strong>Origin:</strong> \${data.traits.origin}</p>
+        \`;
+      });
+  </script>
+</body>
+</html>

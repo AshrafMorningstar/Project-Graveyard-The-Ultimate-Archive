@@ -1,0 +1,144 @@
+/*
+ * -----------------------------------------------------------------------------
+ * @author      Ashraf Morningstar
+ * @github      https://github.com/AshrafMorningstar
+ * @repository  Project Graveyard - The Ultimate Archive
+ * @quote       "Code that defines the future. Designed to inspire."
+ * -----------------------------------------------------------------------------
+*/
+
+/* Ambient Landing - Base Styles */
+
+:root {
+  --color-bg: #0a0a0f;
+  --color-text: #e8e8f0;
+  --color-muted: #9090a0;
+  --color-accent: #6366f1;
+
+  --font-primary: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+  --spacing-unit: 1rem;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-primary);
+  background: var(--color-bg);
+  color: var(--color-text);
+  min-height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+
+.landing-container {
+  position: relative;
+  z-index: 1;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: calc(var(--spacing-unit) * 3);
+  text-align: center;
+}
+
+.landing-header {
+  margin-bottom: calc(var(--spacing-unit) * 4);
+}
+
+.headline {
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  margin-bottom: calc(var(--spacing-unit) * 1.5);
+  animation: text-breathe 8s ease-in-out infinite;
+}
+
+@keyframes text-breathe {
+  0%,
+  100% {
+    opacity: 0.95;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+.subheading {
+  font-size: clamp(1.125rem, 2vw, 1.5rem);
+  font-weight: 300;
+  color: var(--color-muted);
+  letter-spacing: 0.01em;
+}
+
+.landing-content {
+  max-width: 700px;
+  margin-bottom: calc(var(--spacing-unit) * 4);
+}
+
+.statement {
+  font-size: clamp(1rem, 1.5vw, 1.25rem);
+  line-height: 1.8;
+  font-weight: 300;
+  color: var(--color-text);
+  opacity: 0.9;
+}
+
+.landing-footer {
+  margin-top: auto;
+}
+
+.ambient-indicator {
+  display: flex;
+  align-items: center;
+  gap: calc(var(--spacing-unit) * 0.75);
+  justify-content: center;
+}
+
+.pulse-dot {
+  width: 8px;
+  height: 8px;
+  background: var(--color-accent);
+  border-radius: 50%;
+  animation: pulse 3s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 0.4;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+}
+
+.indicator-text {
+  font-size: 0.875rem;
+  color: var(--color-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  font-weight: 400;
+}
+
+@media (max-width: 768px) {
+  .landing-container {
+    padding: calc(var(--spacing-unit) * 2);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}

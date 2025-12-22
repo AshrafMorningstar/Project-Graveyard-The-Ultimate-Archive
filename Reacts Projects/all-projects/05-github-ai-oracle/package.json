@@ -1,0 +1,20 @@
+{
+  "name": "05-github-ai-oracle",
+  "version": "1.0.0",
+  "description": "AI-powered predictive GitHub analytics with ML regression",
+  "author": "AshrafMorningstar <https://github.com/AshrafMorningstar>",
+  "license": "MIT",
+  "scripts": {
+    "start": "npx http-server -p 8080",
+    "deploy": "gh-pages -d ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AshrafMorningstar/05-github-ai-oracle"
+  },
+  "keywords": [
+    "github",
+    "ai-dashboard",
+    "ashrafmorningstar"
+  ]
+}

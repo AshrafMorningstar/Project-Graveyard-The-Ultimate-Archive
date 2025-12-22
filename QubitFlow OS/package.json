@@ -1,0 +1,28 @@
+{
+  "name": "qubitflow-os",
+  "private": false,
+  "version": "1.0.0",
+  "description": "🌌 QubitFlow OS - The Quantum Computing Interface. A next-gen web operating system simulation. 🚀 Built with React, Vite, and Quantum UI.",
+  "author": "Ashraf Morningstar <https://github.com/AshrafMorningstar>",
+  "keywords": ["react", "web-os", "quantum-interface", "portfolio", "viral"],
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "react": "^19.2.3",
+    "react-dom": "^19.2.3",
+    "framer-motion": "^11.0.8",
+    "lucide-react": "^0.561.0",
+    "zustand": "^5.0.9",
+    "gsap": "^3.12.5"
+  },
+  "devDependencies": {
+    "@types/node": "^22.14.0",
+    "@vitejs/plugin-react": "^5.0.0",
+    "typescript": "~5.8.2",
+    "vite": "^6.2.0"
+  }
+}

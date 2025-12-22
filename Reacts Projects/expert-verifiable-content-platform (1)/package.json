@@ -1,0 +1,8 @@
+{
+  "name": "expert-verifiable-content-platform",
+  "private": true,
+  "scripts": {
+    "dev": "echo dev",
+    "build": "echo build"
+  }
+}

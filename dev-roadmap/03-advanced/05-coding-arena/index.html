@@ -1,0 +1,142 @@
+<!--
+ -----------------------------------------------------------------------------
+ @author      Ashraf Morningstar
+ @github      https://github.com/AshrafMorningstar
+ @repository  Project Graveyard - The Ultimate Archive
+ @quote       "Code that defines the future. Designed to inspire."
+ -----------------------------------------------------------------------------
+-->
+
+<!--
+  Author: Ashraf Morningstar
+  GitHub: https://github.com/AshrafMorningstar
+  Project: Real-Time Competitive Coding Arena
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CodeArena | Ashraf Morningstar</title>
+    <!-- CodeMirror -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/codemirror.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/theme/dracula.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/mode/javascript/javascript.min.js"></script>
+    <!-- Socket.io -->
+    <script src="https://cdn.socket.io/4.5.4/socket.io.min.js"></script>
+    
+    <style>
+        body { margin: 0; display: flex; height: 100vh; background: #282a36; font-family: sans-serif; color: white; overflow: hidden; }
+        .problem-pane { width: 35%; padding: 20px; border-right: 1px solid #444; overflow-y: auto; background: #21222c; }
+        .editor-pane { flex: 1; display: flex; flex-direction: column; }
+        .CodeMirror { flex: 1; font-size: 16px; font-family: 'Fira Code', monospace; }
+        .toolbar { padding: 15px; background: #44475a; display: flex; justify-content: space-between; align-items: center; }
+        
+        button { padding: 10px 20px; border: none; border-radius: 6px; font-weight: bold; cursor: pointer; transition: 0.2s; }
+        .btn-submit { background: #50fa7b; color: #282a36; font-size: 1rem; }
+        .btn-submit:hover { transform: translateY(-2px); box-shadow: 0 4px 10px rgba(80, 250, 123, 0.4); }
+        
+        h2 { color: #8be9fd; margin-top: 5px; }
+        .tag { background: #6272a4; padding: 2px 8px; border-radius: 12px; font-size: 0.75rem; color: #f8f8f2; margin-right: 5px; }
+        
+        #output { padding: 15px; background: #191a21; border-top: 1px solid #444; max-height: 200px; overflow-y: auto; font-family: monospace; font-size: 0.9rem; }
+        .pass { color: #50fa7b; }
+        .fail { color: #ff5555; }
+        .status-box { font-size: 0.9rem; color: #f1fa8c; }
+    </style>
+</head>
+<body>
+    <div class="problem-pane">
+        <div style="margin-bottom: 20px;">
+            <span class="tag">Easy</span>
+            <span class="tag">Arrays</span>
+            <span class="tag">Hash Map</span>
+        </div>
+        <h2>Two Sum</h2>
+        <p>Given an array of integers <code>nums</code> and an integer <code>target</code>, return indices of the two numbers such that they add up to <code>target</code>.</p>
+        <p>You may assume that each input would have exactly one solution, and you may not use the same element twice.</p>
+        
+        <h3>Example 1:</h3>
+        <pre style="background:#444; padding:10px; border-radius:4px;">Input: nums = [2,7,11,15], target = 9
+Output: [0,1]</pre>
+        
+        <h3>Example 2:</h3>
+        <pre style="background:#444; padding:10px; border-radius:4px;">Input: nums = [3,2,4], target = 6
+Output: [1,2]</pre>
+    </div>
+    
+    <div class="editor-pane">
+        <textarea id="code-editor">// Solution by Ashraf Morningstar
+function twoSum(nums, target) {
+    // Write your solution here...
+    
+}</textarea>
+        
+        <div id="output">Result console...</div>
+
+        <div class="toolbar">
+            <div class="status-box">Opponent Status: <span id="opp-status">Idle</span></div>
+            <button class="btn-submit" onclick="submitCode()">Run & Submit</button>
+        </div>
+    </div>
+
+    <script>
+        // Init CodeMirror
+        var editor = CodeMirror.fromTextArea(document.getElementById("code-editor"), {
+            mode: "javascript",
+            theme: "dracula",
+            lineNumbers: true,
+            autoCloseBrackets: true,
+            indentUnit: 4
+        });
+
+        // Init Socket
+        let socket;
+        try {
+            socket = io();
+        } catch(e) {
+            document.getElementById('output').innerHTML = "<span class='fail'>Server not connected. Install dependencies & run 'node arena_server.js'.</span>";
+        }
+
+        // Handle Typing
+        editor.on('change', () => {
+            if(socket) socket.emit('typing');
+        });
+
+        if(socket) {
+            socket.on('opponent_update', (data) => {
+                document.getElementById('opp-status').innerText = data.status;
+            });
+
+            socket.on('result', (data) => {
+                const out = document.getElementById('output');
+                if(data.error) {
+                    out.innerHTML = `<span class='fail'>${data.error}</span>`;
+                } else {
+                    let html = `<div>Tests: ${data.passed}/${data.total} Passed</div>`;
+                    data.details.forEach(d => {
+                        html += `<div class="${d.passed ? 'pass' : 'fail'}">
+                            Case ${d.case}: ${d.passed ? 'PASS' : 'FAIL'} 
+                            ${!d.passed ? `(Expected ${d.expected}, Got ${d.actual})` : ''}
+                        </div>`;
+                    });
+                    if(data.success) html += "<h3 class='pass'>🏆 ACCEPTED!</h3>";
+                    out.innerHTML = html;
+                }
+            });
+            
+            socket.on('game_over', (data) => {
+                if(data.winner !== socket.id) alert("Opponent Won!");
+                else alert("You Won!");
+            });
+        }
+
+        function submitCode() {
+            if(!socket) return alert("Server offline");
+            const code = editor.getValue();
+            document.getElementById('output').innerHTML = "Running tests on server...";
+            socket.emit('submit_code', code);
+        }
+    </script>
+</body>
+</html>

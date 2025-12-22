@@ -1,0 +1,20 @@
+{
+  "name": "10-github-soulprint",
+  "version": "1.0.0",
+  "description": "Digital soul profile with symbolic traits and colors",
+  "author": "AshrafMorningstar <https://github.com/AshrafMorningstar>",
+  "license": "MIT",
+  "scripts": {
+    "start": "npx http-server -p 8080",
+    "deploy": "gh-pages -d ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AshrafMorningstar/10-github-soulprint"
+  },
+  "keywords": [
+    "github",
+    "identity",
+    "ashrafmorningstar"
+  ]
+}

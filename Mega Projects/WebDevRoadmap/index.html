@@ -1,0 +1,338 @@
+<!--
+ -----------------------------------------------------------------------------
+ @author      Ashraf Morningstar
+ @github      https://github.com/AshrafMorningstar
+ @repository  Project Graveyard - The Ultimate Archive
+ @quote       "Code that defines the future. Designed to inspire."
+ -----------------------------------------------------------------------------
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ashraf Morningstar | Ultimate Web Dev Portfolio</title>
+    <meta name="description" content="A premium collection of 12 advanced web development projects by Ashraf Morningstar. From AI Generative UI to Privacy-First Analytics.">
+    <meta name="author" content="Ashraf Morningstar">
+    <style>
+        :root {
+            --bg-dark: #0f172a;
+            --bg-card: #1e293b;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --accent: #3b82f6;
+            --accent-hover: #60a5fa;
+            --font-main: 'Inter', system-ui, -apple-system, sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-main);
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        header {
+            text-align: center;
+            padding: 4rem 0;
+            background: radial-gradient(circle at center, #1e293b 0%, #0f172a 100%);
+            margin-bottom: 3rem;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(to right, #60a5fa, #a855f7);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .subtitle {
+            font-size: 1.25rem;
+            color: var(--text-muted);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            margin: 3rem 0 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--bg-card);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .card {
+            background: var(--bg-card);
+            border: 1px solid #334155;
+            border-radius: 12px;
+            padding: 2rem;
+            transition: transform 0.2s, box-shadow 0.2s;
+            display: flex;
+            flex-direction: column;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            border-color: var(--accent);
+        }
+
+        .card-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-main);
+        }
+
+        .card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+        }
+
+        .tags {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            margin-bottom: 1.5rem;
+        }
+
+        .tag {
+            background: rgba(59, 130, 246, 0.1);
+            color: var(--accent-hover);
+            padding: 0.25rem 0.75rem;
+            border-radius: 999px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            border: 1px solid rgba(59, 130, 246, 0.2);
+        }
+
+        .btn {
+            display: inline-block;
+            background: var(--accent);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            text-align: center;
+            font-weight: 600;
+            transition: background 0.2s;
+        }
+
+        .btn:hover {
+            background: var(--accent-hover);
+        }
+
+        footer {
+            text-align: center;
+            padding: 4rem 0;
+            color: var(--text-muted);
+            margin-top: 4rem;
+            border-top: 1px solid var(--bg-card);
+        }
+
+        footer a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 2.5rem; }
+            .grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+  <!-- Author: Ashraf Morningstar | https://github.com/AshrafMorningstar -->
+
+    <header>
+        <div class="container">
+            <h1>Ashraf Morningstar</h1>
+            <p class="subtitle">Ultimate Web Development Roadmap Portfolio. 12 Premium, Open-Source Projects.</p>
+        </div>
+    </header>
+
+    <div class="container">
+        
+        <h2 class="section-title">🚀 Expert Projects</h2>
+        <div class="grid">
+            <a href="expert-collaborative-cv-studio/index.html" class="card">
+                <div class="card-icon">📄</div>
+                <h3>Collaborative CV Studio</h3>
+                <p>Real-time resume editor with rich text capabilities, Google Docs-style collaboration features, and A4 print layout.</p>
+                <div class="tags">
+                    <span class="tag">QuillJS</span>
+                    <span class="tag">Real-time</span>
+                    <span class="tag">A4 Layout</span>
+                </div>
+                <span class="btn">Launch App</span>
+            </a>
+
+            <a href="expert-generative-ui-engine/index.html" class="card">
+                <div class="card-icon">✨</div>
+                <h3>Generative UI Engine</h3>
+                <p>AI-powered component generator. Describe a UI element in natural language and get production-ready Tailwind CSS code.</p>
+                <div class="tags">
+                    <span class="tag">AI Mock</span>
+                    <span class="tag">Tailwind</span>
+                    <span class="tag">Generative</span>
+                </div>
+                <span class="btn">Launch App</span>
+            </a>
+
+            <a href="expert-privacy-first-analytics/index.html" class="card">
+                <div class="card-icon">📊</div>
+                <h3>Privacy-First Analytics</h3>
+                <p>GDPR-compliant analytics dashboard that tracks metrics without cookies or personal data collection.</p>
+                <div class="tags">
+                    <span class="tag">Chart.js</span>
+                    <span class="tag">Privacy</span>
+                    <span class="tag">GDPR</span>
+                </div>
+                <span class="btn">Launch App</span>
+            </a>
+
+            <a href="expert-micro-mentorship-pwa/index.html" class="card">
+                <div class="card-icon">🎓</div>
+                <h3>MentorMatch PWA</h3>
+                <p>Instant mentorship platform with simulated WebRTC video calls and offline-first PWA architecture.</p>
+                <div class="tags">
+                    <span class="tag">PWA</span>
+                    <span class="tag">WebRTC</span>
+                    <span class="tag">Mobile First</span>
+                </div>
+                <span class="btn">Launch App</span>
+            </a>
+
+            <a href="expert-wasm-image-pipeline/index.html" class="card">
+                <div class="card-icon">🖼️</div>
+                <h3>WASM Image Pipeline</h3>
+                <p>High-performance client-side image processor using Canvas API to simulate WebAssembly filters.</p>
+                <div class="tags">
+                    <span class="tag">Canvas API</span>
+                    <span class="tag">WASM Sim</span>
+                    <span class="tag">Image Proc</span>
+                </div>
+                <span class="btn">Launch App</span>
+            </a>
+
+            <a href="expert-verifiable-content-platform/index.html" class="card">
+                <div class="card-icon">🔐</div>
+                <h3>Verifiable Content</h3>
+                <p>Cryptographic content verification platform using SHA-256 hashing to ensure data integrity.</p>
+                <div class="tags">
+                    <span class="tag">Web Crypto</span>
+                    <span class="tag">SHA-256</span>
+                    <span class="tag">Security</span>
+                </div>
+                <span class="btn">Launch App</span>
+            </a>
+        </div>
+
+        <h2 class="section-title">🐣 Beginner Projects</h2>
+        <div class="grid">
+            <a href="beginner-micro-portfolio-generator/index.html" class="card">
+                <div class="card-icon">🎨</div>
+                <h3>Micro Portfolio Generator</h3>
+                <p>Zero-config portfolio builder with live preview and downloadable HTML export.</p>
+                <div class="tags">
+                    <span class="tag">DOM</span>
+                    <span class="tag">Export</span>
+                </div>
+                <span class="btn">Launch App</span>
+            </a>
+
+            <a href="beginner-events-offline-pwa/index.html" class="card">
+                <div class="card-icon">📡</div>
+                <h3>Local Events PWA</h3>
+                <p>Offline-first event manager using Service Workers and Cache API.</p>
+                <div class="tags">
+                    <span class="tag">Service Worker</span>
+                    <span class="tag">Offline</span>
+                </div>
+                <span class="btn">Launch App</span>
+            </a>
+
+            <a href="beginner-recipe-remix/index.html" class="card">
+                <div class="card-icon">🍳</div>
+                <h3>Recipe Remix Engine</h3>
+                <p>Ingredient matcher with interactive cooking mode.</p>
+                <div class="tags">
+                    <span class="tag">Algorithms</span>
+                    <span class="tag">Interaction</span>
+                </div>
+                <span class="btn">Launch App</span>
+            </a>
+
+            <a href="beginner-accessible-quiz-builder/index.html" class="card">
+                <div class="card-icon">✏️</div>
+                <h3>Accessible Quiz Builder</h3>
+                <p>WCAG AA compliant quiz platform with full keyboard support.</p>
+                <div class="tags">
+                    <span class="tag">a11y</span>
+                    <span class="tag">WCAG</span>
+                </div>
+                <span class="btn">Launch App</span>
+            </a>
+
+            <a href="beginner-css-theme-playground/index.html" class="card">
+                <div class="card-icon">🎭</div>
+                <h3>Themed CSS Playground</h3>
+                <p>Live design token editor with CodeMirror integration.</p>
+                <div class="tags">
+                    <span class="tag">CSS Vars</span>
+                    <span class="tag">Editor</span>
+                </div>
+                <span class="btn">Launch App</span>
+            </a>
+
+            <a href="beginner-ecommerce-ux-sandbox/index.html" class="card">
+                <div class="card-icon">🛒</div>
+                <h3>E-commerce UX Sandbox</h3>
+                <p>Complete mock storefront with shopping cart and checkout flows.</p>
+                <div class="tags">
+                    <span class="tag">UX</span>
+                    <span class="tag">State</span>
+                </div>
+                <span class="btn">Launch App</span>
+            </a>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Ashraf Morningstar. Released under MIT License.</p>
+        <p>Built with ❤️ for the Open Source Community.</p>
+    </footer>
+
+</body>
+</html>
+

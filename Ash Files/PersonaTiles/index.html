@@ -1,0 +1,96 @@
+<!--
+ -----------------------------------------------------------------------------
+ @author      Ashraf Morningstar
+ @github      https://github.com/AshrafMorningstar
+ @repository  Project Graveyard - The Ultimate Archive
+ @quote       "Code that defines the future. Designed to inspire."
+ -----------------------------------------------------------------------------
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Persona Tiles - Modular Profile Builder</title>
+    <meta name="description" content="Build your digital persona through interactive tiles">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/grid.css">
+    <link rel="stylesheet" href="css/tiles.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1 class="main-title">Persona Tiles</h1>
+            <p class="subtitle">Build your identity through interaction</p>
+        </header>
+
+        <main class="persona-builder">
+            <div class="tiles-grid" id="tilesGrid">
+                <!-- Skills -->
+                <div class="tile" data-type="skill" data-id="js">
+                    <div class="tile-icon">💻</div>
+                    <div class="tile-label">JavaScript</div>
+                </div>
+                <div class="tile" data-type="skill" data-id="design">
+                    <div class="tile-icon">🎨</div>
+                    <div class="tile-label">Design</div>
+                </div>
+                <div class="tile" data-type="skill" data-id="writing">
+                    <div class="tile-icon">✍️</div>
+                    <div class="tile-label">Writing</div>
+                </div>
+                
+                <!-- Interests -->
+                <div class="tile" data-type="interest" data-id="music">
+                    <div class="tile-icon">🎵</div>
+                    <div class="tile-label">Music</div>
+                </div>
+                <div class="tile" data-type="interest" data-id="travel">
+                    <div class="tile-icon">✈️</div>
+                    <div class="tile-label">Travel</div>
+                </div>
+                <div class="tile" data-type="interest" data-id="reading">
+                    <div class="tile-icon">📚</div>
+                    <div class="tile-label">Reading</div>
+                </div>
+                
+                <!-- Values -->
+                <div class="tile" data-type="value" data-id="creativity">
+                    <div class="tile-icon">💡</div>
+                    <div class="tile-label">Creativity</div>
+                </div>
+                <div class="tile" data-type="value" data-id="growth">
+                    <div class="tile-icon">🌱</div>
+                    <div class="tile-label">Growth</div>
+                </div>
+                <div class="tile" data-type="value" data-id="impact">
+                    <div class="tile-icon">🎯</div>
+                    <div class="tile-label">Impact</div>
+                </div>
+                
+                <!-- Goals -->
+                <div class="tile" data-type="goal" data-id="learn">
+                    <div class="tile-icon">🚀</div>
+                    <div class="tile-label">Learn</div>
+                </div>
+                <div class="tile" data-type="goal" data-id="build">
+                    <div class="tile-icon">🔨</div>
+                    <div class="tile-label">Build</div>
+                </div>
+                <div class="tile" data-type="goal" data-id="connect">
+                    <div class="tile-icon">🤝</div>
+                    <div class="tile-label">Connect</div>
+                </div>
+            </div>
+        </main>
+
+        <footer class="attribution">
+            <p>Created by <strong>Ashraf Morningstar</strong></p>
+            <a href="https://github.com/AshrafMorningstar" target="_blank">github.com/AshrafMorningstar</a>
+        </footer>
+    </div>
+
+    <script src="js/persona-engine.js"></script>
+</body>
+</html>

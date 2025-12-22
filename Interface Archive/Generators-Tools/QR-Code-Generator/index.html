@@ -1,0 +1,112 @@
+<!--
+ -----------------------------------------------------------------------------
+ @author      Ashraf Morningstar
+ @github      https://github.com/AshrafMorningstar
+ @repository  Project Graveyard - The Ultimate Archive
+ @quote       "Code that defines the future. Designed to inspire."
+ -----------------------------------------------------------------------------
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Minimalist Luxury QR Code Generator - Created by Ashraf Morningstar">
+    <meta name="keywords" content="qr code generator, minimalist design, Ashraf Morningstar">
+    <meta name="author" content="Ashraf Morningstar">
+    <title>QR Atelier | Ashraf Morningstar</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Premium QR Code Generator - A beautifully designed, fully functional web application with NEON_GLOW design theme. Created by Ashraf Morningstar.">
+    <meta name="keywords" content="QR-Code-Generator, web app, NEON_GLOW, premium design, Ashraf Morningstar, Generators-Tools, web development">
+    <meta name="author" content="Ashraf Morningstar">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="QR-Code-Generator - Premium Web App">
+    <meta property="og:description" content="Premium QR Code Generator - A beautifully designed, fully functional web application with NEON_GLOW design theme. Created by Ashraf Morningstar.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://github.com/AshrafMorningstar">
+    <meta property="og:image" content="./preview.png">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="QR-Code-Generator - Premium Web App">
+    <meta name="twitter:description" content="Premium QR Code Generator - A beautifully designed, fully functional web application with NEON_GLOW design theme. Created by Ashraf Morningstar.">
+    <meta name="twitter:creator" content="@AshrafMorningstar">
+    <meta name="twitter:image" content="./preview.png">
+    
+    <!-- Additional Meta Tags -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="canonical" href="https://github.com/AshrafMorningstar">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1 class="brand">QR Atelier</h1>
+            <p class="tagline">Elegance in Every Code</p>
+        </header>
+
+        <main class="main-content">
+            <div class="input-section">
+                <label for="text-input" class="label">Enter Your Content</label>
+                <textarea 
+                    id="text-input" 
+                    class="text-input" 
+                    placeholder="Website URL, text, or any data..."
+                    rows="4"
+                ></textarea>
+
+                <div class="options-grid">
+                    <div class="option-group">
+                        <label class="label-small">Size</label>
+                        <select id="size-select" class="select">
+                            <option value="200">Small (200px)</option>
+                            <option value="300" selected>Medium (300px)</option>
+                            <option value="400">Large (400px)</option>
+                        </select>
+                    </div>
+
+                    <div class="option-group">
+                        <label class="label-small">Color</label>
+                        <input type="color" id="color-picker" value="#1a1a1a" class="color-input">
+                    </div>
+                </div>
+
+                <button id="generate-btn" class="generate-btn">
+                    <span>Generate QR Code</span>
+                </button>
+            </div>
+
+            <div class="output-section">
+                <div class="qr-display" id="qr-display">
+                    <div class="placeholder">
+                        <svg width="100" height="100" viewBox="0 0 100 100" fill="none">
+                            <rect x="10" y="10" width="35" height="35" fill="#e0e0e0"/>
+                            <rect x="55" y="10" width="35" height="35" fill="#e0e0e0"/>
+                            <rect x="10" y="55" width="35" height="35" fill="#e0e0e0"/>
+                        </svg>
+                        <p>Your QR code will appear here</p>
+                    </div>
+                    <div id="qr-code" class="qr-code hidden"></div>
+                </div>
+
+                <button id="download-btn" class="download-btn hidden">
+                    Download QR Code
+                </button>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <p>Crafted by <a href="https://github.com/AshrafMorningstar" target="_blank">Ashraf Morningstar</a></p>
+        </footer>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

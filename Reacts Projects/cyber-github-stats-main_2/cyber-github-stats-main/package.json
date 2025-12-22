@@ -1,0 +1,46 @@
+{
+  "name": "cyber-github-stats",
+  "version": "1.0.0",
+  "description": "Professional cyber-themed GitHub stats generator with dynamic animations",
+  "main": "src/index.tsx",
+  "scripts": {
+    "start": "remotion studio",
+    "build": "remotion render",
+    "render": "node scripts/render-all.js",
+    "fetch-stats": "node scripts/fetch-github-stats.js",
+    "test": "jest",
+    "upgrade": "remotion upgrade"
+  },
+  "keywords": [
+    "github",
+    "stats",
+    "remotion",
+    "cyber",
+    "animation",
+    "gif",
+    "profile",
+    "readme"
+  ],
+  "author": "Ashraf Morningstar",
+  "license": "MIT",
+  "dependencies": {
+    "@remotion/bundler": "^4.0.0",
+    "@remotion/cli": "^4.0.0",
+    "@remotion/renderer": "^4.0.0",
+    "axios": "^1.6.2",
+    "dotenv": "^16.3.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "remotion": "^4.0.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.45",
+    "@types/node": "^20.10.5",
+    "autoprefixer": "^10.4.16",
+    "eslint": "^8.56.0",
+    "postcss": "^8.4.32",
+    "prettier": "^3.1.1",
+    "tailwindcss": "^3.4.0",
+    "typescript": "^5.3.3"
+  }
+}

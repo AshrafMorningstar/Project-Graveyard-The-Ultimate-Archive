@@ -1,0 +1,11 @@
+{
+  "name": "cv-studio-collab-server",
+  "private": true,
+  "scripts": {
+    "start": "node src/server.js"
+  },
+  "dependencies": {
+    "ws": "^8.0.0",
+    "y-websocket": "^1.5.0"
+  }
+}

@@ -1,0 +1,134 @@
+/*
+ * -----------------------------------------------------------------------------
+ * @author      Ashraf Morningstar
+ * @github      https://github.com/AshrafMorningstar
+ * @repository  Project Graveyard - The Ultimate Archive
+ * @quote       "Code that defines the future. Designed to inspire."
+ * -----------------------------------------------------------------------------
+*/
+
+/**
+ * Author: Ashraf Morningstar
+ * GitHub: https://github.com/AshrafMorningstar
+ * Project: Multi-Vendor Farm-to-Table Platform
+ */
+
+body {
+    margin: 0;
+    font-family: 'DM Sans', sans-serif;
+    color: #2d3748;
+    background: #f7fafc;
+}
+
+.dashboard {
+    display: grid;
+    grid-template-columns: 240px 1fr;
+    min-height: 100vh;
+}
+
+aside {
+    background: #ffffff;
+    border-right: 1px solid #e2e8f0;
+    padding: 2rem;
+}
+
+.brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #48bb78;
+    margin-bottom: 3rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+aside nav a {
+    display: block;
+    padding: 10px 15px;
+    color: #718096;
+    text-decoration: none;
+    margin-bottom: 5px;
+    border-radius: 8px;
+    font-weight: 500;
+}
+
+aside nav a.active {
+    background: #e6fffa;
+    color: #2f855a;
+}
+
+aside nav a:hover { background: #f7fafc; }
+
+.badge {
+    background: #e53e3e;
+    color: white;
+    padding: 2px 6px;
+    border-radius: 10px;
+    font-size: 0.7rem;
+    margin-left: auto;
+}
+
+main {
+    padding: 3rem;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 3rem;
+}
+
+button {
+    background: #48bb78;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.stat-box {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.stat-box span { color: #a0aec0; font-size: 0.9rem; }
+.stat-box h3 { font-size: 1.8rem; margin: 5px 0 0 0; }
+
+table {
+    width: 100%;
+    background: white;
+    border-radius: 12px;
+    border-collapse: collapse;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+th, td {
+    padding: 1.2rem;
+    text-align: left;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+th { background: #f7fafc; color: #4a5568; font-weight: 600; }
+
+.status {
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.status.pending { background: #feebc8; color: #c05621; }
+.status.shipped { background: #c6f6d5; color: #276749; }

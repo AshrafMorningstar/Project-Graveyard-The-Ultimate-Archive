@@ -1,0 +1,18 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "ModelMeta",
+  "type": "object",
+  "required": ["id", "name", "version", "runtime", "entrypoint", "signature"],
+  "properties": {
+    "id": { "type": "string" },
+    "name": { "type": "string" },
+    "version": { "type": "string" },
+    "runtime": { "type": "string", "enum": ["wasm", "python", "container"] },
+    "entrypoint": { "type": "string" },
+    "inputs": { "type": "array", "items": { "type": "string" } },
+    "outputs": { "type": "array", "items": { "type": "string" } },
+    "constraints": { "type": "object" },
+    "created_at": { "type": "string", "format": "date-time" },
+    "signature": { "type": "string" }
+  }
+}

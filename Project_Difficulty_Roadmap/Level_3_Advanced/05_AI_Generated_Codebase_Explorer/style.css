@@ -1,0 +1,77 @@
+/*
+ * -----------------------------------------------------------------------------
+ * @author      Ashraf Morningstar
+ * @github      https://github.com/AshrafMorningstar
+ * @repository  Project Graveyard - The Ultimate Archive
+ * @quote       "Code that defines the future. Designed to inspire."
+ * -----------------------------------------------------------------------------
+*/
+
+/* 
+   Project: AI-Generated Codebase Explorer
+   Level: Advanced
+   Author: Ashraf Morningstar
+   GitHub: https://github.com/AshrafMorningstar
+*/
+
+body {
+    margin: 0;
+    overflow: hidden;
+    background: #000;
+    color: white;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+#ui-overlay {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 10;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    border-radius: 8px;
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    width: 300px;
+}
+
+h1 {
+    font-size: 1.5rem;
+    margin: 0 0 1rem 0;
+    background: linear-gradient(45deg, #00ffff, #ff00ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.controls {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+input {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 8px;
+    color: white;
+    border-radius: 4px;
+}
+
+button {
+    background: linear-gradient(90deg, #00ffff, #00ccff);
+    border: none;
+    padding: 10px;
+    color: black;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 4px;
+    text-transform: uppercase;
+}
+
+button:hover {
+    opacity: 0.9;
+}
+
+#info-panel h3 { margin: 0 0 5px 0; color: #aaa; }
+#info-panel p { margin: 5px 0; font-size: 0.9rem; }

@@ -1,0 +1,145 @@
+<!--
+ -----------------------------------------------------------------------------
+ @author      Ashraf Morningstar
+ @github      https://github.com/AshrafMorningstar
+ @repository  Project Graveyard - The Ultimate Archive
+ @quote       "Code that defines the future. Designed to inspire."
+ -----------------------------------------------------------------------------
+-->
+
+<!--
+  Author: Ashraf Morningstar
+  GitHub: https://github.com/AshrafMorningstar
+  Project: Predictive Personal Health Log
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HealthPulse | Ashraf Morningstar</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- TensorFlow.js Library -->
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@3.18.0/dist/tf.min.js"></script>
+</head>
+<body class="bg-gray-50 text-gray-800">
+    <div class="max-w-md mx-auto min-h-screen bg-white shadow-lg overflow-hidden flex flex-col">
+        <header class="bg-teal-500 text-white p-6 rounded-b-3xl shadow-md">
+            <div class="flex justify-between items-center mb-4">
+                <h1 class="text-2xl font-bold">HealthPulse AI</h1>
+                <div class="w-10 h-10 bg-teal-600 rounded-full flex items-center justify-center font-bold">AM</div>
+            </div>
+            <div class="bg-teal-600 p-4 rounded-xl flex justify-between items-end">
+                <div>
+                    <span class="text-sm opacity-80">Energy Prediction</span>
+                    <div class="text-3xl font-bold" id="score-display">--%</div>
+                </div>
+                <div class="text-sm">TF.js Ready</div>
+            </div>
+        </header>
+
+        <main class="flex-1 p-6">
+            <p class="text-xs text-gray-400 mb-4 uppercase font-bold tracking-wider">Daily Metrics</p>
+            
+            <form id="health-form" class="space-y-4">
+                <div>
+                    <label class="block text-sm text-gray-600 mb-1">Sleep (Hours)</label>
+                    <input type="number" id="sleep" class="w-full bg-gray-100 p-3 rounded-lg outline-none focus:ring-2 focus:ring-teal-500" value="7">
+                </div>
+                <div>
+                    <label class="block text-sm text-gray-600 mb-1">Water Intake (Liters)</label>
+                    <input type="number" step="0.1" id="water" class="w-full bg-gray-100 p-3 rounded-lg outline-none focus:ring-2 focus:ring-teal-500" value="2.0">
+                </div>
+                <div>
+                    <label class="block text-sm text-gray-600 mb-1">Activity (Steps)</label>
+                    <input type="number" id="steps" class="w-full bg-gray-100 p-3 rounded-lg outline-none focus:ring-2 focus:ring-teal-500" value="5000">
+                </div>
+                
+                <button type="button" onclick="runPrediction()" id="predict-btn" class="w-full bg-teal-500 text-white font-bold py-3 rounded-xl shadow-lg hover:bg-teal-600 transition-transform active:scale-95 disabled:opacity-50">
+                    Run AI Prediction
+                </button>
+            </form>
+
+            <div id="console" class="mt-6 p-4 border border-teal-200 bg-teal-50 rounded-xl text-xs font-mono text-teal-800 h-32 overflow-y-auto">
+                > System Initialized...<br>
+                > Click 'Run AI Prediction' to train & predict.
+            </div>
+        </main>
+    </div>
+
+    <script>
+        const log = (msg) => {
+            const el = document.getElementById('console');
+            el.innerHTML += `> ${msg}<br>`;
+            el.scrollTop = el.scrollHeight;
+        }
+
+        async function runPrediction() {
+            const btn = document.getElementById('predict-btn');
+            btn.disabled = true;
+            btn.innerText = "Training Model...";
+            
+            try {
+                // 1. Prepare dummy training data
+                // Inputs: [Sleep, Water, Steps/1000]
+                const trainX = tf.tensor2d([
+                    [6, 1.0, 3], [8, 2.5, 8], [5, 0.5, 2], [7.5, 2.0, 6], [9, 3.0, 10]
+                ]);
+                // Outputs: [Energy Score 0-1]
+                const trainY = tf.tensor2d([
+                    [0.4], [0.9], [0.3], [0.8], [0.95]
+                ]);
+
+                // 2. Define Model
+                const model = tf.sequential();
+                model.add(tf.layers.dense({units: 8, inputShape: [3], activation: 'relu'}));
+                model.add(tf.layers.dense({units: 1, activation: 'sigmoid'}));
+
+                model.compile({optimizer: tf.train.sgd(0.1), loss: 'meanSquaredError'});
+
+                log("Training on local browser GPU...");
+                
+                // 3. Train
+                await model.fit(trainX, trainY, {
+                    epochs: 50,
+                    callbacks: {
+                        onEpochEnd: (epoch, logs) => {
+                            if(epoch % 10 === 0) log(`Epoch ${epoch}: loss = ${logs.loss.toFixed(4)}`);
+                        }
+                    }
+                });
+
+                log("Training Complete.");
+
+                // 4. Predict
+                const sleep = parseFloat(document.getElementById('sleep').value);
+                const water = parseFloat(document.getElementById('water').value);
+                const steps = parseFloat(document.getElementById('steps').value) / 1000;
+
+                const input = tf.tensor2d([[sleep, water, steps]]);
+                const prediction = model.predict(input);
+                const score = (await prediction.data())[0];
+
+                document.getElementById('score-display').innerText = Math.round(score * 100) + "%";
+                log(`Prediction Result: ${score.toFixed(4)}`);
+                
+                if(score > 0.7) log("Status: Optimal Energy Levels");
+                else log("Status: Rest & Hydration Recommended");
+                
+                // Cleanup
+                input.dispose();
+                prediction.dispose();
+
+            } catch (e) {
+                log("Error: " + e.message);
+            } finally {
+                btn.disabled = false;
+                btn.innerText = "Run AI Prediction";
+                
+                // Dispose training tensors
+                // (In a real app, do this more carefully)
+            }
+        }
+    </script>
+</body>
+</html>

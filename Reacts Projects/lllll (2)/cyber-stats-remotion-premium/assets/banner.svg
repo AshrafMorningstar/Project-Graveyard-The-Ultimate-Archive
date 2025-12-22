@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="240" viewBox="0 0 1200 240">
+  <defs>
+    <linearGradient id="g" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#00ffd5"/>
+      <stop offset="1" stop-color="#7a00ff"/>
+    </linearGradient>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="6" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  <rect width="1200" height="240" fill="#050814" rx="12"/>
+  <g transform="translate(40,40)">
+    <text x="0" y="60" font-size="48" fill="url(#g)" font-family="Inter, Arial" font-weight="700">Cyber Stats</text>
+    <text x="0" y="110" font-size="20" fill="#86a3c3" font-family="Inter, Arial">Elegant GitHub statistics — Made for AshrafMorningstar</text>
+    <g transform="translate(720,0)">
+      <rect x="0" y="0" width="420" height="140" rx="8" fill="transparent" stroke="url(#g)" stroke-width="1.6" filter="url(#glow)"/>
+      <text x="18" y="45" font-size="18" fill="#cfeff0" font-family="Inter, Arial">Professional • Neon • Responsive</text>
+      <text x="18" y="80" font-size="14" fill="#86a3c3" font-family="Inter, Arial">Auto-rendered with GitHub Actions</text>
+    </g>
+  </g>
+</svg>

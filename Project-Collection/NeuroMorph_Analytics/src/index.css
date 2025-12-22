@@ -1,0 +1,133 @@
+/*
+ * -----------------------------------------------------------------------------
+ * @author      Ashraf Morningstar
+ * @github      https://github.com/AshrafMorningstar
+ * @repository  Project Graveyard - The Ultimate Archive
+ * @quote       "Code that defines the future. Designed to inspire."
+ * -----------------------------------------------------------------------------
+*/
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-cyber-bg text-white font-['Rajdhani'] antialiased;
+    margin: 0;
+    overflow: hidden;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-['Orbitron'];
+  }
+}
+
+@layer utilities {
+  .glass {
+    @apply bg-white/5 backdrop-blur-xl border border-white/10;
+  }
+
+  .glass-strong {
+    @apply bg-white/10 backdrop-blur-2xl border border-white/20;
+  }
+
+  .neon-text {
+    text-shadow: 0 0 10px currentColor, 0 0 20px currentColor,
+      0 0 30px currentColor;
+  }
+
+  .neon-border {
+    box-shadow: 0 0 5px currentColor, inset 0 0 5px currentColor;
+  }
+
+  .grid-bg {
+    background-image: linear-gradient(
+        rgba(0, 240, 255, 0.1) 1px,
+        transparent 1px
+      ),
+      linear-gradient(90deg, rgba(0, 240, 255, 0.1) 1px, transparent 1px);
+    background-size: 50px 50px;
+  }
+
+  .gradient-text {
+    @apply bg-clip-text text-transparent;
+  }
+
+  .holographic {
+    background: linear-gradient(
+      45deg,
+      #00f0ff 0%,
+      #ff00ff 25%,
+      #ffff00 50%,
+      #00ff88 75%,
+      #00f0ff 100%
+    );
+    background-size: 200% 200%;
+    animation: holographic 5s ease infinite;
+  }
+
+  @keyframes holographic {
+    0%,
+    100% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+  }
+
+  .particle-field::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(
+      circle,
+      rgba(255, 255, 255, 0.1) 1px,
+      transparent 1px
+    );
+    background-size: 30px 30px;
+    animation: particle-drift 20s linear infinite;
+  }
+
+  @keyframes particle-drift {
+    from {
+      transform: translateY(0);
+    }
+    to {
+      transform: translateY(-30px);
+    }
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-cyber-surface;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-cyber-primary/50 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-cyber-primary;
+}
+
+/* Selection */
+::selection {
+  @apply bg-cyber-primary/30 text-white;
+}

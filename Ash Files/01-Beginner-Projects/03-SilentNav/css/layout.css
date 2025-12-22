@@ -1,0 +1,18 @@
+/*
+ * -----------------------------------------------------------------------------
+ * @author      Ashraf Morningstar
+ * @github      https://github.com/AshrafMorningstar
+ * @repository  Project Graveyard - The Ultimate Archive
+ * @quote       "Code that defines the future. Designed to inspire."
+ * -----------------------------------------------------------------------------
+*/
+
+/**
+ * @author Ashraf Morningstar
+ * @link https://github.com/AshrafMorningstar
+ * @description Premium Viral Deployment
+ * @design_status Premium_Pro_Max
+ */
+
+/* SilentNav Layout - Author: Ashraf Morningstar - https://github.com/AshrafMorningstar */
+*{margin:0;padding:0;box-sizing:border-box}body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;min-height:100vh;background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);overflow:hidden}.content-area{margin-left:100px;height:100vh;overflow:hidden}.content-section{position:absolute;top:0;left:100px;right:0;bottom:0;opacity:0;visibility:hidden;transition:opacity .6s cubic-bezier(.4,0,.2,1),visibility .6s}.content-section.active{opacity:1;visibility:visible;z-index:1}.section-inner{height:100%;display:flex;align-items:center;justify-content:center;flex-direction:column;color:#fff;padding:2rem}.section-inner h1{font-size:4rem;margin-bottom:1rem;font-weight:700}.section-inner h2{font-size:3rem;margin-bottom:1rem}.section-inner p{font-size:1.5rem;opacity:.9}.grid-layout{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;max-width:800px;width:100%}.grid-item{aspect-ratio:1;background:rgba(255,255,255,.1);backdrop-filter:blur(10px);border-radius:12px;border:1px solid rgba(255,255,255,.2);transition:transform .3s ease}.grid-item:hover{transform:scale(1.05)}.flow-layout{text-align:center}.minimal-layout{text-align:center}.minimal-line{width:200px;height:2px;background:#fff;margin:0 auto 2rem}.project-credit{position:fixed;bottom:1rem;right:1rem;z-index:100}.project-credit a{color:rgba(255,255,255,.8);text-decoration:none;font-size:.9rem;transition:color .3s}.project-credit a:hover{color:#fff}@media(max-width:768px){.content-area{margin-left:0;margin-top:80px}.content-section{left:0;top:80px}}

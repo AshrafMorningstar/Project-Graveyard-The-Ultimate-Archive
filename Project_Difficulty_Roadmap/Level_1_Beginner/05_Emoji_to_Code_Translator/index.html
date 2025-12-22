@@ -1,0 +1,79 @@
+<!--
+ -----------------------------------------------------------------------------
+ @author      Ashraf Morningstar
+ @github      https://github.com/AshrafMorningstar
+ @repository  Project Graveyard - The Ultimate Archive
+ @quote       "Code that defines the future. Designed to inspire."
+ -----------------------------------------------------------------------------
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emoji-to-Code Translator | Ashraf Morningstar</title>
+    <!-- 
+        Project: Emoji-to-Code Translator
+        Level: Beginner
+        Author: Ashraf Morningstar
+        GitHub: https://github.com/AshrafMorningstar
+    -->
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&family=Inter:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🔮 Emoji to Code</h1>
+            <p>Translate your feelings into valid HTML/CSS!</p>
+        </header>
+
+        <main class="translator-interface">
+            <div class="input-section glass-panel">
+                <label>Type your emoji recipe:</label>
+                <div class="emoji-toolbar">
+                    <button class="emoji-btn" data-char="📦">📦 (Div)</button>
+                    <button class="emoji-btn" data-char="🔵">🔵 (Blue)</button>
+                    <button class="emoji-btn" data-char="🔴">🔴 (Red)</button>
+                    <button class="emoji-btn" data-char="🖼️">🖼️ (Img)</button>
+                    <button class="emoji-btn" data-char="📝">📝 (Input)</button>
+                    <button class="emoji-btn" data-char="✨">✨ (Flex)</button>
+                    <button class="emoji-btn" data-char="🔘">🔘 (Btn)</button>
+                    <button class="emoji-btn" data-char="🔳">🔳 (Border)</button>
+                </div>
+                <input type="text" id="emoji-input" placeholder="e.g. 📦 + 🔵 + 🔳" autocomplete="off">
+            </div>
+
+            <div class="action-section">
+                <button id="translate-btn">Translate 🪄</button>
+            </div>
+
+            <div class="output-section glass-panel">
+                <div class="code-output">
+                    <h3>Generated Code:</h3>
+                    <pre><code id="code-result">// Code will appear here...</code></pre>
+                </div>
+                <div class="preview-output">
+                    <h3>Live Preview:</h3>
+                    <div id="preview-result" class="preview-box"></div>
+                </div>
+            </div>
+        </main>
+
+        <div class="cheatsheet glass-panel">
+            <h3>Cheat Sheet</h3>
+            <ul>
+                <li>📦 = <code>&lt;div&gt;</code></li>
+                <li>🖼️ = <code>&lt;img&gt;</code></li>
+                <li>📝 = <code>&lt;input&gt;</code></li>
+                <li>🔘 = <code>&lt;button&gt;</code></li>
+                <li>🔵/🔴 = Background Color</li>
+                <li>🔳 = Border: 2px solid</li>
+                <li>✨ = Display: Flex</li>
+            </ul>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,7 @@
+date	size'/'remotesize	flags(request:Update,Range state:File response:Modified,Chunked,gZipped)	statuscode	status ('servermsg')	MIME	Etag|Date	URL	localfile	(from URL)
+20:50:55	1368/1368	---M-Z	404	error ('Not%20Found')	text/html	etag:1762846874-ssl-df	https://jsmfolio.netlify.app/robots.txt		(from )
+20:50:55	468/468	---M--	200	added ('OK')	text/html	etag:%22531000e043321d706ad3a1dcb8e675e1-ssl%22	https://jsmfolio.netlify.app/	D:/ads/assss/jsmfolio.netlify.app/c1-qyagr.html	(from )
+20:50:55	1888/1888	---M--	200	added ('OK')	image/png	etag:%227c9df48d972070271aef66f3d47ff572-ssl%22	https://jsmfolio.netlify.app/macbook.png	D:/ads/assss/jsmfolio.netlify.app/6b_-g5a1.png	(from https://jsmfolio.netlify.app/)
+20:50:56	899987/899987	---M-Z	200	added ('OK')	application/javascript	etag:%22377552f4d88636dc82829260ad8d93bd-ssl-df%22	https://jsmfolio.netlify.app/assets/index-BV2SIJsF.js	D:/ads/assss/jsmfolio.netlify.app/ylp67hn7.js	(from https://jsmfolio.netlify.app/)
+20:50:57	75971/75971	---M-Z	200	added ('OK')	text/css	etag:%22634d278727a6e64f28ba98bc60313ae8-ssl-df%22	https://jsmfolio.netlify.app/assets/index-WCy5WX9Q.css	D:/ads/assss/jsmfolio.netlify.app/-lgvhn9j.css	(from https://jsmfolio.netlify.app/)
+20:50:58	1023770/1023770	---M--	200	added ('OK')	image/png	etag:%224239b5b507de29a92bb7060649bf5dd1-ssl%22	https://jsmfolio.netlify.app/images/wallpaper.png	D:/ads/assss/jsmfolio.netlify.app/lii62_jz.png	(from https://jsmfolio.netlify.app/assets/index-WCy5WX9Q.css)

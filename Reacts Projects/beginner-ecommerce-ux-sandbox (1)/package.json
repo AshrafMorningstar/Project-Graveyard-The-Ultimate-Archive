@@ -1,0 +1,8 @@
+{
+  "name": "beginner-ecommerce-ux-sandbox",
+  "private": true,
+  "scripts": {
+    "dev": "echo dev",
+    "build": "echo build"
+  }
+}

@@ -1,0 +1,197 @@
+/*
+ * -----------------------------------------------------------------------------
+ * @author      Ashraf Morningstar
+ * @github      https://github.com/AshrafMorningstar
+ * @repository  Project Graveyard - The Ultimate Archive
+ * @quote       "Code that defines the future. Designed to inspire."
+ * -----------------------------------------------------------------------------
+*/
+
+/* MoodScroll - Emotional Zone Styles */
+
+/* Zone 1: Calm */
+.zone-calm {
+    --zone-bg: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    --zone-text: #2c3e50;
+    --zone-accent: #74b9ff;
+    background: var(--zone-bg);
+}
+
+.zone-calm .zone-title {
+    color: var(--zone-text);
+    font-weight: 400;
+}
+
+.zone-calm .zone-text {
+    color: var(--zone-text);
+    opacity: 0.8;
+    font-weight: 300;
+}
+
+/* Zone 2: Curiosity */
+.zone-curiosity {
+    --zone-bg: linear-gradient(135deg, #dfe6e9 0%, #b2bec3 100%);
+    --zone-text: #2d3436;
+    --zone-accent: #6c5ce7;
+    background: var(--zone-bg);
+}
+
+.zone-curiosity .zone-title {
+    color: var(--zone-text);
+    font-weight: 600;
+    letter-spacing: 0.02em;
+}
+
+.zone-curiosity .zone-text {
+    color: var(--zone-text);
+    opacity: 0.85;
+    font-weight: 400;
+}
+
+.zone-curiosity .floating-element {
+    background: var(--zone-accent);
+}
+
+/* Zone 3: Intensity */
+.zone-intensity {
+    --zone-bg: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    --zone-text: #ffffff;
+    --zone-accent: #f093fb;
+    background: var(--zone-bg);
+}
+
+.zone-intensity .zone-title {
+    color: var(--zone-text);
+    font-weight: 700;
+    text-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    letter-spacing: -0.01em;
+}
+
+.zone-intensity .zone-text {
+    color: var(--zone-text);
+    opacity: 0.95;
+    font-weight: 400;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.zone-intensity .intensity-pulse {
+    background: var(--zone-accent);
+    animation-duration: 1.5s;
+}
+
+/* Zone 4: Reflection */
+.zone-reflection {
+    --zone-bg: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+    --zone-text: #ecf0f1;
+    --zone-accent: #3498db;
+    background: var(--zone-bg);
+}
+
+.zone-reflection .zone-title {
+    color: var(--zone-text);
+    font-weight: 400;
+    opacity: 0.9;
+}
+
+.zone-reflection .zone-text {
+    color: var(--zone-text);
+    opacity: 0.75;
+    font-weight: 300;
+    line-height: 2;
+}
+
+/* Scroll-based state transitions */
+.mood-zone {
+    opacity: 0.4;
+    filter: blur(2px);
+    transform: scale(0.98);
+}
+
+.mood-zone.active {
+    opacity: 1;
+    filter: blur(0);
+    transform: scale(1);
+}
+
+.mood-zone.approaching {
+    opacity: 0.7;
+    filter: blur(1px);
+    transform: scale(0.99);
+}
+
+/* Enhanced motion for intensity zone */
+.zone-intensity.active .zone-content {
+    animation: intensity-entrance 1s ease-out;
+}
+
+@keyframes intensity-entrance {
+    0% {
+        opacity: 0;
+        transform: translateY(60px) scale(0.95);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* Calm zone subtle motion */
+.zone-calm.active .zone-title {
+    animation: calm-breathe 4s ease-in-out infinite;
+}
+
+@keyframes calm-breathe {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+}
+
+/* Curiosity zone elements */
+.zone-curiosity.active .floating-element {
+    animation: float 6s ease-in-out infinite, rotate 12s linear infinite;
+}
+
+@keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* Reflection zone fade */
+.zone-reflection.active .zone-text {
+    animation: fade-in-sequence 2s ease-out forwards;
+}
+
+.zone-reflection.active .zone-text:nth-child(2) {
+    animation-delay: 0.3s;
+}
+
+.zone-reflection.active .zone-text:nth-child(3) {
+    animation-delay: 0.6s;
+}
+
+.zone-reflection.active .zone-text:nth-child(4) {
+    animation-delay: 0.9s;
+}
+
+@keyframes fade-in-sequence {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 0.75;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .floating-element {
+        width: 80px;
+        height: 80px;
+    }
+    
+    .intensity-pulse {
+        width: 150px;
+        height: 150px;
+    }
+}

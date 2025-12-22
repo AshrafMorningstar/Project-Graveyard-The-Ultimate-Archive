@@ -1,0 +1,101 @@
+/*
+ * -----------------------------------------------------------------------------
+ * @author      Ashraf Morningstar
+ * @github      https://github.com/AshrafMorningstar
+ * @repository  Project Graveyard - The Ultimate Archive
+ * @quote       "Code that defines the future. Designed to inspire."
+ * -----------------------------------------------------------------------------
+*/
+
+/**
+ * MoodScroll - Base Styles
+ * Author: Ashraf Morningstar
+ * GitHub: https://github.com/AshrafMorningstar
+ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    overflow-x: hidden;
+    background: #000;
+}
+
+.scroll-container {
+    position: relative;
+}
+
+.mood-zone {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4rem 2rem;
+    position: relative;
+    overflow: hidden;
+    transition: background-color 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.content {
+    max-width: 800px;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
+
+.zone-title {
+    font-size: clamp(3rem, 8vw, 6rem);
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    letter-spacing: -0.02em;
+    line-height: 1;
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.zone-text {
+    font-size: clamp(1.25rem, 3vw, 2rem);
+    font-weight: 300;
+    letter-spacing: 0.02em;
+    line-height: 1.6;
+    opacity: 0.8;
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.scroll-indicator {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: rgba(255, 255, 255, 0.1);
+    z-index: 1000;
+    pointer-events: none;
+}
+
+.indicator-bar {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+    transition: width 0.1s ease-out, background 0.6s ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+    
+    .mood-zone,
+    .zone-title,
+    .zone-text,
+    .indicator-bar {
+        transition: none;
+    }
+}

@@ -1,0 +1,18 @@
+{
+  "name": "18-quantum-commit-analyzer",
+  "version": "1.0.0",
+  "description": "AI-powered commit pattern analyzer with quantum computing visualization and predictive insights",
+  "author": "AshrafMorningstar <https://github.com/AshrafMorningstar>",
+  "license": "MIT",
+  "scripts": {
+    "start": "npx http-server -p 8080",
+    "deploy": "gh-pages -d ."
+  },
+  "keywords": [
+    "github",
+    "ai-analytics",
+    "ashrafmorningstar",
+    "advanced",
+    "professional"
+  ]
+}

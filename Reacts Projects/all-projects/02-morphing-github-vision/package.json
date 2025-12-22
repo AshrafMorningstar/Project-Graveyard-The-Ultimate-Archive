@@ -1,0 +1,20 @@
+{
+  "name": "02-morphing-github-vision",
+  "version": "1.0.0",
+  "description": "Dynamic theme-changing GitHub stats with randomized visual styles",
+  "author": "AshrafMorningstar <https://github.com/AshrafMorningstar>",
+  "license": "MIT",
+  "scripts": {
+    "start": "npx http-server -p 8080",
+    "deploy": "gh-pages -d ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AshrafMorningstar/02-morphing-github-vision"
+  },
+  "keywords": [
+    "github",
+    "stats-visualizer",
+    "ashrafmorningstar"
+  ]
+}

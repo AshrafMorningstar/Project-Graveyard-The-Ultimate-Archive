@@ -1,0 +1,90 @@
+/*
+ * -----------------------------------------------------------------------------
+ * @author      Ashraf Morningstar
+ * @github      https://github.com/AshrafMorningstar
+ * @repository  Project Graveyard - The Ultimate Archive
+ * @quote       "Code that defines the future. Designed to inspire."
+ * -----------------------------------------------------------------------------
+*/
+
+/**
+ * Ambient Landing - Base Styles
+ * Author: Ashraf Morningstar
+ * GitHub: https://github.com/AshrafMorningstar
+ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    overflow: hidden;
+    position: relative;
+}
+
+.ambient-container {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.content {
+    text-align: center;
+    z-index: 10;
+    position: relative;
+}
+
+.headline {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(4rem, 12vw, 8rem);
+    font-weight: 300;
+    color: rgba(255, 255, 255, 0.95);
+    margin-bottom: 1rem;
+    letter-spacing: 0.05em;
+}
+
+.subheading {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2rem, 6vw, 4rem);
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 2rem;
+}
+
+.statement {
+    font-size: clamp(1rem, 2vw, 1.25rem);
+    color: rgba(255, 255, 255, 0.7);
+    font-weight: 300;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+.attribution {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    text-align: right;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.85rem;
+    z-index: 100;
+}
+
+.attribution a {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+    }
+}

@@ -1,0 +1,78 @@
+/*
+ * -----------------------------------------------------------------------------
+ * @author      Ashraf Morningstar
+ * @github      https://github.com/AshrafMorningstar
+ * @repository  Project Graveyard - The Ultimate Archive
+ * @quote       "Code that defines the future. Designed to inspire."
+ * -----------------------------------------------------------------------------
+*/
+
+/**
+ * Crypto Password Forge
+ * Created by: Ashraf Morningstar
+ * GitHub: https://github.com/AshrafMorningstar
+ */
+
+class CryptoPasswordForge {
+    constructor() {
+        this.init();
+    }
+    
+    init() {
+        console.log('Crypto Password Forge initialized');
+        this.setupUI();
+        this.attachEventListeners();
+    }
+    
+    setupUI() {
+        const main = document.getElementById('appMain');
+        main.innerHTML = this.generateUI();
+    }
+    
+    generateUI() {
+        return `
+            <div class="feature-grid">
+                
+                <div class="feature-card">
+                    <h3>Custom rules</h3>
+                    <p>Premium custom rules functionality</p>
+                    <button class="btn btn-primary">Try Now</button>
+                </div>
+            
+                <div class="feature-card">
+                    <h3>Strength meter</h3>
+                    <p>Premium strength meter functionality</p>
+                    <button class="btn btn-primary">Try Now</button>
+                </div>
+            
+                <div class="feature-card">
+                    <h3>Batch generation</h3>
+                    <p>Premium batch generation functionality</p>
+                    <button class="btn btn-primary">Try Now</button>
+                </div>
+            
+            </div>
+        `;
+    }
+    
+    attachEventListeners() {
+        // Add event listeners here
+        console.log('Event listeners attached');
+    }
+}
+
+// Initialize app when DOM is ready
+document.addEventListener('DOMContentLoaded', () => {
+    new CryptoPasswordForge();
+});
+
+// Add smooth animations
+document.querySelectorAll('.btn').forEach(btn => {
+    btn.addEventListener('mouseenter', function() {
+        this.style.transform = 'translateY(-2px)';
+    });
+    
+    btn.addEventListener('mouseleave', function() {
+        this.style.transform = 'translateY(0)';
+    });
+});

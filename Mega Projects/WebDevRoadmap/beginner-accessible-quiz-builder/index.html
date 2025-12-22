@@ -1,0 +1,128 @@
+<!--
+ -----------------------------------------------------------------------------
+ @author      Ashraf Morningstar
+ @github      https://github.com/AshrafMorningstar
+ @repository  Project Graveyard - The Ultimate Archive
+ @quote       "Code that defines the future. Designed to inspire."
+ -----------------------------------------------------------------------------
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- SEO & Viral Metadata -->
+    <meta name="description" content="Premium BEGINNER ACCESSIBLE QUIZ BUILDER web application. Built with modern web technologies. Part of the Ultimate Web Dev Roadmap by Ashraf Morningstar.">
+    <meta name="keywords" content="web development, BEGINNER ACCESSIBLE QUIZ BUILDER, javascript, css, html, ashraf morningstar, open source, premium ui">
+    <meta name="author" content="Ashraf Morningstar">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://ashrafmorningstar.github.io/WebDevRoadmap/beginner-accessible-quiz-builder/">
+    <meta property="og:title" content="BEGINNER ACCESSIBLE QUIZ BUILDER | Premium Web App">
+    <meta property="og:description" content="Premium BEGINNER ACCESSIBLE QUIZ BUILDER web application. Built with modern web technologies. Part of the Ultimate Web Dev Roadmap by Ashraf Morningstar.">
+    <meta property="og:image" content="https://via.placeholder.com/1200x630.png?text=BEGINNER+ACCESSIBLE+QUIZ+BUILDER">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://ashrafmorningstar.github.io/WebDevRoadmap/beginner-accessible-quiz-builder/">
+    <meta property="twitter:title" content="BEGINNER ACCESSIBLE QUIZ BUILDER | Premium Web App">
+    <meta property="twitter:description" content="Premium BEGINNER ACCESSIBLE QUIZ BUILDER web application. Built with modern web technologies. Part of the Ultimate Web Dev Roadmap by Ashraf Morningstar.">
+    <meta property="twitter:image" content="https://via.placeholder.com/1200x630.png?text=BEGINNER+ACCESSIBLE+QUIZ+BUILDER">
+    
+    <link rel="canonical" href="https://ashrafmorningstar.github.io/WebDevRoadmap/beginner-accessible-quiz-builder/">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Accessible Quiz Builder</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Author: Ashraf Morningstar | https://github.com/AshrafMorningstar -->
+  
+  <div class="container">
+    <header class="header">
+      <h1>Accessible Quiz Builder</h1>
+      <p>Create and take quizzes with full accessibility support</p>
+    </header>
+
+    <main>
+      <!-- Mode Switcher -->
+      <div class="mode-switcher" role="radiogroup" aria-label="Application Mode">
+        <button id="builderModeBtn" class="mode-btn active" aria-pressed="true">
+          ✏️ Builder Mode
+        </button>
+        <button id="playerModeBtn" class="mode-btn" aria-pressed="false">
+          ▶️ Player Mode
+        </button>
+      </div>
+
+      <!-- Builder View -->
+      <section id="builderView" class="view active" aria-label="Quiz Builder">
+        <div class="card">
+          <h2>Create New Question</h2>
+          <form id="questionForm">
+            <div class="form-group">
+              <label for="questionText">Question Text</label>
+              <input type="text" id="questionText" required aria-required="true" placeholder="e.g., What is the capital of France?">
+            </div>
+
+            <fieldset>
+              <legend>Answer Options</legend>
+              
+              <div class="option-group">
+                <input type="radio" name="correctAnswer" id="correct0" value="0" checked aria-label="Mark option 1 as correct">
+                <input type="text" id="option0" class="option-input" required aria-label="Option 1 text" placeholder="Option 1">
+              </div>
+
+              <div class="option-group">
+                <input type="radio" name="correctAnswer" id="correct1" value="1" aria-label="Mark option 2 as correct">
+                <input type="text" id="option1" class="option-input" required aria-label="Option 2 text" placeholder="Option 2">
+              </div>
+
+              <div class="option-group">
+                <input type="radio" name="correctAnswer" id="correct2" value="2" aria-label="Mark option 3 as correct">
+                <input type="text" id="option2" class="option-input" required aria-label="Option 3 text" placeholder="Option 3">
+              </div>
+
+              <div class="option-group">
+                <input type="radio" name="correctAnswer" id="correct3" value="3" aria-label="Mark option 4 as correct">
+                <input type="text" id="option3" class="option-input" required aria-label="Option 4 text" placeholder="Option 4">
+              </div>
+            </fieldset>
+
+            <button type="submit" class="btn-primary">Add Question</button>
+          </form>
+        </div>
+
+        <div class="card">
+          <h2>Current Quiz Questions</h2>
+          <div id="questionsList" role="list">
+            <!-- Questions will appear here -->
+            <p class="empty-state">No questions added yet.</p>
+          </div>
+          <button id="saveQuizBtn" class="btn-secondary" style="margin-top: 1rem;">💾 Save Quiz</button>
+        </div>
+      </section>
+
+      <!-- Player View -->
+      <section id="playerView" class="view hidden" aria-label="Quiz Player" aria-hidden="true">
+        <div class="quiz-container" id="quizContainer">
+          <div class="quiz-progress" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
+            <div class="progress-fill" id="quizProgress"></div>
+          </div>
+          
+          <div id="currentQuestion" class="question-display" aria-live="polite">
+            <!-- Current question will replace this -->
+            <button id="startQuizBtn" class="btn-primary btn-large">Start Quiz</button>
+          </div>
+
+          <div id="feedbackRegion" class="feedback-region" aria-live="assertive"></div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,20 @@
+{
+  "name": "15-chroniclenet",
+  "version": "1.0.0",
+  "description": "Time-layered social network with future-locked posts",
+  "author": "AshrafMorningstar <https://github.com/AshrafMorningstar>",
+  "license": "MIT",
+  "scripts": {
+    "start": "npx http-server -p 8080",
+    "deploy": "gh-pages -d ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AshrafMorningstar/15-chroniclenet"
+  },
+  "keywords": [
+    "github",
+    "social",
+    "ashrafmorningstar"
+  ]
+}

@@ -1,0 +1,62 @@
+<!--
+ -----------------------------------------------------------------------------
+ @author      Ashraf Morningstar
+ @github      https://github.com/AshrafMorningstar
+ @repository  Project Graveyard - The Ultimate Archive
+ @quote       "Code that defines the future. Designed to inspire."
+ -----------------------------------------------------------------------------
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Astro GitHub Timeline</title>
+  <style>
+    body {
+      margin: 0;
+      background: radial-gradient(circle at top, #0f0f30, #000);
+      font-family: 'Segoe UI', sans-serif;
+      color: #d1f0ff;
+      padding: 40px;
+      text-align: center;
+    }
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 30px;
+    }
+    .timeline {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+    }
+    .event {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid #2b4f60;
+      padding: 15px 25px;
+      border-radius: 10px;
+      width: 80%;
+      max-width: 500px;
+      box-shadow: 0 0 15px rgba(0, 255, 255, 0.2);
+    }
+  </style>
+</head>
+<body>
+  <h1>Astro GitHub Timeline</h1>
+  <div class="timeline" id="timeline"></div>
+  <script>
+    fetch('output/timeline.json')
+      .then(res => res.json())
+      .then(events => {
+        const timelineEl = document.getElementById('timeline');
+        events.forEach(event => {
+          const div = document.createElement('div');
+          div.className = 'event';
+          div.innerHTML = `<strong>${event.type}</strong><br><em>${event.repo}</em><br><small>${new Date(event.created_at).toLocaleString()}</small>`;
+          timelineEl.appendChild(div);
+        });
+      });
+  </script>
+</body>
+</html>

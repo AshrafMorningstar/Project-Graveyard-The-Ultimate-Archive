@@ -1,0 +1,126 @@
+{
+  "author": "Ashraf Morningstar",
+  "github": "https://github.com/AshrafMorningstar",
+  "projects": [
+    {
+      "id": 1,
+      "name": "Holographic-Task-Manager",
+      "description": "A futuristic task management app with holographic UI effects and 3D transformations",
+      "design": "Holographic Glassmorphism with RGB shifting borders",
+      "features": [
+        "3D card flips",
+        "Particle effects",
+        "Voice commands",
+        "AI suggestions"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Neon-Cyberpunk-Calculator",
+      "description": "Advanced calculator with cyberpunk aesthetics and neon glow effects",
+      "design": "Cyberpunk Neon with glitch animations",
+      "features": [
+        "Scientific calculations",
+        "History tracking",
+        "Keyboard support",
+        "Theme switcher"
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Liquid-Morphing-Portfolio",
+      "description": "Portfolio showcase with liquid morphing animations and blob effects",
+      "design": "Liquid morphism with SVG blob animations",
+      "features": [
+        "Smooth transitions",
+        "Interactive blobs",
+        "Project filtering",
+        "Contact form"
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Aurora-Weather-Dashboard",
+      "description": "Weather app with aurora borealis inspired gradients and animations",
+      "design": "Aurora gradient with particle systems",
+      "features": [
+        "Real-time weather",
+        "7-day forecast",
+        "Location search",
+        "Animated backgrounds"
+      ]
+    },
+    {
+      "id": 5,
+      "name": "Neumorphic-Music-Player",
+      "description": "Elegant music player with soft neumorphic design and visualizer",
+      "design": "Soft Neumorphism with audio visualization",
+      "features": [
+        "Playlist management",
+        "Audio visualizer",
+        "Equalizer",
+        "Shuffle & repeat"
+      ]
+    },
+    {
+      "id": 6,
+      "name": "Crystalline-E-Commerce-Cart",
+      "description": "Shopping cart with crystalline glass effects and prismatic reflections",
+      "design": "Crystalline glassmorphism with prism effects",
+      "features": [
+        "Product filtering",
+        "Cart management",
+        "Checkout flow",
+        "Wishlist"
+      ]
+    },
+    {
+      "id": 7,
+      "name": "Quantum-Code-Editor",
+      "description": "Code editor with quantum-inspired UI and particle effects",
+      "design": "Quantum particles with energy field effects",
+      "features": [
+        "Syntax highlighting",
+        "Auto-completion",
+        "Multi-tab support",
+        "Theme customization"
+      ]
+    },
+    {
+      "id": 8,
+      "name": "Cosmic-Chat-Application",
+      "description": "Real-time chat with cosmic space theme and stellar animations",
+      "design": "Cosmic space with star field animations",
+      "features": [
+        "Real-time messaging",
+        "Emoji support",
+        "File sharing",
+        "User presence"
+      ]
+    },
+    {
+      "id": 9,
+      "name": "Prismatic-Image-Gallery",
+      "description": "Image gallery with prismatic color splitting and refraction effects",
+      "design": "Prismatic refraction with chromatic aberration",
+      "features": [
+        "Lightbox view",
+        "Filter effects",
+        "Lazy loading",
+        "Masonry layout"
+      ]
+    },
+    {
+      "id": 10,
+      "name": "Ethereal-Meditation-Timer",
+      "description": "Meditation timer with ethereal floating elements and calming animations",
+      "design": "Ethereal floating with breathing animations",
+      "features": [
+        "Custom durations",
+        "Ambient sounds",
+        "Progress tracking",
+        "Session history"
+      ]
+    }
+  ]
+}

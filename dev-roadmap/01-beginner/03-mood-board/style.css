@@ -1,0 +1,151 @@
+/*
+ * -----------------------------------------------------------------------------
+ * @author      Ashraf Morningstar
+ * @github      https://github.com/AshrafMorningstar
+ * @repository  Project Graveyard - The Ultimate Archive
+ * @quote       "Code that defines the future. Designed to inspire."
+ * -----------------------------------------------------------------------------
+*/
+
+/**
+ * Author: Ashraf Morningstar
+ * GitHub: https://github.com/AshrafMorningstar
+ * Project: Mood Board Background Generator
+ */
+
+:root {
+    --bg-dark: #1e1e2e;
+    --sidebar-bg: #2b2b3b;
+    --text: #ffffff;
+    --accent: #ff007a;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: var(--bg-dark);
+    color: var(--text);
+    overflow: hidden; /* App-like feel */
+}
+
+.app-container {
+    display: flex;
+    height: 100vh;
+}
+
+.controls {
+    width: 300px;
+    background: var(--sidebar-bg);
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    box-shadow: 2px 0 10px rgba(0,0,0,0.3);
+    z-index: 10;
+}
+
+.header h2 { font-weight: 300; letter-spacing: 2px; text-transform: uppercase; }
+.author-link { color: #888; text-decoration: none; font-size: 0.8rem; display: block; margin-top: 5px; }
+
+.control-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+    color: #aaa;
+}
+
+.color-inputs {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+input[type="color"] {
+    border: none;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    background: none;
+}
+
+select, input[type="text"] {
+    width: 100%;
+    padding: 8px;
+    border-radius: 4px;
+    border: 1px solid #444;
+    background: #333;
+    color: #fff;
+}
+
+.pattern-options {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+.pattern-btn {
+    padding: 8px;
+    background: #333;
+    border: 1px solid #444;
+    color: #ccc;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: all 0.2s;
+}
+
+.pattern-btn.active, .pattern-btn:hover {
+    background: var(--accent);
+    color: white;
+    border-color: var(--accent);
+}
+
+.actions {
+    margin-top: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+button {
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    background: #444;
+    color: white;
+    transition: transform 0.1s;
+}
+
+button.primary { background: linear-gradient(45deg, #ff007a, #7a00ff); }
+button:active { transform: scale(0.98); }
+
+.preview-area {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #111;
+    position: relative;
+    background-image: 
+        linear-gradient(45deg, #222 25%, transparent 25%), 
+        linear-gradient(-45deg, #222 25%, transparent 25%), 
+        linear-gradient(45deg, transparent 75%, #222 75%), 
+        linear-gradient(-45deg, transparent 75%, #222 75%);
+    background-size: 20px 20px;
+    background-position: 0 0, 0 10px, 10px -10px, -10px 0px; 
+}
+
+canvas {
+    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+    max-width: 90%;
+    max-height: 90%;
+}
+
+.canvas-tip {
+    position: absolute;
+    bottom: 20px;
+    color: #555;
+    font-size: 0.8rem;
+}

@@ -1,0 +1,20 @@
+{
+  "name": "12-blockweavex",
+  "version": "1.0.0",
+  "description": "Decentralized multi-chain knowledge publishing network",
+  "author": "AshrafMorningstar <https://github.com/AshrafMorningstar>",
+  "license": "MIT",
+  "scripts": {
+    "start": "npx http-server -p 8080",
+    "deploy": "gh-pages -d ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AshrafMorningstar/12-blockweavex"
+  },
+  "keywords": [
+    "github",
+    "web3",
+    "ashrafmorningstar"
+  ]
+}

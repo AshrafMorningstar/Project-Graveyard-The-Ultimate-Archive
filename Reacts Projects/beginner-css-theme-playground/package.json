@@ -1,0 +1,8 @@
+{
+  "name": "beginner-css-theme-playground",
+  "private": true,
+  "scripts": {
+    "dev": "echo dev",
+    "build": "echo build"
+  }
+}

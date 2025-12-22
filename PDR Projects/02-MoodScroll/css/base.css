@@ -1,0 +1,204 @@
+/*
+ * -----------------------------------------------------------------------------
+ * @author      Ashraf Morningstar
+ * @github      https://github.com/AshrafMorningstar
+ * @repository  Project Graveyard - The Ultimate Archive
+ * @quote       "Code that defines the future. Designed to inspire."
+ * -----------------------------------------------------------------------------
+*/
+
+/* MoodScroll - Base Styles */
+
+:root {
+    /* Typography */
+    --font-display: 'Playfair Display', Georgia, serif;
+    --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    
+    /* Layout */
+    --section-height: 100vh;
+    --content-max-width: 800px;
+    --spacing-unit: 1rem;
+    
+    /* Animation timing */
+    --transition-smooth: 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-quick: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    
+    /* Dynamic variables (updated by scroll) */
+    --scroll-progress: 0;
+    --current-bg: #f8f9fa;
+    --current-text: #1a1a1a;
+    --current-accent: #3498db;
+}
+
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-body);
+    background: var(--current-bg);
+    color: var(--current-text);
+    overflow-x: hidden;
+    transition: background var(--transition-smooth), color var(--transition-smooth);
+}
+
+/* Scroll Container */
+.scroll-container {
+    position: relative;
+    width: 100%;
+}
+
+/* Mood Zones */
+.mood-zone {
+    min-height: var(--section-height);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: calc(var(--spacing-unit) * 4) calc(var(--spacing-unit) * 2);
+    position: relative;
+    transition: all var(--transition-smooth);
+}
+
+.zone-content {
+    max-width: var(--content-max-width);
+    text-align: center;
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all var(--transition-smooth);
+}
+
+.mood-zone.active .zone-content {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Typography */
+.zone-title {
+    font-family: var(--font-display);
+    font-size: clamp(3rem, 8vw, 6rem);
+    font-weight: 700;
+    margin-bottom: calc(var(--spacing-unit) * 2);
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+    transition: all var(--transition-smooth);
+}
+
+.zone-text {
+    font-size: clamp(1.125rem, 2vw, 1.5rem);
+    line-height: 1.8;
+    margin-bottom: calc(var(--spacing-unit) * 1.5);
+    opacity: 0.9;
+    font-weight: 300;
+    transition: all var(--transition-smooth);
+}
+
+/* Scroll Indicator */
+.scroll-indicator {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+.indicator-fill {
+    height: 100%;
+    background: var(--current-accent);
+    width: 0%;
+    transition: width 0.1s ease-out, background var(--transition-smooth);
+}
+
+/* Mood Label */
+.mood-label {
+    position: fixed;
+    bottom: calc(var(--spacing-unit) * 2);
+    right: calc(var(--spacing-unit) * 2);
+    padding: calc(var(--spacing-unit) * 0.75) calc(var(--spacing-unit) * 1.5);
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    z-index: 100;
+    transition: all var(--transition-quick);
+}
+
+.mood-name {
+    font-size: 0.875rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--current-text);
+    transition: color var(--transition-smooth);
+}
+
+/* Floating Elements */
+.floating-element,
+.intensity-pulse {
+    position: absolute;
+    pointer-events: none;
+}
+
+.floating-element {
+    width: 120px;
+    height: 120px;
+    background: var(--current-accent);
+    opacity: 0.15;
+    border-radius: 50%;
+    top: 20%;
+    right: 10%;
+    animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-30px) rotate(180deg); }
+}
+
+.intensity-pulse {
+    width: 200px;
+    height: 200px;
+    background: var(--current-accent);
+    opacity: 0.1;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.1; }
+    50% { transform: translate(-50%, -50%) scale(1.2); opacity: 0.2; }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .mood-zone {
+        padding: calc(var(--spacing-unit) * 3) calc(var(--spacing-unit) * 1.5);
+    }
+    
+    .mood-label {
+        bottom: calc(var(--spacing-unit) * 1);
+        right: calc(var(--spacing-unit) * 1);
+    }
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}

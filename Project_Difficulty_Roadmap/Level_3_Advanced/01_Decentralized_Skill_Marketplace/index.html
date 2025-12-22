@@ -1,0 +1,89 @@
+<!--
+ -----------------------------------------------------------------------------
+ @author      Ashraf Morningstar
+ @github      https://github.com/AshrafMorningstar
+ @repository  Project Graveyard - The Ultimate Archive
+ @quote       "Code that defines the future. Designed to inspire."
+ -----------------------------------------------------------------------------
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Decentralized Skill Marketplace | Ashraf Morningstar</title>
+    <!-- 
+        Project: Decentralized Skill Marketplace
+        Level: Advanced
+        Author: Ashraf Morningstar
+        GitHub: https://github.com/AshrafMorningstar
+    -->
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Rajdhani:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue@3/dist/vue.global.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        <header>
+            <div class="logo">
+                <i class="fa-solid fa-link"></i> SKILLCHAIN
+            </div>
+            <div class="wallet-status">
+                <span class="indicator"></span> Connected: {{ walletAddress }}
+            </div>
+        </header>
+
+        <main class="grid-layout">
+            <!-- Sidebar: Market & Wallet -->
+            <aside class="sidebar">
+                <div class="panel user-panel">
+                    <h3>My Skills</h3>
+                    <div class="skill-tags">
+                        <span v-for="skill in mySkills" :key="skill" class="tag">{{ skill }}</span>
+                        <button class="add-btn" @click="addSkill">+</button>
+                    </div>
+                </div>
+
+                <div class="panel blockchain-panel">
+                    <h3><i class="fa-solid fa-cubes"></i> MockChain Ledger</h3>
+                    <div class="ledger-container">
+                        <div v-for="block in blocks" :key="block.hash" class="block" :class="{ 'mining': block.isMining }">
+                            <div class="block-header">Block #{{ block.index }}</div>
+                            <div class="block-hash">{{ block.hash.substring(0, 16) }}...</div>
+                            <div class="tx-count">{{ block.transactions.length }} Txns</div>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+
+            <!-- Main: Marketplace Listings -->
+            <section class="marketplace">
+                <div class="market-header">
+                    <h2>Available Contracts (P2P)</h2>
+                    <button class="primary-btn" @click="createContract">Create Request</button>
+                </div>
+
+                <div class="contracts-grid">
+                    <div v-for="contract in contracts" :key="contract.id" class="contract-card">
+                        <div class="contract-header">
+                            <span class="contract-id">#{{ contract.id.substring(0,6) }}</span>
+                            <span class="status" :class="contract.status">{{ contract.status }}</span>
+                        </div>
+                        <h3>{{ contract.title }}</h3>
+                        <p>Offering: <strong>{{ contract.offering }}</strong></p>
+                        <p>Seeking: <strong>{{ contract.seeking }}</strong></p>
+                        <div class="contract-actions">
+                            <button v-if="contract.status === 'OPEN'" @click="executeContact(contract)">Execute Swap</button>
+                            <button v-if="contract.status === 'PENDING'" disabled>Verifying in Block...</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>

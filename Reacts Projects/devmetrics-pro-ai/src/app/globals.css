@@ -1,0 +1,173 @@
+/*
+ * -----------------------------------------------------------------------------
+ * @author      Ashraf Morningstar
+ * @github      https://github.com/AshrafMorningstar
+ * @repository  Project Graveyard - The Ultimate Archive
+ * @quote       "Code that defines the future. Designed to inspire."
+ * -----------------------------------------------------------------------------
+*/
+
+@import "tailwindcss";
+
+:root {
+  --background: #030014; /* Deep Void */
+  --foreground: #ffffff;
+  --card: rgba(255, 255, 255, 0.03);
+  --card-foreground: #ffffff;
+  --primary: #8b5cf6; /* Cyber Violet */
+  --primary-foreground: #ffffff;
+  --secondary: #06b6d4; /* Neon Cyan */
+  --secondary-foreground: #ffffff;
+  --accent: #f472b6; /* Laser Pink */
+  --accent-foreground: #ffffff;
+  --destructive: #ef4444;
+  --destructive-foreground: #ffffff;
+  --border: rgba(139, 92, 246, 0.2);
+  --input: rgba(255, 255, 255, 0.05);
+  --ring: #8b5cf6;
+  --radius: 1rem;
+
+  /* Cyberpunk Palette */
+  --neon-blue: #00f3ff;
+  --neon-pink: #ff00ff;
+  --neon-purple: #bd00ff;
+  --void-dark: #050511;
+  --grid-line: rgba(139, 92, 246, 0.15);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: "Inter", sans-serif;
+  overflow-x: hidden;
+
+  /* Advanced Mesh Gradient */
+  background-image: radial-gradient(
+      circle at 15% 50%,
+      rgba(139, 92, 246, 0.08),
+      transparent 25%
+    ),
+    radial-gradient(circle at 85% 30%, rgba(6, 182, 212, 0.08), transparent 25%),
+    linear-gradient(to bottom, transparent, #030014 90%),
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 49px,
+      var(--grid-line) 50px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 49px,
+      var(--grid-line) 50px
+    );
+  background-size: 100% 100%, 100% 100%, 100% 100%, 100px 100px, 100px 100px;
+}
+
+/* Premium Holographic Glass */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.02);
+  backdrop-filter: blur(16px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3),
+    inset 0 0 20px rgba(255, 255, 255, 0.02);
+}
+
+.holo-card {
+  position: relative;
+  background: linear-gradient(
+    145deg,
+    rgba(255, 255, 255, 0.03) 0%,
+    rgba(10, 10, 25, 0.4) 100%
+  );
+  backdrop-filter: blur(24px);
+  border: 1px solid rgba(139, 92, 246, 0.15);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.05);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+}
+
+.holo-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.08),
+    transparent
+  );
+  transition: 0.5s;
+  pointer-events: none;
+}
+
+.holo-card:hover::before {
+  left: 100%;
+}
+
+.holo-card:hover {
+  border-color: rgba(139, 92, 246, 0.4);
+  box-shadow: 0 0 30px rgba(139, 92, 246, 0.2),
+    inset 0 0 20px rgba(139, 92, 246, 0.05);
+  transform: translateY(-2px);
+}
+
+/* Neon Text Effects */
+.text-neon-blue {
+  color: #fff;
+  text-shadow: 0 0 5px var(--neon-blue), 0 0 10px var(--neon-blue),
+    0 0 20px var(--neon-blue);
+}
+
+.text-neon-purple {
+  color: #fff;
+  text-shadow: 0 0 5px var(--neon-purple), 0 0 10px var(--neon-purple),
+    0 0 20px var(--neon-purple);
+}
+
+/* Scanline Effect */
+.scanlines {
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0),
+    rgba(255, 255, 255, 0) 50%,
+    rgba(0, 0, 0, 0.2) 50%,
+    rgba(0, 0, 0, 0.2)
+  );
+  background-size: 100% 4px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  z-index: 10;
+  opacity: 0.15;
+}

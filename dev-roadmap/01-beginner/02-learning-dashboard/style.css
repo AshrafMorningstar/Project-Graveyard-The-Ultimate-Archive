@@ -1,0 +1,266 @@
+/*
+ * -----------------------------------------------------------------------------
+ * @author      Ashraf Morningstar
+ * @github      https://github.com/AshrafMorningstar
+ * @repository  Project Graveyard - The Ultimate Archive
+ * @quote       "Code that defines the future. Designed to inspire."
+ * -----------------------------------------------------------------------------
+*/
+
+/**
+ * Author: Ashraf Morningstar
+ * GitHub: https://github.com/AshrafMorningstar
+ * Project: Personal Learning Dashboard
+ */
+
+:root {
+    --bg-dark: #0f172a;
+    --bg-card: #1e293b;
+    --text-primary: #f1f5f9;
+    --text-secondary: #94a3b8;
+    --accent: #38bdf8;
+    --accent-hover: #0ea5e9;
+    --success: #22c55e;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-dark);
+    color: var(--text-primary);
+}
+
+.dashboard-container {
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    min-height: 100vh;
+}
+
+/* Sidebar */
+.sidebar {
+    background: var(--bg-card);
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid #334155;
+}
+
+.profile {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.avatar {
+    width: 60px;
+    height: 60px;
+    background: var(--accent);
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 0 auto 1rem;
+}
+
+.sidebar nav ul {
+    list-style: none;
+}
+
+.sidebar nav li {
+    padding: 1rem;
+    margin-bottom: 0.5rem;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: background 0.2s;
+    color: var(--text-secondary);
+}
+
+.sidebar nav li:hover, .sidebar nav li.active {
+    background: rgba(56, 189, 248, 0.1);
+    color: var(--accent);
+}
+
+.github-plug {
+    margin-top: auto;
+}
+
+.github-plug a {
+    display: block;
+    text-align: center;
+    color: var(--text-secondary);
+    text-decoration: none;
+    border: 1px solid #334155;
+    padding: 10px;
+    border-radius: 8px;
+    transition: all 0.2s;
+}
+
+.github-plug a:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+}
+
+/* Main Content */
+.main-content {
+    padding: 2rem 3rem;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.primary-btn {
+    background: var(--accent);
+    color: #fff;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background 0.2s;
+}
+
+.primary-btn:hover {
+    background: var(--accent-hover);
+}
+
+/* Stats */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+}
+
+.stat-card {
+    background: var(--bg-card);
+    padding: 1.5rem;
+    border-radius: 12px;
+}
+
+.stat-card h3 { color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 0.5rem; }
+.stat-number { font-size: 2rem; font-weight: 700; margin-bottom: 0.5rem; }
+.trend { color: var(--success); font-size: 0.8rem; }
+
+/* Goals Container */
+.goals-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.goal-card {
+    background: var(--bg-card);
+    padding: 1.5rem;
+    border-radius: 12px;
+    position: relative;
+}
+
+.goal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.platform-badge {
+    background: #334155;
+    font-size: 0.8rem;
+    padding: 2px 8px;
+    border-radius: 4px;
+}
+
+.progress-container {
+    background: #334155;
+    height: 8px;
+    border-radius: 4px;
+    margin: 1rem 0;
+    overflow: hidden;
+}
+
+.progress-bar {
+    height: 100%;
+    background: var(--accent);
+    width: 0%;
+    transition: width 0.5s ease;
+}
+
+.controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.control-btn {
+    padding: 4px 8px;
+    background: #334155;
+    border: none;
+    color: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.control-btn:hover { background: #475569; }
+
+/* Modal */
+.modal {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s;
+}
+
+.modal.show {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.modal-content {
+    background: var(--bg-card);
+    padding: 2rem;
+    border-radius: 12px;
+    width: 400px;
+    position: relative;
+}
+
+.close-btn {
+    position: absolute;
+    top: 1rem; right: 1rem;
+    cursor: pointer;
+    font-size: 1.5rem;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--text-secondary);
+}
+
+.form-group input {
+    width: 100%;
+    padding: 0.8rem;
+    border-radius: 6px;
+    border: 1px solid #334155;
+    background: var(--bg-dark);
+    color: #fff;
+}

@@ -1,0 +1,79 @@
+<!--
+ -----------------------------------------------------------------------------
+ @author      Ashraf Morningstar
+ @github      https://github.com/AshrafMorningstar
+ @repository  Project Graveyard - The Ultimate Archive
+ @quote       "Code that defines the future. Designed to inspire."
+ -----------------------------------------------------------------------------
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ExpenseFlow | Web Dev Mega Projects</title>
+    <meta name="description" content="Track your income and expenses with precise analytics. A modern FinTech dashboard for personal finance.">
+    <meta name="author" content="Ashraf Morningstar">
+    
+    <link rel="stylesheet" href="../../../assets/css/global.css">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container flex-center" style="min-height: 100vh;">
+        <main class="dashboard">
+            <header class="header">
+                <h2>ExpenseFlow</h2>
+                <div class="balance-card">
+                    <p>YOUR BALANCE</p>
+                    <h1 id="balance">$0.00</h1>
+                    
+                    <div class="inc-exp-container">
+                        <div>
+                            <h4>INCOME</h4>
+                            <p id="money-plus" class="money plus">+$0.00</p>
+                        </div>
+                        <div>
+                            <h4>EXPENSE</h4>
+                            <p id="money-minus" class="money minus">-$0.00</p>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <div class="content-grid">
+                <section class="history-section">
+                    <h3>Transaction History</h3>
+                    <ul id="list" class="list">
+                        <!-- Transactions injected here -->
+                    </ul>
+                    <div id="empty-msg" class="empty-state">No transactions yet. Start tracking!</div>
+                </section>
+
+                <section class="add-section">
+                    <h3>Add New Transaction</h3>
+                    <form id="form">
+                        <div class="form-control">
+                            <label for="text">Description</label>
+                            <input type="text" id="text" placeholder="e.g. Salary, Rent" autocomplete="off" />
+                        </div>
+                        <div class="form-control">
+                            <label for="amount">Amount <br /><small>(- expense, + income)</small></label>
+                            <input type="number" id="amount" placeholder="0" autocomplete="off" />
+                        </div>
+                        <button class="btn btn-primary" style="width: 100%;">Add Transaction</button>
+                    </form>
+                </section>
+            </div>
+
+            <footer class="footer-attribution">
+                <p>Created & Maintained by <a href="https://github.com/AshrafMorningstar">Ashraf Morningstar</a></p>
+            </footer>
+        </main>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

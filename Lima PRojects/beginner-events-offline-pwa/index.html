@@ -1,0 +1,491 @@
+<!--
+ -----------------------------------------------------------------------------
+ @author      Ashraf Morningstar
+ @github      https://github.com/AshrafMorningstar
+ @repository  Project Graveyard - The Ultimate Archive
+ @quote       "Code that defines the future. Designed to inspire."
+ -----------------------------------------------------------------------------
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Offline-first PWA for discovering and managing local community events">
+    <meta name="author" content="Ashraf Morningstar">
+    <meta name="theme-color" content="#3B82F6">
+    <title>Local Events PWA | Ashraf Morningstar</title>
+    <link rel="stylesheet" href="../shared/global-design-system.css">
+    <link rel="manifest" href="manifest.json">
+    <style>
+        /* PWA-specific styles */
+        .app-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: var(--space-4);
+        }
+
+        .app-header {
+            background: var(--bg-secondary);
+            padding: var(--space-6);
+            border-radius: var(--radius-xl);
+            margin-bottom: var(--space-6);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .status-indicator {
+            display: flex;
+            align-items: center;
+            gap: var(--space-2);
+            padding: var(--space-2) var(--space-4);
+            background: var(--bg-elevated);
+            border-radius: var(--radius-full);
+            font-size: var(--font-size-sm);
+        }
+
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--success);
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        .status-dot.offline {
+            background: var(--warning);
+        }
+
+        .tabs {
+            display: flex;
+            gap: var(--space-2);
+            margin-bottom: var(--space-6);
+            background: var(--bg-secondary);
+            padding: var(--space-2);
+            border-radius: var(--radius-lg);
+        }
+
+        .tab-btn {
+            flex: 1;
+            padding: var(--space-3) var(--space-4);
+            background: transparent;
+            border: none;
+            color: var(--text-secondary);
+            font-weight: var(--font-weight-medium);
+            border-radius: var(--radius-md);
+            cursor: pointer;
+            transition: all var(--transition-fast);
+        }
+
+        .tab-btn.active {
+            background: var(--accent-primary);
+            color: white;
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        .events-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: var(--space-4);
+        }
+
+        .event-card {
+            background: var(--bg-secondary);
+            border-radius: var(--radius-xl);
+            padding: var(--space-6);
+            transition: all var(--transition-base);
+            border: 1px solid transparent;
+        }
+
+        .event-card:hover {
+            border-color: var(--accent-primary);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .event-category {
+            display: inline-block;
+            padding: var(--space-1) var(--space-3);
+            background: rgba(59, 130, 246, 0.2);
+            color: var(--accent-secondary);
+            border-radius: var(--radius-full);
+            font-size: var(--font-size-xs);
+            font-weight: var(--font-weight-semibold);
+            margin-bottom: var(--space-3);
+        }
+
+        .event-title {
+            font-size: var(--font-size-xl);
+            margin-bottom: var(--space-2);
+        }
+
+        .event-meta {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-2);
+            color: var(--text-secondary);
+            font-size: var(--font-size-sm);
+            margin: var(--space-4) 0;
+        }
+
+        .event-actions {
+            display: flex;
+            gap: var(--space-2);
+            margin-top: var(--space-4);
+        }
+
+        .favorite-btn {
+            background: transparent;
+            border: 1px solid var(--text-tertiary);
+            color: var(--text-secondary);
+            padding: var(--space-2) var(--space-4);
+            border-radius: var(--radius-md);
+            cursor: pointer;
+            transition: all var(--transition-fast);
+        }
+
+        .favorite-btn.favorited {
+            background: var(--error);
+            border-color: var(--error);
+            color: white;
+        }
+
+        .map-container {
+            height: 500px;
+            background: var(--bg-secondary);
+            border-radius: var(--radius-xl);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-tertiary);
+        }
+
+        .calendar-container {
+            background: var(--bg-secondary);
+            border-radius: var(--radius-xl);
+            padding: var(--space-6);
+        }
+
+        .install-prompt {
+            background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+            color: white;
+            padding: var(--space-4);
+            border-radius: var(--radius-lg);
+            margin-bottom: var(--space-6);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .install-prompt.hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="app-container">
+        <!-- Install Prompt -->
+        <div id="installPrompt" class="install-prompt hidden">
+            <div>
+                <strong>Install Local Events</strong>
+                <p style="margin: 0; opacity: 0.9; font-size: var(--font-size-sm);">Get the full app experience with offline access</p>
+            </div>
+            <button id="installBtn" class="btn btn-secondary">Install</button>
+        </div>
+
+        <!-- Header -->
+        <header class="app-header">
+            <div>
+                <h1 style="margin: 0;">📅 Local Events</h1>
+                <p style="margin: 0; color: var(--text-secondary); font-size: var(--font-size-sm);">Discover community events near you</p>
+            </div>
+            <div class="status-indicator">
+                <span class="status-dot" id="statusDot"></span>
+                <span id="statusText">Online</span>
+            </div>
+        </header>
+
+        <!-- Tabs -->
+        <div class="tabs">
+            <button class="tab-btn active" data-tab="list">📋 List View</button>
+            <button class="tab-btn" data-tab="map">🗺️ Map View</button>
+            <button class="tab-btn" data-tab="calendar">📆 Calendar</button>
+            <button class="tab-btn" data-tab="favorites">❤️ Favorites</button>
+        </div>
+
+        <!-- Tab Content: List View -->
+        <div id="listTab" class="tab-content active">
+            <div class="events-grid" id="eventsGrid">
+                <!-- Events will be loaded here -->
+            </div>
+        </div>
+
+        <!-- Tab Content: Map View -->
+        <div id="mapTab" class="tab-content">
+            <div class="map-container">
+                <div style="text-align: center;">
+                    <div style="font-size: 3rem; margin-bottom: var(--space-4);">🗺️</div>
+                    <p>Map view with event markers</p>
+                    <p style="font-size: var(--font-size-sm); opacity: 0.7;">Leaflet integration would go here</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tab Content: Calendar -->
+        <div id="calendarTab" class="tab-content">
+            <div class="calendar-container">
+                <h2 style="margin-bottom: var(--space-6);">Event Calendar</h2>
+                <div style="text-align: center; padding: var(--space-12); color: var(--text-tertiary);">
+                    <div style="font-size: 3rem; margin-bottom: var(--space-4);">📆</div>
+                    <p>Calendar view with event dates</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tab Content: Favorites -->
+        <div id="favoritesTab" class="tab-content">
+            <div class="events-grid" id="favoritesGrid">
+                <!-- Favorited events will be loaded here -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        /**
+         * Local Events PWA - Application Logic
+         * Author: Ashraf Morningstar
+         * GitHub: https://github.com/AshrafMorningstar
+         */
+
+        // Sample events data
+        const sampleEvents = [
+            {
+                id: 1,
+                title: 'Tech Meetup: Web Development',
+                category: 'Technology',
+                date: '2024-01-15',
+                time: '18:00',
+                location: 'Tech Hub, Downtown',
+                description: 'Join us for an evening of web development discussions and networking.'
+            },
+            {
+                id: 2,
+                title: 'Community Farmers Market',
+                category: 'Community',
+                date: '2024-01-20',
+                time: '09:00',
+                location: 'Central Park',
+                description: 'Fresh local produce and handmade goods from local vendors.'
+            },
+            {
+                id: 3,
+                title: 'Art Gallery Opening',
+                category: 'Arts',
+                date: '2024-01-22',
+                time: '19:00',
+                location: 'City Art Gallery',
+                description: 'Explore contemporary art from emerging local artists.'
+            },
+            {
+                id: 4,
+                title: 'Yoga in the Park',
+                category: 'Wellness',
+                date: '2024-01-25',
+                time: '07:00',
+                location: 'Riverside Park',
+                description: 'Free outdoor yoga session for all skill levels.'
+            },
+            {
+                id: 5,
+                title: 'Live Music Night',
+                category: 'Entertainment',
+                date: '2024-01-27',
+                time: '20:00',
+                location: 'The Blue Note',
+                description: 'Local bands performing jazz, rock, and indie music.'
+            },
+            {
+                id: 6,
+                title: 'Coding Workshop for Beginners',
+                category: 'Technology',
+                date: '2024-01-30',
+                time: '14:00',
+                location: 'Library Meeting Room',
+                description: 'Learn the basics of HTML, CSS, and JavaScript.'
+            }
+        ];
+
+        // State
+        let events = [];
+        let favorites = new Set();
+        let isOnline = navigator.onLine;
+
+        // DOM Elements
+        const eventsGrid = document.getElementById('eventsGrid');
+        const favoritesGrid = document.getElementById('favoritesGrid');
+        const statusDot = document.getElementById('statusDot');
+        const statusText = document.getElementById('statusText');
+        const installPrompt = document.getElementById('installPrompt');
+        const installBtn = document.getElementById('installBtn');
+
+        // Initialize
+        function init() {
+            loadEvents();
+            loadFavorites();
+            setupTabs();
+            setupOnlineStatus();
+            setupPWA();
+            renderEvents();
+        }
+
+        // Load events (from IndexedDB or sample data)
+        function loadEvents() {
+            const stored = localStorage.getItem('events');
+            events = stored ? JSON.parse(stored) : sampleEvents;
+        }
+
+        // Load favorites
+        function loadFavorites() {
+            const stored = localStorage.getItem('favorites');
+            favorites = new Set(stored ? JSON.parse(stored) : []);
+        }
+
+        // Save favorites
+        function saveFavorites() {
+            localStorage.setItem('favorites', JSON.stringify([...favorites]));
+        }
+
+        // Render events
+        function renderEvents() {
+            eventsGrid.innerHTML = events.map(event => createEventCard(event)).join('');
+            renderFavorites();
+        }
+
+        // Render favorites
+        function renderFavorites() {
+            const favoriteEvents = events.filter(e => favorites.has(e.id));
+            if (favoriteEvents.length === 0) {
+                favoritesGrid.innerHTML = `
+                    <div style="grid-column: 1/-1; text-align: center; padding: var(--space-12); color: var(--text-tertiary);">
+                        <div style="font-size: 3rem; margin-bottom: var(--space-4);">❤️</div>
+                        <p>No favorite events yet</p>
+                        <p style="font-size: var(--font-size-sm);">Click the heart icon on events to save them here</p>
+                    </div>
+                `;
+            } else {
+                favoritesGrid.innerHTML = favoriteEvents.map(event => createEventCard(event)).join('');
+            }
+        }
+
+        // Create event card HTML
+        function createEventCard(event) {
+            const isFavorited = favorites.has(event.id);
+            return `
+                <article class="event-card">
+                    <span class="event-category">${event.category}</span>
+                    <h3 class="event-title">${event.title}</h3>
+                    <div class="event-meta">
+                        <span>📅 ${formatDate(event.date)}</span>
+                        <span>🕐 ${event.time}</span>
+                        <span>📍 ${event.location}</span>
+                    </div>
+                    <p style="color: var(--text-secondary); font-size: var(--font-size-sm);">${event.description}</p>
+                    <div class="event-actions">
+                        <button class="favorite-btn ${isFavorited ? 'favorited' : ''}" onclick="toggleFavorite(${event.id})">
+                            ${isFavorited ? '❤️' : '🤍'} ${isFavorited ? 'Favorited' : 'Favorite'}
+                        </button>
+                        <button class="btn btn-primary btn-sm" style="flex: 1;">View Details</button>
+                    </div>
+                </article>
+            `;
+        }
+
+        // Toggle favorite
+        function toggleFavorite(eventId) {
+            if (favorites.has(eventId)) {
+                favorites.delete(eventId);
+            } else {
+                favorites.add(eventId);
+            }
+            saveFavorites();
+            renderEvents();
+        }
+
+        // Format date
+        function formatDate(dateStr) {
+            const date = new Date(dateStr);
+            return date.toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric' });
+        }
+
+        // Setup tabs
+        function setupTabs() {
+            const tabBtns = document.querySelectorAll('.tab-btn');
+            const tabContents = document.querySelectorAll('.tab-content');
+
+            tabBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const tabName = btn.dataset.tab;
+
+                    tabBtns.forEach(b => b.classList.remove('active'));
+                    tabContents.forEach(c => c.classList.remove('active'));
+
+                    btn.classList.add('active');
+                    document.getElementById(`${tabName}Tab`).classList.add('active');
+                });
+            });
+        }
+
+        // Setup online/offline status
+        function setupOnlineStatus() {
+            function updateStatus() {
+                isOnline = navigator.onLine;
+                statusDot.classList.toggle('offline', !isOnline);
+                statusText.textContent = isOnline ? 'Online' : 'Offline';
+            }
+
+            window.addEventListener('online', updateStatus);
+            window.addEventListener('offline', updateStatus);
+            updateStatus();
+        }
+
+        // Setup PWA
+        function setupPWA() {
+            let deferredPrompt;
+
+            window.addEventListener('beforeinstallprompt', (e) => {
+                e.preventDefault();
+                deferredPrompt = e;
+                installPrompt.classList.remove('hidden');
+            });
+
+            installBtn.addEventListener('click', async () => {
+                if (deferredPrompt) {
+                    deferredPrompt.prompt();
+                    const { outcome } = await deferredPrompt.userChoice;
+                    deferredPrompt = null;
+                    installPrompt.classList.add('hidden');
+                }
+            });
+
+            // Register service worker
+            if ('serviceWorker' in navigator) {
+                navigator.serviceWorker.register('service-worker.js')
+                    .then(reg => console.log('Service Worker registered'))
+                    .catch(err => console.log('Service Worker registration failed'));
+            }
+        }
+
+        // Initialize app
+        init();
+    </script>
+</body>
+</html>

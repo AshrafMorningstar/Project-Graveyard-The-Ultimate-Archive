@@ -1,0 +1,134 @@
+<!--
+ -----------------------------------------------------------------------------
+ @author      Ashraf Morningstar
+ @github      https://github.com/AshrafMorningstar
+ @repository  Project Graveyard - The Ultimate Archive
+ @quote       "Code that defines the future. Designed to inspire."
+ -----------------------------------------------------------------------------
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- SEO & Viral Metadata -->
+    <meta name="description" content="Premium BEGINNER ECOMMERCE UX SANDBOX web application. Built with modern web technologies. Part of the Ultimate Web Dev Roadmap by Ashraf Morningstar.">
+    <meta name="keywords" content="web development, BEGINNER ECOMMERCE UX SANDBOX, javascript, css, html, ashraf morningstar, open source, premium ui">
+    <meta name="author" content="Ashraf Morningstar">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://ashrafmorningstar.github.io/WebDevRoadmap/beginner-ecommerce-ux-sandbox/">
+    <meta property="og:title" content="BEGINNER ECOMMERCE UX SANDBOX | Premium Web App">
+    <meta property="og:description" content="Premium BEGINNER ECOMMERCE UX SANDBOX web application. Built with modern web technologies. Part of the Ultimate Web Dev Roadmap by Ashraf Morningstar.">
+    <meta property="og:image" content="https://via.placeholder.com/1200x630.png?text=BEGINNER+ECOMMERCE+UX+SANDBOX">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://ashrafmorningstar.github.io/WebDevRoadmap/beginner-ecommerce-ux-sandbox/">
+    <meta property="twitter:title" content="BEGINNER ECOMMERCE UX SANDBOX | Premium Web App">
+    <meta property="twitter:description" content="Premium BEGINNER ECOMMERCE UX SANDBOX web application. Built with modern web technologies. Part of the Ultimate Web Dev Roadmap by Ashraf Morningstar.">
+    <meta property="twitter:image" content="https://via.placeholder.com/1200x630.png?text=BEGINNER+ECOMMERCE+UX+SANDBOX">
+    
+    <link rel="canonical" href="https://ashrafmorningstar.github.io/WebDevRoadmap/beginner-ecommerce-ux-sandbox/">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>E-commerce UX Sandbox</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Author: Ashraf Morningstar | https://github.com/AshrafMorningstar -->
+  
+  <nav class="navbar">
+    <div class="container nav-content">
+      <div class="brand">✨ LuxeStore</div>
+      <button class="cart-btn" id="cartBtn">
+        🛒 Cart <span id="cartCount" class="badge">0</span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="container main-layout">
+    <!-- Product Grid -->
+    <main class="products-section">
+      <h1>Featured Collection</h1>
+      <div id="productGrid" class="product-grid">
+        <!-- Products injected here -->
+      </div>
+    </main>
+
+    <!-- Cart Sidebar (Hidden by default) -->
+    <aside class="cart-sidebar" id="cartSidebar">
+      <div class="cart-header">
+        <h2>Your Cart</h2>
+        <button id="closeCart" class="close-btn">×</button>
+      </div>
+      
+      <div id="cartItems" class="cart-items">
+        <p class="empty-cart-msg">Your cart is empty.</p>
+      </div>
+
+      <div class="cart-footer">
+        <div class="total-row">
+          <span>Total</span>
+          <span id="cartTotal">$0.00</span>
+        </div>
+        <button id="checkoutBtn" class="btn-primary full-width" disabled>Proceed to Checkout</button>
+      </div>
+    </aside>
+  </div>
+
+  <!-- Checkout Modal -->
+  <div class="modal-overlay" id="checkoutModal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>Secure Checkout</h2>
+        <button id="closeModal" class="close-btn">×</button>
+      </div>
+      
+      <form id="checkoutForm">
+        <div class="form-section">
+          <h3>Shipping Info</h3>
+          <div class="form-row">
+            <input type="text" placeholder="Full Name" required>
+          </div>
+          <div class="form-row">
+            <input type="email" placeholder="Email Address" required>
+          </div>
+          <div class="form-row">
+            <input type="text" placeholder="Address" required>
+          </div>
+        </div>
+
+        <div class="form-section">
+          <h3>Payment (Mock Sandbox)</h3>
+          <div class="credit-card-mock">
+            <input type="text" placeholder="Card Number" maxlength="19" required>
+            <div class="row">
+              <input type="text" placeholder="MM/YY" maxlength="5" required style="width: 100px;">
+              <input type="text" placeholder="CVC" maxlength="3" required style="width: 80px;">
+            </div>
+          </div>
+          <p class="mock-notice">ℹ️ This is a sandbox. No real payment is processed.</p>
+        </div>
+
+        <button type="submit" class="btn-success full-width">Pay <span id="payAmount">$0.00</span></button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Success Overlay -->
+  <div class="success-overlay" id="successOverlay">
+    <div class="success-content">
+      <div class="check-icon">✓</div>
+      <h2>Order Confirmed!</h2>
+      <p>Thank you for your purchase.</p>
+      <button id="continueShopping" class="btn-primary">Continue Shopping</button>
+    </div>
+  </div>
+
+  <script src="products.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
+

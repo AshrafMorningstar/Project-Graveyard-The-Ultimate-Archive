@@ -1,0 +1,20 @@
+name: GitHub AI Oracle
+
+on:
+  push:
+  schedule:
+    - cron: '0 */6 * * *'
+
+jobs:
+  ai-dash:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+      - name: Install dependencies
+        run: npm install
+      - name: Run AI Oracle Engine
+        run: node engine/oracle.js

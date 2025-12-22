@@ -1,0 +1,535 @@
+/*
+ * -----------------------------------------------------------------------------
+ * @author      Ashraf Morningstar
+ * @github      https://github.com/AshrafMorningstar
+ * @repository  Project Graveyard - The Ultimate Archive
+ * @quote       "Code that defines the future. Designed to inspire."
+ * -----------------------------------------------------------------------------
+*/
+
+/* Created by Ashraf Morningstar - https://github.com/AshrafMorningstar */
+
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;500;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-bg: #0a0e27;
+    --secondary-bg: #1a1f3a;
+    --accent-cyan: #00f3ff;
+    --accent-pink: #ff006e;
+    --accent-purple: #8b5cf6;
+    --accent-gold: #ffd700;
+    --text-primary: #ffffff;
+    --text-secondary: #a0aec0;
+    --grid-bg: #151a30;
+    --tile-empty: rgba(255, 255, 255, 0.05);
+}
+
+body {
+    font-family: 'Rajdhani', sans-serif;
+    background: linear-gradient(135deg, #0a0e27 0%, #1a1f3a 50%, #0f1428 100%);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: var(--text-primary);
+    overflow-x: hidden;
+    position: relative;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        radial-gradient(circle at 20% 50%, rgba(0, 243, 255, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(255, 0, 110, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 40% 20%, rgba(139, 92, 246, 0.1) 0%, transparent 50%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+.container {
+    position: relative;
+    z-index: 1;
+    max-width: 550px;
+    width: 100%;
+    padding: 20px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    animation: slideDown 0.6s ease-out;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.header h1 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 4rem;
+    font-weight: 900;
+    background: linear-gradient(135deg, var(--accent-cyan), var(--accent-purple));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: 0 0 30px rgba(0, 243, 255, 0.5);
+    letter-spacing: 2px;
+}
+
+.neon-text {
+    display: block;
+    font-size: 1.2rem;
+    background: linear-gradient(135deg, var(--accent-pink), var(--accent-gold));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    letter-spacing: 8px;
+    margin-top: -10px;
+}
+
+.score-container {
+    display: flex;
+    gap: 10px;
+}
+
+.score-box {
+    background: linear-gradient(135deg, rgba(0, 243, 255, 0.1), rgba(139, 92, 246, 0.1));
+    border: 2px solid var(--accent-cyan);
+    border-radius: 12px;
+    padding: 12px 20px;
+    text-align: center;
+    min-width: 100px;
+    box-shadow: 0 0 20px rgba(0, 243, 255, 0.3);
+    transition: all 0.3s ease;
+}
+
+.score-box:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 30px rgba(0, 243, 255, 0.5);
+}
+
+.score-box.best {
+    border-color: var(--accent-gold);
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
+}
+
+.score-box.best:hover {
+    box-shadow: 0 0 30px rgba(255, 215, 0, 0.5);
+}
+
+.score-label {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.score-value {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 900;
+    color: var(--text-primary);
+    margin-top: 5px;
+}
+
+.game-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    animation: fadeIn 0.8s ease-out 0.2s both;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.instruction {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+}
+
+.instruction strong {
+    color: var(--accent-cyan);
+    font-weight: 700;
+}
+
+.new-game-btn {
+    font-family: 'Orbitron', sans-serif;
+    background: linear-gradient(135deg, var(--accent-pink), var(--accent-purple));
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(255, 0, 110, 0.4);
+    letter-spacing: 1px;
+}
+
+.new-game-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 25px rgba(255, 0, 110, 0.6);
+}
+
+.new-game-btn:active {
+    transform: translateY(0);
+}
+
+.game-board {
+    background: var(--grid-bg);
+    border-radius: 16px;
+    padding: 15px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    box-shadow: 
+        0 0 40px rgba(0, 0, 0, 0.5),
+        inset 0 0 30px rgba(0, 243, 255, 0.1);
+    animation: scaleIn 0.6s ease-out 0.3s both;
+    position: relative;
+}
+
+@keyframes scaleIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.tile {
+    aspect-ratio: 1;
+    background: var(--tile-empty);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 900;
+    transition: all 0.15s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.tile::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, transparent, rgba(255, 255, 255, 0.1));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.tile:hover::before {
+    opacity: 1;
+}
+
+.tile[data-value="2"] {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+}
+
+.tile[data-value="4"] {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    box-shadow: 0 4px 15px rgba(240, 147, 251, 0.4);
+}
+
+.tile[data-value="8"] {
+    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+    box-shadow: 0 4px 15px rgba(79, 172, 254, 0.4);
+}
+
+.tile[data-value="16"] {
+    background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+    box-shadow: 0 4px 15px rgba(67, 233, 123, 0.4);
+}
+
+.tile[data-value="32"] {
+    background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+    box-shadow: 0 4px 15px rgba(250, 112, 154, 0.4);
+}
+
+.tile[data-value="64"] {
+    background: linear-gradient(135deg, #30cfd0 0%, #330867 100%);
+    box-shadow: 0 4px 15px rgba(48, 207, 208, 0.4);
+}
+
+.tile[data-value="128"] {
+    background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+    box-shadow: 0 4px 15px rgba(168, 237, 234, 0.6);
+    animation: pulse 1s infinite;
+}
+
+.tile[data-value="256"] {
+    background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%);
+    box-shadow: 0 4px 15px rgba(255, 154, 158, 0.6);
+    animation: pulse 1s infinite;
+}
+
+.tile[data-value="512"] {
+    background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+    box-shadow: 0 4px 15px rgba(255, 236, 210, 0.6);
+    animation: pulse 1s infinite;
+}
+
+.tile[data-value="1024"] {
+    background: linear-gradient(135deg, #ff0844 0%, #ffb199 100%);
+    box-shadow: 0 4px 15px rgba(255, 8, 68, 0.6);
+    animation: pulse 0.8s infinite;
+    font-size: 2rem;
+}
+
+.tile[data-value="2048"] {
+    background: linear-gradient(135deg, #ffd700 0%, #ff6b6b 100%);
+    box-shadow: 0 4px 25px rgba(255, 215, 0, 0.8);
+    animation: winner 1s infinite;
+    font-size: 2rem;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+@keyframes winner {
+    0%, 100% {
+        transform: scale(1) rotate(0deg);
+        box-shadow: 0 4px 25px rgba(255, 215, 0, 0.8);
+    }
+    50% {
+        transform: scale(1.1) rotate(2deg);
+        box-shadow: 0 8px 40px rgba(255, 215, 0, 1);
+    }
+}
+
+.tile-new {
+    animation: appear 0.2s ease;
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: scale(0);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.tile-merged {
+    animation: merge 0.3s ease;
+}
+
+@keyframes merge {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.controls-info {
+    text-align: center;
+    margin-top: 20px;
+    color: var(--text-secondary);
+    animation: fadeIn 1s ease-out 0.5s both;
+}
+
+.controls-info kbd {
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid var(--accent-cyan);
+    border-radius: 6px;
+    padding: 5px 10px;
+    margin: 0 3px;
+    font-family: 'Orbitron', sans-serif;
+    color: var(--accent-cyan);
+    box-shadow: 0 0 10px rgba(0, 243, 255, 0.3);
+}
+
+.game-over-overlay,
+.win-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(10, 14, 39, 0.95);
+    backdrop-filter: blur(10px);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    animation: fadeIn 0.3s ease;
+}
+
+.game-over-overlay.active,
+.win-overlay.active {
+    display: flex;
+}
+
+.game-over-content,
+.win-content {
+    background: linear-gradient(135deg, rgba(26, 31, 58, 0.9), rgba(21, 26, 48, 0.9));
+    border: 2px solid var(--accent-cyan);
+    border-radius: 20px;
+    padding: 50px;
+    text-align: center;
+    box-shadow: 0 0 50px rgba(0, 243, 255, 0.5);
+    animation: scaleIn 0.4s ease;
+}
+
+.game-over-content h2,
+.win-content h2 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 3rem;
+    margin-bottom: 20px;
+    background: linear-gradient(135deg, var(--accent-pink), var(--accent-purple));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.final-score,
+.win-message {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+    color: var(--text-secondary);
+}
+
+.final-score span {
+    color: var(--accent-cyan);
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 900;
+    font-size: 2rem;
+}
+
+.retry-btn,
+.continue-btn {
+    font-family: 'Orbitron', sans-serif;
+    background: linear-gradient(135deg, var(--accent-cyan), var(--accent-purple));
+    color: white;
+    border: none;
+    padding: 15px 40px;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 20px rgba(0, 243, 255, 0.4);
+    margin: 5px;
+}
+
+.retry-btn:hover,
+.continue-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 30px rgba(0, 243, 255, 0.6);
+}
+
+.win-buttons {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+}
+
+.creator-footer {
+    position: fixed;
+    bottom: 20px;
+    text-align: center;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    z-index: 1;
+}
+
+.creator-footer a {
+    color: var(--accent-cyan);
+    text-decoration: none;
+    font-weight: 700;
+    transition: all 0.3s ease;
+}
+
+.creator-footer a:hover {
+    color: var(--accent-pink);
+    text-shadow: 0 0 10px rgba(255, 0, 110, 0.5);
+}
+
+@media (max-width: 600px) {
+    .header h1 {
+        font-size: 2.5rem;
+    }
+    
+    .neon-text {
+        font-size: 0.9rem;
+        letter-spacing: 4px;
+    }
+    
+    .score-box {
+        min-width: 80px;
+        padding: 8px 15px;
+    }
+    
+    .score-value {
+        font-size: 1.4rem;
+    }
+    
+    .game-info {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .tile {
+        font-size: 1.8rem;
+    }
+    
+    .tile[data-value="1024"],
+    .tile[data-value="2048"] {
+        font-size: 1.4rem;
+    }
+}
+
+/* Created by Ashraf Morningstar - https://github.com/AshrafMorningstar */

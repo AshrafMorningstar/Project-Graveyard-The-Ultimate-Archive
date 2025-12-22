@@ -1,0 +1,123 @@
+/*
+ * -----------------------------------------------------------------------------
+ * @author      Ashraf Morningstar
+ * @github      https://github.com/AshrafMorningstar
+ * @repository  Project Graveyard - The Ultimate Archive
+ * @quote       "Code that defines the future. Designed to inspire."
+ * -----------------------------------------------------------------------------
+*/
+
+/**
+ * Ambient Landing - Ambient Motion
+ * Author: Ashraf Morningstar
+ * GitHub: https://github.com/AshrafMorningstar
+ */
+
+.floating-orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.3;
+    pointer-events: none;
+}
+
+.orb-1 {
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.8) 0%, transparent 70%);
+    top: 20%;
+    left: 10%;
+    animation: float1 18s ease-in-out infinite;
+}
+
+.orb-2 {
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(255, 182, 193, 0.6) 0%, transparent 70%);
+    bottom: 30%;
+    right: 15%;
+    animation: float2 16s ease-in-out infinite;
+}
+
+.orb-3 {
+    width: 350px;
+    height: 350px;
+    background: radial-gradient(circle, rgba(173, 216, 230, 0.5) 0%, transparent 70%);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: float3 20s ease-in-out infinite;
+}
+
+@keyframes float1 {
+    0%, 100% {
+        transform: translate(0, 0) scale(1);
+    }
+    33% {
+        transform: translate(30px, -20px) scale(1.05);
+    }
+    66% {
+        transform: translate(-20px, 30px) scale(0.95);
+    }
+}
+
+@keyframes float2 {
+    0%, 100% {
+        transform: translate(0, 0) scale(1);
+    }
+    33% {
+        transform: translate(-25px, 25px) scale(1.08);
+    }
+    66% {
+        transform: translate(25px, -15px) scale(0.92);
+    }
+}
+
+@keyframes float3 {
+    0%, 100% {
+        transform: translate(-50%, -50%) scale(1);
+    }
+    50% {
+        transform: translate(-50%, -50%) scale(1.1);
+    }
+}
+
+/* Subtle text breathing */
+.headline {
+    animation: breathe 12s ease-in-out infinite;
+}
+
+@keyframes breathe {
+    0%, 100% {
+        opacity: 0.95;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.02);
+    }
+}
+
+.subheading {
+    animation: breathe 14s ease-in-out infinite;
+    animation-delay: 2s;
+}
+
+.statement {
+    animation: breathe 16s ease-in-out infinite;
+    animation-delay: 4s;
+}
+
+/* Background gradient shift */
+body {
+    animation: gradientShift 30s ease-in-out infinite;
+}
+
+@keyframes gradientShift {
+    0%, 100% {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    }
+    50% {
+        background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+    }
+}

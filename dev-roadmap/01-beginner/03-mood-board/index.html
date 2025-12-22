@@ -1,0 +1,78 @@
+<!--
+ -----------------------------------------------------------------------------
+ @author      Ashraf Morningstar
+ @github      https://github.com/AshrafMorningstar
+ @repository  Project Graveyard - The Ultimate Archive
+ @quote       "Code that defines the future. Designed to inspire."
+ -----------------------------------------------------------------------------
+-->
+
+<!--
+  Author: Ashraf Morningstar
+  GitHub: https://github.com/AshrafMorningstar
+  Project: Mood Board Background Generator
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mood Board Generator | Ashraf Morningstar</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        
+        <aside class="controls">
+            <div class="header">
+                <h2>Mood Maker</h2>
+                <a href="https://github.com/AshrafMorningstar" class="author-link">by Ashraf Morningstar</a>
+            </div>
+
+            <!-- Color Palette -->
+            <div class="control-group">
+                <label>Base Gradient</label>
+                <div class="color-inputs">
+                    <input type="color" id="color1" value="#ff9a9e">
+                    <input type="color" id="color2" value="#fecfef">
+                </div>
+                <select id="gradient-type">
+                    <option value="linear">Linear</option>
+                    <option value="radial">Radial</option>
+                </select>
+            </div>
+
+            <!-- Pattern Overlay -->
+            <div class="control-group">
+                <label>Pattern Overlay</label>
+                <div class="pattern-options">
+                    <button class="pattern-btn active" data-pattern="none">None</button>
+                    <button class="pattern-btn" data-pattern="dots">Dots</button>
+                    <button class="pattern-btn" data-pattern="lines">Lines</button>
+                    <button class="pattern-btn" data-pattern="noise">Noise</button>
+                </div>
+            </div>
+
+            <!-- Text Overlay -->
+            <div class="control-group">
+                <label>Add Mood Text</label>
+                <input type="text" id="mood-text" placeholder="e.g. Chill Vibes">
+                <input type="range" id="font-size" min="20" max="100" value="40">
+            </div>
+
+            <!-- Actions -->
+            <div class="actions">
+                <button id="random-btn">🎲 Randomize</button>
+                <button id="download-btn" class="primary">⬇ Download</button>
+            </div>
+        </aside>
+
+        <main class="preview-area">
+            <canvas id="mood-canvas"></canvas>
+            <div class="canvas-tip">Real-time Preview</div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

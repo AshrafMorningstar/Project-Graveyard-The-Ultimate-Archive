@@ -1,0 +1,51 @@
+/*
+ * -----------------------------------------------------------------------------
+ * @author      Ashraf Morningstar
+ * @github      https://github.com/AshrafMorningstar
+ * @repository  Project Graveyard - The Ultimate Archive
+ * @quote       "Code that defines the future. Designed to inspire."
+ * -----------------------------------------------------------------------------
+*/
+
+/* Created by Ashraf Morningstar - https://github.com/AshrafMorningstar */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #111;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+    margin: 0;
+    flex-direction: column;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    max-width: 400px;
+}
+
+.square {
+    background-color: #1d1d1d;
+    box-shadow: 0 0 2px #000;
+    height: 16px;
+    width: 16px;
+    margin: 2px;
+    transition: 2s ease;
+}
+
+.square:hover {
+    transition-duration: 0s;
+}
+
+.footer {
+    margin-top: 50px;
+    color: #666;
+}
+.footer a { color: #fff; text-decoration: none; font-weight: bold; }

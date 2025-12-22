@@ -1,0 +1,142 @@
+/*
+ * -----------------------------------------------------------------------------
+ * @author      Ashraf Morningstar
+ * @github      https://github.com/AshrafMorningstar
+ * @repository  Project Graveyard - The Ultimate Archive
+ * @quote       "Code that defines the future. Designed to inspire."
+ * -----------------------------------------------------------------------------
+*/
+
+/*
+Created & Maintained by Ashraf Morningstar
+GitHub: https://github.com/AshrafMorningstar
+*/
+
+body {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    font-family: 'Bebas Neue', cursive;
+    color: #fff;
+    overflow: hidden;
+}
+
+.stage {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.header h1 {
+    font-size: 4rem;
+    letter-spacing: 8px;
+    text-shadow: 4px 4px 0 rgba(0,0,0,0.2);
+    margin-bottom: 0.5rem;
+}
+
+.header p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+    letter-spacing: 2px;
+}
+
+/* Drum Pads */
+.drum-kit {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+}
+
+.pad {
+    width: 140px;
+    height: 140px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.1s;
+    user-select: none;
+}
+
+.pad:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: scale(1.05);
+}
+
+.pad.active {
+    background: rgba(255, 255, 255, 0.4);
+    transform: scale(0.95);
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.5);
+}
+
+.key-label {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.sound-name {
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+    opacity: 0.8;
+}
+
+/* Visualizer */
+.visualizer {
+    display: flex;
+    gap: 10px;
+    align-items: flex-end;
+    height: 80px;
+    margin-top: 2rem;
+}
+
+.bar {
+    width: 15px;
+    height: 20px;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+    transition: height 0.1s;
+}
+
+.bar.pulse {
+    animation: pulse 0.3s ease-out;
+}
+
+@keyframes pulse {
+    0% { height: 20px; }
+    50% { height: 70px; background: rgba(255, 255, 255, 0.8); }
+    100% { height: 20px; }
+}
+
+/* Footer */
+.footer-attribution {
+    margin-top: 3rem;
+    opacity: 0.7;
+}
+
+.footer-attribution a {
+    color: #fff;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+    .drum-kit {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .pad {
+        width: 120px;
+        height: 120px;
+    }
+}

@@ -1,0 +1,72 @@
+<!--
+ -----------------------------------------------------------------------------
+ @author      Ashraf Morningstar
+ @github      https://github.com/AshrafMorningstar
+ @repository  Project Graveyard - The Ultimate Archive
+ @quote       "Code that defines the future. Designed to inspire."
+ -----------------------------------------------------------------------------
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BeatBox | Web Dev Mega Projects</title>
+    <meta name="description" content="Interactive drum kit with keyboard and mouse controls. Create beats in your browser.">
+    <meta name="author" content="Ashraf Morningstar">
+    
+    <link rel="stylesheet" href="../../../assets/css/global.css">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="stage">
+        <header class="header">
+            <h1>BEATBOX</h1>
+            <p>Press keys or click pads to play</p>
+        </header>
+
+        <div class="drum-kit">
+            <div class="pad" data-key="65" data-sound="kick">
+                <div class="key-label">A</div>
+                <div class="sound-name">KICK</div>
+            </div>
+            <div class="pad" data-key="83" data-sound="snare">
+                <div class="key-label">S</div>
+                <div class="sound-name">SNARE</div>
+            </div>
+            <div class="pad" data-key="68" data-sound="hihat">
+                <div class="key-label">D</div>
+                <div class="sound-name">HI-HAT</div>
+            </div>
+            <div class="pad" data-key="70" data-sound="tom">
+                <div class="key-label">F</div>
+                <div class="sound-name">TOM</div>
+            </div>
+            <div class="pad" data-key="71" data-sound="clap">
+                <div class="key-label">G</div>
+                <div class="sound-name">CLAP</div>
+            </div>
+            <div class="pad" data-key="72" data-sound="openhat">
+                <div class="key-label">H</div>
+                <div class="sound-name">OPEN HAT</div>
+            </div>
+        </div>
+
+        <div class="visualizer" id="visualizer">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+
+        <footer class="footer-attribution">
+            <p>Created & Maintained by <a href="https://github.com/AshrafMorningstar">Ashraf Morningstar</a></p>
+        </footer>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

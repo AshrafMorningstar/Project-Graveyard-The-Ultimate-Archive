@@ -1,0 +1,78 @@
+/*
+ * -----------------------------------------------------------------------------
+ * @author      Ashraf Morningstar
+ * @github      https://github.com/AshrafMorningstar
+ * @repository  Project Graveyard - The Ultimate Archive
+ * @quote       "Code that defines the future. Designed to inspire."
+ * -----------------------------------------------------------------------------
+*/
+
+/**
+ * BMI Calculator Advanced
+ * Created by: Ashraf Morningstar
+ * GitHub: https://github.com/AshrafMorningstar
+ */
+
+class BmiCalculatorAdvanced {
+    constructor() {
+        this.init();
+    }
+    
+    init() {
+        console.log('BMI Calculator Advanced initialized');
+        this.setupUI();
+        this.attachEventListeners();
+    }
+    
+    setupUI() {
+        const main = document.getElementById('appMain');
+        main.innerHTML = this.generateUI();
+    }
+    
+    generateUI() {
+        return `
+            <div class="feature-grid">
+                
+                <div class="feature-card">
+                    <h3>BMI/BMR</h3>
+                    <p>Premium bmi/bmr functionality</p>
+                    <button class="btn btn-primary">Try Now</button>
+                </div>
+            
+                <div class="feature-card">
+                    <h3>Charts</h3>
+                    <p>Premium charts functionality</p>
+                    <button class="btn btn-primary">Try Now</button>
+                </div>
+            
+                <div class="feature-card">
+                    <h3>Recommendations</h3>
+                    <p>Premium recommendations functionality</p>
+                    <button class="btn btn-primary">Try Now</button>
+                </div>
+            
+            </div>
+        `;
+    }
+    
+    attachEventListeners() {
+        // Add event listeners here
+        console.log('Event listeners attached');
+    }
+}
+
+// Initialize app when DOM is ready
+document.addEventListener('DOMContentLoaded', () => {
+    new BmiCalculatorAdvanced();
+});
+
+// Add smooth animations
+document.querySelectorAll('.btn').forEach(btn => {
+    btn.addEventListener('mouseenter', function() {
+        this.style.transform = 'translateY(-2px)';
+    });
+    
+    btn.addEventListener('mouseleave', function() {
+        this.style.transform = 'translateY(0)';
+    });
+});

@@ -1,0 +1,351 @@
+<!--
+ -----------------------------------------------------------------------------
+ @author      Ashraf Morningstar
+ @github      https://github.com/AshrafMorningstar
+ @repository  Project Graveyard - The Ultimate Archive
+ @quote       "Code that defines the future. Designed to inspire."
+ -----------------------------------------------------------------------------
+-->
+
+<!DOCTYPE html>
+<!-- Created by Ashraf Morningstar - https://github.com/AshrafMorningstar -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ultimate Web Dev Projects | Ashraf Morningstar</title>
+    <style>
+        /* Created by Ashraf Morningstar - https://github.com/AshrafMorningstar */
+        @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Space Grotesk', sans-serif; }
+        
+        body {
+            background-color: #0b0c10;
+            color: #c5c6c7;
+            min-height: 100vh;
+            overflow-x: hidden;
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(102, 252, 241, 0.05) 0%, transparent 20%),
+                radial-gradient(circle at 90% 80%, rgba(69, 162, 158, 0.05) 0%, transparent 20%);
+        }
+        
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #0b0c10; }
+        ::-webkit-scrollbar-thumb { background: #45a29e; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #66fcf1; }
+
+        header {
+            background: rgba(11, 12, 16, 0.8);
+            backdrop-filter: blur(10px);
+            padding: 60px 20px;
+            text-align: center;
+            border-bottom: 1px solid rgba(102, 252, 241, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        header h1 { 
+            font-size: 3.5rem; 
+            margin-bottom: 15px; 
+            color: #fff;
+            background: linear-gradient(to right, #66fcf1, #45a29e);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        
+        header p { 
+            font-size: 1.2rem; 
+            color: #c5c6c7;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        header a {
+            color: #66fcf1;
+            text-decoration: none;
+            border-bottom: 1px dashed #66fcf1;
+            transition: all 0.3s;
+        }
+        
+        header a:hover {
+            color: #fff;
+            border-bottom-style: solid;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 60px auto;
+            padding: 0 40px;
+        }
+        
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 30px;
+        }
+        
+        .card {
+            background: rgba(31, 40, 51, 0.6);
+            border: 1px solid rgba(69, 162, 158, 0.2);
+            border-radius: 16px;
+            overflow: hidden;
+            transition: all 0.4s ease;
+            text-decoration: none;
+            color: inherit;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+        
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(to right, #66fcf1, #45a29e);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s ease;
+        }
+        
+        .card:hover {
+            transform: translateY(-10px);
+            background: rgba(31, 40, 51, 0.9);
+            box-shadow: 0 20px 40px rgba(102, 252, 241, 0.1);
+            border-color: #66fcf1;
+        }
+        
+        .card:hover::before {
+            transform: scaleX(1);
+        }
+        
+        .card-body {
+            padding: 30px;
+            flex-grow: 1;
+        }
+        
+        .card-title {
+            font-size: 1.6rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: #fff;
+        }
+        
+        .card-desc {
+            font-size: 1rem;
+            color: #8b9bb4;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: auto;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 6px 12px;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .calc { background: rgba(52, 152, 219, 0.15); color: #3498db; border: 1px solid rgba(52, 152, 219, 0.3); }
+        .game { background: rgba(46, 204, 113, 0.15); color: #2ecc71; border: 1px solid rgba(46, 204, 113, 0.3); }
+        .tool { background: rgba(243, 156, 18, 0.15); color: #f39c12; border: 1px solid rgba(243, 156, 18, 0.3); }
+        .web { background: rgba(155, 89, 182, 0.15); color: #9b59b6; border: 1px solid rgba(155, 89, 182, 0.3); }
+        
+        footer {
+            text-align: center;
+            padding: 60px 20px;
+            margin-top: 80px;
+            background: rgba(11, 12, 16, 0.9);
+            border-top: 1px solid rgba(102, 252, 241, 0.1);
+        }
+        
+        .footer-link { 
+            color: #66fcf1; 
+            text-decoration: none; 
+            font-weight: 700; 
+            font-size: 1.2rem;
+        }
+
+        .footer p {
+            color: #8b9bb4;
+            font-size: 0.9rem;
+            margin-top: 10px;
+        }
+
+        @media (max-width: 768px) {
+            header h1 { font-size: 2.5rem; }
+            .container { padding: 0 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Web Dev Projects</h1>
+        <p>A curated collection of premium, fully functional web applications by <br><a href="https://github.com/AshrafMorningstar">Ashraf Morningstar</a></p>
+    </header>
+
+    <div class="container">
+        <div class="grid">
+            <!-- Featured: Redesigned Projects -->
+            <a href="2048-Game/index.html" class="card">
+                <div class="card-body">
+                    <div class="card-title">2048 Game</div>
+                    <div class="card-desc">Slide and merge tiles to reach 2048. Featuring a stunning Glassmorphism neon design.</div>
+                    <div class="tags">
+                        <span class="badge game">Game</span>
+                        <span class="badge tool">Premium UI</span>
+                    </div>
+                </div>
+            </a>
+
+            <a href="Age-Calculator/index.html" class="card">
+                <div class="card-body">
+                    <div class="card-title">Age Calculator</div>
+                    <div class="card-desc">Calculate your precise age. Designed with a Modern Soft UI (Neumorphism).</div>
+                    <div class="tags">
+                        <span class="badge calc">Calculator</span>
+                        <span class="badge tool">Neumorphism</span>
+                    </div>
+                </div>
+            </a>
+            
+            <!-- Other Projects (Batch 1) -->
+            <a href="BMI-Calculator/index.html" class="card">
+                <div class="card-body">
+                    <div class="card-title">BMI Calculator</div>
+                    <div class="card-desc">Check your Body Mass Index with health tips and instant feedback.</div>
+                    <div class="tags"><span class="badge calc">Calculator</span></div>
+                </div>
+            </a>
+            
+            <a href="Simple-Calculator/index.html" class="card">
+                <div class="card-body">
+                    <div class="card-title">Simple Calculator</div>
+                    <div class="card-desc">A fully functional standard calculator for everyday math.</div>
+                    <div class="tags"><span class="badge calc">Calculator</span></div>
+                </div>
+            </a>
+
+            <a href="Tic-Tac-Toe/index.html" class="card">
+                <div class="card-body">
+                    <div class="card-title">Tic Tac Toe</div>
+                    <div class="card-desc">Classic X and O game. Play against a friend!</div>
+                    <div class="tags"><span class="badge game">Game</span></div>
+                </div>
+            </a>
+
+            <a href="Rock-Paper-Scissors/index.html" class="card">
+                <div class="card-body">
+                    <div class="card-title">Rock Paper Scissors</div>
+                    <div class="card-desc">Test your luck against the computer in this classic game.</div>
+                    <div class="tags"><span class="badge game">Game</span></div>
+                </div>
+            </a>
+            
+            <a href="Snake-Game/index.html" class="card">
+                <div class="card-body">
+                    <div class="card-title">Snake Game</div>
+                    <div class="card-desc">Navigate the snake to eat food and grow without hitting walls.</div>
+                    <div class="tags"><span class="badge game">Game</span></div>
+                </div>
+            </a>
+            
+            <a href="Memory-Card-Game/index.html" class="card">
+                <div class="card-body">
+                    <div class="card-title">Memory Card Game</div>
+                    <div class="card-desc">Flip cards to match pairs and test your memory skills.</div>
+                    <div class="tags"><span class="badge game">Game</span></div>
+                </div>
+            </a>
+
+            <a href="ToDo-List/index.html" class="card">
+                <div class="card-body">
+                    <div class="card-title">To-Do List</div>
+                    <div class="card-desc">Organize your day with this persistent task manager.</div>
+                    <div class="tags"><span class="badge tool">Productivity</span></div>
+                </div>
+            </a>
+            
+            <a href="Digital-Clock/index.html" class="card">
+                <div class="card-body">
+                    <div class="card-title">Digital Clock</div>
+                    <div class="card-desc">Accurate digital time display with seconds and date.</div>
+                    <div class="tags"><span class="badge tool">Utility</span></div>
+                </div>
+            </a>
+            
+            <a href="Password-Generator/index.html" class="card">
+                <div class="card-body">
+                    <div class="card-title">Password Generator</div>
+                    <div class="card-desc">Generate strong, secure passwords with custom options.</div>
+                    <div class="tags"><span class="badge tool">Security</span></div>
+                </div>
+            </a>
+            
+            <a href="Note-Taking-App/index.html" class="card">
+                <div class="card-body">
+                    <div class="card-title">Note Taking App</div>
+                    <div class="card-desc">Jot down thoughts and save them for later.</div>
+                    <div class="tags"><span class="badge tool">Productivity</span></div>
+                </div>
+            </a>
+
+            <a href="Weather-App/index.html" class="card">
+                <div class="card-body">
+                    <div class="card-title">Weather App</div>
+                    <div class="card-desc">Get real-time weather updates for any location worldwide.</div>
+                    <div class="tags"><span class="badge web">API</span></div>
+                </div>
+            </a>
+            
+            <a href="Portfolio-Website/index.html" class="card">
+                <div class="card-body">
+                    <div class="card-title">Portfolio Template</div>
+                    <div class="card-desc">A professional portfolio template to showcase your work.</div>
+                    <div class="tags"><span class="badge web">Template</span></div>
+                </div>
+            </a>
+            
+            <a href="Recipe-App/index.html" class="card">
+                <div class="card-body">
+                    <div class="card-title">Recipe App</div>
+                    <div class="card-desc">Search for delicious recipes with ingredients and instructions.</div>
+                    <div class="tags"><span class="badge web">API</span></div>
+                </div>
+            </a>
+             <a href="Countdown-Timer/index.html" class="card">
+                <div class="card-body">
+                    <div class="card-title">Countdown Timer</div>
+                    <div class="card-desc">Track time remaining for future events.</div>
+                    <div class="tags"><span class="badge tool">Utility</span></div>
+                </div>
+            </a>
+
+        </div>
+    </div>
+
+    <footer>
+        <a href="https://github.com/AshrafMorningstar" class="footer-link">Ashraf Morningstar</a>
+        <p>&copy; 2025 All Rights Reserved. Built with precision and passion.</p>
+    </footer>
+
+</body>
+</html>

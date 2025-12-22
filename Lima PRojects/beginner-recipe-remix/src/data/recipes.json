@@ -1,0 +1,102 @@
+/**
+ * Recipe Data Set
+ * A curated list of diverse recipes for testing the matching engine.
+ */
+[
+  {
+    "id": "r1",
+    "title": "Rustic Tomato Basil Pasta",
+    "description": "A quick, vibrant pasta dish that celebrates fresh ingredients.",
+    "time": "20 mins",
+    "servings": 2,
+    "tags": ["vegetarian", "quick", "italian"],
+    "ingredients": [
+      { "item": "spaghetti", "amount": "200g", "isPantry": true },
+      { "item": "cherry tomatoes", "amount": "2 cups", "isPantry": false },
+      { "item": "garlic", "amount": "3 cloves", "isPantry": true },
+      { "item": "fresh basil", "amount": "1 handful", "isPantry": false },
+      { "item": "olive oil", "amount": "3 tbsp", "isPantry": true },
+      { "item": "parmesan cheese", "amount": "to taste", "isPantry": false }
+    ],
+    "steps": [
+      "Bring a large pot of salted water to a boil.",
+      "Add spaghetti and cook until al dente.",
+      "Meanwhile, heat olive oil in a pan over medium heat.",
+      "Add minced garlic and halved cherry tomatoes. Sauté until tomatoes burst (about 5 mins).",
+      "Toss pasta with the sauce and a splash of pasta water.",
+      "Stir in fresh basil and serve with parmesan."
+    ],
+    "image": "https://images.unsplash.com/photo-1563379926898-05f4575a45d8?auto=format&fit=crop&w=800&q=80"
+  },
+  {
+    "id": "r2",
+    "title": "Golden Turmeric Chickpea Curry",
+    "description": "A warming, anti-inflammatory coconut curry packed with protein.",
+    "time": "30 mins",
+    "servings": 4,
+    "tags": ["vegan", "gluten-free", "healthy"],
+    "ingredients": [
+      { "item": "chickpeas", "amount": "2 cans", "isPantry": true },
+      { "item": "coconut milk", "amount": "1 can", "isPantry": true },
+      { "item": "onion", "amount": "1 medium", "isPantry": false },
+      { "item": "spinach", "amount": "2 cups", "isPantry": false },
+      { "item": "turmeric", "amount": "1 tsp", "isPantry": true },
+      { "item": "ginger", "amount": "1 inch piece", "isPantry": false },
+      { "item": "rice", "amount": "1 cup", "isPantry": true }
+    ],
+    "steps": [
+      "Sauté diced onion and ginger in a pot until soft.",
+      "Stir in turmeric and chickpeas, coating them in the spices.",
+      "Pour in coconut milk and simmer for 15 minutes.",
+      "Stir in spinach until wilted.",
+      "Serve hot over steamed rice."
+    ],
+    "image": "https://images.unsplash.com/photo-1565557623262-b51c2513a641?auto=format&fit=crop&w=800&q=80"
+  },
+  {
+    "id": "r3",
+    "title": "Avocado Toast with Poached Egg",
+    "description": "The quintessential brunch staple, elevated.",
+    "time": "10 mins",
+    "servings": 1,
+    "tags": ["vegetarian", "breakfast", "quick"],
+    "ingredients": [
+      { "item": "bread", "amount": "2 slices", "isPantry": false },
+      { "item": "avocado", "amount": "1 ripe", "isPantry": false },
+      { "item": "egg", "amount": "2", "isPantry": false },
+      { "item": "lemon", "amount": "1 wedge", "isPantry": false },
+      { "item": "chili flakes", "amount": "pinch", "isPantry": true }
+    ],
+    "steps": [
+      "Toast the bread slices to your liking.",
+      "Mash the avocado with salt and a squeeze of lemon.",
+      "Poach eggs in simmering water for 3 minutes.",
+      "Spread avocado on toast, top with egg, and sprinkle with chili flakes."
+    ],
+    "image": "https://images.unsplash.com/photo-1525351484163-7529414395d8?auto=format&fit=crop&w=800&q=80"
+  },
+  {
+    "id": "r4",
+    "title": "Classic Chicken Stir-Fry",
+    "description": "Better than takeout, uses whatever veggies you have.",
+    "time": "25 mins",
+    "servings": 3,
+    "tags": ["high-protein", "dairy-free"],
+    "ingredients": [
+      { "item": "chicken breast", "amount": "500g", "isPantry": false },
+      { "item": "soy sauce", "amount": "3 tbsp", "isPantry": true },
+      { "item": "broccoli", "amount": "1 head", "isPantry": false },
+      { "item": "bell pepper", "amount": "1", "isPantry": false },
+      { "item": "garlic", "amount": "2 cloves", "isPantry": true },
+      { "item": "honey", "amount": "1 tbsp", "isPantry": true }
+    ],
+    "steps": [
+      "Cut chicken and vegetables into bite-sized pieces.",
+      "Mix soy sauce, minced garlic, and honey for the sauce.",
+      "Pan-fry chicken until golden and cooked through. Remove.",
+      "Stir-fry vegetables for 3-4 minutes.",
+      "Add chicken back, pour sauce over, and toss to coat."
+    ],
+    "image": "https://images.unsplash.com/photo-1603133872878-684f10830303?auto=format&fit=crop&w=800&q=80"
+  }
+]

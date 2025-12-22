@@ -1,0 +1,66 @@
+<!--
+ -----------------------------------------------------------------------------
+ @author      Ashraf Morningstar
+ @github      https://github.com/AshrafMorningstar
+ @repository  Project Graveyard - The Ultimate Archive
+ @quote       "Code that defines the future. Designed to inspire."
+ -----------------------------------------------------------------------------
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>AshrafCoin Blockchain</title>
+  <style>
+    body { font-family: monospace; background: #000; color: #0f0; padding: 2rem; }
+    .block { border: 1px solid #0f0; margin: 1rem 0; padding: 1rem; }
+  </style>
+</head>
+<body>
+  <h1>AshrafCoin Blockchain Simulation</h1>
+  <div id="chain">Generating chain...</div>
+  <script>
+    function sha256(str) {
+      return crypto.subtle.digest('SHA-256', new TextEncoder().encode(str)).then(buf => {
+        return Array.from(new Uint8Array(buf)).map(b => b.toString(16).padStart(2, '0')).join('');
+      });
+    }
+
+    async function createBlockchain() {
+      const chain = [];
+      let prevHash = '0'.repeat(64);
+
+      for (let i = 0; i < 5; i++) {
+        const transaction = {
+          from: 'wallet_' + (i + 1),
+          to: 'wallet_' + (i + 2),
+          amount: (Math.random() * 10).toFixed(2)
+        };
+        const block = {
+          index: i,
+          timestamp: new Date().toISOString(),
+          transaction,
+          prevHash,
+        };
+        const str = JSON.stringify(block);
+        block.hash = await sha256(str);
+        chain.push(block);
+        prevHash = block.hash;
+      }
+
+      document.getElementById('chain').innerHTML = chain.map(b => `
+        <div class="block">
+          <strong>Block #${b.index}</strong><br>
+          Time: ${b.timestamp}<br>
+          From: ${b.transaction.from} To: ${b.transaction.to} Amount: ${b.transaction.amount}<br>
+          Prev Hash: ${b.prevHash}<br>
+          Hash: ${b.hash}
+        </div>
+      `).join('');
+    }
+
+    createBlockchain();
+  </script>
+</body>
+</html>

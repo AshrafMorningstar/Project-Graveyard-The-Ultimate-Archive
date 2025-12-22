@@ -1,0 +1,54 @@
+/*
+ * -----------------------------------------------------------------------------
+ * @author      Ashraf Morningstar
+ * @github      https://github.com/AshrafMorningstar
+ * @repository  Project Graveyard - The Ultimate Archive
+ * @quote       "Code that defines the future. Designed to inspire."
+ * -----------------------------------------------------------------------------
+*/
+
+/* Room 404 - Lost */
+
+#room-404 {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: #ffffff;
+}
+
+#room-404 .error-code {
+    background: linear-gradient(135deg, #ffffff 0%, #f093fb 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.floating-number {
+    position: absolute;
+    font-family: var(--font-display);
+    font-size: 8rem;
+    font-weight: 700;
+    opacity: 0.05;
+    animation: float-number 8s ease-in-out infinite;
+}
+
+.floating-number:nth-child(1) {
+    top: 10%;
+    left: 10%;
+    animation-delay: 0s;
+}
+
+.floating-number:nth-child(2) {
+    top: 50%;
+    right: 15%;
+    animation-delay: -2s;
+}
+
+.floating-number:nth-child(3) {
+    bottom: 15%;
+    left: 20%;
+    animation-delay: -4s;
+}
+
+@keyframes float-number {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-30px) rotate(5deg); }
+}

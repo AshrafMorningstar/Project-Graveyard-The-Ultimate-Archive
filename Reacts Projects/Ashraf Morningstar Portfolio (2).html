@@ -1,0 +1,781 @@
+<!--
+ -----------------------------------------------------------------------------
+ @author      Ashraf Morningstar
+ @github      https://github.com/AshrafMorningstar
+ @repository  Project Graveyard - The Ultimate Archive
+ @quote       "Code that defines the future. Designed to inspire."
+ -----------------------------------------------------------------------------
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ashraf Morningstar - Portfolio</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+            min-height: 100vh;
+            overflow: hidden;
+            color: #fff;
+        }
+
+        .macos-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(ellipse at 20% 50%, rgba(100, 200, 255, 0.1) 0%, transparent 50%),
+                        radial-gradient(ellipse at 80% 80%, rgba(255, 100, 200, 0.1) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .dock {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 12px;
+            background: rgba(30, 30, 30, 0.8);
+            backdrop-filter: blur(20px);
+            border-radius: 20px;
+            padding: 8px 16px;
+            z-index: 100;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .dock-item {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 24px;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .dock-item:hover {
+            transform: translateY(-10px) scale(1.1);
+            box-shadow: 0 20px 40px rgba(102, 126, 234, 0.4);
+        }
+
+        .dock-item.active {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+        }
+
+        .window {
+            position: fixed;
+            min-width: 500px;
+            min-height: 400px;
+            background: rgba(20, 20, 30, 0.95);
+            backdrop-filter: blur(20px);
+            border-radius: 16px;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            display: flex;
+            flex-direction: column;
+            cursor: grab;
+            touch-action: none;
+            z-index: 50;
+        }
+
+        .window.dragging {
+            cursor: grabbing;
+            opacity: 0.9;
+        }
+
+        .window-header {
+            height: 40px;
+            background: linear-gradient(to bottom, rgba(100, 100, 120, 0.3), transparent);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            padding: 0 16px;
+            gap: 12px;
+            user-select: none;
+            border-radius: 16px 16px 0 0;
+        }
+
+        .window-controls {
+            display: flex;
+            gap: 8px;
+        }
+
+        .control-btn {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .control-btn.close {
+            background: #ff5f57;
+        }
+
+        .control-btn.minimize {
+            background: #febc2e;
+        }
+
+        .control-btn.maximize {
+            background: #28c940;
+        }
+
+        .control-btn:hover {
+            transform: scale(1.2);
+        }
+
+        .window-title {
+            flex: 1;
+            text-align: center;
+            font-size: 13px;
+            font-weight: 600;
+            color: #ccc;
+        }
+
+        .window-content {
+            flex: 1;
+            overflow-y: auto;
+            padding: 24px;
+            color: #e0e0e0;
+        }
+
+        .window-content::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .window-content::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        .window-content::-webkit-scrollbar-thumb {
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 4px;
+        }
+
+        .window-content::-webkit-scrollbar-thumb:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        .resize-handle {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 20px;
+            height: 20px;
+            cursor: se-resize;
+            background: linear-gradient(135deg, transparent 50%, rgba(255, 255, 255, 0.1) 50%);
+            border-radius: 0 0 16px 0;
+        }
+
+        h2 {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        h3 {
+            font-size: 18px;
+            font-weight: 600;
+            margin: 16px 0 8px 0;
+            color: #64d5ff;
+        }
+
+        p {
+            line-height: 1.6;
+            color: #b0b0b0;
+            margin-bottom: 12px;
+        }
+
+        .project-card {
+            background: rgba(100, 150, 255, 0.1);
+            border: 1px solid rgba(100, 150, 255, 0.2);
+            border-radius: 12px;
+            padding: 16px;
+            margin: 12px 0;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .project-card:hover {
+            background: rgba(100, 150, 255, 0.2);
+            border-color: rgba(100, 150, 255, 0.4);
+            transform: translateX(4px);
+        }
+
+        .project-card h4 {
+            color: #64d5ff;
+            font-size: 16px;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .project-card .lang {
+            font-size: 12px;
+            background: rgba(255, 100, 150, 0.2);
+            color: #ff64a3;
+            padding: 2px 8px;
+            border-radius: 4px;
+            display: inline-block;
+        }
+
+        .github-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            color: #64d5ff;
+            text-decoration: none;
+            font-size: 14px;
+            margin-top: 8px;
+            padding: 6px 12px;
+            background: rgba(100, 213, 255, 0.1);
+            border-radius: 6px;
+            border: 1px solid rgba(100, 213, 255, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .github-link:hover {
+            background: rgba(100, 213, 255, 0.2);
+            border-color: rgba(100, 213, 255, 0.5);
+            gap: 10px;
+        }
+
+        .about-window h2 {
+            background: linear-gradient(135deg, #f093fb, #f5576c);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 12px;
+            margin: 16px 0;
+            flex-wrap: wrap;
+        }
+
+        .social-btn {
+            padding: 8px 16px;
+            background: rgba(100, 150, 255, 0.1);
+            border: 1px solid rgba(100, 150, 255, 0.3);
+            border-radius: 8px;
+            color: #64d5ff;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-size: 13px;
+            cursor: pointer;
+        }
+
+        .social-btn:hover {
+            background: rgba(100, 150, 255, 0.2);
+            border-color: rgba(100, 150, 255, 0.5);
+            transform: translateY(-2px);
+        }
+
+        .stat-box {
+            background: rgba(255, 100, 200, 0.1);
+            border: 1px solid rgba(255, 100, 200, 0.2);
+            border-radius: 10px;
+            padding: 12px;
+            margin: 12px 0;
+            text-align: center;
+        }
+
+        .stat-box .number {
+            font-size: 24px;
+            font-weight: 700;
+            color: #ff64a3;
+        }
+
+        .stat-box .label {
+            font-size: 12px;
+            color: #999;
+            margin-top: 4px;
+        }
+
+        .tech-stack {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin: 16px 0;
+        }
+
+        .tech-badge {
+            background: rgba(100, 100, 255, 0.2);
+            border: 1px solid rgba(100, 100, 255, 0.4);
+            color: #64c8ff;
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-size: 12px;
+            font-weight: 500;
+        }
+
+        .topbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 28px;
+            background: rgba(0, 0, 0, 0.4);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 16px;
+            font-size: 12px;
+            color: #ccc;
+            z-index: 200;
+        }
+
+        .time {
+            font-weight: 500;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .floating {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        .pulsing {
+            animation: pulse 2s ease-in-out infinite;
+        }
+    </style>
+</head>
+<body>
+    <div class="macos-bg"></div>
+    <div class="topbar">
+        <span>macOS Portfolio</span>
+        <span class="time" id="time">12:00</span>
+    </div>
+
+    <div class="dock" id="dock"></div>
+
+    <!-- Windows Container -->
+    <div id="windows-container"></div>
+
+    <script>
+        const PROJECTS = [
+            { name: 'studious-happiness', url: 'https://github.com/AshrafMorningstar/studious-happiness', lang: 'JavaScript', desc: 'Full-stack web application with modern tech stack' },
+            { name: 'github-stats-cinematic', url: 'https://github.com/AshrafMorningstar/github-stats-cinematic', lang: 'TypeScript', desc: 'Premium GitHub Statistics Generator with cinematic effects' },
+            { name: 'quantum-github-visualizer', url: 'https://github.com/AshrafMorningstar/quantum-github-visualizer', lang: 'TypeScript', desc: 'Revolutionary Multi-Theme GitHub Stats Visualizer' },
+            { name: 'devmetrics-pro-ai', url: 'https://github.com/AshrafMorningstar/devmetrics-pro-ai', lang: 'TypeScript', desc: 'Premium Developer Analytics Platform with AI insights' },
+            { name: 'cyber-github-stats', url: 'https://github.com/AshrafMorningstar/cyber-github-stats', lang: 'TypeScript', desc: 'Cyberpunk-themed GitHub Stats Dashboard' },
+            { name: 'QUANTUM-FLUX-VISUALIZER', url: 'https://github.com/AshrafMorningstar/QUANTUM-FLUX-VISUALIZER', lang: 'TypeScript', desc: '8 Dynamic Themes | 3D WebGL | Particle Networks' },
+            { name: 'Website-Crash-Tool-Mstar', url: 'https://github.com/AshrafMorningstar/Website-Crash-Tool-Mstar', lang: 'Python', desc: 'Website stress testing tool - Tests robustness & performance' },
+            { name: 'Mstar-Youtube-Auto-Upload-Bot', url: 'https://github.com/AshrafMorningstar/Mstar-Youtube-Auto-Upload-Bot', lang: 'Python', desc: 'YouTube automation with Selenium - Seamless video uploads' },
+            { name: 'New-Mstar-Ad-Blocker', url: 'https://github.com/AshrafMorningstar/New-Mstar-Ad-Blocker', lang: 'JavaScript', desc: 'YouTube ad blocker - Uninterrupted video content experience' },
+            { name: 'My-Work-History', url: 'https://github.com/AshrafMorningstar/My-Work-History', lang: 'Documentation', desc: 'Comprehensive work history & project portfolio since 2009' }
+        ];
+
+        const WINDOWS_DATA = [
+            {
+                id: 'about',
+                title: 'About.txt',
+                icon: '👤',
+                content: `
+                    <div class="about-window">
+                        <h2>About Ashraf Morningstar</h2>
+                        <p>Full-Stack Web Developer | React Enthusiast | Animation Expert</p>
+                        <p>Location: India</p>
+                        <p>Email: ashrafmorningstar@gmail.com</p>
+                        
+                        <h3>Experience</h3>
+                        <p>6+ years of professional software development experience at Wipro Technologies. Specialized in creating cutting-edge web applications with modern technologies.</p>
+                        
+                        <h3>Skills</h3>
+                        <div class="tech-stack">
+                            <span class="tech-badge">React</span>
+                            <span class="tech-badge">JavaScript</span>
+                            <span class="tech-badge">TypeScript</span>
+                            <span class="tech-badge">Tailwind CSS</span>
+                            <span class="tech-badge">GSAP</span>
+                            <span class="tech-badge">Node.js</span>
+                            <span class="tech-badge">Full-Stack Dev</span>
+                        </div>
+                        
+                        <h3>Quick Stats</h3>
+                        <div class="stat-box">
+                            <div class="number">57</div>
+                            <div class="label">Public Repositories</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="number">3</div>
+                            <div class="label">Followers</div>
+                        </div>
+                        
+                        <h3>Connect</h3>
+                        <div class="social-links">
+                            <a href="https://github.com/AshrafMorningstar" class="social-btn" target="_blank">GitHub</a>
+                            <a href="https://twitter.com/AMS_Morningstar" class="social-btn" target="_blank">Twitter</a>
+                            <a href="mailto:ashrafmorningstar@gmail.com" class="social-btn">Email</a>
+                        </div>
+                    </div>
+                `
+            },
+            {
+                id: 'projects',
+                title: 'Projects',
+                icon: '📁',
+                content: `
+                    <h2>Featured Projects</h2>
+                    <p>Showcasing my best work in web development, data visualization, and animation.</p>
+                    ${PROJECTS.map(p => `
+                        <div class="project-card">
+                            <h4>
+                                <span>${p.name}</span>
+                                <span class="lang">${p.lang}</span>
+                            </h4>
+                            <p>${p.desc}</p>
+                            <a href="${p.url}" target="_blank" class="github-link">
+                                → View on GitHub
+                            </a>
+                        </div>
+                    `).join('')}
+                `
+            },
+            {
+                id: 'skills',
+                title: 'Skills.txt',
+                icon: '⚙️',
+                content: `
+                    <h2>Technical Skills</h2>
+                    
+                    <h3>Frontend Development</h3>
+                    <div class="tech-stack">
+                        <span class="tech-badge">React</span>
+                        <span class="tech-badge">TypeScript</span>
+                        <span class="tech-badge">JavaScript (ES6+)</span>
+                        <span class="tech-badge">Tailwind CSS</span>
+                        <span class="tech-badge">GSAP</span>
+                        <span class="tech-badge">Framer Motion</span>
+                        <span class="tech-badge">Responsive Design</span>
+                    </div>
+                    
+                    <h3>Animation & Design</h3>
+                    <div class="tech-stack">
+                        <span class="tech-badge">GSAP Animation</span>
+                        <span class="tech-badge">3D WebGL</span>
+                        <span class="tech-badge">Canvas API</span>
+                        <span class="tech-badge">SVG Animation</span>
+                        <span class="tech-badge">UI/UX Design</span>
+                        <span class="tech-badge">Interactive Design</span>
+                    </div>
+                    
+                    <h3>Backend & Tools</h3>
+                    <div class="tech-stack">
+                        <span class="tech-badge">Node.js</span>
+                        <span class="tech-badge">Express</span>
+                        <span class="tech-badge">Git/GitHub</span>
+                        <span class="tech-badge">REST APIs</span>
+                        <span class="tech-badge">MongoDB</span>
+                        <span class="tech-badge">Firebase</span>
+                    </div>
+                    
+                    <h3>Specializations</h3>
+                    <p>• Advanced GSAP animations and timeline management</p>
+                    <p>• Higher-Order Components (HOC) and React patterns</p>
+                    <p>• State management with Zustand</p>
+                    <p>• Responsive web design and mobile-first approach</p>
+                    <p>• Performance optimization and code splitting</p>
+                    <p>• Cross-browser compatibility</p>
+                `
+            },
+            {
+                id: 'contact',
+                title: 'Contact.txt',
+                icon: '✉️',
+                content: `
+                    <h2>Get in Touch</h2>
+                    <p>I'm always interested in hearing about new projects and opportunities.</p>
+                    
+                    <h3>Contact Information</h3>
+                    <p><strong>Email:</strong> ashrafmorningstar@gmail.com</p>
+                    <p><strong>Location:</strong> India</p>
+                    <p><strong>GitHub:</strong> <a href="https://github.com/AshrafMorningstar" style="color: #64d5ff;" target="_blank">@AshrafMorningstar</a></p>
+                    <p><strong>Twitter:</strong> <a href="https://twitter.com/AMS_Morningstar" style="color: #64d5ff;" target="_blank">@AMS_Morningstar</a></p>
+                    
+                    <h3>Services & Expertise</h3>
+                    <p>• Full-Stack Web Development</p>
+                    <p>• Interactive UI/UX Design</p>
+                    <p>• GSAP Animation & Motion Design</p>
+                    <p>• React Application Development</p>
+                    <p>• Data Visualization & Analytics</p>
+                    <p>• Performance Optimization</p>
+                    
+                    <h3>Available For</h3>
+                    <p>✓ Freelance Projects</p>
+                    <p>✓ Full-Time Opportunities</p>
+                    <p>✓ Collaboration & Partnerships</p>
+                    <p>✓ Consulting & Code Review</p>
+                `
+            }
+        ];
+
+        class MacOSPortfolio {
+            constructor() {
+                this.windows = new Map();
+                this.activeWindow = null;
+                this.draggedWindow = null;
+                this.dragOffset = { x: 0, y: 0 };
+                this.zIndex = 50;
+                this.init();
+            }
+
+            init() {
+                this.createDock();
+                this.createWindows();
+                this.setupDragAndDrop();
+                this.updateTime();
+                setInterval(() => this.updateTime(), 1000);
+            }
+
+            createDock() {
+                const dock = document.getElementById('dock');
+                WINDOWS_DATA.forEach(data => {
+                    const item = document.createElement('div');
+                    item.className = 'dock-item';
+                    item.textContent = data.icon;
+                    item.title = data.title;
+                    item.onclick = () => this.toggleWindow(data.id);
+                    dock.appendChild(item);
+                });
+            }
+
+            createWindows() {
+                const container = document.getElementById('windows-container');
+                let startX = 40;
+                let startY = 80;
+
+                WINDOWS_DATA.forEach((data, index) => {
+                    const windowEl = document.createElement('div');
+                    windowEl.className = 'window';
+                    windowEl.id = `window-${data.id}`;
+                    windowEl.style.left = (startX + index * 20) + 'px';
+                    windowEl.style.top = (startY + index * 20) + 'px';
+                    windowEl.style.width = '650px';
+                    windowEl.style.display = 'none';
+
+                    windowEl.innerHTML = `
+                        <div class="window-header">
+                            <div class="window-controls">
+                                <div class="control-btn close" onclick="portfolio.closeWindow('${data.id}')"></div>
+                                <div class="control-btn minimize" onclick="portfolio.minimizeWindow('${data.id}')"></div>
+                                <div class="control-btn maximize" onclick="portfolio.maximizeWindow('${data.id}')"></div>
+                            </div>
+                            <div class="window-title">${data.title}</div>
+                        </div>
+                        <div class="window-content">
+                            ${data.content}
+                        </div>
+                        <div class="resize-handle"></div>
+                    `;
+
+                    container.appendChild(windowEl);
+                    this.windows.set(data.id, { element: windowEl, visible: false });
+
+                    // Drag handle setup
+                    windowEl.querySelector('.window-header').addEventListener('mousedown', (e) => {
+                        this.startDrag(e, data.id);
+                    });
+
+                    // Resize handle setup
+                    windowEl.querySelector('.resize-handle').addEventListener('mousedown', (e) => {
+                        this.startResize(e, data.id);
+                    });
+
+                    // Click to focus
+                    windowEl.addEventListener('mousedown', () => {
+                        this.focusWindow(data.id);
+                    });
+                });
+            }
+
+            toggleWindow(id) {
+                const window = this.windows.get(id);
+                if (window.visible) {
+                    this.closeWindow(id);
+                } else {
+                    this.openWindow(id);
+                }
+            }
+
+            openWindow(id) {
+                const window = this.windows.get(id);
+                if (!window) return;
+
+                gsap.to(window.element, {
+                    display: 'flex',
+                    opacity: 1,
+                    scale: 1,
+                    duration: 0.3,
+                    ease: 'back.out'
+                });
+
+                window.visible = true;
+                this.focusWindow(id);
+                this.updateDockIcon(id, true);
+            }
+
+            closeWindow(id) {
+                const window = this.windows.get(id);
+                if (!window) return;
+
+                gsap.to(window.element, {
+                    opacity: 0,
+                    scale: 0.9,
+                    duration: 0.2,
+                    ease: 'back.in',
+                    onComplete: () => {
+                        window.element.style.display = 'none';
+                    }
+                });
+
+                window.visible = false;
+                this.updateDockIcon(id, false);
+            }
+
+            minimizeWindow(id) {
+                const window = this.windows.get(id);
+                gsap.to(window.element, {
+                    opacity: 0,
+                    y: window.element.offsetHeight + 100,
+                    duration: 0.3,
+                    ease: 'back.in'
+                });
+                window.visible = false;
+            }
+
+            maximizeWindow(id) {
+                const window = this.windows.get(id);
+                gsap.to(window.element, {
+                    left: 20,
+                    top: 60,
+                    width: 'calc(100% - 40px)',
+                    height: 'calc(100% - 100px)',
+                    duration: 0.4,
+                    ease: 'power2.inOut'
+                });
+            }
+
+            focusWindow(id) {
+                this.zIndex++;
+                const window = this.windows.get(id).element;
+                window.style.zIndex = this.zIndex;
+            }
+
+            updateDockIcon(id, active) {
+                const items = document.querySelectorAll('.dock-item');
+                const index = Array.from(WINDOWS_DATA).findIndex(w => w.id === id);
+                if (items[index]) {
+                    items[index].classList.toggle('active', active);
+                }
+            }
+
+            startDrag(e, id) {
+                if (e.target.classList.contains('window-controls')) return;
+
+                this.draggedWindow = id;
+                const window = this.windows.get(id).element;
+                const rect = window.getBoundingClientRect();
+
+                this.dragOffset.x = e.clientX - rect.left;
+                this.dragOffset.y = e.clientY - rect.top;
+
+                window.classList.add('dragging');
+
+                document.addEventListener('mousemove', (e) => this.drag(e));
+                document.addEventListener('mouseup', () => this.stopDrag());
+            }
+
+            drag(e) {
+                if (!this.draggedWindow) return;
+
+                const window = this.windows.get(this.draggedWindow).element;
+                window.style.left = (e.clientX - this.dragOffset.x) + 'px';
+                window.style.top = (e.clientY - this.dragOffset.y) + 'px';
+            }
+
+            stopDrag() {
+                if (this.draggedWindow) {
+                    const window = this.windows.get(this.draggedWindow).element;
+                    window.classList.remove('dragging');
+                    this.draggedWindow = null;
+                }
+            }
+
+            startResize(e, id) {
+                const window = this.windows.get(id).element;
+                const startX = e.clientX;
+                const startY = e.clientY;
+                const startWidth = window.offsetWidth;
+                const startHeight = window.offsetHeight;
+
+                const handleResize = (e) => {
+                    const newWidth = startWidth + (e.clientX - startX);
+                    const newHeight = startHeight + (e.clientY - startY);
+
+                    if (newWidth > 400) window.style.width = newWidth + 'px';
+                    if (newHeight > 300) window.style.height = newHeight + 'px';
+                };
+
+                const stopResize = () => {
+                    document.removeEventListener('mousemove', handleResize);
+                    document.removeEventListener('mouseup', stopResize);
+                };
+
+                document.addEventListener('mousemove', handleResize);
+                document.addEventListener('mouseup', stopResize);
+            }
+
+            updateTime() {
+                const now = new Date();
+                const hours = String(now.getHours()).padStart(2, '0');
+                const minutes = String(now.getMinutes()).padStart(2, '0');
+                document.getElementById('time').textContent = `${hours}:${minutes}`;
+            }
+        }
+
+        const portfolio = new MacOSPortfolio();
+
+        // Open About window on load
+        setTimeout(() => {
+            portfolio.openWindow('about');
+        }, 300);
+    </script>
+</body>
+</html>

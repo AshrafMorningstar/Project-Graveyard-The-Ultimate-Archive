@@ -1,0 +1,26 @@
+{
+  "name": "cyber-github-stats",
+  "version": "1.0.0",
+  "description": "Cyberpunk-themed GitHub stats visualizer by AshrafMorningstar",
+  "author": "AshrafMorningstar <https://github.com/AshrafMorningstar>",
+  "license": "MIT",
+  "scripts": {
+    "start": "npx http-server -p 8080",
+    "deploy": "gh-pages -d ."
+  },
+  "keywords": [
+    "github",
+    "stats",
+    "cyberpunk",
+    "visualization",
+    "AshrafMorningstar"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AshrafMorningstar/cyber-github-stats"
+  },
+  "devDependencies": {
+    "http-server": "^14.1.1",
+    "gh-pages": "^6.1.0"
+  }
+}

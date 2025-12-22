@@ -1,0 +1,8 @@
+{
+  "name": "beginner-events-offline-pwa",
+  "private": true,
+  "scripts": {
+    "dev": "echo dev",
+    "build": "echo build"
+  }
+}

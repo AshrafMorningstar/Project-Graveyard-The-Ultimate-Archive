@@ -1,0 +1,96 @@
+/*
+ * -----------------------------------------------------------------------------
+ * @author      Ashraf Morningstar
+ * @github      https://github.com/AshrafMorningstar
+ * @repository  Project Graveyard - The Ultimate Archive
+ * @quote       "Code that defines the future. Designed to inspire."
+ * -----------------------------------------------------------------------------
+*/
+
+/* 
+   Project: Holographic Data Sanctuary
+   Level: Expert
+   Author: Ashraf Morningstar
+   GitHub: https://github.com/AshrafMorningstar
+*/
+
+body {
+    margin: 0;
+    overflow: hidden;
+    background: #000;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+#blocker {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 10;
+}
+
+#instructions {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    text-align: center;
+    cursor: pointer;
+    font-size: 1.5rem;
+    z-index: 11;
+}
+
+/* Styles for the "Holographic" Panels rendered in 3D */
+.holo-card {
+    width: 400px;
+    height: 300px;
+    background: rgba(0, 20, 40, 0.8);
+    border: 1px solid #0ff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.5), inset 0 0 20px rgba(0, 255, 255, 0.2);
+    color: #0ff;
+    overflow-y: auto;
+    font-size: 1rem;
+    cursor: default; /* Important so inputs work */
+    user-select: none;
+    backface-visibility: hidden; /* Or visible if we want two-sided */
+}
+
+.holo-card h3 {
+    margin-top: 0;
+    border-bottom: 2px solid #0ff;
+    padding-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.holo-card img {
+    width: 100%;
+    border-radius: 4px;
+    border: 1px solid #066;
+}
+
+.holo-card .btn {
+    display: block;
+    width: 100%;
+    margin-top: 20px;
+    padding: 10px;
+    background: rgba(0, 255, 255, 0.2);
+    border: 1px solid #0ff;
+    color: #fff;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.holo-card .btn:hover {
+    background: rgba(0, 255, 255, 0.5);
+}
+
+/* Custom scrollbar for Holo UI */
+.holo-card::-webkit-scrollbar { width: 5px; }
+.holo-card::-webkit-scrollbar-thumb { background: #0ff; radius: 2px; }

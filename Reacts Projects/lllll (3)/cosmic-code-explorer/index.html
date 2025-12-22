@@ -1,0 +1,175 @@
+<!--
+ -----------------------------------------------------------------------------
+ @author      Ashraf Morningstar
+ @github      https://github.com/AshrafMorningstar
+ @repository  Project Graveyard - The Ultimate Archive
+ @quote       "Code that defines the future. Designed to inspire."
+ -----------------------------------------------------------------------------
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cosmic Code Explorer | 3D GitHub Universe</title>
+    <meta
+      name="description"
+      content="Explore your GitHub repositories in a stunning 3D cosmic environment"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Exo+2:wght@300;400;600;700;900&family=Orbitron:wght@400;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <canvas id="cosmicCanvas"></canvas>
+
+    <div class="cosmic-ui">
+      <header class="cosmic-header">
+        <div class="logo-section">
+          <div class="cosmic-logo">
+            <svg viewBox="0 0 100 100" class="logo-svg">
+              <circle
+                cx="50"
+                cy="50"
+                r="45"
+                fill="none"
+                stroke="url(#cosmicGrad)"
+                stroke-width="2"
+                opacity="0.3"
+              />
+              <circle
+                cx="50"
+                cy="50"
+                r="35"
+                fill="none"
+                stroke="url(#cosmicGrad)"
+                stroke-width="1.5"
+                opacity="0.5"
+              />
+              <circle
+                cx="50"
+                cy="50"
+                r="25"
+                fill="none"
+                stroke="url(#cosmicGrad)"
+                stroke-width="1"
+                opacity="0.7"
+              />
+              <circle cx="50" cy="50" r="8" fill="url(#cosmicGrad)" />
+              <defs>
+                <radialGradient id="cosmicGrad">
+                  <stop offset="0%" stop-color="#ffd700" />
+                  <stop offset="100%" stop-color="#ff6b35" />
+                </radialGradient>
+              </defs>
+            </svg>
+          </div>
+          <div class="title-section">
+            <h1 class="cosmic-title">COSMIC CODE EXPLORER</h1>
+            <p class="cosmic-subtitle">Navigate Your GitHub Universe in 3D</p>
+          </div>
+        </div>
+        <div class="controls-section">
+          <button class="cosmic-btn" id="autoRotateBtn">
+            <span class="btn-icon">🔄</span>
+            <span class="btn-text">Auto Rotate</span>
+          </button>
+          <button class="cosmic-btn" id="resetViewBtn">
+            <span class="btn-icon">🎯</span>
+            <span class="btn-text">Reset View</span>
+          </button>
+        </div>
+      </header>
+
+      <div class="info-panel" id="infoPanel">
+        <div class="panel-header">
+          <h3>Repository Details</h3>
+          <button class="close-btn" id="closePanelBtn">×</button>
+        </div>
+        <div class="panel-content" id="panelContent">
+          <p class="panel-placeholder">
+            Click on a planet to view repository details
+          </p>
+        </div>
+      </div>
+
+      <div class="stats-overlay">
+        <div class="stat-card">
+          <div class="stat-icon">🌟</div>
+          <div class="stat-info">
+            <div class="stat-value" id="totalStars">0</div>
+            <div class="stat-label">Total Stars</div>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon">📦</div>
+          <div class="stat-info">
+            <div class="stat-value" id="totalRepos">0</div>
+            <div class="stat-label">Repositories</div>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon">🍴</div>
+          <div class="stat-info">
+            <div class="stat-value" id="totalForks">0</div>
+            <div class="stat-label">Total Forks</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="legend-panel">
+        <h4>Planet Size Legend</h4>
+        <div class="legend-item">
+          <div class="legend-dot size-large"></div>
+          <span>High Stars (100+)</span>
+        </div>
+        <div class="legend-item">
+          <div class="legend-dot size-medium"></div>
+          <span>Medium Stars (10-99)</span>
+        </div>
+        <div class="legend-item">
+          <div class="legend-dot size-small"></div>
+          <span>Low Stars (0-9)</span>
+        </div>
+      </div>
+
+      <div class="instructions">
+        <h4>🎮 Controls</h4>
+        <p>🖱️ <strong>Mouse Drag:</strong> Rotate view</p>
+        <p>🔍 <strong>Scroll:</strong> Zoom in/out</p>
+        <p>👆 <strong>Click Planet:</strong> View details</p>
+      </div>
+
+      <footer class="cosmic-footer">
+        <p>
+          Created by
+          <a href="https://github.com/AshrafMorningstar" target="_blank"
+            >AshrafMorningstar</a
+          >
+        </p>
+        <p class="footer-note">
+          Explore the infinite possibilities of code in 3D space
+        </p>
+      </footer>
+    </div>
+
+    <div class="loading-screen" id="loadingScreen">
+      <div class="loading-content">
+        <div class="orbit-loader">
+          <div class="planet"></div>
+          <div class="orbit"></div>
+          <div class="orbit orbit-2"></div>
+          <div class="orbit orbit-3"></div>
+        </div>
+        <p class="loading-text">Initializing Cosmic Explorer...</p>
+        <p class="loading-subtext">Fetching repositories from GitHub</p>
+      </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

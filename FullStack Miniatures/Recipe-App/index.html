@@ -1,0 +1,84 @@
+<!--
+ -----------------------------------------------------------------------------
+ @author      Ashraf Morningstar
+ @github      https://github.com/AshrafMorningstar
+ @repository  Project Graveyard - The Ultimate Archive
+ @quote       "Code that defines the future. Designed to inspire."
+ -----------------------------------------------------------------------------
+-->
+
+<!DOCTYPE html>
+<!-- Created by Ashraf Morningstar - https://github.com/AshrafMorningstar -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Yummy Recipes | Ashraf Morningstar</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <h1>Yummy<span class="dot">.</span></h1>
+            <div class="search-box">
+                <input type="text" placeholder="Search delicious recipes...">
+                <button><i class="fas fa-search"></i></button>
+            </div>
+        </header>
+        
+        <div class="categories">
+            <span class="pill active">All</span>
+            <span class="pill">Breakfast</span>
+            <span class="pill">Vegan</span>
+            <span class="pill">Dessert</span>
+        </div>
+
+        <div class="recipe-grid">
+            <!-- Recipe Card 1 -->
+            <div class="card">
+                <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1546069901-ba9599a7e63c?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80');"></div>
+                <div class="card-body">
+                    <div class="meta">
+                        <span class="tag">Healthy</span>
+                        <span class="rating">⭐ 4.8</span>
+                    </div>
+                    <h3>Avocado Salad Bowl</h3>
+                    <p>Fresh vibes with greeny goodness.</p>
+                    <button class="btn-cook">Cook Now</button>
+                </div>
+            </div>
+
+            <!-- Recipe Card 2 -->
+            <div class="card">
+                <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80');"></div>
+                <div class="card-body">
+                    <div class="meta">
+                        <span class="tag warning">Hot</span>
+                        <span class="rating">⭐ 4.9</span>
+                    </div>
+                    <h3>Spicy Pepper Pizza</h3>
+                    <p>Cheesy explosion with a kick.</p>
+                    <button class="btn-cook">Cook Now</button>
+                </div>
+            </div>
+            
+             <!-- Recipe Card 3 -->
+            <div class="card">
+                <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1482049016688-2d3e1b311543?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80');"></div>
+                <div class="card-body">
+                    <div class="meta">
+                        <span class="tag sweet">Sweet</span>
+                        <span class="rating">⭐ 5.0</span>
+                    </div>
+                    <h3>Morning Pancakes</h3>
+                    <p>Fluffy clouds on a plate.</p>
+                    <button class="btn-cook">Cook Now</button>
+                </div>
+            </div>
+        </div>
+        
+         <div class="footer">Made with 🥣 by <a href="https://github.com/AshrafMorningstar">Ashraf Morningstar</a></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

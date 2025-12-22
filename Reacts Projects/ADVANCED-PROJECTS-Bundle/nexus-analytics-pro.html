@@ -1,0 +1,392 @@
+<!--
+ -----------------------------------------------------------------------------
+ @author      Ashraf Morningstar
+ @github      https://github.com/AshrafMorningstar
+ @repository  Project Graveyard - The Ultimate Archive
+ @quote       "Code that defines the future. Designed to inspire."
+ -----------------------------------------------------------------------------
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NEXUS ANALYTICS PRO — Advanced Enterprise Dashboard</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Sora:wght@400;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --primary: #3b82f6;
+      --secondary: #8b5cf6;
+      --accent: #ec4899;
+      --success: #10b981;
+      --warning: #f59e0b;
+      --danger: #ef4444;
+      --bg-dark: #0f172a;
+      --bg-darker: #020617;
+      --surface: #1e293b;
+      --surface-light: #334155;
+      --text: #f1f5f9;
+      --text-muted: #cbd5e1;
+      --border: rgba(148, 163, 184, 0.2);
+      --shadow-sm: 0 1px 2px rgba(0,0,0,0.4);
+      --shadow-md: 0 4px 12px rgba(0,0,0,0.5);
+      --shadow-lg: 0 12px 24px rgba(0,0,0,0.6);
+      --shadow-xl: 0 20px 40px rgba(0,0,0,0.7);
+    }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #020617 100%);
+      color: var(--text);
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 70px;
+      background: rgba(15, 23, 42, 0.95);
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      padding: 0 32px;
+      gap: 32px;
+      z-index: 1000;
+      backdrop-filter: blur(10px);
+    }
+    .navbar-brand {
+      font-family: 'Sora', sans-serif;
+      font-size: 1.3rem;
+      font-weight: 700;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    .navbar-nav {
+      display: flex;
+      gap: 28px;
+      flex: 1;
+    }
+    .navbar-nav a {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: color 0.3s;
+      padding: 8px 16px;
+      border-radius: 8px;
+    }
+    .navbar-nav a:hover {
+      color: var(--primary);
+      background: rgba(59, 130, 246, 0.1);
+    }
+    .container {
+      max-width: 1600px;
+      margin: 0 auto;
+      padding: 100px 32px 32px;
+    }
+    .header {
+      margin-bottom: 40px;
+    }
+    .header h1 {
+      font-family: 'Sora', sans-serif;
+      font-size: 2.8rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    .header p {
+      font-size: 1rem;
+      color: var(--text-muted);
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+      margin-bottom: 32px;
+    }
+    .metric-card {
+      background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(139, 92, 246, 0.1));
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 24px;
+      backdrop-filter: blur(10px);
+      transition: all 0.3s;
+      cursor: pointer;
+    }
+    .metric-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-lg);
+      border-color: var(--primary);
+    }
+    .metric-label {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 12px;
+    }
+    .metric-value {
+      font-family: 'Sora', sans-serif;
+      font-size: 2.2rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+    .metric-change {
+      font-size: 0.85rem;
+      color: var(--success);
+    }
+    .chart-container {
+      background: linear-gradient(135deg, rgba(30, 41, 59, 0.8), rgba(30, 41, 59, 0.6));
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 28px;
+      margin-bottom: 24px;
+      backdrop-filter: blur(10px);
+    }
+    .chart-title {
+      font-family: 'Sora', sans-serif;
+      font-size: 1.3rem;
+      font-weight: 600;
+      margin-bottom: 20px;
+      color: var(--text);
+    }
+    .chart-wrapper {
+      position: relative;
+      height: 400px;
+      margin-bottom: 20px;
+    }
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+    }
+    .stat-item {
+      background: rgba(59, 130, 246, 0.05);
+      border: 1px solid rgba(59, 130, 246, 0.2);
+      border-radius: 12px;
+      padding: 16px;
+      text-align: center;
+    }
+    .stat-number {
+      font-family: 'Sora', sans-serif;
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 4px;
+    }
+    .stat-label {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+    .tab-nav {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 24px;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 0;
+    }
+    .tab-btn {
+      padding: 12px 20px;
+      background: transparent;
+      border: none;
+      color: var(--text-muted);
+      cursor: pointer;
+      font-size: 0.9rem;
+      transition: all 0.3s;
+      border-bottom: 2px solid transparent;
+      position: relative;
+      bottom: -1px;
+    }
+    .tab-btn.active {
+      color: var(--primary);
+      border-bottom-color: var(--primary);
+    }
+    @media (max-width: 768px) {
+      .navbar { padding: 0 16px; gap: 16px; }
+      .navbar-nav { display: none; }
+      .container { padding: 80px 16px 16px; }
+      .header h1 { font-size: 2rem; }
+      .grid { grid-template-columns: 1fr; }
+      .chart-wrapper { height: 300px; }
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="navbar-brand">⚡ NEXUS</div>
+    <div class="navbar-nav">
+      <a href="#dashboard">Dashboard</a>
+      <a href="#analytics">Analytics</a>
+      <a href="#reports">Reports</a>
+      <a href="#settings">Settings</a>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div class="header">
+      <h1>Enterprise Analytics Dashboard</h1>
+      <p>Real-time multi-source data visualization and insights</p>
+    </div>
+
+    <div class="grid">
+      <div class="metric-card">
+        <div class="metric-label">Total Revenue</div>
+        <div class="metric-value" id="revenue">$0</div>
+        <div class="metric-change">↑ 12.5% from last month</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-label">Active Users</div>
+        <div class="metric-value" id="users">0</div>
+        <div class="metric-change">↑ 8.2% from last week</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-label">Conversion Rate</div>
+        <div class="metric-value" id="conversion">0%</div>
+        <div class="metric-change">↑ 3.1% from last month</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-label">Avg. Session</div>
+        <div class="metric-value" id="session">0m</div>
+        <div class="metric-change">↓ 2.4% from last week</div>
+      </div>
+    </div>
+
+    <div class="tab-nav">
+      <button class="tab-btn active">Revenue Trends</button>
+      <button class="tab-btn">User Analytics</button>
+      <button class="tab-btn">Performance</button>
+    </div>
+
+    <div class="chart-container">
+      <div class="chart-title">Revenue Over Time</div>
+      <div class="chart-wrapper">
+        <canvas id="revenueChart"></canvas>
+      </div>
+    </div>
+
+    <div class="chart-container">
+      <div class="chart-title">Data Distribution</div>
+      <div class="chart-wrapper">
+        <canvas id="distributionChart"></canvas>
+      </div>
+    </div>
+
+    <div class="chart-container">
+      <div class="chart-title">Performance Metrics</div>
+      <div class="stats-grid">
+        <div class="stat-item">
+          <div class="stat-number">98.5%</div>
+          <div class="stat-label">Uptime</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">245ms</div>
+          <div class="stat-label">Avg Response</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">99.2%</div>
+          <div class="stat-label">Success Rate</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">15.3GB</div>
+          <div class="stat-label">Data Processed</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const chartOptions = {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: {
+        legend: {
+          labels: { color: '#cbd5e1', font: { family: "'Inter', sans-serif" } }
+        }
+      },
+      scales: {
+        y: {
+          ticks: { color: '#cbd5e1' },
+          grid: { color: 'rgba(148, 163, 184, 0.1)' },
+          beginAtZero: true
+        },
+        x: {
+          ticks: { color: '#cbd5e1' },
+          grid: { color: 'rgba(148, 163, 184, 0.1)' }
+        }
+      }
+    };
+
+    const revenueCtx = document.getElementById('revenueChart').getContext('2d');
+    const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+    const revenueData = Array.from({length: 12}, () => Math.floor(Math.random() * 50000 + 20000));
+    new Chart(revenueCtx, {
+      type: 'line',
+      data: {
+        labels: months,
+        datasets: [{
+          label: 'Revenue',
+          data: revenueData,
+          borderColor: '#3b82f6',
+          backgroundColor: 'rgba(59, 130, 246, 0.1)',
+          borderWidth: 2,
+          tension: 0.4,
+          fill: true
+        }]
+      },
+      options: chartOptions
+    });
+
+    const distributionCtx = document.getElementById('distributionChart').getContext('2d');
+    new Chart(distributionCtx, {
+      type: 'doughnut',
+      data: {
+        labels: ['Product A', 'Product B', 'Product C', 'Product D'],
+        datasets: [{
+          data: [30, 25, 20, 25],
+          backgroundColor: [
+            'rgba(59, 130, 246, 0.8)',
+            'rgba(139, 92, 246, 0.8)',
+            'rgba(236, 72, 153, 0.8)',
+            'rgba(16, 185, 129, 0.8)'
+          ],
+          borderColor: '#0f172a',
+          borderWidth: 2
+        }]
+      },
+      options: { ...chartOptions, plugins: { ...chartOptions.plugins, legend: { position: 'right' } } }
+    });
+
+    function updateMetrics() {
+      const revenue = Math.floor(Math.random() * 1000000 + 100000);
+      const users = Math.floor(Math.random() * 50000 + 5000);
+      const conversion = (Math.random() * 10 + 2).toFixed(1);
+      const session = Math.floor(Math.random() * 45 + 5);
+
+      document.getElementById('revenue').textContent = '$' + revenue.toLocaleString();
+      document.getElementById('users').textContent = users.toLocaleString();
+      document.getElementById('conversion').textContent = conversion + '%';
+      document.getElementById('session').textContent = session + 'm';
+    }
+
+    updateMetrics();
+
+    document.querySelectorAll('.tab-btn').forEach(btn => {
+      btn.addEventListener('click', function() {
+        document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+        this.classList.add('active');
+        updateMetrics();
+      });
+    });
+
+    setInterval(updateMetrics, 5000);
+  </script>
+</body>
+</html>

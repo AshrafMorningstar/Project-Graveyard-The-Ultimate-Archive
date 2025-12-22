@@ -1,0 +1,20 @@
+{
+  "name": "11-neuroforge-os",
+  "version": "1.0.0",
+  "description": "Browser-based AI-powered modular operating system",
+  "author": "AshrafMorningstar <https://github.com/AshrafMorningstar>",
+  "license": "MIT",
+  "scripts": {
+    "start": "npx http-server -p 8080",
+    "deploy": "gh-pages -d ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AshrafMorningstar/11-neuroforge-os"
+  },
+  "keywords": [
+    "github",
+    "os",
+    "ashrafmorningstar"
+  ]
+}

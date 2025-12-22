@@ -1,0 +1,81 @@
+<!--
+ -----------------------------------------------------------------------------
+ @author      Ashraf Morningstar
+ @github      https://github.com/AshrafMorningstar
+ @repository  Project Graveyard - The Ultimate Archive
+ @quote       "Code that defines the future. Designed to inspire."
+ -----------------------------------------------------------------------------
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ashraf Morningstar | Master Portfolio</title>
+    <style>
+        :root { --bg: #0a0a0a; --card: #111; --text: #fff; --accent: #00ff88; }
+        body { margin: 0; font-family: system-ui, sans-serif; background: var(--bg); color: var(--text); padding: 2rem; }
+        .container { max-width: 1200px; margin: 0 auto; }
+        header { text-align: center; margin-bottom: 4rem; }
+        h1 { font-size: 3rem; margin: 0; background: linear-gradient(to right, var(--accent), #00ccff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.5rem; }
+        .card { background: var(--card); border: 1px solid #222; padding: 1.5rem; border-radius: 12px; transition: transform 0.2s; }
+        .card:hover { transform: translateY(-5px); border-color: var(--accent); }
+        h3 { margin-top: 0; }
+        .links { display: flex; gap: 0.5rem; margin-top: 1rem; }
+        a { flex: 1; text-align: center; padding: 0.5rem; border-radius: 6px; text-decoration: none; font-weight: bold; }
+        .btn-primary { background: var(--accent); color: #000; }
+        .btn-secondary { border: 1px solid #444; color: #ccc; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Ashraf Morningstar</h1>
+            <p>12 High-Performance Web Engineering Projects</p>
+            <p><small>Fully Automated Deployment Dashboard</small></p>
+        </header>
+
+        <div class="grid" id="grid">
+            <!-- Populated by JS -->
+        </div>
+    </div>
+
+    <script>
+        const projects = [
+            { id: "collaborative-cv-studio", name: "Collaborative CV Studio", desc: "Real-time CRDT Editor (Flagship)" },
+            { id: "micro-portfolio-generator", name: "Portfolio Generator", desc: "Static Site Generator" },
+            { id: "offline-events-pwa", name: "Offline Events PWA", desc: "Offline-First Architecture" },
+            { id: "recipe-remix-engine", name: "Recipe Remix Engine", desc: "Fuzzy Search Algorithms" },
+            { id: "accessible-quiz-builder", name: "Accessible Quiz Builder", desc: "WCAG AA Compliant" },
+            { id: "css-theme-playground", name: "CSS Theme Playground", desc: "Design System Tooling" },
+            { id: "ecommerce-ux-sandbox", name: "E-Commerce UX Sandbox", desc: "Complex State Management" },
+            { id: "generative-ui-pattern-engine", name: "Generative UI Engine", desc: "AI-Assisted Components" },
+            { id: "privacy-first-analytics", name: "Privacy First Analytics", desc: "GDPR-Compliant Dashboard" },
+            { id: "micro-mentorship-pwa", name: "Micro Mentorship PWA", desc: "WebRTC Video Platform" },
+            { id: "wasm-image-processing", name: "WASM Image Processing", desc: "Rust + WebAssembly" },
+            { id: "verifiable-content-platform", name: "Verifiable Content Platform", desc: "IPFS & Cryptography" }
+        ];
+
+        const grid = document.getElementById('grid');
+        
+        projects.forEach(p => {
+            // Local Universe Link (since we built locally)
+            const localLink = `/projects/${p.id}/`;
+            const githubLink = `https://github.com/ashraf-morningstar-labs/${p.id}`;
+            
+            grid.innerHTML += `
+                <div class="card">
+                    <h3>${p.name}</h3>
+                    <p style="color:#888">${p.desc}</p>
+                    <div class="links">
+                        <a href="${localLink}" class="btn-primary" target="_blank">Launch 🚀</a>
+                        <a href="${githubLink}" class="btn-secondary" target="_blank">Code 💻</a>
+                    </div>
+                </div>
+            `;
+        });
+    </script>
+</body>
+</html>

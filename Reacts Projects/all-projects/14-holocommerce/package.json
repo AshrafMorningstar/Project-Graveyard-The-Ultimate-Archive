@@ -1,0 +1,20 @@
+{
+  "name": "14-holocommerce",
+  "version": "1.0.0",
+  "description": "3D holographic e-commerce with WebGL and AR try-on",
+  "author": "AshrafMorningstar <https://github.com/AshrafMorningstar>",
+  "license": "MIT",
+  "scripts": {
+    "start": "npx http-server -p 8080",
+    "deploy": "gh-pages -d ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AshrafMorningstar/14-holocommerce"
+  },
+  "keywords": [
+    "github",
+    "ecommerce",
+    "ashrafmorningstar"
+  ]
+}

@@ -1,0 +1,56 @@
+<!--
+ -----------------------------------------------------------------------------
+ @author      Ashraf Morningstar
+ @github      https://github.com/AshrafMorningstar
+ @repository  Project Graveyard - The Ultimate Archive
+ @quote       "Code that defines the future. Designed to inspire."
+ -----------------------------------------------------------------------------
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Time-Traveling Journal | Ashraf Morningstar</title>
+    <!-- 
+        Project: Time-Traveling Journal
+        Level: Beginner
+        Author: Ashraf Morningstar
+        GitHub: https://github.com/AshrafMorningstar
+    -->
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Courier+Prime&family=Orbitron:wght@400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+</head>
+<body class="theme-modern">
+    <div class="time-machine-controls">
+        <label for="time-dial">Set Target Year:</label>
+        <input type="number" id="time-dial" value="2025" min="1000" max="3000">
+        <button id="jump-btn">⚡ TIME JUMP</button>
+    </div>
+
+    <div class="journal-container">
+        <header class="journal-header">
+            <h1 id="journal-title">Chronicles of 2025</h1>
+            <p id="era-badge">Era: Modern Age</p>
+        </header>
+
+        <main>
+            <div class="editor-section">
+                <textarea id="journal-entry" placeholder="Record your observations of this timeline..."></textarea>
+                <div class="actions">
+                    <button id="save-btn">Save Entry</button>
+                    <button id="clear-btn">Clear Time Stream</button>
+                </div>
+            </div>
+
+            <div class="archives">
+                <h2>Temporal Archives</h2>
+                <div id="entries-list"></div>
+            </div>
+        </main>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

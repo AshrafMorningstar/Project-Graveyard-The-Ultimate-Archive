@@ -1,0 +1,123 @@
+<!--
+ -----------------------------------------------------------------------------
+ @author      Ashraf Morningstar
+ @github      https://github.com/AshrafMorningstar
+ @repository  Project Graveyard - The Ultimate Archive
+ @quote       "Code that defines the future. Designed to inspire."
+ -----------------------------------------------------------------------------
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- SEO & Viral Metadata -->
+    <meta name="description" content="Premium EXPERT GENERATIVE UI ENGINE web application. Built with modern web technologies. Part of the Ultimate Web Dev Roadmap by Ashraf Morningstar.">
+    <meta name="keywords" content="web development, EXPERT GENERATIVE UI ENGINE, javascript, css, html, ashraf morningstar, open source, premium ui">
+    <meta name="author" content="Ashraf Morningstar">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://ashrafmorningstar.github.io/WebDevRoadmap/expert-generative-ui-engine/">
+    <meta property="og:title" content="EXPERT GENERATIVE UI ENGINE | Premium Web App">
+    <meta property="og:description" content="Premium EXPERT GENERATIVE UI ENGINE web application. Built with modern web technologies. Part of the Ultimate Web Dev Roadmap by Ashraf Morningstar.">
+    <meta property="og:image" content="https://via.placeholder.com/1200x630.png?text=EXPERT+GENERATIVE+UI+ENGINE">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://ashrafmorningstar.github.io/WebDevRoadmap/expert-generative-ui-engine/">
+    <meta property="twitter:title" content="EXPERT GENERATIVE UI ENGINE | Premium Web App">
+    <meta property="twitter:description" content="Premium EXPERT GENERATIVE UI ENGINE web application. Built with modern web technologies. Part of the Ultimate Web Dev Roadmap by Ashraf Morningstar.">
+    <meta property="twitter:image" content="https://via.placeholder.com/1200x630.png?text=EXPERT+GENERATIVE+UI+ENGINE">
+    
+    <link rel="canonical" href="https://ashrafmorningstar.github.io/WebDevRoadmap/expert-generative-ui-engine/">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Generative UI Engine</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/codemirror.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/theme/material-darker.min.css"
+    />
+  </head>
+  <body>
+    <!-- Author: Ashraf Morningstar | https://github.com/AshrafMorningstar -->
+
+    <div class="app-container">
+      <header class="navbar">
+        <div class="brand">✨ GenUI <span class="badge">AI Powered</span></div>
+        <div class="actions">
+          <button class="btn-ghost">📚 Library</button>
+          <button class="btn-primary">⬇ Export React Code</button>
+        </div>
+      </header>
+
+      <div class="workspace">
+        <!-- Prompt Panel -->
+        <section class="prompt-panel">
+          <h2>Describe your component</h2>
+          <div class="input-group">
+            <textarea
+              id="promptInput"
+              placeholder="e.g. A blue primary button with rounded corners and shadow..."
+            ></textarea>
+            <button id="generateBtn" class="btn-generate">
+              <span>✨</span> Generate
+            </button>
+          </div>
+
+          <div class="suggestions">
+            <p>Try these:</p>
+            <div class="tags">
+              <span class="tag" onclick="usePrompt('Primary Button')"
+                >Primary Button</span
+              >
+              <span class="tag" onclick="usePrompt('Profile Card')"
+                >Profile Card</span
+              >
+              <span class="tag" onclick="usePrompt('Navbar')">Navbar</span>
+              <span class="tag" onclick="usePrompt('Pricing Table')"
+                >Pricing Table</span
+              >
+            </div>
+          </div>
+        </section>
+
+        <!-- Preview Split -->
+        <section class="preview-split">
+          <div class="preview-container">
+            <div class="panel-header">
+              <span>👁️ Live Preview</span>
+              <div class="toggles">
+                <button class="icon-btn active">Desktop</button>
+                <button class="icon-btn">Mobile</button>
+              </div>
+            </div>
+            <div class="canvas-wrapper">
+              <iframe id="previewFrame" title="Component Preview"></iframe>
+            </div>
+          </div>
+
+          <div class="code-container">
+            <div class="panel-header">
+              <span>💻 Generated Code</span>
+              <button class="icon-btn" id="copyCode">📋 Copy</button>
+            </div>
+            <textarea id="codeEditor"></textarea>
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/mode/xml/xml.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/mode/css/css.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/mode/htmlmixed/htmlmixed.min.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
+

@@ -1,0 +1,240 @@
+<!--
+ -----------------------------------------------------------------------------
+ @author      Ashraf Morningstar
+ @github      https://github.com/AshrafMorningstar
+ @repository  Project Graveyard - The Ultimate Archive
+ @quote       "Code that defines the future. Designed to inspire."
+ -----------------------------------------------------------------------------
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NEURAL NEXUS — AI Code Analysis Platform</title>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Quicksand:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --neural: #7c3aed;
+      --accent: #ec4899;
+      --success: #10b981;
+      --bg: #0d0117;
+      --surface: #1a0033;
+      --text: #f0f9ff;
+      --muted: #a0aec0;
+    }
+    body {
+      font-family: 'Quicksand', sans-serif;
+      background: linear-gradient(135deg, #0d0117 0%, #1a0033 50%, #0d0117 100%);
+      color: var(--text);
+      min-height: 100vh;
+    }
+    .navbar {
+      background: rgba(13, 1, 23, 0.9);
+      border-bottom: 2px solid var(--neural);
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo {
+      font-size: 1.5rem;
+      color: var(--neural);
+      font-weight: 700;
+    }
+    .credit {
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+    .credit a { color: var(--neural); text-decoration: none; }
+    .container {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+    }
+    .card {
+      background: linear-gradient(135deg, rgba(26, 0, 51, 0.8), rgba(124, 58, 237, 0.1));
+      border: 2px solid var(--neural);
+      border-radius: 12px;
+      padding: 24px;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 40px rgba(124, 58, 237, 0.4);
+    }
+    .card-title {
+      font-family: 'Fira Code', monospace;
+      color: var(--neural);
+      font-size: 1.1rem;
+      margin-bottom: 12px;
+      text-transform: uppercase;
+    }
+    .card-value {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--accent);
+      margin-bottom: 8px;
+    }
+    .card-desc {
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+    .analysis-box {
+      background: rgba(124, 58, 237, 0.1);
+      border: 1px solid var(--neural);
+      border-radius: 8px;
+      padding: 16px;
+      margin-top: 20px;
+    }
+    .analysis-title {
+      color: var(--neural);
+      font-weight: 600;
+      margin-bottom: 12px;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+    }
+    .analysis-item {
+      display: flex;
+      justify-content: space-between;
+      padding: 8px 0;
+      border-bottom: 1px solid rgba(124, 58, 237, 0.2);
+      color: var(--muted);
+      font-size: 0.85rem;
+    }
+    .analysis-item:last-child { border-bottom: none; }
+    .analysis-value { color: var(--success); font-weight: 600; }
+    @media (max-width: 768px) {
+      .container { padding: 20px 10px; }
+      .grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div class="navbar">
+    <div class="logo">🧠 NEURAL NEXUS</div>
+    <div class="credit">Created by <a href="https://github.com/AshrafMorningstar" target="_blank">@AshrafMorningstar</a></div>
+  </div>
+
+  <div class="container">
+    <div class="grid">
+      <div class="card">
+        <div class="card-title">Code Quality</div>
+        <div class="card-value" id="quality">0%</div>
+        <div class="card-desc">Overall codebase quality score</div>
+        <div class="analysis-box">
+          <div class="analysis-title">Metrics</div>
+          <div class="analysis-item"><span>Complexity:</span><span class="analysis-value" id="complexity">Low</span></div>
+          <div class="analysis-item"><span>Maintainability:</span><span class="analysis-value" id="maintainability">High</span></div>
+          <div class="analysis-item"><span>Security:</span><span class="analysis-value" id="security">Good</span></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-title">Repository Stats</div>
+        <div class="card-value" id="commits">0</div>
+        <div class="card-desc">Total commits analyzed</div>
+        <div class="analysis-box">
+          <div class="analysis-title">Repository</div>
+          <div class="analysis-item"><span>Files:</span><span class="analysis-value" id="files">0</span></div>
+          <div class="analysis-item"><span>Languages:</span><span class="analysis-value" id="languages">0</span></div>
+          <div class="analysis-item"><span>Size:</span><span class="analysis-value" id="size">0 MB</span></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-title">AI Analysis</div>
+        <div class="card-value" id="ai">0%</div>
+        <div class="card-desc">Neural network prediction accuracy</div>
+        <div class="analysis-box">
+          <div class="analysis-title">Intelligence</div>
+          <div class="analysis-item"><span>Model Confidence:</span><span class="analysis-value" id="confidence">0%</span></div>
+          <div class="analysis-item"><span>Predictions:</span><span class="analysis-value" id="predictions">0</span></div>
+          <div class="analysis-item"><span>Patterns Found:</span><span class="analysis-value" id="patterns">0</span></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-title">Performance</div>
+        <div class="card-value" id="performance">0ms</div>
+        <div class="card-desc">Analysis execution time</div>
+        <div class="analysis-box">
+          <div class="analysis-title">Benchmarks</div>
+          <div class="analysis-item"><span>Parse Speed:</span><span class="analysis-value" id="parse">0ms</span></div>
+          <div class="analysis-item"><span>Analysis Speed:</span><span class="analysis-value" id="analyze">0ms</span></div>
+          <div class="analysis-item"><span>Report Gen:</span><span class="analysis-value" id="report">0ms</span></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-title">Vulnerabilities</div>
+        <div class="card-value" id="vulns">0</div>
+        <div class="card-desc">Security issues detected</div>
+        <div class="analysis-box">
+          <div class="analysis-title">Severity</div>
+          <div class="analysis-item"><span>Critical:</span><span class="analysis-value" id="critical">0</span></div>
+          <div class="analysis-item"><span>High:</span><span class="analysis-value" id="high">0</span></div>
+          <div class="analysis-item"><span>Medium:</span><span class="analysis-value" id="medium">0</span></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-title">Dependencies</div>
+        <div class="card-value" id="deps">0</div>
+        <div class="card-desc">External dependencies tracked</div>
+        <div class="analysis-box">
+          <div class="analysis-title">Status</div>
+          <div class="analysis-item"><span>Outdated:</span><span class="analysis-value" id="outdated">0</span></div>
+          <div class="analysis-item"><span>Vulnerable:</span><span class="analysis-value" id="vulndeps">0</span></div>
+          <div class="analysis-item"><span>Up-to-date:</span><span class="analysis-value" id="uptodate">0</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function updateAnalysis() {
+      document.getElementById('quality').textContent = Math.floor(Math.random() * 20 + 80) + '%';
+      document.getElementById('commits').textContent = Math.floor(Math.random() * 5000 + 1000);
+      document.getElementById('complexity').textContent = ['Low', 'Medium', 'High'][Math.floor(Math.random() * 3)];
+      document.getElementById('maintainability').textContent = ['Low', 'Medium', 'High'][Math.floor(Math.random() * 3)];
+      document.getElementById('security').textContent = ['Poor', 'Fair', 'Good', 'Excellent'][Math.floor(Math.random() * 4)];
+
+      document.getElementById('files').textContent = Math.floor(Math.random() * 500 + 50);
+      document.getElementById('languages').textContent = Math.floor(Math.random() * 8 + 3);
+      document.getElementById('size').textContent = Math.floor(Math.random() * 500 + 50) + ' MB';
+
+      document.getElementById('ai').textContent = Math.floor(Math.random() * 10 + 90) + '%';
+      document.getElementById('confidence').textContent = Math.floor(Math.random() * 10 + 85) + '%';
+      document.getElementById('predictions').textContent = Math.floor(Math.random() * 1000 + 100);
+      document.getElementById('patterns').textContent = Math.floor(Math.random() * 500 + 50);
+
+      document.getElementById('performance').textContent = Math.floor(Math.random() * 100 + 10) + 'ms';
+      document.getElementById('parse').textContent = Math.floor(Math.random() * 50 + 5) + 'ms';
+      document.getElementById('analyze').textContent = Math.floor(Math.random() * 40 + 10) + 'ms';
+      document.getElementById('report').textContent = Math.floor(Math.random() * 30 + 5) + 'ms';
+
+      document.getElementById('vulns').textContent = Math.floor(Math.random() * 10 + 1);
+      document.getElementById('critical').textContent = Math.floor(Math.random() * 3);
+      document.getElementById('high').textContent = Math.floor(Math.random() * 5);
+      document.getElementById('medium').textContent = Math.floor(Math.random() * 10);
+
+      document.getElementById('deps').textContent = Math.floor(Math.random() * 100 + 20);
+      document.getElementById('outdated').textContent = Math.floor(Math.random() * 10);
+      document.getElementById('vulndeps').textContent = Math.floor(Math.random() * 5);
+      document.getElementById('uptodate').textContent = Math.floor(Math.random() * 80 + 40);
+    }
+
+    updateAnalysis();
+    setInterval(updateAnalysis, 2000);
+  </script>
+</body>
+</html>

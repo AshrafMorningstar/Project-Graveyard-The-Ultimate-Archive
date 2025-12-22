@@ -1,0 +1,185 @@
+/*
+ * -----------------------------------------------------------------------------
+ * @author      Ashraf Morningstar
+ * @github      https://github.com/AshrafMorningstar
+ * @repository  Project Graveyard - The Ultimate Archive
+ * @quote       "Code that defines the future. Designed to inspire."
+ * -----------------------------------------------------------------------------
+*/
+
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap");
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "JetBrains Mono", monospace;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.chameleon-root {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.banner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  margin-bottom: 1rem;
+}
+.title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--accent, #fff);
+  margin: 0;
+}
+.subtitle {
+  font-size: 0.9rem;
+  opacity: 0.8;
+  color: var(--accent2, #aaa);
+}
+.loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  color: #fff;
+  font-size: 2rem;
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  flex: 1;
+  padding: 0 2rem 2rem;
+}
+.layout-0 .main-card {
+  grid-column: span 1;
+  grid-row: span 2;
+}
+.layout-1 .main-card {
+  grid-column: span 2;
+  grid-row: span 1;
+}
+.layout-2 .main-card {
+  grid-column: span 3;
+}
+.card {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  padding: 1.5rem;
+  color: #eee;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+.main-card {
+  align-items: center;
+  text-align: center;
+}
+.avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+  border: 2px solid var(--accent, #fff);
+}
+.name {
+  font-size: 1.5rem;
+  margin: 0 0 0.5rem;
+  color: var(--accent, #fff);
+}
+.bio {
+  font-size: 0.9rem;
+  opacity: 0.8;
+  margin-bottom: 1rem;
+}
+.meta {
+  font-size: 0.8rem;
+  opacity: 0.6;
+}
+h3 {
+  margin: 0 0 1rem;
+  font-size: 1.1rem;
+  color: var(--accent2, #aaa);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 0.5rem;
+}
+ul,
+ol {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-size: 0.9em;
+}
+li {
+  margin-bottom: 0.5rem;
+  display: flex;
+  justify-content: space-between;
+}
+a {
+  color: var(--accent, #fff);
+  text-decoration: none;
+}
+.heatmap-grid {
+  display: flex;
+  gap: 2px;
+}
+.week {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.cell {
+  width: 10px;
+  height: 10px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 2px;
+}
+.cell.lvl-1 {
+  background: var(--accent2);
+  opacity: 0.4;
+}
+.cell.lvl-2 {
+  background: var(--accent);
+  opacity: 0.7;
+}
+.cell.lvl-3 {
+  background: var(--accent);
+}
+[data-theme="Cyber Neon"] {
+  --accent: #00ffd5;
+  --accent2: #7a00ff;
+  color: #fff;
+}
+[data-theme="Aurora Glow"] {
+  --accent: #7af;
+  --accent2: #0ff;
+  color: #eef;
+}
+[data-theme="Glass Frost"] {
+  --accent: #3b82f6;
+  --accent2: #06b6d4;
+  color: #334;
+  background: rgba(255, 255, 255, 0.8);
+}
+[data-theme="Glass Frost"] .card {
+  background: rgba(255, 255, 255, 0.6);
+  border: 1px solid #fff;
+  color: #334;
+}
+[data-theme="Marble Luxe"] {
+  --accent: #c084fc;
+  --accent2: #f97316;
+  color: #444;
+}
+[data-theme="Marble Luxe"] .card {
+  background: #fff;
+  color: #333;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}

@@ -1,0 +1,16 @@
+{
+  "name": "aether-viz",
+  "version": "1.0.0",
+  "description": "Neo-Minimalist GitHub Visualization System",
+  "scripts": {
+    "start": "vite",
+    "build": "vite build"
+  },
+  "dependencies": {
+    "three": "^0.150.0",
+    "gsap": "^3.11.0"
+  },
+  "devDependencies": {
+    "vite": "^4.0.0"
+  }
+}

@@ -1,0 +1,129 @@
+/*
+ * -----------------------------------------------------------------------------
+ * @author      Ashraf Morningstar
+ * @github      https://github.com/AshrafMorningstar
+ * @repository  Project Graveyard - The Ultimate Archive
+ * @quote       "Code that defines the future. Designed to inspire."
+ * -----------------------------------------------------------------------------
+*/
+
+/* 
+   Project: Code-to-Music Transcriber
+   Level: Advanced
+   Author: Ashraf Morningstar
+   GitHub: https://github.com/AshrafMorningstar
+*/
+
+:root {
+    --bg-dark: #1e1e2e;
+    --editor-bg: #282a36;
+    --sidebar-bg: #21222c;
+    --accent: #bd93f9;
+    --text: #f8f8f2;
+}
+
+body {
+    background: var(--bg-dark);
+    color: var(--text);
+    margin: 0;
+    font-family: 'Outfit', sans-serif;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.app-container {
+    display: flex;
+    height: 100%;
+}
+
+.sidebar {
+    width: 300px;
+    background: var(--sidebar-bg);
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid #44475a;
+}
+
+h1 { margin: 0; color: var(--accent); }
+
+.controls {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+select, input[type="range"] {
+    background: #44475a;
+    border: none;
+    padding: 0.5rem;
+    color: white;
+    width: 100%;
+}
+
+.play-btn {
+    background: linear-gradient(135deg, #ff79c6, #bd93f9);
+    border: none;
+    padding: 1rem;
+    font-size: 1.2rem;
+    border-radius: 8px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 1rem;
+    transition: transform 0.2s;
+}
+
+.play-btn:hover {
+    transform: scale(1.05);
+}
+
+.visualization {
+    margin-top: auto;
+    height: 200px;
+    background: #000;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+canvas {
+    width: 100%;
+    height: 100%;
+}
+
+.editor-area {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    background: var(--editor-bg);
+}
+
+.editor-header {
+    background: #191a21;
+    padding: 0 1rem;
+    height: 40px;
+    display: flex;
+    align-items: center;
+}
+
+.tab {
+    background: var(--editor-bg);
+    padding: 0.5rem 1rem;
+    border-radius: 5px 5px 0 0;
+    font-size: 0.9rem;
+    color: var(--accent);
+}
+
+textarea {
+    flex: 1;
+    background: transparent;
+    border: none;
+    color: #f8f8f2;
+    padding: 2rem;
+    font-family: 'Fira Code', monospace;
+    font-size: 1.1rem;
+    resize: none;
+    outline: none;
+    line-height: 1.6;
+}

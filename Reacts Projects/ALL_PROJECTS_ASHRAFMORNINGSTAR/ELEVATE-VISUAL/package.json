@@ -1,0 +1,16 @@
+{
+  "name": "elevate-visual",
+  "version": "1.0.0",
+  "description": "Neo-Architectural Data Sculptures for GitHub",
+  "scripts": {
+    "generate": "ts-node src/index.ts"
+  },
+  "dependencies": {
+    "three": "^0.150.0",
+    "canvas": "^2.11.0"
+  },
+  "devDependencies": {
+    "typescript": "^4.9.0",
+    "ts-node": "^10.9.0"
+  }
+}

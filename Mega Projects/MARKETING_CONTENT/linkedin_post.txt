@@ -1,0 +1,36 @@
+# LinkedIn Launch Post
+
+I'm excited to share my latest portfolio: 12 production-ready web engineering projects spanning beginner to expert levels.
+
+What's included:
+
+Beginner Projects:
+- Portfolio Generator
+- Offline Events PWA
+- Recipe Remix Engine
+- Accessible Quiz Builder
+- CSS Theme Playground
+- E-commerce UX Sandbox
+
+Expert Projects:
+- Collaborative CV Studio (Real-time CRDT editor)
+- Generative UI Engine (AI-assisted code generation)
+- Privacy-First Analytics (GDPR-compliant dashboard)
+- Micro-Mentorship PWA (WebRTC video platform)
+- WASM Image Processing (High-performance Rust/WASM)
+- Verifiable Content Platform (IPFS and cryptography)
+
+Tech Stack: React, Next.js, TypeScript, Yjs, WebRTC, WebAssembly, IPFS, Node.js
+
+Every project includes:
+- Production-ready code
+- Comprehensive documentation
+- Live demos
+- CI/CD pipelines
+- Accessibility compliance
+
+Explore the portfolio: https://github.com/ashraf-morningstar-labs
+
+All projects are open source and contributions are welcome!
+
+#WebDevelopment #SoftwareEngineering #OpenSource #React #FullStack

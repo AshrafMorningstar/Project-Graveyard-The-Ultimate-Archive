@@ -1,0 +1,43 @@
+<!--
+ -----------------------------------------------------------------------------
+ @author      Ashraf Morningstar
+ @github      https://github.com/AshrafMorningstar
+ @repository  Project Graveyard - The Ultimate Archive
+ @quote       "Code that defines the future. Designed to inspire."
+ -----------------------------------------------------------------------------
+-->
+
+<!--
+  Author: Ashraf Morningstar
+  GitHub: https://github.com/AshrafMorningstar
+  Project: Interactive Algorithm Visualizer
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AlgoViz | Ashraf Morningstar</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Sorting Visualizer</h1>
+            <div class="controls">
+                <button onclick="resetArray()">New Array</button>
+                <div class="separator"></div>
+                <button onclick="algoBubble()">Bubble Sort</button>
+                <button onclick="algoSelection()">Selection Sort</button>
+                <button onclick="algoInsertion()">Insertion Sort</button>
+            </div>
+        </header>
+        
+        <div id="array-container"></div>
+        
+        <footer>
+            Speed: <input type="range" id="speed" min="1" max="100" value="50">
+        </footer>
+    </div>
+    <script src="visualizer.js"></script>
+</body>
+</html>

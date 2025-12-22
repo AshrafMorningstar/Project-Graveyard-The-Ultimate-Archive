@@ -1,0 +1,57 @@
+<!--
+ -----------------------------------------------------------------------------
+ @author      Ashraf Morningstar
+ @github      https://github.com/AshrafMorningstar
+ @repository  Project Graveyard - The Ultimate Archive
+ @quote       "Code that defines the future. Designed to inspire."
+ -----------------------------------------------------------------------------
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Breathing Webpage | Ashraf Morningstar</title>
+    <!-- 
+        Project: Breathing Webpage
+        Level: Beginner
+        Author: Ashraf Morningstar
+        GitHub: https://github.com/AshrafMorningstar
+    -->
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Just Breathe</h1>
+            <p>Follow the rhythm to relax.</p>
+        </header>
+
+        <main>
+            <div class="breathing-circle-container">
+                <div class="circle-outer"></div>
+                <div class="circle-inner">
+                    <span id="breath-text">Inhale</span>
+                </div>
+            </div>
+
+            <div class="controls">
+                <div class="technique-selector">
+                    <button class="tech-btn active" data-tech="4-7-8">4-7-8 Relax</button>
+                    <button class="tech-btn" data-tech="box">Box Breathing</button>
+                    <button class="tech-btn" data-tech="coherence">Coherence</button>
+                </div>
+                
+                <button id="toggle-btn" class="primary-btn">Start</button>
+            </div>
+        </main>
+
+        <footer>
+            <p>Designed by <a href="https://github.com/AshrafMorningstar" target="_blank">Ashraf Morningstar</a></p>
+        </footer>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>

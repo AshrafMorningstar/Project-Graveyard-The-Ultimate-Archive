@@ -1,0 +1,99 @@
+<!--
+ -----------------------------------------------------------------------------
+ @author      Ashraf Morningstar
+ @github      https://github.com/AshrafMorningstar
+ @repository  Project Graveyard - The Ultimate Archive
+ @quote       "Code that defines the future. Designed to inspire."
+ -----------------------------------------------------------------------------
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- SEO & Viral Metadata -->
+    <meta name="description" content="Premium BEGINNER RECIPE REMIX web application. Built with modern web technologies. Part of the Ultimate Web Dev Roadmap by Ashraf Morningstar.">
+    <meta name="keywords" content="web development, BEGINNER RECIPE REMIX, javascript, css, html, ashraf morningstar, open source, premium ui">
+    <meta name="author" content="Ashraf Morningstar">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://ashrafmorningstar.github.io/WebDevRoadmap/beginner-recipe-remix/">
+    <meta property="og:title" content="BEGINNER RECIPE REMIX | Premium Web App">
+    <meta property="og:description" content="Premium BEGINNER RECIPE REMIX web application. Built with modern web technologies. Part of the Ultimate Web Dev Roadmap by Ashraf Morningstar.">
+    <meta property="og:image" content="https://via.placeholder.com/1200x630.png?text=BEGINNER+RECIPE+REMIX">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://ashrafmorningstar.github.io/WebDevRoadmap/beginner-recipe-remix/">
+    <meta property="twitter:title" content="BEGINNER RECIPE REMIX | Premium Web App">
+    <meta property="twitter:description" content="Premium BEGINNER RECIPE REMIX web application. Built with modern web technologies. Part of the Ultimate Web Dev Roadmap by Ashraf Morningstar.">
+    <meta property="twitter:image" content="https://via.placeholder.com/1200x630.png?text=BEGINNER+RECIPE+REMIX">
+    
+    <link rel="canonical" href="https://ashrafmorningstar.github.io/WebDevRoadmap/beginner-recipe-remix/">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Recipe Remix - What's in My Fridge?</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Author: Ashraf Morningstar | https://github.com/AshrafMorningstar -->
+
+    <div class="container">
+      <header class="header">
+        <h1>🍳 Recipe Remix</h1>
+        <p class="subtitle">Turn your ingredients into delicious meals</p>
+      </header>
+
+      <!-- Ingredient Input -->
+      <div class="ingredient-input-section">
+        <div class="input-wrapper">
+          <input
+            type="text"
+            id="ingredientInput"
+            placeholder="Type an ingredient and press Enter..."
+            autocomplete="off"
+          />
+          <button id="addIngredientBtn" class="btn-add">Add</button>
+        </div>
+
+        <div class="ingredients-chips" id="ingredientsChips">
+          <!-- Ingredient chips will appear here -->
+        </div>
+
+        <button id="findRecipesBtn" class="btn-find">🔍 Find Recipes</button>
+      </div>
+
+      <!-- Results Section -->
+      <div class="results-section" id="resultsSection" style="display: none">
+        <h2>Matching Recipes</h2>
+        <div class="recipes-grid" id="recipesGrid">
+          <!-- Recipe cards will appear here -->
+        </div>
+      </div>
+
+      <!-- Cooking Mode Modal -->
+      <div class="modal" id="cookingModal">
+        <div class="modal-content">
+          <button class="modal-close" id="closeModal">×</button>
+          <div class="cooking-mode">
+            <h2 id="recipeTitle"></h2>
+            <div class="progress-bar">
+              <div class="progress-fill" id="progressFill"></div>
+            </div>
+            <div class="step-counter" id="stepCounter"></div>
+            <div class="step-content" id="stepContent"></div>
+            <div class="step-navigation">
+              <button id="prevStepBtn" class="btn-nav">← Previous</button>
+              <button id="nextStepBtn" class="btn-nav">Next →</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="recipes-data.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
+

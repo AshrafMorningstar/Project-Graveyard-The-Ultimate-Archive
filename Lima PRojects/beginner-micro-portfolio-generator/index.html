@@ -1,0 +1,172 @@
+<!--
+ -----------------------------------------------------------------------------
+ @author      Ashraf Morningstar
+ @github      https://github.com/AshrafMorningstar
+ @repository  Project Graveyard - The Ultimate Archive
+ @quote       "Code that defines the future. Designed to inspire."
+ -----------------------------------------------------------------------------
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Generate beautiful portfolio websites instantly with zero configuration">
+    <meta name="author" content="Ashraf Morningstar">
+    <title>Micro Portfolio Generator | Ashraf Morningstar</title>
+    <link rel="stylesheet" href="../shared/global-design-system.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <a href="#main-content" class="skip-to-main">Skip to main content</a>
+
+    <header class="app-header">
+        <div class="container">
+            <h1>✨ Micro Portfolio Generator</h1>
+            <p>Create your professional portfolio in seconds</p>
+        </div>
+    </header>
+
+    <main id="main-content" class="container">
+        <div class="app-layout">
+            <!-- Editor Panel -->
+            <aside class="editor-panel">
+                <div class="panel-header">
+                    <h2>Portfolio Editor</h2>
+                    <button id="resetBtn" class="btn btn-secondary btn-sm" aria-label="Reset form">
+                        Reset
+                    </button>
+                </div>
+
+                <form id="portfolioForm" class="portfolio-form">
+                    <!-- Personal Info -->
+                    <section class="form-section">
+                        <h3>Personal Information</h3>
+                        
+                        <div class="form-group">
+                            <label for="fullName" class="form-label">Full Name *</label>
+                            <input type="text" id="fullName" class="form-input" required 
+                                   placeholder="John Doe" aria-required="true">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="tagline" class="form-label">Tagline *</label>
+                            <input type="text" id="tagline" class="form-input" required 
+                                   placeholder="Full-Stack Developer & Designer" aria-required="true">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="bio" class="form-label">Bio</label>
+                            <textarea id="bio" class="form-textarea" rows="4" 
+                                      placeholder="Tell us about yourself..."></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" id="email" class="form-input" 
+                                   placeholder="john@example.com">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="location" class="form-label">Location</label>
+                            <input type="text" id="location" class="form-input" 
+                                   placeholder="San Francisco, CA">
+                        </div>
+                    </section>
+
+                    <!-- Skills -->
+                    <section class="form-section">
+                        <h3>Skills</h3>
+                        <div class="form-group">
+                            <label for="skills" class="form-label">Add Skills (comma-separated)</label>
+                            <input type="text" id="skills" class="form-input" 
+                                   placeholder="JavaScript, React, Node.js, CSS">
+                            <small class="form-hint">Separate skills with commas</small>
+                        </div>
+                    </section>
+
+                    <!-- Social Links -->
+                    <section class="form-section">
+                        <h3>Social Links</h3>
+                        
+                        <div class="form-group">
+                            <label for="github" class="form-label">GitHub</label>
+                            <input type="url" id="github" class="form-input" 
+                                   placeholder="https://github.com/username">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="linkedin" class="form-label">LinkedIn</label>
+                            <input type="url" id="linkedin" class="form-input" 
+                                   placeholder="https://linkedin.com/in/username">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="twitter" class="form-label">Twitter</label>
+                            <input type="url" id="twitter" class="form-input" 
+                                   placeholder="https://twitter.com/username">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="website" class="form-label">Personal Website</label>
+                            <input type="url" id="website" class="form-input" 
+                                   placeholder="https://yourwebsite.com">
+                        </div>
+                    </section>
+
+                    <!-- Theme Selection -->
+                    <section class="form-section">
+                        <h3>Choose Theme</h3>
+                        <div class="theme-selector">
+                            <label class="theme-option">
+                                <input type="radio" name="theme" value="minimal" checked>
+                                <span class="theme-card">
+                                    <span class="theme-preview minimal-preview"></span>
+                                    <span class="theme-name">Minimal</span>
+                                </span>
+                            </label>
+                            <label class="theme-option">
+                                <input type="radio" name="theme" value="neon">
+                                <span class="theme-card">
+                                    <span class="theme-preview neon-preview"></span>
+                                    <span class="theme-name">Neon</span>
+                                </span>
+                            </label>
+                            <label class="theme-option">
+                                <input type="radio" name="theme" value="glass">
+                                <span class="theme-card">
+                                    <span class="theme-preview glass-preview"></span>
+                                    <span class="theme-name">Glass</span>
+                                </span>
+                            </label>
+                        </div>
+                    </section>
+                </form>
+            </aside>
+
+            <!-- Preview Panel -->
+            <section class="preview-panel">
+                <div class="panel-header">
+                    <h2>Live Preview</h2>
+                    <button id="exportBtn" class="btn btn-primary" aria-label="Export portfolio">
+                        📦 Export Portfolio
+                    </button>
+                </div>
+
+                <div id="preview" class="preview-container">
+                    <!-- Preview will be rendered here -->
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="app-footer">
+        <div class="container">
+            <p>Built by <a href="https://github.com/AshrafMorningstar" target="_blank" rel="noopener noreferrer">Ashraf Morningstar</a></p>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>

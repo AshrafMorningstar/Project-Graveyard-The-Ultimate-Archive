@@ -1,0 +1,184 @@
+/*
+ * -----------------------------------------------------------------------------
+ * @author      Ashraf Morningstar
+ * @github      https://github.com/AshrafMorningstar
+ * @repository  Project Graveyard - The Ultimate Archive
+ * @quote       "Code that defines the future. Designed to inspire."
+ * -----------------------------------------------------------------------------
+*/
+
+/* 
+   Project: Dynamic Resume Generator
+   Level: Intermediate
+   Author: Ashraf Morningstar
+   GitHub: https://github.com/AshrafMorningstar
+*/
+
+:root {
+    --bg-dark: #121212;
+    --card-bg: #1e1e1e;
+    --accent: #bb86fc;
+    --text-primary: #e0e0e0;
+    --text-secondary: #a0a0a0;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    background: var(--bg-dark);
+    color: var(--text-primary);
+    font-family: 'Roboto', sans-serif;
+    height: 100vh;
+    overflow: hidden;
+}
+
+#root { height: 100%; }
+
+.app-container {
+    display: grid;
+    grid-template-columns: 400px 1fr;
+    height: 100%;
+}
+
+/* Editor Sidebar */
+.editor-sidebar {
+    background: #1f1f1f;
+    border-right: 1px solid #333;
+    padding: 2rem;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+h2 {
+    font-family: 'Space Grotesk', sans-serif;
+    color: var(--accent);
+    margin-bottom: 0.5rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+label {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+input, textarea {
+    background: #2d2d2d;
+    border: 1px solid #444;
+    padding: 0.8rem;
+    border-radius: 4px;
+    color: white;
+    font-family: inherit;
+    transition: 0.2s;
+}
+
+input:focus, textarea:focus {
+    border-color: var(--accent);
+    outline: none;
+}
+
+.skill-input-group {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+input[type="range"] {
+    flex: 1;
+    cursor: pointer;
+}
+
+/* Resume Preview */
+.preview-area {
+    background: #121212;
+    padding: 3rem;
+    overflow-y: auto;
+    display: flex;
+    justify-content: center;
+}
+
+.resume-paper {
+    background: white;
+    color: #333;
+    width: 100%;
+    max-width: 800px;
+    min-height: 1000px; /* A4-ish ratio */
+    padding: 3rem;
+    border-radius: 4px;
+    box-shadow: 0 0 50px rgba(0,0,0,0.5);
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 2rem;
+}
+
+.resume-main header {
+    border-bottom: 2px solid #333;
+    padding-bottom: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.resume-main h1 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 3rem;
+    color: #000;
+    line-height: 1;
+}
+
+.role {
+    font-size: 1.2rem;
+    color: #666;
+    margin-top: 0.5rem;
+}
+
+.resume-section {
+    margin-bottom: 2rem;
+}
+
+.resume-section h3 {
+    font-family: 'Space Grotesk', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.resume-sidebar {
+    background: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 8px;
+}
+
+.contact-info {
+    list-style: none;
+    font-size: 0.9rem;
+}
+
+.contact-info li {
+    margin-bottom: 0.8rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.chart-container {
+    margin-top: 2rem;
+    position: relative;
+    height: 250px;
+}
+
+@media print {
+    body { background: white; }
+    .editor-sidebar { display: none; }
+    .app-container { display: block; }
+    .preview-area { padding: 0; overflow: visible; }
+    .resume-paper { box-shadow: none; width: 100%; }
+}

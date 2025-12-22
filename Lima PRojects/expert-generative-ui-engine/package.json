@@ -1,0 +1,26 @@
+{
+  "name": "generative-ui-engine",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "monaco-editor": "^0.45.0",
+    "@monaco-editor/react": "^4.6.0",
+    "prettier": "^3.1.1",
+    "sucrase": "^3.34.0",
+    "lucide-react": "^0.294.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.2.0",
+    "vite": "^5.0.0",
+    "autoprefixer": "^10.4.16",
+    "postcss": "^8.4.31",
+    "tailwindcss": "^3.3.0"
+  },
+  "author": "Ashraf Morningstar <https://github.com/AshrafMorningstar>"
+}

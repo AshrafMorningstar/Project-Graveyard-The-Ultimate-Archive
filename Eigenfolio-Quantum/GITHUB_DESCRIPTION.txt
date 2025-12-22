@@ -1,0 +1,5 @@
+Eigenfolio Quantum 🌌
+
+The Ultimate Neural-Interface Portfolio OS. Built with React, TypeScript, GSAP & Zustand. Features a fully immersive desktop environment, quantum-themed UI, and AI integrations. The new standard for developer portfolios. 🚀
+
+#React #WebDev #Portfolio #UIUX #OpenSource

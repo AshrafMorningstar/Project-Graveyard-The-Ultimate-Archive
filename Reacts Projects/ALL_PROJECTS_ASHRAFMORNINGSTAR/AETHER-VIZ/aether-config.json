@@ -1,0 +1,12 @@
+{
+  "user": "AshrafMorningstar",
+  "visualStyle": "sculptural-minimalism",
+  "animationStyle": "cinematic-elegance",
+  "colorTheme": "arctic-aurora",
+  "outputs": {
+    "gif": {
+      "quality": "museum",
+      "duration": 12
+    }
+  }
+}

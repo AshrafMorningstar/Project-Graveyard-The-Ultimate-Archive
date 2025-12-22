@@ -1,0 +1,126 @@
+<!--
+ -----------------------------------------------------------------------------
+ @author      Ashraf Morningstar
+ @github      https://github.com/AshrafMorningstar
+ @repository  Project Graveyard - The Ultimate Archive
+ @quote       "Code that defines the future. Designed to inspire."
+ -----------------------------------------------------------------------------
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EIGENFOLIO | Quantum Architecture</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+              display: ['Space Grotesk', 'sans-serif'],
+              mono: ['monospace'],
+            },
+            colors: {
+              chronos: {
+                blue: "#0A0C27",
+                dark: "#050510",
+                space: "#0F102E"
+              },
+              neuro: {
+                purple: "#3A0CA3",
+                pink: "#FF00FF",
+                cyan: "#00F5FF"
+              },
+              quantum: {
+                glow: "#4CC9F0",
+                energy: "#7209B7",
+                matter: "#F72585"
+              },
+              os: {
+                bg: '#050510',
+                dock: 'rgba(10, 12, 39, 0.6)',
+                window: 'rgba(10, 12, 39, 0.85)',
+                text: '#f8fafc',
+                muted: '#94a3b8',
+              }
+            },
+            animation: {
+              'quantum-pulse': 'quantum-pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+              'hologram-flicker': 'hologram-flicker 4s infinite',
+            },
+            keyframes: {
+              'quantum-pulse': {
+                '0%, 100%': { opacity: 1 },
+                '50%': { opacity: 0.5 }
+              },
+              'hologram-flicker': {
+                '0%, 100%': { opacity: 1 },
+                '92%': { opacity: 1 },
+                '93%': { opacity: 0.5 },
+                '94%': { opacity: 1 },
+                '96%': { opacity: 1 },
+                '97%': { opacity: 0.7 },
+                '98%': { opacity: 1 },
+              }
+            }
+          },
+        },
+      }
+    </script>
+    <style>
+      body {
+        margin: 0;
+        overflow: hidden;
+        background-color: #050510;
+        color: #fff;
+      }
+      /* Custom scrollbar for windows */
+      ::-webkit-scrollbar {
+        width: 6px;
+        height: 6px;
+      }
+      ::-webkit-scrollbar-track {
+        background: transparent;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: linear-gradient(180deg, #3A0CA3, #7209B7);
+        border-radius: 4px;
+      }
+      .glass-panel {
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        box-shadow: 0 0 50px rgba(76, 201, 240, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      }
+      .hologram-border {
+        box-shadow: 0 0 15px rgba(0, 245, 255, 0.3), inset 0 0 20px rgba(58, 12, 163, 0.2);
+        border: 1px solid rgba(0, 245, 255, 0.3);
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@18.3.1",
+    "react/": "https://esm.sh/react@18.3.1/",
+    "react-dom": "https://esm.sh/react-dom@18.3.1",
+    "react-dom/": "https://esm.sh/react-dom@18.3.1/",
+    "zustand": "https://esm.sh/zustand@4.5.2",
+    "@google/genai": "https://esm.sh/@google/genai@0.1.1",
+    "gsap": "https://esm.sh/gsap@3.12.5",
+    "lucide-react": "https://esm.sh/lucide-react@0.378.0",
+    "chess.js": "https://esm.sh/chess.js@1.0.0-beta.8",
+    "@react-spring/web": "https://esm.sh/@react-spring/web@9.7.3"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body>
+    <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>

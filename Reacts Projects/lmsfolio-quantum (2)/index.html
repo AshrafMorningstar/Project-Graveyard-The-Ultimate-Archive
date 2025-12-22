@@ -1,0 +1,218 @@
+<!--
+ -----------------------------------------------------------------------------
+ @author      Ashraf Morningstar
+ @github      https://github.com/AshrafMorningstar
+ @repository  Project Graveyard - The Ultimate Archive
+ @quote       "Code that defines the future. Designed to inspire."
+ -----------------------------------------------------------------------------
+-->
+
+<!DOCTYPE html>
+<html lang="en" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Eigenfolio Quantum | Neuromorphic Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            colors: {
+              chronos: {
+                blue: "var(--chronos-blue)",
+                dark: "var(--chronos-dark)",
+                space: "var(--chronos-space)"
+              },
+              neuro: {
+                purple: "var(--neuro-purple)",
+                pink: "var(--neuro-pink)",
+                cyan: "var(--neuro-cyan)"
+              },
+              quantum: {
+                glow: "var(--quantum-glow)",
+                energy: "var(--quantum-energy)",
+                matter: "var(--quantum-matter)"
+              },
+              glass: {
+                primary: "var(--hologram-primary)",
+                secondary: "var(--hologram-secondary)",
+                accent: "var(--hologram-accent)"
+              }
+            },
+            fontFamily: {
+              'space': ['Space Grotesk', 'sans-serif'],
+              'inter': ['Inter', 'sans-serif'],
+              'quantum': ['Courier New', 'monospace'], // Fallback for Quantum Sans
+            },
+            animation: {
+              'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+              'float': 'float 6s ease-in-out infinite',
+              'glow': 'glow 2s ease-in-out infinite alternate',
+              'quantum-pulse': 'quantum-pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+              'chronos-spin': 'chronos-spin 20s linear infinite',
+              'neural-flow': 'neural-flow 3s ease-in-out infinite',
+              'cosmic-drift': 'cosmic-drift 60s linear infinite',
+              'slide-up-fade': 'slideUpFade 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards',
+            },
+            keyframes: {
+              float: {
+                '0%, 100%': { transform: 'translateY(0)' },
+                '50%': { transform: 'translateY(-10px)' },
+              },
+              glow: {
+                'from': { boxShadow: '0 0 10px var(--quantum-glow)' },
+                'to': { boxShadow: '0 0 20px var(--quantum-energy), 0 0 10px var(--quantum-glow)' },
+              },
+              'quantum-pulse': {
+                '0%, 100%': { opacity: 1, transform: 'scale(1)' },
+                '50%': { opacity: 0.5, transform: 'scale(1.05)' }
+              },
+              'chronos-spin': {
+                from: { transform: 'rotate(0deg) scale(1)' },
+                to: { transform: 'rotate(360deg) scale(1.1)' }
+              },
+              'neural-flow': {
+                '0%, 100%': { transform: 'translateY(0) scale(1)', opacity: 0.7 },
+                '50%': { transform: 'translateY(-20px) scale(1.05)', opacity: 1 }
+              },
+              'cosmic-drift': {
+                '0%': { transform: 'translateX(0) translateY(0)' },
+                '25%': { transform: 'translateX(10px) translateY(-5px)' },
+                '50%': { transform: 'translateX(0) translateY(-10px)' },
+                '75%': { transform: 'translateX(-10px) translateY(-5px)' },
+                '100%': { transform: 'translateX(0) translateY(0)' }
+              },
+              slideUpFade: {
+                '0%': { opacity: 0, transform: 'translateY(40px) scale(0.95)' },
+                '100%': { opacity: 1, transform: 'translateY(0) scale(1)' }
+              },
+              'quantum-materialize': {
+                '0%': { opacity: 0, transform: 'scale(0.9) translateY(20px)', filter: 'blur(10px)' },
+                '50%': { opacity: 0.5, filter: 'blur(5px)' },
+                '100%': { opacity: 1, transform: 'scale(1) translateY(0)', filter: 'blur(0)' }
+              }
+            },
+            boxShadow: {
+              'quantum': '0 0 50px rgba(76, 201, 240, 0.3)',
+              'neuro': '0 0 70px rgba(255, 0, 255, 0.4)',
+              'chronos': '0 0 100px rgba(10, 12, 39, 0.5)',
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      :root {
+        /* Default Dark Mode (Quantum) */
+        --chronos-blue: #0A0C27;
+        --chronos-dark: #050510;
+        --chronos-space: #0F102E;
+        
+        --neuro-purple: #3A0CA3;
+        --neuro-pink: #FF00FF;
+        --neuro-cyan: #00F5FF;
+        
+        --quantum-glow: #4CC9F0;
+        --quantum-energy: #7209B7;
+        --quantum-matter: #F72585;
+        
+        --hologram-primary: rgba(10, 12, 39, 0.85);
+        --hologram-secondary: rgba(58, 12, 163, 0.8);
+        --hologram-accent: rgba(0, 245, 255, 0.6);
+      }
+
+      /* Light Mode Overrides */
+      html:not(.dark) {
+        --chronos-blue: #F0F4F8;
+        --chronos-dark: #FFFFFF;
+        --chronos-space: #E2E8F0;
+
+        --neuro-purple: #4F46E5; 
+        --neuro-pink: #DB2777;
+        --neuro-cyan: #0891B2;
+
+        --quantum-glow: #0EA5E9;
+        --quantum-energy: #7C3AED;
+        --quantum-matter: #BE185D;
+
+        --hologram-primary: rgba(255, 255, 255, 0.85);
+        --hologram-secondary: rgba(79, 70, 229, 0.1);
+        --hologram-accent: rgba(14, 165, 233, 0.2);
+      }
+
+      body {
+        margin: 0;
+        overflow-x: hidden;
+        background-color: var(--chronos-dark);
+        color: #fff;
+        transition: background-color 0.5s ease, color 0.5s ease;
+      }
+
+      html:not(.dark) body {
+        color: #1a202c;
+      }
+
+      .quantum-scroll::-webkit-scrollbar {
+        width: 8px;
+        background: var(--chronos-dark);
+      }
+      .quantum-scroll::-webkit-scrollbar-thumb {
+        background: var(--neuro-purple);
+        border-radius: 4px;
+      }
+      
+      .glass-panel {
+        background: var(--hologram-primary);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      }
+      
+      html:not(.dark) .glass-panel {
+        border: 1px solid rgba(0, 0, 0, 0.05);
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+      }
+
+      /* Quantum Grid Background */
+      .quantum-grid {
+        background-size: 50px 50px;
+        background-image: 
+          linear-gradient(to right, rgba(58, 12, 163, 0.1) 1px, transparent 1px),
+          linear-gradient(to bottom, rgba(58, 12, 163, 0.1) 1px, transparent 1px);
+      }
+
+      .hologram-text {
+         text-shadow: 0 0 10px var(--quantum-glow), 0 0 20px var(--quantum-glow);
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "react": "https://esm.sh/react@^19.2.3",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "react-dom": "https://esm.sh/react-dom@^19.2.3",
+    "react-dom/client": "https://esm.sh/react-dom@^19.2.3/client",
+    "@google/genai": "https://esm.sh/@google/genai@^1.33.0",
+    "lucide-react": "https://esm.sh/lucide-react@^0.561.0",
+    "gsap": "https://esm.sh/gsap@3.12.5",
+    "chess.js": "https://esm.sh/chess.js@1.0.0-beta.8",
+    "@react-spring/web": "https://esm.sh/@react-spring/web@9.7.3",
+    "@use-gesture/react": "https://esm.sh/@use-gesture/react@10.3.0",
+    "zustand": "https://esm.sh/zustand@4.5.0",
+    "zustand/": "https://esm.sh/zustand@^5.0.9/"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body>
+    <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>

@@ -1,0 +1,362 @@
+<!--
+ -----------------------------------------------------------------------------
+ @author      Ashraf Morningstar
+ @github      https://github.com/AshrafMorningstar
+ @repository  Project Graveyard - The Ultimate Archive
+ @quote       "Code that defines the future. Designed to inspire."
+ -----------------------------------------------------------------------------
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Neural Network Visualizer | AI Intelligence Dashboard</title>
+    <meta
+      name="description"
+      content="Interactive neural network visualization with real-time training simulation and AI-powered insights"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&family=Share+Tech+Mono&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Neural Background -->
+    <canvas id="neuralCanvas"></canvas>
+
+    <!-- Main Container -->
+    <div class="neural-container">
+      <!-- Header -->
+      <header class="neural-header">
+        <div class="header-left">
+          <div class="brain-logo">
+            <svg viewBox="0 0 100 100" class="brain-svg">
+              <circle
+                cx="50"
+                cy="50"
+                r="40"
+                fill="none"
+                stroke="url(#brainGrad)"
+                stroke-width="2"
+              />
+              <circle
+                cx="50"
+                cy="50"
+                r="30"
+                fill="none"
+                stroke="url(#brainGrad)"
+                stroke-width="1.5"
+                opacity="0.7"
+              />
+              <circle
+                cx="50"
+                cy="50"
+                r="20"
+                fill="none"
+                stroke="url(#brainGrad)"
+                stroke-width="1"
+                opacity="0.5"
+              />
+              <circle cx="50" cy="50" r="5" fill="url(#brainGrad)" />
+              <defs>
+                <linearGradient
+                  id="brainGrad"
+                  x1="0%"
+                  y1="0%"
+                  x2="100%"
+                  y2="100%"
+                >
+                  <stop
+                    offset="0%"
+                    style="stop-color: #00d4ff; stop-opacity: 1"
+                  />
+                  <stop
+                    offset="100%"
+                    style="stop-color: #7b2cbf; stop-opacity: 1"
+                  />
+                </linearGradient>
+              </defs>
+            </svg>
+          </div>
+          <div class="header-text">
+            <h1 class="neural-title">NEURAL NETWORK VISUALIZER</h1>
+            <p class="neural-subtitle">Real-time AI Training Simulation</p>
+          </div>
+        </div>
+        <div class="header-right">
+          <div class="status-badge">
+            <span class="status-dot"></span>
+            <span class="status-text">ACTIVE</span>
+          </div>
+        </div>
+      </header>
+
+      <!-- Main Grid -->
+      <div class="neural-grid">
+        <!-- Network Visualization -->
+        <div class="neural-card network-card">
+          <div class="card-header">
+            <h3 class="card-title">
+              <span class="title-icon">🧠</span>
+              Network Architecture
+            </h3>
+            <div class="card-controls">
+              <button class="control-btn" id="trainBtn">
+                <span>▶</span> Train
+              </button>
+              <button class="control-btn" id="resetBtn">
+                <span>↻</span> Reset
+              </button>
+            </div>
+          </div>
+          <canvas id="networkCanvas" class="network-canvas"></canvas>
+          <div class="network-info">
+            <div class="info-item">
+              <span class="info-label">Layers:</span>
+              <span class="info-value" id="layerCount">4</span>
+            </div>
+            <div class="info-item">
+              <span class="info-label">Neurons:</span>
+              <span class="info-value" id="neuronCount">64</span>
+            </div>
+            <div class="info-item">
+              <span class="info-label">Connections:</span>
+              <span class="info-value" id="connectionCount">256</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Training Metrics -->
+        <div class="neural-card metrics-card">
+          <div class="card-header">
+            <h3 class="card-title">
+              <span class="title-icon">📊</span>
+              Training Metrics
+            </h3>
+          </div>
+          <div class="metrics-grid">
+            <div class="metric-box">
+              <div class="metric-label">Accuracy</div>
+              <div class="metric-value" id="accuracy">0%</div>
+              <div class="metric-bar">
+                <div class="metric-fill" id="accuracyBar"></div>
+              </div>
+            </div>
+            <div class="metric-box">
+              <div class="metric-label">Loss</div>
+              <div class="metric-value" id="loss">1.000</div>
+              <div class="metric-bar">
+                <div class="metric-fill loss-fill" id="lossBar"></div>
+              </div>
+            </div>
+            <div class="metric-box">
+              <div class="metric-label">Epoch</div>
+              <div class="metric-value" id="epoch">0</div>
+              <div class="metric-bar">
+                <div class="metric-fill" id="epochBar"></div>
+              </div>
+            </div>
+            <div class="metric-box">
+              <div class="metric-label">Learning Rate</div>
+              <div class="metric-value" id="learningRate">0.001</div>
+              <div class="metric-bar">
+                <div class="metric-fill" id="lrBar"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Loss Graph -->
+        <div class="neural-card graph-card">
+          <div class="card-header">
+            <h3 class="card-title">
+              <span class="title-icon">📈</span>
+              Loss Over Time
+            </h3>
+          </div>
+          <canvas id="lossGraph" class="loss-graph"></canvas>
+        </div>
+
+        <!-- Accuracy Graph -->
+        <div class="neural-card graph-card">
+          <div class="card-header">
+            <h3 class="card-title">
+              <span class="title-icon">🎯</span>
+              Accuracy Progress
+            </h3>
+          </div>
+          <canvas id="accuracyGraph" class="accuracy-graph"></canvas>
+        </div>
+
+        <!-- Layer Configuration -->
+        <div class="neural-card config-card">
+          <div class="card-header">
+            <h3 class="card-title">
+              <span class="title-icon">⚙️</span>
+              Network Configuration
+            </h3>
+          </div>
+          <div class="config-content">
+            <div class="config-group">
+              <label class="config-label">Input Layer</label>
+              <input
+                type="range"
+                class="config-slider"
+                id="inputNeurons"
+                min="2"
+                max="20"
+                value="8"
+              />
+              <span class="config-value" id="inputValue">8</span>
+            </div>
+            <div class="config-group">
+              <label class="config-label">Hidden Layer 1</label>
+              <input
+                type="range"
+                class="config-slider"
+                id="hidden1Neurons"
+                min="4"
+                max="32"
+                value="16"
+              />
+              <span class="config-value" id="hidden1Value">16</span>
+            </div>
+            <div class="config-group">
+              <label class="config-label">Hidden Layer 2</label>
+              <input
+                type="range"
+                class="config-slider"
+                id="hidden2Neurons"
+                min="4"
+                max="32"
+                value="16"
+              />
+              <span class="config-value" id="hidden2Value">16</span>
+            </div>
+            <div class="config-group">
+              <label class="config-label">Output Layer</label>
+              <input
+                type="range"
+                class="config-slider"
+                id="outputNeurons"
+                min="2"
+                max="10"
+                value="4"
+              />
+              <span class="config-value" id="outputValue">4</span>
+            </div>
+            <div class="config-group">
+              <label class="config-label">Activation Function</label>
+              <select class="config-select" id="activation">
+                <option value="relu">ReLU</option>
+                <option value="sigmoid">Sigmoid</option>
+                <option value="tanh">Tanh</option>
+                <option value="softmax">Softmax</option>
+              </select>
+            </div>
+            <button class="apply-btn" id="applyConfig">
+              Apply Configuration
+            </button>
+          </div>
+        </div>
+
+        <!-- AI Insights -->
+        <div class="neural-card insights-card">
+          <div class="card-header">
+            <h3 class="card-title">
+              <span class="title-icon">💡</span>
+              AI Insights
+            </h3>
+          </div>
+          <div class="insights-content" id="insights">
+            <div class="insight-item">
+              <div class="insight-icon">🎯</div>
+              <div class="insight-text">
+                Network initialized with optimal parameters
+              </div>
+            </div>
+            <div class="insight-item">
+              <div class="insight-icon">⚡</div>
+              <div class="insight-text">Ready to begin training simulation</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Neuron Activity -->
+        <div class="neural-card activity-card">
+          <div class="card-header">
+            <h3 class="card-title">
+              <span class="title-icon">⚡</span>
+              Neuron Activity
+            </h3>
+          </div>
+          <div class="activity-grid" id="activityGrid"></div>
+        </div>
+
+        <!-- Performance Stats -->
+        <div class="neural-card stats-card">
+          <div class="card-header">
+            <h3 class="card-title">
+              <span class="title-icon">📊</span>
+              Performance Statistics
+            </h3>
+          </div>
+          <div class="stats-content">
+            <div class="stat-row">
+              <span class="stat-label">Training Time:</span>
+              <span class="stat-value" id="trainingTime">0.00s</span>
+            </div>
+            <div class="stat-row">
+              <span class="stat-label">Iterations/sec:</span>
+              <span class="stat-value" id="iterationsPerSec">0</span>
+            </div>
+            <div class="stat-row">
+              <span class="stat-label">Best Accuracy:</span>
+              <span class="stat-value" id="bestAccuracy">0%</span>
+            </div>
+            <div class="stat-row">
+              <span class="stat-label">Lowest Loss:</span>
+              <span class="stat-value" id="lowestLoss">1.000</span>
+            </div>
+            <div class="stat-row">
+              <span class="stat-label">Convergence:</span>
+              <span class="stat-value" id="convergence">Not Started</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer -->
+      <footer class="neural-footer">
+        <p>
+          Powered by Advanced Neural Algorithms | Created by
+          <a href="https://github.com/AshrafMorningstar" target="_blank"
+            >AshrafMorningstar</a
+          >
+        </p>
+        <p class="footer-note">
+          Simulated neural network for educational and visualization purposes
+        </p>
+      </footer>
+    </div>
+
+    <!-- Loading Overlay -->
+    <div class="loading-overlay" id="loadingOverlay">
+      <div class="loading-content">
+        <div class="neural-loader">
+          <div class="loader-circle"></div>
+          <div class="loader-circle"></div>
+          <div class="loader-circle"></div>
+        </div>
+        <p class="loading-text">Initializing Neural Network...</p>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

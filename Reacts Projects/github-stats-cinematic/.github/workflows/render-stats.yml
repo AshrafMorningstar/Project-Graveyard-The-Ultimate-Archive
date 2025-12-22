@@ -1,0 +1,47 @@
+# Created by AshrafMorningstar - https://github.com/AshrafMorningstar
+name: Generate Premium Stats
+
+on:
+  schedule:
+    - cron: "0 0 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install Dependencies
+        run: npm ci
+
+      - name: Install FFmpeg
+        run: sudo apt-get update && sudo apt-get install -y ffmpeg
+
+      - name: Fetch Data
+        run: npm run fetch
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+
+      - name: Install Chrome
+        run: npx remotion browser ensure
+
+      - name: Render Premium GIF
+        run: npm run render:gif -- --gl=angle
+
+      - name: Commit and Push
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          git add out/stats.gif src/data/stats.json
+          git commit -m "Update cinematic stats [skip ci]" || exit 0
+          git push

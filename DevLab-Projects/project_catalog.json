@@ -1,0 +1,82 @@
+{
+  "project_root": "projects",
+  "categories": [
+    {
+      "name": "calculators",
+      "projects": [
+        {
+          "id": "age-calculator",
+          "name": "Age Calculator",
+          "description": "Calculate exact age in years, months, and days with a premium timeline visualization.",
+          "tech": ["HTML", "CSS", "JS"],
+          "features": [
+            "Leap year logic",
+            "Real-time calculation",
+            "Premium Glassmorphism UI"
+          ],
+          "keywords": [
+            "age calculator",
+            "date calculator",
+            "birthday calculator"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "games",
+      "projects": [
+        {
+          "id": "2048-game",
+          "name": "2048 Game",
+          "description": "The classic sliding tile puzzle game with a modern neon aesthetic.",
+          "tech": ["HTML", "CSS", "JS"],
+          "features": ["Dark Mode", "High Score", "Swipe Controls"],
+          "keywords": ["2048", "puzzle game", "logic game"]
+        }
+      ]
+    },
+    {
+      "name": "productivity",
+      "projects": [
+        {
+          "id": "todo-list",
+          "name": "To-Do List",
+          "description": "A minimalist, persistent to-do list inspired by Notion.",
+          "tech": ["HTML", "CSS", "JS"],
+          "features": ["LocalStorage", "Drag & Drop", "Minimalist UI"],
+          "keywords": ["todo list", "task manager", "productivity"]
+        }
+      ]
+    },
+    {
+      "name": "generators",
+      "projects": [
+        {
+          "id": "password-generator",
+          "name": "Password Generator",
+          "description": "Generate cryptographically strong passwords with specific constraints.",
+          "tech": ["HTML", "CSS", "JS"],
+          "features": ["Strength Meter", "One-click Copy", "Custom Length"],
+          "keywords": ["password generator", "security tool", "random password"]
+        }
+      ]
+    },
+    {
+      "name": "api-apps",
+      "projects": [
+        {
+          "id": "weather-app",
+          "name": "Weather App",
+          "description": "Real-time weather data visualization using public APIs.",
+          "tech": ["HTML", "CSS", "JS", "Fetch API"],
+          "features": [
+            "Live Data",
+            "Location Detection",
+            "Dynamic Backgrounds"
+          ],
+          "keywords": ["weather app", "forecast", "live weather"]
+        }
+      ]
+    }
+  ]
+}

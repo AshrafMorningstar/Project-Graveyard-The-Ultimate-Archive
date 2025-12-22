@@ -1,0 +1,91 @@
+<!--
+ -----------------------------------------------------------------------------
+ @author      Ashraf Morningstar
+ @github      https://github.com/AshrafMorningstar
+ @repository  Project Graveyard - The Ultimate Archive
+ @quote       "Code that defines the future. Designed to inspire."
+ -----------------------------------------------------------------------------
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- SEO & Viral Metadata -->
+    <meta name="description" content="Premium BEGINNER CSS THEME PLAYGROUND web application. Built with modern web technologies. Part of the Ultimate Web Dev Roadmap by Ashraf Morningstar.">
+    <meta name="keywords" content="web development, BEGINNER CSS THEME PLAYGROUND, javascript, css, html, ashraf morningstar, open source, premium ui">
+    <meta name="author" content="Ashraf Morningstar">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://ashrafmorningstar.github.io/WebDevRoadmap/beginner-css-theme-playground/">
+    <meta property="og:title" content="BEGINNER CSS THEME PLAYGROUND | Premium Web App">
+    <meta property="og:description" content="Premium BEGINNER CSS THEME PLAYGROUND web application. Built with modern web technologies. Part of the Ultimate Web Dev Roadmap by Ashraf Morningstar.">
+    <meta property="og:image" content="https://via.placeholder.com/1200x630.png?text=BEGINNER+CSS+THEME+PLAYGROUND">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://ashrafmorningstar.github.io/WebDevRoadmap/beginner-css-theme-playground/">
+    <meta property="twitter:title" content="BEGINNER CSS THEME PLAYGROUND | Premium Web App">
+    <meta property="twitter:description" content="Premium BEGINNER CSS THEME PLAYGROUND web application. Built with modern web technologies. Part of the Ultimate Web Dev Roadmap by Ashraf Morningstar.">
+    <meta property="twitter:image" content="https://via.placeholder.com/1200x630.png?text=BEGINNER+CSS+THEME+PLAYGROUND">
+    
+    <link rel="canonical" href="https://ashrafmorningstar.github.io/WebDevRoadmap/beginner-css-theme-playground/">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Themed CSS Playground</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- CodeMirror for syntax highlighting -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/codemirror.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/theme/dracula.min.css">
+</head>
+<body>
+  <!-- Author: Ashraf Morningstar | https://github.com/AshrafMorningstar -->
+  
+  <div class="app-layout">
+    <!-- Sidebar / Editor -->
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <h1>🎨 CSS Playground</h1>
+        <button id="exportBtn" class="btn-primary">Export Tokens</button>
+      </div>
+      
+      <div class="controls">
+        <label>Theme Preset</label>
+        <select id="themePreset">
+          <option value="default">Default</option>
+          <option value="ocean">Ocean Breeze</option>
+          <option value="sunset">Sunset Glow</option>
+          <option value="forest">Deep Forest</option>
+        </select>
+      </div>
+
+      <div class="editor-container">
+        <label>CSS Variables</label>
+        <textarea id="cssEditor"></textarea>
+      </div>
+    </aside>
+
+    <!-- Preview Area -->
+    <main class="preview-area">
+      <div class="preview-header">
+        <div class="device-toggles">
+          <button class="device-btn active" data-width="100%">🖥️</button>
+          <button class="device-btn" data-width="768px">📱 Tab</button>
+          <button class="device-btn" data-width="375px">📱 Mobile</button>
+        </div>
+        <span class="preview-label">Live Preview</span>
+      </div>
+
+      <div class="preview-canvas-wrapper">
+        <iframe id="previewFrame" class="preview-canvas"></iframe>
+      </div>
+    </main>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/codemirror.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/mode/css/css.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
+

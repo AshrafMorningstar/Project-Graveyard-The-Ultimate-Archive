@@ -1,0 +1,213 @@
+openapi: 3.0.3
+info:
+  title: Titan Reality Weaver API
+  version: "1.0.0"
+servers:
+  - url: https://api.trw.example/v1
+paths:
+  /connectors:
+    post:
+      summary: Register a new connector (MQTT/Kafka/OPC-UA/RTSP)
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/ConnectorSpec"
+      responses:
+        "201":
+          description: Connector registered
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ConnectorResponse"
+  /models:
+    post:
+      summary: Upload a new model artifact (OCI manifest or WASM binary)
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                manifest:
+                  type: string
+                file:
+                  type: string
+                  format: binary
+      responses:
+        "201":
+          description: Model uploaded
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ModelMeta"
+    get:
+      summary: List models
+      responses:
+        "200":
+          description: Model list
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/ModelMeta"
+  /models/{model_id}:
+    get:
+      summary: Get model metadata
+      parameters:
+        - name: model_id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Model metadata
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ModelMeta"
+  /twins:
+    post:
+      summary: Create a twin instance from DSL (twin-compose)
+      requestBody:
+        required: true
+        content:
+          application/yaml:
+            schema:
+              type: string
+      responses:
+        "201":
+          description: Twin created
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/TwinSummary"
+  /twins/{twin_id}/run:
+    post:
+      summary: Start a simulation run
+      parameters:
+        - name: twin_id
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/RunSpec"
+      responses:
+        "202":
+          description: Run accepted
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/RunResponse"
+  /runs/{run_id}/logs:
+    get:
+      summary: Fetch run logs / traces
+      parameters:
+        - name: run_id
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: cursor
+          in: query
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Stream of logs
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/TracePage"
+components:
+  schemas:
+    ConnectorSpec:
+      type: object
+      required: [name, type, config]
+      properties:
+        name:
+          type: string
+        type:
+          type: string
+          enum: [mqtt, kafka, opcua, rtsp, http]
+        config:
+          type: object
+          description: connector-specific configuration
+    ConnectorResponse:
+      type: object
+      properties:
+        id:
+          type: string
+        status:
+          type: string
+    ModelMeta:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        version:
+          type: string
+        runtime:
+          type: string
+        created_at:
+          type: string
+          format: date-time
+        signature:
+          type: string
+    TwinSummary:
+      type: object
+      properties:
+        twin_id: { type: string }
+        status: { type: string }
+    RunSpec:
+      type: object
+      properties:
+        mode:
+          type: string
+          enum: [simulate, shadow, deploy]
+        start_time:
+          type: string
+          format: date-time
+        duration_seconds:
+          type: integer
+        parameters:
+          type: object
+    RunResponse:
+      type: object
+      properties:
+        run_id: { type: string }
+        status: { type: string }
+    TracePage:
+      type: object
+      properties:
+        run_id: { type: string }
+        items:
+          type: array
+          items:
+            $ref: "#/components/schemas/TraceItem"
+        next_cursor:
+          type: string
+    TraceItem:
+      type: object
+      properties:
+        timestamp: { type: string, format: date-time }
+        type: { type: string }
+        payload: { type: object }
+security:
+  - api_key: []
+securitySchemes:
+  api_key:
+    type: apiKey
+    in: header
+    name: X-API-Key

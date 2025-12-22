@@ -1,0 +1,92 @@
+<!--
+ -----------------------------------------------------------------------------
+ @author      Ashraf Morningstar
+ @github      https://github.com/AshrafMorningstar
+ @repository  Project Graveyard - The Ultimate Archive
+ @quote       "Code that defines the future. Designed to inspire."
+ -----------------------------------------------------------------------------
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Age Calculator | Web Dev Mega Projects</title>
+    <meta
+      name="description"
+      content="Calculate your exact age in years, months, and days with our premium Age Calculator. Free, fast, and beautiful."
+    />
+    <meta
+      name="keywords"
+      content="age calculator, birthday calculator, date difference, years months days"
+    />
+    <meta name="author" content="Ashraf Morningstar" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Age Calculator - Premium Tool" />
+    <meta
+      property="og:description"
+      content="Calculate your exact age in years, months, and days."
+    />
+
+    <!-- Global CSS -->
+    <link rel="stylesheet" href="../../../assets/css/global.css" />
+    <!-- Project CSS -->
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container flex-center" style="min-height: 100vh">
+      <main class="card calculator-card">
+        <header class="header">
+          <h1>Age Calculator</h1>
+          <p>Track your journey through time</p>
+        </header>
+
+        <div class="input-group">
+          <label for="birthdate">Date of Birth</label>
+          <input type="date" id="birthdate" class="date-input" />
+        </div>
+
+        <div class="controls">
+          <button id="calculate-btn" class="btn btn-primary">
+            Calculate Age
+          </button>
+        </div>
+
+        <div id="result" class="result-container hidden">
+          <div class="result-box years">
+            <span id="years" class="number">0</span>
+            <span class="label">Years</span>
+          </div>
+          <div class="result-box months">
+            <span id="months" class="number">0</span>
+            <span class="label">Months</span>
+          </div>
+          <div class="result-box days">
+            <span id="days" class="number">0</span>
+            <span class="label">Days</span>
+          </div>
+        </div>
+
+        <footer class="footer-attribution">
+          <p>
+            Created & Maintained by
+            <a href="https://github.com/AshrafMorningstar"
+              >Ashraf Morningstar</a
+            >
+          </p>
+        </footer>
+      </main>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,20 @@
+{
+  "name": "13-synapseflow-studio",
+  "version": "1.0.0",
+  "description": "Visual drag-and-drop workflow automation builder",
+  "author": "AshrafMorningstar <https://github.com/AshrafMorningstar>",
+  "license": "MIT",
+  "scripts": {
+    "start": "npx http-server -p 8080",
+    "deploy": "gh-pages -d ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AshrafMorningstar/13-synapseflow-studio"
+  },
+  "keywords": [
+    "github",
+    "automation",
+    "ashrafmorningstar"
+  ]
+}

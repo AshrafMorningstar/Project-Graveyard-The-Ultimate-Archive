@@ -1,0 +1,173 @@
+/*
+ * -----------------------------------------------------------------------------
+ * @author      Ashraf Morningstar
+ * @github      https://github.com/AshrafMorningstar
+ * @repository  Project Graveyard - The Ultimate Archive
+ * @quote       "Code that defines the future. Designed to inspire."
+ * -----------------------------------------------------------------------------
+*/
+
+/* Cyber GitHub Stats - Created by AshrafMorningstar */
+/* https://github.com/AshrafMorningstar */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --neon-cyan: #00ffcc;
+  --neon-pink: #ff00ff;
+  --neon-blue: #00f0ff;
+  --dark-bg: #0a0a0f;
+  --card-bg: #1a1a2e;
+}
+
+body {
+  font-family: "Courier New", monospace;
+  background: linear-gradient(135deg, #0a0a0f 0%, #1a1a2e 100%);
+  color: var(--neon-cyan);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow-x: hidden;
+}
+
+.container {
+  max-width: 1200px;
+  width: 90%;
+  padding: 2rem;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.glitch {
+  font-size: 4rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  position: relative;
+  text-shadow: 0 0 10px var(--neon-cyan), 0 0 20px var(--neon-cyan),
+    0 0 30px var(--neon-cyan), 0 0 40px var(--neon-pink);
+  animation: glitch 2s infinite;
+}
+
+@keyframes glitch {
+  0%,
+  100% {
+    text-shadow: 0 0 10px var(--neon-cyan), 0 0 20px var(--neon-cyan),
+      0 0 30px var(--neon-cyan);
+  }
+  50% {
+    text-shadow: 0 0 10px var(--neon-pink), 0 0 20px var(--neon-pink),
+      0 0 30px var(--neon-pink);
+  }
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  margin-top: 1rem;
+  color: var(--neon-blue);
+}
+
+.subtitle a {
+  color: var(--neon-cyan);
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.subtitle a:hover {
+  text-shadow: 0 0 10px var(--neon-cyan);
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.stat-card {
+  background: var(--card-bg);
+  border: 2px solid var(--neon-cyan);
+  border-radius: 15px;
+  padding: 2rem;
+  text-align: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 20px rgba(0, 255, 204, 0.2);
+  animation: fadeIn 0.6s ease-out;
+}
+
+.stat-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 0 30px rgba(0, 255, 204, 0.4), 0 0 40px rgba(255, 0, 255, 0.2);
+  border-color: var(--neon-pink);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.stat-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.stat-label {
+  font-size: 0.9rem;
+  color: var(--neon-blue);
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.stat-value {
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--neon-cyan);
+  text-shadow: 0 0 10px var(--neon-cyan);
+}
+
+.footer {
+  text-align: center;
+  padding: 2rem 0;
+  border-top: 1px solid var(--neon-cyan);
+  opacity: 0.7;
+}
+
+.footer a {
+  color: var(--neon-cyan);
+  text-decoration: none;
+}
+
+.footer a:hover {
+  text-shadow: 0 0 10px var(--neon-cyan);
+}
+
+.timestamp {
+  margin-top: 0.5rem;
+  font-size: 0.8rem;
+  color: var(--neon-blue);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .glitch {
+    font-size: 2.5rem;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+}

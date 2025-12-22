@@ -1,0 +1,42 @@
+# Author: Ashraf Morningstar
+# GitHub: https://github.com/AshrafMorningstar
+# Project: Multi-Vendor Farm-to-Table Platform
+
+version: '3.8'
+
+services:
+  # User Service
+  users:
+    build: ./services/users
+    ports:
+      - "3001:3000"
+    environment:
+      - JWT_SECRET=supersecret
+
+  # Inventory Service
+  inventory:
+    build: ./services/inventory
+    ports:
+      - "3002:3000"
+    depends_on:
+      - redis
+
+  # Order Service
+  orders:
+    build: ./services/orders
+    ports:
+      - "3003:3000"
+    environment:
+      - STRIPE_KEY=sk_test_123
+
+  # Database Cache
+  redis:
+    image: redis:alpine
+
+  # API Gateway
+  gateway:
+    image: nginx:alpine
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf

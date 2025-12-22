@@ -1,0 +1,21 @@
+username: "AshrafMorningstar"
+theme:
+  name: "cyber_purple"
+  primary_color: "#00f3ff"
+  secondary_color: "#ff00ff"
+  glitch_intensity: medium
+  animation_speed: fast
+
+cards:
+  - contributions_3d
+  - language_radar
+  - achievement_badges
+  - repo_network
+  - activity_stream
+
+output:
+  formats: ["gif", "mp4"]
+  resolution: "4k"
+  include_watermark: false
+
+refresh_rate: "daily"

@@ -1,0 +1,279 @@
+{
+  "author": "Ashraf Morningstar",
+  "github": "https://github.com/AshrafMorningstar",
+  "totalProjects": 20,
+  "projects": [
+    {
+      "name": "aurora-gradient-calculator",
+      "category": "Productivity",
+      "theme": "aurora",
+      "description": "Scientific calculator with mesmerizing aurora gradient effects",
+      "features": [
+        "Advanced calculations",
+        "Memory functions",
+        "History tracking",
+        "Keyboard support"
+      ]
+    },
+    {
+      "name": "cyberpunk-music-player",
+      "category": "Entertainment",
+      "theme": "cyberpunk",
+      "description": "Futuristic music player with cyberpunk aesthetics and neon effects",
+      "features": [
+        "Playlist management",
+        "Visualizer",
+        "Equalizer",
+        "Shuffle & repeat"
+      ]
+    },
+    {
+      "name": "liquid-morphing-portfolio",
+      "category": "Portfolio",
+      "theme": "liquid",
+      "description": "Portfolio showcase with liquid morphing animations",
+      "features": [
+        "Project gallery",
+        "Smooth transitions",
+        "Contact form",
+        "Responsive design"
+      ]
+    },
+    {
+      "name": "glassmorphic-weather-dashboard",
+      "category": "API Apps",
+      "theme": "glassmorphism",
+      "description": "Beautiful weather dashboard with glassmorphic design",
+      "features": [
+        "Real-time weather",
+        "Forecast",
+        "Multiple locations",
+        "Weather maps"
+      ]
+    },
+    {
+      "name": "neon-glow-typing-test",
+      "category": "Games",
+      "theme": "neon-glow",
+      "description": "Typing speed test with stunning neon glow effects",
+      "features": [
+        "WPM tracking",
+        "Accuracy metrics",
+        "Leaderboard",
+        "Custom texts"
+      ]
+    },
+    {
+      "name": "holographic-expense-tracker",
+      "category": "Finance",
+      "theme": "holographic",
+      "description": "Expense tracker with holographic UI and data visualization",
+      "features": [
+        "Budget management",
+        "Charts & graphs",
+        "Categories",
+        "Export data"
+      ]
+    },
+    {
+      "name": "cosmic-pomodoro-timer",
+      "category": "Productivity",
+      "theme": "cosmic",
+      "description": "Pomodoro timer with cosmic space theme and animations",
+      "features": [
+        "Customizable intervals",
+        "Break reminders",
+        "Statistics",
+        "Sound alerts"
+      ]
+    },
+    {
+      "name": "vaporwave-image-editor",
+      "category": "Creative",
+      "theme": "vaporwave",
+      "description": "Image editor with vaporwave aesthetic and filters",
+      "features": [
+        "Filters & effects",
+        "Crop & resize",
+        "Text overlay",
+        "Download edited"
+      ]
+    },
+    {
+      "name": "minimalist-luxury-blog",
+      "category": "Content",
+      "theme": "minimalist-luxury",
+      "description": "Elegant blog template with minimalist luxury design",
+      "features": [
+        "Article management",
+        "Categories",
+        "Search",
+        "Dark mode"
+      ]
+    },
+    {
+      "name": "particle-system-quiz-app",
+      "category": "Education",
+      "theme": "particle-system",
+      "description": "Interactive quiz application with particle effects",
+      "features": [
+        "Multiple categories",
+        "Score tracking",
+        "Timer",
+        "Results analysis"
+      ]
+    },
+    {
+      "name": "gradient-mesh-chat-interface",
+      "category": "Communication",
+      "theme": "gradient-mesh",
+      "description": "Modern chat interface with gradient mesh backgrounds",
+      "features": [
+        "Real-time messaging",
+        "Emoji support",
+        "File sharing",
+        "User status"
+      ]
+    },
+    {
+      "name": "claymorphic-habit-tracker",
+      "category": "Productivity",
+      "theme": "claymorphism",
+      "description": "Habit tracker with soft claymorphic design",
+      "features": [
+        "Daily tracking",
+        "Streak counter",
+        "Progress charts",
+        "Reminders"
+      ]
+    },
+    {
+      "name": "brutalist-code-editor",
+      "category": "Development",
+      "theme": "brutalism",
+      "description": "Minimalist code editor with brutalist design philosophy",
+      "features": [
+        "Syntax highlighting",
+        "Multiple languages",
+        "Auto-save",
+        "Export code"
+      ]
+    },
+    {
+      "name": "aurora-meditation-app",
+      "category": "Wellness",
+      "theme": "aurora",
+      "description": "Meditation and mindfulness app with aurora visuals",
+      "features": [
+        "Guided sessions",
+        "Breathing exercises",
+        "Ambient sounds",
+        "Progress tracking"
+      ]
+    },
+    {
+      "name": "holographic-crypto-tracker",
+      "category": "Finance",
+      "theme": "holographic",
+      "description": "Cryptocurrency price tracker with holographic effects",
+      "features": [
+        "Live prices",
+        "Portfolio tracking",
+        "Price alerts",
+        "Charts"
+      ]
+    },
+    {
+      "name": "liquid-recipe-finder",
+      "category": "Food",
+      "theme": "liquid",
+      "description": "Recipe finder with liquid morphing card animations",
+      "features": [
+        "Recipe search",
+        "Ingredients list",
+        "Cooking steps",
+        "Save favorites"
+      ]
+    },
+    {
+      "name": "neon-snake-game",
+      "category": "Games",
+      "theme": "neon-glow",
+      "description": "Classic snake game with neon glow aesthetics",
+      "features": [
+        "Score tracking",
+        "Difficulty levels",
+        "Leaderboard",
+        "Sound effects"
+      ]
+    },
+    {
+      "name": "glassmorphic-calendar",
+      "category": "Productivity",
+      "theme": "glassmorphism",
+      "description": "Beautiful calendar app with glassmorphic design",
+      "features": [
+        "Event management",
+        "Reminders",
+        "Multiple views",
+        "Color coding"
+      ]
+    },
+    {
+      "name": "cyberpunk-password-generator",
+      "category": "Security",
+      "theme": "cyberpunk",
+      "description": "Secure password generator with cyberpunk UI",
+      "features": [
+        "Custom length",
+        "Character options",
+        "Strength meter",
+        "Copy to clipboard"
+      ]
+    },
+    {
+      "name": "cosmic-memory-game",
+      "category": "Games",
+      "theme": "cosmic",
+      "description": "Memory card game with cosmic space theme",
+      "features": [
+        "Multiple difficulty",
+        "Timer",
+        "Move counter",
+        "High scores"
+      ]
+    }
+  ],
+  "lastUpdated": "2025-12-21T11:07:22.683Z",
+  "categories": [
+    "Productivity",
+    "Entertainment",
+    "Portfolio",
+    "API Apps",
+    "Games",
+    "Finance",
+    "Creative",
+    "Content",
+    "Education",
+    "Communication",
+    "Development",
+    "Wellness",
+    "Food",
+    "Security"
+  ],
+  "themes": [
+    "aurora",
+    "cyberpunk",
+    "liquid",
+    "glassmorphism",
+    "neon-glow",
+    "holographic",
+    "cosmic",
+    "vaporwave",
+    "minimalist-luxury",
+    "particle-system",
+    "gradient-mesh",
+    "claymorphism",
+    "brutalism"
+  ]
+}

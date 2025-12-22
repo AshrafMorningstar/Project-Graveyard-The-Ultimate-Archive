@@ -1,0 +1,16 @@
+{
+  "manifest_version": 3,
+  "name": "Ashraf's Custom Startpage",
+  "version": "1.0",
+  "description": "A custom new tab page with widgets. Created by Ashraf Morningstar.",
+  "author": "Ashraf Morningstar",
+  "chrome_url_overrides": {
+    "newtab": "newtab.html"
+  },
+  "permissions": ["storage", "bookmarks"],
+  "icons": {
+    "16": "icon16.png",
+    "48": "icon48.png",
+    "128": "icon128.png"
+  }
+}

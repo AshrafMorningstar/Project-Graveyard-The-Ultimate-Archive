@@ -1,0 +1,103 @@
+<!--
+ -----------------------------------------------------------------------------
+ @author      Ashraf Morningstar
+ @github      https://github.com/AshrafMorningstar
+ @repository  Project Graveyard - The Ultimate Archive
+ @quote       "Code that defines the future. Designed to inspire."
+ -----------------------------------------------------------------------------
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Persona Tiles - Build your digital persona using interactive, modular tiles">
+    <title>Persona Tiles - Modular Profile Builder</title>
+    <link rel="stylesheet" href="css/grid.css">
+    <link rel="stylesheet" href="css/tiles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="app-header">
+        <h1 class="app-title">Persona Tiles</h1>
+        <p class="app-subtitle">Click tiles to build your digital identity</p>
+    </header>
+
+    <main class="tiles-container" id="tilesContainer">
+        <!-- Skills -->
+        <div class="tile" data-type="skill" data-id="design">
+            <div class="tile-icon">🎨</div>
+            <h3 class="tile-label">Design</h3>
+        </div>
+        
+        <div class="tile" data-type="skill" data-id="code">
+            <div class="tile-icon">💻</div>
+            <h3 class="tile-label">Code</h3>
+        </div>
+        
+        <div class="tile" data-type="skill" data-id="writing">
+            <div class="tile-icon">✍️</div>
+            <h3 class="tile-label">Writing</h3>
+        </div>
+        
+        <!-- Interests -->
+        <div class="tile" data-type="interest" data-id="music">
+            <div class="tile-icon">🎵</div>
+            <h3 class="tile-label">Music</h3>
+        </div>
+        
+        <div class="tile" data-type="interest" data-id="travel">
+            <div class="tile-icon">✈️</div>
+            <h3 class="tile-label">Travel</h3>
+        </div>
+        
+        <div class="tile" data-type="interest" data-id="books">
+            <div class="tile-icon">📚</div>
+            <h3 class="tile-label">Books</h3>
+        </div>
+        
+        <!-- Values -->
+        <div class="tile" data-type="value" data-id="creativity">
+            <div class="tile-icon">💡</div>
+            <h3 class="tile-label">Creativity</h3>
+        </div>
+        
+        <div class="tile" data-type="value" data-id="growth">
+            <div class="tile-icon">🌱</div>
+            <h3 class="tile-label">Growth</h3>
+        </div>
+        
+        <div class="tile" data-type="value" data-id="impact">
+            <div class="tile-icon">⚡</div>
+            <h3 class="tile-label">Impact</h3>
+        </div>
+        
+        <!-- Goals -->
+        <div class="tile" data-type="goal" data-id="mastery">
+            <div class="tile-icon">🎯</div>
+            <h3 class="tile-label">Mastery</h3>
+        </div>
+        
+        <div class="tile" data-type="goal" data-id="freedom">
+            <div class="tile-icon">🦅</div>
+            <h3 class="tile-label">Freedom</h3>
+        </div>
+        
+        <div class="tile" data-type="goal" data-id="connection">
+            <div class="tile-icon">🤝</div>
+            <h3 class="tile-label">Connection</h3>
+        </div>
+    </main>
+
+    <footer class="app-footer">
+        <div class="selection-count" id="selectionCount">
+            <span class="count-number">0</span> tiles selected
+        </div>
+    </footer>
+
+    <script src="js/persona-engine.js"></script>
+</body>
+</html>

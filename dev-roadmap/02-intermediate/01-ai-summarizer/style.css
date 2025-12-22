@@ -1,0 +1,139 @@
+/*
+ * -----------------------------------------------------------------------------
+ * @author      Ashraf Morningstar
+ * @github      https://github.com/AshrafMorningstar
+ * @repository  Project Graveyard - The Ultimate Archive
+ * @quote       "Code that defines the future. Designed to inspire."
+ * -----------------------------------------------------------------------------
+*/
+
+/**
+ * Author: Ashraf Morningstar
+ * GitHub: https://github.com/AshrafMorningstar
+ * Project: AI-Powered Study Note Summarizer
+ */
+
+:root {
+    --bg: #0f172a;
+    --card: rgba(30, 41, 59, 0.7);
+    --primary: #818cf8;
+    --secondary: #c084fc;
+    --text: #ffffff;
+}
+
+body {
+    margin: 0;
+    font-family: 'Space Grotesk', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    background-image: radial-gradient(circle at 10% 20%, rgba(129, 140, 248, 0.2) 0%, transparent 20%),
+                      radial-gradient(circle at 90% 80%, rgba(192, 132, 252, 0.2) 0%, transparent 20%);
+    min-height: 100vh;
+}
+
+.app-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 3rem 1rem;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 3rem;
+    background: linear-gradient(to right, var(--primary), var(--secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 0.5rem;
+}
+
+.subtitle {
+    color: #94a3b8;
+    margin-bottom: 3rem;
+}
+
+.summarizer-card {
+    background: var(--card);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 24px;
+    padding: 2rem;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+}
+
+.input-area textarea {
+    width: 100%;
+    min-height: 200px;
+    background: rgba(0,0,0,0.3);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 1rem;
+    color: white;
+    font-family: inherit;
+    font-size: 1rem;
+    resize: vertical;
+    transition: border-color 0.3s;
+}
+
+.input-area textarea:focus {
+    outline: none;
+    border-color: var(--primary);
+}
+
+.controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 1.5rem 0;
+    color: #94a3b8;
+    font-size: 0.9rem;
+}
+
+.btn-summarize {
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.btn-summarize:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(129, 140, 248, 0.4);
+}
+
+.btn-summarize:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.result-area {
+    margin-top: 2rem;
+    text-align: left;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 2rem;
+    animation: slideUp 0.5s ease;
+}
+
+@keyframes slideUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.summary-content {
+    line-height: 1.8;
+    font-size: 1.1rem;
+    color: #e2e8f0;
+}
+
+footer {
+    margin-top: 3rem;
+    color: #64748b;
+    font-size: 0.9rem;
+}
+
+footer a { color: var(--primary); text-decoration: none; }

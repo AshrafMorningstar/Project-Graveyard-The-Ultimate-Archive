@@ -1,0 +1,410 @@
+<!--
+ -----------------------------------------------------------------------------
+ @author      Ashraf Morningstar
+ @github      https://github.com/AshrafMorningstar
+ @repository  Project Graveyard - The Ultimate Archive
+ @quote       "Code that defines the future. Designed to inspire."
+ -----------------------------------------------------------------------------
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Ashraf Morningstar">
+    <meta name="description" content="Premium collection of 20+ web applications with stunning UI designs - Created by Ashraf Morningstar">
+    <meta name="keywords" content="web development, premium ui, web apps, javascript, html, css, ashraf morningstar">
+    <meta property="og:title" content="Premium Web Masterpieces - 20+ Stunning Web Apps">
+    <meta property="og:description" content="A curated collection of premium web applications with beautiful designs">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <title>Premium Web Masterpieces - Ashraf Morningstar</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #0f0c29;
+            color: #fff;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        .animated-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            overflow: hidden;
+        }
+        
+        .gradient-orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(100px);
+            opacity: 0.5;
+            animation: float 25s ease-in-out infinite;
+        }
+        
+        .orb-1 {
+            width: 600px;
+            height: 600px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            top: -15%;
+            left: -15%;
+        }
+        
+        .orb-2 {
+            width: 500px;
+            height: 500px;
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            bottom: -15%;
+            right: -15%;
+            animation-delay: -10s;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0) rotate(0deg); }
+            33% { transform: translate(50px, -50px) rotate(120deg); }
+            66% { transform: translate(-30px, 30px) rotate(240deg); }
+        }
+        
+        .container {
+            position: relative;
+            z-index: 1;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .hero {
+            text-align: center;
+            padding: 4rem 0;
+            animation: fadeInDown 0.8s ease-out;
+        }
+        
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .hero-icon {
+            font-size: 5rem;
+            margin-bottom: 1rem;
+            animation: pulse 2s ease-in-out infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+        
+        h1 {
+            font-family: 'Poppins', sans-serif;
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            font-weight: 800;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1rem;
+        }
+        
+        .hero-subtitle {
+            font-size: clamp(1.1rem, 2vw, 1.5rem);
+            color: #ccc;
+            margin-bottom: 2rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .hero-stats {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+        
+        .stat {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 1rem 2rem;
+            border-radius: 1rem;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .stat-value {
+            font-size: 2.5rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .stat-label {
+            font-size: 0.9rem;
+            color: #999;
+        }
+        
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        
+        .project-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 1.5rem;
+            padding: 2rem;
+            text-decoration: none;
+            color: #fff;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            border-color: rgba(255, 255, 255, 0.3);
+        }
+        
+        .project-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .project-title {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+        
+        .project-desc {
+            color: #ccc;
+            margin-bottom: 1rem;
+            flex: 1;
+        }
+        
+        .project-cta {
+            font-weight: 600;
+            color: #667eea;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 4rem 0 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            margin-top: 4rem;
+        }
+        
+        footer a {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 700;
+        }
+        
+        footer a:hover {
+            text-decoration: underline;
+        }
+        
+        @media (max-width: 768px) {
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="animated-bg">
+        <div class="gradient-orb orb-1"></div>
+        <div class="gradient-orb orb-2"></div>
+    </div>
+    
+    <div class="container">
+        <header class="hero">
+            <div class="hero-icon">🚀</div>
+            <h1>Premium Web Masterpieces</h1>
+            <p class="hero-subtitle">
+                A curated collection of 20+ premium web applications with stunning UI designs,
+                modern features, and professional code quality.
+            </p>
+            <div class="hero-stats">
+                <div class="stat">
+                    <div class="stat-value">20+</div>
+                    <div class="stat-label">Projects</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-value">100%</div>
+                    <div class="stat-label">Free & Open Source</div>
+                </div>
+            </div>
+        </header>
+        
+        <main>
+            <div class="projects-grid">
+                <a href="Quantum-Age-Calculator/index.html" class="project-card">
+                    <div class="project-icon">⏰</div>
+                    <h3 class="project-title">Quantum Age Calculator</h3>
+                    <p class="project-desc">Calculate your age with quantum precision and cosmic insights</p>
+                    <div class="project-cta">View Project →</div>
+                </a>
+                
+                <a href="Neural-BMI-Analyzer/index.html" class="project-card">
+                    <div class="project-icon">💪</div>
+                    <h3 class="project-title">Neural BMI Analyzer</h3>
+                    <p class="project-desc">AI-powered BMI calculator with health insights</p>
+                    <div class="project-cta">View Project →</div>
+                </a>
+                
+                <a href="Infinity-Temperature-Converter/index.html" class="project-card">
+                    <div class="project-icon">🌡️</div>
+                    <h3 class="project-title">Infinity Temperature Converter</h3>
+                    <p class="project-desc">Convert temperatures across all scales with precision</p>
+                    <div class="project-cta">View Project →</div>
+                </a>
+                
+                <a href="Premium-Tip-Calculator/index.html" class="project-card">
+                    <div class="project-icon">💰</div>
+                    <h3 class="project-title">Premium Tip Calculator</h3>
+                    <p class="project-desc">Calculate tips and split bills like a pro</p>
+                    <div class="project-cta">View Project →</div>
+                </a>
+                
+                <a href="Cosmic-Calculator-Pro/index.html" class="project-card">
+                    <div class="project-icon">🔢</div>
+                    <h3 class="project-title">Cosmic Calculator Pro</h3>
+                    <p class="project-desc">Professional calculator with advanced features</p>
+                    <div class="project-cta">View Project →</div>
+                </a>
+                
+                <a href="Quantum-Tic-Tac-Toe/index.html" class="project-card">
+                    <div class="project-icon">🎮</div>
+                    <h3 class="project-title">Quantum Tic Tac Toe</h3>
+                    <p class="project-desc">Classic game with quantum-inspired design</p>
+                    <div class="project-cta">View Project →</div>
+                </a>
+                
+                <a href="Elite-Todo-Manager/index.html" class="project-card">
+                    <div class="project-icon">✅</div>
+                    <h3 class="project-title">Elite Todo Manager</h3>
+                    <p class="project-desc">Manage tasks with style and efficiency</p>
+                    <div class="project-cta">View Project →</div>
+                </a>
+                
+                <a href="Stellar-Weight-Converter/index.html" class="project-card">
+                    <div class="project-icon">⚖️</div>
+                    <h3 class="project-title">Stellar Weight Converter</h3>
+                    <p class="project-desc">Convert weights across universal units</p>
+                    <div class="project-cta">View Project →</div>
+                </a>
+                
+                <a href="Nexus-Loan-Calculator/index.html" class="project-card">
+                    <div class="project-icon">🏦</div>
+                    <h3 class="project-title">Nexus Loan Calculator</h3>
+                    <p class="project-desc">Calculate loans with professional accuracy</p>
+                    <div class="project-cta">View Project →</div>
+                </a>
+                
+                <a href="Crypto-Compound-Interest/index.html" class="project-card">
+                    <div class="project-icon">📈</div>
+                    <h3 class="project-title">Crypto Compound Interest</h3>
+                    <p class="project-desc">Calculate investment returns with precision</p>
+                    <div class="project-cta">View Project →</div>
+                </a>
+                
+                <a href="Aurora-Color-Picker/index.html" class="project-card">
+                    <div class="project-icon">🎨</div>
+                    <h3 class="project-title">Aurora Color Picker</h3>
+                    <p class="project-desc">Pick and manage colors like a designer</p>
+                    <div class="project-cta">View Project →</div>
+                </a>
+                
+                <a href="Velocity-Stopwatch/index.html" class="project-card">
+                    <div class="project-icon">⏱️</div>
+                    <h3 class="project-title">Velocity Stopwatch</h3>
+                    <p class="project-desc">Precision timing with lap tracking</p>
+                    <div class="project-cta">View Project →</div>
+                </a>
+                
+                <a href="Zenith-Countdown-Timer/index.html" class="project-card">
+                    <div class="project-icon">⏳</div>
+                    <h3 class="project-title">Zenith Countdown Timer</h3>
+                    <p class="project-desc">Beautiful countdown for any occasion</p>
+                    <div class="project-cta">View Project →</div>
+                </a>
+                
+                <a href="Prism-Random-Quote/index.html" class="project-card">
+                    <div class="project-icon">💭</div>
+                    <h3 class="project-title">Prism Random Quote</h3>
+                    <p class="project-desc">Get inspired with beautiful quotes</p>
+                    <div class="project-cta">View Project →</div>
+                </a>
+                
+                <a href="Nexus-Password-Generator/index.html" class="project-card">
+                    <div class="project-icon">🔐</div>
+                    <h3 class="project-title">Nexus Password Generator</h3>
+                    <p class="project-desc">Generate ultra-secure passwords</p>
+                    <div class="project-cta">View Project →</div>
+                </a>
+                
+                <a href="Quantum-QR-Generator/index.html" class="project-card">
+                    <div class="project-icon">📱</div>
+                    <h3 class="project-title">Quantum QR Generator</h3>
+                    <p class="project-desc">Create stunning QR codes instantly</p>
+                    <div class="project-cta">View Project →</div>
+                </a>
+                
+                <a href="Stellar-Markdown-Editor/index.html" class="project-card">
+                    <div class="project-icon">📝</div>
+                    <h3 class="project-title">Stellar Markdown Editor</h3>
+                    <p class="project-desc">Write markdown with live preview</p>
+                    <div class="project-cta">View Project →</div>
+                </a>
+                
+                <a href="Aurora-Image-Compressor/index.html" class="project-card">
+                    <div class="project-icon">🖼️</div>
+                    <h3 class="project-title">Aurora Image Compressor</h3>
+                    <p class="project-desc">Compress images without quality loss</p>
+                    <div class="project-cta">View Project →</div>
+                </a>
+                
+                <a href="Velocity-Typing-Test/index.html" class="project-card">
+                    <div class="project-icon">⌨️</div>
+                    <h3 class="project-title">Velocity Typing Test</h3>
+                    <p class="project-desc">Test and improve your typing speed</p>
+                    <div class="project-cta">View Project →</div>
+                </a>
+                
+                <a href="Prism-Pomodoro-Timer/index.html" class="project-card">
+                    <div class="project-icon">🍅</div>
+                    <h3 class="project-title">Prism Pomodoro Timer</h3>
+                    <p class="project-desc">Boost productivity with Pomodoro technique</p>
+                    <div class="project-cta">View Project →</div>
+                </a>
+            </div>
+        </main>
+        
+        <footer>
+            <p>Crafted with ❤️ by <a href="https://github.com/AshrafMorningstar" target="_blank">Ashraf Morningstar</a></p>
+            <p style="margin-top: 1rem;">
+                <a href="https://github.com/AshrafMorningstar/Premium-Web-Masterpieces" target="_blank">⭐ Star on GitHub</a>
+            </p>
+            <p style="color: #999; font-size: 0.9rem; margin-top: 2rem;">
+                © 2025 Ashraf Morningstar. All rights reserved.
+            </p>
+        </footer>
+    </div>
+</body>
+</html>

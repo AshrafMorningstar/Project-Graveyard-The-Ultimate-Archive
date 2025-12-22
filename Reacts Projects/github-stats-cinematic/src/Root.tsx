@@ -1,0 +1,49 @@
+/*
+ * -----------------------------------------------------------------------------
+ * @author      Ashraf Morningstar
+ * @github      https://github.com/AshrafMorningstar
+ * @repository  Project Graveyard - The Ultimate Archive
+ * @quote       "Code that defines the future. Designed to inspire."
+ * -----------------------------------------------------------------------------
+*/
+
+/* Created by AshrafMorningstar - https://github.com/AshrafMorningstar */
+import { Composition } from "remotion";
+import { StatsScene } from "./Scenes/StatsScene";
+import { CinematicGif } from "./CinematicGif";
+import "./style.css";
+
+export const RemotionRoot: React.FC = () => {
+  return (
+    <>
+      <Composition
+        id="StatsComposition"
+        component={StatsScene}
+        durationInFrames={300}
+        fps={30}
+        width={1200}
+        height={630}
+      />
+      <Composition
+        id="CinematicGif"
+        component={CinematicGif}
+        durationInFrames={300}
+        fps={30}
+        width={1280}
+        height={640}
+        defaultProps={{
+          stats: {
+            totalContributions: 8540,
+            totalStars: 1240,
+            repos: 45,
+            commits: 3420,
+            prs: 560,
+            issues: 120,
+            streak: 450,
+            topLanguage: "TypeScript",
+          },
+        }}
+      />
+    </>
+  );
+};

@@ -1,0 +1,475 @@
+/*
+ * -----------------------------------------------------------------------------
+ * @author      Ashraf Morningstar
+ * @github      https://github.com/AshrafMorningstar
+ * @repository  Project Graveyard - The Ultimate Archive
+ * @quote       "Code that defines the future. Designed to inspire."
+ * -----------------------------------------------------------------------------
+*/
+
+/**
+ * Neumorphic Task Manager - Premium Soft UI Design
+ * Author: Ashraf Morningstar
+ * GitHub: https://github.com/AshrafMorningstar
+ */
+
+:root {
+    --bg-color: #e0e5ec;
+    --text-primary: #2c3e50;
+    --text-secondary: #7f8c8d;
+    --accent-color: #667eea;
+    --accent-hover: #764ba2;
+    --shadow-light: #ffffff;
+    --shadow-dark: #a3b1c6;
+    --success-color: #2ecc71;
+    --danger-color: #e74c3c;
+    --font-main: 'Poppins', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-main);
+    background: var(--bg-color);
+    color: var(--text-primary);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+}
+
+.app-container {
+    width: 100%;
+    max-width: 800px;
+    background: var(--bg-color);
+    border-radius: 30px;
+    padding: 3rem;
+    box-shadow: 
+        20px 20px 60px var(--shadow-dark),
+        -20px -20px 60px var(--shadow-light);
+}
+
+/* Header */
+.app-header {
+    margin-bottom: 3rem;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.app-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--accent-color);
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.app-title .icon {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--bg-color);
+    border-radius: 15px;
+    box-shadow: 
+        8px 8px 16px var(--shadow-dark),
+        -8px -8px 16px var(--shadow-light);
+    font-size: 1.5rem;
+}
+
+.author-tag {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    background: var(--bg-color);
+    border-radius: 20px;
+    box-shadow: 
+        inset 4px 4px 8px var(--shadow-dark),
+        inset -4px -4px 8px var(--shadow-light);
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+}
+
+.author-tag a {
+    color: var(--accent-color);
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.author-tag a:hover {
+    color: var(--accent-hover);
+}
+
+.header-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+
+.stat-item {
+    text-align: center;
+    padding: 1.5rem;
+    background: var(--bg-color);
+    border-radius: 20px;
+    box-shadow: 
+        10px 10px 20px var(--shadow-dark),
+        -10px -10px 20px var(--shadow-light);
+    transition: all 0.3s ease;
+}
+
+.stat-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 
+        15px 15px 30px var(--shadow-dark),
+        -15px -15px 30px var(--shadow-light);
+}
+
+.stat-value {
+    display: block;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--accent-color);
+    margin-bottom: 0.5rem;
+}
+
+.stat-label {
+    display: block;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Task Input Section */
+.task-input-section {
+    margin-bottom: 2rem;
+}
+
+.input-wrapper {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.task-input {
+    flex: 1;
+    padding: 1.25rem 1.5rem;
+    background: var(--bg-color);
+    border: none;
+    border-radius: 20px;
+    font-family: var(--font-main);
+    font-size: 1rem;
+    color: var(--text-primary);
+    box-shadow: 
+        inset 8px 8px 16px var(--shadow-dark),
+        inset -8px -8px 16px var(--shadow-light);
+    transition: all 0.3s ease;
+}
+
+.task-input:focus {
+    outline: none;
+    box-shadow: 
+        inset 10px 10px 20px var(--shadow-dark),
+        inset -10px -10px 20px var(--shadow-light);
+}
+
+.task-input::placeholder {
+    color: var(--text-secondary);
+}
+
+.add-btn {
+    padding: 1.25rem 2rem;
+    background: linear-gradient(135deg, var(--accent-color), var(--accent-hover));
+    border: none;
+    border-radius: 20px;
+    color: white;
+    font-family: var(--font-main);
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    box-shadow: 
+        8px 8px 16px var(--shadow-dark),
+        -8px -8px 16px var(--shadow-light);
+    transition: all 0.3s ease;
+}
+
+.add-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 
+        12px 12px 24px var(--shadow-dark),
+        -12px -12px 24px var(--shadow-light);
+}
+
+.add-btn:active {
+    transform: translateY(0);
+    box-shadow: 
+        inset 4px 4px 8px var(--shadow-dark),
+        inset -4px -4px 8px var(--shadow-light);
+}
+
+.btn-icon {
+    font-size: 1.5rem;
+    line-height: 1;
+}
+
+/* Filter Buttons */
+.filter-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.filter-btn {
+    padding: 0.75rem 1.5rem;
+    background: var(--bg-color);
+    border: none;
+    border-radius: 15px;
+    font-family: var(--font-main);
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+    cursor: pointer;
+    box-shadow: 
+        6px 6px 12px var(--shadow-dark),
+        -6px -6px 12px var(--shadow-light);
+    transition: all 0.3s ease;
+}
+
+.filter-btn:hover {
+    color: var(--accent-color);
+}
+
+.filter-btn.active {
+    color: white;
+    background: linear-gradient(135deg, var(--accent-color), var(--accent-hover));
+    box-shadow: 
+        inset 4px 4px 8px rgba(0, 0, 0, 0.2),
+        inset -4px -4px 8px rgba(255, 255, 255, 0.1);
+}
+
+/* Tasks Container */
+.tasks-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.task-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.25rem;
+    background: var(--bg-color);
+    border-radius: 20px;
+    box-shadow: 
+        8px 8px 16px var(--shadow-dark),
+        -8px -8px 16px var(--shadow-light);
+    transition: all 0.3s ease;
+    animation: slideIn 0.3s ease;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.task-item:hover {
+    transform: translateX(5px);
+}
+
+.task-checkbox {
+    width: 24px;
+    height: 24px;
+    border-radius: 8px;
+    background: var(--bg-color);
+    box-shadow: 
+        inset 4px 4px 8px var(--shadow-dark),
+        inset -4px -4px 8px var(--shadow-light);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.task-checkbox.checked {
+    background: linear-gradient(135deg, var(--success-color), #27ae60);
+    box-shadow: 
+        4px 4px 8px var(--shadow-dark),
+        -4px -4px 8px var(--shadow-light);
+}
+
+.task-checkbox.checked::after {
+    content: '✓';
+    color: white;
+    font-weight: bold;
+}
+
+.task-text {
+    flex: 1;
+    font-size: 1rem;
+    color: var(--text-primary);
+    transition: all 0.3s ease;
+}
+
+.task-text.completed {
+    text-decoration: line-through;
+    color: var(--text-secondary);
+    opacity: 0.6;
+}
+
+.task-actions {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.task-btn {
+    width: 36px;
+    height: 36px;
+    border: none;
+    border-radius: 10px;
+    background: var(--bg-color);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 
+        4px 4px 8px var(--shadow-dark),
+        -4px -4px 8px var(--shadow-light);
+    transition: all 0.3s ease;
+}
+
+.task-btn:hover {
+    transform: scale(1.1);
+}
+
+.task-btn:active {
+    box-shadow: 
+        inset 2px 2px 4px var(--shadow-dark),
+        inset -2px -2px 4px var(--shadow-light);
+}
+
+.delete-btn {
+    color: var(--danger-color);
+}
+
+/* Empty State */
+.empty-state {
+    text-align: center;
+    padding: 4rem 2rem;
+    display: none;
+}
+
+.empty-state.show {
+    display: block;
+    animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.empty-icon {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    opacity: 0.5;
+}
+
+.empty-state h3 {
+    font-size: 1.5rem;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+}
+
+.empty-state p {
+    color: var(--text-secondary);
+}
+
+/* Footer */
+.app-footer {
+    text-align: center;
+    padding-top: 2rem;
+    margin-top: 2rem;
+    border-top: 2px solid rgba(163, 177, 198, 0.2);
+}
+
+.app-footer a {
+    color: var(--accent-color);
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.app-footer a:hover {
+    color: var(--accent-hover);
+}
+
+.footer-tagline {
+    margin-top: 0.5rem;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .app-container {
+        padding: 2rem 1.5rem;
+    }
+
+    .header-content {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+    }
+
+    .header-stats {
+        grid-template-columns: 1fr;
+    }
+
+    .input-wrapper {
+        flex-direction: column;
+    }
+
+    .filter-buttons {
+        flex-wrap: wrap;
+    }
+
+    .app-title {
+        font-size: 2rem;
+    }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+    }
+}

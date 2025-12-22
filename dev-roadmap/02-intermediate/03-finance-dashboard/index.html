@@ -1,0 +1,88 @@
+<!--
+ -----------------------------------------------------------------------------
+ @author      Ashraf Morningstar
+ @github      https://github.com/AshrafMorningstar
+ @repository  Project Graveyard - The Ultimate Archive
+ @quote       "Code that defines the future. Designed to inspire."
+ -----------------------------------------------------------------------------
+-->
+
+<!--
+  Author: Ashraf Morningstar
+  GitHub: https://github.com/AshrafMorningstar
+  Project: Personal Finance Dashboard
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FinanceFlow | Ashraf Morningstar</title>
+    <!-- Chart.js for graphs -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="dashboard-layout">
+        <!-- Sidebar -->
+        <nav class="sidebar">
+            <div class="logo">FinanceFlow</div>
+            <ul>
+                <li class="active">Overview</li>
+                <li>Transactions</li>
+                <li>Budget</li>
+                <li>Investments</li>
+            </ul>
+            <div class="user-profile">
+                <div class="avatar">AM</div>
+                <span>Ashraf Morningstar</span>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main>
+            <header>
+                <h1>Financial Overview</h1>
+                <button class="add-btn">+ Add Transaction</button>
+            </header>
+
+            <!-- Cards -->
+            <section class="cards-row">
+                <div class="card balance-card">
+                    <h3>Total Balance</h3>
+                    <div class="amount" id="total-balance">$12,450.00</div>
+                    <span class="trend positive">↗ +2.5%</span>
+                </div>
+                <div class="card">
+                    <h3>Income</h3>
+                    <div class="amount positive">+$4,200.00</div>
+                </div>
+                <div class="card">
+                    <h3>Expenses</h3>
+                    <div class="amount negative">-$1,840.00</div>
+                </div>
+            </section>
+
+            <!-- Charts & Lists -->
+            <section class="grid-section">
+                <!-- Large Chart -->
+                <div class="card chart-panel">
+                    <h3>Cash Flow</h3>
+                    <canvas id="financeChart"></canvas>
+                </div>
+                
+                <!-- Recent Txs -->
+                <div class="card transactions-panel">
+                    <h3>Recent Transactions</h3>
+                    <ul class="tx-list" id="tx-list">
+                        <!-- JS injected -->
+                    </ul>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="dashboard.js"></script>
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!--
+ -----------------------------------------------------------------------------
+ @author      Ashraf Morningstar
+ @github      https://github.com/AshrafMorningstar
+ @repository  Project Graveyard - The Ultimate Archive
+ @quote       "Code that defines the future. Designed to inspire."
+ -----------------------------------------------------------------------------
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- SEO & Viral Metadata -->
+    <meta name="description" content="Premium EXPERT VERIFIABLE CONTENT PLATFORM web application. Built with modern web technologies. Part of the Ultimate Web Dev Roadmap by Ashraf Morningstar.">
+    <meta name="keywords" content="web development, EXPERT VERIFIABLE CONTENT PLATFORM, javascript, css, html, ashraf morningstar, open source, premium ui">
+    <meta name="author" content="Ashraf Morningstar">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://ashrafmorningstar.github.io/WebDevRoadmap/expert-verifiable-content-platform/">
+    <meta property="og:title" content="EXPERT VERIFIABLE CONTENT PLATFORM | Premium Web App">
+    <meta property="og:description" content="Premium EXPERT VERIFIABLE CONTENT PLATFORM web application. Built with modern web technologies. Part of the Ultimate Web Dev Roadmap by Ashraf Morningstar.">
+    <meta property="og:image" content="https://via.placeholder.com/1200x630.png?text=EXPERT+VERIFIABLE+CONTENT+PLATFORM">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://ashrafmorningstar.github.io/WebDevRoadmap/expert-verifiable-content-platform/">
+    <meta property="twitter:title" content="EXPERT VERIFIABLE CONTENT PLATFORM | Premium Web App">
+    <meta property="twitter:description" content="Premium EXPERT VERIFIABLE CONTENT PLATFORM web application. Built with modern web technologies. Part of the Ultimate Web Dev Roadmap by Ashraf Morningstar.">
+    <meta property="twitter:image" content="https://via.placeholder.com/1200x630.png?text=EXPERT+VERIFIABLE+CONTENT+PLATFORM">
+    
+    <link rel="canonical" href="https://ashrafmorningstar.github.io/WebDevRoadmap/expert-verifiable-content-platform/">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Verifiable Content Platform</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Author: Ashraf Morningstar | https://github.com/AshrafMorningstar -->
+  
+  <div class="container">
+    <header class="header">
+      <h1>🔐 Verifiable Pages</h1>
+      <p>Publish tamper-proof content with cryptographic verification</p>
+    </header>
+
+    <div class="two-column">
+      <section class="publish-section">
+        <h2>Publish Content</h2>
+        <div class="form-group">
+          <label>Content Title</label>
+          <input type="text" id="contentTitle" placeholder="My Verifiable Document">
+        </div>
+        <div class="form-group">
+          <label>Content Body</label>
+          <textarea id="contentBody" rows="10" placeholder="Enter your content here..."></textarea>
+        </div>
+        <button id="publishBtn" class="btn-primary">🚀 Publish & Generate Hash</button>
+        
+        <div id="publishResult" class="result-box" style="display:none;">
+          <h3>✅ Published Successfully</h3>
+          <div class="hash-display">
+            <label>Content Hash (SHA-256):</label>
+            <code id="contentHash"></code>
+          </div>
+          <p class="info">This hash proves the authenticity of your content. Anyone can verify it hasn't been tampered with.</p>
+        </div>
+      </section>
+
+      <section class="verify-section">
+        <h2>Verify Content</h2>
+        <div class="form-group">
+          <label>Paste Content to Verify</label>
+          <textarea id="verifyContent" rows="10" placeholder="Paste content here..."></textarea>
+        </div>
+        <div class="form-group">
+          <label>Expected Hash</label>
+          <input type="text" id="expectedHash" placeholder="Enter the hash to verify against">
+        </div>
+        <button id="verifyBtn" class="btn-secondary">🔍 Verify Integrity</button>
+        
+        <div id="verifyResult" class="result-box" style="display:none;">
+          <h3 id="verifyStatus"></h3>
+          <p id="verifyMessage"></p>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
+

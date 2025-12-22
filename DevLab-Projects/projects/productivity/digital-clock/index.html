@@ -1,0 +1,53 @@
+<!--
+ -----------------------------------------------------------------------------
+ @author      Ashraf Morningstar
+ @github      https://github.com/AshrafMorningstar
+ @repository  Project Graveyard - The Ultimate Archive
+ @quote       "Code that defines the future. Designed to inspire."
+ -----------------------------------------------------------------------------
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NeoClock | Web Dev Mega Projects</title>
+    <meta name="description" content="A futuristic Digital Clock featuring Neumorphism design, 12/24h toggle, and date display.">
+    <meta name="author" content="Ashraf Morningstar">
+    
+    <link rel="stylesheet" href="../../../assets/css/global.css">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container flex-center" style="min-height: 100vh;">
+        <main class="clock-frame">
+            <div class="clock-display">
+                <div class="time-segment" id="hours">12</div>
+                <div class="colon">:</div>
+                <div class="time-segment" id="minutes">00</div>
+                <div class="colon">:</div>
+                <div class="time-segment" id="seconds">00</div>
+                <div class="ampm" id="ampm">PM</div>
+            </div>
+
+            <div class="date-display" id="date">
+                Monday, August 12
+            </div>
+
+            <div class="controls">
+                <button class="neu-btn active" id="mode-12" title="12 Hour Mode">12H</button>
+                <button class="neu-btn" id="mode-24" title="24 Hour Mode">24H</button>
+            </div>
+
+            <footer class="footer-attribution">
+                <p>Created & Maintained by <a href="https://github.com/AshrafMorningstar">Ashraf Morningstar</a></p>
+            </footer>
+        </main>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

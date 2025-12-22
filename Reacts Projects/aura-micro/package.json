@@ -1,0 +1,20 @@
+{
+  "name": "aura-micro",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "remotion build src/index.tsx",
+    "render": "node scripts/render.js",
+    "start": "remotion preview src/index.tsx"
+  },
+  "dependencies": {
+    "remotion": "latest",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.0.26",
+    "typescript": "^5.0.0",
+    "ts-node": "^10.9.1"
+  }
+}

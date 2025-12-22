@@ -1,0 +1,37 @@
+/*
+ * -----------------------------------------------------------------------------
+ * @author      Ashraf Morningstar
+ * @github      https://github.com/AshrafMorningstar
+ * @repository  Project Graveyard - The Ultimate Archive
+ * @quote       "Code that defines the future. Designed to inspire."
+ * -----------------------------------------------------------------------------
+*/
+
+import React from 'react';
+import { useSystemStore } from '../store';
+import Window from './Window';
+
+const WindowManager: React.FC<{ 
+    components: Record<string, React.FC<any>> 
+}> = ({ components }) => {
+    const { windows } = useSystemStore();
+
+    return (
+        <div className="absolute inset-0 z-10 pointer-events-none">
+            {windows.map(win => {
+                const Component = components[win.appId];
+                if (!Component) return null;
+                
+                return (
+                    <div key={win.id} className="pointer-events-auto">
+                        <Window win={win}>
+                            <Component {...(win.data || {})} />
+                        </Window>
+                    </div>
+                );
+            })}
+        </div>
+    );
+};
+
+export default WindowManager;

@@ -1,0 +1,8 @@
+{
+  "name": "expert-privacy-first-analytics",
+  "private": true,
+  "scripts": {
+    "dev": "echo dev",
+    "build": "echo build"
+  }
+}

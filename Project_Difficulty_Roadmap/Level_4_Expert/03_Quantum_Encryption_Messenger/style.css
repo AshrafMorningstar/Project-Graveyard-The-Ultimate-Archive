@@ -1,0 +1,182 @@
+/*
+ * -----------------------------------------------------------------------------
+ * @author      Ashraf Morningstar
+ * @github      https://github.com/AshrafMorningstar
+ * @repository  Project Graveyard - The Ultimate Archive
+ * @quote       "Code that defines the future. Designed to inspire."
+ * -----------------------------------------------------------------------------
+*/
+
+/* 
+   Project: Quantum Encryption Messenger
+   Level: Expert
+   Author: Ashraf Morningstar
+   GitHub: https://github.com/AshrafMorningstar
+*/
+
+:root {
+    --bg-dark: #070710;
+    --msg-bg: #0f0f20;
+    --accent: #aa00ff;
+    --text-glow: 0 0 10px rgba(170, 0, 255, 0.5);
+    --font-head: 'Syncopate', sans-serif;
+    --font-mono: 'Roboto Mono', monospace;
+}
+
+body {
+    background: var(--bg-dark);
+    color: white;
+    font-family: var(--font-mono);
+    margin: 0;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.quantum-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    border-left: 1px solid #222;
+    border-right: 1px solid #222;
+    background: radial-gradient(circle at center, #101025 0%, #000 100%);
+}
+
+header {
+    padding: 1rem 2rem;
+    border-bottom: 1px solid rgba(170, 0, 255, 0.2);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+h1 {
+    font-family: var(--font-head);
+    font-size: 1.5rem;
+    margin: 0;
+    color: var(--accent);
+    text-shadow: var(--text-glow);
+}
+
+.entanglement-status {
+    font-size: 0.8rem;
+    color: #666;
+}
+
+#e-status {
+    color: #0f0;
+    font-weight: bold;
+}
+
+main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    overflow: hidden;
+}
+
+#messages-area {
+    flex: 1;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding-bottom: 1rem;
+}
+
+/* Superposition Message Styles */
+.message {
+    padding: 1rem;
+    border-radius: 4px;
+    max-width: 80%;
+    position: relative;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.message.sent {
+    align-self: flex-end;
+    background: rgba(170, 0, 255, 0.1);
+    border: 1px solid rgba(170, 0, 255, 0.3);
+}
+
+.message.received {
+    align-self: flex-start;
+    background: rgba(0, 255, 255, 0.1);
+    border: 1px solid rgba(0, 255, 255, 0.3);
+}
+
+/* The Quantum State (Blurred/Flux) */
+.message.superposition {
+    color: transparent;
+    text-shadow: 0 0 10px rgba(255,255,255,0.5);
+    user-select: none;
+    overflow: hidden;
+}
+
+.message.superposition::before {
+    content: "Scanning...";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: rgba(255,255,255,0.3);
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+}
+
+/* Animation for flux */
+.message.superposition:hover {
+    box-shadow: 0 0 20px var(--accent);
+}
+
+.message.collapsed {
+    color: white;
+    text-shadow: none;
+    animation: collapse 0.5s ease-out;
+}
+
+@keyframes collapse {
+    0% { filter: blur(10px); opacity: 0; }
+    100% { filter: blur(0); opacity: 1; }
+}
+
+.input-area {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+input {
+    flex: 1;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid #333;
+    padding: 1rem;
+    color: white;
+    font-family: inherit;
+    border-radius: 4px;
+}
+
+input:focus {
+    border-color: var(--accent);
+    outline: none;
+    box-shadow: 0 0 10px rgba(170, 0, 255, 0.2);
+}
+
+button {
+    background: var(--accent);
+    color: white;
+    border: none;
+    padding: 0 2rem;
+    font-family: var(--font-head);
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+button:hover {
+    background: #c04df9;
+    box-shadow: 0 0 15px var(--accent);
+}

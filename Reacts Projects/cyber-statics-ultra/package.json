@@ -1,0 +1,27 @@
+{
+  "name": "cyber-statics-remotion-ultra",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "remotion preview",
+    "build": "remotion build",
+    "render:1080": "remotion render src/index.js Main1080 --codec h264 --overwrite",
+    "render:720": "remotion render src/index.js Main720 --codec h264 --overwrite",
+    "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
+    "format": "prettier --write ."
+  },
+  "dependencies": {
+    "remotion": "^4.0.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "axios": "^1.4.0",
+    "d3": "^7.0.0",
+    "date-fns": "^2.30.0",
+    "polished": "^4.1.3"
+  },
+  "devDependencies": {
+    "typescript": "^5.0.0",
+    "eslint": "^8.0.0",
+    "prettier": "^2.0.0"
+  }
+}

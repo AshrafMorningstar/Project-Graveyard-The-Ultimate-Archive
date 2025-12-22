@@ -1,0 +1,36 @@
+<!--
+ -----------------------------------------------------------------------------
+ @author      Ashraf Morningstar
+ @github      https://github.com/AshrafMorningstar
+ @repository  Project Graveyard - The Ultimate Archive
+ @quote       "Code that defines the future. Designed to inspire."
+ -----------------------------------------------------------------------------
+-->
+
+<!--
+  Author: Ashraf Morningstar
+  GitHub: https://github.com/AshrafMorningstar
+  Project: AR Interior Designer
+-->
+<!DOCTYPE html>
+<html>
+  <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+  <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+  <body>
+    <a-scene embedded arjs>
+      <!-- Marker for Furniture -->
+      <a-marker preset="hiro">
+        <!-- 3D Chair Model -->
+        <a-box position="0 0.5 0" material="color: brown; opacity: 0.9"></a-box>
+      </a-marker>
+      
+      <a-entity camera></a-entity>
+    </a-scene>
+    
+    <div style="position: fixed; top: 10px; left: 10px; color: white;">
+        <h1>AR Interior Designer</h1>
+        <p>Point camera at 'Hiro' marker to see furniture.</p>
+        <small>By Ashraf Morningstar</small>
+    </div>
+  </body>
+</html>

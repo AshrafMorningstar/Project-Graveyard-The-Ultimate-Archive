@@ -1,0 +1,54 @@
+<!--
+ -----------------------------------------------------------------------------
+ @author      Ashraf Morningstar
+ @github      https://github.com/AshrafMorningstar
+ @repository  Project Graveyard - The Ultimate Archive
+ @quote       "Code that defines the future. Designed to inspire."
+ -----------------------------------------------------------------------------
+-->
+
+<!DOCTYPE html>
+<!-- Created by Ashraf Morningstar - https://github.com/AshrafMorningstar -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Simple Calculator | Ashraf Morningstar</title>
+    <link rel="stylesheet" href="style.css">
+    <meta name="description" content="A clean, glassmorphism-style simple calculator web app.">
+</head>
+<body>
+    <div class="calculator">
+        <div class="display">
+            <input type="text" id="screen" readonly>
+        </div>
+        <div class="buttons">
+            <button class="btn operator" onclick="clearScreen()">C</button>
+            <button class="btn operator" onclick="deleteChar()">⌫</button>
+            <button class="btn operator" onclick="append('%')">%</button>
+            <button class="btn operator" onclick="append('/')">÷</button>
+            
+            <button class="btn" onclick="append('7')">7</button>
+            <button class="btn" onclick="append('8')">8</button>
+            <button class="btn" onclick="append('9')">9</button>
+            <button class="btn operator" onclick="append('*')">×</button>
+            
+            <button class="btn" onclick="append('4')">4</button>
+            <button class="btn" onclick="append('5')">5</button>
+            <button class="btn" onclick="append('6')">6</button>
+            <button class="btn operator" onclick="append('-')">-</button>
+            
+            <button class="btn" onclick="append('1')">1</button>
+            <button class="btn" onclick="append('2')">2</button>
+            <button class="btn" onclick="append('3')">3</button>
+            <button class="btn operator" onclick="append('+')">+</button>
+            
+            <button class="btn" onclick="append('00')">00</button>
+            <button class="btn" onclick="append('0')">0</button>
+            <button class="btn" onclick="append('.')">.</button>
+            <button class="btn equal" onclick="calculate()">=</button>
+        </div>
+        <div class="footer">Made by <a href="https://github.com/AshrafMorningstar">Ashraf</a></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

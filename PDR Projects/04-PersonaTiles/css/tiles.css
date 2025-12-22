@@ -1,0 +1,178 @@
+/*
+ * -----------------------------------------------------------------------------
+ * @author      Ashraf Morningstar
+ * @github      https://github.com/AshrafMorningstar
+ * @repository  Project Graveyard - The Ultimate Archive
+ * @quote       "Code that defines the future. Designed to inspire."
+ * -----------------------------------------------------------------------------
+*/
+
+/* Persona Tiles - Tile Styles */
+
+/* Tile Base */
+.tile {
+    aspect-ratio: 1;
+    background: var(--color-surface);
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: calc(var(--spacing-unit) * 0.75);
+    cursor: pointer;
+    transition: all var(--transition-quick);
+    position: relative;
+    overflow: hidden;
+    border: 2px solid transparent;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.tile::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.5), transparent);
+    opacity: 0;
+    transition: opacity var(--transition-quick);
+}
+
+/* Tile Icon */
+.tile-icon {
+    font-size: 3rem;
+    transition: transform var(--transition-quick);
+    filter: grayscale(100%);
+}
+
+/* Tile Label */
+.tile-label {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--color-text);
+    transition: all var(--transition-quick);
+    opacity: 0.7;
+}
+
+/* Hover State */
+.tile:hover {
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+.tile:hover::before {
+    opacity: 1;
+}
+
+.tile:hover .tile-icon {
+    transform: scale(1.1);
+    filter: grayscale(0%);
+}
+
+.tile:hover .tile-label {
+    opacity: 1;
+}
+
+/* Active State */
+.tile.active {
+    transform: scale(1.1);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
+    z-index: 10;
+}
+
+.tile.active .tile-icon {
+    transform: scale(1.2);
+    filter: grayscale(0%);
+    animation: icon-bounce 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+@keyframes icon-bounce {
+    0%, 100% { transform: scale(1.2); }
+    50% { transform: scale(1.4); }
+}
+
+.tile.active .tile-label {
+    opacity: 1;
+    font-weight: 700;
+}
+
+/* Type-Specific Colors */
+.tile[data-type="skill"].active {
+    border-color: var(--color-skill);
+    background: linear-gradient(135deg, var(--color-skill)15, var(--color-surface));
+}
+
+.tile[data-type="skill"].active .tile-label {
+    color: var(--color-skill);
+}
+
+.tile[data-type="interest"].active {
+    border-color: var(--color-interest);
+    background: linear-gradient(135deg, var(--color-interest)15, var(--color-surface));
+}
+
+.tile[data-type="interest"].active .tile-label {
+    color: var(--color-interest);
+}
+
+.tile[data-type="value"].active {
+    border-color: var(--color-value);
+    background: linear-gradient(135deg, var(--color-value)15, var(--color-surface));
+}
+
+.tile[data-type="value"].active .tile-label {
+    color: var(--color-value);
+}
+
+.tile[data-type="goal"].active {
+    border-color: var(--color-goal);
+    background: linear-gradient(135deg, var(--color-goal)15, var(--color-surface));
+}
+
+.tile[data-type="goal"].active .tile-label {
+    color: var(--color-goal);
+}
+
+/* Activation Order (visual hierarchy) */
+.tile.active[data-order="1"] {
+    order: -10;
+}
+
+.tile.active[data-order="2"] {
+    order: -9;
+}
+
+.tile.active[data-order="3"] {
+    order: -8;
+}
+
+/* Pulse animation for recently activated */
+.tile.just-activated {
+    animation: tile-pulse 0.6s ease-out;
+}
+
+@keyframes tile-pulse {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    }
+    50% {
+        transform: scale(1.15);
+        box-shadow: 0 16px 40px rgba(0, 0, 0, 0.2);
+    }
+    100% {
+        transform: scale(1.1);
+        box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
+    }
+}
+
+/* Focus State (Keyboard) */
+.tile:focus {
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(52, 152, 219, 0.3);
+}
+
+/* Disabled State */
+.tile.disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+    pointer-events: none;
+}

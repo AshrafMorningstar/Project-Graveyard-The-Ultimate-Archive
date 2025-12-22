@@ -1,0 +1,145 @@
+<!--
+ -----------------------------------------------------------------------------
+ @author      Ashraf Morningstar
+ @github      https://github.com/AshrafMorningstar
+ @repository  Project Graveyard - The Ultimate Archive
+ @quote       "Code that defines the future. Designed to inspire."
+ -----------------------------------------------------------------------------
+-->
+
+<!--
+  Author: Ashraf Morningstar
+  GitHub: https://github.com/AshrafMorningstar
+  Project: Automated Code Review Assistant
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CodeGuard AI Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body { background: #0d1117; color: #c9d1d9; font-family: 'JetBrains Mono', monospace; padding: 2rem; margin: 0; }
+        .container { max-width: 1200px; margin: 0 auto; }
+        .header { display: flex; justify-content: space-between; border-bottom: 1px solid #30363d; padding-bottom: 1rem; margin-bottom: 2rem; }
+        .logo { color: #58a6ff; font-weight: bold; font-size: 1.5rem; }
+        
+        .dashboard-grid { display: grid; grid-template-columns: 1fr 2fr; gap: 2rem; }
+        
+        .card { background: #161b22; border: 1px solid #30363d; border-radius: 6px; padding: 1.5rem; margin-bottom: 1rem; }
+        .card h3 { color: #58a6ff; margin-top: 0; }
+        
+        .stat { font-size: 2.5rem; font-weight: bold; color: white; }
+        .stat-label { color: #8b949e; font-size: 0.9rem; }
+        
+        .issue-list { max-height: 500px; overflow-y: auto; }
+        .issue-item { padding: 10px; border-bottom: 1px solid #21262d; display: flex; align-items: flex-start; gap: 10px; }
+        .issue-item:last-child { border-bottom: none; }
+        
+        .severity { padding: 2px 6px; border-radius: 4px; font-size: 0.7rem; font-weight: bold; text-transform: uppercase; }
+        .severity.high { background: #da3633; color: white; }
+        .severity.low { background: #238636; color: white; }
+        .severity.info { background: #1f6feb; color: white; }
+        
+        .file-loc { color: #8b949e; font-size: 0.8rem; margin-bottom: 4px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="logo">CodeGuard AI</div>
+            <div>
+                <button onclick="loadReport()" style="background: #238636; color: white; border: none; padding: 8px 16px; border-radius: 4px; cursor: pointer;">Refresh Report</button>
+            </div>
+        </header>
+
+        <div id="loading" style="text-align: center; margin-top: 50px;">
+            Run <code>python review_bot.py</code> to generate a report, then click Refresh.
+        </div>
+
+        <div id="dashboard" class="dashboard-grid" style="display: none;">
+            <!-- Sidebar Stats -->
+            <div>
+                <div class="card">
+                    <h3>Health Score</h3>
+                    <div class="stat" id="score">--</div>
+                    <div class="stat-label">Based on static analysis</div>
+                </div>
+                <div class="card">
+                    <h3>Scan Stats</h3>
+                    <p><span id="loc">0</span> Lines of Code</p>
+                    <p><span id="files">0</span> Files Scanned</p>
+                    <p class="stat-label" style="margin-top: 10px;">Root: <span id="root-path">...</span></p>
+                </div>
+                <div class="card">
+                    <h3>Last Scan</h3>
+                    <div id="timestamp" style="color: #e3b341;">--</div>
+                </div>
+            </div>
+
+            <!-- Issues Feed -->
+            <div class="card">
+                <h3>Issues Detected (<span id="issue-count">0</span>)</h3>
+                <div class="issue-list" id="issue-list">
+                    <!-- JS Injected -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        async function loadReport() {
+            try {
+                // Try to fetch the generated JSON report
+                const res = await fetch('report.json');
+                if (!res.ok) throw new Error("Report not found");
+                
+                const data = await res.json();
+                renderDashboard(data);
+            } catch (e) {
+                alert("Could not load 'report.json'.\n\nMake sure you run 'python review_bot.py' in this directory first!");
+            }
+        }
+
+        function renderDashboard(data) {
+            document.getElementById('loading').style.display = 'none';
+            document.getElementById('dashboard').style.display = 'grid';
+
+            // Stats
+            document.getElementById('score').innerText = data.score + "%";
+            document.getElementById('score').style.color = data.score > 80 ? '#238636' : '#da3633';
+            
+            document.getElementById('loc').innerText = data.stats.lines_of_code;
+            document.getElementById('files').innerText = data.stats.files_scanned;
+            document.getElementById('root-path').innerText = data.project_root.split('\\').pop() + "/...";
+            document.getElementById('timestamp').innerText = data.timestamp;
+            document.getElementById('issue-count').innerText = data.issues.length;
+
+            // Issues
+            const list = document.getElementById('issue-list');
+            list.innerHTML = '';
+            
+            if(data.issues.length === 0) {
+                list.innerHTML = '<div style="padding: 20px; text-align: center; color: #238636;">No issues found! Clean code.</div>';
+                return;
+            }
+
+            data.issues.forEach(issue => {
+                const item = document.createElement('div');
+                item.className = 'issue-item';
+                item.innerHTML = `
+                    <span class="severity ${issue.severity.toLowerCase()}">${issue.severity}</span>
+                    <div>
+                        <div class="file-loc">${issue.file}:${issue.line}</div>
+                        <div>${issue.message}</div>
+                    </div>
+                `;
+                list.appendChild(item);
+            });
+        }
+
+        // Auto load on start
+        loadReport();
+    </script>
+</body>
+</html>

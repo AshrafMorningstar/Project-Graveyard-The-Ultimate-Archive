@@ -1,0 +1,45 @@
+<!--
+ -----------------------------------------------------------------------------
+ @author      Ashraf Morningstar
+ @github      https://github.com/AshrafMorningstar
+ @repository  Project Graveyard - The Ultimate Archive
+ @quote       "Code that defines the future. Designed to inspire."
+ -----------------------------------------------------------------------------
+-->
+
+<!DOCTYPE html>
+<!-- Created by Ashraf Morningstar - https://github.com/AshrafMorningstar -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI Calculator | Ashraf Morningstar</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1>BMI Calculator</h1>
+        
+        <div class="input-group">
+            <label>Height (cm)</label>
+            <input type="number" id="height" placeholder="Enter height in cm">
+        </div>
+        
+        <div class="input-group">
+            <label>Weight (kg)</label>
+            <input type="number" id="weight" placeholder="Enter weight in kg">
+        </div>
+
+        <button onclick="calculateBMI()">Calculate BMI</button>
+
+        <div id="result" class="result"></div>
+        <div id="message" class="message"></div>
+
+        <div class="footer">
+            <p>Made with ❤️ by <a href="https://github.com/AshrafMorningstar" target="_blank">Ashraf Morningstar</a></p>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

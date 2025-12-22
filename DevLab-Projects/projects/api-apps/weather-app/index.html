@@ -1,0 +1,92 @@
+<!--
+ -----------------------------------------------------------------------------
+ @author      Ashraf Morningstar
+ @github      https://github.com/AshrafMorningstar
+ @repository  Project Graveyard - The Ultimate Archive
+ @quote       "Code that defines the future. Designed to inspire."
+ -----------------------------------------------------------------------------
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkyCast | Web Dev Mega Projects</title>
+    <meta name="description" content="Real-time weather forecast application with location detection and beautiful dynamic backgrounds.">
+    <meta name="author" content="Ashraf Morningstar">
+    
+    <link rel="stylesheet" href="../../../assets/css/global.css">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="video-bg">
+        <!-- Background will change dynamically via JS/CSS -->
+        <div class="overlay"></div>
+    </div>
+
+    <div class="container flex-center" style="min-height: 100vh; position: relative; z-index: 2;">
+        <main class="weather-card">
+            <div class="search-box">
+                <i class="fas fa-search location-icon"></i>
+                <input type="text" id="city-input" placeholder="Enter City Name...">
+                <button id="search-btn"><i class="fas fa-arrow-right"></i></button>
+            </div>
+
+            <div id="weather-data" class="weather-content hidden">
+                <div class="weather-header">
+                    <h2 id="city-name">New York, US</h2>
+                    <p id="date">Monday, 12 Aug 2025</p>
+                </div>
+
+                <div class="weather-main">
+                    <div class="temp-container">
+                        <img src="" alt="Weather Icon" id="weather-icon" class="weather-icon">
+                        <h1 id="temperature">24°</h1>
+                    </div>
+                    <p id="description">Broken Clouds</p>
+                </div>
+
+                <div class="weather-details">
+                    <div class="detail-item">
+                        <i class="fas fa-wind"></i>
+                        <div>
+                            <span id="wind-speed">12 km/h</span>
+                            <p>Wind Speed</p>
+                        </div>
+                    </div>
+                    <div class="detail-item">
+                        <i class="fas fa-tint"></i>
+                        <div>
+                            <span id="humidity">45%</span>
+                            <p>Humidity</p>
+                        </div>
+                    </div>
+                    <div class="detail-item">
+                        <i class="fas fa-compress-arrows-alt"></i>
+                        <div>
+                            <span id="pressure">1012 hPa</span>
+                            <p>Pressure</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="error-msg" class="error-msg hidden">
+                <i class="fas fa-cloud-showers-heavy"></i>
+                <p>City not found. Please try again!</p>
+            </div>
+            
+            <div id="loader" class="loader hidden"></div>
+
+            <footer class="footer-attribution">
+                <p>Created & Maintained by <a href="https://github.com/AshrafMorningstar">Ashraf Morningstar</a></p>
+            </footer>
+        </main>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,246 @@
+{
+  "project_source": "Web-dev-mini-projects",
+  "author": "Ashraf Morningstar",
+  "github": "https://github.com/AshrafMorningstar",
+  "categories": [
+    {
+      "name": "Calculators & Converters",
+      "projects": [
+        "Age Calculator",
+        "BMI Calculator",
+        "BMI Calculator (Flask)",
+        "Simple Calculator (Flask)",
+        "CALCULATOR",
+        "Compound Interest Calculator",
+        "Temperature Convertor",
+        "Height Converter",
+        "Weight Converter",
+        "Tip Calculator",
+        "Loan Calculator",
+        "VAT Calculator",
+        "LCM-HCF-CALCULATOR",
+        "Exchange Rate Calculator"
+      ]
+    },
+    {
+      "name": "Games",
+      "projects": [
+        "2048 Game",
+        "Blackjack Game",
+        "Chess Game",
+        "Tic-Tac-Toe Game",
+        "Rock-Paper-Scissors",
+        "Snake Game",
+        "Dice Game",
+        "Memory Card Game",
+        "ConnectFour",
+        "Simon Game",
+        "Maths Quiz Game",
+        "Bottle Flip Game",
+        "Game Ping Pong",
+        "Color Guessing Game",
+        "Guess My Number",
+        "JAVASCRIPT GAME"
+      ]
+    },
+    {
+      "name": "Productivity & Utilities",
+      "projects": [
+        "To-Do List",
+        "Darkmode To Do List",
+        "Notes Keeping Website",
+        "Keep Note",
+        "Expense Tracker",
+        "Countdown Timer",
+        "Count Down To New Year",
+        "Digital Clock",
+        "Live Clock",
+        "Clock",
+        "Clock-Stopwatch",
+        "DIGITAL-JAVASCRIPT-CLOCK"
+      ]
+    },
+    {
+      "name": "Generators & Tools",
+      "projects": [
+        "QR Code Generator",
+        "01-qrcode-gen",
+        "Password Generator",
+        "Random Password Generator",
+        "Quote Generator",
+        "AI Quote Generator",
+        "Random Color Generator",
+        "Random Meal Generator",
+        "CAT GENERATOR APP",
+        "Chuck Norris Jokes",
+        "Basic Background Generator",
+        "Password Strength Meter",
+        "Lorem Ipsum Generator"
+      ]
+    },
+    {
+      "name": "API & Data Applications",
+      "projects": [
+        "Weather App",
+        "Corona Tracker",
+        "GitHub Profile Finder",
+        "Movie Search App",
+        "Movie Website",
+        "React Movie App",
+        "News App",
+        "Breaking Bad Characters",
+        "Dictionary",
+        "Emoji Search App"
+      ]
+    },
+    {
+      "name": "Website Templates",
+      "projects": [
+        "Basic Portfolio Website",
+        "Single Window Portfolio",
+        "Architecture Website",
+        "Food Website",
+        "Restaurant Website",
+        "Band Website",
+        "MyGym Website",
+        "Art Gallery",
+        "Personal Blog",
+        "Blog Application",
+        "Ecommerce Website",
+        "SPORTS WEBSITE",
+        "TravelPro",
+        "Landing Page Dark Theme",
+        "Parallax Website"
+      ]
+    },
+    {
+      "name": "Forms & Authentication",
+      "projects": [
+        "Basic Contact Form",
+        "AuthPage",
+        "Login Page",
+        "Glassmorphism Form",
+        "Good Vibes Form",
+        "SURVEY FORM",
+        "Form Validation"
+      ]
+    },
+    {
+      "name": "Clones & Recreations",
+      "projects": [
+        "Google.com Clone",
+        "Instagram Clone",
+        "Instagram Login/Signup Clone",
+        "Amazon Prime Login Clone",
+        "SpotifyClone",
+        "YouTube Clone",
+        "Jira Clone",
+        "Trello Board Clone",
+        "Tindog"
+      ]
+    },
+    {
+      "name": "Music & Audio",
+      "projects": [
+        "DRUM",
+        "DRUM (darkmode)",
+        "Drum Kit Web App",
+        "Guitar",
+        "Tabla",
+        "Audio Visualization with Three.js"
+      ]
+    },
+    {
+      "name": "Image & Media Tools",
+      "projects": [
+        "Image Filter App",
+        "Image Finder App",
+        "Browser Camera",
+        "White Board"
+      ]
+    },
+    {
+      "name": "Animation & Visual Effects",
+      "projects": [
+        "Animated Car",
+        "Animated Rainbow",
+        "Bouncing Balls",
+        "CSS Loading Animation",
+        "Wavy Loader",
+        "Neon Light",
+        "Double Vertical Slider",
+        "Expand Button",
+        "Like Button Animation",
+        "Battery Indicator"
+      ]
+    },
+    {
+      "name": "CSS Recreations",
+      "projects": [
+        "Instagram Logo Using CSS",
+        "YouTube Logo",
+        "Google Logo Using CSS",
+        "Chrome Logo Using CSS",
+        "Facebook Logo"
+      ]
+    },
+    {
+      "name": "Educational & Quiz",
+      "projects": [
+        "QUIZ WEB APP",
+        "QUIZ APP 2",
+        "Quiz App",
+        "Online Quiz Portal",
+        "Javascript Documentation",
+        "TRIBUTE PAGE",
+        "Product Landing Page"
+      ]
+    },
+    {
+      "name": "Text & Data Processing",
+      "projects": [
+        "Text Analyzer",
+        "Word Counter",
+        "String Palindrome Checker",
+        "Text to Speech",
+        "Text Conversion Dark/Light Mode",
+        "File Zipper",
+        "Sudoku Solver"
+      ]
+    },
+    {
+      "name": "Miscellaneous",
+      "projects": [
+        "Typing Speed Test",
+        "Typing Champ",
+        "CLASSROOM SCHEDULER",
+        "Week Day Predictor",
+        "Museum of Candies",
+        "Geography Table",
+        "COVID-19 Awareness",
+        "LOVE CALCULATOR",
+        "Birthday Letter",
+        "Date Guarantee",
+        "Relaxer App",
+        "Magic Color Changer",
+        "Counter App",
+        "Score Keeper",
+        "Custom Range Slider",
+        "Responsive Navigation Bar",
+        "Glowing Icons",
+        "FAQ Application",
+        "Interactive Pricing Component",
+        "URL Shortener",
+        "Online Code Editor",
+        "Virtual Keyboard",
+        "Chat App",
+        "Classifier Using JS",
+        "Solar System 3D",
+        "iCoder",
+        "My Online Meal",
+        "Payment Integration",
+        "Project Explorer"
+      ]
+    }
+  ]
+}

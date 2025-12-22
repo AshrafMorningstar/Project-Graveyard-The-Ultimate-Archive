@@ -1,0 +1,126 @@
+/*
+ * -----------------------------------------------------------------------------
+ * @author      Ashraf Morningstar
+ * @github      https://github.com/AshrafMorningstar
+ * @repository  Project Graveyard - The Ultimate Archive
+ * @quote       "Code that defines the future. Designed to inspire."
+ * -----------------------------------------------------------------------------
+*/
+
+/* 
+   Project: Dream Code Architect
+   Level: Expert
+   Author: Ashraf Morningstar
+   GitHub: https://github.com/AshrafMorningstar
+*/
+
+body {
+    margin: 0;
+    overflow: hidden;
+    background: #050505;
+    font-family: 'Montserrat', sans-serif;
+    color: #e0e0e0;
+}
+
+.dream-container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+}
+
+canvas {
+    display: block;
+    filter: blur(0.5px); /* Dreamy effect */
+}
+
+.interface-layer {
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 600px;
+    text-align: center;
+    background: rgba(0,0,0,0.4);
+    backdrop-filter: blur(10px);
+    padding: 2rem;
+    border-radius: 20px;
+    border: 1px solid rgba(255,255,255,0.1);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+header h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2rem;
+    margin: 0;
+    background: linear-gradient(to right, #fff, #aaa);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+header p {
+    font-size: 0.9rem;
+    color: #888;
+    margin-top: 5px;
+}
+
+.input-zone {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+    align-items: center;
+}
+
+input {
+    flex: 1;
+    background: rgba(255,255,255,0.05);
+    border: none;
+    border-bottom: 1px solid #555;
+    padding: 10px;
+    color: white;
+    font-family: inherit;
+    font-size: 1.1rem;
+    text-align: center;
+    transition: all 0.3s;
+}
+
+input:focus {
+    outline: none;
+    border-color: #fff;
+    background: rgba(255,255,255,0.1);
+}
+
+.icon-btn {
+    background: none;
+    border: 1px solid #555;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    color: #fff;
+    transition: all 0.3s;
+}
+
+.icon-btn:hover {
+    background: white;
+    color: black;
+}
+
+.icon-btn.listening {
+    background: #f00;
+    border-color: #f00;
+    animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); box-shadow: 0 0 0 rgba(255,0,0,0.7); }
+    70% { transform: scale(1.1); box-shadow: 0 0 10px rgba(255,0,0,0); }
+    100% { transform: scale(1); box-shadow: 0 0 0 rgba(255,0,0,0); }
+}
+
+#status-text {
+    margin-top: 10px;
+    font-size: 0.8rem;
+    color: #aaa;
+    font-style: italic;
+}

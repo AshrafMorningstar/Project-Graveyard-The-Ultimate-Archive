@@ -1,0 +1,88 @@
+<!--
+ -----------------------------------------------------------------------------
+ @author      Ashraf Morningstar
+ @github      https://github.com/AshrafMorningstar
+ @repository  Project Graveyard - The Ultimate Archive
+ @quote       "Code that defines the future. Designed to inspire."
+ -----------------------------------------------------------------------------
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Property Explorer | Ashraf Morningstar</title>
+    <!-- 
+        Project: Interactive CSS Property Explorer
+        Level: Intermediate
+        Author: Ashraf Morningstar
+        GitHub: https://github.com/AshrafMorningstar
+    -->
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+    
+    <!-- Vue 3 CDN -->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+<body>
+    <div id="app">
+        <header>
+            <h1>CSS 3D Playground</h1>
+            <p>Interactive Property Explorer</p>
+        </header>
+
+        <main class="playground">
+            <!-- Controls -->
+            <aside class="controls info-panel">
+                <div class="control-group">
+                    <h3>Transform</h3>
+                    <label>Rotate X ({{ rotateX }}deg)</label>
+                    <input type="range" min="0" max="360" v-model="rotateX">
+                    
+                    <label>Rotate Y ({{ rotateY }}deg)</label>
+                    <input type="range" min="0" max="360" v-model="rotateY">
+
+                    <label>Rotate Z ({{ rotateZ }}deg)</label>
+                    <input type="range" min="0" max="360" v-model="rotateZ">
+                </div>
+
+                <div class="control-group">
+                    <h3>Box Model</h3>
+                    <label>Padding ({{ padding }}px)</label>
+                    <input type="range" min="0" max="50" v-model="padding">
+                    
+                    <label>Border Radius ({{ borderRadius }}%)</label>
+                    <input type="range" min="0" max="50" v-model="borderRadius">
+                </div>
+
+                <div class="control-group">
+                    <h3>Effects</h3>
+                    <label>Opacity ({{ opacity }})</label>
+                    <input type="range" min="0" max="1" step="0.1" v-model="opacity">
+                    
+                    <label>Scale ({{ scale }})</label>
+                    <input type="range" min="0.5" max="2" step="0.1" v-model="scale">
+                </div>
+
+                <div class="output-code">
+                    <pre>transform: rotateX({{rotateX}}deg) rotateY({{rotateY}}deg) ...;</pre>
+                </div>
+            </aside>
+
+            <!-- Visualization -->
+            <section class="stage">
+                <div class="cube-container" :style="containerStyles">
+                    <div class="face front" :style="boxStyles">Front</div>
+                    <div class="face back" :style="boxStyles">Back</div>
+                    <div class="face right" :style="boxStyles">Right</div>
+                    <div class="face left" :style="boxStyles">Left</div>
+                    <div class="face top" :style="boxStyles">Top</div>
+                    <div class="face bottom" :style="boxStyles">Bottom</div>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!--
+ -----------------------------------------------------------------------------
+ @author      Ashraf Morningstar
+ @github      https://github.com/AshrafMorningstar
+ @repository  Project Graveyard - The Ultimate Archive
+ @quote       "Code that defines the future. Designed to inspire."
+ -----------------------------------------------------------------------------
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SilentNav - Navigation Without Labels</title>
+    <meta name="description" content="A website where navigation exists without text labels">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/nav.css">
+    <!-- Author: Ashraf Morningstar -->
+    <!-- GitHub: https://github.com/AshrafMorningstar -->
+</head>
+<body>
+    <nav class="silent-nav" role="navigation" aria-label="Main navigation">
+        <button class="nav-item" data-section="home" aria-label="Home">
+            <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <circle cx="12" cy="12" r="10"/>
+            </svg>
+        </button>
+        <button class="nav-item" data-section="work" aria-label="Work">
+            <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <rect x="3" y="3" width="18" height="18"/>
+            </svg>
+        </button>
+        <button class="nav-item" data-section="about" aria-label="About">
+            <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <polygon points="12,2 22,12 12,22 2,12"/>
+            </svg>
+        </button>
+        <button class="nav-item" data-section="contact" aria-label="Contact">
+            <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <path d="M12 2 L22 8 L22 16 L12 22 L2 16 L2 8 Z"/>
+            </svg>
+        </button>
+    </nav>
+
+    <main class="content-area">
+        <section id="home" class="section active">
+            <div class="section-content">
+                <h1>Welcome</h1>
+                <p>Navigate through shapes and motion</p>
+            </div>
+        </section>
+
+        <section id="work" class="section">
+            <div class="section-content">
+                <h1>Projects</h1>
+                <div class="grid">
+                    <div class="card"></div>
+                    <div class="card"></div>
+                    <div class="card"></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="section">
+            <div class="section-content">
+                <h1>Philosophy</h1>
+                <p>Understanding through intuition</p>
+            </div>
+        </section>
+
+        <section id="contact" class="section">
+            <div class="section-content">
+                <h1>Connect</h1>
+                <p>Reach out through intention</p>
+            </div>
+        </section>
+    </main>
+
+    <script src="js/nav-controller.js"></script>
+</body>
+</html>

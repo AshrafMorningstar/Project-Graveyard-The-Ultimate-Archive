@@ -1,0 +1,258 @@
+<!--
+ -----------------------------------------------------------------------------
+ @author      Ashraf Morningstar
+ @github      https://github.com/AshrafMorningstar
+ @repository  Project Graveyard - The Ultimate Archive
+ @quote       "Code that defines the future. Designed to inspire."
+ -----------------------------------------------------------------------------
+-->
+
+<!--
+  Author: Ashraf Morningstar
+  GitHub: https://github.com/AshrafMorningstar
+  Project: Master Web Development Roadmap Portfolio
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Dev Roadmap | Ashraf Morningstar</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #0f172a;
+            --card: #1e293b;
+            --primary: #818cf8;
+            --beginner: #4ade80;
+            --intermediate: #fbbf24;
+            --advanced: #f472b6;
+            --text: #f8fafc;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Outfit', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 5rem;
+            animation: fadeIn 1s ease;
+        }
+
+        h1 {
+            font-size: 4rem;
+            margin: 0;
+            background: linear-gradient(to right, #818cf8, #c084fc);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            color: #94a3b8;
+            margin-top: 1rem;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            margin: 4rem 0 2rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .badge {
+            font-size: 0.9rem;
+            padding: 5px 12px;
+            border-radius: 20px;
+            color: #1e293b;
+            font-weight: bold;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .card {
+            background: var(--card);
+            border-radius: 16px;
+            padding: 2rem;
+            transition: transform 0.3s, box-shadow 0.3s;
+            text-decoration: none;
+            color: inherit;
+            border: 1px solid rgba(255,255,255,0.05);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+            border-color: rgba(129, 140, 248, 0.3);
+        }
+
+        .card h3 { margin: 0 0 0.5rem 0; font-size: 1.4rem; }
+        .card p { color: #94a3b8; font-size: 0.95rem; line-height: 1.5; }
+        
+        .card-number {
+            position: absolute;
+            top: -10px; right: -10px;
+            font-size: 4rem;
+            font-weight: 800;
+            opacity: 0.05;
+        }
+
+        /* Animations */
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+
+        footer {
+            text-align: center;
+            margin-top: 6rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: #64748b;
+        }
+        
+        a.social { color: var(--primary); text-decoration: none; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Web Dev Roadmap</h1>
+            <p class="subtitle">18 Premium Projects • Beginner to Advanced • Full Stack Ready</p>
+        </header>
+
+        <!-- Beginner -->
+        <h2 class="section-title">
+            <span class="badge" style="background: var(--beginner)">Tier 1</span> 
+            Beginner Foundations
+        </h2>
+        <div class="grid">
+            <a href="01-beginner/01-interactive-recipe/index.html" class="card">
+                <span class="card-number">01</span>
+                <h3>Interactive Recipe</h3>
+                <p>Scrollytelling experience with semantic HTML & CSS animations.</p>
+            </a>
+            <a href="01-beginner/02-learning-dashboard/index.html" class="card">
+                <span class="card-number">02</span>
+                <h3>Learning Dashboard</h3>
+                <p>CSS Grid layout with LocalStorage CRUD operations.</p>
+            </a>
+            <a href="01-beginner/03-mood-board/index.html" class="card">
+                <span class="card-number">03</span>
+                <h3>Mood Board Pro</h3>
+                <p>Dynamic background generator using HTML5 Canvas API.</p>
+            </a>
+            <a href="01-beginner/04-accessible-countdown/index.html" class="card">
+                <span class="card-number">04</span>
+                <h3>Accessible Countdown</h3>
+                <p>Event timer focused on ARIA and Accessibility standards.</p>
+            </a>
+            <a href="01-beginner/05-micro-blog/index.html" class="card">
+                <span class="card-number">05</span>
+                <h3>Micro-Blog Layout</h3>
+                <p>Responsive masonry grid using modern CSS Flex/Grid.</p>
+            </a>
+            <a href="01-beginner/06-eco-footprint/index.html" class="card">
+                <span class="card-number">06</span>
+                <h3>Eco Calculator</h3>
+                <p>Multi-step form with dynamic score calculation logic.</p>
+            </a>
+        </div>
+
+        <!-- Intermediate -->
+        <h2 class="section-title">
+            <span class="badge" style="background: var(--intermediate)">Tier 2</span> 
+            Intermediate Applications
+        </h2>
+        <div class="grid">
+            <a href="02-intermediate/01-ai-summarizer/index.html" class="card">
+                <span class="card-number">07</span>
+                <h3>AI Summarizer</h3>
+                <p>React Frontend connected to Flask NLP Backend.</p>
+            </a>
+            <a href="02-intermediate/02-booking-system/index.html" class="card">
+                <span class="card-number">08</span>
+                <h3>Booking System</h3>
+                <p>Airbnb-style UI with Express/Node API integration.</p>
+            </a>
+            <a href="02-intermediate/03-finance-dashboard/index.html" class="card">
+                <span class="card-number">09</span>
+                <h3>Finance Dashboard</h3>
+                <p>Data visualization using Chart.js libraries.</p>
+            </a>
+            <a href="02-intermediate/04-algorithm-visualizer/index.html" class="card">
+                <span class="card-number">10</span>
+                <h3>Algo Visualizer</h3>
+                <p>Interactive sorting algorithm animations in real-time.</p>
+            </a>
+            <a href="02-intermediate/05-browser-startpage/newtab.html" class="card">
+                <span class="card-number">11</span>
+                <h3>Custom Startpage</h3>
+                <p>Browser extension manifest and dashboard widgets.</p>
+            </a>
+            <a href="02-intermediate/06-whiteboard/index.html" class="card">
+                <span class="card-number">12</span>
+                <h3>Real-Time Whiteboard</h3>
+                <p>Collaborative drawing canvas with WebSocket server.</p>
+            </a>
+        </div>
+
+        <!-- Advanced -->
+        <h2 class="section-title">
+            <span class="badge" style="background: var(--advanced)">Tier 3</span> 
+            Advanced Systems
+        </h2>
+        <div class="grid">
+            <a href="03-advanced/01-decentralized-blog/index.html" class="card">
+                <span class="card-number">13</span>
+                <h3>Decentralized Blog</h3>
+                <p>Web3 DApp with Solidity Smart Contract integration.</p>
+            </a>
+            <a href="03-advanced/02-multivendor-platform/index.html" class="card">
+                <span class="card-number">14</span>
+                <h3>Multi-Vendor Platform</h3>
+                <p>Complex dashboard UI with Docker microservices scaffold.</p>
+            </a>
+            <a href="03-advanced/03-code-review-bot/index.html" class="card">
+                <span class="card-number">15</span>
+                <h3>Code Review Bot</h3>
+                <p>Admin panel for automated Python code analysis bot.</p>
+            </a>
+            <a href="03-advanced/04-health-log/index.html" class="card">
+                <span class="card-number">16</span>
+                <h3>AI Health Log</h3>
+                <p>Mobile-first UI utilizing TensorFlow.js models.</p>
+            </a>
+            <a href="03-advanced/05-coding-arena/index.html" class="card">
+                <span class="card-number">17</span>
+                <h3>Coding Arena</h3>
+                <p>Competitive editor with Server-side VM2 Sandbox execution.</p>
+            </a>
+            <a href="03-advanced/06-ar-designer/index.html" class="card">
+                <span class="card-number">18</span>
+                <h3>AR Interior</h3>
+                <p>Augmented Reality view using React keyframes.</p>
+            </a>
+        </div>
+
+        <footer>
+            <p>Built with ❤️ by <a href="https://github.com/AshrafMorningstar" class="social">Ashraf Morningstar</a></p>
+        </footer>
+    </div>
+</body>
+</html>

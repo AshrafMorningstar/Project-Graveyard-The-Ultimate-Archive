@@ -1,0 +1,78 @@
+/*
+ * -----------------------------------------------------------------------------
+ * @author      Ashraf Morningstar
+ * @github      https://github.com/AshrafMorningstar
+ * @repository  Project Graveyard - The Ultimate Archive
+ * @quote       "Code that defines the future. Designed to inspire."
+ * -----------------------------------------------------------------------------
+*/
+
+/* Created by Ashraf Morningstar - https://github.com/AshrafMorningstar */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #1e3c72, #2a5298);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.game-container {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    width: 400px;
+    border-radius: 20px;
+    padding: 30px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+.problem {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 40px;
+}
+
+.options {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.option-btn {
+    background: #fff;
+    color: #1e3c72;
+    border: none;
+    padding: 15px;
+    font-size: 1.5rem;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.2s;
+    font-weight: bold;
+}
+
+.option-btn:hover {
+    background: #FFD700;
+    transform: translateY(-3px);
+}
+
+.footer {
+    margin-top: 30px;
+    font-size: 0.8rem;
+    opacity: 0.8;
+}
+.footer a { color: #FFD700; text-decoration: none; }

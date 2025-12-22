@@ -1,0 +1,14 @@
+# Full-Stack Web Development Mini Projects
+# Author: Ashraf Morningstar
+# GitHub: https://github.com/AshrafMorningstar
+
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://AshrafMorningstar.github.io/Full-stack-Web-dev-mini-projects/sitemap.xml
+
+# Crawl-delay
+Crawl-delay: 0
+
+# Disallow nothing - we want everything indexed!

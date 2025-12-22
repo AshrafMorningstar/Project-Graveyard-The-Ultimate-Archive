@@ -1,0 +1,155 @@
+<!--
+ -----------------------------------------------------------------------------
+ @author      Ashraf Morningstar
+ @github      https://github.com/AshrafMorningstar
+ @repository  Project Graveyard - The Ultimate Archive
+ @quote       "Code that defines the future. Designed to inspire."
+ -----------------------------------------------------------------------------
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A real-time CSS design token playground">
+    <meta name="author" content="Ashraf Morningstar">
+    <title>CSS Theme Playground | Ashraf Morningstar</title>
+    <!-- Virality Tags -->
+    <meta property="og:title" content="CSS Theme Playground">
+    <meta property="og:description" content="Master design systems with this live CSS token editor.">
+    <meta property="og:image" content="/og-preview.png">
+    <link rel="stylesheet" href="src/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-layout">
+        <!-- Sidebar Editor -->
+        <aside class="sidebar" role="region" aria-label="Token Editor">
+            <header class="sidebar-header">
+                <h2>Design Tokens</h2>
+                <div class="actions">
+                    <button id="reset-btn" class="icon-btn" title="Reset Default">↺</button>
+                    <button id="export-btn" class="primary-btn small">Export CSS</button>
+                </div>
+            </header>
+
+            <div class="controls-container">
+                <section class="control-group">
+                    <h3>Colors</h3>
+                    <div class="control-item">
+                        <label for="primaryColor">Primary</label>
+                        <input type="color" id="primaryColor" data-var="--primary-color" value="#646cff">
+                        <span class="value-display">#646cff</span>
+                    </div>
+                    <div class="control-item">
+                        <label for="bgColor">Background</label>
+                        <input type="color" id="bgColor" data-var="--bg-color" value="#ffffff">
+                        <span class="value-display">#ffffff</span>
+                    </div>
+                    <div class="control-item">
+                        <label for="textColor">Text</label>
+                        <input type="color" id="textColor" data-var="--text-color" value="#213547">
+                        <span class="value-display">#213547</span>
+                    </div>
+                </section>
+
+                <section class="control-group">
+                    <h3>Typography</h3>
+                    <div class="control-item">
+                        <label for="baseSize">Base Size</label>
+                        <input type="range" id="baseSize" data-var="--base-size" min="12" max="24" value="16">
+                        <span class="value-display">16px</span>
+                    </div>
+                    <div class="control-item">
+                        <label for="headingWeight">Heading Weight</label>
+                        <input type="range" id="headingWeight" data-var="--font-weight-heading" min="300" max="900" step="100" value="700">
+                        <span class="value-display">700</span>
+                    </div>
+                </section>
+
+                <section class="control-group">
+                    <h3>Shape</h3>
+                    <div class="control-item">
+                        <label for="borderRadius">Radius</label>
+                        <input type="range" id="borderRadius" data-var="--border-radius" min="0" max="32" value="8">
+                        <span class="value-display">8px</span>
+                    </div>
+                    <div class="control-item">
+                        <label for="spacingUnit">Spacing Unit</label>
+                        <input type="range" id="spacingUnit" data-var="--spacing-unit" min="4" max="16" step="2" value="8">
+                        <span class="value-display">8px</span>
+                    </div>
+                </section>
+                
+                <section class="control-group presets">
+                    <h3>Presets</h3>
+                    <div class="preset-buttons">
+                        <button class="preset-btn" data-preset="default">Default</button>
+                        <button class="preset-btn" data-preset="cyberpunk">Cyberpunk</button>
+                        <button class="preset-btn" data-preset="corporate">Corporate</button>
+                    </div>
+                </section>
+            </div>
+        </aside>
+
+        <!-- Main Preview Area -->
+        <main class="preview-area">
+            <div class="preview-header">
+                <h1>Component Preview</h1>
+                <p>Real-time reflection of your design tokens</p>
+            </div>
+
+            <div class="component-grid">
+                <!-- Card Component -->
+                <div class="preview-component card">
+                    <div class="card-image"></div>
+                    <div class="card-body">
+                        <h3>Product Card</h3>
+                        <p>This is a standard card component demonstrating spacing, typography, and border radius tokens.</p>
+                        <button class="btn btn-primary">Action</button>
+                    </div>
+                </div>
+
+                <!-- Form Component -->
+                <div class="preview-component card form-component">
+                    <h3>Login Form</h3>
+                    <div class="input-group">
+                        <label>Email Address</label>
+                        <input type="text" placeholder="user@example.com">
+                    </div>
+                    <div class="input-group">
+                        <label>Password</label>
+                        <input type="password" placeholder="••••••••">
+                    </div>
+                    <div class="form-actions">
+                        <button class="btn btn-primary full-width">Sign In</button>
+                    </div>
+                </div>
+
+                <!-- Typography Scale -->
+                <div class="preview-component card typography-scale">
+                    <h1>Heading 1</h1>
+                    <h2>Heading 2</h2>
+                    <h3>Heading 3</h3>
+                    <p>Body text is crucial for readability. This paragraph demonstrates the base font size and line height settings derived from your tokens.</p>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Export Modal -->
+    <div id="export-modal" class="modal hidden">
+        <div class="modal-content">
+            <h3>Generated CSS</h3>
+            <pre><code id="css-output"></code></pre>
+            <div class="modal-actions">
+                <button id="copy-btn" class="btn btn-primary">Copy to Clipboard</button>
+                <button id="close-modal" class="btn btn-secondary">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="src/main.js"></script>
+</body>
+</html>

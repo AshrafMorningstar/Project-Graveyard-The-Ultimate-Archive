@@ -1,0 +1,161 @@
+/*
+ * -----------------------------------------------------------------------------
+ * @author      Ashraf Morningstar
+ * @github      https://github.com/AshrafMorningstar
+ * @repository  Project Graveyard - The Ultimate Archive
+ * @quote       "Code that defines the future. Designed to inspire."
+ * -----------------------------------------------------------------------------
+*/
+
+/* Created by Ashraf Morningstar - https://github.com/AshrafMorningstar */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');
+
+:root {
+  --bg-color: #e0e5ec;
+  --text-primary: #4a4a4a;
+  --text-secondary: #8d97a5;
+  --accent-color: #6d5dfc;
+  --shadow-light: #ffffff;
+  --shadow-dark: #a3b1c6;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+}
+
+body {
+  background-color: var(--bg-color);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.container {
+  width: 100%;
+  max-width: 450px;
+  background-color: var(--bg-color);
+  padding: 40px 30px;
+  border-radius: 30px;
+  box-shadow: 
+    9px 9px 16px var(--shadow-dark), 
+    -9px -9px 16px var(--shadow-light);
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.container:hover {
+    transform: translateY(-5px);
+}
+
+h1 {
+  color: var(--text-primary);
+  margin-bottom: 25px;
+  font-size: 2rem;
+  letter-spacing: -1px;
+}
+
+.input-box {
+  margin: 30px 0;
+  width: 100%;
+}
+
+input[type="date"] {
+  width: 100%;
+  padding: 15px;
+  background: var(--bg-color);
+  border: none;
+  border-radius: 15px;
+  box-shadow: 
+    inset 4px 4px 8px var(--shadow-dark), 
+    inset -4px -4px 8px var(--shadow-light);
+  color: var(--text-primary);
+  font-size: 1rem;
+  font-weight: 600;
+  outline: none;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+button {
+  width: 100%;
+  padding: 15px;
+  background: var(--bg-color);
+  border: none;
+  border-radius: 15px;
+  box-shadow: 
+    6px 6px 10px var(--shadow-dark), 
+    -6px -6px 10px var(--shadow-light);
+  color: var(--accent-color);
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+button:active {
+  box-shadow: 
+    inset 4px 4px 8px var(--shadow-dark), 
+    inset -4px -4px 8px var(--shadow-light);
+  transform: scale(0.98);
+}
+
+.output-wrapper {
+  margin-top: 30px;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: slideUp 0.5s forwards;
+}
+
+@keyframes slideUp {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+#result {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+#result span {
+  display: inline-block;
+  color: var(--accent-color);
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin: 0 5px;
+  text-shadow: 2px 2px 4px rgba(109, 93, 252, 0.2);
+}
+
+.footer {
+  margin-top: 40px;
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+}
+
+.footer a {
+  color: var(--accent-color);
+  text-decoration: none;
+  font-weight: 700;
+  position: relative;
+}
+
+.footer a::after {
+  content: '';
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  bottom: -2px;
+  left: 0;
+  background-color: var(--accent-color);
+  transition: width 0.3s;
+}
+
+.footer a:hover::after {
+  width: 100%;
+}

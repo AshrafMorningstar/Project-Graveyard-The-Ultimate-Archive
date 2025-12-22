@@ -1,0 +1,83 @@
+<!--
+ -----------------------------------------------------------------------------
+ @author      Ashraf Morningstar
+ @github      https://github.com/AshrafMorningstar
+ @repository  Project Graveyard - The Ultimate Archive
+ @quote       "Code that defines the future. Designed to inspire."
+ -----------------------------------------------------------------------------
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- SEO & Viral Metadata -->
+    <meta name="description" content="Premium EXPERT MICRO MENTORSHIP PWA web application. Built with modern web technologies. Part of the Ultimate Web Dev Roadmap by Ashraf Morningstar.">
+    <meta name="keywords" content="web development, EXPERT MICRO MENTORSHIP PWA, javascript, css, html, ashraf morningstar, open source, premium ui">
+    <meta name="author" content="Ashraf Morningstar">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://ashrafmorningstar.github.io/WebDevRoadmap/expert-micro-mentorship-pwa/">
+    <meta property="og:title" content="EXPERT MICRO MENTORSHIP PWA | Premium Web App">
+    <meta property="og:description" content="Premium EXPERT MICRO MENTORSHIP PWA web application. Built with modern web technologies. Part of the Ultimate Web Dev Roadmap by Ashraf Morningstar.">
+    <meta property="og:image" content="https://via.placeholder.com/1200x630.png?text=EXPERT+MICRO+MENTORSHIP+PWA">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://ashrafmorningstar.github.io/WebDevRoadmap/expert-micro-mentorship-pwa/">
+    <meta property="twitter:title" content="EXPERT MICRO MENTORSHIP PWA | Premium Web App">
+    <meta property="twitter:description" content="Premium EXPERT MICRO MENTORSHIP PWA web application. Built with modern web technologies. Part of the Ultimate Web Dev Roadmap by Ashraf Morningstar.">
+    <meta property="twitter:image" content="https://via.placeholder.com/1200x630.png?text=EXPERT+MICRO+MENTORSHIP+PWA">
+    
+    <link rel="canonical" href="https://ashrafmorningstar.github.io/WebDevRoadmap/expert-micro-mentorship-pwa/">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Micro-Mentorship PWA</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Author: Ashraf Morningstar | https://github.com/AshrafMorningstar -->
+  
+  <div class="app">
+    <header class="header">
+      <h1>🎓 MentorMatch</h1>
+      <button class="profile-btn">👤</button>
+    </header>
+
+    <main class="container">
+      <section class="hero">
+        <h2>Find a mentor in 60 seconds</h2>
+        <p>Quick 15-30 minute sessions with experts</p>
+      </section>
+
+      <div class="mentor-grid" id="mentorGrid">
+        <!-- Mentors injected here -->
+      </div>
+
+      <!-- Call Modal -->
+      <div class="modal" id="callModal">
+        <div class="modal-content">
+          <div class="call-header">
+            <h3 id="mentorName">Connecting...</h3>
+            <button id="endCall" class="btn-danger">End Call</button>
+          </div>
+          <div class="video-placeholder">
+            <div class="avatar-large">👤</div>
+            <p>Video call simulation</p>
+          </div>
+          <div class="call-controls">
+            <button class="control-btn">🎤 Mute</button>
+            <button class="control-btn">📹 Video</button>
+            <button class="control-btn">💬 Chat</button>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
+

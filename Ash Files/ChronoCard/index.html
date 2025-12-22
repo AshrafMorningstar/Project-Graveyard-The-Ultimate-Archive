@@ -1,0 +1,59 @@
+<!--
+ -----------------------------------------------------------------------------
+ @author      Ashraf Morningstar
+ @github      https://github.com/AshrafMorningstar
+ @repository  Project Graveyard - The Ultimate Archive
+ @quote       "Code that defines the future. Designed to inspire."
+ -----------------------------------------------------------------------------
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ChronoCard - Time-Aware Digital Identity</title>
+    <meta
+      name="description"
+      content="A living digital identity card that reacts to time itself"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/theme.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="chrono-card">
+        <div class="card-header">
+          <div class="time-display" id="timeDisplay">00:00:00</div>
+          <div class="date-display" id="dateDisplay">Monday</div>
+        </div>
+
+        <div class="card-body">
+          <h1 class="name" id="greeting">Good Morning</h1>
+          <h2 class="identity-name">Ashraf Morningstar</h2>
+          <p class="role">Creative Developer & UI/UX Designer</p>
+          <div class="accent-line"></div>
+        </div>
+
+        <div class="card-footer">
+          <div class="status-indicator"></div>
+          <p class="tagline">Time-Aware Digital Identity</p>
+        </div>
+      </div>
+
+      <div class="attribution">
+        <p>Created by <strong>Ashraf Morningstar</strong></p>
+        <a href="https://github.com/AshrafMorningstar" target="_blank"
+          >github.com/AshrafMorningstar</a
+        >
+      </div>
+    </div>
+
+    <script src="js/time-engine.js"></script>
+  </body>
+</html>

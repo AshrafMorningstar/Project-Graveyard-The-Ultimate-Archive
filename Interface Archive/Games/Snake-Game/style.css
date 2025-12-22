@@ -1,0 +1,296 @@
+/*
+ * -----------------------------------------------------------------------------
+ * @author      Ashraf Morningstar
+ * @github      https://github.com/AshrafMorningstar
+ * @repository  Project Graveyard - The Ultimate Archive
+ * @quote       "Code that defines the future. Designed to inspire."
+ * -----------------------------------------------------------------------------
+*/
+
+/*
+ * Created by: Ashraf Morningstar
+ * GitHub: https://github.com/AshrafMorningstar
+ * Premium Web Development Projects
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+:root {
+    --primary-color: #0d0221;
+    --secondary-color: #0f084b;
+    --accent-color: #26408b;
+    --text-color: #ffffff;
+    --background: linear-gradient(135deg, #0d0221 0%, #0f084b 100%);
+    --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --font-secondary: 'Poppins', sans-serif;
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    --border-radius: 15px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-primary);
+    background: var(--background);
+    color: var(--text-color);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* Animated Background */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--background);
+    z-index: -2;
+}
+
+body::after {
+    content: '';
+    position: fixed;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px);
+    background-size: 50px 50px;
+    animation: backgroundMove 20s linear infinite;
+    z-index: -1;
+    opacity: 0.3;
+}
+
+@keyframes backgroundMove {
+    0% { transform: translate(0, 0); }
+    100% { transform: translate(50px, 50px); }
+}
+
+/* Container Styles */
+.container {
+    width: 100%;
+    max-width: 1200px;
+    background: rgba(10, 14, 39, 0.8);
+    
+    border: 2px solid #ff006e;
+    border-radius: var(--border-radius);
+    padding: 40px;
+    box-shadow: var(--shadow);
+    
+    box-shadow: undefined;
+    animation: fadeInUp 0.6s ease-out;
+    position: relative;
+    overflow: hidden;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Heading Styles */
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-secondary);
+    font-weight: 700;
+    margin-bottom: 20px;
+    
+    text-shadow: 0 0 20px #ff006e, 0 0 40px #ff006e;
+    animation: neon-pulse 1.5s infinite alternate;
+    
+}
+
+/* Button Styles */
+button, .btn {
+    font-family: var(--font-primary);
+    font-weight: 600;
+    padding: 12px 30px;
+    border: none;
+    border-radius: var(--border-radius);
+    background: var(--accent-color);
+    color: var(--text-color);
+    cursor: pointer;
+    transition: var(--transition);
+    box-shadow: var(--shadow);
+    position: relative;
+    overflow: hidden;
+    
+    
+    border: 2px solid #ff006e;
+    box-shadow: 0 0 20px #ff006e, 0 0 40px #ff006e;
+}
+
+button::before, .btn::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+
+button:hover::before, .btn:hover::before {
+    width: 300px;
+    height: 300px;
+}
+
+button:hover, .btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+    
+    box-shadow: 0 0 20px #00f5ff, 0 0 40px #00f5ff;
+}
+
+button:active, .btn:active {
+    transform: translateY(-1px);
+}
+
+/* Input Styles */
+input, textarea, select {
+    font-family: var(--font-primary);
+    width: 100%;
+    padding: 12px 20px;
+    margin: 10px 0;
+    border: 2px solid #ff006e;
+    border-radius: var(--border-radius);
+    background: rgba(10, 14, 39, 0.6);
+    color: var(--text-color);
+    font-size: 16px;
+    transition: var(--transition);
+    
+    
+}
+
+input:focus, textarea:focus, select:focus {
+    outline: none;
+    border-color: var(--accent-color);
+    
+    box-shadow: undefined;
+    transform: translateY(-2px);
+}
+
+/* Card Styles */
+.card {
+    background: rgba(26, 31, 58, 0.8);
+    border-radius: var(--border-radius);
+    padding: 25px;
+    margin: 15px 0;
+    box-shadow: var(--shadow);
+    
+    
+    
+    border: 2px solid #ff006e;
+    box-shadow: undefined;
+    transition: var(--transition);
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+}
+
+/* Animation Keyframes */
+
+
+
+
+
+
+
+@keyframes neon-pulse {
+    from { box-shadow: 0 0 20px #ff006e, 0 0 40px #ff006e; }
+    to { box-shadow: 0 0 30px #ff006e, 0 0 60px #ff006e, 0 0 80px #ff006e; }
+}
+
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 25px;
+    }
+    
+    body {
+        padding: 10px;
+    }
+    
+    button, .btn {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #0a0e27;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--accent-color);
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #26408b;
+}
+
+/* Loading Animation */
+.loading {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    border: 5px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border-top-color: var(--accent-color);
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* Utility Classes */
+.text-center { text-align: center; }
+.mt-1 { margin-top: 10px; }
+.mt-2 { margin-top: 20px; }
+.mt-3 { margin-top: 30px; }
+.mb-1 { margin-bottom: 10px; }
+.mb-2 { margin-bottom: 20px; }
+.mb-3 { margin-bottom: 30px; }
+.p-1 { padding: 10px; }
+.p-2 { padding: 20px; }
+.p-3 { padding: 30px; }
+.flex { display: flex; }
+.flex-center { display: flex; justify-content: center; align-items: center; }
+.flex-column { flex-direction: column; }
+.gap-1 { gap: 10px; }
+.gap-2 { gap: 20px; }
+.gap-3 { gap: 30px; }
+
+
+/* Custom Styles */

@@ -1,0 +1,14 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "VideoTelemetry",
+  "type": "object",
+  "required": ["device_id", "timestamp", "frame_idx", "frame_payload"],
+  "properties": {
+    "device_id": { "type": "string" },
+    "timestamp": { "type": "string", "format": "date-time" },
+    "frame_idx": { "type": "integer" },
+    "frame_payload": { "type": "string", "format": "binary" },
+    "encoding": { "type": "string", "enum": ["h264", "jpeg", "raw"] },
+    "meta": { "type": "object" }
+  }
+}

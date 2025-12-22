@@ -1,0 +1,65 @@
+# Created by AshrafMorningstar
+# GitHub: https://github.com/AshrafMorningstar
+
+name: Generate DevMetrics Analytics
+
+on:
+  schedule:
+    - cron: '0 0 * * 0'  # Weekly on Sunday at midnight UTC
+  workflow_dispatch:      # Manual trigger
+  push:
+    branches:
+      - main
+    paths:
+      - 'config/**'
+      - 'src/**'
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: 📥 Checkout repository
+        uses: actions/checkout@v4
+      
+      - name: 🔧 Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+          
+      - name: 📦 Install dependencies
+        run: npm ci
+        
+      - name: 🎨 Generate visualizations
+        run: npm run render
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          
+      - name: 📤 Upload outputs
+        uses: actions/upload-artifact@v4
+        with:
+          name: analytics-visualizations-${{ github.run_number }}
+          path: outputs/
+          retention-days: 30
+          
+      - name: 🚀 Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        if: github.ref == 'refs/heads/main'
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./outputs
+          commit_message: 'chore: Update analytics visualizations'
+          
+      - name: 📊 Create release
+        if: github.event_name == 'schedule'
+        uses: softprops/action-gh-release@v1
+        with:
+          tag_name: analytics-${{ github.run_number }}
+          name: Weekly Analytics ${{ github.run_number }}
+          files: outputs/*
+          draft: false
+          prerelease: false
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

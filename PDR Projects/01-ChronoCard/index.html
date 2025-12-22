@@ -1,0 +1,66 @@
+<!--
+ -----------------------------------------------------------------------------
+ @author      Ashraf Morningstar
+ @github      https://github.com/AshrafMorningstar
+ @repository  Project Graveyard - The Ultimate Archive
+ @quote       "Code that defines the future. Designed to inspire."
+ -----------------------------------------------------------------------------
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="ChronoCard - A time-aware digital identity card that morphs based on real-time context"
+    />
+    <title>ChronoCard - Time-Aware Digital Identity</title>
+    <link rel="stylesheet" href="css/theme.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <main class="container">
+      <article class="chrono-card" id="chronoCard">
+        <div class="card-glow"></div>
+        <div class="card-content">
+          <header class="card-header">
+            <h1 class="greeting" id="greeting">Good Morning</h1>
+            <time class="current-time" id="currentTime">00:00:00</time>
+          </header>
+
+          <section class="identity">
+            <h2 class="name">Your Name</h2>
+            <p class="role">Creative Developer</p>
+            <p class="tagline" id="tagline">
+              Crafting experiences that adapt to time
+            </p>
+          </section>
+
+          <footer class="card-footer">
+            <div class="day-indicator" id="dayIndicator">
+              <span class="day-name" id="dayName">Monday</span>
+              <div class="day-accent"></div>
+            </div>
+            <div class="time-period" id="timePeriod">AM</div>
+          </footer>
+        </div>
+      </article>
+
+      <aside class="info-panel">
+        <p class="info-text">
+          This card adapts to time itself. Watch as it changes throughout the
+          day.
+        </p>
+      </aside>
+    </main>
+
+    <script src="js/time-engine.js"></script>
+  </body>
+</html>

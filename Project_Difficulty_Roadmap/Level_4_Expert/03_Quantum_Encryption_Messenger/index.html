@@ -1,0 +1,50 @@
+<!--
+ -----------------------------------------------------------------------------
+ @author      Ashraf Morningstar
+ @github      https://github.com/AshrafMorningstar
+ @repository  Project Graveyard - The Ultimate Archive
+ @quote       "Code that defines the future. Designed to inspire."
+ -----------------------------------------------------------------------------
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quantum Encryption Messenger | Ashraf Morningstar</title>
+    <!-- 
+        Project: Quantum Encryption Messenger
+        Level: Expert
+        Author: Ashraf Morningstar
+        GitHub: https://github.com/AshrafMorningstar
+    -->
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700&family=Roboto+Mono:wght@300&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="quantum-container">
+        <header>
+            <h1><span class="q-icon">⚛</span> Q-LINK</h1>
+            <div class="entanglement-status">
+                ENTANGLEMENT: <span id="e-status">STABLE</span>
+            </div>
+        </header>
+
+        <main>
+            <div id="messages-area">
+                <!-- Messages will be injected here -->
+                <div class="message system">
+                    Waiting for quantum key distribution...
+                </div>
+            </div>
+
+            <div class="input-area">
+                <input type="text" id="msg-input" placeholder="Enter payload..." autocomplete="off">
+                <button id="send-btn">TRANSMIT</button>
+            </div>
+        </main>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>

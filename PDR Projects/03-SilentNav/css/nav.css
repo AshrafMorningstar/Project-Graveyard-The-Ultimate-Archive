@@ -1,0 +1,199 @@
+/*
+ * -----------------------------------------------------------------------------
+ * @author      Ashraf Morningstar
+ * @github      https://github.com/AshrafMorningstar
+ * @repository  Project Graveyard - The Ultimate Archive
+ * @quote       "Code that defines the future. Designed to inspire."
+ * -----------------------------------------------------------------------------
+*/
+
+/* SilentNav - Navigation Styles */
+
+/* Navigation Container */
+.silent-nav {
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100vh;
+    width: var(--nav-size);
+    background: var(--color-surface);
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: calc(var(--spacing-unit) * 2);
+    z-index: 1000;
+    transition: all var(--transition-smooth);
+}
+
+/* Navigation Symbol Buttons */
+.nav-symbol {
+    width: 56px;
+    height: 56px;
+    background: transparent;
+    border: 2px solid var(--color-muted);
+    border-radius: 12px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all var(--transition-quick);
+    position: relative;
+    overflow: hidden;
+}
+
+.nav-symbol::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: var(--color-accent);
+    opacity: 0;
+    transition: opacity var(--transition-quick);
+}
+
+/* Symbol Icon */
+.symbol-icon {
+    width: 28px;
+    height: 28px;
+    fill: var(--color-muted);
+    stroke: var(--color-muted);
+    transition: all var(--transition-quick);
+    position: relative;
+    z-index: 1;
+}
+
+/* Hover State */
+.nav-symbol:hover {
+    border-color: var(--color-accent);
+    transform: scale(1.1);
+}
+
+.nav-symbol:hover::before {
+    opacity: 0.1;
+}
+
+.nav-symbol:hover .symbol-icon {
+    fill: var(--color-accent);
+    stroke: var(--color-accent);
+    transform: rotate(5deg);
+}
+
+/* Active State */
+.nav-symbol.active {
+    border-color: var(--color-accent);
+    background: rgba(0, 255, 136, 0.1);
+    transform: scale(1.05);
+}
+
+.nav-symbol.active .symbol-icon {
+    fill: var(--color-accent);
+    stroke: var(--color-accent);
+    animation: symbol-pulse 2s ease-in-out infinite;
+}
+
+@keyframes symbol-pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+/* Focus State (Keyboard Navigation) */
+.nav-symbol:focus {
+    outline: none;
+    border-color: var(--color-accent);
+    box-shadow: 0 0 0 4px rgba(0, 255, 136, 0.2);
+}
+
+.nav-symbol:focus .symbol-icon {
+    fill: var(--color-accent);
+    stroke: var(--color-accent);
+}
+
+/* Transition State */
+.nav-symbol.transitioning {
+    pointer-events: none;
+}
+
+.nav-symbol.transitioning .symbol-icon {
+    animation: symbol-transition 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes symbol-transition {
+    0% { transform: scale(1) rotate(0deg); }
+    50% { transform: scale(0.8) rotate(180deg); }
+    100% { transform: scale(1) rotate(360deg); }
+}
+
+/* Symbol-Specific Animations */
+.nav-symbol[data-section="grid"]:hover .symbol-icon rect {
+    animation: grid-morph 0.6s ease-in-out;
+}
+
+@keyframes grid-morph {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(0.9); }
+}
+
+.nav-symbol[data-section="flow"]:hover .symbol-icon circle {
+    animation: circle-expand 0.8s ease-in-out;
+}
+
+@keyframes circle-expand {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+}
+
+.nav-symbol[data-section="lines"]:hover .symbol-icon line {
+    animation: line-slide 0.5s ease-in-out;
+}
+
+@keyframes line-slide {
+    0%, 100% { transform: translateX(0); }
+    50% { transform: translateX(4px); }
+}
+
+.nav-symbol[data-section="minimal"]:hover .symbol-icon polygon {
+    animation: triangle-rotate 0.8s ease-in-out;
+}
+
+@keyframes triangle-rotate {
+    0%, 100% { transform: rotate(0deg); }
+    50% { transform: rotate(120deg); }
+}
+
+/* Responsive - Mobile */
+@media (max-width: 768px) {
+    .silent-nav {
+        width: 100%;
+        height: var(--nav-size);
+        flex-direction: row;
+        border-right: none;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .nav-symbol {
+        width: 48px;
+        height: 48px;
+    }
+    
+    .symbol-icon {
+        width: 24px;
+        height: 24px;
+    }
+}
+
+/* Accessibility - High Contrast Mode */
+@media (prefers-contrast: high) {
+    .nav-symbol {
+        border-width: 3px;
+    }
+    
+    .nav-symbol.active {
+        background: var(--color-accent);
+    }
+    
+    .nav-symbol.active .symbol-icon {
+        fill: var(--color-bg);
+        stroke: var(--color-bg);
+    }
+}

@@ -1,0 +1,407 @@
+<!--
+ -----------------------------------------------------------------------------
+ @author      Ashraf Morningstar
+ @github      https://github.com/AshrafMorningstar
+ @repository  Project Graveyard - The Ultimate Archive
+ @quote       "Code that defines the future. Designed to inspire."
+ -----------------------------------------------------------------------------
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Publish verifiable content to simulated IPFS with cryptographic proofs">
+    <meta name="author" content="Ashraf Morningstar">
+    <title>D-Page | Decentralized Publisher</title>
+    <link rel="stylesheet" href="../shared/global-design-system.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            background-color: #0d1117;
+            background-image: radial-gradient(circle at top right, #1f2937 0%, transparent 40%);
+        }
+
+        .app-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: var(--space-8);
+            display: grid;
+            grid-template-columns: 1fr 350px;
+            gap: var(--space-8);
+            min-height: 100vh;
+        }
+
+        /* Editor Section */
+        .editor-section {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-6);
+        }
+
+        .editor-card {
+            background: #161b22;
+            border: 1px solid #30363d;
+            border-radius: var(--radius-xl);
+            padding: var(--space-6);
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+        }
+
+        .toolbar {
+            display: flex;
+            gap: var(--space-2);
+            padding-bottom: var(--space-4);
+            border-bottom: 1px solid #30363d;
+            margin-bottom: var(--space-4);
+        }
+
+        .tool-btn {
+            background: transparent;
+            border: none;
+            color: #8b949e;
+            cursor: pointer;
+            padding: 6px;
+            border-radius: 4px;
+        }
+
+        .tool-btn:hover {
+            color: white;
+            background: #30363d;
+        }
+
+        #titleInput {
+            background: transparent;
+            border: none;
+            font-size: 2rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: var(--space-4);
+            width: 100%;
+        }
+
+        #titleInput:focus { outline: none; }
+
+        #contentEditor {
+            flex: 1;
+            background: transparent;
+            border: none;
+            color: #c9d1d9;
+            font-size: 1.1rem;
+            line-height: 1.6;
+            resize: none;
+            min-height: 400px;
+            font-family: 'Inter', sans-serif;
+        }
+
+        #contentEditor:focus { outline: none; }
+
+        /* Sidebar */
+        .sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-6);
+        }
+
+        .status-card {
+            background: #0d1117;
+            border: 1px solid #30363d;
+            border-radius: var(--radius-lg);
+            padding: var(--space-6);
+        }
+
+        .status-header {
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: #8b949e;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: var(--space-4);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .hash-display {
+            background: #010409;
+            padding: var(--space-3);
+            border-radius: var(--radius-md);
+            border: 1px solid #30363d;
+            font-family: 'Courier New', monospace;
+            font-size: 0.8rem;
+            color: var(--accent-primary);
+            word-break: break-all;
+            margin-bottom: var(--space-4);
+        }
+
+        .node-status {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--success);
+            font-size: 0.9rem;
+            background: rgba(35, 134, 54, 0.1);
+            padding: 8px 12px;
+            border-radius: 99px;
+            width: fit-content;
+        }
+
+        .publish-btn {
+            width: 100%;
+            padding: 12px;
+            background: var(--accent-primary);
+            color: white;
+            border: none;
+            border-radius: var(--radius-md);
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .publish-btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .publish-btn:hover:not(:disabled) {
+            background: #2563eb;
+            transform: translateY(-2px);
+        }
+
+        /* Key Pair Section */
+        .key-section {
+            border-top: 1px solid #30363d;
+            padding-top: var(--space-4);
+            margin-top: var(--space-4);
+        }
+
+        .key-status {
+            font-size: 0.8rem;
+            color: #8b949e;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        /* History */
+        .history-list {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .history-item {
+            padding: 12px;
+            background: #161b22;
+            border-radius: var(--radius-md);
+            border: 1px solid #30363d;
+            cursor: pointer;
+        }
+
+        .history-cid {
+            font-family: monospace;
+            font-size: 0.75rem;
+            color: var(--accent-secondary);
+        }
+
+        .history-meta {
+            font-size: 0.75rem;
+            color: #8b949e;
+            margin-top: 4px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        /* Verification Badge */
+        .verify-badge {
+            display: none;
+            margin-top: var(--space-4);
+            padding: 12px;
+            background: rgba(35, 134, 54, 0.1);
+            border: 1px solid var(--success);
+            border-radius: var(--radius-md);
+            color: var(--success);
+            font-size: 0.9rem;
+            align-items: center;
+            gap: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="app-container">
+        <!-- Main Editor -->
+        <main class="editor-section">
+            <header style="display: flex; align-items: center; gap: 12px; margin-bottom: 20px;">
+                <i class="fas fa-cube fa-2x" style="color: var(--accent-primary);"></i>
+                <div>
+                    <h1 style="margin: 0; font-size: 1.5rem;">D-Page Composer</h1>
+                    <span style="color: #8b949e; font-size: 0.9rem;">Decentralized Content Publishing</span>
+                </div>
+            </header>
+
+            <div class="editor-card">
+                <div class="toolbar">
+                    <button class="tool-btn"><i class="fas fa-bold"></i></button>
+                    <button class="tool-btn"><i class="fas fa-italic"></i></button>
+                    <button class="tool-btn"><i class="fas fa-link"></i></button>
+                    <button class="tool-btn"><i class="fas fa-image"></i></button>
+                    <div style="flex: 1;"></div>
+                    <button class="tool-btn"><i class="fas fa-eye"></i> Preview</button>
+                </div>
+                <input type="text" id="titleInput" placeholder="Page Title...">
+                <textarea id="contentEditor" placeholder="Start writing decentralized content..."></textarea>
+            </div>
+        </main>
+
+        <!-- Sidebar Actions -->
+        <aside class="sidebar">
+            <div class="status-card">
+                <div class="status-header">
+                    <i class="fas fa-network-wired"></i> Network Status
+                </div>
+                <div class="node-status">
+                    <div style="width: 8px; height: 8px; background: currentColor; border-radius: 50%;"></div>
+                    Connected to Swarm (8 peers)
+                </div>
+            </div>
+
+            <div class="status-card">
+                <div class="status-header">
+                    <i class="fas fa-fingerprint"></i> Content Hash (CID)
+                </div>
+                <div id="cidDisplay" class="hash-display">waiting for content...</div>
+                
+                <div class="key-section">
+                    <div class="key-status">
+                        <i class="fas fa-key" style="color: var(--warning);"></i>
+                        <span id="keyStatus">Generating Identity...</span>
+                    </div>
+                </div>
+
+                <div id="verifyBadge" class="verify-badge">
+                    <i class="fas fa-check-circle"></i>
+                    <span>Cryptographically Signed</span>
+                </div>
+
+                <button id="publishBtn" class="publish-btn" onclick="publishContent()">
+                    <i class="fas fa-cloud-upload-alt"></i> Publish to IPFS
+                </button>
+            </div>
+
+            <div class="status-card" style="flex: 1;">
+                <div class="status-header">
+                    <i class="fas fa-history"></i> Publish History
+                </div>
+                <div id="historyList" class="history-list">
+                    <!-- History Items -->
+                </div>
+            </div>
+        </aside>
+    </div>
+
+    <script>
+        /**
+         * D-Page Verifiable Content
+         * Author: Ashraf Morningstar
+         */
+
+        const titleInput = document.getElementById('titleInput');
+        const contentEditor = document.getElementById('contentEditor');
+        const cidDisplay = document.getElementById('cidDisplay');
+        const publishBtn = document.getElementById('publishBtn');
+        const historyList = document.getElementById('historyList');
+        const verifyBadge = document.getElementById('verifyBadge');
+        
+        let keyPair = null;
+
+        // Init: Generate Keys
+        async function generateKeys() {
+            try {
+                keyPair = await window.crypto.subtle.generateKey(
+                    {
+                        name: "RSASSA-PKCS1-v1_5",
+                        modulusLength: 2048,
+                        publicExponent: new Uint8Array([1, 0, 1]),
+                        hash: "SHA-256",
+                    },
+                    true,
+                    ["sign", "verify"]
+                );
+                document.getElementById('keyStatus').innerHTML = '<span style="color: #c9d1d9">Identity Active:</span> 0x7f3...9a2';
+                document.querySelector('.fa-key').style.color = 'var(--success)';
+            } catch (e) {
+                console.error(e);
+            }
+        }
+        generateKeys();
+
+        // Real-time Hash Simulation
+        function updateHash() {
+            const data = titleInput.value + contentEditor.value;
+            if (!data) {
+                cidDisplay.textContent = 'waiting for content...';
+                return;
+            }
+            
+            // Simulating CID generation (usually base58 encoded SHA256)
+            simulateCID(data).then(cid => {
+                cidDisplay.textContent = cid;
+            });
+        }
+
+        async function simulateCID(text) {
+            const encoder = new TextEncoder();
+            const data = encoder.encode(text);
+            const hashBuffer = await crypto.subtle.digest('SHA-256', data);
+            const hashArray = Array.from(new Uint8Array(hashBuffer));
+            const hashHex = hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
+            return 'Qm' + hashHex.substring(0, 44); // Fake CID format
+        }
+
+        titleInput.addEventListener('input', updateHash);
+        contentEditor.addEventListener('input', updateHash);
+
+        // Publish Action
+        async function publishContent() {
+            const title = titleInput.value;
+            if (!title) return alert('Please enter a title');
+
+            publishBtn.disabled = true;
+            publishBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Pinning...';
+
+            // Simulate Network Delay
+            await new Promise(r => setTimeout(r, 1500));
+
+            const cid = cidDisplay.textContent;
+            const timestamp = new Date().toLocaleTimeString();
+
+            // Add to History
+            const item = document.createElement('div');
+            item.className = 'history-item';
+            item.innerHTML = `
+                <div style="font-weight: 600; color: white;">${title}</div>
+                <div class="history-cid">${cid}</div>
+                <div class="history-meta">
+                    <span><i class="fas fa-check"></i> Verified</span>
+                    <span>${timestamp}</span>
+                </div>
+            `;
+            historyList.prepend(item);
+
+            // Show Verify Badge
+            verifyBadge.style.display = 'flex';
+            
+            // Reset Button
+            publishBtn.innerHTML = '<i class="fas fa-cloud-upload-alt"></i> Publish Update';
+            publishBtn.disabled = false;
+        }
+
+    </script>
+</body>
+</html>

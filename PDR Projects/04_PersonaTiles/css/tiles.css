@@ -1,0 +1,115 @@
+/*
+ * -----------------------------------------------------------------------------
+ * @author      Ashraf Morningstar
+ * @github      https://github.com/AshrafMorningstar
+ * @repository  Project Graveyard - The Ultimate Archive
+ * @quote       "Code that defines the future. Designed to inspire."
+ * -----------------------------------------------------------------------------
+*/
+
+/**
+ * Persona Tiles - Tile Styles
+ * Author: Ashraf Morningstar
+ * GitHub: https://github.com/AshrafMorningstar
+ */
+
+.tile {
+    aspect-ratio: 1;
+    background: var(--surface);
+    border-radius: 16px;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.tile::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(255,255,255,0.05), transparent);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.tile:hover::before {
+    opacity: 1;
+}
+
+.tile:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+.tile-icon {
+    font-size: 3rem;
+    transition: transform 0.3s ease;
+}
+
+.tile:hover .tile-icon {
+    transform: scale(1.15);
+}
+
+.tile-label {
+    font-size: 1rem;
+    font-weight: 600;
+    text-align: center;
+    opacity: 0.8;
+}
+
+/* Active state */
+.tile.active {
+    transform: scale(1.1);
+    z-index: 10;
+}
+
+.tile.active .tile-label {
+    opacity: 1;
+    font-weight: 700;
+}
+
+/* Type-specific colors */
+.tile[data-type="skill"].active {
+    border-color: var(--skill-color);
+    background: linear-gradient(135deg, var(--surface), rgba(59, 130, 246, 0.1));
+    box-shadow: 0 0 30px rgba(59, 130, 246, 0.3);
+}
+
+.tile[data-type="interest"].active {
+    border-color: var(--interest-color);
+    background: linear-gradient(135deg, var(--surface), rgba(139, 92, 246, 0.1));
+    box-shadow: 0 0 30px rgba(139, 92, 246, 0.3);
+}
+
+.tile[data-type="value"].active {
+    border-color: var(--value-color);
+    background: linear-gradient(135deg, var(--surface), rgba(236, 72, 153, 0.1));
+    box-shadow: 0 0 30px rgba(236, 72, 153, 0.3);
+}
+
+.tile[data-type="goal"].active {
+    border-color: var(--goal-color);
+    background: linear-gradient(135deg, var(--surface), rgba(16, 185, 129, 0.1));
+    box-shadow: 0 0 30px rgba(16, 185, 129, 0.3);
+}
+
+/* Focus state for accessibility */
+.tile:focus {
+    outline: 2px solid var(--text-primary);
+    outline-offset: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .tile,
+    .tile::before,
+    .tile-icon {
+        transition: none;
+    }
+}

@@ -1,0 +1,86 @@
+<!--
+ -----------------------------------------------------------------------------
+ @author      Ashraf Morningstar
+ @github      https://github.com/AshrafMorningstar
+ @repository  Project Graveyard - The Ultimate Archive
+ @quote       "Code that defines the future. Designed to inspire."
+ -----------------------------------------------------------------------------
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Stats-Visualizer - Premium Data-Viz | Ashraf Morningstar">
+    <meta name="keywords" content="stats-visualizer, data-viz, web app, ashraf morningstar">
+    <meta name="author" content="Ashraf Morningstar">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Stats-Visualizer - Premium Web App">
+    <meta property="og:description" content="Experience premium Data-Viz with Amethyst-Mystic design">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://github.com/AshrafMorningstar/Premium-Web-Projects/Data-Viz/Stats-Visualizer">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Stats-Visualizer">
+    <meta name="twitter:description" content="Premium Data-Viz Application">
+    
+    <title>Stats-Visualizer | Ashraf Morningstar</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header class="glass-card" style="text-align: center; margin-bottom: 2rem;">
+            <h1>Stats Visualizer</h1>
+            <p style="font-size: 1.2rem; opacity: 0.9; margin-bottom: 1rem;">
+                Premium Data Viz Application
+            </p>
+            <p style="opacity: 0.7;">Amethyst Mystic Theme</p>
+            <a href="https://github.com/AshrafMorningstar" class="btn" style="display: inline-block; margin-top: 1rem; text-decoration: none;">
+                View on GitHub
+            </a>
+        </header>
+        
+        <main class="glass-card">
+            <h2 style="margin-bottom: 1.5rem; color: var(--secondary);">Features</h2>
+            <div id="app" style="min-height: 400px;">
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem;">
+                    <div class="glass-card" style="text-align: center; padding: 2rem;">
+                        <div style="font-size: 3rem; margin-bottom: 1rem;">&#x1F680;</div>
+                        <h3>Lightning Fast</h3>
+                        <p style="opacity: 0.8;">Optimized performance</p>
+                    </div>
+                    <div class="glass-card" style="text-align: center; padding: 2rem;">
+                        <div style="font-size: 3rem; margin-bottom: 1rem;">&#x1F3A8;</div>
+                        <h3>Premium Design</h3>
+                        <p style="opacity: 0.8;">Unique Amethyst-Mystic aesthetic</p>
+                    </div>
+                    <div class="glass-card" style="text-align: center; padding: 2rem;">
+                        <div style="font-size: 3rem; margin-bottom: 1rem;">&#x1F4F1;</div>
+                        <h3>Fully Responsive</h3>
+                        <p style="opacity: 0.8;">Works on all devices</p>
+                    </div>
+                </div>
+                
+                <div class="glass-card" style="margin-top: 2rem; padding: 2rem;">
+                    <h3 style="margin-bottom: 1rem;">Interactive Demo</h3>
+                    <input type="text" id="demo-input" placeholder="Try it now..." style="margin-bottom: 1rem;">
+                    <button class="btn" onclick="handleDemo()">Experience Magic</button>
+                    <div id="output" style="margin-top: 1rem; min-height: 50px; font-size: 1.2rem;"></div>
+                </div>
+            </div>
+        </main>
+        
+        <footer class="glass-card" style="text-align: center; margin-top: 2rem;">
+            <p>Created with &#x2764; by <strong>Ashraf Morningstar</strong></p>
+            <p style="opacity: 0.7; margin-top: 0.5rem;">
+                <a href="https://github.com/AshrafMorningstar" style="color: var(--secondary); text-decoration: none;">https://github.com/AshrafMorningstar</a>
+            </p>
+        </footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!--
+ -----------------------------------------------------------------------------
+ @author      Ashraf Morningstar
+ @github      https://github.com/AshrafMorningstar
+ @repository  Project Graveyard - The Ultimate Archive
+ @quote       "Code that defines the future. Designed to inspire."
+ -----------------------------------------------------------------------------
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- SEO & Viral Metadata -->
+    <meta name="description" content="Premium EXPERT WASM IMAGE PIPELINE web application. Built with modern web technologies. Part of the Ultimate Web Dev Roadmap by Ashraf Morningstar.">
+    <meta name="keywords" content="web development, EXPERT WASM IMAGE PIPELINE, javascript, css, html, ashraf morningstar, open source, premium ui">
+    <meta name="author" content="Ashraf Morningstar">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://ashrafmorningstar.github.io/WebDevRoadmap/expert-wasm-image-pipeline/">
+    <meta property="og:title" content="EXPERT WASM IMAGE PIPELINE | Premium Web App">
+    <meta property="og:description" content="Premium EXPERT WASM IMAGE PIPELINE web application. Built with modern web technologies. Part of the Ultimate Web Dev Roadmap by Ashraf Morningstar.">
+    <meta property="og:image" content="https://via.placeholder.com/1200x630.png?text=EXPERT+WASM+IMAGE+PIPELINE">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://ashrafmorningstar.github.io/WebDevRoadmap/expert-wasm-image-pipeline/">
+    <meta property="twitter:title" content="EXPERT WASM IMAGE PIPELINE | Premium Web App">
+    <meta property="twitter:description" content="Premium EXPERT WASM IMAGE PIPELINE web application. Built with modern web technologies. Part of the Ultimate Web Dev Roadmap by Ashraf Morningstar.">
+    <meta property="twitter:image" content="https://via.placeholder.com/1200x630.png?text=EXPERT+WASM+IMAGE+PIPELINE">
+    
+    <link rel="canonical" href="https://ashrafmorningstar.github.io/WebDevRoadmap/expert-wasm-image-pipeline/">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WASM Image Pipeline</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Author: Ashraf Morningstar | https://github.com/AshrafMorningstar -->
+  
+  <div class="app-layout">
+    <aside class="sidebar">
+      <h2>Filters</h2>
+      <div class="filter-list">
+        <button class="filter-btn" data-filter="grayscale">Grayscale</button>
+        <button class="filter-btn" data-filter="sepia">Sepia</button>
+        <button class="filter-btn" data-filter="invert">Invert</button>
+        <button class="filter-btn" data-filter="blur">Blur</button>
+        <button class="filter-btn" data-filter="brightness">Brightness</button>
+      </div>
+      
+      <div class="controls">
+        <label>Intensity</label>
+        <input type="range" id="intensity" min="0" max="100" value="100">
+        <span id="intensityValue">100%</span>
+      </div>
+
+      <button id="resetBtn" class="btn-secondary">Reset</button>
+      <button id="exportBtn" class="btn-primary">Export Image</button>
+    </aside>
+
+    <main class="canvas-area">
+      <div class="upload-zone" id="uploadZone">
+        <p>📁 Drop an image here or click to upload</p>
+        <input type="file" id="fileInput" accept="image/*" hidden>
+      </div>
+      <canvas id="canvas" style="display:none;"></canvas>
+    </main>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,197 @@
+/*
+ * -----------------------------------------------------------------------------
+ * @author      Ashraf Morningstar
+ * @github      https://github.com/AshrafMorningstar
+ * @repository  Project Graveyard - The Ultimate Archive
+ * @quote       "Code that defines the future. Designed to inspire."
+ * -----------------------------------------------------------------------------
+*/
+
+/**
+ * ChronoCard - Time-Aware Digital Identity Card
+ * Author: Ashraf Morningstar
+ * GitHub: https://github.com/AshrafMorningstar
+ */
+
+:root {
+    /* Default theme variables - will be updated by JS */
+    --primary-hue: 210;
+    --saturation: 70%;
+    --lightness: 50%;
+    --bg-color: hsl(var(--primary-hue), 20%, 95%);
+    --card-bg: hsla(var(--primary-hue), 30%, 98%, 0.7);
+    --text-primary: hsl(var(--primary-hue), 30%, 15%);
+    --text-secondary: hsl(var(--primary-hue), 20%, 40%);
+    --accent-color: hsl(var(--primary-hue), var(--saturation), var(--lightness));
+    --shadow-color: hsla(var(--primary-hue), 30%, 20%, 0.1);
+    --font-weight: 400;
+    --scale-factor: 1;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    background: linear-gradient(135deg, var(--bg-color) 0%, hsl(var(--primary-hue), 25%, 90%) 100%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 2s ease;
+    overflow: hidden;
+}
+
+.card-container {
+    perspective: 1000px;
+}
+
+.chrono-card {
+    width: 420px;
+    max-width: 90vw;
+    aspect-ratio: 1.586 / 1;
+    background: var(--card-bg);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-radius: 24px;
+    padding: 2.5rem;
+    box-shadow: 
+        0 8px 32px var(--shadow-color),
+        0 2px 8px hsla(var(--primary-hue), 30%, 20%, 0.05),
+        inset 0 1px 1px hsla(0, 0%, 100%, 0.5);
+    border: 1px solid hsla(var(--primary-hue), 30%, 100%, 0.3);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transform: scale(var(--scale-factor));
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.chrono-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(
+        circle at center,
+        hsla(var(--primary-hue), var(--saturation), var(--lightness), 0.1) 0%,
+        transparent 70%
+    );
+    animation: breathe 12s ease-in-out infinite;
+    pointer-events: none;
+}
+
+@keyframes breathe {
+    0%, 100% { transform: translate(0, 0) scale(1); opacity: 0.3; }
+    50% { transform: translate(5%, 5%) scale(1.1); opacity: 0.5; }
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+}
+
+.time-display {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--accent-color);
+    letter-spacing: -0.02em;
+    line-height: 1;
+    font-variant-numeric: tabular-nums;
+}
+
+.date-display {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    text-align: right;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.card-body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.name {
+    font-size: 2rem;
+    font-weight: var(--font-weight);
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.02em;
+    transition: font-weight 1s ease;
+}
+
+.role {
+    font-size: 1.125rem;
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+    font-weight: 500;
+}
+
+.greeting {
+    font-size: 1.25rem;
+    color: var(--accent-color);
+    font-weight: 600;
+    opacity: 0.9;
+    transition: opacity 1s ease;
+}
+
+.card-footer {
+    margin-top: 1.5rem;
+}
+
+.accent-bar {
+    height: 4px;
+    background: linear-gradient(
+        90deg,
+        var(--accent-color) 0%,
+        hsla(var(--primary-hue), var(--saturation), calc(var(--lightness) + 10%), 0.5) 100%
+    );
+    border-radius: 2px;
+    transition: all 1s ease;
+    box-shadow: 0 2px 8px hsla(var(--primary-hue), var(--saturation), var(--lightness), 0.3);
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+    .chrono-card {
+        padding: 2rem;
+    }
+    
+    .time-display {
+        font-size: 2rem;
+    }
+    
+    .name {
+        font-size: 1.5rem;
+    }
+    
+    .greeting {
+        font-size: 1rem;
+    }
+}
+
+/* Accessibility - Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    .chrono-card,
+    .chrono-card::before,
+    .name,
+    .greeting,
+    .accent-bar {
+        transition: none;
+        animation: none;
+    }
+}

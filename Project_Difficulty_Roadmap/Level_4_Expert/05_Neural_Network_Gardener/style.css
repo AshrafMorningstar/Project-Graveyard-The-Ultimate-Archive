@@ -1,0 +1,115 @@
+/*
+ * -----------------------------------------------------------------------------
+ * @author      Ashraf Morningstar
+ * @github      https://github.com/AshrafMorningstar
+ * @repository  Project Graveyard - The Ultimate Archive
+ * @quote       "Code that defines the future. Designed to inspire."
+ * -----------------------------------------------------------------------------
+*/
+
+/* 
+   Project: Neural Network Gardener
+   Level: Expert
+   Author: Ashraf Morningstar
+   GitHub: https://github.com/AshrafMorningstar
+*/
+
+body {
+    margin: 0;
+    overflow: hidden;
+    background: #fdfbf7;
+    color: #4a4a4a;
+    font-family: 'Zen Maru Gothic', sans-serif;
+}
+
+.garden-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+header {
+    text-align: center;
+    padding: 2rem;
+    position: absolute;
+    width: 100%;
+    pointer-events: none;
+    z-index: 10;
+}
+
+h1 {
+    margin: 0;
+    font-size: 2.5rem;
+    color: #2c3e50;
+    text-transform: lowercase;
+    font-variant: small-caps;
+}
+
+p {
+    margin: 0.5rem 0 0;
+    font-size: 0.9rem;
+    color: #7f8c8d;
+    font-style: italic;
+}
+
+main {
+    flex: 1;
+    cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2"><path d="M6 9l6-6 6 6"/><path d="M12 3v18"/></svg>') 12 12, auto;
+}
+
+.hud {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 3rem;
+    background: white;
+    padding: 1rem 3rem;
+    border-radius: 50px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+.stat {
+    text-align: center;
+    font-size: 0.8rem;
+    color: #95a5a6;
+    letter-spacing: 1px;
+}
+
+.stat span {
+    display: block;
+    font-size: 1.5rem;
+    color: #2c3e50;
+    font-weight: bold;
+}
+
+button {
+    background: #e74c3c;
+    color: white;
+    border: none;
+    padding: 0 1.5rem;
+    border-radius: 20px;
+    font-family: inherit;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+button:hover {
+    transform: scale(1.05);
+}
+
+/* D3 Elements */
+line {
+    stroke: #bdc3c7;
+    stroke-opacity: 0.6;
+}
+
+circle {
+    transition: r 0.3s;
+}
+
+circle:hover {
+    stroke: #e74c3c;
+    stroke-width: 2px;
+}

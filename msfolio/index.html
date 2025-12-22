@@ -1,0 +1,152 @@
+<!--
+ -----------------------------------------------------------------------------
+ @author      Ashraf Morningstar
+ @github      https://github.com/AshrafMorningstar
+ @repository  Project Graveyard - The Ultimate Archive
+ @quote       "Code that defines the future. Designed to inspire."
+ -----------------------------------------------------------------------------
+-->
+
+<!--
+  @file index.html
+  @author Ashraf Morningstar <https://github.com/AshrafMorningstar>
+  @copyright 2025 Ashraf Morningstar
+  @license MIT
+  🌌 MSFolio - The Ultimate Microsoft-Style Portfolio
+  "The future is unwritten, but the code is compiled."
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MSFolio 🪟 | Windows 11 Web Clone & Portfolio</title>
+    <meta name="description" content="A pixel-perfect recreation of Windows 11 running in your browser. Features Snap Layouts, Virtual File System, and Notepad Pro. The ultimate developer portfolio.">
+    <meta name="keywords" content="windows 11 clone, web os, react portfolio, msfolio, microsoft ui, fluent design, interactive resume, frontend developer">
+    <meta name="author" content="Ashraf Morningstar">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://msfolio.vercel.app/">
+    <meta property="og:title" content="MSFolio 🪟 | Windows 11 in React 19">
+    <meta property="og:description" content="Experience Windows 11 on the web. A high-performance portfolio by Ashraf Morningstar.">
+    <meta property="og:image" content="https://raw.githubusercontent.com/AshrafMorningstar/MSFolio/main/public/og-image.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://msfolio.vercel.app/">
+    <meta property="twitter:title" content="MSFolio 🪟 | Windows 11 Web Clone">
+    <meta property="twitter:description" content="A pixel-perfect Windows 11 recreation. 100% Type-Safe. Built by Ashraf Morningstar.">
+    <meta property="twitter:image" content="https://raw.githubusercontent.com/AshrafMorningstar/MSFolio/main/public/og-image.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+              display: ['Space Grotesk', 'sans-serif'],
+              mono: ['monospace'],
+            },
+            colors: {
+              chronos: {
+                blue: "#0A0C27",
+                dark: "#050510",
+                space: "#0F102E"
+              },
+              neuro: {
+                purple: "#3A0CA3",
+                pink: "#FF00FF",
+                cyan: "#00F5FF"
+              },
+              quantum: {
+                glow: "#4CC9F0",
+                energy: "#7209B7",
+                matter: "#F72585"
+              },
+              os: {
+                bg: '#050510',
+                dock: 'rgba(10, 12, 39, 0.6)',
+                window: 'rgba(10, 12, 39, 0.85)',
+                text: '#f8fafc',
+                muted: '#94a3b8',
+              }
+            },
+            animation: {
+              'quantum-pulse': 'quantum-pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+              'hologram-flicker': 'hologram-flicker 4s infinite',
+            },
+            keyframes: {
+              'quantum-pulse': {
+                '0%, 100%': { opacity: 1 },
+                '50%': { opacity: 0.5 }
+              },
+              'hologram-flicker': {
+                '0%, 100%': { opacity: 1 },
+                '92%': { opacity: 1 },
+                '93%': { opacity: 0.5 },
+                '94%': { opacity: 1 },
+                '96%': { opacity: 1 },
+                '97%': { opacity: 0.7 },
+                '98%': { opacity: 1 },
+              }
+            }
+          },
+        },
+      }
+    </script>
+    <style>
+      body {
+        margin: 0;
+        overflow: hidden;
+        background-color: #050510;
+        color: #fff;
+      }
+      /* Custom scrollbar for windows */
+      ::-webkit-scrollbar {
+        width: 6px;
+        height: 6px;
+      }
+      ::-webkit-scrollbar-track {
+        background: transparent;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: linear-gradient(180deg, #3A0CA3, #7209B7);
+        border-radius: 4px;
+      }
+      .glass-panel {
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        box-shadow: 0 0 50px rgba(76, 201, 240, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      }
+      .hologram-border {
+        box-shadow: 0 0 15px rgba(0, 245, 255, 0.3), inset 0 0 20px rgba(58, 12, 163, 0.2);
+        border: 1px solid rgba(0, 245, 255, 0.3);
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@18.3.1",
+    "react/": "https://esm.sh/react@18.3.1/",
+    "react-dom": "https://esm.sh/react-dom@18.3.1",
+    "react-dom/": "https://esm.sh/react-dom@18.3.1/",
+    "zustand": "https://esm.sh/zustand@4.5.2",
+    "@google/genai": "https://esm.sh/@google/genai@0.1.1",
+    "gsap": "https://esm.sh/gsap@3.12.5",
+    "lucide-react": "https://esm.sh/lucide-react@0.378.0",
+    "chess.js": "https://esm.sh/chess.js@1.0.0-beta.8",
+    "@react-spring/web": "https://esm.sh/@react-spring/web@9.7.3"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body>
+    <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>

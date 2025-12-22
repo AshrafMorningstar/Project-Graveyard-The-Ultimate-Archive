@@ -1,0 +1,133 @@
+/*
+ * -----------------------------------------------------------------------------
+ * @author      Ashraf Morningstar
+ * @github      https://github.com/AshrafMorningstar
+ * @repository  Project Graveyard - The Ultimate Archive
+ * @quote       "Code that defines the future. Designed to inspire."
+ * -----------------------------------------------------------------------------
+*/
+
+/* 
+   Project: Interactive CSS Property Explorer
+   Level: Intermediate
+   Author: Ashraf Morningstar
+   GitHub: https://github.com/AshrafMorningstar
+*/
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background: #0d1117;
+    color: #fff;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    text-align: center;
+    padding: 1rem;
+    border-bottom: 1px solid #30363d;
+}
+
+h1 { margin: 0; color: #58a6ff; }
+p { margin: 0; color: #8b949e; font-size: 0.9rem; }
+
+.playground {
+    flex: 1;
+    display: flex;
+    overflow: hidden;
+}
+
+.controls {
+    width: 320px;
+    background: #161b22;
+    padding: 2rem;
+    border-right: 1px solid #30363d;
+    overflow-y: auto;
+}
+
+.control-group {
+    margin-bottom: 2rem;
+}
+
+h3 {
+    color: #79c0ff;
+    border-bottom: 2px solid #30363d;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+    color: #c9d1d9;
+}
+
+input[type="range"] {
+    width: 100%;
+    margin-bottom: 1rem;
+    cursor: pointer;
+}
+
+.output-code {
+    background: #0d1117;
+    padding: 1rem;
+    border-radius: 6px;
+    border: 1px solid #30363d;
+}
+
+pre {
+    margin: 0;
+    font-family: monospace;
+    font-size: 0.8rem;
+    color: #7ee787;
+    white-space: pre-wrap;
+    word-break: break-all;
+}
+
+.stage {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: radial-gradient(circle at center, #1c2128 0%, #0d1117 100%);
+    perspective: 1000px;
+}
+
+/* Cube Styles */
+.cube-container {
+    width: 200px;
+    height: 200px;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.1s; /* Quick updates */
+}
+
+.face {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    background: rgba(88, 166, 255, 0.2);
+    border: 2px solid #58a6ff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: white;
+    box-shadow: 0 0 20px rgba(88, 166, 255, 0.2);
+    backface-visibility: visible; /* Show inside */
+}
+
+/* Box Model Styles applied dynamically via Vue */
+
+/* Standard transformations for cube faces */
+.front  { transform: translateZ(100px); }
+.back   { transform: rotateY(180deg) translateZ(100px); }
+.right  { transform: rotateY(90deg) translateZ(100px); }
+.left   { transform: rotateY(-90deg) translateZ(100px); }
+.top    { transform: rotateX(90deg) translateZ(100px); }
+.bottom { transform: rotateX(-90deg) translateZ(100px); }

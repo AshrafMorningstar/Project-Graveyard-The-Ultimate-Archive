@@ -1,0 +1,220 @@
+/*
+ * -----------------------------------------------------------------------------
+ * @author      Ashraf Morningstar
+ * @github      https://github.com/AshrafMorningstar
+ * @repository  Project Graveyard - The Ultimate Archive
+ * @quote       "Code that defines the future. Designed to inspire."
+ * -----------------------------------------------------------------------------
+*/
+
+/* 
+   Project: Collaborative Whiteboard
+   Level: Intermediate
+   Author: Ashraf Morningstar
+   GitHub: https://github.com/AshrafMorningstar
+*/
+
+:root {
+    --bg-dark: #1e1e1e;
+    --toolbar-bg: #2d2d2d;
+    --panel-bg: #252526;
+    --border: #3e3e42;
+    --accent: #0e639c;
+    --text: #cccccc;
+    --highlight: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background: var(--bg-dark);
+    color: var(--text);
+    height: 100vh;
+    overflow: hidden;
+}
+
+.app-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+/* Toolbar */
+.toolbar {
+    height: 50px;
+    background: var(--toolbar-bg);
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    padding: 0 1rem;
+    justify-content: space-between;
+}
+
+.brand {
+    font-weight: bold;
+    color: var(--highlight);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.tools {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.tool-btn {
+    background: transparent;
+    border: none;
+    color: var(--text);
+    padding: 0.5rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1.1rem;
+}
+
+.tool-btn.active, .tool-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--highlight);
+}
+
+#color-picker {
+    border: none;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    background: transparent;
+}
+
+.actions {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.action-btn {
+    padding: 0.4rem 1rem;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.action-btn.primary {
+    background: var(--accent);
+    color: white;
+}
+
+.action-btn.secondary {
+    background: transparent;
+    color: var(--text);
+    border: 1px solid var(--border);
+}
+
+/* Workspace */
+.workspace {
+    flex: 1;
+    display: flex;
+    overflow: hidden;
+}
+
+.git-panel {
+    width: 250px;
+    background: var(--panel-bg);
+    border-right: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+}
+
+.git-panel h3 {
+    padding: 1rem;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    border-bottom: 1px solid var(--border);
+    background: rgba(0,0,0,0.2);
+}
+
+.branch-selector {
+    padding: 0.5rem;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    gap: 0.5rem;
+}
+
+select {
+    flex: 1;
+    background: #3c3c3c;
+    color: white;
+    border: 1px solid #555;
+    padding: 0.3rem;
+    border-radius: 2px;
+}
+
+.small-btn {
+    background: var(--accent);
+    color: white;
+    border: none;
+    width: 24px;
+    border-radius: 2px;
+    cursor: pointer;
+}
+
+.commit-list {
+    flex: 1;
+    overflow-y: auto;
+    padding: 0.5rem;
+}
+
+.commit-item {
+    margin-bottom: 0.5rem;
+    padding: 0.5rem;
+    border-radius: 4px;
+    cursor: pointer;
+    border: 1px solid transparent;
+    transition: all 0.2s;
+}
+
+.commit-item:hover {
+    background: rgba(255,255,255,0.05);
+}
+
+.commit-item.active {
+    background: rgba(14, 99, 156, 0.3);
+    border-color: var(--accent);
+}
+
+.commit-hash {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.8rem;
+    color: #ffd700;
+}
+
+.commit-msg {
+    font-size: 0.9rem;
+    color: var(--highlight);
+    margin-top: 0.2rem;
+}
+
+.commit-time {
+    font-size: 0.75rem;
+    color: #888;
+    margin-top: 0.2rem;
+}
+
+.canvas-area {
+    flex: 1;
+    position: relative;
+    background: #ffffff; /* Whiteboard should be white */
+    cursor: crosshair;
+    overflow: hidden;
+}
+
+canvas {
+    display: block;
+}

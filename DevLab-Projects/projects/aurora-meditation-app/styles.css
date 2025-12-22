@@ -1,0 +1,229 @@
+/*
+ * -----------------------------------------------------------------------------
+ * @author      Ashraf Morningstar
+ * @github      https://github.com/AshrafMorningstar
+ * @repository  Project Graveyard - The Ultimate Archive
+ * @quote       "Code that defines the future. Designed to inspire."
+ * -----------------------------------------------------------------------------
+*/
+
+/**
+ * Aurora Meditation App - Premium aurora Design
+ * Author: Ashraf Morningstar
+ * GitHub: https://github.com/AshrafMorningstar
+ * Category: Wellness
+ */
+
+:root {
+    --color-primary: #00c9ff;
+    --color-secondary: #92fe9d;
+    --color-accent: #ff6b6b;
+    --color-highlight: #4ecdc4;
+    --font-display: 'Outfit', sans-serif;
+    --font-body: 'Inter', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-body);
+    min-height: 100vh;
+    overflow-x: hidden;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: #fff;
+}
+
+.app-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.app-header {
+    text-align: center;
+    padding: 3rem 0;
+    margin-bottom: 3rem;
+    animation: fadeInDown 0.8s ease-out;
+}
+
+.app-title {
+    font-family: var(--font-display);
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 900;
+    margin-bottom: 1rem;
+    background: linear-gradient(135deg, var(--color-accent), var(--color-highlight)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+}
+
+.app-description {
+    font-size: clamp(1rem, 2vw, 1.25rem);
+    margin-bottom: 1.5rem;
+    opacity: 0.9;
+}
+
+.author-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.2);
+    transition: all 0.3s ease;
+}
+
+.author-link {
+    color: var(--color-accent);
+    text-decoration: none;
+    font-weight: 700;
+    transition: all 0.3s ease;
+}
+
+.author-link:hover {
+    transform: translateY(-2px);
+    text-shadow: 0 0 20px var(--color-accent);
+}
+
+.main-content {
+    min-height: 60vh;
+    animation: fadeInUp 0.8s ease-out 0.2s both;
+}
+
+.feature-showcase {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.feature-card {
+    padding: 2rem;
+    border-radius: 20px;
+    background: rgba(255,255,255,0.05); border: 1px solid var(--color-accent);
+    transition: all 0.3s ease;
+    animation: slideIn 0.5s ease-out;
+    animation-delay: calc(var(--index) * 0.1s);
+}
+
+.feature-card:hover {
+    transform: translateY(-10px);
+}
+
+.feature-icon {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.feature-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+.interactive-section {
+    padding: 3rem;
+    border-radius: 30px;
+    background: rgba(255,255,255,0.05); border: 1px solid var(--color-accent);
+}
+
+.app-footer {
+    text-align: center;
+    padding: 3rem 0;
+    margin-top: 4rem;
+    opacity: 0.8;
+}
+
+.app-footer a {
+    color: var(--color-accent);
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.app-footer a:hover {
+    color: var(--color-highlight);
+}
+
+.footer-tagline {
+    margin: 0.5rem 0;
+    font-size: 0.9rem;
+}
+
+.social-links {
+    margin-top: 1rem;
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .app-container {
+        padding: 1rem;
+    }
+    
+    .feature-showcase {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+
+/* aurora specific styles */
+.aurora-theme .action-btn {
+    padding: 1rem 2rem;
+    background: linear-gradient(135deg, var(--color-accent), var(--color-highlight));
+    border: none;
+    border-radius: 50px;
+    color: white;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.aurora-theme .action-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}

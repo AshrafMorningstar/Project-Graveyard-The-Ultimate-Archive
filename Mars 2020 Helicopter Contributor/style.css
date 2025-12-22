@@ -1,0 +1,454 @@
+/*
+ * -----------------------------------------------------------------------------
+ * @author      Ashraf Morningstar
+ * @github      https://github.com/AshrafMorningstar
+ * @repository  Project Graveyard - The Ultimate Archive
+ * @quote       "Code that defines the future. Designed to inspire."
+ * -----------------------------------------------------------------------------
+*/
+
+:root {
+  --mars-red: #e63946;
+  --mars-rust: #d65a31;
+  --space-black: #0b0d17;
+  --star-white: #fef9ef;
+  --glass-bg: rgba(255, 255, 255, 0.05);
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --neon-blue: #4cc9f0;
+  --text-primary: #ffffff;
+  --text-secondary: #a0a0a0;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--space-black);
+  color: var(--text-primary);
+  font-family: "Rajdhani", sans-serif;
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+/* Background Stars Animation */
+.stars,
+.twinkling {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.stars {
+  background: #000
+    url("http://www.script-tutorials.com/demos/360/images/stars.png") repeat top
+    center;
+  z-index: -2;
+}
+
+.twinkling {
+  background: transparent
+    url("http://www.script-tutorials.com/demos/360/images/twinkling.png") repeat
+    top center;
+  z-index: -1;
+  animation: move-twink-back 200s linear infinite;
+  opacity: 0.5;
+}
+
+@keyframes move-twink-back {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: -10000px 5000px;
+  }
+}
+
+/* Header */
+header {
+  padding: 2rem 5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  backdrop-filter: blur(5px);
+  position: fixed;
+  width: 100%;
+  z-index: 100;
+  border-bottom: 1px solid var(--glass-border);
+}
+
+.logo {
+  font-family: "Orbitron", sans-serif;
+  font-weight: 900;
+  font-size: 1.5rem;
+  color: var(--mars-red);
+  letter-spacing: 2px;
+}
+
+nav .links a {
+  color: var(--text-primary);
+  text-decoration: none;
+  margin-left: 2rem;
+  font-weight: 500;
+  transition: color 0.3s;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+nav .links a:hover,
+nav .links a.github-link {
+  color: var(--mars-red);
+}
+
+/* Hero Section */
+main {
+  padding-top: 100px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 10%;
+  height: 80vh;
+}
+
+.content {
+  max-width: 600px;
+  z-index: 10;
+}
+
+.badge-container {
+  margin-bottom: 1rem;
+}
+
+.badge {
+  background: rgba(230, 57, 70, 0.2);
+  color: var(--mars-red);
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  font-family: "Orbitron", sans-serif;
+  font-size: 0.8rem;
+  letter-spacing: 2px;
+  border: 1px solid var(--mars-red);
+  box-shadow: 0 0 10px rgba(230, 57, 70, 0.3);
+}
+
+h1 {
+  font-family: "Orbitron", sans-serif;
+  font-size: 4rem;
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+}
+
+.mars-text {
+  background: linear-gradient(45deg, var(--mars-red), var(--mars-rust));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.subtitle {
+  font-size: 1.25rem;
+  color: var(--text-secondary);
+  margin-bottom: 2.5rem;
+  max-width: 450px;
+  line-height: 1.6;
+}
+
+.stats-grid {
+  display: flex;
+  gap: 3rem;
+  margin-bottom: 3rem;
+  padding: 1.5rem;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: 10px;
+  backdrop-filter: blur(10px);
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.stat-item .number {
+  font-family: "Orbitron", sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.stat-item .label {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.cta-button {
+  background: linear-gradient(90deg, var(--mars-red), var(--mars-rust));
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  font-family: "Orbitron", sans-serif;
+  font-weight: 700;
+  letter-spacing: 1px;
+  cursor: pointer;
+  clip-path: polygon(10% 0, 100% 0, 100% 70%, 90% 100%, 0 100%, 0 30%);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.cta-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(230, 57, 70, 0.3);
+}
+
+/* Visual / CSS Art */
+.visual {
+  position: relative;
+  width: 500px;
+  height: 500px;
+}
+
+.planet-mars {
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle at 30% 30%, var(--mars-rust), #8b3a28);
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: inset -20px -20px 50px rgba(0, 0, 0, 0.5),
+    0 0 50px rgba(214, 90, 49, 0.2);
+}
+
+.crater {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 50%;
+  position: absolute;
+  box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.4);
+}
+
+.c1 {
+  width: 60px;
+  height: 60px;
+  top: 20%;
+  left: 30%;
+}
+.c2 {
+  width: 40px;
+  height: 40px;
+  top: 60%;
+  left: 70%;
+}
+.c3 {
+  width: 80px;
+  height: 80px;
+  bottom: 20%;
+  left: 40%;
+}
+
+.helicopter {
+  position: absolute;
+  z-index: 20;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: float 6s ease-in-out infinite;
+}
+
+.blade {
+  width: 200px;
+  height: 4px;
+  background: #333;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 2px;
+}
+
+.blade-top {
+  top: -20px;
+  animation: spin 0.1s linear infinite;
+}
+
+.blade-bottom {
+  top: -10px;
+  animation: spin 0.1s linear infinite reverse;
+}
+
+.body {
+  width: 40px;
+  height: 40px;
+  background: #ccc;
+  border: 1px solid #999;
+  position: relative;
+  top: 0;
+  z-index: 2;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+.legs {
+  width: 100px;
+  height: 40px;
+  border: 2px solid #555;
+  border-top: none;
+  position: absolute;
+  top: 35px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+@keyframes spin {
+  from {
+    transform: translateX(-50%) rotate(0deg);
+  }
+  to {
+    transform: translateX(-50%) rotate(360deg);
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translate(-50%, -50%) translateY(0);
+  }
+  50% {
+    transform: translate(-50%, -50%) translateY(-20px);
+  }
+}
+
+/* Terminal Section */
+.terminal-hidden {
+  display: none;
+  width: 100%;
+  padding: 0 10% 4rem;
+  animation: fadeIn 1s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.terminal-window {
+  background: rgba(10, 10, 20, 0.95);
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  border: 1px solid #333;
+  font-family: "Fira Code", monospace;
+  overflow: hidden;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.terminal-header {
+  background: #2d2d2d;
+  padding: 10px 15px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.red {
+  background: #ff5f56;
+}
+.yellow {
+  background: #ffbd2e;
+}
+.green {
+  background: #27c93f;
+}
+
+.terminal-header .title {
+  margin-left: 10px;
+  color: #999;
+  font-size: 0.8rem;
+}
+
+.terminal-body {
+  padding: 20px;
+  color: #4cc9f0;
+  height: 300px;
+  overflow-y: auto;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.log-entry {
+  margin-bottom: 5px;
+}
+.success {
+  color: #27c93f;
+}
+.warn {
+  color: #ffbd2e;
+}
+
+footer {
+  text-align: center;
+  padding: 2rem;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  border-top: 1px solid var(--glass-border);
+  margin-top: auto;
+}
+
+footer a {
+  color: var(--mars-red);
+  text-decoration: none;
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+    padding-top: 150px;
+    height: auto;
+  }
+
+  .visual {
+    margin-top: 50px;
+    transform: scale(0.7);
+  }
+
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  .stats-grid {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+  }
+
+  header {
+    padding: 1rem 5%;
+  }
+}

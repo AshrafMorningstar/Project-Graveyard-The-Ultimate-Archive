@@ -1,0 +1,22 @@
+{
+  "name": "cyber-statics-remotion-standard",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "remotion preview",
+    "build": "remotion build",
+    "render": "remotion render src/index.js Main --codec h264 --overwrite",
+    "lint": "eslint . --ext .js,.jsx"
+  },
+  "dependencies": {
+    "remotion": "^4.0.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "axios": "^1.4.0",
+    "d3-shape": "^3.0.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.0.0",
+    "eslint-plugin-react": "^7.0.0"
+  }
+}

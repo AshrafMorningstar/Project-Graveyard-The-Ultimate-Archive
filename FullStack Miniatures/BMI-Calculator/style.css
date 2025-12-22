@@ -1,0 +1,230 @@
+/*
+ * -----------------------------------------------------------------------------
+ * @author      Ashraf Morningstar
+ * @github      https://github.com/AshrafMorningstar
+ * @repository  Project Graveyard - The Ultimate Archive
+ * @quote       "Code that defines the future. Designed to inspire."
+ * -----------------------------------------------------------------------------
+*/
+
+/* Created by Ashraf Morningstar - https://github.com/AshrafMorningstar */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap');
+
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+    font-family: 'Orbitron', sans-serif; 
+}
+
+@keyframes holographic {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+}
+
+@keyframes shimmer {
+    0% { background-position: -1000px 0; }
+    100% { background-position: 1000px 0; }
+}
+
+body {
+    background: linear-gradient(-45deg, #000000, #1a1a2e, #16213e, #0f3460);
+    background-size: 400% 400%;
+    animation: holographic 15s ease infinite;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    background: 
+        radial-gradient(circle at 20% 50%, rgba(120, 119, 198, 0.3), transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(255, 0, 128, 0.3), transparent 50%),
+        radial-gradient(circle at 40% 20%, rgba(0, 255, 255, 0.3), transparent 50%);
+    animation: holographic 20s ease infinite;
+}
+
+.container {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(20px);
+    padding: 50px 40px;
+    border-radius: 30px;
+    box-shadow: 
+        0 8px 32px 0 rgba(31, 38, 135, 0.37),
+        inset 0 0 20px rgba(255, 255, 255, 0.1);
+    width: 100%;
+    max-width: 450px;
+    text-align: center;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    position: relative;
+    z-index: 10;
+    animation: float 6s ease-in-out infinite;
+}
+
+.container::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, #ff00ff, #00ffff, #ff00ff);
+    border-radius: 30px;
+    z-index: -1;
+    opacity: 0.5;
+    filter: blur(10px);
+}
+
+h1 { 
+    background: linear-gradient(90deg, #00f5ff, #ff00ff, #00f5ff);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 30px;
+    font-size: 2.5rem;
+    font-weight: 900;
+    letter-spacing: 3px;
+    animation: shimmer 3s linear infinite;
+}
+
+.input-group {
+    margin-bottom: 25px;
+    text-align: left;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    color: #00f5ff;
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 0 0 10px rgba(0, 245, 255, 0.5);
+}
+
+input {
+    width: 100%;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 2px solid rgba(0, 245, 255, 0.3);
+    border-radius: 15px;
+    font-size: 1.1rem;
+    color: #fff;
+    transition: all 0.3s;
+    font-weight: 700;
+}
+
+input::placeholder {
+    color: rgba(255, 255, 255, 0.3);
+}
+
+input:focus {
+    border-color: #00f5ff;
+    outline: none;
+    box-shadow: 0 0 20px rgba(0, 245, 255, 0.5);
+    background: rgba(255, 255, 255, 0.1);
+}
+
+button {
+    width: 100%;
+    padding: 15px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    border-radius: 15px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    font-weight: 700;
+    transition: all 0.3s;
+    margin-top: 15px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    position: relative;
+    overflow: hidden;
+}
+
+button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+    transition: 0.5s;
+}
+
+button:hover::before {
+    left: 100%;
+}
+
+button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(102, 126, 234, 0.6);
+}
+
+button:active {
+    transform: translateY(-1px);
+}
+
+.result {
+    margin-top: 30px;
+    font-size: 3rem;
+    font-weight: 900;
+    background: linear-gradient(90deg, #00f5ff, #ff00ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 30px rgba(0, 245, 255, 0.5);
+}
+
+.message {
+    margin-top: 15px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.underweight { 
+    color: #ffd93d;
+    text-shadow: 0 0 20px rgba(255, 217, 61, 0.8);
+}
+.normal { 
+    color: #6bcf7f;
+    text-shadow: 0 0 20px rgba(107, 207, 127, 0.8);
+}
+.overweight { 
+    color: #ff6b6b;
+    text-shadow: 0 0 20px rgba(255, 107, 107, 0.8);
+}
+.obese { 
+    color: #ee5a6f;
+    text-shadow: 0 0 20px rgba(238, 90, 111, 0.8);
+}
+
+.footer {
+    margin-top: 40px;
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.5);
+}
+.footer a { 
+    color: #00f5ff; 
+    text-decoration: none;
+    text-shadow: 0 0 10px rgba(0, 245, 255, 0.5);
+    font-weight: 700;
+}

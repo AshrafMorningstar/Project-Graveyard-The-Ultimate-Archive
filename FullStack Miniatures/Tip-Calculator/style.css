@@ -1,0 +1,106 @@
+/*
+ * -----------------------------------------------------------------------------
+ * @author      Ashraf Morningstar
+ * @github      https://github.com/AshrafMorningstar
+ * @repository  Project Graveyard - The Ultimate Archive
+ * @quote       "Code that defines the future. Designed to inspire."
+ * -----------------------------------------------------------------------------
+*/
+
+/* Created by Ashraf Morningstar - https://github.com/AshrafMorningstar */
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Space Mono', monospace;
+}
+
+body {
+    background-color: #c5e4e7;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.container {
+    background-color: #ffffff;
+    width: 400px;
+    padding: 40px;
+    border-radius: 25px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+h1 {
+    color: #3d6666;
+    text-align: center;
+    margin-bottom: 30px;
+    letter-spacing: 5px;
+}
+
+.wrapper {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f3f9fa;
+    padding: 10px 20px;
+    border-radius: 10px;
+}
+
+.lbl {
+    color: #5e7a7d;
+    font-size: 14px;
+}
+
+.val {
+    border: none;
+    background: transparent;
+    text-align: right;
+    width: 60px;
+    font-size: 20px;
+    color: #00474b;
+    font-weight: bold;
+    outline: none;
+}
+
+button {
+    width: 100%;
+    background-color: #26c2ae;
+    color: #00474b;
+    font-size: 20px;
+    padding: 15px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-weight: bold;
+    transition: 0.3s;
+    margin: 10px 0;
+}
+
+button:hover {
+    background-color: #9fe8df;
+}
+
+.total-wrapper {
+    background-color: #00474b;
+}
+
+.total-wrapper .lbl {
+    color: #ffffff;
+}
+
+.total-wrapper .val {
+    color: #26c2ae;
+    width: auto;
+}
+
+.footer {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 12px;
+}
+.footer a { color: #26c2ae; text-decoration: none; }

@@ -1,0 +1,252 @@
+/*
+ * -----------------------------------------------------------------------------
+ * @author      Ashraf Morningstar
+ * @github      https://github.com/AshrafMorningstar
+ * @repository  Project Graveyard - The Ultimate Archive
+ * @quote       "Code that defines the future. Designed to inspire."
+ * -----------------------------------------------------------------------------
+*/
+
+/**
+ * Accessible Quiz Builder - Main Styles
+ * Author: Ashraf Morningstar
+ * GitHub: https://github.com/AshrafMorningstar
+ */
+
+/* Theme Variables */
+.theme-light {
+    --bg-body: #ffffff;
+    --bg-surface: #f8f9fa;
+    --text-primary: #212529;
+    --text-secondary: #495057;
+    --primary-color: #0d6efd;
+    --primary-hover: #0b5ed7;
+    --border-color: #dee2e6;
+    --focus-ring: 0 0 0 4px rgba(13, 110, 253, 0.4);
+}
+
+.theme-dark {
+    --bg-body: #212529;
+    --bg-surface: #343a40;
+    --text-primary: #f8f9fa;
+    --text-secondary: #adb5bd;
+    --primary-color: #6ea8fe;
+    --primary-hover: #8bb9fe;
+    --border-color: #495057;
+    --focus-ring: 0 0 0 4px rgba(110, 168, 254, 0.4);
+}
+
+.theme-high-contrast {
+    --bg-body: #000000;
+    --bg-surface: #000000;
+    --text-primary: #ffff00;
+    --text-secondary: #ffffff;
+    --primary-color: #ffff00;
+    --primary-hover: #ffffff;
+    --border-color: #ffffff;
+    --focus-ring: 0 0 0 4px #ffffff;
+}
+
+/* Base Styles */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-body);
+    color: var(--text-primary);
+    font-family: system-ui, -apple-system, sans-serif;
+    line-height: 1.5;
+    margin: 0;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Utilities */
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+/* Accessibility: Focus Styles */
+*:focus-visible {
+    outline: none;
+    box-shadow: var(--focus-ring);
+    border-radius: 4px;
+}
+
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: var(--primary-color);
+    color: var(--bg-body);
+    padding: 8px;
+    z-index: 100;
+    transition: top 0.2s;
+}
+
+.skip-link:focus {
+    top: 0;
+}
+
+/* Layout */
+.app-header {
+    background-color: var(--bg-surface);
+    border-bottom: 2px solid var(--border-color);
+    padding: 1rem 0;
+    margin-bottom: 2rem;
+}
+
+h1 { margin: 0 0 1rem 0; font-size: 1.75rem; }
+
+nav {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+nav button {
+    background: none;
+    border: none;
+    font-size: 1.1rem;
+    color: var(--text-primary);
+    cursor: pointer;
+    border-bottom: 3px solid transparent;
+    padding: 0.5rem;
+}
+
+nav button[aria-current="page"] {
+    border-bottom-color: var(--primary-color);
+    font-weight: bold;
+}
+
+/* Form Styles */
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 0.75rem;
+    font-size: 1rem;
+    background-color: var(--bg-body);
+    color: var(--text-primary);
+    border: 2px solid var(--border-color);
+    border-radius: 4px;
+}
+
+/* Buttons */
+button {
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 600;
+    border: 2px solid transparent;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: var(--bg-body);
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-hover);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    border-color: var(--border-color);
+    color: var(--text-primary);
+}
+
+.btn-secondary:hover {
+    background-color: var(--bg-surface);
+}
+
+/* Question Builder Cards */
+.question-card {
+    background-color: var(--bg-surface);
+    border: 1px solid var(--border-color);
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+    position: relative;
+}
+
+.remove-question-btn {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: transparent;
+    border: 1px solid var(--border-color);
+    color: var(--text-primary);
+    padding: 0.25rem 0.5rem;
+    font-size: 0.8rem;
+}
+
+/* Player Styles */
+.choice-item {
+    display: block;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    border: 2px solid var(--border-color);
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.choice-item:hover {
+    background-color: var(--bg-surface);
+}
+
+.choice-item input {
+    margin-right: 1rem;
+    transform: scale(1.5);
+}
+
+.progress-bar {
+    height: 10px;
+    background-color: var(--border-color);
+    border-radius: 5px;
+    margin-bottom: 2rem;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    background-color: var(--primary-color);
+    width: 0%;
+    transition: width 0.3s ease;
+}
+
+/* High Contrast Adjustments */
+.theme-high-contrast button {
+    border-width: 3px;
+}
+
+.theme-high-contrast input {
+    border-width: 3px;
+}

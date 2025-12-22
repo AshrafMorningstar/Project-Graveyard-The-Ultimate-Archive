@@ -1,0 +1,293 @@
+/*
+ * -----------------------------------------------------------------------------
+ * @author      Ashraf Morningstar
+ * @github      https://github.com/AshrafMorningstar
+ * @repository  Project Graveyard - The Ultimate Archive
+ * @quote       "Code that defines the future. Designed to inspire."
+ * -----------------------------------------------------------------------------
+*/
+
+/**
+ * ChronoCard - Time-Aware Digital Identity
+ * Author: Ashraf Morningstar
+ * GitHub: https://github.com/AshrafMorningstar
+ */
+
+:root {
+    /* Base Theme Variables - Updated by JavaScript */
+    --bg-primary: #f8f9fa;
+    --bg-secondary: #ffffff;
+    --text-primary: #1a1a1a;
+    --text-secondary: #6c757d;
+    --accent-color: #667eea;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+    --blur-amount: 20px;
+    --card-scale: 1;
+    --card-opacity: 1;
+    
+    /* Typography */
+    --font-weight-base: 400;
+    --font-weight-heading: 600;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 2s ease;
+    overflow: hidden;
+    position: relative;
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, var(--accent-color) 0%, transparent 70%);
+    opacity: 0.1;
+    animation: ambientPulse 20s ease-in-out infinite;
+}
+
+@keyframes ambientPulse {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    50% { transform: translate(10px, 10px) scale(1.05); }
+}
+
+.container {
+    position: relative;
+    z-index: 1;
+    padding: 2rem;
+}
+
+.chrono-card {
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(var(--blur-amount));
+    -webkit-backdrop-filter: blur(var(--blur-amount));
+    border-radius: 24px;
+    padding: 3rem 2.5rem;
+    width: 420px;
+    max-width: 90vw;
+    box-shadow: 
+        0 8px 32px var(--shadow-color),
+        0 2px 8px rgba(0, 0, 0, 0.05),
+        inset 0 1px 1px rgba(255, 255, 255, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    position: relative;
+    transform: scale(var(--card-scale));
+    opacity: var(--card-opacity);
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.chrono-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 24px;
+    padding: 2px;
+    background: linear-gradient(135deg, var(--accent-color), transparent);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0.5;
+}
+
+.card-header {
+    text-align: center;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    padding-bottom: 1.5rem;
+}
+
+.time-display {
+    font-size: 3rem;
+    font-weight: var(--font-weight-heading);
+    color: var(--text-primary);
+    letter-spacing: 0.05em;
+    transition: all 0.3s ease;
+    font-variant-numeric: tabular-nums;
+}
+
+.date-display {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    margin-top: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    font-weight: 500;
+}
+
+.card-body {
+    text-align: center;
+    margin: 2rem 0;
+}
+
+.name {
+    font-size: 2rem;
+    font-weight: var(--font-weight-heading);
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+    transition: all 1.5s ease;
+}
+
+.identity-name {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--accent-color);
+    margin-bottom: 0.5rem;
+    transition: color 2s ease;
+}
+
+.role {
+    font-size: 1rem;
+    color: var(--text-secondary);
+    font-weight: var(--font-weight-base);
+    margin-bottom: 1.5rem;
+    transition: all 1s ease;
+}
+
+.accent-line {
+    width: 60px;
+    height: 3px;
+    background: var(--accent-color);
+    margin: 1.5rem auto;
+    border-radius: 2px;
+    transition: all 2s ease;
+}
+
+.card-footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.status-indicator {
+    width: 8px;
+    height: 8px;
+    background: var(--accent-color);
+    border-radius: 50%;
+    animation: pulse 2s ease-in-out infinite;
+    box-shadow: 0 0 10px var(--accent-color);
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.6; transform: scale(1.2); }
+}
+
+.tagline {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    font-weight: 500;
+    letter-spacing: 0.05em;
+}
+
+.attribution {
+    text-align: center;
+    margin-top: 2rem;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+.attribution a {
+    color: var(--accent-color);
+    text-decoration: none;
+    transition: opacity 0.3s ease;
+}
+
+.attribution a:hover {
+    opacity: 0.7;
+}
+
+/* Theme-specific classes applied by JavaScript */
+.theme-morning {
+    --bg-primary: #fff5e6;
+    --bg-secondary: #ffe4b3;
+    --text-primary: #2c1810;
+    --text-secondary: #8b6914;
+    --shadow-color: rgba(255, 193, 7, 0.2);
+}
+
+.theme-afternoon {
+    --bg-primary: #f0f4f8;
+    --bg-secondary: #d9e2ec;
+    --text-primary: #102a43;
+    --text-secondary: #486581;
+    --shadow-color: rgba(16, 42, 67, 0.15);
+}
+
+.theme-evening {
+    --bg-primary: #ffeef8;
+    --bg-secondary: #ffd6f0;
+    --text-primary: #4a1942;
+    --text-secondary: #9c4a8b;
+    --shadow-color: rgba(156, 74, 139, 0.2);
+}
+
+.theme-night {
+    --bg-primary: #1a1a2e;
+    --bg-secondary: #16213e;
+    --text-primary: #eaeaea;
+    --text-secondary: #a0a0a0;
+    --shadow-color: rgba(0, 0, 0, 0.5);
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+    .chrono-card {
+        padding: 2rem 1.5rem;
+    }
+    
+    .time-display {
+        font-size: 2.5rem;
+    }
+    
+    .name {
+        font-size: 1.5rem;
+    }
+    
+    .identity-name {
+        font-size: 1.25rem;
+    }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* Print Styles */
+@media print {
+    body {
+        background: white;
+    }
+    
+    .chrono-card {
+        box-shadow: none;
+        border: 2px solid #333;
+    }
+}

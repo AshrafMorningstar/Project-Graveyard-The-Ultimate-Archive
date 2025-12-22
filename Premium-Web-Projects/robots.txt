@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://ashrafmorningstar.github.io/Premium-Web-Projects/sitemap.xml

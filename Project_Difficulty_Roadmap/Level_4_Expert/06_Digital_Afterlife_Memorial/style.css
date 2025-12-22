@@ -1,0 +1,81 @@
+/*
+ * -----------------------------------------------------------------------------
+ * @author      Ashraf Morningstar
+ * @github      https://github.com/AshrafMorningstar
+ * @repository  Project Graveyard - The Ultimate Archive
+ * @quote       "Code that defines the future. Designed to inspire."
+ * -----------------------------------------------------------------------------
+*/
+
+/* 
+   Project: Digital Afterlife Memorial
+   Level: Expert
+   Author: Ashraf Morningstar
+   GitHub: https://github.com/AshrafMorningstar
+*/
+
+body {
+    margin: 0;
+    overflow: hidden;
+    background: #000;
+    font-family: 'Cinzel', serif;
+    color: white;
+}
+
+.memorial-ui {
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    pointer-events: none; /* Let clicks pass to 3D scene except inputs */
+    z-index: 10;
+}
+
+h1 {
+    font-size: 2rem;
+    letter-spacing: 10px;
+    opacity: 0.7;
+    margin-bottom: 2rem;
+    text-shadow: 0 0 20px #fff;
+}
+
+.input-group {
+    pointer-events: auto;
+    background: rgba(255,255,255,0.05);
+    padding: 10px;
+    border-radius: 4px;
+    display: flex;
+    gap: 10px;
+}
+
+input {
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid rgba(255,255,255,0.5);
+    padding: 10px;
+    width: 300px;
+    color: white;
+    font-family: inherit;
+    font-size: 1rem;
+    text-align: center;
+}
+
+input:focus {
+    outline: none;
+    border-color: #fff;
+}
+
+button {
+    background: white;
+    color: black;
+    border: none;
+    padding: 10px 20px;
+    font-family: inherit;
+    cursor: pointer;
+    transition: opacity 0.5s;
+}
+
+button:hover {
+    opacity: 0.8;
+}

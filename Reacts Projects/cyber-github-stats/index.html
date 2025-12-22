@@ -1,0 +1,51 @@
+<!--
+ -----------------------------------------------------------------------------
+ @author      Ashraf Morningstar
+ @github      https://github.com/AshrafMorningstar
+ @repository  Project Graveyard - The Ultimate Archive
+ @quote       "Code that defines the future. Designed to inspire."
+ -----------------------------------------------------------------------------
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>AshrafMorningstar - Cyber Stats</title>
+  <style>
+    body {
+      background: #0f0f0f;
+      color: #00ffcc;
+      font-family: 'Courier New', monospace;
+      padding: 40px;
+    }
+    .card {
+      background: #1a1a1a;
+      border: 1px solid #00ffcc;
+      border-radius: 10px;
+      padding: 20px;
+      margin-bottom: 20px;
+      box-shadow: 0 0 20px #00ffcc;
+    }
+  </style>
+</head>
+<body>
+  <h1>Cyber GitHub Stats for AshrafMorningstar</h1>
+  <div class="card">
+    <p><strong>Name:</strong> <span id="name"></span></p>
+    <p><strong>Public Repos:</strong> <span id="repos"></span></p>
+    <p><strong>Followers:</strong> <span id="followers"></span></p>
+    <p><strong>Following:</strong> <span id="following"></span></p>
+  </div>
+  <script>
+    fetch('output/stats.json')
+      .then(res => res.json())
+      .then(data => {
+        document.getElementById('name').textContent = data.name || 'N/A';
+        document.getElementById('repos').textContent = data.public_repos;
+        document.getElementById('followers').textContent = data.followers;
+        document.getElementById('following').textContent = data.following;
+      });
+  </script>
+</body>
+</html>

@@ -1,0 +1,129 @@
+<!--
+ -----------------------------------------------------------------------------
+ @author      Ashraf Morningstar
+ @github      https://github.com/AshrafMorningstar
+ @repository  Project Graveyard - The Ultimate Archive
+ @quote       "Code that defines the future. Designed to inspire."
+ -----------------------------------------------------------------------------
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Vibrant BMI Calculator with Colorful Cards - Created by Ashraf Morningstar">
+    <meta name="keywords" content="bmi calculator, health, fitness, Ashraf Morningstar">
+    <meta name="author" content="Ashraf Morningstar">
+    <title>BMI Pro | Ashraf Morningstar</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+
+    <div class="container">
+        <header class="header">
+            <div class="logo">
+                <svg width="50" height="50" viewBox="0 0 50 50">
+                    <circle cx="25" cy="25" r="20" fill="url(#gradient1)"/>
+                    <path d="M 25 10 L 25 40 M 15 25 L 35 25" stroke="white" stroke-width="3"/>
+                    <defs>
+                        <linearGradient id="gradient1" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#FF6B6B"/>
+                            <stop offset="100%" style="stop-color:#4ECDC4"/>
+                        </linearGradient>
+                    </defs>
+                </svg>
+            </div>
+            <h1>BMI Pro</h1>
+            <p class="tagline">Your Health, Visualized</p>
+        </header>
+
+        <div class="calculator-card">
+            <h2>Calculate Your BMI</h2>
+            
+            <div class="input-group">
+                <label for="weight">Weight</label>
+                <div class="input-wrapper">
+                    <input type="number" id="weight" placeholder="70" min="1">
+                    <select id="weight-unit" class="unit-select">
+                        <option value="kg">kg</option>
+                        <option value="lbs">lbs</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="input-group">
+                <label for="height">Height</label>
+                <div class="input-wrapper">
+                    <input type="number" id="height" placeholder="175" min="1">
+                    <select id="height-unit" class="unit-select">
+                        <option value="cm">cm</option>
+                        <option value="ft">ft</option>
+                    </select>
+                </div>
+            </div>
+
+            <button id="calculate-btn" class="calculate-btn">
+                <span>Calculate BMI</span>
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                    <path d="M5 10 L15 10 M10 5 L15 10 L10 15" stroke="white" stroke-width="2"/>
+                </svg>
+            </button>
+        </div>
+
+        <div class="result-section hidden" id="result-section">
+            <div class="bmi-display">
+                <div class="bmi-value" id="bmi-value">0.0</div>
+                <div class="bmi-label">Your BMI</div>
+            </div>
+
+            <div class="category-card" id="category-card">
+                <div class="category-icon" id="category-icon">😊</div>
+                <h3 id="category-name">Normal</h3>
+                <p id="category-desc">You have a healthy body weight</p>
+            </div>
+
+            <div class="ranges-grid">
+                <div class="range-item underweight">
+                    <div class="range-dot"></div>
+                    <div class="range-info">
+                        <div class="range-name">Underweight</div>
+                        <div class="range-value">&lt; 18.5</div>
+                    </div>
+                </div>
+                <div class="range-item normal">
+                    <div class="range-dot"></div>
+                    <div class="range-info">
+                        <div class="range-name">Normal</div>
+                        <div class="range-value">18.5 - 24.9</div>
+                    </div>
+                </div>
+                <div class="range-item overweight">
+                    <div class="range-dot"></div>
+                    <div class="range-info">
+                        <div class="range-name">Overweight</div>
+                        <div class="range-value">25 - 29.9</div>
+                    </div>
+                </div>
+                <div class="range-item obese">
+                    <div class="range-dot"></div>
+                    <div class="range-info">
+                        <div class="range-name">Obese</div>
+                        <div class="range-value">&gt; 30</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer class="footer">
+            <p>Created by <a href="https://github.com/AshrafMorningstar" target="_blank">Ashraf Morningstar</a></p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

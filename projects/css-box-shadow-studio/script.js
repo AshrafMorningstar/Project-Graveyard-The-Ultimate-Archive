@@ -1,0 +1,78 @@
+/*
+ * -----------------------------------------------------------------------------
+ * @author      Ashraf Morningstar
+ * @github      https://github.com/AshrafMorningstar
+ * @repository  Project Graveyard - The Ultimate Archive
+ * @quote       "Code that defines the future. Designed to inspire."
+ * -----------------------------------------------------------------------------
+*/
+
+/**
+ * CSS Box Shadow Studio
+ * Created by: Ashraf Morningstar
+ * GitHub: https://github.com/AshrafMorningstar
+ */
+
+class CssBoxShadowStudio {
+    constructor() {
+        this.init();
+    }
+    
+    init() {
+        console.log('CSS Box Shadow Studio initialized');
+        this.setupUI();
+        this.attachEventListeners();
+    }
+    
+    setupUI() {
+        const main = document.getElementById('appMain');
+        main.innerHTML = this.generateUI();
+    }
+    
+    generateUI() {
+        return `
+            <div class="feature-grid">
+                
+                <div class="feature-card">
+                    <h3>Live preview</h3>
+                    <p>Premium live preview functionality</p>
+                    <button class="btn btn-primary">Try Now</button>
+                </div>
+            
+                <div class="feature-card">
+                    <h3>Multiple shadows</h3>
+                    <p>Premium multiple shadows functionality</p>
+                    <button class="btn btn-primary">Try Now</button>
+                </div>
+            
+                <div class="feature-card">
+                    <h3>Code export</h3>
+                    <p>Premium code export functionality</p>
+                    <button class="btn btn-primary">Try Now</button>
+                </div>
+            
+            </div>
+        `;
+    }
+    
+    attachEventListeners() {
+        // Add event listeners here
+        console.log('Event listeners attached');
+    }
+}
+
+// Initialize app when DOM is ready
+document.addEventListener('DOMContentLoaded', () => {
+    new CssBoxShadowStudio();
+});
+
+// Add smooth animations
+document.querySelectorAll('.btn').forEach(btn => {
+    btn.addEventListener('mouseenter', function() {
+        this.style.transform = 'translateY(-2px)';
+    });
+    
+    btn.addEventListener('mouseleave', function() {
+        this.style.transform = 'translateY(0)';
+    });
+});

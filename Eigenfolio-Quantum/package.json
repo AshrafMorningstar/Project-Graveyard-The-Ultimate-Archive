@@ -1,0 +1,67 @@
+{
+  "name": "@ashrafmorningstar/eigenfolio-quantum",
+  "private": false,
+  "version": "1.0.1",
+  "description": "🌌 Eigenfolio Quantum - The World's Most Advanced Web OS & Portfolio. 🚀 Neural-Interface Design, 3D Architecture, & AI Integration. 100% Open Source. Built with React 19, Vite, & Quantum UI.",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
+  "keywords": [
+    "react",
+    "typescript",
+    "portfolio",
+    "web-os",
+    "macos-clone",
+    "quantum-ui",
+    "artificial-intelligence",
+    "threejs",
+    "gsap",
+    "framer-motion",
+    "viral-project",
+    "github-trending",
+    "best-portfolio",
+    "shader-effects",
+    "glassmorphism",
+    "system-simulation",
+    "neural-interface"
+  ],
+  "author": {
+    "name": "Ashraf Morningstar",
+    "email": "ashraf.morningstar@example.com",
+    "url": "https://github.com/AshrafMorningstar"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AshrafMorningstar/Eigenfolio-Quantum.git"
+  },
+  "homepage": "https://github.com/AshrafMorningstar/Eigenfolio-Quantum#readme",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@google/genai": "^1.33.0",
+    "clsx": "^2.1.0",
+    "framer-motion": "^11.0.0",
+    "gsap": "^3.14.2",
+    "lucide-react": "^0.363.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "tailwind-merge": "^2.2.0",
+    "zustand": "^4.5.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.14.0",
+    "@types/react": "^18.2.66",
+    "@types/react-dom": "^18.2.22",
+    "@vitejs/plugin-react": "^5.0.0",
+    "autoprefixer": "^10.4.17",
+    "postcss": "^8.4.35",
+    "tailwindcss": "^3.4.1",
+    "typescript": "~5.8.2",
+    "vite": "^6.2.0"
+  }
+}

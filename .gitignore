@@ -32,4 +32,4 @@ yarn-error.log*
 .env.production.local
 
 # Project specific
-automations/
+# automations/  <-- Commented out to allow tracking

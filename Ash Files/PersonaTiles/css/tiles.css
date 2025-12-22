@@ -1,0 +1,174 @@
+/*
+ * -----------------------------------------------------------------------------
+ * @author      Ashraf Morningstar
+ * @github      https://github.com/AshrafMorningstar
+ * @repository  Project Graveyard - The Ultimate Archive
+ * @quote       "Code that defines the future. Designed to inspire."
+ * -----------------------------------------------------------------------------
+*/
+
+/**
+ * Persona Tiles - Tile Styles
+ * Author: Ashraf Morningstar
+ * GitHub: https://github.com/AshrafMorningstar
+ */
+
+.tile {
+    background: var(--bg-secondary);
+    border-radius: 16px;
+    padding: 2rem 1.5rem;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    border: 2px solid transparent;
+    position: relative;
+    overflow: hidden;
+}
+
+.tile::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, transparent 0%, rgba(255, 255, 255, 0.3) 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.tile:hover::before {
+    opacity: 1;
+}
+
+.tile-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    transition: transform 0.3s ease;
+}
+
+.tile:hover .tile-icon {
+    transform: scale(1.2);
+}
+
+.tile-label {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    transition: color 0.3s ease;
+}
+
+/* Type-specific colors */
+.tile[data-type="skill"] {
+    border-color: var(--skill-color);
+}
+
+.tile[data-type="interest"] {
+    border-color: var(--interest-color);
+}
+
+.tile[data-type="value"] {
+    border-color: var(--value-color);
+}
+
+.tile[data-type="goal"] {
+    border-color: var(--goal-color);
+}
+
+/* Active state */
+.tile.active {
+    transform: scale(1.1);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
+    z-index: 10;
+}
+
+.tile[data-type="skill"].active {
+    background: linear-gradient(135deg, var(--skill-color) 0%, #764ba2 100%);
+    border-color: var(--skill-color);
+}
+
+.tile[data-type="interest"].active {
+    background: linear-gradient(135deg, var(--interest-color) 0%, #f5576c 100%);
+    border-color: var(--interest-color);
+}
+
+.tile[data-type="value"].active {
+    background: linear-gradient(135deg, var(--value-color) 0%, #00f2fe 100%);
+    border-color: var(--value-color);
+}
+
+.tile[data-type="goal"].active {
+    background: linear-gradient(135deg, var(--goal-color) 0%, #38f9d7 100%);
+    border-color: var(--goal-color);
+}
+
+.tile.active .tile-label {
+    color: #ffffff;
+    font-weight: 700;
+}
+
+/* Hover effects */
+.tile:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+.tile.active:hover {
+    transform: scale(1.12) translateY(-2px);
+}
+
+/* Animation on click */
+@keyframes tileActivate {
+    0% { transform: scale(1); }
+    50% { transform: scale(0.95); }
+    100% { transform: scale(1.1); }
+}
+
+.tile.activating {
+    animation: tileActivate 0.3s ease;
+}
+
+/* Inactive tiles recede when others are active */
+.tiles-grid.has-active .tile:not(.active) {
+    opacity: 0.6;
+    transform: scale(0.95);
+}
+
+.tiles-grid.has-active .tile:not(.active):hover {
+    opacity: 0.8;
+    transform: scale(0.98);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .tile {
+        padding: 1.5rem 1rem;
+    }
+    
+    .tile-icon {
+        font-size: 2.5rem;
+    }
+    
+    .tile-label {
+        font-size: 0.9rem;
+    }
+}
+
+/* Accessibility */
+.tile:focus {
+    outline: 3px solid var(--skill-color);
+    outline-offset: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .tile,
+    .tile-icon,
+    .tile::before {
+        transition-duration: 0.01ms !important;
+    }
+    
+    .tile.activating {
+        animation: none;
+    }
+}

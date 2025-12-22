@@ -1,0 +1,276 @@
+/*
+ * -----------------------------------------------------------------------------
+ * @author      Ashraf Morningstar
+ * @github      https://github.com/AshrafMorningstar
+ * @repository  Project Graveyard - The Ultimate Archive
+ * @quote       "Code that defines the future. Designed to inspire."
+ * -----------------------------------------------------------------------------
+*/
+
+/**
+ * CSS Theme Playground - Main Styles
+ * Author: Ashraf Morningstar
+ * GitHub: https://github.com/AshrafMorningstar
+ */
+
+/* =========================================
+   1. Dynamic Token Definitions (The Core)
+   These vars are updated via JS
+   ========================================= */
+:root {
+    /* Colors */
+    --primary-color: #646cff;
+    --bg-color: #ffffff;
+    --text-color: #213547;
+    --app-bg: #f9fafe;
+
+    /* Type */
+    --base-size: 16px;
+    --font-heading: 'Inter', sans-serif;
+    --font-body: 'Inter', sans-serif;
+    --font-weight-heading: 700;
+
+    /* Shape */
+    --border-radius: 8px;
+    --spacing-unit: 8px; /* Multiplier for spacing */
+
+    /* Derived Internal Vars */
+    --spacing-xs: calc(var(--spacing-unit) * 0.5);
+    --spacing-sm: var(--spacing-unit);
+    --spacing-md: calc(var(--spacing-unit) * 2);
+    --spacing-lg: calc(var(--spacing-unit) * 4);
+    
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+/* Base Reset */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+    font-family: var(--font-body);
+    font-size: var(--base-size);
+    color: var(--text-color);
+    background-color: var(--app-bg);
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* Layout Grid */
+.app-layout {
+    display: grid;
+    grid-template-columns: 320px 1fr;
+    height: 100vh;
+}
+
+/* Sidebar Styling */
+.sidebar {
+    background: #1e1e24;
+    color: #fff;
+    padding: 20px;
+    overflow-y: auto;
+    border-right: 1px solid rgba(255,255,255,0.1);
+}
+
+.sidebar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.sidebar-header h2 { font-size: 1.2rem; }
+
+.control-group { margin-bottom: 30px; }
+.control-group h3 { 
+    font-size: 0.8rem; 
+    text-transform: uppercase; 
+    letter-spacing: 1px; 
+    margin-bottom: 15px;
+    opacity: 0.6;
+}
+
+.control-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 12px;
+}
+
+.control-item label { font-size: 0.9rem; flex: 1; }
+
+.control-item input[type="color"] {
+    border: none;
+    width: 40px;
+    height: 25px;
+    cursor: pointer;
+    background: none;
+}
+
+.control-item input[type="range"] {
+    width: 100px;
+}
+
+.value-display {
+    font-family: 'Fira Code', monospace;
+    font-size: 0.8rem;
+    width: 60px;
+    text-align: right;
+    opacity: 0.8;
+}
+
+.presets .preset-buttons {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.preset-btn {
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.2);
+    color: white;
+    padding: 5px 10px;
+    font-size: 0.8rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.preset-btn:hover { background: rgba(255,255,255,0.2); }
+
+/* Main Preview Area */
+.preview-area {
+    background-color: var(--app-bg); /* Use token here */
+    padding: 40px;
+    overflow-y: auto;
+}
+
+.preview-header {
+    text-align: center;
+    margin-bottom: 50px;
+    color: var(--text-color); /* Use token */
+}
+
+/* Component Styling (Affected by Tokens) */
+.component-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-lg); /* Token Usage */
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.card {
+    background: var(--bg-color); /* Token Usage */
+    border-radius: var(--border-radius); /* Token Usage */
+    box-shadow: var(--shadow-md);
+    overflow: hidden;
+    color: var(--text-color); /* Token Usage */
+    border: 1px solid rgba(0,0,0,0.05);
+}
+
+.card-image {
+    height: 160px;
+    background: linear-gradient(135deg, var(--primary-color), #a29bfe); /* Token Usage */
+}
+
+.card-body {
+    padding: var(--spacing-md); /* Token Usage */
+}
+
+h1, h2, h3 {
+    font-family: var(--font-heading);
+    font-weight: var(--font-weight-heading);
+    margin-bottom: var(--spacing-sm);
+}
+
+p {
+    margin-bottom: var(--spacing-md);
+    line-height: 1.6;
+    opacity: 0.9;
+}
+
+.btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: var(--border-radius); /* Token Usage */
+    font-weight: 600;
+    cursor: pointer;
+    font-family: var(--font-body);
+    transition: transform 0.1s;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: #fff;
+    /* Determine text color contrast automatically in ideal world, hardcoded white for now */
+}
+
+.btn:active { transform: scale(0.98); }
+
+.full-width { width: 100%; }
+
+/* Form Component styling */
+.input-group { margin-bottom: var(--spacing-md); }
+.input-group label { display: block; margin-bottom: var(--spacing-xs); font-size: 0.9em; font-weight: 600; }
+.input-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: var(--border-radius); /* Token Usage */
+    font-family: var(--font-body);
+}
+
+.input-group input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(100, 108, 255, 0.2);
+}
+
+/* Helper Classes */
+.hidden { display: none !important; }
+
+/* Modal */
+.modal {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0,0,0,0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    width: 600px;
+    max-width: 90%;
+    color: #333;
+}
+
+pre {
+    background: #f4f4f4;
+    padding: 15px;
+    border-radius: 6px;
+    overflow-x: auto;
+    margin: 20px 0;
+    font-family: 'Fira Code', monospace;
+    font-size: 0.9rem;
+}
+
+.modal-actions {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+}
+
+.btn-secondary { background: #eee; color: #333; }
+
+/* Responsive */
+@media (max-width: 768px) {
+    .app-layout { grid-template-columns: 1fr; grid-template-rows: 300px 1fr; }
+    .sidebar { border-right: none; border-bottom: 1px solid #333; }
+}

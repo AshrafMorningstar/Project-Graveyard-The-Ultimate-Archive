@@ -1,0 +1,262 @@
+/*
+ * -----------------------------------------------------------------------------
+ * @author      Ashraf Morningstar
+ * @github      https://github.com/AshrafMorningstar
+ * @repository  Project Graveyard - The Ultimate Archive
+ * @quote       "Code that defines the future. Designed to inspire."
+ * -----------------------------------------------------------------------------
+*/
+
+/**
+ * Accessible Quiz Builder - Styles
+ * Author: Ashraf Morningstar
+ * GitHub: https://github.com/AshrafMorningstar
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+:root {
+  --bg-primary: #ffffff;
+  --bg-secondary: #f3f4f6;
+  --text-primary: #111827;
+  --text-secondary: #4b5563;
+  --accent: #2563eb;
+  --accent-hover: #1d4ed8;
+  --success: #059669;
+  --error: #dc2626;
+  --focus-ring: 0 0 0 4px rgba(37, 99, 235, 0.4);
+  --radius: 8px;
+}
+
+/* High Contrast Dark Mode Preference */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-primary: #111827;
+    --bg-secondary: #1f2937;
+    --text-primary: #f9fafb;
+    --text-secondary: #d1d5db;
+    --accent: #3b82f6;
+    --accent-hover: #60a5fa;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+  line-height: 1.5;
+  margin: 0;
+  padding: 2rem;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Accessibility Focus Styles */
+:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring);
+  border-radius: 4px;
+}
+
+button, input {
+  font-family: inherit;
+  font-size: 1rem;
+}
+
+.mode-switcher {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  justify-content: center;
+}
+
+.mode-btn {
+  padding: 0.75rem 1.5rem;
+  border: 2px solid transparent;
+  background: var(--bg-primary);
+  color: var(--text-secondary);
+  border-radius: var(--radius);
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.2s;
+}
+
+.mode-btn.active {
+  background: var(--accent);
+  color: white;
+}
+
+/* Cards */
+.card {
+  background: var(--bg-primary);
+  padding: 2rem;
+  border-radius: var(--radius);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  margin-bottom: 1.5rem;
+  border: 1px solid rgba(0,0,0,0.1);
+}
+
+/* Forms */
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+input[type="text"] {
+  width: 100%;
+  padding: 0.75rem;
+  border: 2px solid var(--text-secondary);
+  border-radius: var(--radius);
+  background: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+fieldset {
+  border: none;
+  padding: 0;
+  margin: 0 0 1.5rem 0;
+}
+
+legend {
+  font-weight: 600;
+  margin-bottom: 1rem;
+  font-size: 1.125rem;
+}
+
+.option-group {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 0.75rem;
+  background: var(--bg-secondary);
+  padding: 0.5rem;
+  border-radius: var(--radius);
+}
+
+.option-input {
+  border: none;
+  background: transparent;
+}
+
+.option-input:focus {
+  background: var(--bg-primary);
+}
+
+/* Buttons */
+.btn-primary {
+  background: var(--accent);
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--radius);
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  background: var(--accent-hover);
+}
+
+.btn-secondary {
+  background: var(--text-secondary);
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--radius);
+  cursor: pointer;
+}
+
+.btn-large {
+  width: 100%;
+  font-size: 1.25rem;
+  padding: 1.5rem;
+}
+
+/* Quiz Styles */
+.view.hidden {
+  display: none;
+}
+
+.question-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  border-bottom: 1px solid var(--bg-secondary);
+}
+
+.quiz-progress {
+  height: 8px;
+  background: var(--bg-secondary);
+  border-radius: 999px;
+  margin-bottom: 2rem;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: var(--accent);
+  transition: width 0.3s ease;
+}
+
+.quiz-option-btn {
+  display: block;
+  width: 100%;
+  text-align: left;
+  padding: 1rem;
+  margin-bottom: 0.75rem;
+  background: var(--bg-primary);
+  border: 2px solid var(--text-secondary);
+  border-radius: var(--radius);
+  cursor: pointer;
+  color: var(--text-primary);
+}
+
+.quiz-option-btn:hover, .quiz-option-btn:focus {
+  border-color: var(--accent);
+  background: var(--bg-secondary);
+}
+
+.quiz-option-btn.correct {
+  border-color: var(--success);
+  background: rgba(5, 150, 105, 0.1);
+}
+
+.quiz-option-btn.wrong {
+  border-color: var(--error);
+  background: rgba(220, 38, 38, 0.1);
+}
+
+.feedback-region {
+  margin-top: 1rem;
+  font-weight: 700;
+  text-align: center;
+  min-height: 1.5em;
+}
+
+.empty-state {
+  text-align: center;
+  color: var(--text-secondary);
+  font-style: italic;
+}

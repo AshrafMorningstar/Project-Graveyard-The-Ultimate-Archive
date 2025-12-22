@@ -1,0 +1,53 @@
+/*
+ * -----------------------------------------------------------------------------
+ * @author      Ashraf Morningstar
+ * @github      https://github.com/AshrafMorningstar
+ * @repository  Project Graveyard - The Ultimate Archive
+ * @quote       "Code that defines the future. Designed to inspire."
+ * -----------------------------------------------------------------------------
+*/
+
+# 🌐 Cyber GitHub Stats
+
+**Created by:** [AshrafMorningstar](https://github.com/AshrafMorningstar)  
+**GitHub Profile:** https://github.com/AshrafMorningstar
+
+## 🎯 Overview
+
+A futuristic, cyberpunk-themed GitHub profile visualizer with neon aesthetics and dynamic animations. This project automatically fetches and displays your GitHub statistics in a stunning, professional interface.
+
+## ✨ Features
+
+- 🎨 Cyberpunk neon design with glowing effects
+- 📊 Real-time GitHub stats fetching
+- 🔄 Automatic updates via GitHub Actions
+- 💫 Smooth animations and transitions
+- 📱 Fully responsive design
+- 🌙 Dark theme optimized
+
+## 🚀 Quick Start
+
+```bash
+npm install
+npm run build
+```
+
+## 📦 Deployment
+
+This project runs entirely on GitHub using GitHub Actions. Simply push to your repository and the workflow will handle everything automatically.
+
+## 🛠️ Tech Stack
+
+- HTML5 & CSS3
+- Vanilla JavaScript
+- GitHub API
+- GitHub Actions
+
+## 📄 License
+
+MIT License - Created by AshrafMorningstar
+
+---
+
+**Author:** AshrafMorningstar  
+**Profile:** https://github.com/AshrafMorningstar

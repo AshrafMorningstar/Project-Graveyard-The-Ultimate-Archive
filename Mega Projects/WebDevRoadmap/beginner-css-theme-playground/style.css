@@ -1,0 +1,181 @@
+/*
+ * -----------------------------------------------------------------------------
+ * @author      Ashraf Morningstar
+ * @github      https://github.com/AshrafMorningstar
+ * @repository  Project Graveyard - The Ultimate Archive
+ * @quote       "Code that defines the future. Designed to inspire."
+ * -----------------------------------------------------------------------------
+*/
+
+/**
+ * CSS Playground - Styles
+ * Author: Ashraf Morningstar
+ * GitHub: https://github.com/AshrafMorningstar
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Fira+Code:wght@400&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background: #0f172a;
+  color: #e2e8f0;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.app-layout {
+  display: flex;
+  height: 100vh;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 400px;
+  background: #1e293b;
+  border-right: 1px solid #334155;
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem;
+  z-index: 10;
+}
+
+.sidebar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+h1 {
+  font-size: 1.25rem;
+  margin: 0;
+  font-weight: 700;
+  color: #38bdf8;
+}
+
+.controls {
+  margin-bottom: 1.5rem;
+}
+
+label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #94a3b8;
+}
+
+select {
+  width: 100%;
+  padding: 0.5rem;
+  background: #334155;
+  border: 1px solid #475569;
+  border-radius: 6px;
+  color: white;
+  font-family: inherit;
+}
+
+.editor-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.CodeMirror {
+  flex: 1;
+  border-radius: 6px;
+  font-family: 'Fira Code', monospace;
+  font-size: 14px;
+}
+
+/* Preview Area */
+.preview-area {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background: #0f172a;
+  padding: 2rem;
+}
+
+.preview-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.device-toggles {
+  background: #1e293b;
+  padding: 4px;
+  border-radius: 8px;
+  display: flex;
+  gap: 4px;
+}
+
+.device-btn {
+  background: transparent;
+  border: none;
+  color: #94a3b8;
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.2s;
+}
+
+.device-btn:hover {
+  color: white;
+}
+
+.device-btn.active {
+  background: #38bdf8;
+  color: #0f172a;
+}
+
+.preview-label {
+  position: absolute;
+  right: 0;
+  color: #64748b;
+  font-size: 0.875rem;
+}
+
+.preview-canvas-wrapper {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  overflow: auto;
+  padding-bottom: 2rem;
+}
+
+.preview-canvas {
+  background: white;
+  border: none;
+  border-radius: 8px;
+  width: 100%;
+  height: 100%;
+  transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+/* Buttons */
+.btn-primary {
+  background: #38bdf8;
+  color: #0f172a;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  background: #0ea5e9;
+}

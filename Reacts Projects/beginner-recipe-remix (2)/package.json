@@ -1,0 +1,8 @@
+{
+  "name": "beginner-recipe-remix",
+  "private": true,
+  "scripts": {
+    "dev": "echo dev",
+    "build": "echo build"
+  }
+}

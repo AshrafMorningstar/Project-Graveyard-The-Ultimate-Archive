@@ -1,0 +1,72 @@
+<!--
+ -----------------------------------------------------------------------------
+ @author      Ashraf Morningstar
+ @github      https://github.com/AshrafMorningstar
+ @repository  Project Graveyard - The Ultimate Archive
+ @quote       "Code that defines the future. Designed to inspire."
+ -----------------------------------------------------------------------------
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Collaborative Whiteboard | Ashraf Morningstar</title>
+    <!-- 
+        Project: Collaborative Whiteboard with Version Control
+        Level: Intermediate
+        Author: Ashraf Morningstar
+        GitHub: https://github.com/AshrafMorningstar
+    -->
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Toolbar -->
+        <header class="toolbar">
+            <div class="brand">
+                <i class="fa-solid fa-pen-nib"></i> GitDraw
+            </div>
+            
+            <div class="tools">
+                <button class="tool-btn active" id="pencil-btn" title="Pencil"><i class="fa-solid fa-pencil"></i></button>
+                <button class="tool-btn" id="eraser-btn" title="Eraser"><i class="fa-solid fa-eraser"></i></button>
+                <input type="color" id="color-picker" value="#000000">
+                <input type="range" id="size-slider" min="1" max="50" value="2" title="Brush Size">
+            </div>
+
+            <div class="actions">
+                <button class="action-btn secondary" id="clear-btn">Clear</button>
+                <button class="action-btn primary" id="commit-btn"><i class="fa-solid fa-code-commit"></i> Commit</button>
+            </div>
+        </header>
+
+        <div class="workspace">
+            <!-- Sidebar: Version History -->
+            <aside class="git-panel">
+                <h3><i class="fa-solid fa-code-branch"></i> Branches & Commits</h3>
+                <div class="branch-selector">
+                    <select id="branch-select">
+                        <option value="main">main</option>
+                        <option value="feature/sketch">feature/sketch</option>
+                    </select>
+                    <button class="small-btn" id="new-branch-btn">+</button>
+                </div>
+                
+                <div class="commit-list" id="commit-list">
+                    <!-- Commits will appear here -->
+                </div>
+            </aside>
+
+            <!-- Main Canvas -->
+            <main class="canvas-area">
+                <canvas id="whiteboard"></canvas>
+            </main>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>

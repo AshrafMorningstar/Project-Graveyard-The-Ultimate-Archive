@@ -1,0 +1,167 @@
+/*
+ * -----------------------------------------------------------------------------
+ * @author      Ashraf Morningstar
+ * @github      https://github.com/AshrafMorningstar
+ * @repository  Project Graveyard - The Ultimate Archive
+ * @quote       "Code that defines the future. Designed to inspire."
+ * -----------------------------------------------------------------------------
+*/
+
+/*
+Created & Maintained by Ashraf Morningstar
+GitHub: https://github.com/AshrafMorningstar
+*/
+
+body {
+    background: #fafafa;
+    color: #1a1a1a;
+    font-family: 'Inter', sans-serif;
+}
+
+.dict-card {
+    background: #fff;
+    width: 100%;
+    max-width: 650px;
+    padding: 2.5rem;
+    border-radius: 16px;
+    box-shadow: 0 2px 20px rgba(0,0,0,0.08);
+}
+
+.header {
+    margin-bottom: 2rem;
+}
+
+.logo-icon {
+    font-size: 2rem;
+    color: #6366f1;
+    margin-bottom: 1rem;
+}
+
+.search-box {
+    display: flex;
+    gap: 10px;
+}
+
+#input-word {
+    flex: 1;
+    padding: 1rem 1.5rem;
+    border: 2px solid #e5e7eb;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-family: 'Lora', serif;
+    transition: border-color 0.2s;
+}
+
+#input-word:focus {
+    outline: none;
+    border-color: #6366f1;
+}
+
+#search-btn {
+    background: #6366f1;
+    color: white;
+    border: none;
+    padding: 1rem 1.5rem;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+#search-btn:hover {
+    background: #4f46e5;
+}
+
+/* Word Display */
+.word-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid #f3f4f6;
+}
+
+#word {
+    font-family: 'Lora', serif;
+    font-size: 2.5rem;
+    color: #1a1a1a;
+    margin-bottom: 0.5rem;
+}
+
+.phonetic {
+    color: #6366f1;
+    font-style: italic;
+    font-size: 1.1rem;
+}
+
+.audio-btn {
+    background: #f3f4f6;
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    color: #6366f1;
+    font-size: 1.2rem;
+    transition: all 0.2s;
+}
+
+.audio-btn:hover {
+    background: #6366f1;
+    color: white;
+    transform: scale(1.1);
+}
+
+/* Meanings */
+.meaning-group {
+    margin-bottom: 2rem;
+}
+
+.part-of-speech {
+    font-style: italic;
+    color: #6366f1;
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    font-family: 'Lora', serif;
+}
+
+.definitions {
+    list-style: none;
+    padding-left: 0;
+}
+
+.definitions li {
+    position: relative;
+    padding-left: 2rem;
+    margin-bottom: 1rem;
+    line-height: 1.6;
+    color: #4b5563;
+}
+
+.definitions li::before {
+    content: '•';
+    position: absolute;
+    left: 0.5rem;
+    color: #6366f1;
+    font-size: 1.5rem;
+}
+
+/* Error State */
+.error {
+    text-align: center;
+    padding: 3rem 1rem;
+}
+
+.error h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #1a1a1a;
+}
+
+.error p {
+    color: #6b7280;
+}
+
+.hidden {
+    display: none;
+}

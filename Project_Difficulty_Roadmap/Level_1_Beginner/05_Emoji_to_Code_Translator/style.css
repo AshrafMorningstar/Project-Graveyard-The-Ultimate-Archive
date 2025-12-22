@@ -1,0 +1,175 @@
+/*
+ * -----------------------------------------------------------------------------
+ * @author      Ashraf Morningstar
+ * @github      https://github.com/AshrafMorningstar
+ * @repository  Project Graveyard - The Ultimate Archive
+ * @quote       "Code that defines the future. Designed to inspire."
+ * -----------------------------------------------------------------------------
+*/
+
+/* 
+   Project: Emoji-to-Code Translator
+   Level: Beginner
+   Author: Ashraf Morningstar
+   GitHub: https://github.com/AshrafMorningstar
+*/
+
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    width: 100%;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+h1 {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+    text-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.glass-panel {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    padding: 2rem;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+}
+
+.input-section {
+    margin-bottom: 1rem;
+}
+
+.emoji-toolbar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin: 1rem 0;
+}
+
+.emoji-btn {
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.emoji-btn:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: translateY(-2px);
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1.5rem;
+    border: none;
+    border-radius: 8px;
+    background: rgba(0, 0, 0, 0.2);
+    color: white;
+    font-family: 'Fira Code', monospace;
+}
+
+input:focus {
+    outline: 2px solid #a6c1ee;
+}
+
+.action-section {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+#translate-btn {
+    background: #ff0080;
+    color: white;
+    border: none;
+    padding: 1rem 3rem;
+    font-size: 1.2rem;
+    border-radius: 50px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(255, 0, 128, 0.4);
+    transition: transform 0.2s;
+}
+
+#translate-btn:hover {
+    transform: scale(1.05);
+}
+
+.output-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.code-output, .preview-output {
+    min-height: 200px;
+    display: flex;
+    flex-direction: column;
+}
+
+pre {
+    background: #1e1e1e;
+    padding: 1rem;
+    border-radius: 8px;
+    overflow-x: auto;
+    flex: 1;
+    font-family: 'Fira Code', monospace;
+    color: #d4d4d4;
+    border: 1px solid #333;
+}
+
+.preview-box {
+    background: white;
+    border-radius: 8px;
+    flex: 1;
+    padding: 1rem;
+    color: black; /* Reset text color for preview */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cheatsheet {
+    margin-top: 2rem;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+code {
+    background: rgba(0,0,0,0.3);
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    font-family: 'Fira Code', monospace;
+}
+
+@media (max-width: 768px) {
+    .output-section {
+        grid-template-columns: 1fr;
+    }
+}

@@ -1,0 +1,350 @@
+/*
+ * -----------------------------------------------------------------------------
+ * @author      Ashraf Morningstar
+ * @github      https://github.com/AshrafMorningstar
+ * @repository  Project Graveyard - The Ultimate Archive
+ * @quote       "Code that defines the future. Designed to inspire."
+ * -----------------------------------------------------------------------------
+*/
+
+/* ChronoCard - Time-Aware Digital Identity Card */
+/* Design System & Theme Variables */
+
+:root {
+  /* Time-based theme colors */
+  --morning-bg: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+  --morning-text: #2c1810;
+  --morning-accent: #ff6b6b;
+
+  --afternoon-bg: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+  --afternoon-text: #1a1a2e;
+  --afternoon-accent: #4ecdc4;
+
+  --evening-bg: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  --evening-text: #f7f7f7;
+  --evening-accent: #f093fb;
+
+  --night-bg: linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%);
+  --night-text: #e0e0e0;
+  --night-accent: #00d4ff;
+
+  /* Weekday accent colors */
+  --monday: #3498db;
+  --tuesday: #e74c3c;
+  --wednesday: #2ecc71;
+  --thursday: #f39c12;
+  --friday: #9b59b6;
+  --saturday: #1abc9c;
+  --sunday: #e67e22;
+
+  /* Dynamic variables (updated by JS) */
+  --current-bg: var(--morning-bg);
+  --current-text: var(--morning-text);
+  --current-accent: var(--morning-accent);
+  --current-day-accent: var(--monday);
+
+  /* Layout & spacing */
+  --card-width: min(420px, 90vw);
+  --card-aspect: 1.586; /* Golden ratio */
+  --spacing-unit: 1rem;
+  --border-radius: 24px;
+
+  /* Animation timing */
+  --transition-smooth: 2s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-quick: 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* Typography scale */
+  --font-primary: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+  --font-size-xs: 0.75rem;
+  --font-size-sm: 0.875rem;
+  --font-size-base: 1rem;
+  --font-size-lg: 1.25rem;
+  --font-size-xl: 1.5rem;
+  --font-size-2xl: 2rem;
+  --font-size-3xl: 2.5rem;
+}
+
+/* Reset & Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-primary);
+  background: var(--current-bg);
+  color: var(--current-text);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background var(--transition-smooth),
+    color var(--transition-smooth);
+  overflow: hidden;
+}
+
+/* Container */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: calc(var(--spacing-unit) * 2);
+  padding: var(--spacing-unit);
+}
+
+/* ChronoCard - Main Card Component */
+.chrono-card {
+  position: relative;
+  width: var(--card-width);
+  aspect-ratio: var(--card-aspect);
+  perspective: 1000px;
+}
+
+.card-glow {
+  position: absolute;
+  inset: -4px;
+  background: var(--current-accent);
+  border-radius: var(--border-radius);
+  opacity: 0.4;
+  filter: blur(20px);
+  animation: pulse-glow 4s ease-in-out infinite;
+  transition: background var(--transition-smooth);
+}
+
+@keyframes pulse-glow {
+  0%,
+  100% {
+    opacity: 0.3;
+    transform: scale(0.98);
+  }
+  50% {
+    opacity: 0.5;
+    transform: scale(1.02);
+  }
+}
+
+.card-content {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: var(--border-radius);
+  padding: calc(var(--spacing-unit) * 2);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  transition: all var(--transition-smooth);
+  animation: card-breathe 8s ease-in-out infinite;
+}
+
+@keyframes card-breathe {
+  0%,
+  100% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-4px) scale(1.005);
+  }
+}
+
+/* Card Header */
+.card-header {
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--spacing-unit) * 0.5);
+}
+
+.greeting {
+  font-size: var(--font-size-2xl);
+  font-weight: 700;
+  color: var(--current-text);
+  letter-spacing: -0.02em;
+  transition: all var(--transition-quick);
+  animation: greeting-fade 1.5s ease-in-out;
+}
+
+@keyframes greeting-fade {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.current-time {
+  font-size: var(--font-size-3xl);
+  font-weight: 300;
+  color: var(--current-accent);
+  letter-spacing: 0.05em;
+  font-variant-numeric: tabular-nums;
+  transition: all var(--transition-smooth);
+  animation: time-pulse 1s ease-in-out infinite;
+}
+
+@keyframes time-pulse {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.95;
+    transform: scale(1.002);
+  }
+}
+
+/* Identity Section */
+.identity {
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--spacing-unit) * 0.5);
+  padding: calc(var(--spacing-unit) * 1.5) 0;
+}
+
+.name {
+  font-size: var(--font-size-xl);
+  font-weight: 600;
+  color: var(--current-text);
+  transition: all var(--transition-smooth);
+}
+
+.role {
+  font-size: var(--font-size-base);
+  font-weight: 400;
+  color: var(--current-text);
+  opacity: 0.8;
+  transition: all var(--transition-smooth);
+}
+
+.tagline {
+  font-size: var(--font-size-sm);
+  font-weight: 300;
+  color: var(--current-text);
+  opacity: 0.6;
+  font-style: italic;
+  margin-top: calc(var(--spacing-unit) * 0.5);
+  transition: all var(--transition-smooth);
+}
+
+/* Card Footer */
+.card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: calc(var(--spacing-unit) * 1);
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.day-indicator {
+  display: flex;
+  align-items: center;
+  gap: calc(var(--spacing-unit) * 0.5);
+}
+
+.day-name {
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  color: var(--current-text);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  transition: all var(--transition-smooth);
+}
+
+.day-accent {
+  width: 32px;
+  height: 4px;
+  background: var(--current-day-accent);
+  border-radius: 2px;
+  transition: all var(--transition-smooth);
+  animation: day-pulse 3s ease-in-out infinite;
+}
+
+@keyframes day-pulse {
+  0%,
+  100% {
+    transform: scaleX(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scaleX(1.1);
+    opacity: 0.8;
+  }
+}
+
+.time-period {
+  font-size: var(--font-size-lg);
+  font-weight: 700;
+  color: var(--current-accent);
+  transition: all var(--transition-smooth);
+}
+
+/* Info Panel */
+.info-panel {
+  text-align: center;
+  max-width: var(--card-width);
+}
+
+.info-text {
+  font-size: var(--font-size-sm);
+  color: var(--current-text);
+  opacity: 0.7;
+  transition: all var(--transition-smooth);
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+  :root {
+    --font-size-2xl: 1.5rem;
+    --font-size-3xl: 2rem;
+  }
+
+  .card-content {
+    padding: calc(var(--spacing-unit) * 1.5);
+  }
+}
+
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Theme Classes (Applied by JavaScript) */
+.theme-morning {
+  --current-bg: var(--morning-bg);
+  --current-text: var(--morning-text);
+  --current-accent: var(--morning-accent);
+}
+
+.theme-afternoon {
+  --current-bg: var(--afternoon-bg);
+  --current-text: var(--afternoon-text);
+  --current-accent: var(--afternoon-accent);
+}
+
+.theme-evening {
+  --current-bg: var(--evening-bg);
+  --current-text: var(--evening-text);
+  --current-accent: var(--evening-accent);
+}
+
+.theme-night {
+  --current-bg: var(--night-bg);
+  --current-text: var(--night-text);
+  --current-accent: var(--night-accent);
+}

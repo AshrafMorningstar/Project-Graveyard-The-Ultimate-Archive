@@ -1,0 +1,39 @@
+<!--
+ -----------------------------------------------------------------------------
+ @author      Ashraf Morningstar
+ @github      https://github.com/AshrafMorningstar
+ @repository  Project Graveyard - The Ultimate Archive
+ @quote       "Code that defines the future. Designed to inspire."
+ -----------------------------------------------------------------------------
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CryptoTracker by AshrafMorningstar</title>
+  <meta charset="UTF-8">
+  <style>
+    body { background: #0e0e0e; color: #00ffc3; font-family: monospace; padding: 2rem; }
+    .token { margin: 1rem 0; padding: 1rem; border: 1px solid #00ffc3; border-radius: 10px; }
+  </style>
+</head>
+<body>
+  <h1>Crypto Wallet Tracker - AshrafMorningstar</h1>
+  <div id="tokens">Loading token data...</div>
+  <script>
+    const tokens = [
+      { name: 'ETH', balance: (Math.random() * 5).toFixed(4), value: (Math.random() * 7000).toFixed(2) },
+      { name: 'BTC', balance: (Math.random()).toFixed(3), value: (Math.random() * 20000).toFixed(2) },
+      { name: 'SOL', balance: (Math.random() * 25).toFixed(2), value: (Math.random() * 300).toFixed(2) }
+    ];
+    const container = document.getElementById('tokens');
+    container.innerHTML = tokens.map(t => `
+      <div class="token">
+        <strong>${t.name}</strong><br>
+        Balance: ${t.balance}<br>
+        USD Value: $${t.value}
+      </div>
+    `).join('');
+  </script>
+</body>
+</html>

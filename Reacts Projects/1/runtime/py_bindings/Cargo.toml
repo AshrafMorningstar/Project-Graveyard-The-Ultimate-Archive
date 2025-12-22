@@ -1,0 +1,13 @@
+[package]
+name = "py_bindings"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+name = "trw_runtime"
+crate-type = ["cdylib"]
+
+[dependencies]
+pyo3 = { version = "0.20", features = ["extension-module"] }
+runtime_core = { path = "../runtime_core" }
+anyhow = "1.0"

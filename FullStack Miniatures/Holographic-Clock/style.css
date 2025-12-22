@@ -1,0 +1,170 @@
+/*
+ * -----------------------------------------------------------------------------
+ * @author      Ashraf Morningstar
+ * @github      https://github.com/AshrafMorningstar
+ * @repository  Project Graveyard - The Ultimate Archive
+ * @quote       "Code that defines the future. Designed to inspire."
+ * -----------------------------------------------------------------------------
+*/
+
+/* Created by Ashraf Morningstar - https://github.com/AshrafMorningstar */
+@import url('https://fonts.googleapis.com/css?family=Share+Tech+Mono&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-color: #00ff41;
+  --secondary-color: #0d0d0d;
+  --glow-color: #00ff41;
+}
+
+html {
+  transition: all 0.5s ease-in;
+}
+
+html.dark {
+  --primary-color: #ff00de;
+  --secondary-color: #111;
+  --glow-color: #ff00de;
+}
+
+body {
+  font-family: 'Share Tech Mono', monospace;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+  flex-direction: column;
+}
+
+.toggle {
+  background-color: transparent;
+  color: var(--primary-color);
+  border: 2px solid var(--primary-color);
+  border-radius: 4px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 100px;
+  cursor: pointer;
+  box-shadow: 0 0 10px var(--glow-color);
+  font-family: inherit;
+  text-transform: uppercase;
+}
+
+.toggle:focus {
+  outline: none;
+}
+
+.clock-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.clock {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  border: 4px solid var(--primary-color);
+  box-shadow: 0 0 20px var(--glow-color), inset 0 0 20px var(--glow-color);
+  background: rgba(0, 255, 65, 0.05);
+}
+
+.mark {
+    position: absolute;
+    background: var(--primary-color);
+    box-shadow: 0 0 5px var(--glow-color);
+}
+.marks-12 { top: 10px; left: 50%; width: 4px; height: 20px; transform: translateX(-50%); }
+.marks-6 { bottom: 10px; left: 50%; width: 4px; height: 20px; transform: translateX(-50%); }
+.marks-3 { right: 10px; top: 50%; width: 20px; height: 4px; transform: translateY(-50%); }
+.marks-9 { left: 10px; top: 50%; width: 20px; height: 4px; transform: translateY(-50%); }
+
+.needle {
+  background-color: var(--primary-color);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: 80px;
+  width: 4px;
+  transform-origin: bottom center;
+  transition: all 0.5s cubic-bezier(0.1, 2.7, 0.58, 1);
+  box-shadow: 0 0 10px var(--glow-color);
+  border-radius: 5px;
+}
+
+.needle.hour {
+  transform: translate(-50%, -100%) rotate(0deg);
+  height: 60px;
+  width: 6px;
+}
+
+.needle.minute {
+  transform: translate(-50%, -100%) rotate(0deg);
+  height: 100px;
+}
+
+.needle.second {
+  transform: translate(-50%, -100%) rotate(0deg);
+  height: 110px;
+  width: 2px;
+  background-color: #fff;
+  box-shadow: 0 0 15px #fff;
+}
+
+.center-point {
+  background-color: #fff;
+  width: 14px;
+  height: 14px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  box-shadow: 0 0 10px #fff;
+}
+
+.time {
+  font-size: 60px;
+  margin-top: 40px;
+  text-shadow: 0 0 20px var(--glow-color);
+}
+
+.date {
+  color: #aaa;
+  font-size: 16px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-top: 10px;
+}
+
+.date .circle {
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  border-radius: 50%;
+  height: 25px;
+  width: 25px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 18px;
+  transition: all 0.5s ease-in;
+  font-size: 14px;
+  margin-left: 5px;
+  font-weight: bold;
+}
+
+.footer {
+    margin-top: 50px;
+    font-size: 12px;
+    opacity: 0.8;
+}
+.footer a { color: var(--primary-color); text-decoration: none; font-weight: bold; }

@@ -1,0 +1,112 @@
+<!--
+ -----------------------------------------------------------------------------
+ @author      Ashraf Morningstar
+ @github      https://github.com/AshrafMorningstar
+ @repository  Project Graveyard - The Ultimate Archive
+ @quote       "Code that defines the future. Designed to inspire."
+ -----------------------------------------------------------------------------
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ingenuity: Code on Another Planet</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;500;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="stars"></div>
+    <div class="twinkling"></div>
+
+    <header>
+      <nav>
+        <div class="logo">MARS 2020</div>
+        <div class="links">
+          <a href="#about">Mission</a>
+          <a href="#specs">Specs</a>
+          <a
+            href="https://github.com/AshrafMorningstar"
+            target="_blank"
+            class="github-link"
+            >GitHub</a
+          >
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="content">
+          <div class="badge-container">
+            <span class="badge">HELICOPTER CONTRIBUTOR</span>
+          </div>
+          <h1>CODE ON <span class="mars-text">ANOTHER PLANET</span></h1>
+          <p class="subtitle">
+            Celebrating the first powered flight on Mars by Ingenuity.
+          </p>
+          <div class="stats-grid">
+            <div class="stat-item">
+              <span class="number">72</span>
+              <span class="label">Total Flights</span>
+            </div>
+            <div class="stat-item">
+              <span class="number">128.8</span>
+              <span class="label">Flight Minutes</span>
+            </div>
+            <div class="stat-item">
+              <span class="number">17</span>
+              <span class="label">km Traveled</span>
+            </div>
+          </div>
+          <button id="ignite-btn" class="cta-button">
+            INITIATE LAUNCH SEQUENCE
+          </button>
+        </div>
+        <div class="visual">
+          <div class="planet-mars">
+            <div class="crater c1"></div>
+            <div class="crater c2"></div>
+            <div class="crater c3"></div>
+          </div>
+          <div class="helicopter">
+            <div class="blade blade-top"></div>
+            <div class="blade blade-bottom"></div>
+            <div class="body"></div>
+            <div class="legs"></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="terminal-section" class="terminal-hidden">
+        <div class="terminal-window">
+          <div class="terminal-header">
+            <span class="dot red"></span>
+            <span class="dot yellow"></span>
+            <span class="dot green"></span>
+            <span class="title">ingenuity_flight_log.sh</span>
+          </div>
+          <div class="terminal-body" id="terminal-output">
+            <!-- JS will populate this -->
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>
+        Project by
+        <a href="https://github.com/AshrafMorningstar">Ashraf Morningstar</a>
+        &bull; Dedicated to the JPL Team
+      </p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

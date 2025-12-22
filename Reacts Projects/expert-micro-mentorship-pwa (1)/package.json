@@ -1,0 +1,8 @@
+{
+  "name": "expert-micro-mentorship-pwa",
+  "private": true,
+  "scripts": {
+    "dev": "echo dev",
+    "build": "echo build"
+  }
+}

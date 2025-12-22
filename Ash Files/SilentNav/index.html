@@ -1,0 +1,118 @@
+<!--
+ -----------------------------------------------------------------------------
+ @author      Ashraf Morningstar
+ @github      https://github.com/AshrafMorningstar
+ @repository  Project Graveyard - The Ultimate Archive
+ @quote       "Code that defines the future. Designed to inspire."
+ -----------------------------------------------------------------------------
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SilentNav - Navigation Without Labels</title>
+    <meta name="description" content="Navigate purely through shape, motion, and intuition">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/nav.css">
+</head>
+<body>
+    <!-- Silent Navigation -->
+    <nav class="silent-nav" role="navigation" aria-label="Main navigation">
+        <div class="nav-container">
+            <button class="nav-symbol" data-section="home" aria-label="Home section">
+                <svg viewBox="0 0 100 100" class="symbol-svg">
+                    <circle cx="50" cy="50" r="40" class="symbol-shape"/>
+                </svg>
+            </button>
+            
+            <button class="nav-symbol" data-section="work" aria-label="Work section">
+                <svg viewBox="0 0 100 100" class="symbol-svg">
+                    <rect x="20" y="20" width="60" height="60" class="symbol-shape"/>
+                </svg>
+            </button>
+            
+            <button class="nav-symbol" data-section="about" aria-label="About section">
+                <svg viewBox="0 0 100 100" class="symbol-svg">
+                    <polygon points="50,15 85,85 15,85" class="symbol-shape"/>
+                </svg>
+            </button>
+            
+            <button class="nav-symbol" data-section="contact" aria-label="Contact section">
+                <svg viewBox="0 0 100 100" class="symbol-svg">
+                    <path d="M 30 50 L 50 30 L 70 50 L 50 70 Z" class="symbol-shape"/>
+                </svg>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Content Sections -->
+    <main class="content-wrapper">
+        <!-- Home Section -->
+        <section id="home" class="content-section active" data-section="home">
+            <div class="section-inner">
+                <h1 class="section-title">Welcome</h1>
+                <p class="section-text">Navigate through intuition, not instruction.</p>
+                <div class="visual-element circle-grid">
+                    <div class="grid-item"></div>
+                    <div class="grid-item"></div>
+                    <div class="grid-item"></div>
+                    <div class="grid-item"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Work Section -->
+        <section id="work" class="content-section" data-section="work">
+            <div class="section-inner">
+                <h1 class="section-title">Projects</h1>
+                <p class="section-text">Structure emerges from chaos.</p>
+                <div class="visual-element square-grid">
+                    <div class="grid-item"></div>
+                    <div class="grid-item"></div>
+                    <div class="grid-item"></div>
+                    <div class="grid-item"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="content-section" data-section="about">
+            <div class="section-inner">
+                <h1 class="section-title">Philosophy</h1>
+                <p class="section-text">Form follows function, silence speaks volumes.</p>
+                <div class="visual-element triangle-pattern">
+                    <div class="pattern-item"></div>
+                    <div class="pattern-item"></div>
+                    <div class="pattern-item"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="content-section" data-section="contact">
+            <div class="section-inner">
+                <h1 class="section-title">Connect</h1>
+                <p class="section-text">Communication transcends words.</p>
+                <div class="visual-element diamond-cluster">
+                    <div class="cluster-item"></div>
+                    <div class="cluster-item"></div>
+                    <div class="cluster-item"></div>
+                    <div class="cluster-item"></div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="attribution">
+        <p>Created by <strong>Ashraf Morningstar</strong></p>
+        <a href="https://github.com/AshrafMorningstar" target="_blank">github.com/AshrafMorningstar</a>
+    </footer>
+
+    <script src="js/nav-controller.js"></script>
+</body>
+</html>

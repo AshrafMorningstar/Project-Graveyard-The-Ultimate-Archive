@@ -1,0 +1,59 @@
+<!--
+ -----------------------------------------------------------------------------
+ @author      Ashraf Morningstar
+ @github      https://github.com/AshrafMorningstar
+ @repository  Project Graveyard - The Ultimate Archive
+ @quote       "Code that defines the future. Designed to inspire."
+ -----------------------------------------------------------------------------
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real-Time Performance Art Platform | Ashraf Morningstar</title>
+    <!-- 
+        Project: Real-Time Performance Art Platform
+        Level: Advanced
+        Author: Ashraf Morningstar
+        GitHub: https://github.com/AshrafMorningstar
+    -->
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="art-app">
+        <header>
+            <div class="logo">🎨 COLLECTIVE CANVAS</div>
+            <div class="live-indicator">
+                <span class="dot">●</span> <span id="user-count">1</span> Artists Online
+            </div>
+        </header>
+        
+        <main>
+            <canvas id="art-canvas"></canvas>
+            
+            <div class="toolbar">
+                <div class="tool-group">
+                    <button class="tool active" data-color="#000000" style="background:#000"></button>
+                    <button class="tool" data-color="#ff0000" style="background:#f00"></button>
+                    <button class="tool" data-color="#00ff00" style="background:#0f0"></button>
+                    <button class="tool" data-color="#0000ff" style="background:#00f"></button>
+                    <button class="tool" data-color="#ffff00" style="background:#ff0"></button>
+                </div>
+                <div class="tool-group">
+                    <input type="range" id="brush-size" min="2" max="50" value="5">
+                </div>
+                <button id="clear-btn">Clear My Strokes</button>
+            </div>
+        </main>
+
+        <div id="chat-overlay">
+            <div id="chat-messages"></div>
+            <input type="text" id="chat-input" placeholder="Say something...">
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>

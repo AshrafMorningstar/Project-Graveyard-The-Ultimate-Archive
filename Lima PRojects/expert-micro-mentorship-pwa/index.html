@@ -1,0 +1,414 @@
+<!--
+ -----------------------------------------------------------------------------
+ @author      Ashraf Morningstar
+ @github      https://github.com/AshrafMorningstar
+ @repository  Project Graveyard - The Ultimate Archive
+ @quote       "Code that defines the future. Designed to inspire."
+ -----------------------------------------------------------------------------
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Instant mentorship sessions via PWA with WebRTC video integration">
+    <meta name="author" content="Ashraf Morningstar">
+    <meta name="theme-color" content="#4F46E5">
+    <title>MentorMatch | Instant Micro-Mentorship</title>
+    <link rel="stylesheet" href="../shared/global-design-system.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="manifest" href="manifest.json">
+    <style>
+        body {
+            background-color: #F3F4F6;
+            color: #1F2937;
+            padding-bottom: 80px; /* Space for bottom nav */
+        }
+
+        /* App Header */
+        .app-header {
+            background: #4F46E5;
+            color: white;
+            padding: var(--space-6) var(--space-4);
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+        }
+
+        .user-status {
+            font-size: 0.875rem;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 4px 12px;
+            border-radius: 99px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .status-dot { width: 8px; height: 8px; background: #10B981; border-radius: 50%; }
+
+        /* Filter Chips */
+        .filters {
+            display: flex;
+            gap: 12px;
+            padding: 16px;
+            overflow-x: auto;
+            background: white;
+            border-bottom: 1px solid #E5E7EB;
+        }
+
+        .chip {
+            padding: 6px 16px;
+            background: #F3F4F6;
+            border-radius: 99px;
+            font-size: 0.875rem;
+            font-weight: 500;
+            white-space: nowrap;
+            color: #4B5563;
+            border: 1px solid #E5E7EB;
+        }
+
+        .chip.active {
+            background: #EEF2FF;
+            color: #4F46E5;
+            border-color: #4F46E5;
+        }
+
+        /* Mentor List */
+        .mentor-list {
+            padding: 16px;
+            display: grid;
+            gap: 16px;
+        }
+
+        .mentor-card {
+            background: white;
+            border-radius: 16px;
+            padding: 16px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            display: flex;
+            gap: 16px;
+        }
+
+        .mentor-avatar {
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid #E5E7EB;
+        }
+
+        .mentor-info { flex: 1; }
+
+        .mentor-name {
+            font-weight: 700;
+            margin-bottom: 4px;
+            color: #111827;
+        }
+
+        .mentor-title {
+            font-size: 0.875rem;
+            color: #6B7280;
+            margin-bottom: 8px;
+        }
+
+        .mentor-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 4px;
+            margin-bottom: 12px;
+        }
+
+        .tag {
+            font-size: 0.75rem;
+            background: #F3F4F6;
+            padding: 2px 8px;
+            border-radius: 4px;
+            color: #4B5563;
+        }
+
+        .session-btn {
+            width: 100%;
+            background: #4F46E5;
+            color: white;
+            padding: 8px;
+            border-radius: 8px;
+            border: none;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        /* Bottom Nav */
+        .bottom-nav {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background: white;
+            border-top: 1px solid #E5E7EB;
+            display: flex;
+            justify-content: space-around;
+            padding: 12px;
+            padding-bottom: max(12px, env(safe-area-inset-bottom));
+        }
+
+        .nav-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 4px;
+            color: #9CA3AF;
+            font-size: 0.75rem;
+            text-decoration: none;
+        }
+
+        .nav-item.active { color: #4F46E5; }
+        .nav-item i { font-size: 1.25rem; }
+
+        /* Video Call Modal (Simulated) */
+        .call-overlay {
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: #000;
+            z-index: 1000;
+            display: none;
+            flex-direction: column;
+        }
+
+        .call-overlay.active { display: flex; }
+
+        .video-grid {
+            flex: 1;
+            position: relative;
+            background: #111;
+        }
+
+        .remote-video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.8;
+        }
+
+        .local-video {
+            position: absolute;
+            bottom: 24px;
+            right: 24px;
+            width: 120px;
+            height: 160px;
+            background: #333;
+            border-radius: 12px;
+            border: 2px solid rgba(255,255,255,0.2);
+            overflow: hidden;
+        }
+
+        .call-controls {
+            background: rgba(0,0,0,0.8);
+            padding: 32px;
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            padding-bottom: max(32px, env(safe-area-inset-bottom));
+        }
+
+        .control-btn {
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+            color: white;
+            background: rgba(255,255,255,0.2);
+        }
+
+        .control-btn.hangup { background: #EF4444; }
+
+        .call-status {
+            position: absolute;
+            top: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0,0,0,0.5);
+            padding: 8px 16px;
+            border-radius: 99px;
+            color: white;
+            font-size: 0.875rem;
+            backdrop-filter: blur(4px);
+        }
+    </style>
+</head>
+<body>
+    <header class="app-header">
+        <div class="header-title">MentorMatch</div>
+        <div class="user-status">
+            <div class="status-dot"></div> Available
+        </div>
+    </header>
+
+    <div class="filters">
+        <div class="chip active">All</div>
+        <div class="chip">Engineering</div>
+        <div class="chip">Design</div>
+        <div class="chip">Product</div>
+        <div class="chip">Marketing</div>
+    </div>
+
+    <main class="mentor-list">
+        <!-- Mentor Cards -->
+        <div class="mentor-card">
+            <img src="https://i.pravatar.cc/150?u=1" alt="Mentor" class="mentor-avatar">
+            <div class="mentor-info">
+                <div class="mentor-name">Sarah Chen</div>
+                <div class="mentor-title">Staff Engineer @ Google</div>
+                <div class="mentor-tags">
+                    <span class="tag">System Design</span>
+                    <span class="tag">React</span>
+                </div>
+                <button class="session-btn" onclick="startCall('Sarah')">
+                    <i class="fas fa-video"></i> Instant Session (15m)
+                </button>
+            </div>
+        </div>
+
+        <div class="mentor-card">
+            <img src="https://i.pravatar.cc/150?u=2" alt="Mentor" class="mentor-avatar">
+            <div class="mentor-info">
+                <div class="mentor-name">Marcus Johnson</div>
+                <div class="mentor-title">Product Design Lead @ Airbnb</div>
+                <div class="mentor-tags">
+                    <span class="tag">UX Research</span>
+                    <span class="tag">Figma</span>
+                </div>
+                <button class="session-btn" onclick="startCall('Marcus')">
+                    <i class="fas fa-video"></i> Instant Session (15m)
+                </button>
+            </div>
+        </div>
+        
+        <div class="mentor-card">
+            <img src="https://i.pravatar.cc/150?u=3" alt="Mentor" class="mentor-avatar">
+            <div class="mentor-info">
+                <div class="mentor-name">Elena Rodriguez</div>
+                <div class="mentor-title">Senior PM @ Stripe</div>
+                <div class="mentor-tags">
+                    <span class="tag">Strategy</span>
+                    <span class="tag">Roadmapping</span>
+                </div>
+                <button class="session-btn" onclick="startCall('Elena')">
+                    <i class="fas fa-video"></i> Instant Session (15m)
+                </button>
+            </div>
+        </div>
+    </main>
+
+    <nav class="bottom-nav">
+        <a href="#" class="nav-item active">
+            <i class="fas fa-home"></i>
+            Home
+        </a>
+        <a href="#" class="nav-item">
+            <i class="fas fa-calendar-alt"></i>
+            Schedule
+        </a>
+        <a href="#" class="nav-item">
+            <i class="fas fa-comment-dots"></i>
+            Messages
+        </a>
+        <a href="#" class="nav-item">
+            <i class="fas fa-user-circle"></i>
+            Profile
+        </a>
+    </nav>
+
+    <!-- Call Overlay -->
+    <div id="callOverlay" class="call-overlay">
+        <div class="video-grid">
+            <div class="call-status">
+                <i class="fas fa-lock"></i> End-to-End Encrypted
+            </div>
+            <!-- Simulated Remote Video (Image for demo) -->
+            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=800&q=80" class="remote-video" alt="Remote Peer">
+            
+            <div class="local-video">
+                <div style="width:100%; height:100%; background:#444; display:flex; align-items:center; justify-content:center; color:white; font-size:2rem;">
+                    <i class="fas fa-user"></i>
+                </div>
+            </div>
+        </div>
+        
+        <div class="call-controls">
+            <button class="control-btn" onclick="toggleMute(this)"><i class="fas fa-microphone"></i></button>
+            <button class="control-btn" onclick="toggleVideo(this)"><i class="fas fa-video"></i></button>
+            <button class="control-btn hangup" onclick="endCall()"><i class="fas fa-phone-slash"></i></button>
+        </div>
+    </div>
+
+    <script>
+        /**
+         * MentorMatch PWA
+         * Author: Ashraf Morningstar
+         */
+
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('sw.js')
+                .then(reg => console.log('SW Registered'))
+                .catch(err => console.log('SW Failed', err));
+        }
+
+        function startCall(mentorName) {
+            if (confirm(`Start a 15-minute video session with ${mentorName}?`)) {
+                // Request notification permission for "call incoming" simulation
+                if (Notification.permission === 'default') {
+                    Notification.requestPermission();
+                }
+
+                document.getElementById('callOverlay').classList.add('active');
+                document.body.style.overflow = 'hidden';
+            }
+        }
+
+        function endCall() {
+            document.getElementById('callOverlay').classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        function toggleMute(btn) {
+            const icon = btn.querySelector('i');
+            if (icon.classList.contains('fa-microphone')) {
+                icon.classList.replace('fa-microphone', 'fa-microphone-slash');
+                btn.style.background = '#EF4444';
+            } else {
+                icon.classList.replace('fa-microphone-slash', 'fa-microphone');
+                btn.style.background = 'rgba(255,255,255,0.2)';
+            }
+        }
+
+        function toggleVideo(btn) {
+            const icon = btn.querySelector('i');
+            if (icon.classList.contains('fa-video')) {
+                icon.classList.replace('fa-video', 'fa-video-slash');
+                btn.style.background = '#EF4444';
+            } else {
+                icon.classList.replace('fa-video-slash', 'fa-video');
+                btn.style.background = 'rgba(255,255,255,0.2)';
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,18 @@
+/*
+ * -----------------------------------------------------------------------------
+ * @author      Ashraf Morningstar
+ * @github      https://github.com/AshrafMorningstar
+ * @repository  Project Graveyard - The Ultimate Archive
+ * @quote       "Code that defines the future. Designed to inspire."
+ * -----------------------------------------------------------------------------
+*/
+
+/**
+ * @author Ashraf Morningstar
+ * @link https://github.com/AshrafMorningstar
+ * @description Premium Viral Deployment
+ * @design_status Premium_Pro_Max
+ */
+
+/* PersonaTiles Grid - Ashraf Morningstar */
+*{margin:0;padding:0;box-sizing:border-box}body{font-family:'Inter',sans-serif;min-height:100vh;background:linear-gradient(135deg,#1e3c72,#2a5298);color:#fff;padding:2rem}.container{max-width:1200px;margin:0 auto}.header{text-align:center;margin-bottom:3rem}.header h1{font-size:3rem;margin-bottom:0.5rem}.header p{font-size:1.2rem;opacity:0.8}.tiles-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1.5rem;margin-bottom:2rem}footer{text-align:center;padding:2rem}footer a{color:#fff;opacity:0.7;text-decoration:none}footer a:hover{opacity:1}

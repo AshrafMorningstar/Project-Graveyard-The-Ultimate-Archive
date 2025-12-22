@@ -1,0 +1,15 @@
+{
+  "name": "holocommerce-frontend",
+  "version": "1.0.0",
+  "author": "AshrafMorningstar",
+  "scripts": {
+    "start": "react-scripts start"
+  },
+  "dependencies": {
+    "@react-three/fiber": "^8.13.6",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-scripts": "5.0.1",
+    "three": "^0.156.1"
+  }
+}

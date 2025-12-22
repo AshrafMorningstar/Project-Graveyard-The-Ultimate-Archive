@@ -1,0 +1,137 @@
+/*
+ * -----------------------------------------------------------------------------
+ * @author      Ashraf Morningstar
+ * @github      https://github.com/AshrafMorningstar
+ * @repository  Project Graveyard - The Ultimate Archive
+ * @quote       "Code that defines the future. Designed to inspire."
+ * -----------------------------------------------------------------------------
+*/
+
+/* 
+   Project: Personal Internet Time Capsule
+   Level: Intermediate
+   Author: Ashraf Morningstar
+   GitHub: https://github.com/AshrafMorningstar
+*/
+
+:root {
+    --bg-color: #0d0d0d;
+    --text-primary: #e0e0e0;
+    --accent: #d4af37; /* Gold */
+    --accent-glow: rgba(212, 175, 55, 0.3);
+}
+
+body {
+    margin: 0;
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+    font-family: 'Lato', sans-serif;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 2rem;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+h1 {
+    font-family: 'Cinzel', serif;
+    font-size: 2.5rem;
+    color: var(--accent);
+    margin: 0;
+    text-shadow: 0 0 10px var(--accent-glow);
+}
+
+.icon {
+    font-size: 2rem;
+    vertical-align: middle;
+}
+
+p {
+    color: #888;
+    margin-top: 0.5rem;
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    margin-bottom: 2rem;
+    align-items: center;
+}
+
+.primary-btn {
+    background: transparent;
+    border: 1px solid var(--accent);
+    color: var(--accent);
+    padding: 1rem 2rem;
+    font-family: 'Cinzel', serif;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all 0.5s;
+    position: relative;
+    overflow: hidden;
+}
+
+.primary-btn:hover {
+    background: var(--accent-glow);
+    box-shadow: 0 0 20px var(--accent-glow);
+}
+
+.stat-box {
+    text-align: center;
+}
+
+.stat-box span {
+    display: block;
+    font-size: 2rem;
+    font-weight: 300;
+}
+
+.stat-box label {
+    font-size: 0.8rem;
+    color: #666;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.viz-container {
+    flex: 1;
+    border: 1px solid rgba(255,255,255,0.05);
+    background: radial-gradient(circle at center, #1a1a1a 0%, #000 100%);
+    position: relative;
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.placeholder-text {
+    text-align: center;
+    opacity: 0.5;
+    font-style: italic;
+    line-height: 1.6;
+}
+
+/* D3 Tooltip */
+.tooltip {
+    position: absolute;
+    background: rgba(0,0,0,0.8);
+    border: 1px solid var(--accent);
+    padding: 1rem;
+    pointer-events: none;
+    font-size: 0.9rem;
+    color: #fff;
+    opacity: 0;
+    transition: opacity 0.2s;
+    border-radius: 4px;
+    z-index: 10;
+}

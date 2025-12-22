@@ -1,0 +1,59 @@
+<!--
+ -----------------------------------------------------------------------------
+ @author      Ashraf Morningstar
+ @github      https://github.com/AshrafMorningstar
+ @repository  Project Graveyard - The Ultimate Archive
+ @quote       "Code that defines the future. Designed to inspire."
+ -----------------------------------------------------------------------------
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>GitHub Visual DNA</title>
+  <style>
+    body {
+      background: #121212;
+      color: #00ffcc;
+      font-family: 'Courier New', Courier, monospace;
+      padding: 40px;
+      text-align: center;
+    }
+    .dna-card {
+      border: 2px solid #00ffcc;
+      padding: 20px;
+      margin: auto;
+      border-radius: 12px;
+      width: 80%;
+      box-shadow: 0 0 20px #00ffcc33;
+    }
+    ul { list-style: none; padding: 0; }
+  </style>
+</head>
+<body>
+  <h1>GitHub Visual DNA</h1>
+  <div class="dna-card" id="dna">Loading DNA...</div>
+
+  <script>
+    fetch('visuals/dna.json')
+      .then(res => res.json())
+      .then(dna => {
+        const el = document.getElementById('dna');
+        el.innerHTML = \`
+          <p><strong>ID:</strong> \${dna.id}</p>
+          <p><strong>Dominant Language:</strong> \${dna.dominantLanguage}</p>
+          <p><strong>Public Repos:</strong> \${dna.public_repos}</p>
+          <p><strong>Followers:</strong> \${dna.followers}</p>
+          <p><strong>Following:</strong> \${dna.following}</p>
+          <p><strong>Traits:</strong></p>
+          <ul>
+            <li>Symmetry: \${dna.traits.symmetry}</li>
+            <li>Mutation Factor: \${dna.traits.mutationFactor}</li>
+            <li>Branch Style: \${dna.traits.branchStyle}</li>
+          </ul>
+        \`;
+      });
+  </script>
+</body>
+</html>

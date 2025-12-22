@@ -1,0 +1,18 @@
+{
+  "name": "20-cosmic-dev-dashboard",
+  "version": "1.0.0",
+  "description": "Planetary system dashboard where each repo is a planet with real orbital mechanics",
+  "author": "AshrafMorningstar <https://github.com/AshrafMorningstar>",
+  "license": "MIT",
+  "scripts": {
+    "start": "npx http-server -p 8080",
+    "deploy": "gh-pages -d ."
+  },
+  "keywords": [
+    "github",
+    "physics-sim",
+    "ashrafmorningstar",
+    "advanced",
+    "professional"
+  ]
+}

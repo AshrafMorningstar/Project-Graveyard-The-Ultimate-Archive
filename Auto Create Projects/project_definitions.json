@@ -1,0 +1,171 @@
+{
+  "metadata": {
+    "total_projects": 200,
+    "author": "Ashraf Morningstar",
+    "github_url": "https://github.com/AshrafMorningstar",
+    "repository_name": "premium-web-dev-projects",
+    "version": "1.0.0"
+  },
+  "categories": {
+    "interactive_tools": {
+      "count": 30,
+      "projects": [
+        {
+          "id": 1,
+          "name": "quantum-calculator",
+          "title": "Quantum Scientific Calculator",
+          "description": "Advanced scientific calculator with quantum computing visualization and complex mathematical operations",
+          "features": ["Scientific functions", "Matrix operations", "Graphing", "History", "Themes"],
+          "ui_theme": "cyber-neon",
+          "color_scheme": {"primary": "hsl(280, 100%, 60%)", "secondary": "hsl(180, 100%, 50%)", "accent": "hsl(320, 100%, 65%)"},
+          "keywords": ["calculator", "scientific", "quantum", "math", "computation"]
+        },
+        {
+          "id": 2,
+          "name": "prismatic-color-converter",
+          "title": "Prismatic Color Converter Pro",
+          "description": "Professional color conversion tool with live preview, palette generation, and accessibility checker",
+          "features": ["RGB/HSL/HEX conversion", "Palette generator", "Accessibility scores", "Export palettes"],
+          "ui_theme": "gradient-glass",
+          "color_scheme": {"primary": "hsl(200, 90%, 55%)", "secondary": "hsl(280, 85%, 60%)", "accent": "hsl(40, 95%, 65%)"},
+          "keywords": ["color", "converter", "palette", "design", "accessibility"]
+        },
+        {
+          "id": 3,
+          "name": "crypto-password-forge",
+          "title": "Crypto Password Forge",
+          "description": "Military-grade password generator with entropy visualization and security analysis",
+          "features": ["Custom rules", "Strength meter", "Entropy visualization", "Batch generation", "Export"],
+          "ui_theme": "dark-matrix",
+          "color_scheme": {"primary": "hsl(120, 100%, 40%)", "secondary": "hsl(140, 80%, 45%)", "accent": "hsl(100, 100%, 50%)"},
+          "keywords": ["password", "security", "generator", "encryption", "crypto"]
+        },
+        {
+          "id": 4,
+          "name": "universal-unit-nexus",
+          "title": "Universal Unit Nexus",
+          "description": "Comprehensive unit converter covering physics, chemistry, cooking, and custom units",
+          "features": ["500+ units", "Custom units", "Conversion history", "Favorites", "Offline mode"],
+          "ui_theme": "holographic-blue",
+          "color_scheme": {"primary": "hsl(210, 100%, 55%)", "secondary": "hsl(190, 90%, 60%)", "accent": "hsl(230, 100%, 70%)"},
+          "keywords": ["unit", "converter", "measurement", "physics", "universal"]
+        },
+        {
+          "id": 5,
+          "name": "json-yaml-transformer",
+          "title": "JSON-YAML Transformer Studio",
+          "description": "Advanced data format converter with validation, beautification, and minification",
+          "features": ["JSON/YAML/XML/CSV", "Validation", "Beautify/Minify", "Schema validation", "Diff viewer"],
+          "ui_theme": "code-editor-dark",
+          "color_scheme": {"primary": "hsl(220, 15%, 25%)", "secondary": "hsl(210, 50%, 50%)", "accent": "hsl(30, 100%, 60%)"},
+          "keywords": ["json", "yaml", "converter", "data", "developer"]
+        },
+        {
+          "id": 6,
+          "name": "qr-genesis-pro",
+          "title": "QR Genesis Pro",
+          "description": "Professional QR code generator with custom designs, analytics tracking, and batch creation",
+          "features": ["Custom designs", "Logo embedding", "Analytics", "Batch generation", "Multiple formats"],
+          "ui_theme": "minimal-modern",
+          "color_scheme": {"primary": "hsl(0, 0%, 10%)", "secondary": "hsl(260, 100%, 65%)", "accent": "hsl(340, 100%, 60%)"},
+          "keywords": ["qr code", "generator", "barcode", "scanner", "professional"]
+        },
+        {
+          "id": 7,
+          "name": "markdown-live-studio",
+          "title": "Markdown Live Studio",
+          "description": "Real-time markdown editor with live preview, export options, and collaborative features",
+          "features": ["Live preview", "Syntax highlighting", "Export PDF/HTML", "Templates", "Dark mode"],
+          "ui_theme": "writer-zen",
+          "color_scheme": {"primary": "hsl(45, 30%, 95%)", "secondary": "hsl(200, 20%, 30%)", "accent": "hsl(25, 70%, 55%)"},
+          "keywords": ["markdown", "editor", "preview", "writing", "documentation"]
+        },
+        {
+          "id": 8,
+          "name": "regex-pattern-lab",
+          "title": "Regex Pattern Laboratory",
+          "description": "Interactive regex tester with pattern library, explanation engine, and code generation",
+          "features": ["Live testing", "Pattern library", "Explanation", "Code generation", "Cheat sheet"],
+          "ui_theme": "developer-console",
+          "color_scheme": {"primary": "hsl(140, 60%, 40%)", "secondary": "hsl(200, 50%, 45%)", "accent": "hsl(40, 100%, 55%)"},
+          "keywords": ["regex", "pattern", "testing", "developer", "validation"]
+        },
+        {
+          "id": 9,
+          "name": "base64-cipher-vault",
+          "title": "Base64 Cipher Vault",
+          "description": "Multi-format encoder/decoder with encryption, file support, and batch processing",
+          "features": ["Base64/32/16", "File encoding", "Encryption", "Batch mode", "URL safe"],
+          "ui_theme": "vault-secure",
+          "color_scheme": {"primary": "hsl(240, 40%, 20%)", "secondary": "hsl(200, 60%, 45%)", "accent": "hsl(180, 80%, 50%)"},
+          "keywords": ["base64", "encoder", "decoder", "encryption", "security"]
+        },
+        {
+          "id": 10,
+          "name": "lorem-ipsum-forge",
+          "title": "Lorem Ipsum Content Forge",
+          "description": "Advanced placeholder text generator with multiple languages and content types",
+          "features": ["Multiple languages", "Custom length", "HTML/Markdown", "Realistic data", "Templates"],
+          "ui_theme": "typography-elegant",
+          "color_scheme": {"primary": "hsl(30, 40%, 90%)", "secondary": "hsl(210, 30%, 35%)", "accent": "hsl(15, 70%, 50%)"},
+          "keywords": ["lorem ipsum", "placeholder", "text generator", "content", "dummy text"]
+        }
+      ]
+    },
+    "games_entertainment": {
+      "count": 30,
+      "projects": [
+        {
+          "id": 11,
+          "name": "tetris-neon-blast",
+          "title": "Tetris Neon Blast",
+          "description": "Classic Tetris with neon aesthetics, particle effects, and modern gameplay modes",
+          "features": ["Classic mode", "Speed mode", "Multiplayer", "Leaderboard", "Custom themes"],
+          "ui_theme": "neon-arcade",
+          "color_scheme": {"primary": "hsl(300, 100%, 50%)", "secondary": "hsl(180, 100%, 50%)", "accent": "hsl(60, 100%, 50%)"},
+          "keywords": ["tetris", "puzzle", "game", "arcade", "neon"]
+        },
+        {
+          "id": 12,
+          "name": "snake-quantum-edition",
+          "title": "Snake Quantum Edition",
+          "description": "Revolutionary snake game with quantum mechanics, portals, and power-ups",
+          "features": ["Quantum portals", "Power-ups", "Obstacles", "Levels", "Achievements"],
+          "ui_theme": "quantum-grid",
+          "color_scheme": {"primary": "hsl(270, 100%, 60%)", "secondary": "hsl(180, 100%, 55%)", "accent": "hsl(320, 100%, 65%)"},
+          "keywords": ["snake", "game", "quantum", "arcade", "classic"]
+        },
+        {
+          "id": 13,
+          "name": "2048-infinity-merge",
+          "title": "2048 Infinity Merge",
+          "description": "Enhanced 2048 with infinite mode, undo system, and beautiful animations",
+          "features": ["Infinite mode", "Undo/Redo", "Themes", "Animations", "Statistics"],
+          "ui_theme": "material-gradient",
+          "color_scheme": {"primary": "hsl(200, 80%, 55%)", "secondary": "hsl(280, 75%, 60%)", "accent": "hsl(40, 90%, 60%)"},
+          "keywords": ["2048", "puzzle", "merge", "strategy", "game"]
+        },
+        {
+          "id": 14,
+          "name": "memory-card-master",
+          "title": "Memory Card Master",
+          "description": "Memory matching game with multiple difficulty levels and custom card sets",
+          "features": ["Multiple themes", "Difficulty levels", "Timer", "Leaderboard", "Custom cards"],
+          "ui_theme": "playful-cards",
+          "color_scheme": {"primary": "hsl(340, 85%, 60%)", "secondary": "hsl(200, 80%, 55%)", "accent": "hsl(50, 90%, 60%)"},
+          "keywords": ["memory", "cards", "matching", "puzzle", "brain game"]
+        },
+        {
+          "id": 15,
+          "name": "tic-tac-toe-ultimate",
+          "title": "Tic-Tac-Toe Ultimate",
+          "description": "Advanced Tic-Tac-Toe with AI opponent, multiplayer, and tournament mode",
+          "features": ["AI opponent", "Multiplayer", "Tournament", "Statistics", "Themes"],
+          "ui_theme": "minimalist-game",
+          "color_scheme": {"primary": "hsl(0, 0%, 15%)", "secondary": "hsl(210, 100%, 60%)", "accent": "hsl(350, 100%, 65%)"},
+          "keywords": ["tic tac toe", "strategy", "ai", "multiplayer", "game"]
+        }
+      ]
+    }
+  }
+}

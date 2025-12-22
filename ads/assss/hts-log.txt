@@ -1,0 +1,11 @@
+HTTrack3.49-2+htsswf+htsjava launched on Mon, 15 Dec 2025 20:50:54 at https://jsmfolio.netlify.app/ +*.css +*.js -ad.doubleclick.net/* -mime:application/foobar +*.gif +*.jpg +*.jpeg +*.png +*.tif +*.bmp +*.zip +*.tar +*.tgz +*.gz +*.rar +*.z +*.exe +*.mov +*.mpg +*.mpeg +*.avi +*.asf +*.mp3 +*.mp2 +*.rm +*.wav +*.vob +*.qt +*.vid +*.ac3 +*.wma +*.wmv
+(winhttrack -qYC2t%Pns2u1%s%uN199%I0p3DaK0H0%kf2A250000%f#f -F "Mozilla/4.5 (compatible; HTTrack 3.0x; Windows 98)" -%F "<!-- Mirrored from %s%s by HTTrack Website Copier/3.x [XR&CO'2014], %s -->" -%l "en, *" -Y https://jsmfolio.netlify.app/ -O1 "D:\ads\assss" +*.css +*.js -ad.doubleclick.net/* -mime:application/foobar +*.gif +*.jpg +*.jpeg +*.png +*.tif +*.bmp +*.zip +*.tar +*.tgz +*.gz +*.rar +*.z +*.exe +*.mov +*.mpg +*.mpeg +*.avi +*.asf +*.mp3 +*.mp2 +*.rm +*.wav +*.vob +*.qt +*.vid +*.ac3 +*.wma +*.wmv )
+
+Information, Warnings and Errors reported for this mirror:
+note:	the hts-log.txt file, and hts-cache folder, may contain sensitive information,
+	such as username/password authentication for websites mirrored in this project
+	do not share these files/folders if you want these information to remain private
+
+
+HTTrack Website Copier/3.49-2 mirror complete in 4 seconds : 6 links scanned, 5 files written (2002084 bytes overall) [1327197 bytes received at 331799 bytes/sec], 977326 bytes transferred using HTTP compression in 3 files, ratio 30%
+(No errors, 0 warnings, 0 messages)

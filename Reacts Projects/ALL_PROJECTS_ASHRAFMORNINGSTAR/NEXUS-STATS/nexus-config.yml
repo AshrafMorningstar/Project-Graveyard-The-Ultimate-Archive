@@ -1,0 +1,10 @@
+nexus:
+  profile: "AshrafMorningstar"
+  analytics:
+    depth: "strategic"
+  output:
+    formats:
+      - "executive_summary.pdf"
+      - "interactive_dashboard.html"
+  branding:
+    color_palette: "corporate_futurism"

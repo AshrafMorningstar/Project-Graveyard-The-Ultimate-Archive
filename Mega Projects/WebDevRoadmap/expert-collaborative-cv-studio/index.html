@@ -1,0 +1,90 @@
+<!--
+ -----------------------------------------------------------------------------
+ @author      Ashraf Morningstar
+ @github      https://github.com/AshrafMorningstar
+ @repository  Project Graveyard - The Ultimate Archive
+ @quote       "Code that defines the future. Designed to inspire."
+ -----------------------------------------------------------------------------
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- SEO & Viral Metadata -->
+    <meta name="description" content="Premium EXPERT COLLABORATIVE CV STUDIO web application. Built with modern web technologies. Part of the Ultimate Web Dev Roadmap by Ashraf Morningstar.">
+    <meta name="keywords" content="web development, EXPERT COLLABORATIVE CV STUDIO, javascript, css, html, ashraf morningstar, open source, premium ui">
+    <meta name="author" content="Ashraf Morningstar">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://ashrafmorningstar.github.io/WebDevRoadmap/expert-collaborative-cv-studio/">
+    <meta property="og:title" content="EXPERT COLLABORATIVE CV STUDIO | Premium Web App">
+    <meta property="og:description" content="Premium EXPERT COLLABORATIVE CV STUDIO web application. Built with modern web technologies. Part of the Ultimate Web Dev Roadmap by Ashraf Morningstar.">
+    <meta property="og:image" content="https://via.placeholder.com/1200x630.png?text=EXPERT+COLLABORATIVE+CV+STUDIO">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://ashrafmorningstar.github.io/WebDevRoadmap/expert-collaborative-cv-studio/">
+    <meta property="twitter:title" content="EXPERT COLLABORATIVE CV STUDIO | Premium Web App">
+    <meta property="twitter:description" content="Premium EXPERT COLLABORATIVE CV STUDIO web application. Built with modern web technologies. Part of the Ultimate Web Dev Roadmap by Ashraf Morningstar.">
+    <meta property="twitter:image" content="https://via.placeholder.com/1200x630.png?text=EXPERT+COLLABORATIVE+CV+STUDIO">
+    
+    <link rel="canonical" href="https://ashrafmorningstar.github.io/WebDevRoadmap/expert-collaborative-cv-studio/">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Collaborative CV Studio</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Quill Editor CDN -->
+  <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+</head>
+<body>
+  <!-- Author: Ashraf Morningstar | https://github.com/AshrafMorningstar -->
+  
+  <div class="app-layout">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="brand">
+        📄 CV Studio <span class="badge">Pro</span>
+      </div>
+      
+      <div class="menu">
+        <button class="menu-item active">📝 Editor</button>
+        <button class="menu-item">👀 Preview</button>
+        <button class="menu-item">⚙️ Settings</button>
+      </div>
+
+      <div class="collaborators">
+        <h3>Online Users</h3>
+        <div class="user-list" id="userList">
+          <!-- Users injected here -->
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <header class="top-bar">
+        <div class="document-title">
+          <input type="text" value="Untitled Resume" id="docTitle">
+          <span class="status" id="saveStatus">All changes saved</span>
+        </div>
+        
+        <div class="actions">
+          <button class="btn-secondary" id="shareBtn">🔗 Share</button>
+          <button class="btn-primary" id="exportBtn">⬇️ Export PDF</button>
+        </div>
+      </header>
+
+      <div class="editor-container">
+        <!-- Quill Editor Target -->
+        <div id="editor"></div>
+      </div>
+    </main>
+  </div>
+
+  <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
+

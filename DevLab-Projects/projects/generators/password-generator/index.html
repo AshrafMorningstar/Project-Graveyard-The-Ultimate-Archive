@@ -1,0 +1,92 @@
+<!--
+ -----------------------------------------------------------------------------
+ @author      Ashraf Morningstar
+ @github      https://github.com/AshrafMorningstar
+ @repository  Project Graveyard - The Ultimate Archive
+ @quote       "Code that defines the future. Designed to inspire."
+ -----------------------------------------------------------------------------
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SecureGen | Web Dev Mega Projects</title>
+    <meta name="description" content="Generate strong, secure, and random passwords instantly. customizable length and character sets.">
+    <meta name="author" content="Ashraf Morningstar">
+    
+    <link rel="stylesheet" href="../../../assets/css/global.css">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container flex-center" style="min-height: 100vh;">
+        <main class="generator-card">
+            <header class="header">
+                <h1>SecureGen</h1>
+                <p>Generate unbreakable passwords</p>
+            </header>
+
+            <div class="password-display-container">
+                <input type="text" id="password-output" class="password-output" readonly placeholder="P4$5w0rD!">
+                <button id="copy-btn" class="icon-btn" title="Copy to Clipboard">
+                    <i class="far fa-copy"></i>
+                </button>
+            </div>
+
+            <div class="strength-meter-container">
+                <div class="strength-bar" id="strength-bar"></div>
+                <span id="strength-text">Strength</span>
+            </div>
+
+            <div class="settings">
+                <div class="setting-group range-group">
+                    <div class="range-header">
+                        <label for="length">Character Length</label>
+                        <span id="length-val">12</span>
+                    </div>
+                    <input type="range" id="length" min="4" max="32" value="12">
+                </div>
+
+                <div class="setting-group checkboxes">
+                    <label class="checkbox-container">
+                        <input type="checkbox" id="uppercase" checked>
+                        <span class="checkmark"></span>
+                        Include Uppercase Letters
+                    </label>
+                    <label class="checkbox-container">
+                        <input type="checkbox" id="lowercase" checked>
+                        <span class="checkmark"></span>
+                        Include Lowercase Letters
+                    </label>
+                    <label class="checkbox-container">
+                        <input type="checkbox" id="numbers" checked>
+                        <span class="checkmark"></span>
+                        Include Numbers
+                    </label>
+                    <label class="checkbox-container">
+                        <input type="checkbox" id="symbols" checked>
+                        <span class="checkmark"></span>
+                        Include Symbols
+                    </label>
+                </div>
+            </div>
+
+            <button id="generate-btn" class="generate-btn">
+                GENERATE <i class="fas fa-arrow-right"></i>
+            </button>
+            
+            <div id="toast" class="toast">Copied to clipboard!</div>
+
+            <footer class="footer-attribution">
+                <p>Created & Maintained by <a href="https://github.com/AshrafMorningstar">Ashraf Morningstar</a></p>
+            </footer>
+        </main>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

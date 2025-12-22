@@ -1,0 +1,55 @@
+<!--
+ -----------------------------------------------------------------------------
+ @author      Ashraf Morningstar
+ @github      https://github.com/AshrafMorningstar
+ @repository  Project Graveyard - The Ultimate Archive
+ @quote       "Code that defines the future. Designed to inspire."
+ -----------------------------------------------------------------------------
+-->
+
+<!DOCTYPE html>
+<!-- Created by Ashraf Morningstar - https://github.com/AshrafMorningstar -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tip Calculator | Ashraf Morningstar</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Tip Calculator</h1>
+        
+        <div class="wrapper">
+            <span class="lbl">Bill Amount</span>
+            <span class="prefix">$</span>
+            <input type="number" id="bill" class="val" placeholder="0.00">
+        </div>
+        
+        <div class="wrapper">
+            <span class="lbl">Tip Percent %</span>
+            <span class="prefix"></span>
+            <input type="number" id="tip" class="val" placeholder="15">
+        </div>
+        
+        <div class="wrapper">
+            <span class="lbl">No. of People</span>
+            <span class="prefix"><i class="fas fa-user"></i></span>
+            <input type="number" id="people" class="val" placeholder="1">
+        </div>
+        
+        <button id="calculate">Calculate</button>
+        
+        <div class="wrapper total-wrapper">
+            <span class="lbl">Tip Per Person</span>
+            <span id="tip-per-person" class="val">$0.00</span>
+        </div>
+        <div class="wrapper total-wrapper">
+            <span class="lbl">Total Per Person</span>
+            <span id="total-per-person" class="val">$0.00</span>
+        </div>
+        
+        <div class="footer">Made with 💰 by <a href="https://github.com/AshrafMorningstar">Ashraf Morningstar</a></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

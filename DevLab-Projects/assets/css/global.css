@@ -1,0 +1,176 @@
+/*
+ * -----------------------------------------------------------------------------
+ * @author      Ashraf Morningstar
+ * @github      https://github.com/AshrafMorningstar
+ * @repository  Project Graveyard - The Ultimate Archive
+ * @quote       "Code that defines the future. Designed to inspire."
+ * -----------------------------------------------------------------------------
+*/
+
+/*
+Created & Maintained by Ashraf Morningstar
+GitHub: https://github.com/AshrafMorningstar
+*/
+
+/* --- Global Variables --- */
+:root {
+  /* Colors - Modern Dark Theme Base */
+  --bg-primary: #0f172a;
+  --bg-secondary: #1e293b;
+  --text-primary: #f8fafc;
+  --text-secondary: #94a3b8;
+  --accent-blue: #3b82f6;
+  --accent-purple: #8b5cf6;
+  --accent-pink: #ec4899;
+  --success: #10b981;
+  --danger: #ef4444;
+
+  /* Spacing */
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 1.5rem;
+  --spacing-lg: 2rem;
+  --spacing-xl: 4rem;
+
+  /* Typography */
+  --font-family: "Inter", system-ui, -apple-system, sans-serif;
+
+  /* Effects */
+  --radius-sm: 0.5rem;
+  --radius-md: 0.75rem;
+  --radius-lg: 1rem;
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+  --shadow-glow: 0 0 15px rgba(59, 130, 246, 0.5);
+}
+
+/* --- Reset --- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-family);
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+}
+
+/* --- Utilities --- */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-sm);
+}
+
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.grid {
+  display: grid;
+  gap: var(--spacing-md);
+}
+
+.card {
+  background: var(--bg-secondary);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-lg);
+  box-shadow: var(--shadow-md);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-glow);
+}
+
+/* --- Typography --- */
+h1,
+h2,
+h3,
+h4 {
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  color: var(--text-primary);
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: var(--spacing-md);
+}
+h2 {
+  font-size: 2rem;
+  margin-bottom: var(--spacing-sm);
+}
+h3 {
+  font-size: 1.5rem;
+  margin-bottom: var(--spacing-sm);
+}
+
+p {
+  color: var(--text-secondary);
+  margin-bottom: var(--spacing-sm);
+}
+
+/* --- Buttons --- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  transition: all 0.2s;
+  cursor: pointer;
+  border: none;
+  text-decoration: none;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple));
+  color: white;
+}
+
+.btn-primary:hover {
+  opacity: 0.9;
+  transform: scale(1.02);
+}
+
+.btn-outline {
+  background: transparent;
+  border: 2px solid var(--accent-blue);
+  color: var(--accent-blue);
+}
+
+.btn-outline:hover {
+  background: rgba(59, 130, 246, 0.1);
+}
+
+/* --- Footer --- */
+.footer-attribution {
+  text-align: center;
+  padding: var(--spacing-lg);
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+  margin-top: auto;
+}
+
+.footer-attribution a {
+  color: var(--accent-blue);
+  text-decoration: none;
+}
+
+.footer-attribution a:hover {
+  text-decoration: underline;
+}

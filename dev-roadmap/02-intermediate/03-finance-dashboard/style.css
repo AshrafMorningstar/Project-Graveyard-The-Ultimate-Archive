@@ -1,0 +1,169 @@
+/*
+ * -----------------------------------------------------------------------------
+ * @author      Ashraf Morningstar
+ * @github      https://github.com/AshrafMorningstar
+ * @repository  Project Graveyard - The Ultimate Archive
+ * @quote       "Code that defines the future. Designed to inspire."
+ * -----------------------------------------------------------------------------
+*/
+
+/**
+ * Author: Ashraf Morningstar
+ * GitHub: https://github.com/AshrafMorningstar
+ * Project: Personal Finance Dashboard
+ */
+
+:root {
+    --bg: #f3f4f6;
+    --sidebar: #111827;
+    --card-bg: #ffffff;
+    --primary: #6366f1;
+    --text-dark: #1f2937;
+    --green: #10b981;
+    --red: #ef4444;
+}
+
+body {
+    margin: 0;
+    font-family: 'Outfit', sans-serif;
+    background: var(--bg);
+    color: var(--text-dark);
+}
+
+.dashboard-layout {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 250px;
+    background: var(--sidebar);
+    color: white;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--primary);
+    margin-bottom: 3rem;
+}
+
+.sidebar ul { list-style: none; padding: 0; }
+.sidebar li {
+    padding: 1rem;
+    margin-bottom: 0.5rem;
+    border-radius: 8px;
+    cursor: pointer;
+    color: #9ca3af;
+    transition: all 0.2s;
+}
+
+.sidebar li:hover, .sidebar li.active {
+    background: rgba(99, 102, 241, 0.1);
+    color: white;
+}
+
+.user-profile {
+    margin-top: auto;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding-top: 1rem;
+    border-top: 1px solid #374151;
+}
+
+.avatar {
+    width: 35px; height: 35px;
+    background: var(--primary);
+    border-radius: 50%;
+    display: flex; justify-content: center; align-items: center;
+    font-size: 0.8rem;
+}
+
+/* Main */
+main {
+    flex: 1;
+    padding: 2rem 3rem;
+    overflow-y: auto;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.add-btn {
+    background: var(--primary);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+/* Cards */
+.cards-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.card {
+    background: var(--card-bg);
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+.card h3 {
+    margin: 0 0 1rem 0;
+    font-size: 0.9rem;
+    color: #6b7280;
+    text-transform: uppercase;
+}
+
+.amount { font-size: 2rem; font-weight: 700; }
+.positive { color: var(--green); }
+.negative { color: var(--red); }
+
+.trend {
+    display: inline-block;
+    padding: 2px 8px;
+    background: #d1fae5; /* Green Light */
+    color: var(--green);
+    border-radius: 12px;
+    font-size: 0.8rem;
+    margin-top: 0.5rem;
+}
+
+.grid-section {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 2rem;
+}
+
+/* Transactions */
+.tx-list {
+    list-style: none;
+    padding: 0;
+}
+
+.tx-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+    border-bottom: 1px solid #f3f4f6;
+}
+
+.tx-info h4 { margin: 0 0 5px 0; font-size: 1rem; }
+.tx-info span { color: #9ca3af; font-size: 0.8rem; }
+.tx-amount { font-weight: 600; }

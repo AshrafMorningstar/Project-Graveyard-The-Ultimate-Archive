@@ -1,0 +1,8 @@
+{
+  "name": "Eigenfolio Quantum",
+  "description": "The First Neuromorphic Portfolio Architecture. A premium, quantum-design inspired React application featuring AI integration, neural interfaces, and a cosmic UI.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ]
+}

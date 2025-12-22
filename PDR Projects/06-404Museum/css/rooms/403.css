@@ -1,0 +1,42 @@
+/*
+ * -----------------------------------------------------------------------------
+ * @author      Ashraf Morningstar
+ * @github      https://github.com/AshrafMorningstar
+ * @repository  Project Graveyard - The Ultimate Archive
+ * @quote       "Code that defines the future. Designed to inspire."
+ * -----------------------------------------------------------------------------
+*/
+
+/* Room 403 - Restricted */
+
+#room-403 {
+    background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+    color: #ecf0f1;
+}
+
+#room-403 .error-code {
+    color: #e74c3c;
+}
+
+.barrier {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: repeating-linear-gradient(
+        90deg,
+        #e74c3c 0px,
+        #e74c3c 40px,
+        transparent 40px,
+        transparent 80px
+    );
+    transform: translateY(-50%);
+    opacity: 0.3;
+    animation: barrier-pulse 2s ease-in-out infinite;
+}
+
+@keyframes barrier-pulse {
+    0%, 100% { opacity: 0.3; }
+    50% { opacity: 0.6; }
+}

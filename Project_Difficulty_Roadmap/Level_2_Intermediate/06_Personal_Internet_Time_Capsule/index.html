@@ -1,0 +1,57 @@
+<!--
+ -----------------------------------------------------------------------------
+ @author      Ashraf Morningstar
+ @github      https://github.com/AshrafMorningstar
+ @repository  Project Graveyard - The Ultimate Archive
+ @quote       "Code that defines the future. Designed to inspire."
+ -----------------------------------------------------------------------------
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Internet Time Capsule | Ashraf Morningstar</title>
+    <!-- 
+        Project: Personal Internet Time Capsule
+        Level: Intermediate
+        Author: Ashraf Morningstar
+        GitHub: https://github.com/AshrafMorningstar
+    -->
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Lato:wght@300;400&display=swap" rel="stylesheet">
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><span class="icon">⏳</span> Digital Time Capsule</h1>
+            <p>Archiving your digital footprint into art.</p>
+        </header>
+
+        <main>
+            <div class="controls">
+                <button id="visualize-btn" class="primary-btn">Generate Artifact</button>
+                <div class="stat-box">
+                    <span id="site-count">0</span>
+                    <label>Sites Visited</label>
+                </div>
+                <div class="stat-box">
+                    <span id="hour-count">0</span>
+                    <label>Hours Online</label>
+                </div>
+            </div>
+
+            <div id="visualization-area" class="viz-container">
+                <!-- D3 chart will be appended here -->
+                <div class="placeholder-text">
+                    Click "Generate Artifact" to preserve your browsing history as 
+                    <br>a visualized constellation of memories.
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>

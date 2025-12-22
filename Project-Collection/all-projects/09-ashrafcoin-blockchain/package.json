@@ -1,0 +1,20 @@
+{
+  "name": "09-ashrafcoin-blockchain",
+  "version": "1.0.0",
+  "description": "Simulated blockchain ledger with SHA-256 hashing",
+  "author": "AshrafMorningstar <https://github.com/AshrafMorningstar>",
+  "license": "MIT",
+  "scripts": {
+    "start": "npx http-server -p 8080",
+    "deploy": "gh-pages -d ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AshrafMorningstar/09-ashrafcoin-blockchain"
+  },
+  "keywords": [
+    "github",
+    "blockchain",
+    "ashrafmorningstar"
+  ]
+}

@@ -1,0 +1,13 @@
+Create a simple manifest listing the assets (SVGs / PNGs) you may later include (placeholders for now):
+
+logo.svg
+grid-bg.svg
+scanline.png
+neon-ring.svg
+holo-overlay.png
+Notes for PART B-2
+fetchGithub for Ultra will be in src/lib/githubUltra.js (I will provide in PART B-3). Ultra fetcher includes more detailed stats and optional per-repo commit retrieval (with safeguards and caching).
+
+Keep images in assets/ and reference via relative paths when you add real assets.
+
+Files are intentionally modular so you can swap or extend scenes and UI elements.

@@ -1,0 +1,76 @@
+<!--
+ -----------------------------------------------------------------------------
+ @author      Ashraf Morningstar
+ @github      https://github.com/AshrafMorningstar
+ @repository  Project Graveyard - The Ultimate Archive
+ @quote       "Code that defines the future. Designed to inspire."
+ -----------------------------------------------------------------------------
+-->
+
+<!--
+  Author: Ashraf Morningstar
+  GitHub: https://github.com/AshrafMorningstar
+  Project: Accessible Event Countdown
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accessible Countdown | Ashraf Morningstar</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container" role="main">
+        <header>
+            <h1>Event Countdown</h1>
+            <a href="https://github.com/AshrafMorningstar" class="author-credits" aria-label="Visit Ashraf Morningstar's GitHub Profile">
+                By Ashraf Morningstar
+            </a>
+            <button id="contrast-toggle" aria-pressed="false">Toggle High Contrast</button>
+        </header>
+
+        <section class="setup-panel" aria-labelledby="setup-heading">
+            <h2 id="setup-heading" class="sr-only">Setup Event</h2>
+            <form id="event-form">
+                <div class="form-group">
+                    <label for="event-name">Event Name:</label>
+                    <input type="text" id="event-name" placeholder="e.g. My Birthday" required>
+                </div>
+                <div class="form-group">
+                    <label for="event-date">Date & Time:</label>
+                    <input type="datetime-local" id="event-date" required>
+                </div>
+                <button type="submit">Start Countdown</button>
+            </form>
+        </section>
+
+        <section class="countdown-display" aria-live="polite" aria-atomic="true">
+            <h2 id="display-event-name">Waiting for event...</h2>
+            
+            <div class="timer-grid">
+                <div class="time-unit">
+                    <span id="days" class="number">00</span>
+                    <span class="label">Days</span>
+                </div>
+                <div class="time-unit">
+                    <span id="hours" class="number">00</span>
+                    <span class="label">Hours</span>
+                </div>
+                <div class="time-unit">
+                    <span id="minutes" class="number">00</span>
+                    <span class="label">Minutes</span>
+                </div>
+                <div class="time-unit">
+                    <span id="seconds" class="number">00</span>
+                    <span class="label">Seconds</span>
+                </div>
+            </div>
+            
+            <div id="sr-announcer" class="sr-only" aria-live="assertive"></div>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,268 @@
+/*
+ * -----------------------------------------------------------------------------
+ * @author      Ashraf Morningstar
+ * @github      https://github.com/AshrafMorningstar
+ * @repository  Project Graveyard - The Ultimate Archive
+ * @quote       "Code that defines the future. Designed to inspire."
+ * -----------------------------------------------------------------------------
+*/
+
+/**
+ * Author: Ashraf Morningstar
+ * GitHub: https://github.com/AshrafMorningstar
+ * Project: Interactive Recipe Story Page
+ */
+
+:root {
+  --primary-color: #ff9a9e;
+  --secondary-color: #fad0c4;
+  --text-color: #2d3436;
+  --card-bg: rgba(255, 255, 255, 0.9);
+  --font-heading: "Playfair Display", serif;
+  --font-body: "Poppins", sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--text-color);
+  background: #fff;
+  overflow-x: hidden;
+}
+
+/* Nav */
+.sticky-nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+}
+
+.logo {
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+.github-link {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  color: var(--text-color);
+  font-weight: 600;
+  font-size: 0.9rem;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  background: #f1f2f6;
+  transition: all 0.3s ease;
+}
+
+.github-link:hover {
+  background: #dfe6e9;
+  transform: translateY(-2px);
+}
+
+/* Scrolly Sections */
+.story-section {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  padding: 2rem;
+  transition: background 1s ease;
+}
+
+/* Dynamic Backgrounds via JS classes */
+.bg-intro-active {
+  background: linear-gradient(135deg, #a18cd1 0%, #fbc2eb 100%);
+}
+.bg-ingredients-active {
+  background: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
+}
+.bg-mix-active {
+  background: linear-gradient(120deg, #fccb90 0%, #d57eeb 100%);
+}
+.bg-cook-active {
+  background: linear-gradient(120deg, #e0c3fc 0%, #8ec5fc 100%);
+}
+.bg-serve-active {
+  background: linear-gradient(to top, #fff1eb 0%, #ace0f9 100%);
+}
+
+.content-card {
+  background: var(--card-bg);
+  padding: 3rem;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  width: 100%;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease-out;
+}
+
+/* Active State for Animations */
+.section-active .content-card {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+h1 {
+  font-family: var(--font-heading);
+  font-size: 3.5rem;
+  margin-bottom: 0.5rem;
+}
+h2 {
+  font-family: var(--font-heading);
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  color: #6c5ce7;
+}
+p {
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.ingredient-list {
+  list-style: none;
+  text-align: left;
+  margin: 0 auto;
+  display: inline-block;
+}
+
+.ingredient-list li {
+  font-size: 1.1rem;
+  margin: 0.5rem 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.scroll-indicator {
+  margin-top: 2rem;
+  font-size: 0.9rem;
+  opacity: 0.7;
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-10px);
+  }
+  60% {
+    transform: translateY(-5px);
+  }
+}
+
+/* Interactive Elements */
+.interactive-whisk {
+  margin-top: 1rem;
+}
+
+#whisk-btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background: #6c5ce7;
+  color: white;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: transform 0.1s;
+}
+
+#whisk-btn:active {
+  transform: scale(0.95);
+}
+
+.batter-animation {
+  width: 50px;
+  height: 50px;
+  background: #ffeaa7;
+  border-radius: 50%;
+  margin: 1rem auto;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.batter-active {
+  opacity: 1;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Pancake Flip */
+.pan {
+  width: 100px;
+  height: 100px;
+  background: #2d3436;
+  border-radius: 50%;
+  margin: 0 auto;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pancake {
+  width: 80px;
+  height: 80px;
+  background: #ffeaa7;
+  border-radius: 50%;
+  transition: background 0.5s;
+}
+
+.section-active .pancake {
+  animation: flip 2s infinite ease-in-out;
+}
+
+@keyframes flip {
+  0% {
+    transform: translateY(0) rotateX(0);
+    background: #ffeaa7;
+  }
+  50% {
+    transform: translateY(-40px) rotateX(180deg);
+    background: #fab1a0;
+  }
+  100% {
+    transform: translateY(0) rotateX(360deg);
+    background: #e17055;
+  }
+}
+
+footer {
+  text-align: center;
+  padding: 2rem;
+  background: #fafafa;
+  font-size: 0.9rem;
+}
+
+footer a {
+  color: #6c5ce7;
+  text-decoration: none;
+}
