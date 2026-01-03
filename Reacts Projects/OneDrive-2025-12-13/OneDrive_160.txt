@@ -1,2 +1,11 @@
-﻿Sorry, there was a problem downloading this file from OneDrive. Please try again.
+/*
+ Copyright (c) 2026 Ashraf Morningstar
+ These are personal recreations of existing projects, developed by Ashraf Morningstar
+ for learning and skill development.
+ Original project concepts remain the intellectual property of their respective creators.
+ Repository: https://github.com/AshrafMorningstar
+*/
+
+﻿Sorry, there was a problem downloading this file from OneDrive. Please try again.
+
 https://onedrive.live.com/?id=A973F29A8EBF0315%21s264aa58b4a994025a71ce3c5ba1ee4bc&action=Download

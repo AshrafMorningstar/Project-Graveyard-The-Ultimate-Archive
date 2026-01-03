@@ -1,3 +1,11 @@
+/*
+ Copyright (c) 2026 Ashraf Morningstar
+ These are personal recreations of existing projects, developed by Ashraf Morningstar
+ for learning and skill development.
+ Original project concepts remain the intellectual property of their respective creators.
+ Repository: https://github.com/AshrafMorningstar
+*/
+
 date	size'/'remotesize	flags(request:Update,Range state:File response:Modified,Chunked,gZipped)	statuscode	status ('servermsg')	MIME	Etag|Date	URL	localfile	(from URL)
 20:50:55	1368/1368	---M-Z	404	error ('Not%20Found')	text/html	etag:1762846874-ssl-df	https://jsmfolio.netlify.app/robots.txt		(from )
 20:50:55	468/468	---M--	200	added ('OK')	text/html	etag:%22531000e043321d706ad3a1dcb8e675e1-ssl%22	https://jsmfolio.netlify.app/	D:/ads/assss/jsmfolio.netlify.app/c1-qyagr.html	(from )

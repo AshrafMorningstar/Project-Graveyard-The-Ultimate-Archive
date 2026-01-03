@@ -1,3 +1,11 @@
+/*
+ Copyright (c) 2026 Ashraf Morningstar
+ These are personal recreations of existing projects, developed by Ashraf Morningstar
+ for learning and skill development.
+ Original project concepts remain the intellectual property of their respective creators.
+ Repository: https://github.com/AshrafMorningstar
+*/
+
 {
   "#": "Used by Sanity to keep track of configuration file checksums, do not delete or modify!",
   "@sanity/default-layout": "bb034f391ba508a6ca8cd971967cbedeb131c4d19b17b28a0895f32db5d568ea",

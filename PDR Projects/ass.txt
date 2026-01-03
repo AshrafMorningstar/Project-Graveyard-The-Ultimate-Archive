@@ -1,3 +1,11 @@
+/*
+ Copyright (c) 2026 Ashraf Morningstar
+ These are personal recreations of existing projects, developed by Ashraf Morningstar
+ for learning and skill development.
+ Original project concepts remain the intellectual property of their respective creators.
+ Repository: https://github.com/AshrafMorningstar
+*/
+
 Skip to content
 You said:
 CREATE PROJECTS pdr NOT Recommended Learning Path BY USING AI Google Antigravity's Editor view offers tab autocompletion, natural language code commands, and a configurable. An AI IDE Core. Google Antigravity's Editor view SOFTWER Make me a PDR in which there should be about web development projects from beginner to expert level and there should be 6 projects for each level like 6 projects for beginner, 6 projects for expert and you can make PDRs of other similar types of projects one by one but according to the sections like first beginner, after that environment, you can make PDRs of similar types of projects for me but every project should be unique and such that no one in the world has made it. Now create a complete pdr for every project And also Remember to make the UI/UX very premium and Professional looking design Of every project I give you full authority just give me the best of best project PDR Make me a PDR in which there should be about web development projects from beginner to expert level and there should be 6 projects for each level like 6 projects for beginner, 6 projects for expert and you can make PDRs of other similar types of projects one by one but according to the sections like first beginner, after that environment, you can make PDRs of similar types of projects for me but every project should be unique and such that no one in the world has made it.Now create a complete pdr for every project And also Remember to make the UI/UX very premium and Professional looking design Of every project I give you full authority just give me the best of best project PDR

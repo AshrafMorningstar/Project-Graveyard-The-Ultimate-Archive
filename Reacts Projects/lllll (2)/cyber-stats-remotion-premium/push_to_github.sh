@@ -1,4 +1,12 @@
 #!/usr/bin/env bash
+/*
+ Copyright (c) 2026 Ashraf Morningstar
+ These are personal recreations of existing projects, developed by Ashraf Morningstar
+ for learning and skill development.
+ Original project concepts remain the intellectual property of their respective creators.
+ Repository: https://github.com/AshrafMorningstar
+*/
+
 set -euo pipefail
 # Usage: export GH_TOKEN="ghp_..." && bash push_to_github.sh
 REPO_FORK="git@github.com:AshrafMorningstar/github-stats-remotion.git"

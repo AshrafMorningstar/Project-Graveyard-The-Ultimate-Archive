@@ -1,3 +1,11 @@
+/*
+ Copyright (c) 2026 Ashraf Morningstar
+ These are personal recreations of existing projects, developed by Ashraf Morningstar
+ for learning and skill development.
+ Original project concepts remain the intellectual property of their respective creators.
+ Repository: https://github.com/AshrafMorningstar
+*/
+
 # Premium Projects Auto-Generator & Deployer
 # Created by Ashraf Morningstar - https://github.com/AshrafMorningstar
 # This script automatically creates all 25 premium projects and deploys to GitHub

@@ -1,4 +1,12 @@
 /*
+ Copyright (c) 2026 Ashraf Morningstar
+ These are personal recreations of existing projects, developed by Ashraf Morningstar
+ for learning and skill development.
+ Original project concepts remain the intellectual property of their respective creators.
+ Repository: https://github.com/AshrafMorningstar
+*/
+
+/*
  * -----------------------------------------------------------------------------
  * @author      Ashraf Morningstar
  * @github      https://github.com/AshrafMorningstar
@@ -55,3 +63,28 @@ The Application Runs on **localhost:3000**
 ![Screenshot (194)](https://user-images.githubusercontent.com/81071871/127682487-0fe5c6c4-dbea-46d9-b4cc-d05cf2dfcc8d.png)
 
 ![Screenshot (195)](https://user-images.githubusercontent.com/81071871/127682536-3775484a-e20e-41f0-978d-dd0ff130f933.png)
+
+---
+
+## 📜 Copyright & License
+
+© 2026 Ashraf Morningstar. All Rights Reserved.
+
+**Educational Disclaimer:** This is a personal recreation of an existing project concept, developed for learning and skill development purposes. The original project concept remains the intellectual property of its respective creator(s).
+
+**License:** MIT License - See [LICENSE](./LICENSE) file for details.
+
+**Developer:** [Ashraf Morningstar](https://github.com/AshrafMorningstar)
+
+**Portfolio:** Explore more projects at [github.com/AshrafMorningstar](https://github.com/AshrafMorningstar)
+
+---
+
+### 🤝 Connect & Contribute
+
+Found this helpful? Give it a ⭐️ on GitHub!
+
+- 💼 Company: MORNINGSTARCONSTRUCTION
+- 📍 Location: India
+- 🐦 Twitter: [@AMS_Morningstar](https://twitter.com/AMS_Morningstar)
+- 📧 Email: ashrafmorningstar@gmail.com
